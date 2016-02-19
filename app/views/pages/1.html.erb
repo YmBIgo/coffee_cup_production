@@ -1,30 +1,48 @@
 <% provide :title, "ホームページとは？" %>
-<div class="textbook-area">
-  <div class="textbook-area-inner fadeIn wow">
-    <div class="textbook-title">
-      <h1><strong>ホームページとは？</strong></h1>
-    </div>
-    <p>前の章：<a href="/pages/0" class="text-left ">はじめに</a></p>
-    <a href="">
-    <%= image_tag "header/header3.jpg",
-                  :size => "480x320",
-                  :class => "textbook-title-img hover_img" %>
-    </a>
-    <hr>
-    <div class="row">
-      <div class="col-xl-9 col-lg-9 col-md-9 col-sm-8 col-xs-12">
-          <h2 class="textbook-section-title" id="title1"><strong>ホームページとは？</strong></h2>
+<div class="row">
+  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <div class="textbook-area">
+      <div class="textbook-area-inner fadeIn wow">
+        <div class="textbook-title">
+          <h1><strong>ホームページとは？</strong></h1>
+        </div>
+        <h4><u><a href="/pages/0" class="text-left ">前の章：はじめに</a></u></h4>
+        <a href="">
+        <%= image_tag "header/header3.jpg",
+                      :width => "75%",
+                      :class => "textbook-title-img hover_img" %>
+        </a>
+        <hr>
+          <h2 class="textbook-section-title" id="title1"><strong>ホームページの謎</strong></h2>
           <h4>
           日頃使っているホームページ。それがどのようにして動いているか分かりますか？
+          <hr>
+          <ul>
+            <li>投稿した文章はどのようにして表示されているのか？</li>
+            <li>メッセージアプリで送った画像はどこにあるのか？</li>
+            <li>そもそもホームページを作ることでなにができるのか？</li>
+          </ul>
+          <hr>
+          分からないことは山のようにあると思います。
           <br>
+          <br>
+          でもホームページでやっていることは、実は<strong class="remarkable">２つ</strong>しかないです(もちろん厳密にいうならもっとありますが・・・)。
+          <br>
+          それは、データの<strong class="remarkable">保存・表示</strong>です。
           </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title2"><strong>データの表示・保存</strong></h2>
       </div>
-      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xl-12">
-        <div class="slide-bar">
-          <h3>目次</h3>
-          <a href="#title1">ホームページとは？</a>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xl-12">
+    <br>
+    <div id="slide-bar" class="clear-fix">
+      <h3>目次</h3>
+      <ul class="text-left">
+        <li><a href="#title1">ホームページの謎</a></li>
+        <li><a href="#title2">データの表示・保存</a></li>
+      </ul>
     </div>
   </div>
 </div>
