@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StudyRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'common/navbar' %>
+<div id="main-section">
+
+  <%= yield %>
+
+</div>
+
+<script>
+  new WOW().init();
+</script>
+
+</body>
+</html>

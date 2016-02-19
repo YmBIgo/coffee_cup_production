@@ -1,0 +1,47 @@
+// section id
+#main-section{
+  margin-top:80px;
+}
+
+// navbar
+.kbc-navbar{
+  opacity:.9;
+  padding:10px;
+}
+
+// header
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: #fff;
+    background-image: asset-data-url("header/header1.jpg");
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px;
+    text-align: center;
+    /**/
+    overflow: hidden;
+}
+
+// 各アクション
+.hover_img:hover{
+  opacity:.5;
+}
+
+// 共通設定
+body, td, th, form, h1, h2, h3, h4, h5, p, a, li {
+    font-family: SalesforceSansRegular, メイリオ, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', Arial, Helvetica, Verdana, sans-serif;
+}
+.orange-color{
+  color:#ffd700;
+}
