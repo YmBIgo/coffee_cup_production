@@ -1,41 +1,130 @@
 // section id
 #main-section{
-  margin-top:80px;
+  margin-top:70px;
+  background-color:#f9f9f9;
 }
 
-// navbar
-.kbc-navbar{
-  opacity:.9;
-  padding:10px;
+#main-section-inner{
+  margin:30px 0;
 }
 
-// header
-header {
-    position: relative;
-    width: 100%;
-    min-height: auto;
-    text-align: center;
-    color: #fff;
-    background-image: asset-data-url("header/header1.jpg");
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
+// Components
 
-header .header-content {
-    position: relative;
-    width: 100%;
-    padding: 100px 15px;
-    text-align: center;
-    /**/
-    overflow: hidden;
-}
+  // navbar
+  .kbc-navbar{
+    opacity:.9;
+    padding:10px;
+  }
+
+  // header
+  header {
+      position: relative;
+      width: 100%;
+      min-height: auto;
+      text-align: center;
+      color: #fff;
+      background-image: asset-data-url("header/header.jpg");
+      background-position: center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;
+  }
+
+  header .header-content {
+      position: relative;
+      width: 100%;
+      padding: 100px 15px;
+      text-align: center;
+      /**/
+      overflow: hidden;
+  }
+
+  // index
+  .font-18{
+    border-bottom:2px solid;
+    font-size:18px;
+  }
+  // index の textbook へのリンク
+  .table-content{
+    border:1px solid;
+    border-color:rgba(90, 90, 90, .6);
+    border-radius:10px;
+    margin-bottom:20px;
+    p{
+      margin:10px;
+    }
+  }
+  .table-content:hover{
+    background-color:#e0e0e0;
+  }
+
+  // textbook
+  .textbook-title {
+    h1{
+      position: relative;
+      padding: .25em 0 .5em .75em;
+      border-left: 8px solid #3498db;
+    }
+    h1::after{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: '';
+      width: 100%;
+      height: 0;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  .textbook-title-img{
+    display:block;
+    margin:20px auto;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
+  }
+  .textbook-area{
+    margin:10px;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
+  }
+  .textbook-area-inner{
+    background-color:white;
+    padding:10px 30px;
+    .textbook-section-title{
+      padding-bottom:10px;
+      border-bottom:3px solid #FFD700;
+    }
+    h4{
+      margin-top:30px;
+      line-height:1.5;
+      font-weight: 1.2;
+    }
+    .next-page{
+      text-align:center;
+    }
+  }
+    // slidebar
+    .slide-bar{
+      background-color:#f9f9f9;
+      box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
+      padding-bottom:10px;
+      h3{
+        padding:5px 10px;
+        border-bottom:solid 1px;
+        border-color:rgba(190,190,190,.9);
+      }
+      a{
+        padding:10px 20px;
+      }
+    }
+
+  // footer
+  .footer{
+    padding:10px;
+  }
 
 // 各アクション
 .hover_img:hover{
-  opacity:.5;
+  opacity:.7;
 }
 
 // 共通設定
@@ -44,4 +133,14 @@ body, td, th, form, h1, h2, h3, h4, h5, p, a, li {
 }
 .orange-color{
   color:#ffd700;
+}
+
+.orange-hr{
+  border-color: #FFD700;
+  border-width: 3px;
+}
+
+.clear-fix{
+  display:block;
+  clear:both;
 }

@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StudyRails</title>
+  <title><%= yield :title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= render 'common/navbar' %>
-<div id="main-section">
-
-  <%= yield %>
-
-</div>
-
 <script>
   new WOW().init();
 </script>
+
+<%= render 'common/navbar' %>
+<div id="main-section">
+  <div class="container">
+    <%= yield %>
+  </div>
+  <hr>
+  <footer class="footer text-center">
+    <!-- <p><small>@2016 KBC実行委員会</small></p> -->
+  </footer>
+</div>
 
 </body>
 </html>
