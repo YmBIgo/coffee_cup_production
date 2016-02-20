@@ -11,7 +11,7 @@
                       :width => "75%",
                       :class => "textbook-title-img hover_img" %>
         </a>
-        <hr>
+        <br>
         <h2 class="textbook-section-title" id="title1"><strong>当サイトの目的</strong></h2>
         <h4>
           ご覧になっていただき、ありがとうございます。
@@ -19,11 +19,12 @@
           当サイトは友達にホームページの作り方を教えるためのものをついでに公開しようと思い、作ったものです。
           <br>
           ここを上手く活用して、ホームページを作れるようになって下されば幸いです。
-          <br>
+          <br><br>
+          ※PC は<strong><u>Mac</u></strong>を、ブラウザは<strong><u>Google Chrome</u></strong>を使用しますので、ご承知ください。
           <hr>
           少しお金はかかりますが、<a href="https://tech-camp.in"><strong>Tech::Camp</strong></a> というプログラミングの塾もありますので、興味があればそちらも活用してみることをオススメいたします。
         </h4>
-        <hr class="red-hr">
+        <br>
         <div class="next-page">
           <a href="/pages/1" class="btn btn-primary">次の章に進む</a>
         </div>
@@ -31,10 +32,13 @@
     </div>
   </div>
   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xl-12">
+    <br>
     <div id="slide-bar" class="clear-fix">
-      <h3>目次</h3>
-      <a href="#title1">当サイトの目的</a>
-      <br>
+      <div class="list-group nomargin">
+        <a class="list-group-item disabled">目次</a>
+        <a href="#title1" class="list-group-item">当サイトの目的</a>
+      </div>
     </div>
   </div>
 </div>
+<%= render 'pages/fixedjs' %>

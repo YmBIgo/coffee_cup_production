@@ -9,11 +9,11 @@
         <h4><u><a href="/pages/0" class="text-left ">前の章：はじめに</a></u></h4>
         <a href="">
         <%= image_tag "header/header3.jpg",
-                      :width => "75%",
+                      :width => "90%",
                       :class => "textbook-title-img hover_img" %>
         </a>
-        <hr>
-          <h2 class="textbook-section-title" id="title1"><strong>ホームページの謎</strong></h2>
+        <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : ホームページの謎</strong></h2>
           <h4>
           日頃使っているホームページ。それがどのようにして動いているか分かりますか？
           <hr>
@@ -26,16 +26,40 @@
           分からないことは山のようにあると思います。
           <br>
           <br>
-          が、実は、ホームページでやっていることは<strong class="remarkable">２つ</strong>しかありません(もちろん厳密に言えばもっとありますが・・・)。
+          ですが、ホームページでやっていることは<strong class="remarkable">２つ</strong>しかありません。
           <br>
           それは、<strong class="remarkable">データの表示・保存</strong>です。
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title2"><strong>Facebookの仕組み</strong></h2>
+          <h2 class="textbook-section-title" id="title2"><strong>2 : Facebookの仕組み</strong></h2>
           <h4>
-          最初にFacebookを例にとって説明しましょう。
+          Facebookを例に説明しましょう。
+          <hr>
+          <p><i class="fa fa-tags color-red"></i>　<strong>データの表示</strong></p>
+          ホームページのやっていることの一つに、データをどのように画面を表示させるのかということがあります。
           <br><br>
-          Facebookで投稿をすると、その内容が自分のプロフィール・他の人のタイムラインに表示されます。Facebookの裏ではなにが行われているのでしょうか？
+          Facebookは大体このようになっていると思います。
+          <br>
+          <%= image_tag "page1/FB1.png",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <br>
+          このページの
+          <br>
+          Google Chrome を使用している場合は、
+          <br>
+          上のバーの<strong class="little-remarkable color-blue">「View > Developer > ViewSource」</strong>を選択してみて下さい。(下の画像を参考にしてみて下さい)
+          <%= image_tag "page1/Chrome_View_Developer_ViewSource.png",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <br>
+          下のようなウィンドウが表示されます。
+          <%= image_tag "page1/FB_Code.png",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          </h4>
+          <h2 class="textbook-section-title" id="title3"><strong>3 : データの保存</strong></h2>
+          <h4>
           </h4>
       </div>
     </div>
@@ -43,11 +67,13 @@
   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xl-12">
     <br>
     <div id="slide-bar" class="clear-fix">
-      <h3>目次</h3>
-        <a href="#title1">ホームページの謎</a>
-        <hr>
-        <a href="#title2">Facebookの仕組み</a>
+      <div class="list-group nomargin">
+        <a class="list-group-item disabled"><h4>ホームページとは？</h4></a>
+        <a href="#title1" class="list-group-item">1 : ホームページの謎</a>
+        <a href="#title2" class="list-group-item">2 : Facebookの仕組み</a>
+        <a href="#title3" class="list-group-item">3 : </a>
       </ul>
     </div>
   </div>
 </div>
+<%= render 'pages/fixedjs' %>
