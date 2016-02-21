@@ -8,7 +8,7 @@
         </div>
         <h4><u><a href="/pages/0" class="text-left ">前の章：はじめに</a></u></h4>
         <a href="">
-        <%= image_tag "header/header3.jpg",
+        <%= image_tag "header/header1.jpg",
                       :width => "90%",
                       :class => "textbook-title-img hover_img" %>
         </a>
@@ -33,34 +33,91 @@
           <br>
           <h2 class="textbook-section-title" id="title2"><strong>2 : Facebookの仕組み</strong></h2>
           <h4>
-          Facebookを例に説明しましょう。
+          <i class="fa fa-star color-blue"></i>　Facebookを例に<strong class="little-remarkable"><u>データの表示と保存</u></strong>を説明していきます。
           <hr>
-          <p><i class="fa fa-tags color-red"></i>　<strong>データの表示</strong></p>
-          ホームページのやっていることの一つに、データをどのように画面を表示させるのかということがあります。
+          <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong>データの表示</strong></p>
+          ホームページはデータを表示させています。
+          <br>
+          ここでそれがなにで表示されているのか見てみましょう！
           <br><br>
-          Facebookは大体このようになっていると思います。
+          Facebookのトップページは大体このようになっていると思います。
           <br>
-          <%= image_tag "page1/FB1.png",
-                        :width => "90%",
-                        :class => "textbook-title-img hover_img" %>
+          <%= link_to (image_tag "page1/FB1.png",
+                                 :width => "90%",
+                                 :class => "textbook-title-img hover_img"),
+                      "/assets/page1/FB1.png",
+                      :target=>["_blank"] %>
           <br>
-          このページの
-          <br>
+          では、実際にこのページを表示させているものを見てみましょう！
+          <hr>
           Google Chrome を使用している場合は、
           <br>
           上のバーの<strong class="little-remarkable color-blue">「View > Developer > ViewSource」</strong>を選択してみて下さい。(下の画像を参考にしてみて下さい)
-          <%= image_tag "page1/Chrome_View_Developer_ViewSource.png",
-                        :width => "90%",
-                        :class => "textbook-title-img hover_img" %>
+          <%= link_to (image_tag "page1/Chrome_View_Developer_ViewSource.png",
+                                 :width => "90%",
+                                 :class => "textbook-title-img hover_img"),
+                      "/assets/page1/Chrome_View_Developer_ViewSource.png",
+                      :target=>["_blank"] %>
           <br>
-          下のようなウィンドウが表示されます。
-          <%= image_tag "page1/FB_Code.png",
-                        :width => "90%",
-                        :class => "textbook-title-img hover_img" %>
+          下のようなウィンドウが表示されると思います。
+          <%= link_to (image_tag "page1/FB_Code.png",
+                                 :width => "90%",
+                                 :class => "textbook-title-img hover_img"),
+                      "/assets/page1/FB_Code.png",
+                      :target=>["_blank"] %>
+          この長い文字列がページを表示させています。これがページにどのような文字や画像・動画を表示するのかを決めています。
+          <br>
+          <small>※死ぬほど長いですが、探そうと思えば自分の名前なんかも見つかると思います。</small>
+          <br><br>
+          上に出てきた文字や画像・動画の表示をさせているものを<strong class="little-remarkable"><u>HTMLファイル</strong></u>と言います。
+          <hr>
+          <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong>データの保存</strong></p>
+          ここまで、ホームページのデータの表示を簡単に説明しました。
+          ですがホームページはデータを表示させているだけではありません。
+          <br><br>
+          例えば<strong> Facebookの投稿 </strong>のように、利用者は自分の情報を発信できるようになっています。ホームページ作成者のデータの表示だけではホームページはできていません。
+          <br>
+          ホームページは<strong class="little-remarkable color-red">提供者のデータの表示</strong>と<strong class="little-remarkable color-blue">利用者のデータの発信</strong>という相互の情報のやりとりでできています。
+          <hr>
+          <i class="fa fa-question-circle color-green"></i>
+          <strong class="little-remarkable">では、利用者の発信した情報はどこに行くのでしょうか？</strong>
+          <br><br>
+          Facebookの投稿を例に見てみましょう。
+          <%= link_to image_tag("page1/FB_Post.png",
+                                :width => "90%",
+                                :class => "textbook-title-img hover_img"),
+                      "/assets/page1/FB_Post.png",
+                      :target => ["_blank"] %>
+          「投稿する」ボタンがクリックされると、その投稿に関する情報が<strong><u>ホームページの機械（サーバー）</u></strong>に送信されます。上の投稿の画面で言うと、<span class="color-red">「ユーザーは山田太郎、内容はHello World、場所は東京都新宿」</span>などなど・・・
+          <%= link_to image_tag("page1/FB_Save_Data_Before.png",
+                                :width => "90%",
+                                :class => "textbook-title-img hover_img"),
+                      "/assets/page1/FB_Save_Data_Before",
+                      :target => ["_blank"] %>
+          こうやって送信されたデータはどうなるのでしょうか？
+          <br>
+          送信されたデータは、ホームページの機械（サーバー）の中にある<strong><u>情報を保存するExcelの表のようなもの（データベース）</u></strong>に保存されます。
+          <%= link_to image_tag("page1/FB_Save_Data_After.png",
+                                :width => "90%",
+                                :class => "textbook-title-img hover_img"),
+                      "/assets/page1/FB_Save_Data_After.png",
+                      :target => ["_blank"] %>
+          このようにして、ユーザーが発信した情報はホームページの機械（サーバー）の中にあるExcelの表（データベース）に保存されます。
+          <br>
+          発信され保存された情報が表示されることでFacebookではタイムラインが、Twitterではツイートが表示されます。
           </h4>
-          <h2 class="textbook-section-title" id="title3"><strong>3 : データの保存</strong></h2>
+          <br>
+          <h2 class="textbook-section-title" id="title3"><strong>3 : まとめ</strong></h2>
           <h4>
+          <i class="fa fa-star color-blue"></i> ホームページが行っていることはデータの表示と保存だけ
+          <br><br>
+          <i class="fa fa-star color-blue"></i> 言い換えれば、提供者のデータ表示と利用者が発信した情報の保存によって双方間のデータのやりとりが行われている。
           </h4>
+          <hr>
+          <div class="next-page">
+            <a href="/pages/2" class="btn btn-primary">次の章に進む</a>
+          </div>
+          <br>
       </div>
     </div>
   </div>
@@ -71,7 +128,9 @@
         <a class="list-group-item disabled"><h4>ホームページとは？</h4></a>
         <a href="#title1" class="list-group-item">1 : ホームページの謎</a>
         <a href="#title2" class="list-group-item">2 : Facebookの仕組み</a>
-        <a href="#title3" class="list-group-item">3 : </a>
+        <a href="#title2-1" class="list-group-item">　① : データの表示</a>
+        <a href="#title2-2" class="list-group-item">　② : データの保存</a>
+        <a href="#title3" class="list-group-item">3 : まとめ</a>
       </ul>
     </div>
   </div>
