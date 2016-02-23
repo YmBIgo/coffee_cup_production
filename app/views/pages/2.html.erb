@@ -3,7 +3,7 @@
   <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
     <div class="textbook-area">
       <div class="textbook-area-inner fadeIn wow">
-        <div class="textbook-title">
+        <div id="title" class="textbook-title">
           <h1><strong>Ruby on Rails の基本</strong></h1>
         </div>
         <h4><u><a href="/pages/1" class="text-left ">前の章：ホームページとは？</a></u></h4>
@@ -12,6 +12,10 @@
                       :width => "90%",
                       :class => "textbook-title-img hover_img" %>
         </a>
+        <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+        <h4>
+        <i class="fa fa-bookmark color-red"></i>　Ruby on Railsを使ったホームページ作成について大まかな理解を得て、Ruby on Railsの環境構築を終了させる。
+        </h4>
         <br>
         <h2 class="textbook-section-title" id="title1"><strong>1 : Ruby on Rails </strong></h2>
         <h4>
@@ -142,7 +146,7 @@
         </p>
         <hr>
         <i class="fa fa-star color-blue"></i>　<strong>Rails内のデータ保存のためには、データベースの枠組みの定義とデータの操作のやり方を決める。</strong>
-        <hr>
+        <br>
         <br>
         </h4>
         <h2 class="textbook-section-title" id="title2"><strong>2 : Railsの準備</strong></h2>
@@ -204,19 +208,70 @@
         <br><br>
         <a href="http://techacademy.jp/magazine/4630" target="_blank"><i class="fa fa-download"></i>　Railsのインストール方法</a>
         <hr>
-        <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong>③ : Sublime Textのインストール</strong></p>
+        <p id="title2-2-3"><i class="fa fa-tags color-red"></i>　<strong>③ : Sublime Textのインストール</strong></p>
         <br>
-        設定ファイルを編集するためのファイル編集ソフト、<strong><u>Sublime Text</u></strong>もインストールしましょう。
+        設定ファイルを編集するためのファイルの編集ソフト、<strong><u>Sublime Text</u></strong>もインストールしましょう。
         <br><br>
         <a href="http://techacademy.jp/magazine/3060#se2" target="_blank"><i class="fa fa-download"></i>　Sublime Textのインストール方法</a>
         <hr>
-        <p id="title2-4"><i class="fa fa-tags color-red"></i>　<strong>④ : Mysqlのインストール</strong></p>
+        <p id="title2-2-4"><i class="fa fa-tags color-red"></i>　<strong>④ : MySQLのインストール</strong></p>
         <br>
-        Railsでは、<strong><u>Mysql</u></strong>というデータベースを使います。
+        ここでは<strong><u>MySQL</u></strong>というデータベースを使いますので、それをインストールしましょう。
+        <hr class="red-hr">
+        ターミナルを開き、「<strong><u>brew install mysql</u></strong>」と入力してみましょう。
         <br>
-        <pre class="brush:html">
-          <\html></html>
-        </pre>
+        <small>$ マークは入力しないで大丈夫です。</small>
+        <pre class="pre-terminal">$ brew install mysql</pre>
+        実行して大体以下のような表示が出て来れば大丈夫です。
+        <pre class="pre-terminal">==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/mysql-5.6.22.yosemite.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring mysql-5.6.22.yosemite.bottle.tar.gz
+==> Caveats
+A "/etc/my.cnf" from another install may interfere with a Homebrew-built
+server starting up correctly.
+
+To connect:
+    mysql -uroot
+
+To have launchd start mysql at login:
+    ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+Then to load mysql now:
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+Or, if you don't want/need launchctl, you can just run:
+    mysql.server start
+==> /usr/local/Cellar/mysql/5.6.22/bin/mysql_install_db --verbose --user=tasukujp --basedir=/usr/local/Cellar/mysql/5.6.22 --datadir=/usr/local/var/my
+==> Summary
+🍺  /usr/local/Cellar/mysql/5.6.22: 9666 files, 339M</pre>
+        <hr class="red-hr">
+        今の状態だとMySQLを起動させるにはターミナルでコマンドを入力しなければならないので、下の二つのコマンドでログイン時に自動で起動できるようにします。
+        <pre class="pre-terminal">$ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents</pre>
+        <pre class="pre-terminal">$ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</pre>
+        <hr>
+        <p id="title2-2-5"><i class="fa fa-tags color-red"></i>　<strong>⑤ : Sequel Proのインストール</strong></p>
+        データベースの中身（あのExcelの表）を簡単に表示させてくれるソフトウェアである<strong><u>Sequel Pro</u></strong>をインストールしましょう。
+        <br><br>
+        <a href="https://github.com/sequelpro/sequelpro/releases/download/1.1.1/sequel-pro-1.1.1.dmg"><i class="fa fa-download"></i>　Sequel Proをダウンロード（クリックすると始まります）</a>
+        <br><br>
+        ダウンロードができたら、ダウンロードされたファイル（普通ならダウンロードフォルダにあります）を開いてみてください。
+        <%= link_to image_tag("page2/Sequel_Pro_Open.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page2/Sequel_Pro_Open.png",
+                    :target => ["_blank"] %>
+        開くと、下の画像のようなウィンドウが表示されるので、画像の手順にしたがい「Connect」を押して下さい。
+        <%= link_to image_tag("page2/Sequel_Pro.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page2/Sequel_Pro.png",
+                    :target => ["_blank"] %>
+        下のように表示されれば大丈夫です。
+        <%= link_to image_tag("page2/Sequel_Pro_Main_Page.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page2/Sequel_Pro_Main_Page.png",
+                    :target => ["_blank"] %>
+        <hr>
+        <i class="fa fa-star color-blue"></i>　<strong>ここまでで環境構築は終わりです。次の章からは実際にRuby on Rails を使った開発をしていきます。</strong>
         </h4>
         <br>
         <div class="next-page">
@@ -230,7 +285,8 @@
     <br>
     <div id="slide-bar" class="clear-fix">
       <div class="list-group nomargin">
-        <a class="list-group-item disabled"><h4>Ruby on Rails の基本</h4></a>
+        <a href="#title" class="list-group-item list-title"><h4>Ruby on Rails の基本</h4></a>
+        <a href="#title0" class="list-group-item">この章の目的</a>
         <a href="#title1" class="list-group-item">1 : Ruby on Rails </a>
         <a href="#title1-1" class="list-group-item"><small>　① : Railsのページ</small></a>
         <a href="#title1-2" class="list-group-item"><small>　② : Railsのデータ</small></a>
@@ -239,9 +295,10 @@
         <a href="#title2" class="list-group-item">2 : Railsの準備</a>
         <a href="#title2-1" class="list-group-item"><small>　① : ターミナル</small></a>
         <a href="#title2-2" class="list-group-item"><small>　② : Railsのインストール</small></a>
-        <a href="#title2-3" class="list-group-item"><small>　③ : Sublime Textのインストール</small></a>
-        <a href="#title2-4" class="list-group-item"><small>　④ : Mysqlのインストール</small></a>
-      </ul>
+        <a href="#title2-2-3" class="list-group-item"><small>　③ : Sublime Textのインストール</small></a>
+        <a href="#title2-2-4" class="list-group-item"><small>　④ : MySQLのインストール</small></a>
+        <a href="#title2-2-5" class="list-group-item"><small>　⑤ : Sequel Proのインストール</small></a>
+      </div>
     </div>
   </div>
 </div>
