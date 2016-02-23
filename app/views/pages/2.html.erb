@@ -1,6 +1,6 @@
 <% provide :title, "Ruby on Rails の基本" %>
 <div class="row">
-  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
     <div class="textbook-area">
       <div class="textbook-area-inner fadeIn wow">
         <div class="textbook-title">
@@ -19,61 +19,214 @@
         <br>
         ここでは <strong class="color-red">Ruby on Rails</strong> というソフトウェアを使い、ホームページを作っていきます。
         <br><br>
-        前の章で<strong class="little-remarkable">「ホームページはデータの表示と保存」</strong>をしていると説明しましたが、Ruby on Rails ではこの<strong class="little-remarkable">「データの表示と保存」</strong>を自分で設定していくことでホームページを作っていきます。
-        <br><br>
+        前の章で<strong class="little-remarkable">「ホームページはデータの表示と保存」</strong>をしていると説明しましたが、Ruby on Rails ではできている雛形に、<strong class="little-remarkable">「データの表示と保存」を自分で設定する</strong>ことでホームページを作っていきます。
+        <br>
         <small>※　以下、「Ruby on Rails」を単に「Rails」と省略して表記します。長いのは面倒なので・・・</small>
         <br>
         <br>
-        <i class="fa fa-star color-blue"></i>　Rails ではデータの表示と保存を自分で設定しながら、ホームページを作る。
-        <hr>
-        <i class="fa fa-question-circle color-green"></i>　<strong>さて、Railsではなにを「自分で設定」しなければならないのでしょうか？</strong>
+        <i class="fa fa-star color-blue"></i>　Railsではデータの表示と保存を自分で設定しながら、ホームページを作る。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>Railsではなにを「自分で設定」しなければならないのでしょうか？</strong>
         <br><br>
-        簡単に言うと３つあります。
+        自分で設定するものは２つあります。
         <br>
-        １つ目は<strong class="little-remarkable color-red">ページ</strong>、２つ目は<strong class="little-remarkable color-blue">データの箱</strong>、そして３つ目は<strong class="little-remarkable color-orange">データの操作</strong>です。
+        １つ目は<strong class="little-remarkable color-red">ページ</strong>、２つ目は<strong class="little-remarkable color-blue">データ</strong>です。
         <hr>
-        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>Railsのページ</strong></p>
-        Railsでは、データの表示と保存の方法で作れるページが決まっています。
+        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : Railsのページ</strong></p>
+        Railsでは、データの表示と保存の方法で作るページの役割が決まっています。
         <br>
-        ここでは、を例に説明しましょう。
+        Twitterを例にページの役割を説明していきます。
         <br><br>
         <i class="fa fa-check-square color-red"></i>　<strong>データの表示</strong>
         <br>
-        データベースに保存されたデータを<strong class="remarkable">表示</strong>させます。
+        <%= link_to image_tag("page2/Tweet_index_and_show.png",
+                              :width => "90%",
+                              :class => "textbook-title-img hover_img"),
+                    "/assets/page2/Tweet_index_and_show.png",
+                    :target => ["_blank"] %>
+        データベースに保存されたデータを<strong class="remarkable color-red">表示</strong>させます。
         <br>
-        データベース内の<strong class="color-blue">全てのデータを表示するページ</strong>と、データベースから<strong class="color-red">１つのデータを選択して表示するページ</strong>の２つのページからできています。
+        データベース内の全てのデータを表示するページと、データベースから１つのデータを選択して表示するページからできています。
         <br>
         <strong class="color-blue">タイムライン</strong>と<strong class="color-red">１つの投稿のページ</strong>の違いと考えてもらえれば分かりやすいかと思います。
         <br>
-        <small>※　データベースからデータを表示せず、ページだけを表示させることもできます。</small>
+        <small>※　データベースからデータを表示しないページを表示させることもできます。</small>
         <br><br>
         <i class="fa fa-check-square color-red"></i>　<strong>データの作成</strong>
         <br>
-        入力させたデータをデータベースに<strong class="remarkable">保存</strong>します。
+        <%= link_to image_tag("page2/Tweet_new.png",
+                              :width => "90%",
+                              :class => "textbook-title-img hover_img"),
+                    "/assets/page2/Tweet_new.png",
+                    :target => ["_blank"] %>
+        入力させたデータを<strong class="remarkable color-red">データベースに保存</strong>します。
         <br>
-        データを<strong class="color-blue">入力させるページ</strong>と、入力したデータを<strong class="color-red">送信して保存させるページ</strong>の２つのページからできています。
+        データを入力させるページと、入力したデータを送信して保存させるページの２つのページからできています。
         <br><br>
         <i class="fa fa-check-square color-red"></i>　<strong>データの編集</strong>
         <br>
-        選択されたデータを入力された内容に<strong class="remarkable">変更</strong>します。
+        <%= link_to image_tag("page2/Tweet_edit.png",
+                              :width => "90%",
+                              :class => "textbook-title-img hover_img"),
+                    "/assets/page2/Tweet_edit.png",
+                    :target => ["_blank"] %>
+        入力された内容に選択された<strong class="remarkable color-red">データベースの内容を変更</strong>します。
         <br>
-        これも、データを<strong class="color-blue">入力させるページ</strong>と、入力されたデータを<strong class="color-red">送信して内容を変更させるページ</strong>の２つのページからできています。
+        これも、データを入力させるページと、入力されたデータを送信して内容を変更させるページからできています。
         <br><br>
         <i class="fa fa-check-square color-red"></i>　<strong>データの削除</strong>
         <br>
-        選択されたデータを<strong class="remarkable">削除</strong>します。
+        <%= link_to image_tag("page2/Tweet_destroy.png",
+                              :width => "90%",
+                              :class => "textbook-title-img hover_img"),
+                    "/assets/page2/Tweet_destroy.png",
+                    :target => ["_blank"] %>
+        選択されたデータを<strong class="remarkable color-red">データベースから削除</strong>します。
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　Railsでは、<strong class="little-remarkable"><u>データの表示・作成・編集・削除</u></strong>の４種類のページをどのように表示させるかを自分で設定していきます。
         <hr>
-        <p id="title1-2"><i class="fa fa-tags color-blue"></i>　<strong>Railsのデータ</strong></p>
+        <p id="title1-2"><i class="fa fa-tags color-blue"></i>　<strong>② : Railsのデータ</strong></p>
+        Railsでは、データの表示と保存に応じてページに役割が振り分けられていることを説明しました。
+        <br>
+        では、そのデータとはどのようなものなのでしょうか？
+        <hr class="red-hr">
+        <a href="/pages/1">前の章</a>で、それはホームページを動かしている機械（サーバー）の中にあるデータベースに保存される情報だと説明しました。
+        <br>
+        <%= link_to image_tag("page2/FB_Save_Data.png",
+                              :width => "90%",
+                              :class => "textbook-title-img hover_img"),
+                    "/assets/page2/FB_Save_Data.png",
+                    :target => ["_blank"] %>
+        <br>
+        例えばFacebookの投稿であれば、<span class="color-red">「投稿した人の名前は山田太郎、投稿した内容は"Hello world"、場所は東京都新宿、画像はなし...」</span>のような情報がサーバーに送信され、それが<strong><u>サーバー内のデータベース（Excelの表）</u></strong>に保存されます。
+        <br><br>
+        <i class="fa fa-star color-blue"></i>　<strong>Railsで保存されるデータもこれと同じで、利用者が発信した情報をホームページの機械（サーバー）の中のデータベースに保存され、それがページに表示されます。</strong>
+        <hr>
+        Railsでは、利用者が発信した情報が保存される<strong><u>データベースの枠組みの定義</u></strong>（Facebookの例でいうと、名前・内容・場所など）と、ページで入力され送信された<strong><u>データのデータベースへの代入と保存</u></strong>を行います。
+        <br><br>
+        <p id="title1-2-1"><i class="fa fa-check-square color-blue"></i>　<strong>⑴ : データベースの定義</strong></p>
+        <p>データベースの枠組みはそのデータを保存する上での<strong><u>特徴</u></strong>で定義します。
+        <br>
+        amazonの商品を例に、もう一度説明しましょう。
+        <%= link_to image_tag("page2/amazon_expensive.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page2/amazon_expensive.png",
+                    :target => ["_blank"] %>
+        amazonの商品には「商品名・値段・画像・レビュー」などの情報があります。基本的なデータベースの枠組みは下のようなものになるでしょう。
+        <%= link_to image_tag("page2/Amazon_database.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page2/Amazon_database.png",
+                    :target => ["_blank"] %>
+        <br>
+        <strong>Railsでは、まず保存するデータの特性を示す情報を登録することで、データベースの枠組みを定義します。</strong>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　Twitterのデータベースの枠組みがどのように定義されているのか考えてみよう！
+        </p>
+        <hr>
+        <p id="title1-2-2"><i class="fa fa-check-square color-blue"></i>　<strong>⑵ : データの代入と保存</strong></p>
+        <p>入力された情報に応じて、新しいデータをデータベースに追加していきます。
+        <br>
+        Facebookの投稿で言うと、あなたが投稿するたびにデータベースにあなたの投稿のデータが追加されていきます。
+        <br>
+        そして、ページではデータベースから選択されたデータを表示させます。
+        <%= link_to image_tag("page2/FB_database.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page2/FB_database.png",
+                    :target => ["_blank"] %>
+        Railsでは、ページの役割（表示・作成・変更・削除）に応じたデータベースへの代入・保存を行います。
+        <hr class="red-hr">
+        具体的には、ページに作った入力欄・表示する部分とそれに対応する<strong class="little-remarkable color-red">データの操作のやり方（データの表示・作成・変更・削除）</strong>を設定することでデータの保存をしていきます。
+        </p>
+        <hr>
+        <i class="fa fa-star color-blue"></i>　<strong>Rails内のデータ保存のためには、データベースの枠組みの定義とデータの操作のやり方を決める。</strong>
+        <hr>
+        <br>
+        </h4>
+        <h2 class="textbook-section-title" id="title2"><strong>2 : Railsの準備</strong></h2>
+        <h4>
+        早速、Railsをインストールして開発ができる環境にしましょう...
+        <hr class="red-hr">
+        <strong class="remarkable">の前に！</strong>
+        <br>
+        <strong>インストールする時に必要になる<span class="color-blue">「ターミナル」</span>というアプリケーションについて説明します。</strong>
+        <hr>
+        <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong>① : ターミナル</strong></p>
+        まずは開いてみましょう！下の画像を参考に開いてみてください
+        <%= link_to image_tag("page2/Terminal_Open.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page2/Terminal_Open.png",
+                    :target => ["_blank"] %>
+        <%= link_to image_tag("page2/Terminal_Open_Done.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page2/Terminal_Open_Done.png",
+                    :target => ["_blank"] %>
+        ターミナルは開けたでしょうか？
+        <br>
+        でも、このターミナルでなにができるのでしょうか？
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>ターミナルはどのようなアプリケーションなのか？</strong>
+        <br>
+        <br>
+        ターミナルとは、コンピューターに命令を与えるアプリケーションです。Railsのホームページもターミナルの命令で作ります。
+        <hr class="red-hr">
+        <i class="fa fa-exclamation-circle color-red"></i>　<strong>ターミナルを使って、デスクトップ内を移動しよう！</strong>
+        <br><br>
+        半角英数字で「<strong><u>cd Desktop</u></strong>」と入力して、Enterを押してみましょう。
+        <br>
+        下のように１行追加されて表示されたでしょうか？
+        <br>
+        下の画像の赤線が現在の場所を示しています。今は、<strong class="color-red">Desktop</strong>にいますね。
+        <%= link_to image_tag("page2/Terminal_cd_desktop_after.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page2/Terminal_cd_desktop_after.png",
+                    :target => ["_blank"] %>
+        「cd」を使えば、現在のフォルダ内にある<strong><u>指定されたフォルダに移動できます</u></strong>。
+        <%= link_to image_tag("page2/Finder_desktop.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page2/Finder_desktop.png",
+                    :target => ["_blank"] %>
+        <i class="fa fa-folder color-red"></i>　<strong>「cd」で、デスクトップ内の好きなフォルダに移動しよう！<br>
+        　　「open ファイル名」で、ファイルを開くこともできます。
+        </strong>
+        <br>
+        <small>※「cd ..」と入力すれば前のフォルダに、「cd ~/Desktop」と入力すればデスクトップに移動できます。</small>
+        <hr>
+        <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong>② : Railsのインストール</strong></p>
+        <br>
+        <strong>では下のリンクにあるインストールの方法にしたがい、Railsのインストールをしてみましょう！</strong>
+        <br><br>
+        <a href="http://techacademy.jp/magazine/4630" target="_blank"><i class="fa fa-download"></i>　Railsのインストール方法</a>
+        <hr>
+        <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong>③ : Sublime Textのインストール</strong></p>
+        <br>
+        設定ファイルを編集するためのファイル編集ソフト、<strong><u>Sublime Text</u></strong>もインストールしましょう。
+        <br><br>
+        <a href="http://techacademy.jp/magazine/3060#se2" target="_blank"><i class="fa fa-download"></i>　Sublime Textのインストール方法</a>
+        <hr>
+        <p id="title2-4"><i class="fa fa-tags color-red"></i>　<strong>④ : Mysqlのインストール</strong></p>
+        <br>
+        Railsでは、<strong><u>Mysql</u></strong>というデータベースを使います。
+        <br>
+        <pre class="brush:html">
+          <\html></html>
+        </pre>
         </h4>
         <br>
         <div class="next-page">
-            <a href="/pages/3" class="btn btn-primary">次の章に進む</a>
-          </div>
-          <br>
+          <a href="/pages/3" class="btn btn-primary">次の章に進む</a>
+        </div>
+        <br>
       </div>
     </div>
   </div>
-  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xl-12">
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
     <br>
     <div id="slide-bar" class="clear-fix">
       <div class="list-group nomargin">
@@ -81,8 +234,13 @@
         <a href="#title1" class="list-group-item">1 : Ruby on Rails </a>
         <a href="#title1-1" class="list-group-item"><small>　① : Railsのページ</small></a>
         <a href="#title1-2" class="list-group-item"><small>　② : Railsのデータ</small></a>
-        <a href="#title2" class="list-group-item"></a>
-        <a href="#title3" class="list-group-item"></a>
+        <a href="#title1-2-1" class="list-group-item"><small>　　⑴ : データベースの定義</small></a>
+        <a href="#title1-2-2" class="list-group-item"><small>　　⑵ : データの代入と保存</small></a>
+        <a href="#title2" class="list-group-item">2 : Railsの準備</a>
+        <a href="#title2-1" class="list-group-item"><small>　① : ターミナル</small></a>
+        <a href="#title2-2" class="list-group-item"><small>　② : Railsのインストール</small></a>
+        <a href="#title2-3" class="list-group-item"><small>　③ : Sublime Textのインストール</small></a>
+        <a href="#title2-4" class="list-group-item"><small>　④ : Mysqlのインストール</small></a>
       </ul>
     </div>
   </div>
