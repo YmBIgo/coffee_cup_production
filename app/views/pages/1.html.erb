@@ -46,10 +46,10 @@
           <br><br>
           Facebookのトップページは大体このようになっていると思います。
           <br>
-          <%= link_to (image_tag "page1/FB1.png",
+          <%= link_to (image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB1.png",
                                  :width => "90%",
                                  :class => "textbook-title-img hover_img"),
-                      "/assets/page1/FB1.png",
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB1.png",
                       :target=>["_blank"] %>
           <br>
           では、実際にこのページを表示させているものを見てみましょう！
@@ -57,17 +57,17 @@
           Google Chrome を使用している場合は、
           <br>
           上のバーの<strong class="little-remarkable color-blue">「View > Developer > ViewSource」</strong>を選択してみて下さい。(下の画像を参考にしてみて下さい)
-          <%= link_to (image_tag "page1/Chrome_View_Developer_ViewSource.png",
+          <%= link_to (image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/Chrome_View_Developer_ViewSource.png",
                                  :width => "90%",
                                  :class => "textbook-title-img hover_img"),
-                      "/assets/page1/Chrome_View_Developer_ViewSource.png",
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/Chrome_View_Developer_ViewSource.png",
                       :target=>["_blank"] %>
           <br>
           下のようなウィンドウが表示されると思います。
-          <%= link_to (image_tag "page1/FB_Code.png",
+          <%= link_to (image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Code.png",
                                  :width => "90%",
                                  :class => "textbook-title-img hover_img"),
-                      "/assets/page1/FB_Code.png",
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Code.png",
                       :target=>["_blank"] %>
           この長い文字列がページを表示させています。これがページにどのような文字や画像・動画を表示するのかを決めています。
           <br>
@@ -89,24 +89,24 @@
           <strong class="little-remarkable">利用者の発信した情報はどこに行くのか？</strong>
           <br><br>
           Facebookの投稿を例に見てみましょう。
-          <%= link_to image_tag("page1/FB_Post.png",
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Post.png",
                                 :width => "90%",
                                 :class => "textbook-title-img hover_img"),
-                      "/assets/page1/FB_Post.png",
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Post.png",
                       :target => ["_blank"] %>
           「投稿する」ボタンがクリックされると、その投稿に関する情報が<strong><u>ホームページの機械（サーバー）</u></strong>に送信されます。上の投稿の画面で言うと、<span class="color-red">「ユーザーは山田太郎、内容はHello World、場所は東京都新宿」</span>などなど・・・
-          <%= link_to image_tag("page1/FB_Save_Data_Before.png",
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_Before.png",
                                 :width => "90%",
                                 :class => "textbook-title-img hover_img"),
-                      "/assets/page1/FB_Save_Data_Before",
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_Before.png",
                       :target => ["_blank"] %>
           こうやって送信されたデータはどうなるのでしょうか？
           <br>
           送信されたデータは、ホームページの機械（サーバー）の中にある<strong><u>情報を保存するExcelの表のようなもの（データベース）</u></strong>に保存されます。
-          <%= link_to image_tag("page1/FB_Save_Data_After.png",
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_After.png",
                                 :width => "90%",
                                 :class => "textbook-title-img hover_img"),
-                      "/assets/page1/FB_Save_Data_After.png",
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_After.png",
                       :target => ["_blank"] %>
           このようにして、ユーザーが発信した情報はホームページの機械（サーバー）の中にあるExcelの表（データベース）に保存されます。
           <br>
