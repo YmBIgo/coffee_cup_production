@@ -8,7 +8,7 @@
         </div>
         <h4><u><a href="/pages/2" class="text-left ">前の章：Ruby on Rails の基本</a></u></h4>
         <a href="">
-        <%= image_tag "header/header3.jpg",
+        <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header3.jpg",
                       :width => "90%",
                       :class => "textbook-title-img hover_img" %>
         </a>
@@ -34,10 +34,12 @@
           これはFacebookトップページの長い長いHTMLファイルですが、この文字列がどのようにページを表示させるかを決めています。
           <br>
           <br>
-          FacebookのページのHTMLファイルは長いですが、簡単なページならもっと短く書くこともできます。
+          FacebookのページのHTMLファイルは長いですが、<u>簡単なページならもっと短く書くこともできます。</u>
           <br>
           <strong>早速、簡単なページを作ってみましょう！</strong>
           <hr class="red-hr">
+          <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : 簡単なページを作ろう！</strong></p>
+          <br>
           まずは、FinderでDesktop内に<strong class="little-remarkable"><u>「rails_project」</u></strong>というフォルダを作ってください。
           <br>
           <i class="fa fa-exclamation color-red"></i>　<strong class="color-red">これから作るファイルはrails_projectに保存して下さい。</strong>
@@ -53,12 +55,20 @@
           <br>
           <br>
           このSublime Textで、HTMLファイルやRails設定ファイルを<strong>自分の表示させたいように設定していきます</strong>。
+          <hr class="red-hr">
+          まずは、Sublime Textを開いてみましょう。下の手順に従い開いてみて下さい。
+          <%= link_to image_tag("page3/Sublime_Text_New_Window.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/page3/Sublime_Text_New_Window.png",
+                      :target => ["_blank"] %>
+          下のようなウィンドウが開けたでしょうか？
           <%= link_to image_tag("page3/Window_Sublime_Text.png",
                                 :width => "90%",
                                 :class => "hover_img textbook-title-img"),
                       "/assets/page3/Window_Sublime_Text.png",
                       :target => ["_blank"] %>
-          上のようなウィンドウは出てきたら、<strong class="color-blue">「File > Save」</strong>をクリックして下さい。
+          ウィンドウは出てきたら、<strong class="color-blue">「File > Save」</strong>をクリックして下さい。
           <%= link_to image_tag("page3/Sublime_Text_Save.png",
                                 :width => "90%",
                                 :class => "hover_img textbook-title-img"),
@@ -79,7 +89,7 @@
           <hr>
           では実際に手を動かして、ページを作ってみましょう！
           <br>
-          できたファイルを下のように変更してみて下さい！
+          作成したファイルに下の文字列を入力してみて下さい。(<strong>左の数字は行数なので無視して下さい。</strong>)
           <pre class="brush: css;">
             &lt;!DOCTYPE html&gt;
             &lt;html&gt;
@@ -91,7 +101,67 @@
             &lt;/body&gt;
             &lt;/html&gt;
           </pre>
-          入力ができたら、
+          <%= link_to image_tag("page3/Sublime_Text_sample_html1.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/page3/Sublime_Text_sample_html1.png",
+                      :target => ["_blank"] %>
+          <strong class="remarkable">入力が終わったら、「Command」と「s」を一緒に押してください。<br>これをしないと内容は変更されません。</strong>
+          <hr class="red-hr">
+          Finderでrails_projectのフォルダを開き、それを下の手順で開いてみて下さい。
+          <%= link_to image_tag("page3/Window_Open_With_Chrome.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/page3/Window_Open_With_Chrome.png",
+                      :target => ["_blank"] %>
+          下のようなページが表示されましたでしょうか？
+          <%= link_to image_tag("page3/Chrome_sample_html.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/page3/Chrome_sample_html.png",
+                      :target => ["_blank"] %>
+          <hr class="red-hr">
+          <strong class="remarkable color-red">「テスト」</strong>とだけ表示されていますね。
+          <br>
+          長い文章を打ち込んだ（もしくはコピペした）のに、表示されたのがこれだけでは少し悲しいですね。
+          <br>
+          <strong>実はホームページの表示をさせているのは、「&lt;body&gt;」と「&lt;/body&gt;」で囲まれた「&lt;p&gt;テスト&lt;/p&gt;」の部分だけです。</strong>
+          <br>
+          <u>他の部分はコピペして貼り付ければ問題ないです</u>
+          <br>
+          <pre class="brush: css; highlight:[6,7,8,9,10];">
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+              &lt;meta charset="utf-8"&gt;
+            &lt;/head&gt;
+            //→ここから
+            &lt;body&gt;
+              &lt;p&gt;テスト&lt;/p&gt;
+            &lt;/body&gt;
+            //←ここまで
+            &lt;/html&gt;
+          </pre>
+          <strong>「&lt;p&gt;」と「&lt;/p&gt;」で囲まれた部分に入力された文字列</strong>がホームページで表示されます。
+          <br>
+          &lt;p&gt;は普通の大きさの文字を出しますが、&lt;h1&gt;で大きい字・&lt;h2&gt;でまぁまぁ大きい字・&lt;h3&gt;で少し大きい字など...たくさんの表記の仕方があります。
+          <hr class="red-hr">
+          <strong>興味があったら、
+          <br>
+          <a href="http://dotinstall.com/lessons/basic_html_v3" target="_blank">HTML入門 (全24回)</a>とか
+          <br>
+          <a href="http://techacademy.jp/magazine/4843" target="_blank">今さら聞けない！HTMLとは【初心者向け】</a>とか
+          <br>
+          <a href="http://techacademy.jp/magazine/4808" target="_blank">まずはここから！HTMLの書き方【初心者向け】</a>とかを参考にして下さい</strong>
+          <hr class="red-hr">
+          <i class="fa fa-star color-blue"></i>　ホームページを作る際に表示させる文章・画像などは<strong><u>全て「&lt;body&gt;」と「&lt;/body&gt;」で囲まれた部分</u></strong>に記述されます。
+          <br><br>
+          <i class="fa fa-question-circle color-green"></i>　<strong>sample.htmlファイル内の、&lt;p&gt;の代わりに&lt;h1&gt;を使ってページを表示させてみよう！</strong>
+          <br>
+          <a href="/pages/how_to_open" target="_blank">ファイルの開き方</a>
+          <br>
+          <small>※　設定の変更が終わったら「Command」と「s」を一緒に押して、変更を保存して下さい</small>
+          <hr>
         </h4>
         <br>
         <div class="next-page">
@@ -108,7 +178,7 @@
         <a href="#title" class="list-group-item list-title"><h4>Ruby on Railsでページを作ろう！</h4></a>
         <a href="#title0" class="list-group-item">0 : この章の目的</a>
         <a href="#title1" class="list-group-item">1 : HTMLの基本</a>
-        <a href="#title2" class="list-group-item"></a>
+        <a href="#title1-1" class="list-group-item"><small>　① : 簡単なページを作ろう！</small></a>
         <a href="#title2-1" class="list-group-item"></a>
         <a href="#title2-2" class="list-group-item"></a>
         <a href="#title3" class="list-group-item"></a>

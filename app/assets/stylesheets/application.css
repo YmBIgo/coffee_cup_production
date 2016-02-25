@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require syntax-highlighter-rails/shCore
- *= require syntax-highlighter-rails/shThemeEmacs
+ *= require syntax-highlighter-rails/shThemeRDark
  *= require font-awesome
  *= require_tree .
  *= require_self
