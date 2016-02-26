@@ -23,7 +23,7 @@
         <br>
         ここでは <strong class="color-red">Ruby on Rails</strong> というソフトウェアを使い、ホームページを作っていきます。
         <br><br>
-        前の章で<strong class="little-remarkable">「ホームページはデータの表示と保存」</strong>をしていると説明しましたが、Ruby on Rails ではできている雛形に、<strong class="little-remarkable">「データの表示と保存」を自分で設定する</strong>ことでホームページを作っていきます。
+        前の章で<strong class="little-remarkable">「ホームページはデータの表示と保存」</strong>をしていると説明しましたが、Ruby on Rails では、<strong class="little-remarkable">出来上がっている雛形に「データの表示と保存」を自分で設定</strong>していくことでホームページを作っていきます。
         <br>
         <small>※　以下、「Ruby on Rails」を単に「Rails」と省略して表記します。長いのは面倒なので・・・</small>
         <br>
@@ -37,7 +37,13 @@
         １つ目は<strong class="little-remarkable color-red">ページ</strong>、２つ目は<strong class="little-remarkable color-blue">データ</strong>です。
         <hr>
         <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : Railsのページ</strong></p>
-        Railsでは、データの表示と保存の方法で作るページの役割が決まっています。
+        ホームページというからには、Railsでもページをどのように表示させるかを自分で設定しなければなりません。
+        <br>
+        ですがホームページはデータを表示させるだけでなく、<strong>発信されたデータを保存しなければなりません。</strong>
+        <hr class="red-hr">
+        なのでRailsでは、<strong class="color-red">データの表示と保存の方法で、作るページの役割が決まっています。</strong>
+        <br>
+        Railsでホームページを作る人は、データの表示・保存の方法に合わして自分でページを設定します。
         <br>
         Twitterを例にページの役割を説明していきます。
         <br><br>
@@ -54,7 +60,7 @@
         <br>
         <strong class="color-blue">タイムライン</strong>と<strong class="color-red">１つの投稿のページ</strong>の違いと考えてもらえれば分かりやすいかと思います。
         <br>
-        <small>※　データベースからデータを表示しないページを表示させることもできます。</small>
+        <small>※　データベースからデータを表示しないページを表示させることもできます。（ランディングページみたいなページ）</small>
         <br><br>
         <i class="fa fa-check-square color-red"></i>　<strong>データの作成</strong>
         <br>
@@ -90,11 +96,11 @@
         <i class="fa fa-star color-blue"></i>　Railsでは、<strong class="little-remarkable"><u>データの表示・作成・編集・削除</u></strong>の４種類のページをどのように表示させるかを自分で設定していきます。
         <hr>
         <p id="title1-2"><i class="fa fa-tags color-blue"></i>　<strong>② : Railsのデータ</strong></p>
-        Railsでは、データの表示と保存に応じてページに役割が振り分けられていることを説明しました。
+        Railsでは、データの表示と保存の方法に応じてページに役割が振り分けられていることを説明しました。
         <br>
         では、そのデータとはどのようなものなのでしょうか？
         <hr class="red-hr">
-        <a href="/pages/1">前の章</a>で、それはホームページを動かしている機械（サーバー）の中にあるデータベースに保存される情報だと説明しました。
+        <a href="/pages/1">前の章</a>で、それはホームページを動かしている機械（サーバー）の中にあるデータベースに保存される利用者が発信した情報だと説明しました。
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_Save_Data.png",
                               :width => "90%",
@@ -102,50 +108,60 @@
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_Save_Data.png",
                     :target => ["_blank"] %>
         <br>
-        例えばFacebookの投稿であれば、<span class="color-red">「投稿した人の名前は山田太郎、投稿した内容は"Hello world"、場所は東京都新宿、画像はなし...」</span>のような情報がサーバーに送信され、それが<strong><u>サーバー内のデータベース（Excelの表）</u></strong>に保存されます。
+        例えばFacebookの投稿であれば、<span class="color-red">利用者の投稿が「投稿した人の名前は山田太郎、投稿した内容は"Hello world"、場所は東京都新宿、画像はなし...」</span>のような情報でサーバーに送信され、それが<strong><u>サーバー内のデータベース（Excelの表）</u></strong>に保存されます。
         <br><br>
-        <i class="fa fa-star color-blue"></i>　<strong>Railsで保存されるデータもこれと同じで、利用者が発信した情報をホームページの機械（サーバー）の中のデータベースに保存され、それがページに表示されます。</strong>
+        <i class="fa fa-star color-blue"></i>　<strong>Railsで保存されるデータもこれと同じで、利用者が発信した情報をホームページの機械（サーバー）の中のデータベースに保存し、それがページに表示されます。</strong>
         <hr>
-        Railsでは、利用者が発信した情報が保存される<strong><u>データベースの枠組みの定義</u></strong>（Facebookの例でいうと、名前・内容・場所など）と、ページで入力され送信された<strong><u>データのデータベースへの代入と保存</u></strong>を行います。
+        Railsでは、利用者が発信した情報が保存される<strong><u>⑴データベースの枠組みの定義</u></strong>（Facebookの例でいうと、名前・内容・場所など）と、ページで入力され送信されたデータの<strong><u>⑵データベースへの代入と保存</u></strong>を行います。
+        <hr class="red-hr">
+        <p id="title1-2-1"><i class="fa fa-check-square color-blue"></i>　<strong>⑴ : データベースの枠組みの定義</strong></p>
+        <p>
+        Excelで表を作るときにまず一番上の行を決めますよね？一番上の行が決まらなければ、どんなデータも代入できません。
         <br><br>
-        <p id="title1-2-1"><i class="fa fa-check-square color-blue"></i>　<strong>⑴ : データベースの定義</strong></p>
-        <p>データベースの枠組みはそのデータを保存する上での<strong><u>特徴</u></strong>で定義します。
+        これと同じように、<strong><u>利用者が発信した情報を保存するデータベースにも一番上の行が必要になります。</u></strong>
         <br>
-        amazonの商品を例に、もう一度説明しましょう。
+        このデータベースの一番上の行が、発信された利用者の情報の受け皿になります。
+        <br>
+        Railsでデータを扱う際には、<strong class="little-remarkable color-red"><u>このデータベースの一番上の行の定義、枠組みの定義</u></strong>が必要になります。
+        <br>
+        <br>
+        amazonの商品を例に説明しましょう。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/amazon_expensive.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/amazon_expensive.png",
                     :target => ["_blank"] %>
-        amazonの商品には「商品名・値段・画像・レビュー」などの情報があります。基本的なデータベースの枠組みは下のようなものになるでしょう。
+        amazonの商品には「商品名・値段・画像・レビュー」などの情報があり、データベースではこれらの情報が保存されています。
+        <br>
+        基本的なデータベースの枠組みは下のようなものになるでしょう。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Amazon_database.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Amazon_database.png",
                     :target => ["_blank"] %>
         <br>
-        <strong>Railsでは、まず保存するデータの特性を示す情報を登録することで、データベースの枠組みを定義します。</strong>
+        <i class="fa fa-star color-blue"></i>　Railsでは、このようなデータベースの１番上の行を定義を自分で設定します。
         <hr class="red-hr">
         <i class="fa fa-question-circle color-green"></i>　Twitterのデータベースの枠組みがどのように定義されているのか考えてみよう！
         </p>
         <hr>
         <p id="title1-2-2"><i class="fa fa-check-square color-blue"></i>　<strong>⑵ : データの代入と保存</strong></p>
-        <p>入力された情報に応じて、新しいデータをデータベースに追加していきます。
+        <p>ホームページでは入力された情報に応じて、新しいデータがデータベースに追加されていきます。
         <br>
-        Facebookの投稿で言うと、あなたが投稿するたびにデータベースにあなたの投稿のデータが追加されていきます。
-        <br>
-        そして、ページではデータベースから選択されたデータを表示させます。
+        Facebookの投稿で言うと、あなたが投稿するたびにデータベースにはあなたの投稿のデータが追加されていきます。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_database.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_database.png",
                     :target => ["_blank"] %>
-        Railsでは、ページの役割（表示・作成・変更・削除）に応じたデータベースへの代入・保存を行います。
+        Railsでは、データベースへの代入・保存の方法に応じたページの役割があります。
+        <br>
+        ですが、ページではデータの操作（データの表示・作成・変更・削除）は行いません。<strong class="little-remarkable color-red">データの操作はページの役割とは別に自分で設定しなければなりません。</strong>
         <hr class="red-hr">
-        具体的には、ページに作った入力欄・表示する部分とそれに対応する<strong class="little-remarkable color-red">データの操作のやり方（データの表示・作成・変更・削除）</strong>を設定することでデータの保存をしていきます。
+        具体的には、ページに作った入力欄・表示する部分とそれに対応する<strong>データの操作のやり方（データの表示・作成・変更・削除）</strong>を設定することでデータの保存をしていきます。
         </p>
         <hr>
-        <i class="fa fa-star color-blue"></i>　<strong>Rails内のデータ保存のためには、データベースの枠組みの定義とデータの操作のやり方を決める。</strong>
+        <i class="fa fa-star color-blue"></i>　<strong>Rails内のデータ保存は、データベースの枠組みの定義とデータの操作のやり方を自分で設定していくことで実現する。</strong>
         <br>
         <br>
         </h4>

@@ -41,10 +41,6 @@
   }
 
   // index
-  .font-18{
-    border-bottom:2px solid;
-    font-size:18px;
-  }
   // index の textbook へのリンク
   .table-content{
     border:1px solid;
@@ -144,6 +140,11 @@
 
 // 共通設定
 
+.fail_to_highlight{
+  background-color:black;
+  color:white;
+}
+
 .fixed{
   position: fixed;
   top:100px;
@@ -154,6 +155,16 @@
 body, td, th, form, h1, h2, h3, h4, h5, p, a, li {
     font-family: SalesforceSansRegular, メイリオ, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', Arial, Helvetica, Verdana, sans-serif;
 }
+
+.font-18{
+    border-bottom:2px solid;
+    font-size:18px;
+  }
+
+.font-15{
+  font-size:15px;
+}
+
 .color-orange{
   color:#ffa500;
 }

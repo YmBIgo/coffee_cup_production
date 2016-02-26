@@ -14,14 +14,14 @@
         </a>
         <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
         <h4>
-        <i class="fa fa-bookmark color-red"></i>　HTMLの記述の方法を学び、Railsでページを作ってみる。
+        <i class="fa fa-bookmark color-red"></i>　HTMLの記述の方法とRailsの雛形ホームページの作り方を学び、Railsでページを作ってみる。
         </h4>
         <br>
         <h2 class="textbook-section-title" id="title1"><strong>1 : HTMLの基本</strong></h2>
         <h4>
           この章から手を動かながらホームページの作成をしてみましょう！
           <br>
-          この章では実際にページを表示させるところまでやっていきます。
+          この章では実際に<strong class="little-remarkable"><u>ページを表示</u></strong>させるところまでやっていきます。（データの操作などは次の章からやりましょう）
           <br><br>
           <i class="fa fa-question-circle color-green"></i>　<strong>さて、ホームページはなにで表示されているのでしょうか？</strong>
           <hr>
@@ -36,7 +36,7 @@
           <br>
           FacebookのページのHTMLファイルは長いですが、<u>簡単なページならもっと短く書くこともできます。</u>
           <br>
-          <strong>早速、簡単なページを作ってみましょう！</strong>
+          <strong>早速、ページを作ってみましょう！</strong>
           <hr class="red-hr">
           <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : 簡単なページを作ろう！</strong></p>
           <br>
@@ -90,23 +90,26 @@
           では実際に手を動かして、ページを作ってみましょう！
           <br>
           作成したファイルに下の文字列を入力してみて下さい。(<strong>左の数字は行数なので無視して下さい。</strong>)
-          <pre class="brush: css;">
-            &lt;!DOCTYPE html&gt;
-            &lt;html&gt;
-            &lt;head&gt;
-              &lt;meta charset="utf-8"&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-              &lt;p&gt;テスト&lt;/p&gt;
-            &lt;/body&gt;
-            &lt;/html&gt;
-          </pre>
+          <hr class="red-hr">
+          <i class="fa fa-file color-red"></i>　<strong class="font-15">sample.html</strong>
+          <pre class="brush: html; fail_to_highlight">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;テスト&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
           <%= link_to image_tag("page3/Sublime_Text_sample_html1.png",
                                 :width => "90%",
                                 :class => "hover_img textbook-title-img"),
                       "/assets/page3/Sublime_Text_sample_html1.png",
                       :target => ["_blank"] %>
-          <strong class="remarkable">入力が終わったら、「Command」と「s」を一緒に押してください。<br>これをしないと内容は変更されません。</strong>
+          <hr class="red-hr">
+          <strong class="remarkable">入力が終わったら、<span class="color-red">「Command」と「s」</span>を一緒に押してください。<br>これをしないと内容は変更されません。</strong>
           <hr class="red-hr">
           Finderでrails_projectのフォルダを開き、それを下の手順で開いてみて下さい。
           <%= link_to image_tag("page3/Window_Open_With_Chrome.png",
@@ -120,48 +123,149 @@
                                 :class => "hover_img textbook-title-img"),
                       "/assets/page3/Chrome_sample_html.png",
                       :target => ["_blank"] %>
-          <hr class="red-hr">
+          <br>
           <strong class="remarkable color-red">「テスト」</strong>とだけ表示されていますね。
           <br>
-          長い文章を打ち込んだ（もしくはコピペした）のに、表示されたのがこれだけでは少し悲しいですね。
+          長い文章を打ち込んだ（もしくはコピペした）のに、表示されたのがこれだけでは少し悲しいですね...
           <br>
-          <strong>実はホームページの表示をさせているのは、「&lt;body&gt;」と「&lt;/body&gt;」で囲まれた「&lt;p&gt;テスト&lt;/p&gt;」の部分だけです。</strong>
-          <br>
-          <u>他の部分はコピペして貼り付ければ問題ないです</u>
-          <br>
-          <pre class="brush: css; highlight:[6,7,8,9,10];">
-            &lt;!DOCTYPE html&gt;
-            &lt;html&gt;
-            &lt;head&gt;
-              &lt;meta charset="utf-8"&gt;
-            &lt;/head&gt;
-            //→ここから
-            &lt;body&gt;
-              &lt;p&gt;テスト&lt;/p&gt;
-            &lt;/body&gt;
-            //←ここまで
-            &lt;/html&gt;
-          </pre>
+          <strong>それも実はホームページの表示をさせているのは、「&lt;body&gt;」と「&lt;/body&gt;」で囲まれた「&lt;p&gt;テスト&lt;/p&gt;」の部分だけだからです。</strong>
+          <hr class="red-hr">
+          <i class="fa fa-exclamation color-red"></i>　なのでこれからは、<u>「&lt;body&gt;」と「&lt;/body&gt;」で囲まれた部分以外は基本的にコピペして貼り付ければ問題ないです</u>
+          <hr class="red-hr">
+          <i class="fa fa-file color-red"></i>　<strong class="font-15">sample.html</strong>
+          <pre class="brush: html; highlight:[6,7,8,9,10]; fail_to_highlight">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+&lt;/head&gt;
+&lt;!-- ここから --&gt;
+&lt;body&gt;
+  &lt;p&gt;テスト&lt;/p&gt;
+&lt;/body&gt;
+&lt;!-- ここまで --!&gt;
+&lt;/html&gt;</pre>
+          <hr class="red-hr">
           <strong>「&lt;p&gt;」と「&lt;/p&gt;」で囲まれた部分に入力された文字列</strong>がホームページで表示されます。
           <br>
-          &lt;p&gt;は普通の大きさの文字を出しますが、&lt;h1&gt;で大きい字・&lt;h2&gt;でまぁまぁ大きい字・&lt;h3&gt;で少し大きい字など...たくさんの表記の仕方があります。
-          <hr class="red-hr">
-          <strong>興味があったら、
+          &lt;p&gt;は普通の大きさの文字を出しますが、&lt;h1&gt;で大きい字・&lt;h2&gt;でまぁまぁ大きい字・&lt;h3&gt;で少し大きい字・&lt;img&gt;で画像表示など...たくさんの表記の仕方があります。
           <br>
-          <a href="http://dotinstall.com/lessons/basic_html_v3" target="_blank">HTML入門 (全24回)</a>とか
+          <a href="http://techacademy.jp/magazine/5827" target="_blank">→&lt;img&gt;画像の貼り方</a>
+          <hr class="red-hr">
+          <strong>興味があったら
+          <br>
+          <a href="http://dotinstall.com/lessons/basic_html_v3">HTML入門 (全24回)</a>とか
           <br>
           <a href="http://techacademy.jp/magazine/4843" target="_blank">今さら聞けない！HTMLとは【初心者向け】</a>とか
           <br>
-          <a href="http://techacademy.jp/magazine/4808" target="_blank">まずはここから！HTMLの書き方【初心者向け】</a>とかを参考にして下さい</strong>
+          <a href="http://techacademy.jp/magazine/4808" target="_blank">まずはここから！HTMLの書き方【初心者向け】</a>なんかを参考にして下さい</strong>
           <hr class="red-hr">
-          <i class="fa fa-star color-blue"></i>　ホームページを作る際に表示させる文章・画像などは<strong><u>全て「&lt;body&gt;」と「&lt;/body&gt;」で囲まれた部分</u></strong>に記述されます。
+          <i class="fa fa-star color-blue"></i>　ホームページを作る際に表示させる文章・画像などは<strong><u>「&lt;body&gt;」と「&lt;/body&gt;」で囲まれた部分</u></strong>に記述される。
           <br><br>
           <i class="fa fa-question-circle color-green"></i>　<strong>sample.htmlファイル内の、&lt;p&gt;の代わりに&lt;h1&gt;を使ってページを表示させてみよう！</strong>
           <br>
-          <a href="/pages/how_to_open" target="_blank">ファイルの開き方</a>
+          ファイルを閉じてしまったら<a href="/pages/how_to_open" target="_blank">ファイルの開き方</a>をみて下さい
           <br>
-          <small>※　設定の変更が終わったら「Command」と「s」を一緒に押して、変更を保存して下さい</small>
+          <small>※　設定の変更が終わったら、「Command」と「s」を一緒に押して変更を保存して下さい。変更が保存されないと結果は反映されません。</small>
           <hr>
+          <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong>② : ページを装飾しよう！</strong></p>
+          ここまででページの表示の仕方を説明しました。
+          <br>
+          <strong class="little-remarkable">ですが、正直言って思ったよりもダサくって失望した人も多いのではないかと思います。</strong>
+          <hr class="red-hr">
+          それもそのはずです。
+          <br>
+          HTMLは単に文章や画像などのデータを表示させるだけで、<strong>どのように表示させるかは別の設定ファイルを使わなければならないからです。</strong>
+          <br>
+          そのファイルのことを、<strong class="little-remarkable color-red"><u>CSSファイル</u></strong>と言います。
+          <br><br>
+          <strong>早速、このCSSファイルとやらを作って、少しだけ装飾してみましょう！</strong>
+          <hr>
+          まずは、「rails_project」のフォルダに「style.css」というファイルを保存してみましょう！
+          <br>
+          <small>※　「style.css」という名前にしたのは、この名前がよく使われているからというだけであって深い理由はありません。</small>
+          <br>
+          ファイルの保存の仕方が分からなくなったら、<a href="/pages/how_to_save" target="_blank">ここを参照。</a>
+          <br><br>
+          下のように表示されたでしょうか？
+          <%= link_to image_tag("page3/Window_Style_Css.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/page3/Window_Style_Css.png",
+                      :target => ["_blank"] %>
+          Finderには、下のようにStyle.cssとSample.htmlが入っているでしょうか？
+          <%= link_to image_tag("page3/Finder_rails_project.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/page3/Finder_rails_project.png",
+                      :target => ["_blank"] %>
+          ファイルが保存できたら、下のように内容を変更して下さい。
+          <br>
+          ファイルの開き方は<a href="/pages/how_to_open" target="_blank">こちら</a>から
+          <hr class="red-hr">
+          <i class="fa fa-file color-red"></i>　<strong class="font-15">style.css</strong>
+          <pre class="brush: css; fail_to_highlight">
+h1{
+  color:red;
+}
+</pre>
+          <%= link_to image_tag("page3/Sublime_Text_Style_Css.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/page3/Sublime_Text_Style_Css.png",
+                      :target => ["_blank"] %>
+          <i class="fa fa-file color-red"></i>　<strong class="font-15">sample.html（5,8行目を変更/コピペして下さい）</strong>
+          <pre class="brush: html; highlight: [5,8]; fail_to_highlight">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;link rel="stylesheet" href="style.css" type="text/css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;テスト&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+          文字列の変更ができたら、<strong class="little-remarkable color-red"><u>「Command」と「s」</u></strong>を一緒に押して内容を保存しましょう！
+          <hr class="red-hr">
+          変更が完了したら、下の手順にしたがって「sample.html」をブラウザで開いてみましょう！
+          <%= link_to image_tag("page3/Window_Open_With_Chrome.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/page3/Window_Open_With_Chrome.png",
+                      :target => ["_blank"] %>
+          下のように表示されましたか？
+          <%= link_to image_tag("page3/Chrome_Sample_html2.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/page3/Chrome_Sample_html2.png",
+                      :target => ["_blank"] %>
+          文字が赤色に変わりましたね。<strong>このような装飾をCSSファイルで設定します。</strong>
+          <br>
+          では、変更した内容を説明していきます！
+          <hr class="red-hr">
+          まずは、変更を加えたhtmlファイルから説明しましょう。
+<pre class="brush: html; highlight: [5,6]; fail_to_highlight">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;!-- 下の行！ --&gt;
+  &lt;link rel="stylesheet" href="style.css" type="text/css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;テスト&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        <strong class="little-remarkable color-red">「&lt;body&gt;と&lt;/body&gt;の間以外は基本的にコピペでいい！」</strong>と言ったのに早速例外が出てきましたね笑
+        <br>
+        <strong>この１行では、装飾にCSSファイルを使うことを設定しています。</strong>
+        <br>
+        中に「<strong>style.css</strong>」という名前が入っているのが見えますね。
+        <br><br>
+        なので例えば「style2.css」というCSSファイルを指定する時は、この部分を「style2.css」に変更します。
         </h4>
         <br>
         <div class="next-page">
@@ -179,7 +283,7 @@
         <a href="#title0" class="list-group-item">0 : この章の目的</a>
         <a href="#title1" class="list-group-item">1 : HTMLの基本</a>
         <a href="#title1-1" class="list-group-item"><small>　① : 簡単なページを作ろう！</small></a>
-        <a href="#title2-1" class="list-group-item"></a>
+        <a href="#title1-2" class="list-group-item"><small>　② : ページを装飾しよう！</small></a>
         <a href="#title2-2" class="list-group-item"></a>
         <a href="#title3" class="list-group-item"></a>
       </ul>

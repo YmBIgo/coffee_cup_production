@@ -10,11 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require syntax-highlighter-rails/shCore
-//= require syntax-highlighter-rails/shBrushCss
-//= require syntax-highlighter-rails/shBrushXml
-//= require syntax-highlighter-rails/shBrushRuby
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require syntax-highlighter-rails/shCore
 //= require_tree .
