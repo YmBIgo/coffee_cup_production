@@ -102,7 +102,7 @@
 
   // textbook link
   #title, #title0,
-  #title1, #title1-1, #title1-1-1, #title1-1-2, #title1-2, #title1-2-1,#title1-2-2, #title3, #title1-3-1, #title1-3-2,
+  #title1, #title1-1, #title1-1-1, #title1-1-2, #title1-2, #title1-2-1,#title1-2-2, #title1-3, #title1-3-1, #title1-3-2,
   #title2, #title2-1, #title2-1-1, #title2-1-2, #title2-2, #title2-2-1,#title2-2-2,#title2-2-3, #title2-2-4, #title2-2-5,
   #title3, #title3-1, #title3-1-1, #title3-1-2, #title3-2, #title3-2-1,#title3-2-2, #title3, #title3-3-1, #title3-3-2{
     display: block; padding-top: 80px; margin-top: -80px;
@@ -140,9 +140,49 @@
 
 // 共通設定
 
-.fail_to_highlight{
-  background-color:black;
+.highlight{
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
+  white-space: pre;
+  padding:20px;
+  background-color:#2c2c2c;
   color:white;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  .word-green{
+    color:#a6e22e;
+  }
+  .word-red{
+    color:#f92672;
+  }
+  .word-yellow{
+    color:#e6db74;
+  }
+  .word-blue{
+    color:#51CFCF;
+  }
+  .word-purple{
+    color:#AE76E6;
+  }
+  .code-line-no{
+    width:50px;
+    background-color: #f5f5f5;
+    color:black;
+    padding:10px 0;
+  }
+  .code-content{
+    min-width:700px;
+    overflow: scroll;
+  }
+  .code-line{
+    padding-left:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:20px;
+  }
+  .remarkable-code{
+    background-color:#454545;
+    padding:5px;
+    margin:0;
+  }
 }
 
 .fixed{

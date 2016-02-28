@@ -13,5 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require syntax-highlighter-rails/shCore
 //= require_tree .

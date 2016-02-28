@@ -92,17 +92,9 @@
           作成したファイルに下の文字列を入力してみて下さい。(<strong>左の数字は行数なので無視して下さい。</strong>)
           <hr class="red-hr">
           <i class="fa fa-file color-red"></i>　<strong class="font-15">sample.html</strong>
-          <pre class="brush: html; fail_to_highlight">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;p&gt;テスト&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;テスト&lt;/<span class='word-red'>p</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
           <%= link_to image_tag("page3/Sublime_Text_sample_html1.png",
                                 :width => "90%",
                                 :class => "hover_img textbook-title-img"),
@@ -129,23 +121,15 @@
           長い文章を打ち込んだ（もしくはコピペした）のに、表示されたのがこれだけでは少し悲しいですね...
           <br>
           <strong>それも実はホームページの表示をさせているのは、「&lt;body&gt;」と「&lt;/body&gt;」で囲まれた「&lt;p&gt;テスト&lt;/p&gt;」の部分だけだからです。</strong>
-          <hr class="red-hr">
+          <br><br>
           <i class="fa fa-exclamation color-red"></i>　なのでこれからは、<u>「&lt;body&gt;」と「&lt;/body&gt;」で囲まれた部分以外は基本的にコピペして貼り付ければ問題ないです</u>
-          <hr class="red-hr">
+          <br><br>
           <i class="fa fa-file color-red"></i>　<strong class="font-15">sample.html</strong>
-          <pre class="brush: html; highlight:[6,7,8,9,10]; fail_to_highlight">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-&lt;/head&gt;
-&lt;!-- ここから --&gt;
-&lt;body&gt;
-  &lt;p&gt;テスト&lt;/p&gt;
-&lt;/body&gt;
-&lt;!-- ここまで --!&gt;
-&lt;/html&gt;</pre>
-          <hr class="red-hr">
+          <br>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;テスト&lt;/<span class='word-red'>p</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+          <br>
           <strong>「&lt;p&gt;」と「&lt;/p&gt;」で囲まれた部分に入力された文字列</strong>がホームページで表示されます。
           <br>
           &lt;p&gt;は普通の大きさの文字を出しますが、&lt;h1&gt;で大きい字・&lt;h2&gt;でまぁまぁ大きい字・&lt;h3&gt;で少し大きい字・&lt;img&gt;で画像表示など...たくさんの表記の仕方があります。
@@ -179,7 +163,7 @@
           <br>
           そのファイルのことを、<strong class="little-remarkable color-red"><u>CSSファイル</u></strong>と言います。
           <br><br>
-          <strong>早速、このCSSファイルとやらを作って、少しだけ装飾してみましょう！</strong>
+          <strong>早速、このCSSファイルを作って、少しだけ装飾してみましょう！</strong>
           <hr>
           まずは、「rails_project」のフォルダに「style.css」というファイルを保存してみましょう！
           <br>
@@ -199,34 +183,22 @@
                                 :class => "hover_img textbook-title-img"),
                       "/assets/page3/Finder_rails_project.png",
                       :target => ["_blank"] %>
-          ファイルが保存できたら、下のように内容を変更して下さい。
-          <br>
-          ファイルの開き方は<a href="/pages/how_to_open" target="_blank">こちら</a>から
+          ファイルが保存できたら、下のように内容を変更して下さい。（ファイルの開き方は<a href="/pages/how_to_open" target="_blank">こちら</a>から）
           <hr class="red-hr">
           <i class="fa fa-file color-red"></i>　<strong class="font-15">style.css</strong>
-          <pre class="brush: css; fail_to_highlight">
-h1{
-  color:red;
-}
-</pre>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>red</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
           <%= link_to image_tag("page3/Sublime_Text_Style_Css.png",
                                 :width => "90%",
                                 :class => "hover_img textbook-title-img"),
                       "/assets/page3/Sublime_Text_Style_Css.png",
                       :target => ["_blank"] %>
           <i class="fa fa-file color-red"></i>　<strong class="font-15">sample.html（5,8行目を変更/コピペして下さい）</strong>
-          <pre class="brush: html; highlight: [5,8]; fail_to_highlight">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;link rel="stylesheet" href="style.css" type="text/css" /&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;テスト&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+<br>
           文字列の変更ができたら、<strong class="little-remarkable color-red"><u>「Command」と「s」</u></strong>を一緒に押して内容を保存しましょう！
           <hr class="red-hr">
           変更が完了したら、下の手順にしたがって「sample.html」をブラウザで開いてみましょう！
@@ -241,31 +213,54 @@ h1{
                                 :class => "hover_img textbook-title-img"),
                       "/assets/page3/Chrome_Sample_html2.png",
                       :target => ["_blank"] %>
-          文字が赤色に変わりましたね。<strong>このような装飾をCSSファイルで設定します。</strong>
+          文字が赤色に変わりましたね。<strong>まだ簡単なものでしかないですが、このような装飾をCSSファイルで設定します。</strong>
           <br>
           では、変更した内容を説明していきます！
           <hr class="red-hr">
           まずは、変更を加えたhtmlファイルから説明しましょう。
-<pre class="brush: html; highlight: [5,6]; fail_to_highlight">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;!-- 下の行！ --&gt;
-  &lt;link rel="stylesheet" href="style.css" type="text/css" /&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;テスト&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>sample.html</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+<br>
         <strong class="little-remarkable color-red">「&lt;body&gt;と&lt;/body&gt;の間以外は基本的にコピペでいい！」</strong>と言ったのに早速例外が出てきましたね笑
         <br>
-        <strong>この１行では、装飾にCSSファイルを使うことを設定しています。</strong>
+        <strong>この１行で、装飾に「style.css」というCSSファイルを使うことを設定しています。</strong>
         <br>
-        中に「<strong>style.css</strong>」という名前が入っているのが見えますね。
+        中に「style.css」という名前が入っているのが見えますね。ここでどのCSSファイルを使い装飾するかを決めています。<u>使う時はCSSファイル名以外の部分はコピペで、<strong class="little-remarkable">&lt;head&gt;と&lt;/head&gt;の間に書き加える</strong>ことで適用されます。</u>
         <br><br>
-        なので例えば「style2.css」というCSSファイルを指定する時は、この部分を「style2.css」に変更します。
+        なので例えば「style2.css」というCSSファイルを指定する時は、
+        <br>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br></td><td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style2.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span></td></tr>
+</table>
+        を&lt;head&gt;と&lt;/head&gt;の間に記述します。
+        <strong></strong>
+        <br><br>
+        <strong class="remarkable">CSSファイルを扱う時は、この１行を付け加え忘れないようにしましょう！</strong>
+        <hr class="red-hr">
+        では、装飾をするCSSファイルについて説明しましょう。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>red</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+<br><br>
+        装飾をするCSSファイルは
+        <pre class="japanese-code">
+装飾をしたい部分の名前{
+  装飾の方法
+}
+        </pre>
+        のように設定します。
+        <br>
+        この場合は、
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br></td><td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span></td></tr>
+</table>
+        の行の&lt;h1&gt;と&lt;/h1&gt;の間を指定して、赤色にする設定をしています。
+        <br>
         </h4>
         <br>
         <div class="next-page">
