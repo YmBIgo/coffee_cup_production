@@ -103,7 +103,7 @@
   // textbook link
   #title, #title0,
   #title1, #title1-1, #title1-1-1, #title1-1-2, #title1-2, #title1-2-1,#title1-2-2, #title1-3, #title1-3-1, #title1-3-2,
-  #title2, #title2-1, #title2-1-1, #title2-1-2, #title2-2, #title2-2-1,#title2-2-2,#title2-2-3, #title2-2-4, #title2-2-5,
+  #title2, #title2-1, #title2-1-1, #title2-1-2, #title2-2, #title2-2-1,#title2-2-2,#title2-2-3, #title2-2-4, #title2-2-5,#title2-3,
   #title3, #title3-1, #title3-1-1, #title3-1-2, #title3-2, #title3-2-1,#title3-2-2, #title3, #title3-3-1, #title3-3-2{
     display: block; padding-top: 80px; margin-top: -80px;
   }
@@ -162,6 +162,9 @@
   .word-purple{
     color:#AE76E6;
   }
+  .word-gray{
+    color:#aaa;
+  }
   .code-line-no{
     width:50px;
     background-color: #f5f5f5;
@@ -169,8 +172,9 @@
     padding:10px 0;
   }
   .code-content{
-    min-width:700px;
-    overflow: scroll;
+    min-width:725px;
+    max-width:725px;
+  overflow: scroll;
   }
   .code-line{
     padding-left:20px;
@@ -180,8 +184,8 @@
   }
   .remarkable-code{
     background-color:#454545;
-    padding:5px;
-    margin:0;
+    padding-top:5px;
+    padding-bottom:5px;
   }
 }
 
@@ -194,6 +198,10 @@
 
 body, td, th, form, h1, h2, h3, h4, h5, p, a, li {
     font-family: SalesforceSansRegular, メイリオ, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', Arial, Helvetica, Verdana, sans-serif;
+}
+
+hr{
+  border-color:#ddd;
 }
 
 .font-18{
