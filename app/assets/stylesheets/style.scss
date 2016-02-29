@@ -171,10 +171,33 @@
     color:black;
     padding:10px 0;
   }
-  .code-content{
-    min-width:725px;
-    max-width:725px;
-  overflow: scroll;
+  @media (max-width: 768px){
+    .code-content{
+      max-width:600px;
+      min-width:600px;
+      overflow: scroll;
+    }
+  }
+  @media (min-width: 768px){
+    .code-content{
+      max-width:400px;
+      min-width:400px;
+      overflow: scroll;
+    }
+  }
+  @media (min-width: 992px){
+    .code-content{
+      max-width:550px;
+      min-width:550px;
+      overflow: scroll;
+    }
+  }
+  @media (min-width: 1200px){
+    .code-content{
+      max-width:725px;
+      min-width:725px;
+      overflow: scroll;
+    }
   }
   .code-line{
     padding-left:20px;
