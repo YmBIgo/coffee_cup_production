@@ -4,27 +4,30 @@
     <div class="textbook-area">
       <div class="textbook-area-inner fadeIn wow">
         <div id="title" class="textbook-title">
-          <h1><strong>Ruby on Rails でページを作ろう</strong></h1>
+          <h1><strong>3 : ホームページの雛形を作ろう！</strong></h1>
         </div>
         <h4><u><a href="/pages/2" class="text-left ">前の章：Ruby on Rails の基本</a></u></h4>
-        <a href="">
+        <a href="#">
         <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header3.jpg",
                       :width => "90%",
                       :class => "textbook-title-img hover_img" %>
         </a>
         <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
         <h4>
-        <i class="fa fa-bookmark color-red"></i>　HTMLの記述の方法とRailsの雛形ホームページの作り方を学び、Railsの雛形を開いてみる。
+        <i class="fa fa-bookmark color-red"></i>　HTMLの記述の方法・Railsの雛形ホームページの作り方を学び、Railsの雛形を開いてみる。
         </h4>
         <br>
         <h2 class="textbook-section-title" id="title1"><strong>1 : HTMLの基本</strong></h2>
         <h4>
-          この章から手を動かながらホームページの作成をしてみましょう！
+          Railsを動かす環境もできたので、
           <br>
-          この章では<strong class="little-remarkable"><u>Railsで作る雛形のページを見る</u></strong>ところまでやっていきます。（自分で設定するページの作成・データの操作などは次の章からやりましょう）
+          <strong class="remarkable">早速、Railsでホームページを作ってましょう！</strong>
           <br><br>
-          <i class="fa fa-question-circle color-green"></i>　<strong>さて、ホームページはなにで表示されているのでしょうか？</strong>
-          <hr>
+          ・・・と言いたいのですが、その前にまず<strong class="little-remarkable"><u>自分でページを作るために必要となる知識</u></strong>について少し説明したいと思います。
+          <br>
+          <br>
+          <i class="fa fa-question-circle color-green"></i>　<strong><u>ここで質問です。</u>ホームページはなにで表示されているのでしょうか？</strong>
+          <br><br>
           <a href="/pages/1#title2-1">第１章</a>でも説明しましたが、<strong>HTMLファイル</strong>という文字列でページの表示の方法が決められています。
           <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Code.png",
                                 :width => "90%",
@@ -36,8 +39,8 @@
           <br>
           FacebookのページのHTMLファイルは長いですが、<u>簡単なページならもっと短く書くこともできます。</u>
           <br>
-          <strong>早速、ページを作ってみましょう！</strong>
-          <hr class="red-hr">
+          <strong>まずはこのHTMLを使って、ページを作ってみましょう！</strong>
+          <hr>
           <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : 簡単なページを作ろう！</strong></p>
           <br>
           まずは、FinderでDesktop内に<strong class="little-remarkable"><u>「rails_project」</u></strong>というフォルダを作ってください。
@@ -48,7 +51,7 @@
                                 :class => "hover_img textbook-title-img"),
                       "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_mkdir_rails_project.png",
                       :target => ["_blank"] %>
-          <hr class="red-hr">
+          <br>
           前の章でインストールした<strong class="little-remarkable"><u>Sublime Text</u></strong>を使って、HTMLファイルを作っていきます。
           <br>
           <small>※　場所が分からなくなったら、右上の虫眼鏡マークをクリックして「Sublime Text」と入力して探してみましょう</small>
@@ -93,7 +96,7 @@
           <br>
           <strong class="remarkable">また設定するファイルは半角英数字でないと動きませんので、日本語以外の部分は<span class="color-red">半角英数字</span>で入力して下さい。</strong>
           <hr class="red-hr">
-          <i class="fa fa-file color-red"></i>　<strong class="font-15">sample.html</strong>
+          <i class="fa fa-file color-red"></i>　<strong>sample.html（半角英数で入力）</strong>
 <table class="highlight">
 <tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;テスト&lt;/<span class='word-red'>p</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
 </table>
@@ -126,7 +129,7 @@
           <br><br>
           <i class="fa fa-exclamation color-red"></i>　なのでこれからは、<u>「<i>&lt;body&gt;</i>」と「<i>&lt;/body&gt;</i>」で囲まれた部分以外は基本的にコピペして貼り付ければ問題ないです</u>
           <br><br>
-          <i class="fa fa-file color-red"></i>　<strong class="font-15">sample.html</strong>
+          <i class="fa fa-file color-red"></i>　<strong>sample.html（半角英数で入力）</strong>
           <br>
 <table class="highlight">
 <tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;テスト&lt;/<span class='word-red'>p</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
@@ -137,7 +140,7 @@
           <i><u>&lt;p&gt;</u></i>は普通の大きさの文字を出しますが、<i><u>&lt;h1&gt;</u></i>で大きい字・<i><u>&lt;h2&gt;</u></i>でまぁまぁ大きい字・<i><u>&lt;h3&gt;</u></i>で少し大きい字・<i><u>&lt;img&gt;</u></i>で画像表示・<i><u>&lt;br&gt;</u></i>で改行など...たくさんの表記の仕方があります。
           <br>
           <a href="http://techacademy.jp/magazine/5827" target="_blank"><strong>→<i>&lt;img&gt;</i>画像の貼り方</strong></a>
-          <hr class="red-hr">
+          <br><br>
           <strong>興味があったら
           <br>
           <a href="http://dotinstall.com/lessons/basic_html_v3">HTML入門 (全24回)</a>とか
@@ -158,7 +161,7 @@
           ここまででページの表示の仕方を説明しました。
           <br>
           <strong class="little-remarkable">ですが、正直言って思ったよりもダサくって失望した人も多いのではないかと思います。</strong>
-          <hr class="red-hr">
+          <br><br>
           それもそのはずです。
           <br>
           HTMLは単に文章や画像などのデータを表示させるだけで、<strong>どのように表示させるかは別の設定ファイルを使わなければならないからです。</strong>
@@ -166,7 +169,7 @@
           そのファイルのことを、<strong class="little-remarkable color-red"><u>CSSファイル</u></strong>と言います。
           <br><br>
           <strong>早速、このCSSファイルを作って、少しだけ装飾してみましょう！</strong>
-          <hr>
+          <hr class="red-hr">
           まずは、「rails_project」のフォルダに「style.css」というファイルを保存してみましょう！
           <br>
           <small>※　「style.css」という名前にしたのは、この名前がよく使われているからというだけであって深い理由はありません。</small>
@@ -187,7 +190,7 @@
                       :target => ["_blank"] %>
           ファイルが保存できたら、下のように内容を変更して下さい。（ファイルの開き方は<strong><a href="/pages/how_to_open" target="_blank">こちら</a></strong>から）
           <hr class="red-hr">
-          <i class="fa fa-file color-red"></i>　<strong class="font-15">style.css</strong>
+          <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
 <table class="highlight">
 <tr><td class='code-line-no text-center'>1<br>2<br>3<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>red</span>;<br></span><span class='code-line'>}<br></span></td></tr>
 </table>
@@ -197,7 +200,7 @@
                                 :class => "hover_img textbook-title-img"),
                       "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Style_Css.png",
                       :target => ["_blank"] %>
-          <i class="fa fa-file color-red"></i>　<strong class="font-15">sample.html（5,8行目を変更/コピペして下さい）</strong>
+          <i class="fa fa-file color-red"></i>　<strong>sample.html（5,8行目を変更/コピペして下さい）</strong>
 <table class="highlight">
 <tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
 </table>
@@ -478,7 +481,7 @@ class="名前"
         <br>
         はなにをしたのでしょうか？
         <br><br>
-        これは<strong class="little-remarkable"><u>「myappという名前のホームページの雛形を作れ！（rails new myapp）MySQLというデータベースを使って（-d mysql）」</u></strong>というコンピューターに命令になります。
+        これは<strong class="little-remarkable"><u>「myappという名前のホームページの雛形を作れ！（rails new myapp）MySQLというデータベースを使って（-d mysql）」</u></strong>というコンピューターへの命令になります。
         <br><br>
         これ以上は説明のしようがないので次にホームページの雛形を作る時は、
         <br><br>
@@ -804,6 +807,8 @@ gem 'ツール名'
         もう一度ブラウザで、<a href="http://localhost:3000" target="_blank"><strong class="little-remarkable">localhost:3000</strong></a>を開いてみましょう。
         <br>
         <strong>今回はサーバーが動いていないので、<u>ページは表示されないはずです。</u></strong>
+        <br>
+        Railsでページを表示させる必要はない時には、「Command」と「c」を一緒に押してサーバーを停止させて下さい。<strong class="little-remarkable"><u>そうしないと電池が無駄に使われます。</u></strong>
         <hr>
         <i class="fa fa-star color-blue"></i>　<strong>設定が終わった雛形は、「<u>rails s</u>」をターミナルで入力した状態で「<u>localhost:3000</u>」をブラウザで開くことで見ることができる。</strong>
         </h4>
@@ -996,7 +1001,9 @@ gem 'ツール名'
         <br>
         サーバーを立ち上げっぱなしにすると、無駄に電池を使います。
         <hr>
-        <i class="fa fa-star color-blue"></i>　<strong>ここまでの内容をよく復習した上で、次の章に進んでください！次の章では実際にページを作ってみます。</strong>
+        <i class="fa fa-star color-blue"></i>　<strong>ここまでで、Railsを使ったホームページの雛形の作成は終了です。
+        <br>
+        　　次の章では、ホームページでのデータの保存について学びます。</strong>
         </h4>
         <br>
         <div class="next-page">
@@ -1010,7 +1017,7 @@ gem 'ツール名'
     <br>
     <div id="slide-bar" class="clear-fix">
       <div class="list-group nomargin">
-        <a href="#title" class="list-group-item list-title"><h4>Ruby on Railsでページを作ろう！</h4></a>
+        <a href="#title" class="list-group-item list-title"><h4>ホームページの雛形を作ろう！</h4></a>
         <a href="#title0" class="list-group-item">0 : この章の目的</a>
         <a href="#title1" class="list-group-item">1 : HTMLの基本</a>
         <a href="#title1-1" class="list-group-item"><small>　① : 簡単なページを作ろう！</small></a>

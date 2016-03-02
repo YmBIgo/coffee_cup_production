@@ -1,0 +1,36 @@
+<% provide :title, "ページを作ってみよう！" %>
+<div class="row">
+  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <div class="textbook-area">
+      <div class="textbook-area-inner fadeIn wow">
+        <div class="textbook-title">
+          <h1><strong>5 : データをうんぬん</strong></h1>
+        </div>
+        <h4><u><a href="/pages/4" class="text-left ">前の章：Ruby on Rails でページを作ろう！</a></u></h4>
+        <a href="">
+        <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header5.jpg",
+                      :width => "90%",
+                      :class => "textbook-title-img hover_img" %>
+        </a>
+        <div class="next-page">
+            <a href="/pages/6" class="btn btn-primary">次の章に進む</a>
+          </div>
+          <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xl-12">
+    <br>
+    <div id="slide-bar" class="clear-fix">
+      <div class="list-group nomargin">
+        <a class="list-group-item disabled"><h4>データを云々</h4></a>
+        <a href="#title1" class="list-group-item"></a>
+        <a href="#title2" class="list-group-item"></a>
+        <a href="#title2-1" class="list-group-item"></a>
+        <a href="#title2-2" class="list-group-item"></a>
+        <a href="#title3" class="list-group-item"></a>
+      </ul>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>
