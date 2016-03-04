@@ -1,12 +1,12 @@
-<% provide :title, "ページを作ってみよう！" %>
+<% provide :title, "データベースにデータを保存する。" %>
 <div class="row">
-  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
     <div class="textbook-area">
       <div class="textbook-area-inner fadeIn wow">
-        <div class="textbook-title">
-          <h1><strong>4 : ページを作ってみよう！</strong></h1>
+        <div id="title" class="textbook-title">
+          <h1><strong>4 : データベースにデータを保存する。</strong></h1>
         </div>
-        <h4><u><a href="/pages/3" class="text-left ">前の章：ホームページの雛形を作ろう！</a></u></h4>
+        <h4><u><a href="/pages/3" class="text-left ">前の章：ウェブページの雛形を作ろう！</a></u></h4>
         <a href="">
         <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header4.jpg",
                       :width => "90%",
@@ -14,11 +14,1302 @@
         </a>
         <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
         <h4>
-        <i class="fa fa-bookmark color-red"></i>　HTMLの記述の方法と、Railsの雛形ホームページの作り方を学びRailsの雛形を開いてみる。
+        <i class="fa fa-bookmark color-red"></i>　ウェブページ作成に必要になるデータベースへのデータ保存について学ぶ。
+        <hr>
+        Railsでウェブページの雛形を作りそれを開くことができましたので、この章から<strong><u>ウェブページの設定の方法</u></strong>について学んでいきましょう！
+          <br><br>
+          <i class="fa fa-question-circle color-green"></i>　<strong><u>少し復習をしましょう。</u>Railsでのウェブページ作成では、なにを自分で設定しなければならないのでしょうか？</strong>
+          <br><br>
+          それは<a href="/pages/2#title1-1" target="_blank"><strong>ページの表示</strong></a>と<a href="/pages/2#title1-2" target="_blank"><strong>データの保存</strong></a>でしたね。（<a href="/pages/2#title1" target="_blank">第２章</a>の内容を参照）
+          <br>
+          これは言い換えれば、<strong class="little-remarkable"><u>ウェブページ提供者が行うページの表示と利用者の行う情報発信を自分で設定する</u></strong>（<a href="/pages/1#title2" target="_blank">第１章</a>の内容を参照）ということにもなります。
+          <br><br>
+          <u>ページの表示とデータの保存についてRailsで行うことを少し復習しましょう！</u>
+          <br><br>
+          <ul class="number_ul">
+            <strong class="color-red"><li>ページの表示</li></strong>
+            データの操作の方法に応じて、<strong><u>「データの表示・作成・変更・削除」の４種類のページを設定</u></strong>します。
+            <br><br>
+            <strong class="color-blue"><li>データの保存</li></strong>
+            <strong><u>データの操作「データの表示・作成・変更・削除」は、ページとは別に設定します。</u></strong>またデータの保存をするには、<strong><u>どのようにデータの枠組みにデータを保存するかを設定する</u></strong>必要があります。
+            <br><br>
+            つまり、データの保存の設定には、
+            <br>
+            <strong class="little-remarkable"><u>⑴ : データの枠組みの定義　⑵ : データの操作の方法</u></strong>
+            <br>
+            の２種類があります。
+          </ul>
+          <small>※　詳しい内容は<a href="/pages/2" target="_blank">第２章</a>に書いてあります。</small>
+          <hr class="red-hr">
+          ページの表示はデータの操作の方法と絡んでくるので、この章ではまず<strong class="little-remarkable">「<u>データの保存</u>」</strong>について学んでいきます！
+          <br><br>
+          <strong>まずはデータの枠組みの定義からやっていきましょう！</strong>
         </h4>
         <br>
-        <h2 class="textbook-section-title" id="title1"><strong>1 : Ruby on Rails のページ</strong></h2>
+        <h2 class="textbook-section-title" id="title1"><strong>1 : データの枠組みの定義</strong></h2>
         <h4>
+          <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : 自分のデータの枠組みを決めよう！</strong></p>
+          利用者の発信した情報はデータベースというExcelの表のようなものに保存され、それがページに表示されていきます。
+          <br>
+          ここではRailsで作ったウェブページでの、<strong><u>データベースの枠組み・Excelの１番上の行の作り方</u></strong>を説明していきます。
+          <hr class="red-hr">
+          <strong>まずは作ってみたいデータベースを考えてみましょう！</strong>
+          <br>
+          下に枠があるので、例にそって作ってみたいデータベースの枠組みと内容を入力してみましょう。
+          <br>
+          <strong>内容は「商品」「ツイート」から「授業」「ご飯」までなんでも大丈夫です。１番上の行も２行以上あれば大丈夫です</strong>
+          <br>
+          <small>※　作りたいデータベースがないのであれば、入力しなくても大丈夫です。</small>
+          <br><br>
+          <i class="fa fa-facebook color-blue"></i>　<strong>Facebook投稿のデータベース例</strong>
+          <br><br>
+          <strong>投稿の情報</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>投稿番号</th>
+                <th>投稿者</th>
+                <th>投稿内容</th>
+                <th>投稿時間</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>１</td>
+                <td>山田太郎</td>
+                <td>春からSFC</td>
+                <td>2016/03/02 16:26</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr class="red-hr">
+          <i class="fa fa-user color-red"></i>　<strong>入力してみよう！</strong>
+          <br><br>
+          <strong><input type="input" class="form-control table-title" placeholder="データベースのタイトル"></strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+              </tr>
+            </tbody>
+          </table>
+          <u>「データベースの枠組みの定義」などと小難しい言葉</u>を使いましたが、これからやろうとすることの基本は今やってもらった入力の作業です。
+          <br>
+          <strong><u>今回やっていくデータベースの枠組みの定義は、</u></strong>
+          <br><br>
+          <strong><input type="input" class="form-control table-title" placeholder="データベースのタイトル"></strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+              </tr>
+            </thead>
+          </table>
+          をウェブサイトのデータベースで設定していくことになります。
+          <br>
+          <small>※　データの操作は、枠組みの下にある内容の追加・変更・削除のことを言います。</small>
+          <br><br>
+          簡単な説明はここまでにして、ここから実際にそのデータベースを作っていきましょう！
+          <hr>
+          <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong>② : データの枠組みを作ろう！</strong></p>
+          <strong class="little-remarkable">Facebookの投稿のデータベースをウェブページのデータベースに作ってみましょう！</strong>
+          <br>
+          <br>
+          <strong>Railsでのデータベースの定義はターミナルを使って行います。</strong>まず右上の虫眼鏡マークで探して開いてみましょう。開けたら前章で作った「myapp」に移動しましょう！
+          <br><br>
+          　<strong>ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        では始めましょう！まず、
+        <br><br>
+        　<strong>ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model post</span>
+</td>
+</tr>
+</table>
+        <br>
+        を入力して下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_model_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_model_post.png",
+                    :target => ["_blank"] %>
+        このように表示されたでしょうか？
+        <br>
+        この入力で<strong>タイトルが「posts」のデータベースを作るための設定ファイルを作ります。</strong><u>gは「generate」の略です。</u>
+        <br>
+        赤線が引かれた「<strong>2016..._create_posts.rb</strong>」がその設定ファイルになります。
+        <br>
+        この設定ファイルを変更して、データベースの枠組みを作ります。
+        <br>
+        <small>※　Railsで作るデータベースは全て英語表記になりますので、タイトルは「posts」にしました。枠組みの部分も英語で決めます。</small>
+        <br><br>
+        データベースを作る時は
+<pre>
+rails g model データベースのタイトル名（単数）
+</pre>
+        を入力して、その設定ファイルを作ります。
+        <br>
+        「<strong>rails g model タイトル名（単数形）</strong>」で作られた設定ファイル名は、「<strong>作った日時_create_タイトル名（複数形）.rb</strong>」になります。
+        <hr class="red-hr">
+        <strong>では、その設定ファイルを変更していきましょう！</strong>
+        <br>
+        <br>
+        「<strong><u>Sublime Text</u></strong>」でその設定ファイルを変更してみましょう！まずは右上の虫眼鏡マークで探して開きましょう！
+        <br>
+        開けたら、「myapp」のフォルダを「Sublime Text」で開いてみましょう！
+        <br>
+        （ファイル・フォルダの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちら</strong></a>から）
+        <br>
+        下のようなウィンドウはでてきましたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",
+                    :target => ["_blank"] %>
+        出てきたら下の手順に従ってファイルを開いてみましょう。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Migration_Create_Post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Migration_Create_Post.png",
+                    :target => ["_blank"] %>
+        この「<strong>2016...._create_posts.rb</strong>」というファイルが枠組みを作る設定ファイルになります。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreatePosts < <span class='word-purple'>ActiveRecord:</span><span class='word-purple'>:Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:posts</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line remarkable-code'>                     </span>
+<span class='code-line remarkable-code'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+<span class='code-line'></span>
+</td>
+</tr>
+</table>
+        <br>
+        なんとなく「postsを作っているんだなー」ってことは推測できますでしょうか？
+        <br>
+        この「<u>create_table :posts</u>」という部分が「<strong>postsというタイトルのデータベースを作る</strong>」ことを示している設定になります。自分で設定ファイルを０から書く必要はないのでなんとなく理解してもらえれば結構です。
+        <br>
+        データベースの枠組みは、「<strong>create_table :posts do |t|</strong>」とその次に出てくる「<strong>end</strong>」の間に書いて設定していきます。
+        <br>
+        <br>
+        そう見ると枠組みの設定はすでに一つ決まっていますね。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb（５行目）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> false</span>
+</td>
+</tr>
+</table>
+        <br>
+        この１行は<strong>データが作られた時間と更新された時間の枠組みを加える設定</strong>で、最初から加えられています。<u>いらなければ消すこともできます。</u>
+        <br><br>
+        <strong class="little-remarkable"><u>それでは下にある投稿のデータベースの枠組みと同じものを設定してみましょう！</u></strong>
+        <br><br>
+        <strong>posts</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>id</th>
+                <th>name</th>
+                <th>content</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>192</td>
+                <td>山田太郎</td>
+                <td>春からSFC</td>
+                <td style="font-size:11px;">2016-03-02 16:13:52</td>
+                <td style="font-size:11px;">2016-03-02 16:13:52</td>
+              </tr>
+            </tbody>
+          </table>
+          <small>※　枠組みの名前は日本語ではなく英語なのは、<strong><u>枠組みはアルファベットでしか設定できない</u></strong>からです。</small>
+        <hr class="red-hr">
+        「<strong><i>created_at</i></strong>」と「<strong><i>updated_at</i></strong>」は「<strong><i>t.timestamps null: false</i></strong>」で付け加えられる作成時間と更新時間になり、「<strong><i>id</i></strong>」は自動的に生成されるので、設定しなければいけないのは「<strong><i>name</i></strong>」「<strong><i>content</i></strong>」の２つになります。
+        <br>
+        <strong><u>枠組みの設定には最低限２つのことを設定</u></strong>する必要があります。
+        <br><br>
+        <ul class="number_ul">
+          <strong><li>枠組みに入れるデータの種類</li></strong>
+          例えば、<u>数字・短い文字列・長い文字列・時間</u>など
+          <strong><li>枠組みの名前</li></strong>
+          <u>アルファベットで同じ名前が被らないように設定</u>する
+        </ul>
+        そして実際の設定は、
+        <br>
+<pre>
+t.データの種類 :名前
+</pre>
+        で設定します。
+        <br><br>
+        <strong>では、枠組みの設定をやってみましょう！</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb（5,6行目を追加）</strong>
+        <br>
+        <small>※　<strong><u>半角英数で入力</u></strong>して、変更が完了したら<strong><u>「Command」と「s」を一緒に押して内容を保存</u></strong>して下さい。</small>
+        <br>
+        <small>※　綺麗に見せるために空白は多めに入れていますが、打つのが面倒なら空白は１つとかでも大丈夫です。</small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'>
+<span class='code-line'><span class='word-red'>class </span>CreatePosts < <span class='word-purple'>ActiveRecord:</span><span class='word-purple'>:Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:posts</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>   :name</span></span>
+<span class='code-line remarkable-code'>      t.text       <span class='word-purple'>    :content</span></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> false</span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        見ての通り、上から「<strong><i>name</i></strong>」「<strong><i>content</i></strong>」の順番で設定しました。
+        <br><br>
+        <ul class="number_ul">
+        <strong><li>データの種類の設定</li></strong>
+          数字の時は<strong>「<u>t.integer</u>」</strong>、短い文字列の時は<strong>「<u>t.string</u>」</strong>、長い文字列の時は<strong>「<u>t.text</u>」</strong>、細かい日時の時は<strong>「<u>t.timestamps</u>」</strong>と書いて行います。
+          <br>
+          <small>※　他にも、正偽の「t.boolean」や日時の「t.date」などがある。</small>
+        <strong><li>名前の設定</li></strong>
+          <strong><u>データの種類の設定の後で「:名前」を加える</u></strong>ことで行います。
+        </ul>
+        <br>
+        これで、<strong class="little-remarkable"><u>数字を入れる「id」、短い文字列を入れる「name」、長い文字列を入れる「content」と日時を入れる「created_at/updated_at」が入る枠組み「posts」の設定</u></strong>ができました。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　枠組みの設定に「場所」加える設定はどのようになるでしょうか？（マウスを上に置くと答えがでます）
+        <br><br>
+        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>答
+</td>
+<td class='code-content answer-code'><span class='code-line'>  t.string <span class='word-purple'>:place</span></span>
+</td>
+</tr>
+</table>
+<hr class="red-hr">
+        ここまでで設定ファイルの変更ができたら、<strong><u>設定ファイルの内容を実際のデータベースに反映させます。</u></strong>
+        <br>
+        下の入力をしてみて下さい！
+        <br><br>
+        　<strong>ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate.png",
+                    :target => ["_blank"] %>
+        このように表示されたでしょうか？
+        <br>
+        <strong><u>これでデータベースの作成はできました！</u></strong>
+        <hr class="red-hr">
+        作ったデータベースを<strong><u>Sequel Pro</u></strong>で確認してみましょう！これもまず右上の虫眼鏡マークで探して開きましょう！
+        <br>
+        開けたら下の手順に従って開いてみましょう！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                    :target => ["_blank"] %>
+        できたら左上の「<strong>Choose Database</strong>」をクリックして下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                    :target => ["_blank"] %>
+        出てきたリストボックスの中から「<strong>myapp_development</strong>」をクリックしてみて下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                    :target => ["_blank"] %>
+        左に「<strong>posts</strong>」はありますか？これが作ったデータベースになります。これを開いてみましょう！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development.png",
+                    :target => ["_blank"] %>
+        開いて下の画像のように１番上の行ができてるでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development_posts.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development_posts.png",
+                    :target => ["_blank"] %>
+        <strong><u>Ruby on Railsでは、こうやってウェブページで使われるデータベースを設定します。</u></strong>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>ターミナルで「<u>rails g model タイトル名</u>」で設定ファイルを作成し、設定ファイルを変更した上で「<u>rake db:migrate</u>」をすることでデータベースを設定する。</strong>
+        <hr>
+        <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong>③ : データベースの枠組みを変更する</strong></p>
+        ここまでで、データベースの枠組みの作り方について説明しました。
+        <br>
+        でも、最初から完成された枠組みを作るのは難しいです。<u>枠組みを間違えて設定した時や、後から枠組みを追加したり削除したい時</u>はどうすればいいのでしょうか？
+        <br>
+        <strong class="little-remarkable"><u>ここでは、枠組みの変更について説明したいと思います。</u></strong>
+        <hr class="red-hr">
+        <p id="title1-3-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 枠組みを追加する</strong></p>
+        <br>
+        データベースを作る時に、最初から完成されたデータベースを作ることは難しいです。
+        <br>
+        データベースの枠組みを設定する時は、<strong><u>後から内容を追加する</u></strong>ことがよくあります。その枠組みの追加を説明していきます。
+        <br><br>
+        まずは、ターミナルで「myapp」にまで移動して下さい。
+        <br><br>
+        　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        移動できたら、下の入力をしてみて下さい。
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g migration addColumnToPost</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_migration_add_column_to_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_migration_add_column_to_post.png",
+                    :target => ["_blank"] %>
+        この入力は、<strong>枠組みを変更する「add_column_to_post」という追加の設定ファイルを作成する</strong>入力になります。
+        <br><br>
+        なのでまとめると、
+<pre>
+rails g migration 設定ファイル名
+</pre>
+        で、<strong><u>指定した名前の追加の設定ファイルを作成</u></strong>します。
+        <br>
+        設定ファイル名はどのようなものでも大丈夫ですが、<u>後で見た時に分かりやすいものにしましょう。</u>
+        <hr class="red-hr">
+        では、この設定ファイルを見てみましょう！
+        <br>
+        まず「Sublime Text」で「myapp」を開いてみましょう！（ファイル・フォルダの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちら</strong></a>から）
+        <br>
+        開けたら、下の手順でファイルを開いてみましょう！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Open_migration_add_column_to_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Open_migration_add_column_to_post.png",
+                    :target => ["_blank"] %>
+        <i class="fa fa-file color-red"></i><strong>　2016..._add_column_to_post.rb</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost < <span class='word-purple'>ActiveRecord:</span><span class='word-purple'>:Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        こんな感じのファイルが表示されたでしょうか？
+        <br>
+        このファイルの「<u><i>def change</i></u>」とその次の「<u><i>end</i></u>」の間に、枠組みを変更する設定を追加します。
+        <br><br>
+        枠組みの変更には、<strong class="little-remarkable">枠組みの追加、変更、削除</strong>があります。
+        <br>
+        ここでは、<u>枠組みの追加</u>をやってみましょう！
+        <hr class="red-hr">
+        この「rails g migration 設定ファイル名」で作ったファイルでの枠組みの変更には最低限３つの設定をする必要があります。
+        <br>
+        <ul class="number_ul">
+          <strong><li>どのデータベースを変更するか</li></strong>
+          どのデータベースを変更するかを指定します。<strong><u>この場合は「posts」になります。</u></strong>
+          <strong><li>変更する枠組み</li></strong>
+          追加する時は、追加する枠組みの名前を設定します。変更・削除の場合はすでにある枠組みを指定します。
+          <strong><li>枠組みに入力するデータの種類</li></strong>
+          これは枠組みを作る時のものと同じで、<strong><u>数字・短い文字列・長い文字列・日時</u></strong>などあります。
+        </ul>
+        <br>
+        追加の場合、この３つの設定は
+<pre>
+add_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+        になります。
+        <br>
+        すでに作ってある<strong><u>「posts」のデータベースに「place」を加える</u></strong>のを例にして見てみましょう！
+        <br><br>
+        <strong>posts</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>id</th>
+                <th>name</th>
+                <th>content</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+                <th style="background-color: #f2dede;">place</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="font-size:12px">
+                <td>１</td>
+                <td>山田太郎</td>
+                <td>春からSFC</td>
+                <td>2016/03/02 16:26</td>
+                <td>2016/03/02 16:26</td>
+                <td style="background-color: #f2dede;">新宿</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr class="red-hr">
+          <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb（半角英数で３行目を追加）</strong>
+          <br>
+          <small>※　変更ができたら、「Command」と「s」を一緒に押して内容を保存しましょう！</small>
+          <br>
+          <small>※　空白は少なくても多くても大丈夫です。</small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost < <span class='word-purple'>ActiveRecord:</span><span class='word-purple'>:Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:place</span>, <span class='word-purple'>:string</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        これが、<strong>「<u>postsというデータベースに、placeというstring・短い文字列の枠組みを追加するよ</u>」</strong>という設定になります。このような設定はいくつでも追加することができます。
+        <br><br>
+        データの種類だけ難しいですが、もし種類が長い文字列だったら<u>stringはtext</u>に、数字なら<u>stringはinteger</u>になります。
+        <br>
+        <small>※　なぜか「:」が入っていますが、これは設定ファイルの仕様なんで許してやってください。</small>
+        <hr class="red-hr">
+        <p><i class="fa fa-question-circle color-green"></i>　では例えば、<strong>「<u>数字を入れるreputationの枠組みを、postsというデータベースに追加する</u>」</strong>にはどのような設定が必要でしょうか？（マウスを上に置けば答えがでます）</p>
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb（３行目）</strong>
+        <br><br>
+        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <br>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content answer-code'><span class='code-line'>  add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:reputation</span>, <span class='word-purple'>:integer</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        みたいな感じになります。
+        <hr class="red-hr">
+        ここまでで追加について説明しましたが、<strong>削除・変更についても少し説明しましょう。</strong>
+        <br>
+        削除と変更も、追加と同じように<strong><u>データベース名・枠組み・データの種類</u></strong>の３つを指定します。
+        <br>
+        内容を変える設定なので追加の時と違って、<strong>枠組みとデータの種類はすでに作成されているものを指定しないといけません。</strong>
+        <br><br>
+        削除したい時は、
+<pre>
+remove_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+        変更したい時は、
+<pre>
+change_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+        を設定ファイルに追加します。（変更とは言ってもデータの種類しか変更できませんが）
+        <hr class="red-hr">
+        なので<strong><u>「posts」のデータベースの「string（短い文字列）」が入る「name」の枠組みを削除したい</u></strong>時は、
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>設定ファイル</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  remove_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        のように設定し、
+        <br>
+        <strong><u>「posts」のデータベースの「string（短い文字列）」が入る「name」の枠組みを、「text（長い文字列）」が入るように変更したい</u></strong>時は、
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>設定ファイル</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  change_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        のように設定します。（textを書く必要はありません。）
+        <hr class="red-hr">
+        ここまでで、設定ファイルの設定の方法について説明しました。
+        <br>
+        でも現状では設定はたしかに終わったものの、<u>その設定内容はまだ適用されていません。</u>
+        <br>
+        <strong class="little-remarkable">ここでその設定を適用させましょう！</strong>
+        <br><br>
+        設定の適用はターミナルを使って行います。まずはターミナルで「myapp」まで移動しましょう。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        「myapp」まで移動できたら、下の入力をして下さい。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のような表示が出てきたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate2.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate2.png",
+                    :target => ["_blank"] %>
+        <u>これで枠組みの変更は完了しました！</u>
+        <hr class="red-hr">
+        データベースが変更されているかを「Sequel Pro」で確認してみましょう！（開き方は<a href="/pages/how_to_open#title2" target="_blank"><strong>こちら</strong></a>）
+        <br>
+        <u>枠組みに「place」は追加されているでしょうか？</u>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>枠組みの変更を設定するファイルは「<u><i>rails g migration 設定ファイル名</i></u>」で作り、ターミナルで「<u><i>rake db:migrate</i></u>」を入力することでその設定を適用させる。</strong>
+        <hr>
+
+        <p id="title1-3-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 間違えた設定を直す</strong></p>
+        ターミナルで<strong>「<u>rake db:migrate</u>」</strong>をすると、設定ファイルで設定した内容が実際のデータベースに適用されます。
+        <br>
+        ですが、もし設定を間違えて「<strong><u>rake db:migrate</u></strong>」をした時はどうすればいいのでしょうか？
+        <br><br>
+        例えば、<strong><u>「text・長い文字列」を入れる「content」なのに、「string・短い文字列」で設定してしまったとした時など</u></strong>
+        <hr class="red-hr">
+        新しく設定ファイルを作って、内容を変更するできるでしょうか？
+        <br>
+        （「<strong><u>rails g migration 設定ファイル名</u></strong>」で設定ファイルを作り、「<strong>change_column :posts, :content, :text</strong>」を入力）
+        <br>
+        もちろんそれでも枠組みは変更できますが、もっと簡単な方法があります。
+        <br><br>
+        Railsでは、直前に行ったデータベースの変更を取り消すことができます。
+        <br>
+        つまり、<strong class="little-remarkable"><u>間違えた設定を取り消して、設定ファイルの内容が適用される前の状態に戻す</u></strong>こともできるのです。
+        <br>
+        ターミナルで下の入力をすることでそれはできます。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:rollback</span>
+</td>
+</tr>
+</table>
+        <br>
+        これを入力すれば、前の設定ファイルから適用された内容はなくなります。設定ファイルを直して「<u><i>rake db:migrate</i></u>」でもう一度設定ファイルを適用させることで間違いを直すことができます。
+        <br><br>
+        この入力は<strong><u>１つずつしか戻せません</u></strong>が、間違えてしまった時などは利用してみてください。
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>「<u>rake db:rollback</u>」で、データベースを一つ前の設定を適用させる前に戻せる。</strong>
+        <hr>
+
+        <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong>④ : まとめ</strong></p>
+        利用者の発信した情報の保存は、データの保存をするための表・データベースに書き込まれる。ウェブページを作る時には、その表にどのような情報を入れるかの枠組みを決めなくてはいけない。
+        <br><br>
+        <strong>
+        このデータベースの枠組みの設定は、ターミナルと設定ファイルの変更で行う。
+        </strong>
+        <hr class="red-hr">
+        <i class="fa fa-terminal"></i>　<strong class="little-remarkable">ターミナル</strong>
+        <ul class="number_ul" style="margin-top:10px">
+          <strong><li>「<u>rails g model タイトル名（単数形）</u>」</li></strong>
+          タイトル名（複数形）のデータベースの設定ファイルを作る
+          <strong><li>「<u>rails g migration 設定ファイル名</u>」</li></strong>
+          データベースを変更する設定ファイルを作る
+          <strong><li>「<u>rake db:migrate</u>」</li></strong>
+          設定ファイルの設定を実際のデータベースに適用させる。
+          <strong><li>「<u>rake db:rollback</u>」</li></strong>
+          適用された内容を直前の状態に戻す。
+        </ul>
+        <hr class="red-hr">
+        <i class="fa fa-file"></i>　<strong class="little-remarkable">設定ファイル</strong>
+        <ul class="number_ul" style="margin-top:10px">
+        <strong><li>データベースを作る時の設定</li></strong>
+        <br>
+        「データの種類」の「枠組み」を作る
+<pre>
+t.データの種類 :枠組みの名前
+</pre>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>例
+</td>
+<td class='code-content'><span class='code-line'>  t.integer <span class='word-purple'>:age</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>データベースを変更する時の設定</li></strong>
+        <br>
+<pre>
+add_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>例
+</td>
+<td class='code-content'><span class='code-line'>  add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        同じような感じですでにある枠組みに対しては、
+<pre>
+remove_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+<pre>
+change_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+        で変更と削除を行います。
+        </ul>
+        <hr>
+        <i class="fa fa-question-circle color-green"></i>　<strong>余力があれば、自分が作ってみたいウェブページのデータベースを作ってみましょう！</strong>
+        <br>
+        <br>
+        </h4>
+        <h2 class="textbook-section-title" id="title2"><strong>2 : データベースへの内容の追加</strong></h2>
+        <h4>
+        ここまでで、データベースの枠組みを作りました。ここでは、<strong><u>できた枠組みに実際のデータを保存しましょう！</u></strong>
+        <hr>
+        <p id="title2-1"><strong><i class="fa fa-tags color-red"></i>　① : データを作ろう！</strong></p>
+        簡単な枠組みもできたので、データを入れていきましょう！
+        <br><br>
+        <strong class="little-remarkable">ここでは『<u>新宿にいた山田太郎さんの「春からSFC」という投稿</u>』をできた枠組みに追加しましょう！</strong>
+        <hr class="red-hr">
+        本来ならデータの保存はウェブページで行うものなのですが、ページの作り方はまだやっていないので、ここでは<strong><u>ターミナル</u></strong>を使ってデータを作っていきます。
+        <br><br>
+        まずは、ターミナルで<strong>「myapp」</strong>まで移動して下さい。
+        <br><br>
+        　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        移動ができたら<strong>「<i>rails c</i>」</strong>と入力してみて下さい。
+        <br><br>
+        　<strong>ターミナル（半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails c</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように入力する画面は出てきたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c.png",
+                    :target => ["_blank"] %>
+        この<strong>「<i>rails c</i>」</strong>は、<u>Ruby on Railsで作ったウェブページの<strong>データベースの操作などを行う機能</strong></u>です。ここでは、この機能を使ってデータを作っていきます。
+        <br>
+        この<strong>「<i>rails c</i>」</strong>で入力する操作は、
+        <br>
+        一回、<strong>「<i>exit</i>」</strong>と入力してみて下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c_exit.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c_exit.png",
+                    :target => ["_blank"] %>
+        またターミナルの入力欄に戻ったでしょうか？
+        <br>
+        <strong>「<i>rails c</i>」</strong>は<strong>「<i>exit</i>」</strong>と入力して終了させることができます。使い終わったら、<strong>「<i>exit</i>」</strong>を入力して終了させましょう。
+        <hr class="red-hr">
+        ではもう一度<strong>「<i>rails c</i>」</strong>を入力して開いてみましょう！
+        <br>
+        ここに入力をすることで、データベースへのデータの保存を行っていきます。
+        <br>
+        <strong class="little-ramarkable"><u>では下の入力をしてみて下さい</u></strong>
+        <br><br>
+        <strong>　ターミナル（日本語以外は半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "山田太郎", :content =&gt; "春からSFC", :place =&gt; "新宿")</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_create_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_create_post.png",
+                    :target => ["_blank"] %>
+        <strong>これでデータベースへのデータの保存は完了しました！</strong>
+        <br><br>
+        ではSequel Proで中身を確認してみましょう！（開き方は<a href="/pages/how_to_open#title2" target="_blank"><strong>こちら</strong></a>から）
+        <br>
+        下のようにデータが追加されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Posts_Data1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Posts_Data1.png",
+                    :target => ["_blank"] %>
+        <hr class="red-hr">
+        データの作成は、
+<pre>
+データベースのタイトル.create(:枠組み => "内容", :枠組み => "内容", あるだけ...)
+</pre>
+        を入力すればできます。（データベースのタイトルは大文字から始まる単数形）
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "山田太郎", :content =&gt; "春からSFC", :place =&gt; "新宿")</span>
+</td>
+</tr>
+</table>
+        <br>
+        入力にidと時間がないのは、<strong><u>idと時間は自動的に作ってくれてる</u></strong>からです。
+        <br>
+        具体的な例を出すので、考えてみましょう！
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>では、『湘南花子さんが藤沢で投稿した「おはよう」という投稿』はどのようにして入力して作ればいいでしょうか？
+        <br>（マウスを上に置けば答えが出ます）</strong>
+        <br><br>
+        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.create(:name =&gt; "湘南花子", :content =&gt; "おはよう", :place =&gt; "藤沢")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>下のデータベースの枠組みがあった時、『藤沢太郎さんの「六本木なう」というツイート』はどのように入力すれば作れるでしょうか？<br>（マウスを上に置けば答えが出ます）</strong>
+        <br><br>
+        <strong>tweets</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>id</th>
+                <th>user</th>
+                <th>content</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+              </tr>
+            </thead>
+          </table>
+          <hr class="red-hr">
+          <input type="input" class="form-control" placeholder="答えを入力しよう！">
+          <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Tweet.create(:user =&gt; "藤沢太郎", :content =&gt; "六本木なう")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>データの作成は「<u>データベースのタイトル.create(:枠組み=>"内容", :枠組み=>"内容", :枠組み=>"内容")</u>」で行う</strong>
+        <br>
+        <small>※　<u>データベースのタイトルは大文字から始めて、単数形にする。</u></small>
+        <hr>
+        <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong>② : データを選択しよう！</strong></p>
+        ここまででデータの作成をしましたが、データの操作は作成のみではありません。他に<strong class="little-remarkable"><u>データの変更・削除</u></strong>があります。
+        <br><br>
+        ここではデータの選択をやってみましょう。<strong><u>作成した投稿の内容を「SFC入学式」に変えてみましょう。</u></strong>
+        <br><br>
+        データの変更をするには、まず<strong><u>どのデータを変更するのかを選択</u></strong>する必要があります。
+        <br>
+        <strong class="little-remarkable">まずは、このデータの選択をしてみましょう！</strong>
+        <hr class="red-hr">
+        データの選択の方法は２つあります。
+        <br>
+        <strong>
+        ⑴ : idからデータを選択する方法
+        <br>
+        ⑵ : 他の枠組みから内容を検索する方法です。
+        </strong>
+        <br><br>
+        まずは<u>一つ目の方法・idから選択する方法</u>をやってみましょう。まず、<strong>「<i>rails c</i>」</strong>を入力して、下の入力をしてみて下さい。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1)</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように保存したデータが表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1.png",
+                    :target => ["_blank"] %>
+        今回の入力、「<strong>Post.find(1)</strong>」は「<u>postsから、idが1のデータを選択</u>」する入力になります。
+        <br><br>
+        idからデータを選択するには、
+<pre>
+データベースのタイトル.find(数字)
+</pre>
+        を入力します。（データベースのタイトルは大文字から始める単数形）
+        <hr class="red-hr">
+        <u>二つ目の方法・id以外の枠組みから検索して選択する方法</u>をやってみましょう。
+        <br>
+        下の入力をしてみて下さい。
+        <br><br>
+        <strong>　ターミナル（日本語以外は半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.where(:name =&gt; "山田太郎")</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように保存したデータが表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_where_name.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_where_name.png",
+                    :target => ["_blank"] %>
+        今回の入力、「<strong><u>Post.where(:name => "山田太郎")</u></strong>」は、「nameの枠組みが山田太郎のデータを選択」する入力になります。
+        <br><br>
+        id以外から検索するには、
+<pre>
+データベースにタイトル.where(:枠組み => "内容", あるだけ...)
+</pre>
+        を入力します。（データベースのタイトルは大文字から始める単数形）
+        <br>
+        なので「<u>名前が湘南花子・場所が藤沢</u>」のデータを検索するには、
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.where(:name =&gt; "湘南花子", :place =&gt; "藤沢")</span>
+</td>
+</tr>
+</table>
+        <br>
+        と入力します。
+        <hr class="red-hr">
+        では、内容の変更をしてみましょう！
+        <br><br>
+        内容の変更は、
+<pre>
+findで選択したデータ.update(:枠組み => "内容", あるだけ...)
+</pre>
+        で行います。
+        <br>
+        <small>※　whereでの変更はまた後で説明します。</small>
+        <br><br>
+        <strong>　ターミナル（日本語以外は半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "SFC入学式")</span>
+</td>
+</tr>
+</table>
+        <br>
+        を入力してみましょう。下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1_update.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1_update.png",
+                    :target => ["_blank"] %>
+        できたら、Sequel Proで開いて内容が変わったかを確認しましょう！（開き方は<a href="/pages/how_to_open#title2" target="_balnk"><strong>こちら</strong></a>）
+        <br>
+        <small>※　内容が変わっていなかったら、<u>内容を更新する必要があります。</u>内容の更新は下のようにします。</small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Update.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Update.png",
+                    :target => ["_blank"] %>
+        contentの部分が「SFC入学式」に変わっていますか？
+        <br><br>
+        では試しに、他のデータも変更してみましょう！
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>今回変更した投稿のデータを元の『contentが「春からSFC」の投稿』に戻しましょう。（マウスを上に置くと答えがでます）</strong>
+        <br><br>
+        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "春からSFC")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>投稿者の名前を「てふ」に変えてみましょう！（マウスを上に置くと答えがでます）</strong>
+        <br><br>
+        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:name =&gt; "てふ")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>投稿した場所を「六本木」、投稿を「ORF」に変えてみましょう！（マウスを上に置くと答えがでます）</strong>
+        <br><br>
+        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:place =&gt; "六本木", :content =&gt; "ORF")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        最後にSequel Proで内容が変更されたかを確認しましょう！（Sequel Proの使い方は<a href="/pages/how_to_open#title2" target="_blank"><strong>こちら</strong></a>から）<u>更新も忘れずに</u>
+        <br><br>
+        <i class="fa fa-star color-blue"></i>　<strong>データの変更は「<u>データベースのタイトル.find(idの番号).update(:枠組み => "内容")</u>」で行う</strong>
+        <br>
+        <small>※　データベースのタイトルは大文字から始めて、単数形にする。</small>
+        <hr>
+        <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong>③ : データを削除する</strong></p>
+        データの変更もできたので、<u>今度はデータを削除してみましょう！</u>
+        <br>
+        まずは、<strong>「<i>rails c</i>」</strong>を入力しましょう。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>復習ついでに『あなたがシリコンバレーで投稿した「インフルで倒れた」という投稿』のデータを作ってみましょう！<br>（マウスを上に置けば答えが表示されます）</strong>
+        <br><br>
+        <input type="input" class="form-control" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line answer-code small-code'>Post.create(:name =&gt; "あなたの名前", :content =&gt; "インフルで倒れた", :place =&gt; "シリコンバレー")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <strong class="little-remarkable"><u>ではこの「インフルで倒れた」データを削除しましょう！</u></strong>
+        <br><br>
+        データの削除も変更と同じように、「find」でデータを指定してから削除を行います。
+        <br>
+        なので、まずはこの投稿の番号を知っておきましょう。
+        <br>
+        まずは下の入力をしてみましょう。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.all</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように表示されたでしょうか？<u>この中に「インフルで倒れた」データは入っているでしょうか？</u>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_all.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_all.png",
+                    :target => ["_blank"] %>
+        この入力は、<strong>「<u>postsにある全てのデータを表示</u>」</strong>させています
+        <br><br>
+<pre>
+データベースのタイトル.all
+</pre>
+        でデータベースに保存されたデータを全て表示させます。
+        <br>
+        <small>※　データベースのタイトルは、大文字から始まる単数形で書く</small>
+        <br><br>
+        もちろんこんなことをしなくても、<a href="/pages/how_to_open#title2" target="_blank"><strong>Sequel Pro</strong></a>で中身を確認することもできます。
+        <hr class="red-hr">
+        <strong><u>作成されていることが確認できたら、削除をしていきましょう！</u></strong>
+        <br>
+        データの削除も変更と同じように、まずはデータを選択してから行います。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　では復習で、この新しく作った「インフルで倒れた」データを選択してみましょう。</strong>
+        <br><br>
+        <input type="input" class="form-control" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(3)</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        データの削除は、
+<pre>
+選択したデータ.destroy
+</pre>
+        でできます。
+        <br>
+        では、やってみましょう。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+        <br>
+        <small>　※　数字の部分は適宜、自分が削除したいデータのidに変更する</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(3).destroy</span>
+</td>
+</tr>
+</table>
+        <br>下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_3_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_3_destroy.png",
+                    :target => ["_blank"] %>
+        できたら<a href="/pages/how_to_open#title2" target="_blank"><strong>Sequel Pro</strong></a>で中身を確認しましょう。
+        <br>
+        作成されたデータはなくなっているでしょうか？
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>「idが5のデータを削除」する場合はどのような入力をすればいいのでしょうか？</strong>
+        <br><br>
+        <input type="input" class="form-control" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(5).destroy</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-exclamation color-red"></i>　<u>終わったら<strong>「<i>exit</i>」</strong>を入力して下さい。これで<strong>「<i>rails c</i>」</strong>を終了させます。</u>
+        <br><br>
+        <i class="fa fa-star color-blue"></i>　<strong>データの削除は「<u>データベースのタイトル.find(idの番号).destroy</u>」で行う </strong>
+        <br>
+        <small>※　データベースのタイトルは大文字から始めて、単数形にする。</small>
+        <hr>
+        <p id="title2-4"><i class="fa fa-tags color-red"></i>　<strong>④ : まとめ</strong></p>
+        <u>データの保存などの操作は、「rails c」に入力する命令で行う。</u>
+        <br>
+        <small>※　ここでの入力は、後でページのデータ操作を設定する時にも使う</small>
+        <hr class="red-hr">
+        データ操作の方法は<strong>「<u>作成・変更・削除</u>」</strong>の３つがある。
+        <br><br>
+        <ul class="number_ul">
+          <strong><li>データの作成</li></strong>
+          <br>
+<pre>
+データベースのタイトル.create(:枠組み => "内容", :枠組み => "内容", あるだけ...)
+</pre>
+<small>※　データベースのタイトルは大文字から始める単数形にする</small>
+<hr class="red-hr">
+<small>例：「name」が「山田太郎」、「content」が「春からSFC」のデータを作成</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "山田太郎", :content =&gt; "春からSFC")</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>データの変更</li></strong>
+        <br>
+<pre>
+データベースのタイトル.find(変更するデータのid).update(:枠組み => "内容", :枠組み => "内容", あるだけ...)
+</pre>
+<small>※　データベースのタイトルは大文字から始める単数形にする</small>
+<hr class="red-hr">
+<small>例：「id」が「29」のデータの、「content」を「春からSFC」・「place」を「藤沢」に変更</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(29).(:content =&gt; "春からSFC", :place =&gt; "藤沢")</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>データの削除</li></strong>
+        <br>
+<pre>
+データベースのタイトル.find(変更するデータのid).destroy
+</pre>
+<small>※　データベースのタイトルは大文字から始める単数形にする</small>
+<hr class="red-hr">
+<small>例：「id」が「1900」のデータを削除</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1900).destroy</span>
+</td>
+</tr>
+</table>
+        </ul>
+        <hr>
+        <i class="fa fa-star color-blue"></i><strong>
+        　これらのデータの操作がウェブページの裏で行われています。
+        <br>
+        <u>ウェブページでも同じようにしてデータの操作を設定していきます！</u>
+        </strong>
+        </h4>
+        <br>
+        <h2 class="textbook-section-title" id="title3"><strong>3 : まとめ</strong></h2>
+        <h4>
+          ウェブページは、<strong><u>利用者の発信した情報をデータベースという表に保存しそれを表示させている。</u></strong>
+          <br><br>
+          なのでウェブページを作るためには、<strong class="little-remarkable"><u>データベースの表の枠組みを決め、実際にそこにデータを入れていきます。</u></strong>
+          <hr class="red-hr">
+          枠組みの細かい設定は<a href="/pages/4#title1-4" target="_blank"><strong>こちらのまとめ</strong></a>を、
+          <br>
+          内容の操作は<a href="/pages/4#title2-4" target="_blank"><strong>こちらのまとめ</strong></a>をそれぞれみて下さい。
+          <hr>
+          <i class="fa fa-star color-blue"></i>
+          <strong>
+          　ここまででデータの保存に関することはひととおり終了です。
+          <br>
+          　　 次の章ではページを表示させましょう！
+          </strong>
+        </h4>
+        <br>
         <div class="next-page">
             <a href="/pages/5" class="btn btn-primary">次の章に進む</a>
           </div>
@@ -26,17 +1317,26 @@
       </div>
     </div>
   </div>
-  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xl-12">
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
     <br>
     <div id="slide-bar" class="clear-fix">
       <div class="list-group nomargin">
-        <a class="list-group-item disabled"><h4>ページを作ってみよう！</h4></a>
-        <a href="#title1" class="list-group-item">0 : この章の目的</a>
-        <a href="#title2" class="list-group-item">1 : Ruby on Rails のページ</a>
-        <a href="#title2-1" class="list-group-item"></a>
-        <a href="#title2-2" class="list-group-item"></a>
-        <a href="#title3" class="list-group-item"></a>
-      </ul>
+        <a href="#title" class="list-group-item list-title"><h4>データベースにデータを保存する。</h4></a>
+        <a href="#title0" class="list-group-item">0 : この章の目的</a>
+        <a href="#title1" class="list-group-item">1 : データの枠組みの定義</a>
+        <a href="#title1-1" class="list-group-item"><small>　① : 自分のデータの枠組みを決めよう！</small></a>
+        <a href="#title1-2" class="list-group-item"><small>　② : 枠組みを作ろう！</small></a>
+        <a href="#title1-3" class="list-group-item"><small>　③ : 枠組みを変更する</small></a>
+        <a href="#title1-3-1" class="list-group-item"><small>　　⑴ : 枠組みを追加する</small></a>
+        <a href="#title1-3-2" class="list-group-item"><small>　　⑵ : 間違った設定を直す</small></a>
+        <a href="#title1-4" class="list-group-item"><small>　④ : まとめ</small></a>
+        <a href="#title2" class="list-group-item">2 : データベースへの内容の追加</a>
+        <a href="#title2-1" class="list-group-item"><small>　① : データを作ろう！</small></a>
+        <a href="#title2-2" class="list-group-item"><small>　② : データを変更しよう</small></a>
+        <a href="#title2-3" class="list-group-item"><small>　③ : データを削除する</small></a>
+        <a href="#title2-4" class="list-group-item"><small>　④ : まとめ</small></a>
+        <a href="#title3" class="list-group-item"><small>3 : まとめ</small></a>
+      </div>
     </div>
   </div>
 </div>

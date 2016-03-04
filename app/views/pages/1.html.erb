@@ -1,10 +1,10 @@
-<% provide :title, "ホームページとは？" %>
+<% provide :title, "ウェブページとは？" %>
 <div class="row">
   <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
     <div class="textbook-area">
       <div class="textbook-area-inner fadeIn wow">
         <div id="title" class="textbook-title">
-          <h1><strong>1 : ホームページとは？</strong></h1>
+          <h1><strong>1 : ウェブページとは？</strong></h1>
         </div>
         <h4><u><a href="/pages/0" class="text-left ">前の章：はじめに</a></u></h4>
         <a href="">
@@ -14,23 +14,23 @@
         </a>
           <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
           <h4>
-          <i class="fa fa-bookmark color-red"></i>　ホームページの仕組みについて大まかな理解を得る。
+          <i class="fa fa-bookmark color-red"></i>　ウェブページの仕組みについて大まかな理解を得る。
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title1"><strong>1 : ホームページの謎</strong></h2>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : ウェブページの謎</strong></h2>
           <h4>
-          日頃使っているホームページ。それがどのようにして動いているか分かりますか？
+          日頃使っているウェブページ。それがどのようにして動いているか分かりますか？
           <hr>
           <ul>
             <li>投稿した文章はどのようにして表示されているのか？</li>
             <li>メッセージアプリで送った画像はどこにあるのか？</li>
-            <li>そもそもホームページを作ることでなにができるのか？</li>
+            <li>そもそもウェブページを作ることでなにができるのか？</li>
           </ul>
           <hr>
           分からないことは山のようにあると思います。
           <br>
           <br>
-          ですが、ホームページでやっていることは<strong class="remarkable">２つ</strong>しかありません。
+          ですが、ウェブページでやっていることは<strong class="remarkable">２つ</strong>しかありません。
           <br>
           それは、<strong class="remarkable">データの表示・保存</strong>です。
           </h4>
@@ -40,9 +40,9 @@
           <i class="fa fa-star color-blue"></i>　Facebookを例に<strong class="little-remarkable"><u>データの表示と保存</u></strong>を説明していきます。
           <hr>
           <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong>① : データの表示</strong></p>
-          ホームページはデータを表示させています。
+          ウェブページはデータを表示させています。
           <br>
-          ここでは、ホームページがなにで表示されているのか見てみましょう！
+          ここでは、ウェブページがなにで表示されているのか見てみましょう！
           <br><br>
           Facebookのトップページは大体このようになっていると思います。
           <br>
@@ -76,12 +76,12 @@
           上に出てきた文字や画像・動画の表示をさせているものを<strong class="little-remarkable"><u>HTMLファイル</strong></u>と言います。
           <hr>
           <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong>② : データの保存</strong></p>
-          ここまで、ホームページのデータの表示を簡単に説明しました。
-          ですがホームページはデータを表示させているだけではありません。
+          ここまで、ウェブページのデータの表示を簡単に説明しました。
+          ですがウェブページはデータを表示させているだけではありません。
           <br><br>
-          例えば<strong> Facebookの投稿 </strong>のように、利用者は自分の情報を発信できるようになっています。ホームページ作成者のデータの表示だけではホームページはできていません。
+          例えば<strong> Facebookの投稿 </strong>のように、利用者は自分の情報を発信できるようになっています。ウェブページ作成者のデータの表示だけではウェブページはできていません。
           <br>
-          ホームページは<strong class="little-remarkable color-red">提供者のデータの表示</strong>と<strong class="little-remarkable color-blue">利用者のデータの発信</strong>という相互の情報のやりとりでできています。
+          ウェブページは<strong class="little-remarkable color-red">提供者のデータの表示</strong>と<strong class="little-remarkable color-blue">利用者のデータの発信</strong>という相互の情報のやりとりでできています。
           <br><br>
           提供者のデータは前のHTMLファイルで表示されています。
           <br>
@@ -96,7 +96,7 @@
                                 :class => "textbook-title-img hover_img"),
                       "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Post.png",
                       :target => ["_blank"] %>
-          「投稿する」ボタンがクリックされると、その投稿に関する情報が<strong><u>ホームページの機械（サーバー）</u></strong>に送信されます。上の投稿の画面で言うと、<span class="color-red">「ユーザーは山田太郎、内容はHello World、場所は東京都新宿」</span>などなど・・・
+          「投稿する」ボタンがクリックされると、その投稿に関する情報が<strong><u>ウェブページの機械（サーバー）</u></strong>に送信されます。上の投稿の画面で言うと、<span class="color-red">「ユーザーは山田太郎、内容はHello World、場所は東京都新宿」</span>などなど・・・
           <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_Before.png",
                                 :width => "90%",
                                 :class => "textbook-title-img hover_img"),
@@ -104,13 +104,13 @@
                       :target => ["_blank"] %>
           こうやって送信されたデータはどうなるのでしょうか？
           <br>
-          送信されたデータは、ホームページの機械（サーバー）の中にある<strong><u>情報を保存するExcelの表のようなもの（データベース）</u></strong>に保存されます。
+          送信されたデータは、ウェブページの機械（サーバー）の中にある<strong><u>情報を保存するExcelの表のようなもの（データベース）</u></strong>に保存されます。
           <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_After.png",
                                 :width => "90%",
                                 :class => "textbook-title-img hover_img"),
                       "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_After.png",
                       :target => ["_blank"] %>
-          このようにして、ユーザーが発信した情報はホームページの機械（サーバー）の中にあるExcelの表（データベース）に保存されます。
+          このようにして、ユーザーが発信した情報はウェブページの機械（サーバー）の中にあるExcelの表（データベース）に保存されます。
           <br>
           発信され保存された情報が表示されることでFacebookではタイムラインが、Twitterではツイートが表示されています。
           <br>
@@ -119,14 +119,14 @@
           <br>
           <h2 class="textbook-section-title" id="title3"><strong>3 : まとめ</strong></h2>
           <h4>
-          <i class="fa fa-star color-blue"></i> ホームページが行っていることはデータの表示と保存だけ
+          <i class="fa fa-star color-blue"></i> ウェブページが行っていることはデータの表示と保存だけ
           <br><br>
           <i class="fa fa-star color-blue"></i> 提供者のデータ表示と利用者が発信した情報の保存によって、提供者・利用者の双方間のデータのやりとりが行われている。
           </h4>
           <hr>
           <h4 class="little-remarkable">
           <strong>
-            次の章でホームページを作るのに使うソフトウェア、Ruby on Rails を説明していきます。
+            次の章でウェブページを作るのに使うソフトウェア、Ruby on Rails を説明していきます。
           </strong>
           </h4>
           <br>
@@ -141,9 +141,9 @@
     <br>
     <div id="slide-bar" class="clear-fix">
       <div class="list-group nomargin">
-        <a href="#title" class="list-group-item list-title"><h4>ホームページとは？</h4></a>
+        <a href="#title" class="list-group-item list-title"><h4>ウェブページとは？</h4></a>
         <a href="#title0" class="list-group-item">0 : この章の目的</a>
-        <a href="#title1" class="list-group-item">1 : ホームページの謎</a>
+        <a href="#title1" class="list-group-item">1 : ウェブページの謎</a>
         <a href="#title2" class="list-group-item">2 : Facebookの仕組み</a>
         <a href="#title2-1" class="list-group-item"><small>　① : データの表示</small></a>
         <a href="#title2-2" class="list-group-item"><small>　② : データの保存</small></a>

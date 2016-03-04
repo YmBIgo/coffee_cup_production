@@ -4,7 +4,7 @@
     <div class="textbook-area">
       <div class="textbook-area-inner fadeIn wow">
         <div id="title" class="textbook-title">
-          <h1><strong>3 : ホームページの雛形を作ろう！</strong></h1>
+          <h1><strong>3 : ウェブページの雛形を作ろう！</strong></h1>
         </div>
         <h4><u><a href="/pages/2" class="text-left ">前の章：Ruby on Rails の基本</a></u></h4>
         <a href="#">
@@ -14,19 +14,16 @@
         </a>
         <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
         <h4>
-        <i class="fa fa-bookmark color-red"></i>　HTMLの記述の方法・Railsの雛形ホームページの作り方を学び、Railsの雛形を開いてみる。
-        </h4>
-        <br>
-        <h2 class="textbook-section-title" id="title1"><strong>1 : HTMLの基本</strong></h2>
-        <h4>
-          Railsを動かす環境もできたので、
+        <i class="fa fa-bookmark color-red"></i>　HTMLの記述の方法・Railsの雛形ウェブページの作り方を学び、Railsの雛形を開いてみる。
+        <hr>
+        Railsを動かす環境もできたので、
           <br>
-          <strong class="remarkable">早速、Railsでホームページを作ってましょう！</strong>
+          <strong class="remarkable">早速、Railsでウェブページを作ってましょう！</strong>
           <br><br>
           ・・・と言いたいのですが、その前にまず<strong class="little-remarkable"><u>自分でページを作るために必要となる知識</u></strong>について少し説明したいと思います。
           <br>
           <br>
-          <i class="fa fa-question-circle color-green"></i>　<strong><u>ここで質問です。</u>ホームページはなにで表示されているのでしょうか？</strong>
+          <i class="fa fa-question-circle color-green"></i>　<strong><u>ここで質問です。</u>ウェブページはなにで表示されているのでしょうか？</strong>
           <br><br>
           <a href="/pages/1#title2-1">第１章</a>でも説明しましたが、<strong>HTMLファイル</strong>という文字列でページの表示の方法が決められています。
           <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Code.png",
@@ -40,9 +37,11 @@
           FacebookのページのHTMLファイルは長いですが、<u>簡単なページならもっと短く書くこともできます。</u>
           <br>
           <strong>まずはこのHTMLを使って、ページを作ってみましょう！</strong>
-          <hr>
+        </h4>
+        <br>
+        <h2 class="textbook-section-title" id="title1"><strong>1 : HTMLの基本</strong></h2>
+        <h4>
           <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : 簡単なページを作ろう！</strong></p>
-          <br>
           まずは、FinderでDesktop内に<strong class="little-remarkable"><u>「rails_project」</u></strong>というフォルダを作ってください。
           <br>
           <i class="fa fa-exclamation color-red"></i>　<strong class="color-red">これから作るファイルはrails_projectに保存して下さい。</strong>
@@ -125,7 +124,7 @@
           <br>
           長い文章を打ち込んだ（もしくはコピペした）のに、表示されたのがこれだけでは少し悲しいですね...
           <br>
-          <strong>それも実はホームページの表示をさせているのは、「<i>&lt;body&gt;</i>」と「<i>&lt;/body&gt;</i>」で囲まれた「<i>&lt;p&gt;</i>テスト<i>&lt;/p&gt;</i>」の部分だけだからです。</strong>
+          <strong>それも実はウェブページの表示をさせているのは、「<i>&lt;body&gt;</i>」と「<i>&lt;/body&gt;</i>」で囲まれた「<i>&lt;p&gt;</i>テスト<i>&lt;/p&gt;</i>」の部分だけだからです。</strong>
           <br><br>
           <i class="fa fa-exclamation color-red"></i>　なのでこれからは、<u>「<i>&lt;body&gt;</i>」と「<i>&lt;/body&gt;</i>」で囲まれた部分以外は基本的にコピペして貼り付ければ問題ないです</u>
           <br><br>
@@ -135,7 +134,7 @@
 <tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;テスト&lt;/<span class='word-red'>p</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
 </table>
           <br>
-          <strong>「<i>&lt;p&gt;</i>」と「<i>&lt;/p&gt;</i>」で囲まれた部分に入力された文字列</strong>がホームページで表示されます。
+          <strong>「<i>&lt;p&gt;</i>」と「<i>&lt;/p&gt;</i>」で囲まれた部分に入力された文字列</strong>がウェブページで表示されます。
           <br>
           <i><u>&lt;p&gt;</u></i>は普通の大きさの文字を出しますが、<i><u>&lt;h1&gt;</u></i>で大きい字・<i><u>&lt;h2&gt;</u></i>でまぁまぁ大きい字・<i><u>&lt;h3&gt;</u></i>で少し大きい字・<i><u>&lt;img&gt;</u></i>で画像表示・<i><u>&lt;br&gt;</u></i>で改行など...たくさんの表記の仕方があります。
           <br>
@@ -149,7 +148,7 @@
           <br>
           <a href="http://techacademy.jp/magazine/4808" target="_blank">まずはここから！HTMLの書き方【初心者向け】</a>なんかを参考にして下さい</strong>
           <hr class="red-hr">
-          <i class="fa fa-star color-blue"></i>　ホームページを作る際に表示させる文章・画像などは<strong><u>「<i>&lt;body&gt;</i>」と「<i>&lt;/body&gt;</i>」で囲まれた部分</u></strong>に記述される。
+          <i class="fa fa-star color-blue"></i>　ウェブページを作る際に表示させる文章・画像などは<strong><u>「<i>&lt;body&gt;</i>」と「<i>&lt;/body&gt;</i>」で囲まれた部分</u></strong>に記述される。
           <br><br>
           <i class="fa fa-question-circle color-green"></i>　<strong>sample.htmlファイル内の、<i>&lt;p&gt;</i>の代わりに<i>&lt;h1&gt;</i>を使ってページを表示させてみよう！</strong>
           <br>
@@ -388,21 +387,21 @@ class="名前"
         </strong>
         </h4>
         <br>
-        <h2 class="textbook-section-title" id="title2"><strong>2 : Railsでホームページの雛形を作ろう！</strong></h2>
+        <h2 class="textbook-section-title" id="title2"><strong>2 : Railsでウェブページの雛形を作ろう！</strong></h2>
         <h4>
         ここまでで、<strong class="little-remarkable"><u>htmlとCSSを使ったページの表示</u></strong>の方法を説明しました。
         <br>
-        実際のホームページの表示は、この二つの設定ファイルを設定しながらやっていきます。細かい手法などの内容は適宜内容を付け加えていきます。
+        実際のウェブページの表示は、この二つの設定ファイルを設定しながらやっていきます。細かい手法などの内容は適宜内容を付け加えていきます。
         <hr class="red-hr">
         <strong class="remarkable">
-        この章から実際にRuby on Railsでホームページを作っていきます。
+        この章から実際にRuby on Railsでウェブページを作っていきます。
         </strong>
         <br>
-        Ruby on Railsでは、<strong class="little-remarkable">出来上がっている雛形に自分で設定を加えていく</strong>ことでホームページを作っていきます。
+        Ruby on Railsでは、<strong class="little-remarkable">出来上がっている雛形に自分で設定を加えていく</strong>ことでウェブページを作っていきます。
         <br>
-        この章では、<u>Ruby on Railsでホームページの雛形を作り、それを開いてみる</u>部分までをやってみましょう！
+        この章では、<u>Ruby on Railsでウェブページの雛形を作り、それを開いてみる</u>部分までをやってみましょう！
         <hr>
-        Railsでは、前の章で使った<strong>ターミナル</strong>を使ってホームページの雛形を作ります。
+        Railsでは、前の章で使った<strong>ターミナル</strong>を使ってウェブページの雛形を作ります。
         <br>
         右上にある虫眼鏡マークを押して、「ターミナル」を検索して開きましょう。
         <br><br>
@@ -427,7 +426,7 @@ class="名前"
         <small>※　半角英数字で入力して下さい</small>
         <hr>
         <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong>① : rails new</strong></p>
-        では、Railsでホームページの雛形を作りましょう！
+        では、Railsでウェブページの雛形を作りましょう！
 <br><br>
         <strong>ターミナル</strong>
 <table class="highlight">
@@ -455,7 +454,7 @@ class="名前"
                     :target => ["_blank"] %>
         こんな感じに表示されましたでしょうか？
         <br>
-        <strong class="remarkable">これでホームページの雛形は完成しました！</strong>
+        <strong class="remarkable">これでウェブページの雛形は完成しました！</strong>
         <br><br>
         Finderで確認してみましょう。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_myapp.png",
@@ -465,7 +464,7 @@ class="名前"
                     :target => ["_blank"] %>
         「rails_project」に「myapp」というフォルダができているのが確認できますか？
         <br><br>
-        <strong>この「myapp」がホームページの雛形で、中にある設定ファイルを自分の好きな設定に変更していくことでホームページを作っていきます。</strong>
+        <strong>この「myapp」がウェブページの雛形で、中にある設定ファイルを自分の好きな設定に変更していくことでウェブページを作っていきます。</strong>
         <hr class="red-hr">
         では、さっきの
 <br><br>
@@ -481,9 +480,9 @@ class="名前"
         <br>
         はなにをしたのでしょうか？
         <br><br>
-        これは<strong class="little-remarkable"><u>「myappという名前のホームページの雛形を作れ！（rails new myapp）MySQLというデータベースを使って（-d mysql）」</u></strong>というコンピューターへの命令になります。
+        これは<strong class="little-remarkable"><u>「myappという名前のウェブページの雛形を作れ！（rails new myapp）MySQLというデータベースを使って（-d mysql）」</u></strong>というコンピューターへの命令になります。
         <br><br>
-        これ以上は説明のしようがないので次にホームページの雛形を作る時は、
+        これ以上は説明のしようがないので次にウェブページの雛形を作る時は、
         <br><br>
 <strong>ターミナル</strong>
 <table class="highlight">
@@ -497,7 +496,7 @@ class="名前"
         <br>
         をターミナルに入力して下さい。
         <hr class="red-hr">
-        <i class="fa fa-star color-blue"></i>　<strong>ホームページの雛形を作る時は、ターミナルで「<u>rails new ホームページ名 -d mysql</u>」と入力する。</strong>
+        <i class="fa fa-star color-blue"></i>　<strong>ウェブページの雛形を作る時は、ターミナルで「<u>rails new ウェブページ名 -d mysql</u>」と入力する。</strong>
         <hr>
         <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong>② : 雛形の諸設定</strong></p>
         前章では
@@ -512,18 +511,18 @@ class="名前"
 </tr>
 </table>
 <br>
-        でホームページの雛形を作りました。
+        でウェブページの雛形を作りました。
         <hr class="red-hr">
-        でもこれだけではホームページの雛形はまだ完成していません。ターミナルで行う、まだ終わっていない設定があります。
+        でもこれだけではウェブページの雛形はまだ完成していません。ターミナルで行う、まだ終わっていない設定があります。
         <br><br>
-        その設定は、<u>⑴ホームページを作るのに必要になるツールの設定と導入 ⑵データベースの用意</u>になります。
+        その設定は、<u>⑴ウェブページを作るのに必要になるツールの設定と導入 ⑵データベースの用意</u>になります。
         <br>
         <strong>ここではその設定を完了させましょう。</strong>
         <hr>
         <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : ツールの導入と設定</strong></p>
-        Railsでは、<strong><u>インターネット上に公開されているホームページを作る際のツール（gemといいます）</u></strong>を使いながらホームページを作っていきます。
+        Railsでは、<strong><u>インターネット上に公開されているウェブページを作る際のツール（gemといいます）</u></strong>を使いながらウェブページを作っていきます。
         <br>
-        これらツールをホームページに導入していくことで、例えば自分で作るとなると手間がかかる<u>ユーザー管理や画像の保存などを自動的に作ってくれます</u>。
+        これらツールをウェブページに導入していくことで、例えば自分で作るとなると手間がかかる<u>ユーザー管理や画像の保存などを自動的に作ってくれます</u>。
 
         <br><br>
         <i class="fa fa-star color-red"></i>　<strong class="little-remarkable">ここではこのgemの導入と設定をしましょう！</strong>
@@ -676,7 +675,7 @@ gem 'ツール名'
         <br>
         ですが設定はもう一つあります。それは<strong>データベースの用意</strong>です。
         <br>
-        ホームページでデータの保存を行う時に必要になる空のExcelの表(データベース)を作ります。
+        ウェブページでデータの保存を行う時に必要になる空のExcelの表(データベース)を作ります。
         <br>
         <strong class="little-remarkable">すぐ終わるので早速やってみましょう！</strong>
         <hr class="red-hr">
@@ -727,7 +726,7 @@ gem 'ツール名'
                     :target => ["_blank"] %>
         出てきたリストボックスの中に「<strong>myapp_development</strong>」はありますか？
         <br>
-        <u>これがホームページでデータを保存するデータベースになります。</u>
+        <u>これがウェブページでデータを保存するデータベースになります。</u>
         <br>
         <small>※　「ページ名_development」がデータベースの名前になります。</small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
@@ -743,7 +742,7 @@ gem 'ツール名'
         <strong>
         「<u>rails new ページ名 -d mysql</u>」でページを作ったら・・・
         <br><br>
-        <ul style="list-style-type: decimal">
+        <ul class="number_ul">
           <li class="color-red">
           ツール（gem）の設定と導入
           </li>
@@ -758,7 +757,7 @@ gem 'ツール名'
         <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong>③ : 雛形を開く</strong></p>
         これで雛形は完成しましたが、開けないと本当にできたか分からないですよね？
         <br>
-        <strong>ここで出来上がったホームページを開いてみましょう！</strong>
+        <strong>ここで出来上がったウェブページを開いてみましょう！</strong>
         <hr class="red-hr">
         まずは<u>ターミナルで「myapp」まで移動</u>してみて下さい。（分からなかったら、<a href="/pages/2#title2-1" target="_blank"><strong>こちら</strong></a>を見てみましょう！）
         <br><br>
@@ -784,7 +783,7 @@ gem 'ツール名'
         <br>
         <small>※　今動かしているサーバーは自分のコンピューター内で動かしてるものなので、自分のコンピューターからしか見れません。</small>
         <hr class="red-hr">
-        これでホームページを表示させることができました。
+        これでウェブページを表示させることができました。
         <br>
         ブラウザで、<a href="http://localhost:3000" target="_blank"><strong class="little-remarkable">localhost:3000</strong></a>を開いてみて下さい。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
@@ -820,7 +819,7 @@ gem 'ツール名'
           <strong>
           ⑴ ページを表示させる設定ファイル<a href="#title1-1">html</a>と、その装飾をする設定ファイル<a href="#title1-2">CSS</a>
           <br>
-          ⑵ Railsで作る雛形ホームページの作り方と開き方
+          ⑵ Railsで作る雛形ウェブページの作り方と開き方
           <br>
           </strong>
           について学んびました。それぞれについて簡単なまとめをします。
@@ -883,9 +882,9 @@ gem 'ツール名'
 </tr>
 </table>
         <hr>
-        <strong>⑵ Railsでの雛形ホームページの作成</strong>
+        <strong>⑵ Railsでの雛形ウェブページの作成</strong>
         <br><br>
-        Railsでの雛形ホームページの作成は<strong class="little-remarkable"><u>ターミナル</u></strong>で行います（場所は右上の虫眼鏡で探してみて下さい）。
+        Railsでの雛形ウェブページの作成は<strong class="little-remarkable"><u>ターミナル</u></strong>で行います（場所は右上の虫眼鏡で探してみて下さい）。
         <hr class="red-hr">
         まずは雛形の作成を
         <br><br>
@@ -969,7 +968,7 @@ gem 'ツール名'
 </tr>
 </table>
         <br>
-        その後で、ホームページのデータの保存をするための<strong><u>データベースを用意</u></strong>します。
+        その後で、ウェブページのデータの保存をするための<strong><u>データベースを用意</u></strong>します。
 <br><br>
         　<strong>ターミナル</strong>
 <table class="highlight">
@@ -1001,9 +1000,9 @@ gem 'ツール名'
         <br>
         サーバーを立ち上げっぱなしにすると、無駄に電池を使います。
         <hr>
-        <i class="fa fa-star color-blue"></i>　<strong>ここまでで、Railsを使ったホームページの雛形の作成は終了です。
+        <i class="fa fa-star color-blue"></i>　<strong>ここまでで、Railsを使ったウェブページの雛形の作成は終了です。
         <br>
-        　　次の章では、ホームページでのデータの保存について学びます。</strong>
+        　　次の章では、ウェブページでのデータの保存について学びます。</strong>
         </h4>
         <br>
         <div class="next-page">
@@ -1017,13 +1016,13 @@ gem 'ツール名'
     <br>
     <div id="slide-bar" class="clear-fix">
       <div class="list-group nomargin">
-        <a href="#title" class="list-group-item list-title"><h4>ホームページの雛形を作ろう！</h4></a>
+        <a href="#title" class="list-group-item list-title"><h4>ウェブページの雛形を作ろう！</h4></a>
         <a href="#title0" class="list-group-item">0 : この章の目的</a>
         <a href="#title1" class="list-group-item">1 : HTMLの基本</a>
         <a href="#title1-1" class="list-group-item"><small>　① : 簡単なページを作ろう！</small></a>
         <a href="#title1-2" class="list-group-item"><small>　② : ページを装飾しよう！</small></a>
         <a href="#title1-3" class="list-group-item"><small>　③ : まとめ</small></a>
-        <a href="#title2" class="list-group-item">2 : Railsでホームページの雛形を作ろう！</a>
+        <a href="#title2" class="list-group-item">2 : Railsでウェブページの雛形を作ろう！</a>
         <a href="#title2-1" class="list-group-item"><small>　① : rails new</small></a>
         <a href="#title2-2" class="list-group-item"><small>　② : 雛形の諸設定</small>
         <a href="#title2-2-1" class="list-group-item"><small>　　⑴ : ツールの導入と設定</small></a>
@@ -1031,7 +1030,7 @@ gem 'ツール名'
         <a href="#title2-2-3" class="list-group-item"><small>　　⑶ : まとめ</small>
         <a href="#title2-3" class="list-group-item"><small>　③ : 雛形を開く</small></a>
         <a href="#title3" class="list-group-item"><small>3 : この章のまとめ</small></a>
-      </ul>
+      </div>
     </div>
   </div>
 </div>

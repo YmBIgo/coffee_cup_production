@@ -6,7 +6,7 @@
         <div id="title" class="textbook-title">
           <h1><strong>2 : Ruby on Rails の基本</strong></h1>
         </div>
-        <h4><u><a href="/pages/1" class="text-left ">前の章：ホームページとは？</a></u></h4>
+        <h4><u><a href="/pages/1" class="text-left ">前の章：ウェブページとは？</a></u></h4>
         <a href="">
         <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header2.jpg",
                       :width => "90%",
@@ -14,21 +14,21 @@
         </a>
         <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
         <h4>
-        <i class="fa fa-bookmark color-red"></i>　Ruby on Railsを使ったホームページ作成について大まかな理解を得て、Ruby on Railsの環境構築を終了させる。
+        <i class="fa fa-bookmark color-red"></i>　Ruby on Railsを使ったウェブページ作成について大まかな理解を得て、Ruby on Railsの環境構築を終了させる。
         </h4>
         <br>
         <h2 class="textbook-section-title" id="title1"><strong>1 : Ruby on Rails </strong></h2>
         <h4>
-        この章から、実際のホームページの作成の方法を説明していきます。
+        この章から、実際のウェブページの作成の方法を説明していきます。
         <br>
-        ここでは <strong class="color-red">Ruby on Rails</strong> というソフトウェアを使い、ホームページを作っていきます。
+        ここでは <strong class="color-red">Ruby on Rails</strong> というソフトウェアを使い、ウェブページを作っていきます。
         <br><br>
-        前の章で<strong class="little-remarkable">「ホームページはデータの表示と保存」</strong>をしていると説明しましたが、Ruby on Rails では、<strong class="little-remarkable">出来上がっている雛形に「データの表示と保存」を自分で設定</strong>していくことでホームページを作っていきます。
+        前の章で<strong class="little-remarkable">「ウェブページはデータの表示と保存」</strong>をしていると説明しましたが、Ruby on Rails では、<strong class="little-remarkable">出来上がっている雛形に「データの表示と保存」を自分で設定</strong>していくことでウェブページを作っていきます。
         <br>
         <small>※　以下、「Ruby on Rails」を単に「Rails」と省略して表記します。長いのは面倒なので・・・</small>
         <br>
         <br>
-        <i class="fa fa-star color-blue"></i>　Railsではデータの表示と保存を自分で設定しながら、ホームページを作る。
+        <i class="fa fa-star color-blue"></i>　Railsではデータの表示と保存を自分で設定しながら、ウェブページを作る。
         <hr class="red-hr">
         <i class="fa fa-question-circle color-green"></i>　<strong>Railsではなにを「自分で設定」しなければならないのでしょうか？</strong>
         <br><br>
@@ -37,13 +37,13 @@
         １つ目は<strong class="little-remarkable color-red">ページ</strong>、２つ目は<strong class="little-remarkable color-blue">データ</strong>です。
         <hr>
         <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : Railsのページ</strong></p>
-        ホームページというからには、Railsでもページをどのように表示させるかを自分で設定しなければなりません。
+        ウェブページというからには、Railsでもページをどのように表示させるかを自分で設定しなければなりません。
         <br>
-        ですがホームページはデータを表示させるだけでなく、<strong>発信されたデータを保存しなければなりません。</strong>
+        ですがウェブページはデータを表示させるだけでなく、<strong>発信されたデータを保存しなければなりません。</strong>
         <hr class="red-hr">
         なのでRailsでは、<strong class="color-red">データの表示と保存の方法で、作るページの役割が決まっています。</strong>
         <br>
-        Railsでホームページを作る人は、データの表示・保存の方法に合わして自分でページを設定します。
+        Railsでウェブページを作る人は、データの表示・保存の方法に合わして自分でページを設定します。
         <br>
         Twitterを例にページの役割を説明していきます。
         <br><br>
@@ -56,7 +56,7 @@
                     :target => ["_blank"] %>
         データベースに保存されたデータを<strong class="remarkable color-red">表示</strong>させます。
         <br>
-        データベース内の全てのデータを表示するページと、データベースから１つのデータを選択して表示するページからできています。
+        データベース内の全てのデータを表示するページと、データベースから１つのデータを<strong class="little-remarkable"><u>選択</u></strong>して表示するページからできています。
         <br>
         <strong class="color-blue">タイムライン</strong>と<strong class="color-red">１つの投稿のページ</strong>の違いと考えてもらえれば分かりやすいかと思います。
         <br>
@@ -100,7 +100,7 @@
         <br>
         では、そのデータとはどのようなものなのでしょうか？
         <hr class="red-hr">
-        <a href="/pages/1">前の章</a>で、それはホームページを動かしている機械（サーバー）の中にあるデータベースに保存される利用者が発信した情報だと説明しました。
+        <a href="/pages/1">前の章</a>で、それはウェブページを動かしている機械（サーバー）の中にあるデータベースに保存される利用者が発信した情報だと説明しました。
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_Save_Data.png",
                               :width => "90%",
@@ -110,7 +110,7 @@
         <br>
         例えばFacebookの投稿であれば、<span class="color-red">利用者の投稿が「投稿した人の名前は山田太郎、投稿した内容は"Hello world"、場所は東京都新宿、画像はなし...」</span>のような情報でサーバーに送信され、それが<strong><u>サーバー内のデータベース（Excelの表）</u></strong>に保存されます。
         <br><br>
-        <i class="fa fa-star color-blue"></i>　<strong>Railsで保存されるデータもこれと同じで、利用者が発信した情報をホームページの機械（サーバー）の中のデータベースに保存し、それがページに表示されます。</strong>
+        <i class="fa fa-star color-blue"></i>　<strong>Railsで保存されるデータもこれと同じで、利用者が発信した情報をウェブページの機械（サーバー）の中のデータベースに保存し、それがページに表示されます。</strong>
         <hr>
         Railsでは、利用者が発信した情報が保存される<strong><u>⑴データベースの枠組みの定義</u></strong>（Facebookの例でいうと、名前・内容・場所など）と、ページで入力され送信されたデータの<strong><u>⑵データベースへの代入と保存</u></strong>を行います。
         <hr class="red-hr">
@@ -146,7 +146,7 @@
         </p>
         <hr>
         <p id="title1-2-2"><i class="fa fa-check-square color-blue"></i>　<strong>⑵ : データの代入と保存</strong></p>
-        <p>ホームページでは入力された情報に応じて、新しいデータがデータベースに追加されていきます。
+        <p>ウェブページでは入力された情報に応じて、新しいデータがデータベースに追加されていきます。
         <br>
         Facebookの投稿で言うと、あなたが投稿するたびにデータベースにはあなたの投稿のデータが追加されていきます。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_database.png",
@@ -164,7 +164,7 @@
         <i class="fa fa-star color-blue"></i>　<strong>Rails内のデータ保存は、データベースの枠組みの定義とデータの操作のやり方を自分で設定していくことで実現する。</strong>
         <hr>
         <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong>③ : まとめ</strong></p>
-        <strong>Railsでは、出来上がった雛形の上にどのようなページを表示させ、どのようなデータを保存させるか・ページとデータの操作をどう振り分けるかを設定していくことでホームページを作っていく。</strong>
+        <strong>Railsでは、出来上がった雛形の上にどのようなページを表示させ、どのようなデータを保存させるか・ページとデータの操作をどう振り分けるかを設定していくことでウェブページを作っていく。</strong>
         <br>
         <br>
         </h4>
@@ -199,7 +199,7 @@
         <i class="fa fa-question-circle color-green"></i>　<strong>ターミナルはどのようなアプリケーションなのか？</strong>
         <br>
         <br>
-        ターミナルとは、コンピューターに命令を与えるアプリケーションです。Railsのホームページもターミナルの命令で作ります。
+        ターミナルとは、コンピューターに命令を与えるアプリケーションです。Railsのウェブページもターミナルの命令で作ります。
         <hr class="red-hr">
         <i class="fa fa-exclamation-circle color-red"></i>　<strong>ターミナルを使って、デスクトップ内を移動しよう！</strong>
         <br><br>

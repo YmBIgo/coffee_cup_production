@@ -1,10 +1,10 @@
-<% provide :title, "ファイル・フォルダを開く方法" %>
+<% provide :title, "ファイル・フォルダなどのを開く方法" %>
 <div class="row">
   <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
     <div class="textbook-area">
       <div class="textbook-area-inner fadeIn wow">
         <div id="title" class="textbook-title">
-          <h1><strong>ファイル・フォルダの開き方</strong></h1>
+          <h1><strong>ファイル・フォルダなどの開き方</strong></h1>
         </div>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header11.jpg",
                               :width => "90%",
@@ -22,32 +22,72 @@
           <h2 class="textbook-section-title" id="title1"><strong>1 : Sublime Textでのファイルの開き方</strong></h2>
           <h4>
             まずは、Sublime Textのウィンドウを以下の手順で開いて下さい。
-            <%= link_to image_tag("page3/Sublime_Text_New_Window.png",
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_New_Window.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
-                        "/assets/page3/Sublime_Text_New_Window.png",
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_New_Window.png",
                         :target => ["_blank"] %>
             なにも入力されていないウィンドウが出てくれば大丈夫です。
-            <%= link_to image_tag("page3/Window_Sublime_Text.png",
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
-                        "/assets/page3/Window_Sublime_Text.png",
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text.png",
                         :target => ["_blank"] %>
             ウィンドウが出てきたら、「Command」と「o」を一緒に押して下さい。
             <br>
             新しいウィンドウが出てくるので、下の画像の手順に従って操作して下さい。
-            <%= link_to image_tag("page3/Sublime_Text_Open_File.png",
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Open_File.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
-                        "/assets/page3/Sublime_Text_Open_File.png",
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Open_File.png",
                         :target => ["_blank"] %>
             <strong class="little-remarkable">これで開きました！</strong>
-            <%= link_to image_tag("page3/Sublime_Text_Open_File_After.png",
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Open_File_After.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
-                        "/assets/page3/Sublime_Text_Open_File_After.png",
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Open_File_After.png",
                         :target => ["_blank"] %>
-            <hr>
+          </h4>
+          <h2 class="textbook-section-title" id="title2"><strong>2 : Sequel Proでのデータベースの開き方</strong></h2>
+          <h4>
+          <strong><u>Sequel Pro</u></strong>を右上の虫眼鏡マークで探して開きましょう！
+        <br>
+        開けたら下の手順に従って開いてみましょう！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                    :target => ["_blank"] %>
+        できたら左上の「<strong>Choose Database</strong>」をクリックして下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                    :target => ["_blank"] %>
+        出てきたリストボックスの中から「<strong>myapp_development</strong>」をクリックしてみて下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                    :target => ["_blank"] %>
+          左側に作成されたデータベースが表示されるので、見てみたいデータベースを選択して下さい。
+          <%= link_to image_tag("page4/Sequel_Pro_myapp_development.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page4/Sequel_Pro_myapp_development.png",
+                    :target => ["_blank"] %>
+          内容は確認できたでしょうか？
+          <%= link_to image_tag("page4/Sequel_Pro_Posts_Data1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "/assets/page4/Sequel_Pro_Posts_Data1.png",
+                    :target => ["_blank"] %>
+          また、内容の更新は下のようにすればできます。
+          <%= link_to image_tag("page4/Sequel_Pro_Update.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/page4/Sequel_Pro_Update.png",
+                      :target => ["_blank"] %>
           </h4>
           <div class="next-page">
             <a href="javascript:history.back()" class="btn btn-primary">戻る</a>
@@ -59,9 +99,10 @@
     <br>
     <div id="slide-bar" class="clear-fix">
       <div class="list-group nomargin">
-        <a href="#title" class="list-group-item list-title"><h4>ファイルを保存する</h4></a>
+        <a href="#title" class="list-group-item list-title"><h4>ファイル・フォルダなどのを開く方法</h4></a>
         <a href="#title0" class="list-group-item">0 : この章の目的</a>
-        <a href="#title1" class="list-group-item">1 : Sublime Textでのファイルの保存</a>
+        <a href="#title1" class="list-group-item">1 : Sublime Textでのファイルの開き方</a>
+        <a href="#title2" class="list-group-item">2 : Sequel Proでのデータベースの開き方</a>
       </ul>
     </div>
   </div>

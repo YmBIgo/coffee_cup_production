@@ -102,8 +102,8 @@
 
   // textbook link
   #title, #title0,
-  #title1, #title1-1, #title1-1-1, #title1-1-2, #title1-2, #title1-2-1,#title1-2-2, #title1-3, #title1-3-1, #title1-3-2,
-  #title2, #title2-1, #title2-1-1, #title2-1-2, #title2-2, #title2-2-1,#title2-2-2,#title2-2-3, #title2-2-4, #title2-2-5,#title2-3,
+  #title1, #title1-1, #title1-1-1, #title1-1-2, #title1-2, #title1-2-1,#title1-2-2, #title1-3, #title1-3-1, #title1-3-2, #title1-4,
+  #title2, #title2-1, #title2-1-1, #title2-1-2, #title2-2, #title2-2-1,#title2-2-2,#title2-2-3, #title2-2-4, #title2-2-5,#title2-3, #title2-4,
   #title3, #title3-1, #title3-1-1, #title3-1-2, #title3-2, #title3-2-1,#title3-2-2, #title3, #title3-3-1, #title3-3-2{
     display: block; padding-top: 80px; margin-top: -80px;
   }
@@ -127,6 +127,17 @@
         margin:0;
       }
     }
+
+  // table内のform
+  .table-form{
+    margin-bottom:0px;
+    width:100%;
+  }
+  .table-title{
+    width:300px;
+    margin-bottom:5px;
+    margin-top:5px;
+  }
 
   // footer
   .footer{
@@ -205,6 +216,15 @@
     padding-bottom:10px;
     padding-right:20px;
   }
+  .small-code{
+    font-size:12px;
+  }
+  .answer-code{
+    opacity:0;
+  }
+  .answer-code:hover{
+    opacity: 1;
+  }
   .remarkable-code{
     background-color:#454545;
     padding-top:5px;
@@ -270,6 +290,10 @@ hr{
   border-width: 3px;
   width:50px;
   opacity:.5;
+}
+
+.number_ul{
+  list-style-type: decimal;
 }
 
 .pre-terminal{
