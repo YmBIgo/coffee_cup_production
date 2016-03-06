@@ -342,9 +342,9 @@ t.データの種類 :名前
         <br>
         これで、<strong class="little-remarkable"><u>数字を入れる「id」、短い文字列を入れる「name」、長い文字列を入れる「content」と日時を入れる「created_at/updated_at」が入る枠組み「posts」の設定</u></strong>ができました。
         <hr class="red-hr">
-        <i class="fa fa-question-circle color-green"></i>　枠組みの設定に「場所」加える設定はどのようになるでしょうか？（マウスを上に置くと答えがでます）
+        <i class="fa fa-question-circle color-green"></i>　枠組みの設定に、<strong><u>短い文字列をいれる「place」を加える設定</u></strong>はどのようになるでしょうか？（マウスを上に置くと答えがでます）
         <br><br>
-        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
         <br>
         <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb</strong>
 <table class='highlight'>
@@ -579,7 +579,7 @@ add_column :データベース名, :枠組みの名前, :データの種類
         <br>
         <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb（３行目）</strong>
         <br><br>
-        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
         <br>
 <table class="highlight">
 <tr>
@@ -899,7 +899,7 @@ change_column :データベース名, :枠組みの名前, :データの種類
         <i class="fa fa-question-circle color-green"></i>　<strong>では、『湘南花子さんが藤沢で投稿した「おはよう」という投稿』はどのようにして入力して作ればいいでしょうか？
         <br>（マウスを上に置けば答えが出ます）</strong>
         <br><br>
-        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
         <br>
 <table class='highlight'>
 <tr>
@@ -925,7 +925,7 @@ change_column :データベース名, :枠組みの名前, :データの種類
             </thead>
           </table>
           <hr class="red-hr">
-          <input type="input" class="form-control" placeholder="答えを入力しよう！">
+          <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
           <br>
 <table class='highlight'>
 <tr>
@@ -1064,7 +1064,7 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
         <br><br>
         <i class="fa fa-question-circle color-green"></i>　<strong>今回変更した投稿のデータを元の『contentが「春からSFC」の投稿』に戻しましょう。（マウスを上に置くと答えがでます）</strong>
         <br><br>
-        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
         <br>
 <table class='highlight'>
 <tr>
@@ -1077,7 +1077,7 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
         <hr class="red-hr">
         <i class="fa fa-question-circle color-green"></i>　<strong>投稿者の名前を「てふ」に変えてみましょう！（マウスを上に置くと答えがでます）</strong>
         <br><br>
-        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
         <br>
 <table class='highlight'>
 <tr>
@@ -1090,7 +1090,7 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
         <hr class="red-hr">
         <i class="fa fa-question-circle color-green"></i>　<strong>投稿した場所を「六本木」、投稿を「ORF」に変えてみましょう！（マウスを上に置くと答えがでます）</strong>
         <br><br>
-        <input type="input" class="form-control" placeholder="答えを入力しよう！">
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
         <br>
 <table class='highlight'>
 <tr>
@@ -1114,7 +1114,7 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
         <hr class="red-hr">
         <i class="fa fa-question-circle color-green"></i>　<strong>復習ついでに『あなたがシリコンバレーで投稿した「インフルで倒れた」という投稿』のデータを作ってみましょう！<br>（マウスを上に置けば答えが表示されます）</strong>
         <br><br>
-        <input type="input" class="form-control" placeholder="答えを入力して下さい">
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
         <br>
 <table class='highlight'>
 <tr>
@@ -1166,7 +1166,7 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
         <br><br>
         <i class="fa fa-question-circle color-green"></i><strong>　では復習で、この新しく作った「インフルで倒れた」データを選択してみましょう。</strong>
         <br><br>
-        <input type="input" class="form-control" placeholder="答えを入力して下さい">
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
         <br>
 <table class='highlight'>
 <tr>
@@ -1208,7 +1208,7 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
         <br><br>
         <i class="fa fa-question-circle color-green"></i>　<strong>「idが5のデータを削除」する場合はどのような入力をすればいいのでしょうか？</strong>
         <br><br>
-        <input type="input" class="form-control" placeholder="答えを入力して下さい">
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
         <br>
 <table class='highlight'>
 <tr>
@@ -1250,6 +1250,23 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
 </tr>
 </table>
         <br>
+        <strong><li>データの選択</li></strong>
+        <br>
+<pre>
+データベースのタイトル.find(変更するデータのid)
+</pre>
+<small>※　データベースのタイトルは大文字から始める単数形にする</small>
+<hr class="red-hr">
+<small>例：「id」が「2018」のデータを選択</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(2018)</span>
+</td>
+</tr>
+</table>
+        <br>
         <strong><li>データの変更</li></strong>
         <br>
 <pre>
@@ -1280,6 +1297,23 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
 <td class='code-line-no text-center'>1
 </td>
 <td class='code-content'><span class='code-line small-code'>Post.find(1900).destroy</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>データの全選択</li></strong>
+        <br>
+<pre>
+データベースのタイトル.all
+</pre>
+<small>※　データベースのタイトルは大文字から始める単数形にする</small>
+<hr class="red-hr">
+<small>例：全てのデータを選択</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.all</span>
 </td>
 </tr>
 </table>
