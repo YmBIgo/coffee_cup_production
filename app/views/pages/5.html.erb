@@ -56,7 +56,7 @@
           <br>
           みたいな感じのデータベースにデータを保存して、それを表示させています。
           <br>
-          もう簡単なデータベースの作り方も分かったのではないかとと思うので、<strong>この章では保存したデータを「<i>rails c</i>」でなく、<u>ブラウザのページに表示させてみることをやってみたいと思います。</u></strong>
+          もう簡単なデータベースの作り方も分かったのではないかとと思うので、<strong>この章では保存したデータを「<i>rails c</i>」でなく、<u>ブラウザのページに表示・作成・変更・削除させてみることをやってみたいと思います。</u></strong>
           <br>
           <small>※　ページの表示にはhtmlを使うことになりますので、少しだけ<a href="/pages/3#title1" target="_blank"><strong>htmlの内容</strong></a>を見ておいてください。</small>
         </h4>
@@ -100,9 +100,9 @@
         <br>
         この<u>３つの設定</u>を行えば、ページは表示されます。
         <hr class="red-hr">
-        <strong class="little-remarkable">では、７つのページを設定していきましょう！</strong>
+        <strong class="little-remarkable">ここではまず「１つのデータの表示（show）」をするページを作ってみましょう！</strong>
         <hr>
-        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : １つのデータを表示する（show）</strong></p>
+        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : １つのデータを表示する（show）</strong></p>
         <br>
         では<strong>「<u>１つのデータの表示（show）</u>」</strong>を上の３つの設定にそってやっていきます。
         <br>
@@ -120,7 +120,13 @@
 </table>
         <br>
         を使います。
-        <br>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
+                    :target => ["_blank"] %>
+        のようにidに応じたデータが表示されるページを作ります。
+        <br><br>
         では、設定をしてみましょう！
         <hr>
         <p id="title1-1-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : <u>７つのページを設定する</u></strong></p>
@@ -508,7 +514,7 @@ resources :データベース名, :only => [:加えたいページ...]
         <strong>いよいよ、保存したデータをページに表示してみましょう！</strong>
         ページの作成は、前に少し触れた<strong class="little-remarkable"><u>「views」フォルダにhtmlファイルを作る</u></strong>ことでやっていきます。
         <hr class="red-hr">
-        まずは下の手順に従って、Sublime Textで開いた「myapp」から「views」フォルダを開いてみましょう！（Sublime Textの開き方は<a href="/pages/how_to_open#title1" target="_blank"><strong>こちら</strong></a>から）
+        まずは下の手順に従って、Sublime Textで開いた「myapp > app」から「views」フォルダを開いてみましょう！（Sublime Textの開き方は<a href="/pages/how_to_open#title1" target="_blank"><strong>こちら</strong></a>から）
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Select_views.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -547,6 +553,7 @@ resources :データベース名, :only => [:加えたいページ...]
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_views_posts_all.png",
                     :target => ["_blank"] %>
+        これらのファイルを使って、他のページの設定をしていきます。
         <hr class="red-hr">
         では、ページの設定をしてみましょう！
         <br>
@@ -701,7 +708,7 @@ resources :データベース名, :only => [:加えたいページ...]
         <br>
         <strong><a href="/pages/5#title1-1-2" target="_blank">さっきデータ操作の部分</a>で設定した「<u>@post</u>」</strong>がありますね。この<strong>「<u>@post</u>」</strong>がページで選択されたデータになります。
         <br><br>
-        <u>なので、もしデータ操作の部分・「posts_controller.rb」で「@post」を設定しなければ、このようにデータは表示されません。</u>
+        <u>なので、もしデータ操作の部分・「posts_controller.rb」で「@post」を設定しなければ、このようなデータは表示されません。</u>
         <br><br>
 <table class='highlight'>
 <tr>
@@ -811,7 +818,7 @@ resources :データベース名, :only => [:加えたいページ...]
 </td>
 <td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
 <span class='code-line'></span>
-<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:delete</span>]</span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
 <span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
 <span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
 <span class='code-line'></span>
@@ -901,7 +908,7 @@ resources :データベース名, :only => [:加えたいページ...]
         </h4>
         <hr>
         <h4>
-        <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong>②
+        <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">②
          : 全てのデータを表示する（index）</strong></p>
          <br>
          では、<strong><u>全てのデータを表示するタイムラインのようなページ</u></strong>を作ってみましょう。
@@ -917,10 +924,20 @@ resources :データベース名, :only => [:加えたいページ...]
 </table>
          <br>
          をすると考えてもらえれば大丈夫です。
+         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
+                               :width => "90%",
+                               :class => "hover_img textbook-title-img"),
+                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
+                     :target =>["_blank"] %>
+         のように投稿一覧が出てくるページを作っていきます。
+         <br><br>
+         設定は、<strong><u>「どのページを使うかの設定」「データ操作の設定」「ページの内容の設定」の３つ</u></strong>がありますのでそれぞれについてやってみましょう。
          <hr>
          <p id="title1-2-1"><i class="fa fa-check-square color-red"></i>　<strong>　⑴ : ページを設定する</strong></p>
          <br>
-         ７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル（configフォルダにある）</strong>で
+         まずは<strong>「<u>どのページを使うか</u>」</strong>の設定をします。
+         <br><br>
+         ７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル</strong>（configフォルダにある）を見てみましょう。
                  <br><br>
         <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
 <table class='highlight'>
@@ -940,7 +957,7 @@ resources :データベース名, :only => [:加えたいページ...]
 </td>
 <td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
 <span class='code-line'></span>
-<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple remarkable-code'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:delete</span>]</span>
+<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple remarkable-code'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
 <span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
 <span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
 <span class='code-line'></span>
@@ -954,11 +971,17 @@ resources :データベース名, :only => [:加えたいページ...]
 </tr>
 </table>
         <br>
-        <strong><u>のように「index」を設定した</u></strong>と思うので、<strong>「<u>posts_controller.rb</u>」</strong>ファイルから設定を始めましょう。
-        <br>
-        <strong>まずは「app」フォルダの中にある「controllers」フォルダから、「<u>posts_controller.rb</u>」を開きましょう。</strong>（Sublime Textの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちら</strong></a>）
+        内容は前に変更しましたよね。
         <br><br>
-        開けたら、<strong><u>「def index」と「end」の間</u></strong>を下のように設定しましょう。
+        <strong><u>上のように「index」を追加した</u></strong>と思います。これで「データの全表示をする（index）」ページを使うことを設定できました。
+        <hr class="red-hr">
+        では、「<u>データ操作</u>」の設定をしましょう。データ操作は「データベース名_controller.rb」ファイルで設定します。
+        <br>
+        <strong>「posts」データベースのデータ操作を設定する「posts_controller.rb」ファイルから設定を始めましょう。</strong>
+        <br><br>
+        まずは「app」フォルダの中にある「controllers」フォルダから、「<strong>posts_controller.rb</strong>」を開きましょう。（Sublime Textの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちら</strong></a>）
+        <br><br>
+        開けたら、<u>「def index」と「end」の間</u>を下のように設定しましょう。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（8行目を追加）</strong>
 <table class='highlight'>
@@ -976,7 +999,7 @@ resources :データベース名, :only => [:加えたいページ...]
         <br>
         <strong>「<u>Post.all</u>」</strong>の部分は全く同じですね。<u>これでデータを全て選択します。</u>（信じられないのであれば、「<a href="/pages/4#title2" target="_blank"><i>rails c</i></a>」で入力して確認してみてください。）
         <br><br>
-        <strong>後ろの「<u>@posts</u>」が複数形になっていますね。</strong>
+        <strong>ページ（html）で表示させる時の標識の「<u>@posts</u>」が複数形になっていますね。</strong>
         <br>
         別に名前はなんでもいいんですけど、データを全て表示するなら<u>複数形のほうが分かりやすい</u>のでこんな感じになっています。
         <br><br>
@@ -1000,8 +1023,8 @@ resources :データベース名, :only => [:加えたいページ...]
         まずは、Sublime Textで開いた「myapp」で<strong>「<i>app > views > posts</i>」</strong>を開いてみましょう。
         <br>
         その中に<strong>「<u>index.html.erb</u>」</strong>ファイルはあるでしょうか？あったら開きましょう！
-        <br>
-        <strong>この空のファイルに内容を追加していきます。</strong>
+        <br><br>
+        <strong>このファイルに「データの全表示をする（index）」ページを表示する設定を追加していきます。</strong>
         <br><br>
         <i class="fa fa-question-circle color-green"></i>　<strong>まずは復習から始めましょう。</strong>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_1.png",
@@ -1085,22 +1108,6 @@ resources :データベース名, :only => [:加えたいページ...]
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
                     :target => ["_blank"] %>
         <strong class="remarkable">ちゃっちい投稿サイトのトップページのようななにか</strong>はでましたか？
-        <br><br>
-        <strong>「<u>localhost:3000/データベース名</u>」</strong>をブラウザで開けば、<strong>「<u>データの全表示（index）</u>」</strong>をするページを開くことができます。
-        <br><br>
-        <i class="fa fa-question-circle color-green"></i><strong>　「tweets」のデータを全て表示するページをブラウザで開くにはどのページを開けばいいでしょうか？</strong>
-        <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
-        <br>
-        <i class="fa fa-chrome color-red"></i><strong>　ブラウザ</strong>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content answer-code'><span class='code-line small-code'>localhost:3000/tweets</span>
-</td>
-</tr>
-</table>
         <hr class="red-hr">
         さっきの変更でなにをやったかを説明します。
         <br><br>
@@ -1202,7 +1209,7 @@ resources :データベース名, :only => [:加えたいページ...]
 </tr>
 </table>
         <br>
-        この<strong>「<u>&lt;% @標識の名前.each.do |p| %&gt;</u>」と「<u>&lt;% end %&gt;</u>」</strong>を使って、<u>複数あるデータを繰り返し表示させます。</u>
+        この「<u>&lt;% @posts.each.do |p| %&gt;</u>」と「<u>&lt;% end %&gt;</u>」を使って、複数あるデータを繰り返し表示させます。
         <br>
         そして、<strong>それぞれの繰り返しで「p」にデータを入り、それが表示されます。</strong>
         <br>
@@ -1210,7 +1217,7 @@ resources :データベース名, :only => [:加えたいページ...]
         <hr class="red-hr">
         設定の方法の説明をしましょう。
         <br>
-        <strong>「<u>Post.all</u>」のように複数のデータを扱う時は、それを一つ一つのデータに分けて表示する</strong>必要があります。
+        <strong>「<u>Post.all</u>」のように複数のデータを扱う時は、それを一つ一つのデータに分けて表示する必要があります。</strong>
         <br><br>
         このような複数のデータは、
 <pre>
@@ -1291,6 +1298,40 @@ resources :データベース名, :only => [:加えたいページ...]
 </tr>
 </table>
         <hr class="red-hr">
+        <i class="fa fa-play-circle color-red"></i>　もう開いた後ですが、ブラウザでの開き方について説明します。
+        <br><br>
+        <strong>「<u>localhost:3000/データベース名</u>」</strong>をブラウザで開けば、<strong>「<u>データの全表示（index）</u>」</strong>をするページを開くことができます。
+        <br>
+        今回は「posts」データベースの内容をすべて表示させるためのページだったので、
+        <br><br>
+        <i class="fa fa-chrome color-red"></i><strong>　ブラウザ</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>localhost:3000/posts</span>
+</td>
+</tr>
+</table>
+        <br>
+        で開きました。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　「tweets」のデータを全て表示するページをブラウザで開くにはどのページを開けばいいでしょうか？</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <br>
+        <i class="fa fa-chrome color-red"></i><strong>　ブラウザ</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>localhost:3000/tweets</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <p id="title1-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : ページの移動をする</strong></p>
+        <br>
         <strong>ここまででページの全表示は終わりましました。</strong>
         <br><br>
         <strong>
@@ -1338,6 +1379,19 @@ resources :データベース名, :only => [:加えたいページ...]
                     :target => ["_blank"] %>
         「amazon」の部分をクリックしたら、amazonのページに移動できたでしょうか？
         <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>Facebookのページ（<a href="http://facebook.com" target="_blank">http://facebook.com</a>）へ移動する「クリック」の文字を設定してみてください。</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://facebook.com"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
         同じような具合で、<strong><u>「１つのデータを表示する（show）」ページから「全てのデータを表示する（index）」ページに移動</u>できるようにしましょう。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>show.html.erb（4行目を変更）</strong>
@@ -1365,6 +1419,19 @@ resources :データベース名, :only => [:加えたいページ...]
         変更をした「トップに戻る」を押したら、「データの全表示（index）」をするページ「<a href="http://localhost:3000/posts" target="_blank"><strong>locahost:3000/posts</strong></a>」に移動はできたでしょうか？
         <br><br>
         <i class="fa fa-arrow-right color-red"></i>　内容を説明すると、<strong>「/posts」の「/」がページの<u>url「localhost:3000」を示している</u>のでページを移動できるようになっています。</strong>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　photosデータベースの「index」ページに移動する「クリック」の文字を設定をしてみて下さい。</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/photos"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
         <hr class="red-hr">
         <strong>では、「index」のページから「show」のページに移動できるようにしましょう。</strong>
         <br>
@@ -1412,37 +1479,24 @@ resources :データベース名, :only => [:加えたいページ...]
         <br>
         「<u>localhost:3000/posts/idの番号」省略して「/posts/idの番号</u>」をブラウザで入力することで、「一つのデータを表示（show）」するページに移動します。
         <br><br>
-        なのでここでは「<u>/posts/idの番号</u>」を指定するために、<strong>「<u>idの番号</u>」の部分にデータベースからidを入れる「<u>&lt;%= p.id %&gt;</u>」の設定をしています。</strong>
+        ここでは「<u>/posts/idの番号</u>」を指定するために、<strong>「<u>idの番号</u>」の部分にデータベースからidを入れる「<u>&lt;%= p.id %&gt;</u>」の設定をしています。</strong>
         <br>
         これでデータの「id」に応じたページの移動をしています。
         <hr class="red-hr">
-        <i class="fa fa-question-circle color-green"></i>　<strong>Facebookのページ（<a href="http://facebook.com" target="_blank">http://facebook.com</a>）へ移動する「クリック」の文字を設定してみてください。</strong>
+        <i class="fa fa-question-circle color-green"></i><strong>　booksデータベースの「idが10」の「show」ページに移動する「クリック」</u>を設定してみて下さい。</strong>
         <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
         <br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://facebook.com"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
-</td>
-</tr>
-</table>
-        <br>
-        <i class="fa fa-question-circle color-green"></i><strong>　photosデータベースの「index」ページに移動する「クリック」の文字を設定をしてみて下さい。</strong>
-        <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
-        <br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/photos"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/10"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
         <hr>
-        <p id="title1-2-2"><i class="fa fa-check-square color-red"></i><strong>　⑵ : まとめ</strong></p>
+        <p id="title1-2-3"><i class="fa fa-check-square color-red"></i><strong>　⑶ : まとめ</strong></p>
         <strong>「データの全表示をする（index）」</strong>ページの３つの設定をまとめる。
         <hr class="red-hr">
         <i class="fa fa-play-circle"></i>　<strong>７つのページの設定</strong>
@@ -1467,7 +1521,7 @@ resources :データベース名, :only => [:加えたいページ...]
 </td>
 <td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
 <span class='code-line'></span>
-<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple remarkable-code'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:delete</span>]</span>
+<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple remarkable-code'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
 <span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
 <span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
 <span class='code-line'></span>
@@ -1593,6 +1647,7 @@ resources :データベース名, :only => [:加えたいページ...]
   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
     <br>
     <div id="slide-bar" class="clear-fix">
+    <strong>
       <div class="list-group nomargin">
         <a href="#title" class="list-group-item list-title"><h4>ページを作ろう！①</h4></a>
         <a href="#title0" class="list-group-item">0 : この章の目的</a>
@@ -1604,8 +1659,10 @@ resources :データベース名, :only => [:加えたいページ...]
         <a href="#title1-1-4" class="list-group-item"><small>　　⑷ : まとめ</small></a>
         <a href="#title1-2" class="list-group-item"><small>　② : 全てのデータを表示する（index）</small></a>
         <a href="#title1-2-1" class="list-group-item"><small>　　⑴ : ページを設定する</small></a>
-        <a href="#title1-2-2" class="list-group-item"><small>　　⑵ : まとめ</small></a>
+        <a href="#title1-2-2" class="list-group-item"><small>　　⑵ : ページの移動をする</small></a>
+        <a href="#title1-2-3" class="list-group-item"><small>　　⑶ : まとめ</small></a>
       </div>
+    </strong>
     </div>
   </div>
 </div>

@@ -48,7 +48,8 @@
         <br>
         <h2 class="textbook-section-title" id="title1"><strong>1 : データの枠組みの定義</strong></h2>
         <h4>
-          <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : 自分のデータの枠組みを決めよう！</strong></p>
+          <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 自分のデータの枠組みを決めよう！</strong></p>
+          <br>
           利用者の発信した情報はデータベースというExcelの表のようなものに保存され、それがページに表示されていきます。
           <br>
           ここではRailsで作ったウェブページでの、<strong><u>データベースの枠組み・Excelの１番上の行の作り方</u></strong>を説明していきます。
@@ -125,7 +126,8 @@
           <br><br>
           簡単な説明はここまでにして、ここから実際にそのデータベースを作っていきましょう！
           <hr>
-          <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong>② : データの枠組みを作ろう！</strong></p>
+          <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : データの枠組みを作ろう！</strong></p>
+          <br>
           <strong class="little-remarkable">Facebookの投稿のデータベースをウェブページのデータベースに作ってみましょう！</strong>
           <br>
           <br>
@@ -414,7 +416,8 @@ t.データの種類 :名前
         <hr class="red-hr">
         <i class="fa fa-star color-blue"></i>　<strong>ターミナルで「<u>rails g model タイトル名</u>」で設定ファイルを作成し、設定ファイルを変更した上で「<u>rake db:migrate</u>」をすることでデータベースを設定する。</strong>
         <hr>
-        <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong>③ : データベースの枠組みを変更する</strong></p>
+        <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : データベースの枠組みを変更する</strong></p>
+        <br>
         ここまでで、データベースの枠組みの作り方について説明しました。
         <br>
         でも、最初から完成された枠組みを作るのは難しいです。<u>枠組みを間違えて設定した時や、後から枠組みを追加したり削除したい時</u>はどうすればいいのでしょうか？
@@ -444,6 +447,7 @@ t.データの種類 :名前
 </table>
         <br>
         移動できたら、下の入力をしてみて下さい。
+        <br>
         <strong>　ターミナル（半角英数で入力）</strong>
 <table class="highlight">
 <tr>
@@ -629,12 +633,12 @@ change_column :データベース名, :枠組みの名前, :データの種類
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>  change_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
+<td class='code-content'><span class='code-line'>  change_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:text</span></span>
 </td>
 </tr>
 </table>
         <br>
-        のように設定します。（textを書く必要はありません。）
+        のように設定します。（stringを書く必要はありません。）
         <hr class="red-hr">
         ここまでで、設定ファイルの設定の方法について説明しました。
         <br>
@@ -721,7 +725,8 @@ change_column :データベース名, :枠組みの名前, :データの種類
         <i class="fa fa-star color-blue"></i>　<strong>「<u>rake db:rollback</u>」で、データベースを一つ前の設定を適用させる前に戻せる。</strong>
         <hr>
 
-        <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong>④ : まとめ</strong></p>
+        <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : まとめ</strong></p>
+        <br>
         利用者の発信した情報の保存は、データの保存をするための表・データベースに書き込まれる。ウェブページを作る時には、その表にどのような情報を入れるかの枠組みを決めなくてはいけない。
         <br><br>
         <strong>
@@ -789,7 +794,8 @@ change_column :データベース名, :枠組みの名前, :データの種類
         <h4>
         ここまでで、データベースの枠組みを作りました。ここでは、<strong><u>できた枠組みに実際のデータを保存しましょう！</u></strong>
         <hr>
-        <p id="title2-1"><strong><i class="fa fa-tags color-red"></i>　① : データを作ろう！</strong></p>
+        <p id="title2-1"><strong class="remarkable"><i class="fa fa-tags color-red"></i>　① : データを作ろう！</strong></p>
+        <br>
         簡単な枠組みもできたので、データを入れていきましょう！
         <br><br>
         <strong class="little-remarkable">ここでは『<u>新宿にいた山田太郎さんの「春からSFC」という投稿</u>』をできた枠組みに追加しましょう！</strong>
@@ -940,14 +946,15 @@ change_column :データベース名, :枠組みの名前, :データの種類
         <br>
         <small>※　<u>データベースのタイトルは大文字から始めて、単数形にする。</u></small>
         <hr>
-        <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong>② : データを選択しよう！</strong></p>
+        <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : データを変更しよう！</strong></p>
+        <br>
         ここまででデータの作成をしましたが、データの操作は作成のみではありません。他に<strong class="little-remarkable"><u>データの変更・削除</u></strong>があります。
         <br><br>
-        ここではデータの選択をやってみましょう。<strong><u>作成した投稿の内容を「SFC入学式」に変えてみましょう。</u></strong>
+        ここではデータの変更をやってみましょう。<strong><u>作成した投稿の内容を「SFC入学式」に変えてみましょう。</u></strong>
         <br><br>
         データの変更をするには、まず<strong><u>どのデータを変更するのかを選択</u></strong>する必要があります。
         <br>
-        <strong class="little-remarkable">まずは、このデータの選択をしてみましょう！</strong>
+        <strong class="little-remarkable">変更をする前に、このデータの選択を説明します！</strong>
         <hr class="red-hr">
         データの選択の方法は２つあります。
         <br>
@@ -957,7 +964,7 @@ change_column :データベース名, :枠組みの名前, :データの種類
         ⑵ : 他の枠組みから内容を検索する方法です。
         </strong>
         <br><br>
-        まずは<u>一つ目の方法・idから選択する方法</u>をやってみましょう。まず、<strong>「<i>rails c</i>」</strong>を入力して、下の入力をしてみて下さい。
+        <i class="fa fa-play-circle color-red"></i>　まずは<u>一つ目の方法・idから選択する方法</u>をやってみましょう。まず、<strong>「<i>rails c</i>」</strong>を入力して、下の入力をしてみて下さい。
         <br><br>
         <strong>　ターミナル（半角英数で入力）</strong>
 <table class='highlight'>
@@ -983,7 +990,7 @@ change_column :データベース名, :枠組みの名前, :データの種類
 </pre>
         を入力します。（データベースのタイトルは大文字から始める単数形）
         <hr class="red-hr">
-        <u>二つ目の方法・id以外の枠組みから検索して選択する方法</u>をやってみましょう。
+        <i class="fa fa-play-circle color-red"></i>　<u>二つ目の方法・id以外の枠組みから検索して選択する方法</u>をやってみましょう。
         <br>
         下の入力をしてみて下さい。
         <br><br>
@@ -1024,7 +1031,7 @@ change_column :データベース名, :枠組みの名前, :データの種類
         <br>
         と入力します。
         <hr class="red-hr">
-        では、内容の変更をしてみましょう！
+        ここまででデータの選択ができたので、内容の変更をしてみましょう！
         <br><br>
         内容の変更は、
 <pre>
@@ -1107,7 +1114,8 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
         <br>
         <small>※　データベースのタイトルは大文字から始めて、単数形にする。</small>
         <hr>
-        <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong>③ : データを削除する</strong></p>
+        <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : データを削除する</strong></p>
+        <br>
         データの変更もできたので、<u>今度はデータを削除してみましょう！</u>
         <br>
         まずは、<strong>「<i>rails c</i>」</strong>を入力しましょう。
@@ -1225,7 +1233,8 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
         <br>
         <small>※　データベースのタイトルは大文字から始めて、単数形にする。</small>
         <hr>
-        <p id="title2-4"><i class="fa fa-tags color-red"></i>　<strong>④ : まとめ</strong></p>
+        <p id="title2-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : まとめ</strong></p>
+        <br>
         <u>データの保存などの操作は、「rails c」に入力する命令で行う。</u>
         <br>
         <small>※　ここでの入力は、後でページのデータ操作を設定する時にも使う</small>
@@ -1354,23 +1363,25 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
     <br>
     <div id="slide-bar" class="clear-fix">
-      <div class="list-group nomargin">
-        <a href="#title" class="list-group-item list-title"><h4>データベースにデータを保存する。</h4></a>
-        <a href="#title0" class="list-group-item">0 : この章の目的</a>
-        <a href="#title1" class="list-group-item">1 : データの枠組みの定義</a>
-        <a href="#title1-1" class="list-group-item"><small>　① : 自分のデータの枠組みを決めよう！</small></a>
-        <a href="#title1-2" class="list-group-item"><small>　② : 枠組みを作ろう！</small></a>
-        <a href="#title1-3" class="list-group-item"><small>　③ : 枠組みを変更する</small></a>
-        <a href="#title1-3-1" class="list-group-item"><small>　　⑴ : 枠組みを追加する</small></a>
-        <a href="#title1-3-2" class="list-group-item"><small>　　⑵ : 間違った設定を直す</small></a>
-        <a href="#title1-4" class="list-group-item"><small>　④ : まとめ</small></a>
-        <a href="#title2" class="list-group-item">2 : データベースへの内容の追加</a>
-        <a href="#title2-1" class="list-group-item"><small>　① : データを作ろう！</small></a>
-        <a href="#title2-2" class="list-group-item"><small>　② : データを変更しよう</small></a>
-        <a href="#title2-3" class="list-group-item"><small>　③ : データを削除する</small></a>
-        <a href="#title2-4" class="list-group-item"><small>　④ : まとめ</small></a>
-        <a href="#title3" class="list-group-item"><small>3 : まとめ</small></a>
-      </div>
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>データベースにデータを保存する。</h4></a>
+          <a href="#title0" class="list-group-item">0 : この章の目的</a>
+          <a href="#title1" class="list-group-item">1 : データの枠組みの定義</a>
+          <a href="#title1-1" class="list-group-item"><small>　① : 自分のデータの枠組みを決めよう！</small></a>
+          <a href="#title1-2" class="list-group-item"><small>　② : 枠組みを作ろう！</small></a>
+          <a href="#title1-3" class="list-group-item"><small>　③ : 枠組みを変更する</small></a>
+          <a href="#title1-3-1" class="list-group-item"><small>　　⑴ : 枠組みを追加する</small></a>
+          <a href="#title1-3-2" class="list-group-item"><small>　　⑵ : 間違った設定を直す</small></a>
+          <a href="#title1-4" class="list-group-item"><small>　④ : まとめ</small></a>
+          <a href="#title2" class="list-group-item">2 : データベースへの内容の追加</a>
+          <a href="#title2-1" class="list-group-item"><small>　① : データを作ろう！</small></a>
+          <a href="#title2-2" class="list-group-item"><small>　② : データを変更しよう</small></a>
+          <a href="#title2-3" class="list-group-item"><small>　③ : データを削除する</small></a>
+          <a href="#title2-4" class="list-group-item"><small>　④ : まとめ</small></a>
+          <a href="#title3" class="list-group-item"><small>3 : まとめ</small></a>
+        </div>
+      </strong>
     </div>
   </div>
 </div>

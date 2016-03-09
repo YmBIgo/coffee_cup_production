@@ -36,7 +36,8 @@
         <br>
         １つ目は<strong class="little-remarkable color-red">ページ</strong>、２つ目は<strong class="little-remarkable color-blue">データ</strong>です。
         <hr>
-        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong>① : Railsのページ</strong></p>
+        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : Railsのページ</strong></p>
+        <br>
         ウェブページというからには、Railsでもページをどのように表示させるかを自分で設定しなければなりません。
         <br>
         ですがウェブページはデータを表示させるだけでなく、<strong>発信されたデータを保存しなければなりません。</strong>
@@ -95,7 +96,8 @@
         <hr class="red-hr">
         <i class="fa fa-star color-blue"></i>　Railsでは、<strong class="little-remarkable"><u>データの表示・作成・編集・削除</u></strong>の４種類のページをどのように表示させるかを自分で設定していきます。
         <hr>
-        <p id="title1-2"><i class="fa fa-tags color-blue"></i>　<strong>② : Railsのデータ</strong></p>
+        <p id="title1-2"><i class="fa fa-tags color-blue"></i>　<strong class="remarkable">② : Railsのデータ</strong></p>
+        <br>
         Railsでは、データの表示と保存の方法に応じてページに役割が振り分けられていることを説明しました。
         <br>
         では、そのデータとはどのようなものなのでしょうか？
@@ -163,7 +165,8 @@
         <hr class="red-hr">
         <i class="fa fa-star color-blue"></i>　<strong>Rails内のデータ保存は、データベースの枠組みの定義とデータの操作のやり方を自分で設定していくことで実現する。</strong>
         <hr>
-        <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong>③ : まとめ</strong></p>
+        <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : まとめ</strong></p>
+        <br>
         <strong>Railsでは、出来上がった雛形の上にどのようなページを表示させ、どのようなデータを保存させるか・ページとデータの操作をどう振り分けるかを設定していくことでウェブページを作っていく。</strong>
         <br>
         <br>
@@ -180,7 +183,8 @@
         <br>
         <strong>インストールする時に必要になる<span class="color-blue">「ターミナル」</span>というアプリケーションについて説明します。</strong>
         <hr>
-        <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong>① : ターミナル</strong></p>
+        <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : ターミナル</strong></p>
+        <br>
         まずは開いてみましょう！下の画像を参考に開いてみてください
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Terminal_Open.png",
                               :width => "90%",
@@ -227,20 +231,20 @@
         <br>
         <small>※　半角英数字で入力して下さい</small>
         <hr>
-        <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong>② : Railsのインストール</strong></p>
+        <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : Railsのインストール</strong></p>
         <br>
         <strong>では下のリンクにあるインストールの方法にしたがい、Railsのインストールをしてみましょう！</strong>
         <br><br>
         <a href="http://techacademy.jp/magazine/4630" target="_blank"><i class="fa fa-download"></i>　Railsのインストール方法</a>
         <hr>
-        <p id="title2-2-3"><i class="fa fa-tags color-red"></i>　<strong>③ : Sublime Textのインストール</strong></p>
+        <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : Sublime Textのインストール</strong></p>
         <br>
         設定ファイルを編集するためのファイルの編集ソフト、<strong><u>Sublime Text</u></strong>もインストールしましょう。
         <br>
         <br>
         <a href="http://techacademy.jp/magazine/3060#se2" target="_blank"><i class="fa fa-download"></i>　Sublime Textのインストール方法</a>
         <hr>
-        <p id="title2-2-4"><i class="fa fa-tags color-red"></i>　<strong>④ : MySQLのインストール</strong></p>
+        <p id="title2-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : MySQLのインストール</strong></p>
         <br>
         ここでは<strong><u>MySQL</u></strong>というデータベースを使いますので、それをインストールしましょう。
         <hr class="red-hr">
@@ -275,7 +279,8 @@ Or, if you don't want/need launchctl, you can just run:
         <pre class="pre-terminal">ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents</pre>
         <pre class="pre-terminal">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</pre>
         <hr>
-        <p id="title2-2-5"><i class="fa fa-tags color-red"></i>　<strong>⑤ : Sequel Proのインストール</strong></p>
+        <p id="title2-5"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑤ : Sequel Proのインストール</strong></p>
+        <br>
         データベースの中身（あのExcelの表）を簡単に表示させてくれるソフトウェアである<strong><u>Sequel Pro</u></strong>をインストールしましょう。
         <br><br>
         <a href="https://github.com/sequelpro/sequelpro/releases/download/1.1.1/sequel-pro-1.1.1.dmg"><i class="fa fa-download"></i>　Sequel Proをダウンロード（クリックすると始まります）</a>
@@ -312,6 +317,7 @@ Or, if you don't want/need launchctl, you can just run:
   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
     <br>
     <div id="slide-bar" class="clear-fix">
+    <strong>
       <div class="list-group nomargin">
         <a href="#title" class="list-group-item list-title"><h4>Ruby on Rails の基本</h4></a>
         <a href="#title0" class="list-group-item">この章の目的</a>
@@ -324,10 +330,11 @@ Or, if you don't want/need launchctl, you can just run:
         <a href="#title2" class="list-group-item">2 : Railsの準備</a>
         <a href="#title2-1" class="list-group-item"><small>　① : ターミナル</small></a>
         <a href="#title2-2" class="list-group-item"><small>　② : Railsのインストール</small></a>
-        <a href="#title2-2-3" class="list-group-item"><small>　③ : Sublime Textのインストール</small></a>
-        <a href="#title2-2-4" class="list-group-item"><small>　④ : MySQLのインストール</small></a>
-        <a href="#title2-2-5" class="list-group-item"><small>　⑤ : Sequel Proのインストール</small></a>
+        <a href="#title2-3" class="list-group-item"><small>　③ : Sublime Textのインストール</small></a>
+        <a href="#title2-4" class="list-group-item"><small>　④ : MySQLのインストール</small></a>
+        <a href="#title2-5" class="list-group-item"><small>　⑤ : Sequel Proのインストール</small></a>
       </div>
+    </strong>
     </div>
   </div>
 </div>
