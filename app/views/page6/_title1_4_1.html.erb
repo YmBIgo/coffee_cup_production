@@ -1,0 +1,218 @@
+<h4 id="chapter6-1-4-1">
+        <p id="title1-4-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : ページを設定する</strong></p>
+        <br>
+        まずは<strong>「<u>７つのページのうち、どのページを使うか</u>」</strong>の設定をします。
+         <br><br>
+         ７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル</strong>（configフォルダにある）を見てみましょう。
+                 <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        内容は前に変更しましたよね。
+        <br><br>
+        <strong><u>上のように「create」を追加した</u></strong>と思います。これで「データを作成（create）」するページを使うことを設定できました。
+        <hr class="red-hr">
+        では、「<u>データ操作</u>」の設定をしましょう。データ操作は「データベース名_controller.rb」ファイルで設定します。
+        <br>
+        <strong>「posts」データベースのデータ操作を設定する「posts_controller.rb」ファイルから設定を始めましょう。</strong>
+        <br><br>
+        まずは「app」フォルダの中にある「controllers」フォルダから、「<strong>posts_controller.rb</strong>」を開きましょう。（Sublime Textの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちら</strong></a>）
+        <br><br>
+        開けたら、<u>「def create」と「end」の間</u>を下のように設定しましょう。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（16行目を追加）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>15
+16
+17
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        今回は少し内容が複雑ですね。
+        <br>
+        「<u>@post</u>」がhtmlファイルで表示させる時に標識、「<u>Post.create</u>」でデータを作っているのはわかると思うので、
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>params.<span class='word-red'>require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>)</span>
+</td>
+</tr>
+</table>
+        <br>
+        の部分が少し分からないと思います。
+        <br><br>
+        実は「新しいデータの記入（new）」をしたページから送られた、例えば「<u>nameは'山田太郎'、contentは'春からSFC'、placeは'新宿'</u>」のようなデータは、全てこの<strong>「params」</strong>の部分に集約されています。
+        <br><br>
+        なのでこの<strong>「params」</strong>が、
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>(<span class='word-purple'>:name</span> => <span class='word-yellow'>"入力された内容"</span>, <span class='word-purple'>:content</span> => <span class='word-yellow'>"入力された内容"</span>, <span class='word-purple'>:place</span> => <span class='word-yellow'>"入力された内容"</span>)</span>
+</td>
+</tr>
+</table>
+        <br>
+        を示しています。
+        <br><br>
+        その後ろの
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>.<span class='word-red'>require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>)</span>
+</td>
+</tr>
+</table>
+        <br>
+        では、<strong>「<u>postsのデータベースのname、content、placeの値以外は保存しない</u>」</strong>ことを設定しています。
+        <br>
+        これはセキュリティー上、他のデータを改ざんされたりされるのを防ぐための設定になります。<strong><u>セキュリティーのために必要と思って下さい。</u></strong>
+        <br><br>
+        「require」の後ろに変更する「:データベース名（単数形）」、「permit」の後ろに作成する「:枠組みの名前」を設定します。
+        <br><br>
+        まとめると、
+<pre>
+@設定する標識 = データベース名(１文字目大文字・単数形).create(params.require(:単数形データベース名).permit(:枠組みの名前...あるだけ))
+</pre>
+        こんな感じになりますが、<u>覚える必要はないので適宜コピペしてきて下さい。</u>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　<u>「tweets」データベースの「name」「content」「place」の「データを作成（create）」</u>するページのデータ操作はどのように設定するのでしょうか？</strong>
+        <br><br>
+        <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+        <br>
+        <i class="fa fa-file color-red"></i><strong>　tweets_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'><span class='word-blue'>Tweet</span>.create(params.permit(<span class='word-purple'>:tweet</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        データ操作はここまでなので、<strong><u>ページの設定をやってみましょう！</u></strong>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_create_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_create_1.png",
+                    :target => ["_blank"] %>
+        このようなページができるようにします。
+        <br><br>
+        まずは、Sublime Textで開いた「myapp」で<strong>「<i>app > views > posts</i>」</strong>を開いてみましょう。
+        <br>
+        その中に<strong>「<u>create.html.erb</u>」</strong>ファイルはあるでしょうか？あったら開きましょう！
+        <br><br>
+        <strong>このファイルに「データを作成（create）」するページを表示する設定を追加していきます。</strong>
+        <br><br>
+        では、この「create.html.erb」を下のように変更してみましょう！
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　create.html.erb</strong>
+        <br>
+        <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿が完了しました&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.name %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.content %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.place %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        内容が変更できたら、ターミナルで「<u>myapp</u>」に移動してから<strong>「<i>rails s</i>」</strong>でサーバを立ち上げて、「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」を開いてみましょう！
+        <br><br>
+        データの入力欄のページは表示されると思うで、そこで好きなデータを入力してみて「登録する」ボタンを押してみて下さい。
+        <br>
+        下のように「投稿が完了しました」の画面に移動できたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_create_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_create_1.png",
+                    :target => ["_blank"] %>
+        移動ができたら、<a href="/pages/how_to_open#title2" target="_blank"><strong>Sequel Pro</strong></a>で中身を確認してみましょう！
+        <br>
+        データは保存できているでしょうか？
+        <hr class="red-hr">
+        ページの内容は分かりやすいですよね。
+        <br>
+        「<a href="/pages/5#title1"><strong>show.html.erb</strong></a>」にあった、
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= @post.name %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        と同じような感じで作成したデータを表示させています。
+        <br><br>
+        今回の「@post」は、
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@post = <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+</td>
+</tr>
+</table>
+        <br>
+        と今回は「find(idの番号)」とデータを選択しているわけではありませんが、<u>「create」でもデータを表示することができる</u>ので覚えて下さい。
+</h4>

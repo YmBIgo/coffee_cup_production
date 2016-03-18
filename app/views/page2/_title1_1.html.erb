@@ -1,0 +1,61 @@
+<h4 id="chapter2-1-1">
+        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : Railsのページ</strong></p>
+        <br>
+        ウェブページというからには、Railsでもページをどのように表示させるかを自分で設定しなければなりません。
+        <br>
+        ですがウェブページはデータを表示させるだけでなく、<strong>発信されたデータを保存しなければなりません。</strong>
+        <hr class="red-hr">
+        なのでRailsでは、<strong class="color-red">データの表示と保存の方法で、作るページの役割が決まっています。</strong>
+        <br>
+        Railsでウェブページを作る人は、データの表示・保存の方法に合わして自分でページを設定します。
+        <br>
+        Twitterを例にページの役割を説明していきます。
+        <br><br>
+        <i class="fa fa-check-square color-red"></i>　<strong>データの表示</strong>
+        <br>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_index_and_show.png",
+                              :width => "90%",
+                              :class => "textbook-title-img hover_img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_index_and_show.png",
+                    :target => ["_blank"] %>
+        データベースに保存されたデータを<strong class="remarkable color-red">表示</strong>させます。
+        <br>
+        データベース内の全てのデータを表示するページと、データベースから１つのデータを<strong class="little-remarkable"><u>選択</u></strong>して表示するページからできています。
+        <br>
+        <strong class="color-blue">タイムライン</strong>と<strong class="color-red">１つの投稿のページ</strong>の違いと考えてもらえれば分かりやすいかと思います。
+        <br>
+        <small>※　データベースからデータを表示しないページを表示させることもできます。（ランディングページみたいなページ）</small>
+        <br><br>
+        <i class="fa fa-check-square color-red"></i>　<strong>データの作成</strong>
+        <br>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_new.png",
+                              :width => "90%",
+                              :class => "textbook-title-img hover_img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_new.png",
+                    :target => ["_blank"] %>
+        入力させたデータを<strong class="remarkable color-red">データベースに保存</strong>します。
+        <br>
+        データを入力させるページと、入力したデータを送信して保存させるページの２つのページからできています。
+        <br><br>
+        <i class="fa fa-check-square color-red"></i>　<strong>データの編集</strong>
+        <br>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_edit.png",
+                              :width => "90%",
+                              :class => "textbook-title-img hover_img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_edit.png",
+                    :target => ["_blank"] %>
+        入力された内容に選択された<strong class="remarkable color-red">データベースの内容を変更</strong>します。
+        <br>
+        これも、データを入力させるページと、入力されたデータを送信して内容を変更させるページからできています。
+        <br><br>
+        <i class="fa fa-check-square color-red"></i>　<strong>データの削除</strong>
+        <br>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_destroy.png",
+                              :width => "90%",
+                              :class => "textbook-title-img hover_img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_destroy.png",
+                    :target => ["_blank"] %>
+        選択されたデータを<strong class="remarkable color-red">データベースから削除</strong>します。
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　Railsでは、<strong class="little-remarkable"><u>データの表示・作成・編集・削除</u></strong>の４種類のページをどのように表示させるかを自分で設定していきます。
+</h4>

@@ -1,0 +1,290 @@
+<h4 id="chapter4-1-2">
+          <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : データの枠組みを作ろう！</strong></p>
+          <br>
+          <strong class="little-remarkable">Facebookの投稿のデータベースをウェブページのデータベースに作ってみましょう！</strong>
+          <br>
+          <br>
+          <strong>Railsでのデータベースの定義はターミナルを使って行います。</strong>まず右上の虫眼鏡マークで探して開いてみましょう。開けたら前章で作った「myapp」に移動しましょう！
+          <br><br>
+          　<strong>ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        では始めましょう！まず、
+        <br><br>
+        　<strong>ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model post</span>
+</td>
+</tr>
+</table>
+        <br>
+        を入力して下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_model_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_model_post.png",
+                    :target => ["_blank"] %>
+        このように表示されたでしょうか？
+        <br>
+        この入力で<strong>タイトルが「posts」のデータベースを作るための設定ファイルを作ります。</strong><u>gは「generate」の略です。</u>
+        <br>
+        赤線が引かれた「<strong>2016..._create_posts.rb</strong>」がその設定ファイルになります。
+        <br>
+        この設定ファイルを変更して、データベースの枠組みを作ります。
+        <br>
+        <small>※　Railsで作るデータベースは全て英語表記になりますので、タイトルは「posts」にしました。枠組みの部分も英語で決めます。</small>
+        <br><br>
+        データベースを作る時は
+<pre>
+rails g model データベースのタイトル名（単数）
+</pre>
+        を入力して、その設定ファイルを作ります。
+        <br>
+        「<strong>rails g model タイトル名（単数形）</strong>」で作られた設定ファイル名は、「<strong>作った日時_create_タイトル名（複数形）.rb</strong>」になります。
+        <hr class="red-hr">
+        <strong>では、その設定ファイルを変更していきましょう！</strong>
+        <br>
+        <br>
+        「<strong><u>Sublime Text</u></strong>」でその設定ファイルを変更してみましょう！まずは右上の虫眼鏡マークで探して開きましょう！
+        <br>
+        開けたら、「myapp」のフォルダを「Sublime Text」で開いてみましょう！
+        <br>
+        （ファイル・フォルダの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちら</strong></a>から）
+        <br>
+        下のようなウィンドウはでてきましたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",
+                    :target => ["_blank"] %>
+        出てきたら下の手順に従ってファイルを開いてみましょう。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Migration_Create_Post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Migration_Create_Post.png",
+                    :target => ["_blank"] %>
+        この「<strong>2016...._create_posts.rb</strong>」というファイルが枠組みを作る設定ファイルになります。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreatePosts < <span class='word-purple'>ActiveRecord:</span><span class='word-purple'>:Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:posts</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line remarkable-code'>                     </span>
+<span class='code-line remarkable-code'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+<span class='code-line'></span>
+</td>
+</tr>
+</table>
+        <br>
+        なんとなく「postsを作っているんだなー」ってことは推測できますでしょうか？
+        <br>
+        この「<u>create_table :posts</u>」という部分が「<strong>postsというタイトルのデータベースを作る</strong>」ことを示している設定になります。自分で設定ファイルを０から書く必要はないのでなんとなく理解してもらえれば結構です。
+        <br>
+        データベースの枠組みは、「<strong>create_table :posts do |t|</strong>」とその次に出てくる「<strong>end</strong>」の間に書いて設定していきます。
+        <br>
+        <br>
+        そう見ると枠組みの設定はすでに一つ決まっていますね。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb（５行目）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> false</span>
+</td>
+</tr>
+</table>
+        <br>
+        この１行は<strong>データが作られた時間と更新された時間の枠組みを加える設定</strong>で、最初から加えられています。<u>いらなければ消すこともできます。</u>
+        <br><br>
+        <strong class="little-remarkable"><u>それでは下にある投稿のデータベースの枠組みと同じものを設定してみましょう！</u></strong>
+        <br><br>
+        <strong>posts</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>id</th>
+                <th>name</th>
+                <th>content</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>192</td>
+                <td>山田太郎</td>
+                <td>春からSFC</td>
+                <td style="font-size:11px;">2016-03-02 16:13:52</td>
+                <td style="font-size:11px;">2016-03-02 16:13:52</td>
+              </tr>
+            </tbody>
+          </table>
+          <small>※　枠組みの名前は日本語ではなく英語なのは、<strong><u>枠組みはアルファベットでしか設定できない</u></strong>からです。</small>
+        <hr class="red-hr">
+        「<strong><i>created_at</i></strong>」と「<strong><i>updated_at</i></strong>」は「<strong><i>t.timestamps null: false</i></strong>」で付け加えられる作成時間と更新時間になり、「<strong><i>id</i></strong>」は自動的に生成されるので、設定しなければいけないのは「<strong><i>name</i></strong>」「<strong><i>content</i></strong>」の２つになります。
+        <br>
+        <u>枠組みの設定には最低限２つのことを設定</u>する必要があります。
+        <ul class="number_ul">
+          <strong><li>枠組みに入れるデータの種類</li></strong>
+          例えば、<u>数字・短い文字列・長い文字列・時間</u>など
+          <strong><li>枠組みの名前</li></strong>
+          <u>アルファベットで同じ名前が被らないように設定</u>する
+        </ul>
+        そして実際の設定は、
+        <br>
+<pre>
+t.データの種類 :名前
+</pre>
+        で設定します。
+        <br><br>
+        <strong>では、枠組みの設定をやってみましょう！</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb（5,6行目を追加）</strong>
+        <br>
+        <small>※　<strong><u>半角英数で入力</u></strong>して、変更が完了したら<strong><u>「Command」と「s」を一緒に押して内容を保存</u></strong>して下さい。</small>
+        <br>
+        <small>※　綺麗に見せるために空白は多めに入れていますが、打つのが面倒なら空白は１つとかでも大丈夫です。</small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'>
+<span class='code-line'><span class='word-red'>class </span>CreatePosts < <span class='word-purple'>ActiveRecord:</span><span class='word-purple'>:Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:posts</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>   :name</span></span>
+<span class='code-line remarkable-code'>      t.text       <span class='word-purple'>    :content</span></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> false</span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        見ての通り、上から「<strong><i>name</i></strong>」「<strong><i>content</i></strong>」の順番で設定しました。
+        <br><br>
+        <ul class="number_ul">
+        <strong><li>データの種類の設定</li></strong>
+          数字の時は<strong>「<u>t.integer</u>」</strong>、短い文字列の時は<strong>「<u>t.string</u>」</strong>、長い文字列の時は<strong>「<u>t.text</u>」</strong>、細かい日時の時は<strong>「<u>t.timestamps</u>」</strong>と書いて行います。
+          <br>
+          <small>※　他にも、正偽の「t.boolean」や日時の「t.date」などがある。</small>
+        <strong><li>名前の設定</li></strong>
+          <strong><u>データの種類の設定の後で「:名前」を加える</u></strong>ことで行います。
+        </ul>
+        <br>
+        これで、<strong class="little-remarkable"><u>数字を入れる「id」、短い文字列を入れる「name」、長い文字列を入れる「content」と日時を入れる「created_at/updated_at」が入る枠組み「posts」の設定</u></strong>ができました。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　枠組みの設定に、<strong><u>短い文字列をいれる「place」を加える設定</u></strong>はどのようになるでしょうか？（マウスを上に置くと答えがでます）
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>答
+</td>
+<td class='code-content answer-code'><span class='code-line'>  t.string <span class='word-purple'>:place</span></span>
+</td>
+</tr>
+</table>
+<hr class="red-hr">
+        ここまでで設定ファイルの変更ができたら、<strong><u>設定ファイルの内容を実際のデータベースに反映させます。</u></strong>
+        <br>
+        下の入力をしてみて下さい！
+        <br><br>
+        　<strong>ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate.png",
+                    :target => ["_blank"] %>
+        このように表示されたでしょうか？
+        <br>
+        <strong><u>これでデータベースの作成はできました！</u></strong>
+        <hr class="red-hr">
+        作ったデータベースを<strong><u>Sequel Pro</u></strong>で確認してみましょう！これもまず右上の虫眼鏡マークで探して開きましょう！
+        <br>
+        開けたら下の手順に従って開いてみましょう！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                    :target => ["_blank"] %>
+        できたら左上の「<strong>Choose Database</strong>」をクリックして下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                    :target => ["_blank"] %>
+        出てきたリストボックスの中から「<strong>myapp_development</strong>」をクリックしてみて下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                    :target => ["_blank"] %>
+        左に「<strong>posts</strong>」はありますか？これが作ったデータベースになります。これを開いてみましょう！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development.png",
+                    :target => ["_blank"] %>
+        開いて下の画像のように１番上の行ができてるでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development_posts.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development_posts.png",
+                    :target => ["_blank"] %>
+        <strong><u>Ruby on Railsでは、こうやってウェブページで使われるデータベースを設定します。</u></strong>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>ターミナルで「<u>rails g model タイトル名</u>」で設定ファイルを作成し、設定ファイルを変更した上で「<u>rake db:migrate</u>」をすることでデータベースを設定する。</strong>
+</h4>

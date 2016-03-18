@@ -1,0 +1,56 @@
+<h4 id="chapter6-1-7">
+          <p id="title1-7"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑦ : データの削除をする（destroy）</strong></p>
+          <br>
+          もうデータの操作をするページの説明も最後になります。
+          <br>
+          <strong><u>最後に「データの削除（destroy）」について説明したいと思います。</u></strong>
+          <br><br>
+          基本的には、「<a href="/pages/4#title2-3" target="_blank"><strong>rails c</strong></a>」でやった
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(3).destroy</span>
+</td>
+</tr>
+</table>
+        <br>
+        を設定する感じだと思えば分かりやすいと思います。
+        <hr class="red-hr">
+        流れとしては、
+        <br>
+        下のように「１つのデータを表示（show）」するページに<strong>「投稿を削除」するページに移動する文字列を加え、</strong>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
+                    :target => ["_blank"] %>
+        クリックしてページを移動すると、下のような「削除が完了」したページに移動します。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
+                    :target => ["_blank"] %>
+        「データの全表示（index）」をするページで確認すると、下のようにデータがなくなります。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_all_after_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_all_after_destroy.png",
+                    :target => ["_blank"] %>
+        このような流れなので、
+        <strong>
+        <ul class="number_ul">
+          <li>データ削除のページへ移動する文字列の追加</li>
+          <li>データ削除のデータ操作</li>
+          <li>データ削除完了のページの設定</li>
+        </ul>
+        </strong>
+        をやっていきます。
+        <br><br>
+        では、このデータの削除をやってみましょう！
+        </h4>
+        <hr>
+        <%= render "page6/title1_7_1" %>
+        <hr>
+        <%= render "page6/title1_7_2" %>

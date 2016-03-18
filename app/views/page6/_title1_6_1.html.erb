@@ -1,0 +1,200 @@
+<h4 id="chapter6-1-6-1">
+        <p id="title1-6-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : ページを設定する</strong></p>
+        <br>
+        まずは<strong>「<u>７つのページのうち、どのページを使うか</u>」</strong>の設定をします。
+         <br><br>
+         ７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル</strong>（configフォルダにある）を見てみましょう。
+                 <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        内容は前に変更しましたよね。
+        <br><br>
+        <strong><u>上のように「update」を追加した</u></strong>と思います。これで「データを作成（update）」するページを使うことを設定できました。
+        <hr class="red-hr">
+        では、「<u>データ操作</u>」の設定をしましょう。データ操作は「データベース名_controller.rb」ファイルで設定します。
+        <br>
+        <strong>「posts」データベースのデータ操作を設定する「posts_controller.rb」ファイルから設定を始めましょう。</strong>
+        <br><br>
+        まずは「app」フォルダの中にある「controllers」フォルダから、「<strong>posts_controller.rb</strong>」を開きましょう。（Sublime Textの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちら</strong></a>）
+        <br><br>
+        開けたら、<u>「def update」と「end」の間</u>を下のように設定しましょう。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（24、25行目を追加）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>23
+<span class="color-red"><strong>24
+25</strong></span>
+26
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line remarkable-code'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        今回追加した２行もどこかで見たことがある設定ですね。
+        <br>
+        １行目の<strong>「<u>@post = Post.find(params[:id])</u>」</strong>は、<a href="/pages/5#title1-1-1" target="_blank"><strong>「１つのデータの表示（show）」</strong></a>をするページや<a href="/pages/6#title1-5-1" target="_blank"><strong>「編集するデータの入力（edit）」</strong></a>をするページで使いました。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>では、２行目はなにをしているのでしょうか？</strong>
+        <br><br>
+        この２行目では、選択したデータ「<u>@post</u>」を入力されたデータ「<u>params</u>」に「<u>変更（update）</u>」しています。
+        <hr class="red-hr">
+        <strong><a href="/pages/6#title1-4-1" target="_blank">「データの作成」</a></strong>の部分で似た設定がありましたね。
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<span class="color-red"><strong>2</strong></span>
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line remarkable-code'>    @post = <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        この「params」の部分に、<u>送られてきたデータが全て集約されます。</u>この「params」に「nameは'山田太郎'、contentは'春からSFC'、placeは'江ノ島'」のような情報が入ります。
+        <br>
+        そしてこのデータベースの内容以外は変更させないために、<u>「require」と「permit」を設定しています。</u>
+        <br><br>
+        こうして設定したデータベースの内容だけを「作成（create）」するような設定になっています。
+        <br><br>
+        <i class="fa fa-play-circle color-red"></i>　<strong>「データの変更（update）」も同じです。</strong>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>@post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+</td>
+</tr>
+</table>
+        <br>
+        この設定では「データの変更」の「update」が使われているので、
+        <br>
+        <strong>「@post」</strong>を「<u>params（受け取った内容のうち、「posts」データベースの「content」と「place」）</u>」に<strong>「変更（update）」</strong>するデータ操作になります。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　「編集するデータの記入（edit）」するページから受け取った、<u>「books」データベースの「name」「price」「page」の「データの変更（update）」</u>をするページのデータ操作はどのようになるでしょう？</strong>
+        <br><br>
+        <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="5"></textarea>
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content answer-code'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @book = <span class='word-blue'>Book</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @book.update(params.<span class="word-red">require</span>(<span class='word-purple'>:book</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:price</span>, <span class='word-purple'>:page</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        データ操作はここまでなので、<strong><u>ページの設定をやってみましょう！</u></strong>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
+                    :target => ["_blank"] %>
+        編集するデータの入力が終わったら、このようなページを表示させましょう！
+        <br><br>
+        まずは、Sublime Textで開いた「myapp」で<strong>「<i>app > views > posts</i>」</strong>を開いてみましょう。
+        <br>
+        その中に<strong>「<u>update.html.erb</u>」</strong>ファイルはあるでしょうか？あったら開きましょう！
+        <br><br>
+        <strong>このファイルに「編集するデータの入力」でボタンを押した後に表示されるページの設定をします。</strong>
+        <br><br>
+        では、この「update.html.erb」を下のように変更してみましょう！
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　update.html.erb</strong>
+        <br>
+        <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を変更しました。&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.name %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.content %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.place %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>ここではなにを設定しているでしょうか？</strong>
+        <br><br>
+        ここでは変更した後のデータを表示させています。
+        <br>
+        詳しい説明は、<a href="/pages/5#title1-1" target="_blank"><strong>「一つのデータの表示（show）」</strong></a>するページや、<a href="/pages/6#title1-4" target="_blank"><strong>「データの作成（create）」</strong></a>するページなどを参考にして下さい。
+        <hr class="red-hr">
+        では、ページを表示させてみましょう！
+        <br>
+        <small>※　一回、「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。これで内容の変更が適用されます。
+        </small>
+        <br><br>
+        できたらブラウザで、「<a href="http://localhost:3000/posts/edit/1" target="_blank"><strong>localhost:3000/posts/1/edit</strong></a>」を開いてみましょう！
+        <br>
+        開けたら好きな情報を入力して、「変更する」ボタンを押しましょう！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
+                    :target => ["_blank"] %>
+        上のようなページは表示されたでしょうか？
+        <br>
+        出てきたら<a href="/pages/how_to_open" target="_blank"><strong>Sequel Pro</strong></a>を見るなり、「<a href="http://localhost:3000/posts/1"><strong>localhost:3000/posts/1</strong></a>」を見るなりして、内容が変更されたかを確認してみましょう！
+</h4>

@@ -1,0 +1,141 @@
+<h4 id="chapter5-1-2-3">
+        <p id="title1-2-3"><i class="fa fa-check-square color-red"></i><strong>　⑶ : まとめ</strong></p>
+        <strong>「データの全表示をする（index）」</strong>ページの３つの設定をまとめる。
+        <hr class="red-hr">
+        <p id="title1-2-3-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>７つのページの設定</strong></p>
+        <br>
+        <strong>「config」フォルダの中にある「route.rb」ファイルに「<u>index</u>」を設定する</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple remarkable-code'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <p id="title1-2-3-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>データ操作の設定</strong></p>
+        <br>
+        <strong>「app > controllers」フォルダにある「データベース名_controller」ファイルの「<u>index</u>」を設定する</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line remarkable-code'>    @posts = <span class='word-blue'>Post</span>.all</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>データを全て選択するデータ操作「.all」と、htmlで表示させる標識</u>を設定する</strong>
+        <hr class="red-hr">
+        <p id="title1-2-3-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ページ設定</strong></p>
+        <br>
+        <strong>「app > views」フォルダ内にある「データベース名」のファルダの中にある、「<u>index.html.erb</u>」に内容を設定していく。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;メッセージ一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @message.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.name %&gt;さんのメッセージ&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.send_to %&gt;さんから&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        ページでは、<strong><u>「controller」ファイルで設定したデータ</u>を表示します。</strong>
+        <br><br>
+        <strong>「<u>&lt;% @設定した標識.each do |名前| %&gt;</u>」</strong>で複数のデータを各データに区切り、
+        <br>
+        <strong>「<u>&lt;% end %&gt;</u>」</strong>との間にその各データの表示の方法を設定します。
+        <br><br>
+        <strong>「<u>&lt;%= 名前.枠組みの名前 &gt;</u>」</strong>で各データを表示します。
+        <hr class="red-hr">
+        <p id="title1-2-3-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ブラウザでの表示</strong></p>
+        <br>
+        設定が完了したら<strong>ターミナルで「rails s」をした後で</strong>、ブラウザでページを開く。
+        <br>
+        全てのデータを表示する（index）ページは、<strong>「<u>locahost:3000/データベース名</u>」</strong>で開く。
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong>ページの移動（リンク）</strong>
+        <br><br>
+        ページの移動は、
+<pre>
+&lt;a href="飛びたいページ"&gt;文字&lt;/a&gt;
+</pre>
+        で行う。
+        <br><br>
+        「index」ページへの移動は、
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        で、「show」ページでの移動は例えば、
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        で設定する。
+        <hr class="red-hr">
+        <strong>
+        ここまででデータの全表示をするページを作りました。
+        <br>
+        長くなったので、この章の続きの「ページでのデータの作成・変更・削除」は次のページでやりましょう！
+        <hr>
+        </strong>
+</h4>

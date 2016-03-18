@@ -22,5 +22,22 @@
 <script>
   new WOW().init();
 </script>
+<script>
+  var x = 133;
+function larger()  {
+  x *= 1.1;
+  var selected_doc = document.getElementsByTagName("h4");
+  for(var i = 0; i < selected_doc.length; i++){
+    selected_doc[i].style.fontSize = x+"%";
+  }
+}
+function smaller() {
+  x /= 1.1;
+  var selected_doc = document.getElementsByTagName("h4");
+  for(var i = 0; i < selected_doc.length; i++){
+    selected_doc[i].style.fontSize = x+"%";
+  }
+}
+</script>
 </body>
 </html>

@@ -1,0 +1,114 @@
+<h4 id="chapter6-1-5-2">
+        <p id="title1-5-2"><i class="fa fa-tags color-red"></i>　<strong>⑵ : まとめ</strong></p>
+        <strong>「編集するデータの記入（edit）」</strong>ページの３つの設定をまとめる。
+        <hr class="red-hr">
+        <p id="title1-5-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>７つのページの設定</strong></p>
+        <br>
+        <strong>「config」フォルダの中にある「route.rb」ファイルに「<u>edit</u>」を設定する</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <p id="title1-5-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>データ操作の設定</strong></p>
+        <br>
+        <strong>「app > controllers」フォルダにある「データベース名_controller」ファイルの「<u>edit</u>」を設定する</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<span class="color-red"><strong>2</strong></span>
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line remarkable-code'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>編集するデータを選択する「.find(params[:id])」と、htmlで表示させる標識</u>を設定する</strong>
+        <hr class="red-hr">
+        <p id="title1-5-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ページ設定</strong></p>
+        <br>
+        <strong>「app > views」フォルダ内にある「データベース名」のファルダの中にある、「<u>edit.html.erb</u>」に内容を設定していく。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"変更する"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        ページでは、<strong><u>「controller」ファイルで選択したデータの内容を変更する入力欄の設定と選択したデータを表示する設定</u>をします。</strong>
+        <br><br>
+        <strong>「<u>&lt;%= form_for @設定した標識 do |好きな名前| %&gt;</u>」</strong>で空のデータを指定して、<strong>「<u>&lt;% end %&gt;</u>」</strong>との間に<u>データの入力欄と「データを変更（update）」するボタンを作ります。</u>
+        <br><br>
+        <strong>「<u>&lt;%= 名前.入力欄 :枠組みの名前 %&gt;</u>」</strong>でデータの入力欄を作り、
+        <br>
+        <strong>「<u>&lt;%= 名前.submit "表示する文字列" %&gt;</u>」</strong>で「データを変更（update）」するボタンを作ります。
+        <br>
+        <small>※　短い文字列は「名前.text_field」で、長い文字列は「名前.text_area」で、数字は「名前.number_field」で設定する</small>
+        <hr class="red-hr">
+        <p id="title1-5-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ブラウザでの表示</strong></p>
+        <br>
+        設定が完了したら<strong>ターミナルで「rails s」をした後で</strong>、ブラウザでページを開く。
+        <br>
+        「編集したデータの入力」をするページは、<strong>「<u>locahost:3000/データベース名/idの番号/edit</u>」</strong>で開く。
+        <hr class="red-hr">
+        ここまでで、「編集するデータの記入（edit）」をするページを作りました。
+        <br>
+        <strong>次は、入力された「データの変更（update）」するページを作りましょう。</strong>
+</h4>

@@ -1,0 +1,309 @@
+<h4 id="chapter8-1-2">
+  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : ページを作ってみよう！</strong></p>
+  <br>
+  最初に設定した<strong>「<a href="http://localhost:3000" target="_blank">localhost:3000</a>」</strong>に画像を表示させてみましょう。
+  <br>
+  <u>まずは画像ファイルをRuby on Railsの設定ファイルに追加します。</u>
+  <br><br>
+  <a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header12.jpg" target="_blank"><strong>こちら</strong></a>に画像ファイルがあるので、これをダウンロードして、
+  <br>
+  <strong>「app > assets > images」</strong>に画像ファイルを保存して下さい。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets1.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets2.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets2.png",
+              :target => ["_blank"] %>
+  Sublime Textで「myapp」を開いてみて、<strong>「app > assets > images > header12.jpg」</strong>を開いてみて下さい。
+  <br>
+  下のような画像は表示されたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Sublime_Text_header12.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Sublime_Text_header12.png",
+              :target => ["_blank"] %>
+  この保存された画像を表示させてみます。
+  <hr class="red-hr">
+  まずは「index.html.erb」を下のように変更してみて下さい。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1</strong>
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span>ようこそ&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;投稿一覧を見る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  開いても内容は変更されていないと思いますが、
+  <br>
+  この「header-image」に画像を表示させる設定を「style.scss」に加えます。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss（7〜15行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>7
+8
+9
+10
+11
+12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange">/assets/header12.jpg</span>);</span>
+<span class='code-line'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>400</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class="word-blue">-webkit-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-moz-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-o-background-size</span>: cover;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <br>
+  変更が完了したら、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して再起動して、<strong>「<a href="http://localhost:3000" target="_blank">localhost:3000</a>」</strong>を開いてみましょう！
+  <br><br>
+  下のように表示されたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_image.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_image.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  内容について説明しましょう。
+  <br>
+  まず、
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>8
+</td>
+<td class='code-content'><span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange">/assets/header12.jpg</span>);</span>
+</td>
+</tr>
+</table>
+  <br>
+  ここで、先に保存した「header12.jpg」を「header-image」の背景に使用することを設定しています。
+  <br><br>
+  もし「header.jpg」を使うなら、
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>8
+</td>
+<td class='code-content'><span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange remarkable-code">/assets/header.jpg</span>);</span>
+</td>
+</tr>
+</table>
+  <br>
+  という設定になります。
+  <hr class="red-hr">
+<table class="highlight">
+<tr>
+<td class="code-line-no text-center">9
+</td>
+<td class="code-content"><span class='code-line'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>400</span><span class='word-red'>px</span></span>;</span>
+</td>
+</tr>
+</table>
+  <br>
+  で高さの設定をしています。
+  <br>
+  横の長さはコンピューターが画像の大きさに合わせて勝手に決めてくれますが、自分で決めたいなら
+<pre>
+width:好きな長さpx（もしくは%）
+</pre>
+  できめることもできます。
+  <hr class="red-hr">
+  最後の４行は、
+<table class="highlight">
+<tr>
+<td class="code-line-no text-center">10
+11
+12
+13
+</td>
+<td class="code-content"><span class='code-line'>  <span class="word-blue">-webkit-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-moz-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-o-background-size</span>: cover;</span>
+</td>
+</tr>
+</table>
+  <br>
+  画面の大きさが変更された時に、それに応じた画像の大きさの変更をする設定になります。
+  <br><br>
+  いろいろな設定はありますが、コピペで使ってみて慣れましょう。
+  <hr class="red-hr">
+  <strong><u>今の状態だと文字が左上の表示されて見づらいですね。最後にこの文字を中央に配置してみましょう。</u></strong>
+  <br><br>
+  まず文字を
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
+              :target => ["_blank"] %>
+  みたいに中央揃えに配置してみましょう。<u>これもBootstrapの設定でできます。</u>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（2行目を変更）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;ようこそ&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;投稿一覧を見る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <small>※　「&lt;strong&gt;」で囲まれた部分は強調されて表示されます。</small>
+  <br><br>
+  内容が変更できたら、「Command」と「c」を一緒に押してサーバーを一回止めてからもう一度「rails s」でサーバーを立ち上げましょう。
+  <br>
+  できたら、<strong>「<a href="http://localhost:3000" target="_blank">localhost:3000</a>」</strong>を開いてみましょう。
+  <br>
+  文字は中央揃えになったでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
+              :target => ["_blank"] %>
+  このようにBootstrapで文字を中央揃えにするには
+<pre>
+text-center
+</pre>
+  をclassに設定します。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;ようこそ&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>また右揃えにしたければ「text-right」、左揃えにしたければ「text-left」を使います。</strong>
+  <hr class="red-hr">
+  中央揃えにはできたと思いますが、まだ文字が上に張り付いていますね。
+  <br>
+  次はこれを直しましょう。
+  <br><br>
+  まずはこの「&lt;h1&gt;」に、<strong><u>class「header-content」を設定しましょう。</u></strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>2
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center header-content"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;ようこそ&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  この「header-content」の装飾の内容を「style.scss」に設定していきます。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>まずは練習として、<u>class「header-content」の文字の大きさを75pxにする設定</u>をしてみましょう。
+  <br><br>
+  文字の大きさは、
+  </strong>
+<pre>
+font-size:文字の大きさpx;
+</pre>
+  <strong>で設定します。</strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="3"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>16
+17
+18
+</td>
+<td class='code-content answer-code'><span class='code-line'><span class='word-green'>.header-content</span>{</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>75</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  ではこの「header-content」に、文字を下に下げる設定を追加します。
+  <br><br>
+  文字を下に下げるなら<a href="/pages/7#title2-2-4-margin" target="_blank"><strong>空白を作る</strong></a>
+<pre>
+margin-top:150px
+</pre>
+  でできるでしょうか？
+  <br><br>
+  実際に加えてみると、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_margin.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_margin.png",
+              :target => ["_blank"] %>
+  このように逆に上に空白ができてしまいました。
+  <br>
+  <u>この「margin」は要素の外に空白を作る設定</u>なので、今回のようにすでにある要素（&lt;div&gt;）の中では使えませんでした。
+  <br><br>
+  <strong>今回のような要素（&lt;div&gt;）の中で空白を作るには、「<a href="/pages/css#title1-3" target="_blank">padding</a>」という設定を使います。</strong>
+  <br>
+  ではこの「padding」を使って設定をしてみましょう。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.header-content</span>{</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>75</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>padding-top</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <br>
+  内容が変更できたら、<u>「Command」と「c」を一緒に押して</u>サーバーを一回止めてからもう一度「<u>rails s</u>」でサーバーを立ち上げましょう。
+  <br>
+  できたら、<strong>「<a href="http://localhost:3000" target="_blank">localhost:3000</a>」</strong>を開いてみましょう。
+  <br>
+  下のように表示はされたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
+              :target => ["_blank"] %>
+  ここらへんは分かりづらい部分も多いと思うので、適宜使っていきながら試してみましょう。
+</h4>

@@ -1,0 +1,32 @@
+<h4 id="chapter2-1-2-1">
+        <p id="title1-2-1"><i class="fa fa-check-square color-blue"></i>　<strong>⑴ : データベースの枠組みの定義</strong></p>
+        <p>
+        Excelで表を作るときにまず一番上の行を決めますよね？一番上の行が決まらなければ、どんなデータも代入できません。
+        <br><br>
+        これと同じように、<strong><u>利用者が発信した情報を保存するデータベースにも一番上の行が必要になります。</u></strong>
+        <br>
+        このデータベースの一番上の行が、発信された利用者の情報の受け皿になります。
+        <br>
+        Railsでデータを扱う際には、<strong class="little-remarkable color-red"><u>このデータベースの一番上の行の定義、枠組みの定義</u></strong>が必要になります。
+        <br>
+        <br>
+        amazonの商品を例に説明しましょう。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/amazon_expensive.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/amazon_expensive.png",
+                    :target => ["_blank"] %>
+        amazonの商品には「商品名・値段・画像・レビュー」などの情報があり、データベースではこれらの情報が保存されています。
+        <br>
+        基本的なデータベースの枠組みは下のようなものになるでしょう。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Amazon_database.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Amazon_database.png",
+                    :target => ["_blank"] %>
+        <br>
+        <i class="fa fa-star color-blue"></i>　Railsでは、このようなデータベースの１番上の行を定義を自分で設定します。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　Twitterのデータベースの枠組みがどのように定義されているのか考えてみよう！
+        </p>
+        </h4>

@@ -1,0 +1,26 @@
+        <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+        <h4 id="chapter3-0">
+        <i class="fa fa-bookmark color-red"></i>　HTMLの記述の方法・Railsの雛形ウェブページの作り方を学び、Railsの雛形を開いてみる。
+        <hr>
+        Railsを動かす環境もできたので、
+          <br>
+          <strong class="remarkable">早速、Railsでウェブページを作ってましょう！</strong>
+          <br><br>
+          ・・・と言いたいのですが、その前にまず<u>自分でページを作るために必要となる知識</u>について少し説明したいと思います。
+          <br>
+          <br>
+          <i class="fa fa-question-circle color-green"></i>　<strong><u>ここで質問です。</u>ウェブページはなにで表示されているのでしょうか？</strong>
+          <br><br>
+          <a href="/pages/1#title2-1">第１章</a>でも説明しましたが、<strong>HTMLファイル</strong>という文字列でページの表示の方法が決められています。
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Code.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Code.png",
+                      :target => ["_blank"] %>
+          これはFacebookトップページの長い長いHTMLファイルですが、この文字列がどのようにページを表示させるかを決めています。
+          <br>
+          <br>
+          FacebookのページのHTMLファイルは長いですが、<u>簡単なページならもっと短く書くこともできます。</u>
+          <br>
+          <strong>まずはこのHTMLを使って、ページを作ってみましょう！</strong>
+        </h4>

@@ -1,0 +1,75 @@
+<h4 id="chapter3-2-1">
+        <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : rails new</strong></p>
+        <br>
+        では、Railsでウェブページの雛形を作りましょう！
+<br><br>
+        <strong>ターミナル</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails new myapp -d mysql</span>
+</td>
+</tr>
+</table>
+        <br>
+        と入力して下さい！
+        <br>
+        <small>※　半角英数字で入力して下さい</small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Rails_new_myapp_2.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Rails_new_myapp_2.png",
+                    :target => ["_blank"] %>
+        こんな感じに表示されて、
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Rails_new_myapp_after.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Rails_new_myapp_after.png",
+                    :target => ["_blank"] %>
+        こんな感じに表示されましたでしょうか？
+        <br>
+        <strong class="remarkable">これでウェブページの雛形は完成しました！</strong>
+        <br><br>
+        Finderで確認してみましょう。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_myapp.png",
+                    :target => ["_blank"] %>
+        「rails_project」に「myapp」というフォルダができているのが確認できますか？
+        <br><br>
+        <strong>この「myapp」がウェブページの雛形で、中にある設定ファイルを自分の好きな設定に変更していくことでウェブページを作っていきます。</strong>
+        <hr class="red-hr">
+        では、さっきの
+<br><br>
+<strong>ターミナル</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails new ページ名 -d mysql</span>
+</td>
+</tr>
+</table>
+        <br>
+        はなにをしたのでしょうか？
+        <br><br>
+        これは<strong class="little-remarkable"><u>「myappという名前のウェブページの雛形を作れ！（rails new myapp）MySQLというデータベースを使って（-d mysql）」</u></strong>というコンピューターへの命令になります。
+        <br><br>
+        これ以上は説明のしようがないので次にウェブページの雛形を作る時は、
+        <br><br>
+<strong>ターミナル</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails new ページ名 -d mysql</span>
+</td>
+</tr>
+</table>
+        <br>
+        をターミナルに入力して下さい。
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>ウェブページの雛形を作る時は、ターミナルで「<u>rails new ウェブページ名 -d mysql</u>」と入力する。</strong>
+</h4>

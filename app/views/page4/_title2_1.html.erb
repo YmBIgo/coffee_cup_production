@@ -1,0 +1,153 @@
+<h4 id="chapter4-2-1">
+        <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : データを作ろう！</strong></p>
+        <br>
+        簡単な枠組みもできたので、データを入れていきましょう！
+        <br><br>
+        <strong class="little-remarkable">ここでは『<u>新宿にいた山田太郎さんの「春からSFC」という投稿</u>』をできた枠組みに追加しましょう！</strong>
+        <hr class="red-hr">
+        本来ならデータの保存はウェブページで行うものなのですが、ページの作り方はまだやっていないので、ここでは<strong><u>ターミナル</u></strong>を使ってデータを作っていきます。
+        <br><br>
+        まずは、ターミナルで<strong>「myapp」</strong>まで移動して下さい。
+        <br><br>
+        　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        移動ができたら<strong>「<i>rails c</i>」</strong>と入力してみて下さい。
+        <br><br>
+        　<strong>ターミナル（半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails c</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように入力する画面は出てきたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c.png",
+                    :target => ["_blank"] %>
+        この<strong>「<i>rails c</i>」</strong>は、<u>Ruby on Railsで作ったウェブページの<strong>データベースの操作などを行う機能</strong></u>です。ここでは、この機能を使ってデータを作っていきます。
+        <br>
+        この<strong>「<i>rails c</i>」</strong>で入力する操作は、
+        <br>
+        一回、<strong>「<i>exit</i>」</strong>と入力してみて下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c_exit.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c_exit.png",
+                    :target => ["_blank"] %>
+        またターミナルの入力欄に戻ったでしょうか？
+        <br>
+        <strong>「<i>rails c</i>」</strong>は<strong>「<i>exit</i>」</strong>と入力して終了させることができます。使い終わったら、<strong>「<i>exit</i>」</strong>を入力して終了させましょう。
+        <hr class="red-hr">
+        ではもう一度<strong>「<i>rails c</i>」</strong>を入力して開いてみましょう！
+        <br>
+        ここに入力をすることで、データベースへのデータの保存を行っていきます。
+        <br>
+        <strong class="little-ramarkable"><u>では下の入力をしてみて下さい</u></strong>
+        <br><br>
+        <strong>　ターミナル（日本語以外は半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "山田太郎", :content =&gt; "春からSFC", :place =&gt; "新宿")</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_create_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_create_post.png",
+                    :target => ["_blank"] %>
+        <strong>これでデータベースへのデータの保存は完了しました！</strong>
+        <br><br>
+        ではSequel Proで中身を確認してみましょう！（開き方は<a href="/pages/how_to_open#title2" target="_blank"><strong>こちら</strong></a>から）
+        <br>
+        下のようにデータが追加されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Posts_Data1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Posts_Data1.png",
+                    :target => ["_blank"] %>
+        <hr class="red-hr">
+        データの作成は、
+<pre>
+データベースのタイトル.create(:枠組み => "内容", :枠組み => "内容", あるだけ...)
+</pre>
+        を入力すればできます。（データベースのタイトルは大文字から始まる単数形）
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "山田太郎", :content =&gt; "春からSFC", :place =&gt; "新宿")</span>
+</td>
+</tr>
+</table>
+        <br>
+        入力にidと時間がないのは、<strong><u>idと時間は自動的に作ってくれてる</u></strong>からです。
+        <br>
+        具体的な例を出すので、考えてみましょう！
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>では、『湘南花子さんが藤沢で投稿した「おはよう」という投稿』はどのようにして入力して作ればいいでしょうか？
+        <br>（マウスを上に置けば答えが出ます）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.create(:name =&gt; "湘南花子", :content =&gt; "おはよう", :place =&gt; "藤沢")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>下のデータベースの枠組みがあった時、『藤沢太郎さんの「六本木なう」というツイート』はどのように入力すれば作れるでしょうか？<br>（マウスを上に置けば答えが出ます）</strong>
+        <br><br>
+        <strong>tweets</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>id</th>
+                <th>user</th>
+                <th>content</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+              </tr>
+            </thead>
+          </table>
+          <hr class="red-hr">
+          <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
+          <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Tweet.create(:user =&gt; "藤沢太郎", :content =&gt; "六本木なう")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>データの作成は「<u>データベースのタイトル.create(:枠組み=>"内容", :枠組み=>"内容", :枠組み=>"内容")</u>」で行う</strong>
+        <br>
+        <small>※　<u>データベースのタイトルは大文字から始めて、単数形にする。</u></small>
+</h4>

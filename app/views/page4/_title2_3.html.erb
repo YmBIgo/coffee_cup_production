@@ -1,0 +1,120 @@
+<h4 id="chapter4-2-3">
+        <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : データを削除する</strong></p>
+        <br>
+        データの変更もできたので、<u>今度はデータを削除してみましょう！</u>
+        <br>
+        まずは、<strong>「<i>rails c</i>」</strong>を入力しましょう。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>復習ついでに『あなたがシリコンバレーで投稿した「インフルで倒れた」という投稿』のデータを作ってみましょう！<br>（マウスを上に置けば答えが表示されます）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line answer-code small-code'>Post.create(:name =&gt; "あなたの名前", :content =&gt; "インフルで倒れた", :place =&gt; "シリコンバレー")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <strong class="little-remarkable"><u>ではこの「インフルで倒れた」データを削除しましょう！</u></strong>
+        <br><br>
+        データの削除も変更と同じように、「find」でデータを指定してから削除を行います。
+        <br>
+        なので、まずはこの投稿の番号を知っておきましょう。
+        <br>
+        まずは下の入力をしてみましょう。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.all</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように表示されたでしょうか？<u>この中に「インフルで倒れた」データは入っているでしょうか？</u>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_all.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_all.png",
+                    :target => ["_blank"] %>
+        この入力は、<strong>「<u>postsにある全てのデータを表示</u>」</strong>させています
+        <br><br>
+<pre>
+データベースのタイトル.all
+</pre>
+        でデータベースに保存されたデータを全て表示させます。
+        <br>
+        <small>※　データベースのタイトルは、大文字から始まる単数形で書く</small>
+        <br><br>
+        もちろんこんなことをしなくても、<a href="/pages/how_to_open#title2" target="_blank"><strong>Sequel Pro</strong></a>で中身を確認することもできます。
+        <hr class="red-hr">
+        <strong><u>作成されていることが確認できたら、削除をしていきましょう！</u></strong>
+        <br>
+        データの削除も変更と同じように、まずはデータを選択してから行います。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　では復習で、この新しく作った「インフルで倒れた」データを選択してみましょう。</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(3)</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        データの削除は、
+<pre>
+選択したデータ.destroy
+</pre>
+        でできます。
+        <br>
+        では、やってみましょう。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+        <br>
+        <small>　※　数字の部分は適宜、自分が削除したいデータのidに変更する</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(3).destroy</span>
+</td>
+</tr>
+</table>
+        <br>下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_3_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_3_destroy.png",
+                    :target => ["_blank"] %>
+        できたら<a href="/pages/how_to_open#title2" target="_blank"><strong>Sequel Pro</strong></a>で中身を確認しましょう。
+        <br>
+        作成されたデータはなくなっているでしょうか？
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>「idが5のデータを削除」する場合はどのような入力をすればいいのでしょうか？</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(5).destroy</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-exclamation color-red"></i>　<u>終わったら<strong>「<i>exit</i>」</strong>を入力して下さい。これで<strong>「<i>rails c</i>」</strong>を終了させます。</u>
+        <br><br>
+        <i class="fa fa-star color-blue"></i>　<strong>データの削除は「<u>データベースのタイトル.find(idの番号).destroy</u>」で行う </strong>
+        <br>
+        <small>※　データベースのタイトルは大文字から始めて、単数形にする。</small>
+</h4>

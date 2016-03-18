@@ -1,0 +1,265 @@
+<h4 id="chapter4-1-3-1">
+        <p id="title1-3-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 枠組みを追加する</strong></p>
+        <br>
+        データベースを作る時に、最初から完成されたデータベースを作ることは難しいです。
+        <br>
+        データベースの枠組みを設定する時は、<strong><u>後から内容を追加する</u></strong>ことがよくあります。その枠組みの追加を説明していきます。
+        <br><br>
+        まずは、ターミナルで「myapp」にまで移動して下さい。
+        <br><br>
+        　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        移動できたら、下の入力をしてみて下さい。
+        <br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g migration addColumnToPost</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_migration_add_column_to_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_migration_add_column_to_post.png",
+                    :target => ["_blank"] %>
+        この入力は、<strong>枠組みを変更する「add_column_to_post」という追加の設定ファイルを作成する</strong>入力になります。
+        <br><br>
+        なのでまとめると、
+<pre>
+rails g migration 設定ファイル名
+</pre>
+        で、<strong><u>指定した名前の追加の設定ファイルを作成</u></strong>します。
+        <br>
+        設定ファイル名はどのようなものでも大丈夫ですが、<u>後で見た時に分かりやすいものにしましょう。</u>
+        <hr class="red-hr">
+        では、この設定ファイルを見てみましょう！
+        <br>
+        まず「Sublime Text」で「myapp」を開いてみましょう！（ファイル・フォルダの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちら</strong></a>から）
+        <br>
+        開けたら、下の手順でファイルを開いてみましょう！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Open_migration_add_column_to_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Open_migration_add_column_to_post.png",
+                    :target => ["_blank"] %>
+        <i class="fa fa-file color-red"></i><strong>　2016..._add_column_to_post.rb</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost < <span class='word-purple'>ActiveRecord:</span><span class='word-purple'>:Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        こんな感じのファイルが表示されたでしょうか？
+        <br>
+        このファイルの「<u><i>def change</i></u>」とその次の「<u><i>end</i></u>」の間に、枠組みを変更する設定を追加します。
+        <br><br>
+        枠組みの変更には、<strong class="little-remarkable">枠組みの追加、変更、削除</strong>があります。
+        <br>
+        ここでは、<u>枠組みの追加</u>をやってみましょう！
+        <hr class="red-hr">
+        この「rails g migration 設定ファイル名」で作ったファイルでの枠組みの変更には最低限３つの設定をする必要があります。
+        <br>
+        <ul class="number_ul">
+          <strong><li>どのデータベースを変更するか</li></strong>
+          どのデータベースを変更するかを指定します。<strong><u>この場合は「posts」になります。</u></strong>
+          <strong><li>変更する枠組み</li></strong>
+          追加する時は、追加する枠組みの名前を設定します。変更・削除の場合はすでにある枠組みを指定します。
+          <strong><li>枠組みに入力するデータの種類</li></strong>
+          これは枠組みを作る時のものと同じで、<strong><u>数字・短い文字列・長い文字列・日時</u></strong>などあります。
+        </ul>
+        <br>
+        追加の場合、この３つの設定は
+<pre>
+add_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+        になります。
+        <br>
+        すでに作ってある<strong><u>「posts」のデータベースに「place」を加える</u></strong>のを例にして見てみましょう！
+        <br><br>
+        <strong>posts</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>id</th>
+                <th>name</th>
+                <th>content</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+                <th style="background-color: #f2dede;">place</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="font-size:12px">
+                <td>１</td>
+                <td>山田太郎</td>
+                <td>春からSFC</td>
+                <td>2016/03/02 16:26</td>
+                <td>2016/03/02 16:26</td>
+                <td style="background-color: #f2dede;">新宿</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr class="red-hr">
+          <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb（半角英数で３行目を追加）</strong>
+          <br>
+          <small>※　変更ができたら、「Command」と「s」を一緒に押して内容を保存しましょう！</small>
+          <br>
+          <small>※　空白は少なくても多くても大丈夫です。</small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost < <span class='word-purple'>ActiveRecord:</span><span class='word-purple'>:Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:place</span>, <span class='word-purple'>:string</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        これが、<strong>「<u>postsというデータベースに、placeというstring・短い文字列の枠組みを追加するよ</u>」</strong>という設定になります。このような設定はいくつでも追加することができます。
+        <br><br>
+        データの種類だけ難しいですが、もし種類が長い文字列だったら<u>stringはtext</u>に、数字なら<u>stringはinteger</u>になります。
+        <br>
+        <small>※　なぜか「:」が入っていますが、これは設定ファイルの仕様なんで許してやってください。</small>
+        <hr class="red-hr">
+        <p><i class="fa fa-question-circle color-green"></i>　では例えば、<strong>「<u>数字を入れるreputationの枠組みを、postsというデータベースに追加する</u>」</strong>にはどのような設定が必要でしょうか？（マウスを上に置けば答えがでます）</p>
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb（３行目）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
+        <br>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content answer-code'><span class='code-line'>  add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:reputation</span>, <span class='word-purple'>:integer</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        みたいな感じになります。
+        <hr class="red-hr">
+        ここまでで追加について説明しましたが、<strong>削除・変更についても少し説明しましょう。</strong>
+        <br>
+        削除と変更も、追加と同じように<strong><u>データベース名・枠組み・データの種類</u></strong>の３つを指定します。
+        <br>
+        内容を変える設定なので追加の時と違って、<strong>枠組みとデータの種類はすでに作成されているものを指定しないといけません。</strong>
+        <br><br>
+        削除したい時は、
+<pre>
+remove_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+        変更したい時は、
+<pre>
+change_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+        を設定ファイルに追加します。（変更とは言ってもデータの種類しか変更できませんが）
+        <hr class="red-hr">
+        なので<strong><u>「posts」のデータベースの「string（短い文字列）」が入る「name」の枠組みを削除したい</u></strong>時は、
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>設定ファイル</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  remove_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        のように設定し、
+        <br>
+        <strong><u>「posts」のデータベースの「string（短い文字列）」が入る「name」の枠組みを、「text（長い文字列）」が入るように変更したい</u></strong>時は、
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>設定ファイル</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  change_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:text</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        のように設定します。（stringを書く必要はありません。）
+        <hr class="red-hr">
+        ここまでで、設定ファイルの設定の方法について説明しました。
+        <br>
+        でも現状では設定はたしかに終わったものの、<u>その設定内容はまだ適用されていません。</u>
+        <br>
+        <strong class="little-remarkable">ここでその設定を適用させましょう！</strong>
+        <br><br>
+        設定の適用はターミナルを使って行います。まずはターミナルで「myapp」まで移動しましょう。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        「myapp」まで移動できたら、下の入力をして下さい。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のような表示が出てきたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate2.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate2.png",
+                    :target => ["_blank"] %>
+        <u>これで枠組みの変更は完了しました！</u>
+        <hr class="red-hr">
+        データベースが変更されているかを「Sequel Pro」で確認してみましょう！（開き方は<a href="/pages/how_to_open#title2" target="_blank"><strong>こちら</strong></a>）
+        <br>
+        <u>枠組みに「place」は追加されているでしょうか？</u>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>枠組みの変更を設定するファイルは「<u><i>rails g migration 設定ファイル名</i></u>」で作り、ターミナルで「<u><i>rake db:migrate</i></u>」を入力することでその設定を適用させる。</strong>
+</h4>

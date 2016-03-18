@@ -1,0 +1,373 @@
+<h4 id="chapter7-2-2-4">
+  <p id="title2-2-4"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : navigation-bar</strong></p>
+  <br>
+  ここまで入力欄もボタンもできたところで、大分綺麗なページになったのではないかと思います。
+  <br>
+  <strong><u>ページの装飾の最後で、ページの上についているバー（navigation-bar）をBootstrapの設定した「<a href="/pages/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」で使ってみたいと思います。</u></strong>
+  <br><br>
+  感じとしては、下のようなものにしていきたいと思います。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
+              :target => ["_blank"] %>
+  <br>
+  ではやってみましょう！
+  <hr class="red-hr">
+  まずは「myapp」をSublime Textで開き（開き方は<a href="/pages/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）、<strong>「<i>app > views > layouts > application.html.erb</i>」</strong>を開きましょう。
+  <br>
+  この<strong>「application.html.erb」</strong>に設定を加えます。
+  <br><br>
+  では9行目の
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（9行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  の後に、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse"</span> <span class="word-green">data-target</span>=<span class="word-yellow">"#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  をコピペして追加して下さい。（自分で打ちたければどうぞ）
+  <br><br>
+  できたら内容を適用させるために、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して下さい。
+  <br>
+  下のような表示は出たでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_1.png",
+              :target => ["_blank"] %>
+  少し内容が被ってしまっていましたが、上にバーがついたと思います。
+  <hr class="red-hr">
+  内容に関しては私もあまり理解でききっていないので説明はしません<strong>（<u>逆に言えば理解していなくてもコピペすれば使えます</u>）</strong>が、
+  <br><br>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>10
+</td>
+<td><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  で<strong><u>タイトルの左側にでている「myapp」を出し、「&lt;a&gt;」のリンクで「/posts」へのページ移動</u></strong>をしています。
+  <br>
+  適宜内容を変えて使ってみましょう！
+  <hr class="red-hr">
+  では、次に被ってしまった内容を直しましょう。
+  <br>
+  被ってしまった内容を直すには<strong><a href="#application-html" target="_blank">「show」や「index」などページを埋め込んで表示</a></strong>させている、
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（10〜12行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+11
+12
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container"</span>&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  をCSSで少しだけ下にずらします。
+  <br>
+  まずはこの「<a href="#title2-2-1-css-div" target="_blank"><strong>div</strong></a>」に、<strong>「<u>main-page</u>」</strong>の「<a href="/pages/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」を設定しましょう。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong><u>&lt;div class="container"&gt;</u>に「main-page」のclassを追加してみましょう！</strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="3"></textarea>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+11
+12
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container main-page"</span>&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <strong>では、CSSファイル「style.scss」に「main-page」の設定を加えましょう。</strong>
+  <br><br>
+  <p id="title2-2-4-margin" class="fix-link-nav"><i class="fa fa-play-circle"></i>　内容をずらすには、指定した部分の上に空白をつくります。</p>
+  実際には、
+<pre>
+margin-top:50px;
+</pre>
+  のようにして設定します。
+  <br><br>
+  空白の大きさを変えたければ数字の部分を設定します。
+  <br>
+  空白を右に作りたければ<strong>「<u>margin-right:</u>」</strong>、左なら<strong>「<u>margin-left:</u>」</strong>、下なら<strong>「<u>margin-bottom:</u>」</strong>を設定します。
+  <br>
+  <small>※　<a href="/pages/css#title1-3" target="_blank"><strong>こちら</strong></a>も参考</small>
+  <br><br>
+  まずはSublime Textで「myapp」を開き（開き方は<a href="/pages/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）、<strong>「<i>app > assets > stylesheets > style.scss</i>」</strong>を開いてみましょう。
+  <br><br>
+  開けたら下の設定を加えましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>4
+5
+6
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.main-page</span>{</span>
+<span class='code-line'>  <span class='word-blue'>margin-top</span>:<span class='word-blue'><span class='word-purple'>50</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <br>
+  <u>これで「main-page」のclassの部分の上に50pxの空白ができました。</u>
+  <br><br>
+  「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して再起動して、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみましょう！
+  <br>
+  下のように表示されたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_2.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_2.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  最後に下のように
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
+              :target => ["_blank"] %>
+  右側にも「新しく投稿する」ボタンを追加して、「<a href="/pages/6#title1-3" target="_blank"><strong>new</strong></a>」ページに移動できるようにしましょう！
+  <br><br>
+  右側のボタンの設定は、
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（22,23行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>19
+20
+21
+<strong class="color-red">22
+23</strong>
+24
+25
+26
+</td>
+<td class='code-content'><span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  に設定を加えます。
+  <br>
+  ではやってみます。上の22行目の下に内容を追加して下さい。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（23行目を追加）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>22
+<strong class="color-red">23</strong>
+24
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <u>ここで設定した「&lt;li&gt;」と「&lt;/li&gt;」の間で囲われた部分が表示されます。</u>
+  <br>
+  今回は<strong>「<u>&lt;a href="/posts/new"&gt;新しく投稿する&lt;/a&gt;</u>」の部分</strong>になりますね。
+  <br><br>
+  では実際に見てみましょう！
+  <br><br>
+  「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して再起動して、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみましょう！
+  <br>
+  下のように表示されたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
+              :target => ["_blank"] %>
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>では、「/posts」に移動する<a href="/pages/5#title1-2-2" target="_blank">リンク</a>「トップに戻る」（&lt;a&gt;）を上のバーの右側に追加するための設定はどのようになるでしょうか？（23行目の上にマウスを置くと答えがでます）</strong>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（22〜24行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>22
+23
+24
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line answer-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  他のページにも移動してみて、上に同じようなバーが出てくるかを確認して下さい。
+  <br><br>
+  <i class="fa fa-star color-blue"></i>　<strong>Bootstrapで上に表示させるバーを作るには、</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（10〜26行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+<strong class="color-red">10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</strong>
+27
+28
+29
+30
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse"</span> <span class="word-green">data-target</span>=<span class="word-yellow">"#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line remarkable-code'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line remarkable-code'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line remarkable-code'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line remarkable-code'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container"</span>&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  を追加します。
+  <br>
+  自分でコードを打つ必要はないので、コピペでもいいのでとりあえず貼り付けてみましょう！
+  <br><br>
+  この中でも変更する必要があるのは、
+  <ul class="number_ul">
+  <strong><li>左側につけるボタン</li></strong>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>10
+</td>
+<td><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong><li>右側につけるボタン</li></strong>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>22
+23
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  の間に
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  を設定する。
+  <hr class="red-hr">
+  <strong><u>ここまでお疲れさまです。少しまとめをします。</u></strong>
+</h4>

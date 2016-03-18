@@ -1,0 +1,69 @@
+<h4 id="chapter3-2-2-2">
+        <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : データベースの用意</strong></p>
+        ここまででRailsで使うツール（gem）の設定と導入の方法について説明しました。
+        <br>
+        ですが設定はもう一つあります。それは<strong>データベースの用意</strong>です。
+        <br>
+        ウェブページでデータの保存を行う時に必要になる空のExcelの表(データベース)を作ります。
+        <br>
+        <strong class="little-remarkable">すぐ終わるので早速やってみましょう！</strong>
+        <hr class="red-hr">
+        まずは<u>ターミナルで「myapp」まで移動</u>してみて下さい。（分からなかったら、<a href="/pages/2#title2-1" target="_blank"><strong>こちら</strong></a>を見てみましょう！）
+        <br><br>
+        できたら下の文字を入力して下さい。
+<br><br>
+<strong>ターミナル</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:create</span>
+</td>
+</tr>
+</table>
+<br>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rake_db_create.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rake_db_create.png",
+                    :target => ["_blank"] %>
+        <strong class="little-remarkable">これでデータベースの用意、空のExcelの表の用意は終わりました！</strong>
+        <hr class="red-hr">
+        これで終わりなのは寂しいので、実際に本当にできたかを確認しましょう。
+        <br>
+        前章でインストールした「<strong class="little-remarkable"><u>Sequel Pro</u></strong>」を使って、<u>空のExcelの表・データベースを見てみましょう！</u>
+        <br>
+        まずは右上の虫眼鏡で「Sequel Pro」を検索して開いてみましょう！
+        <br><br>
+        開けたら、下の手順にしたがって「<strong>Connect</strong>」を押して下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                    :target => ["_blank"] %>
+        下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro_Main_Page.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro_Main_Page.png",
+                    :target => ["_blank"] %>
+        できたら左上の「<strong>Choose Database</strong>」を選択して下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                    :target => ["_blank"] %>
+        出てきたリストボックスの中に「<strong>myapp_development</strong>」はありますか？
+        <br>
+        <u>これがウェブページでデータを保存するデータベースになります。</u>
+        <br>
+        <small>※　「ページ名_development」がデータベースの名前になります。</small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                    :target => ["_blank"] %>
+        <strong class="remarkable">ここまででひと通りの設定は終了です。</strong>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>データベースは「<u>rake db:create</u>」と入力して作成する</strong>
+</h4>

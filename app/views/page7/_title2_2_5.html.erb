@@ -1,0 +1,197 @@
+<h4 id="chapter7-2-2-5">
+  <p id="title2-2-5"><i class="fa fa-check-square color-red"></i>　<strong>⑸ : まとめ</strong></p>
+  <br>
+  Bootstrapを使った４つの装飾、<a href="#title2-2-1" target="_blank"><strong>container</strong></a>・<a href="#title2-2-2" target="_blank"><strong>btn</strong></a>・<a href="#title2-2-3" target="_blank"><strong>form-control</strong></a>・<a href="#title2-2-4" target="_blank"><strong>navigation-bar</strong></a>についてまとめる
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <p id="title2-2-5-container" class="fix-link-nav"><strong><li>container</li></strong></p>
+    <br>
+    Bootstrapを導入したら、まず<strong>「<u>application.html.erb</u>」</strong>に下のように<strong>「<u>&lt;div class="container"&gt;</u>」</strong>の設定を加える。
+    <br>
+    この設定で、詰めて表示されているページに余白を入れる。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+<span class="color-red"><strong>10</strong></span>
+<span class="color-red"><strong>11</strong></span>
+<span class="color-red"><strong>12</strong></span>
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>html</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>title</span>&gt;Myapp&lt;/<span class='word-red'>title</span>&gt;</span>
+<span class='code-line'>  &lt;%= stylesheet_link_tag    <span class="word-yellow">'application'</span>, <span class='word-purple'>media:</span> <span class="word-yellow">'all'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class="word-purple">true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= javascript_include_tag <span class="word-yellow">'application'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class="word-purple">true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= csrf_meta_tags %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>div </span><span class='word-green'>class</span>=<span class='word-yellow'>"container"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line remarkable-code'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    詳しくは<a href="#title2-2-1" target="_blank"><strong>こちら</strong></a>から
+    <hr class="red-hr">
+    <p id="title2-2-5-btn" class="fix-link-nav"><strong><li>btn</li></strong></p>
+    <br>
+    classに「btn」と好きなボタンを追加する。
+    <br><br>
+    <a class="btn btn-primary">ボタン</a>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ボタン&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <input type="button" class="btn btn-primary" value="登録する">
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"変更する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    詳しくは<a href="#title2-2-2" target="_blank"><strong>こちら</strong></a>から
+    <hr class="red-hr">
+    <p id="title2-2-5-form" class="fix-link-nav"><strong><li>form-control</li></strong></p>
+    <br>
+    入力欄のclassに「form-control」を追加する。
+    <br><br>
+    <input type="input" class="form-control">
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    詳しくは<a href="#title2-2-3" target="_blank"><strong>こちら</strong></a>から
+    <hr class="red-hr">
+    <p id="title2-2-5-nav" class="fix-link-nav"><strong><li>navigation-bar</li></strong></p>
+    <br>
+    Bootstrapで上に表示させるバーを作るには、下の設定を追加します。
+    <br>
+    自分でコードを打つ必要はないので、コピペでもいいのでとりあえず貼り付けてみましょう！
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>application.html.erb（10〜26行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+<strong class="color-red">10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</strong>
+27
+28
+29
+30
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse"</span> <span class="word-green">data-target</span>=<span class="word-yellow">"#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line remarkable-code'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line remarkable-code'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line remarkable-code'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line remarkable-code'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container"</span>&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    この中でも変更する必要があるのは、
+    <ul class="number_ul">
+    <strong><li>左側につけるボタン</li></strong>
+    <br>
+    <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>10
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>右側につけるボタン</li></strong>
+    <br>
+    <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>22
+23
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    の間に
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    を設定する。
+    <br><br>
+    詳しくは<a href="#title2-2-4" target="_blank"><strong>こちら</strong></a>から
+  </ul>
+</h4>

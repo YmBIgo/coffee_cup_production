@@ -1,0 +1,418 @@
+<% provide :title, "CSS設定一覧" %>
+<div class="row">
+  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+    <div class="textbook-area">
+      <div class="textbook-area-inner fadeIn wow">
+        <div id="title" class="textbook-title">
+          <h1><strong>CSS設定一覧</strong></h1>
+        </div>
+        <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header10.jpg",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img") %>
+        <hr>
+        <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+        <h4>
+          <i class="fa fa-star color-red"></i>　CSSの設定の方法について説明する
+          <hr>
+          CSSの設定とは言っても、ここでは<u>普通のCSS</u>と<u>Bootstrapで設定する「<a href="/pages/3#title1-2-css-class" target="_blank">class</a>」</u>の２種類について説明する。
+          <br>
+          <small>※　CSSの書き方については<a href="/pages/3#title1-2" target="_blank"><strong>こちら</strong></a>を参照</small>
+        </h4>
+        <br>
+        <h2 class="textbook-section-title" id="title1"><strong>1 : CSSの設定</strong></h2>
+        <h4>
+          まずは普通のCSSの
+          <strong>
+          <ul class="number_ul">
+            <li>文字の大きさ・色・背景色</li>
+            <li>長さ・高さ、</li>
+            <li>空白</li>
+          </ul>
+          </strong>
+          の３つの書き方について説明します。
+          <hr>
+          <ul class="number_ul" id="title1-1">
+            <strong><li><p style="color:white;background-color:black;font-size:30px;">文字の大きさ・色・背景色</p></li></strong>
+            <br>
+            文字の大きさの設定は、
+<pre>
+font-size:表示させる大きさpx（もしくは%）;
+</pre>
+            で設定します。
+            <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>30</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+            <br>
+            大きさに関しては使っていきながら慣れていきましょう。
+            <hr class="red-hr">
+            色の設定は、
+<pre>
+color:好きな色;
+</pre>
+            で設定します。
+            <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>color</span>:<span class='word-blue'>white</span>;</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>30</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+            <br>
+            色は英語で入力するか、
+            <br>
+            <strong><a href="http://www.netyasun.com/home/color.html" target="_blank">カラーコード一覧表</a></strong>にある「#??????」で設定できます。
+            <hr class="red-hr">
+            背景色の設定は、
+<pre>
+background-color:好きな色;
+</pre>
+            で設定します。
+            <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>background-color</span>:<span class='word-blue'>black</span>;</span>
+<span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>white</span>;</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>30</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+            <br>
+            色は
+<pre>
+color:好きな色;
+</pre>
+            と同じように「#??????」で設定できます（色は<strong><a href="http://www.netyasun.com/home/color.html" target="_blank">こちら</a></strong>を参考）。
+            <hr class="red-hr">
+            <strong><li><p id="title1-2">長さ・高さ</p></li></strong>
+            <br>
+            要素の高さは、
+<pre>
+width:好きな大きさpx（もしくは%）;
+</pre>
+            で設定します。
+            <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.my-form</span>{</span>
+<span class='code-line'>  <span class='word-blue'>width</span>:<span class='word-blue'><span class='word-purple'>500</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+            <br>
+            <a href="/pages/6#title2-3" target="_blank"><strong>Bootstrapのフォーム</strong></a>の長さを設定するときに使いました。
+            <input type="input" style="width:500px;" class="form-control my-form" placeholder="width:500px;">
+            <hr class="red-hr">
+            同じようにして高さは、
+<pre>
+height:好きな大きさpx（もしくは%）;
+</pre>
+            で設定します。
+            <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.my-form</span>{</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>200</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class='word-blue'>width</span>:<span class='word-blue'><span class='word-purple'>500</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+            <br>
+            <textarea class="my-form form-control" placeholder="width:500px;height:200px" style="width:500px;height:200px;"></textarea>
+            <hr class="red-hr">
+            <strong><li><p id="title1-3"></p>空白</li></strong>
+            <br>
+            空白の設定は、
+            <strong>
+              <ul class="number_ul">
+                <li>要素の外側の空白（margin）</li>
+                <li>要素の内側の空白（padding）</li>
+              </ul>
+            </strong>
+            <br>
+            の２種類があります。
+            <br><br>
+            違いについては、
+            <br>
+            <a href="http://scene-live.com/page.php?page=49" target="_blank"><strong>【CSS】margin paddingの違いと使い方を紹介</strong></a>などを参考にしてみて下さい。
+            <hr class="red-hr">
+            要素の外側の空白（margin）は、
+<pre>
+margin-空白の場所:好きな大きさpx（もしくは%）;
+</pre>
+            で設定します。
+            <br>
+            空白の場所は、<u>上が「top」下が「bottom」右が「right」左が「left」</u>で設定します。
+            <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2
+3
+4</strong>
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>margin-top</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>margin-left</span>:<span class='word-blue'><span class='word-purple'>10</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>margin-right</span>:<span class='word-blue'><span class='word-purple'>10</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          要素の中の空白にはpaddingを使います。
+<pre>
+padding-空白の場所:好きな数字px;
+</pre>
+          で設定します。
+          <br>
+          空白の場所についてはmarginと同じです。
+          <hr class="red-hr">
+          例えば、下のように画像の中にある文字（詳しくは<a href="/pages/8#title1-2" target="_blank"><strong>こちら</strong></a>）を
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
+                      :target => ["_blank"] %>
+          もう少し下に下げたい時は、paddingを使って要素の中に空白を作ります。
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "/assets/pahe8/Chrome_posts_root.png",
+                      :target => ["_blank"] %>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+3
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>padding</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+          <br>
+          <strong>marginとpaddingは分からなくなったら、一回試してみてやってみましょう！</strong>
+          </ul>
+          <hr>
+          <strong class="little-remarkable"><u>CSSの設定は他にもたくさんあるので、興味があったらググって調べてみましょう！</u></strong>
+        </h4>
+        <br>
+        <h2 class="textbook-section-title" id="title2"><strong>2 : Bootstrapの設定</strong></h2>
+        <h4>
+        CSSの作業を軽減してくれるツールBootstrap（導入など詳細は<a href="/pages/7#title2" target="_blank"><strong>こちら</strong></a>）の設定について説明します。
+        <br>
+        今回は、
+        <strong>
+        <ul class="number_ul">
+          <li>btn（ボタン）</li>
+          <li>form-control（入力欄）</li>
+          <li>nav（上につくバー）</li>
+        </ul>
+        </strong>
+        について説明します。
+        <hr>
+        <ul class="number_ul">
+          <strong id="title2-1"><li>btn（ボタン）</li></strong>
+          <br>
+          Bootstrapのボタンは、
+<pre>
+class="btn 好きなボタン"
+</pre>
+          で設定します。
+          <hr class="red-hr">
+          <a class="btn btn-primary">青いボタン</a>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;青いボタン&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+          <br>
+          ボタンには、
+          <br>
+          <a class="btn btn-danger">btn-danger</a>　<a class="btn btn-success">btn-success</a>　<a class="btn btn-info">btn-info</a>　などの種類があります。（他のボタンは<a href="http://getbootstrap.com/css#buttons-options" target="_blank"><strong>こちらを参照</strong></a>）
+          <br><br>
+          詳細は<a href="/pages/7#title2-2-2" target="_blank"><strong>こちら</strong></a>
+          <hr class="red-hr">
+          <strong id="title2-2"><li>form-control（入力欄）</li></strong>
+          <br>
+          Bootstrapの入力欄は、
+<pre>
+class="form-control"
+</pre>
+          で設定します。
+          <hr class="red-hr">
+          <input type="input" class="form-control">
+          <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= f.text_field <span class="word-purple">:name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+          <br>
+          詳細は<a href="/pages/7#title2-2-3" target="_blank"><strong>こちら</strong></a>
+          <hr class="red-hr">
+          <strong id="title2-3"><li>nav（上につくバー）</li></strong>
+          <br>
+          Bootstrapのナビゲーションバー（上につくバー）は、
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse"</span> <span class="word-green">data-target</span>=<span class="word-yellow">"#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        で設定します（使う時はコピペして下さい）。
+        <br><br>
+        左側の文字は、
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts" class="navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        で、
+        <br><br>
+        右側の文字は、
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        の間に例えば下のような設定を
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>13
+<strong class="color-red">14</strong>
+15
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        加えることで設定します。
+        <br><br>
+        詳細は<a href="/pages/7#title2-2-4" target="_blank"><strong>こちら</strong></a>。
+        </ul>
+        <hr class="red-hr">
+        <strong>Bootstrapには他にも使い方があるので興味があったら調べてみましょう！</strong>
+        <hr>
+        </h4>
+        <div class="next-page">
+          <a href="javascript:history.back()" class="btn btn-primary">戻る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+    <br>
+    <strong>
+    <div id="slide-bar" class="clear-fix">
+      <div class="list-group nomargin">
+        <a href="#title" class="list-group-item list-title"><h4>css設定一覧</h4></a>
+        <a href="#title0" class="list-group-item">0 : この章の目的</a>
+        <a href="#title1" class="list-group-item">1 : CSSの設定</a>
+        <a href="#title1-1" class="list-group-item"><small>　① : 文字の大きさ・色・背景色</small></a>
+        <a href="#title1-2" class="list-group-item"><small>　② : 長さ・高さ</small></a>
+        <a href="#title1-3" class="list-group-item"><small>　③ : 空白</small></a>
+        <a href="#title2" class="list-group-item">2 : Bootstrapの設定</a>
+        <a href="#title2-1" class="list-group-item"><small>　① : btn</small></a>
+        <a href="#title2-2" class="list-group-item"><small>　② : form-control</small></a>
+        <a href="#title2-3" class="list-group-item"><small>　③ : nav</small></a>
+      </div>
+    </div>
+    </strong>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

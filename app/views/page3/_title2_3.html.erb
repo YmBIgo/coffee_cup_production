@@ -1,0 +1,59 @@
+<h4 id="chapter3-2-3">
+        <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 雛形を開く</strong></p>
+        <br>
+        これで雛形は完成しましたが、開けないと本当にできたか分からないですよね？
+        <br>
+        <strong>ここで出来上がったウェブページを開いてみましょう！</strong>
+        <hr class="red-hr">
+        まずは<u>ターミナルで「myapp」まで移動</u>してみて下さい。（分からなかったら、<a href="/pages/2#title2-1" target="_blank"><strong>こちら</strong></a>を見てみましょう！）
+        <br><br>
+        できたら下の文字を入力して下さい。
+<br><br>
+<strong>ターミナル</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails s</span>
+</td>
+</tr>
+</table>
+<br>
+        下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rails_s.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rails_s.png",
+                    :target => ["_blank"] %>
+        この「<u>rails s</u>」という入力で、<strong class="little-remarkable"><u>ページの表示と保存をする機械・サーバー</u></strong>を使っているコンピューターの中で動かします。
+        <br>
+        <small>※　今動かしているサーバーは自分のコンピューター内で動かしてるものなので、自分のコンピューターからしか見れません。</small>
+        <hr class="red-hr">
+        これでウェブページを表示させることができました。
+        <br>
+        ブラウザで、<a href="http://localhost:3000" target="_blank"><strong class="little-remarkable">localhost:3000</strong></a>を開いてみて下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
+                    :target => ["_blank"] %>
+        このようなページは出てきたでしょうか？これがページの雛形になります。
+        <hr class="red-hr">
+        それでは、「rails s」で動かしたサーバーを一回止めましょう。
+        <br>
+        「rails s」を入力したターミナルの画面で、<strong><u>「Command」と「c」を一緒に押してみてください。</u></strong>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rails_s_finish.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rails_s_finish.png",
+                    :target => ["_blank"] %>
+        これでページの表示と保存をしているサーバーを止めることができました。
+        <br>
+        もう一度ブラウザで、<a href="http://localhost:3000" target="_blank"><strong class="little-remarkable">localhost:3000</strong></a>を開いてみましょう。
+        <br>
+        <strong>今回はサーバーが動いていないので、<u>ページは表示されないはずです。</u></strong>
+        <br>
+        Railsでページを表示させる必要はない時には、「Command」と「c」を一緒に押してサーバーを停止させて下さい。<strong class="little-remarkable"><u>そうしないと電池が無駄に使われます。</u></strong>
+        <hr>
+        <i class="fa fa-star color-blue"></i>　<strong>設定が終わった雛形は、「<u>rails s</u>」をターミナルで入力した状態で「<u>localhost:3000</u>」をブラウザで開くことで見ることができる。</strong>
+</h4>

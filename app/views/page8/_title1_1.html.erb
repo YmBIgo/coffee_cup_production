@@ -1,0 +1,289 @@
+<h4 id="chapter8-1-1">
+  <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : ページを設定しよう！</strong></p>
+  <br>
+  まずは「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」を開いてみましょう！
+  <br>
+  下のような画面はでてきたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
+              :target => ["_blank"] %>
+  これは最初の<strong>「<a href="/pages/3#title2-1" target="_blank">rails new</a>」</strong>で作った雛形のページになります。
+  <br>
+  ここに自分のページを設定してみましょう。
+  <hr class="red-hr">
+  ページを設定するにはなにをすれば良かったか覚えているでしょうか？
+  <ul class="number_ul">
+    <strong><li>どのページを使うかの設定</li></strong>
+    <strong><li>データ操作の設定</li></strong>
+    <strong><li>ページの設定</li></strong>
+  </ul>
+  の<a href="/pages/5#title1" target="_blank"><strong>３つ</strong></a>でしたね。
+  <br><br>
+  今回は<strong>トップページなのでデータ操作をしないページを作ります。</strong>
+  <br>
+  今までデータ操作をするページしか作ってこなかったので、<strong>「データ操作をしないページを作ってもいいのか」という問題はありますが、<u>実はできました。</u></strong>
+  <br>
+  データ操作をしない分だけ、このページでは<strong><a href="/pages/4#title1" target="_blank">データベースの定義（Excelの表を決めること）</a></strong>は必要ありません。
+  <br><br>
+  このようなデータ操作をしないページは<strong>「<a href="/pages/5#title1-2" target="_blank">index</a>」ページ</strong>で設定します。
+  <br>
+  では実際にやってみます。
+  <hr class="red-hr">
+  まずはターミナルで「myapp」にまで移動して下さい。
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+  <br>
+  移動ができたら下の入力をして下さい。
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller welcome</span>
+</td>
+</tr>
+</table>
+  <br>
+  下のような表示はでてきたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/rails_g_controller_welcome.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/rails_g_controller_welcome.png",
+              :target => ["_blank"] %>
+  この
+<pre>
+rails g controller データベース名
+</pre>
+  の入力は、<a href="/pages/6#title2-data-view" target="_blank"><strong>データベースにそったデータ操作とページの設定ファイルを作る入力</strong></a>でしたね。
+  <br><br>
+  今回はその「welcome」データベースは作っていませんね。
+  <br>
+  今回のようにデータ操作をせずページだけを表示させたい時は、ターミナルで
+<pre>
+rails g controller 名前（単数形）
+</pre>
+  を入力して「controller」の設定ファイルとページの設定ファイルを作ります。
+  <br><br>
+  「welcome」データベースのデータ操作はする必要はないのですが、ページの設定のためにこの入力をします。
+  <br>
+  <small>※　もしこのページでデータベースの保存された投稿を表示させるなら、作成された「controller」ファイルに「@post」などの設定を加える必要があります。</small>
+  <br><br>
+  少し例外になりますが覚えて下されば幸いです。
+  <br><br>
+  <ul class="number_ul">
+    <strong><li><i>rails g controller 名前（複数形）</i></li></strong>
+    データベースを<u>使う</u>ページ設定をします。（詳細は<a href="/pages/6#title2-data-view" target="_blank"><strong>こちら</strong></a>）
+    <strong><li><i>rails g controller 名前（単数形）</i></li></strong>
+    データベースを<u>使わない</u>ページ設定をします。
+  </ul>
+  <hr class="red-hr">
+  まずは<strong><u>「どのページを使うか」</u></strong>から設定しましょう。
+  <br>
+  Sublime Textで「myapp」を開き（開き方は<a href="/pages/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）、<strong>「config > route.rb」</strong>を開いて下さい。
+  <br>
+  このファイルに設定を加えます。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>まずは復習からです。<u>「welcome」の「<a href="/pages/5#title1-2" target="_blank">index</a>」ページを使用する</u>にはどのような設定を加えればいいでしょうか？<br>（分からなかったら<a href="/pages/6#title2-route" target="_blank">こちら</a>を参考）</strong>
+  <br><br>
+  <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>route.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+</td>
+</tr>
+</table>
+  <br>
+  この１行を「route.rb」に追加しましょう！
+  <hr class="red-hr">
+  上の１行を追加したら、「route.rb」に下の設定を加えましょう。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>route.rb（4行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+5
+6
+7
+8
+9
+...
+58
+59
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line remarkable-code'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'>  <span class='word-gray'>#   end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  この
+<pre>
+root "表示させるページの設定フォルダ#表示させるページ"
+</pre>
+  が「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」で指定したページを表示する設定になります。
+  <br>
+  今回は<strong>「views > welcome」の「index.html.erb」の設定ファイル</strong>を「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」で表示するよう設定しています。
+  <br><br>
+  また普通に<strong><u>「posts」の「<a href="/pages/5#title1-2" target="_blank">index</a>」ページ</u></strong>をトップページにするなら、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  root <span class='word-yellow'>"posts#index"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  のように設定します。
+  <br><br>
+  このように「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」にページを表示するには、
+<pre>
+root "表示させるページの設定フォルダ#表示させるページ"
+</pre>
+  で設定する。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong><u>「views > top」にある「index.html.erb」</u>を「<a href="http://localhost:3000" target="_blank">localhost:3000</a>」に表示させるには「route.rb」にどのような設定をすればいいでしょうか？</strong>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>route.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>  root <span class='word-yellow'>"top#index"</span></span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  使用するページの指定もできたので、次は<strong><u>データ操作</u></strong>についてやってみたいと思います。
+  <br>
+  とは言っても設定することはありませんのですぐに終わります。
+  <br><br>
+  まずは<strong>「app > controllers > welcome_controller.rb」</strong>を開いてみましょう！
+  <br>
+  これはさっきの<u>「rails g controller welcome」で作られた設定ファイル</u>で、ここにページごとのデータ操作を設定します。
+  <br>
+  このファイルを下のように設定してみましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>welcome_controller.rb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+<strong class="color-red">3</strong>
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>WelcomeController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line remarkable-code'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line remarkable-code'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  「welcome」では<strong>「<a href="/pages/5#title1-2" target="_blank">index</a>」</strong>のページのみを使うのでこのように設定しました。
+  <br><br>
+  今回はデータを表示させたりはしないのでなにも設定しませんが、例えば「post」のデータベースの情報を表示させたいなら、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@posts = <span class='word-blue'>Post</span>.all</span>
+</td>
+</tr>
+</table>
+  <br>
+  のように「@posts」の標識を設定して、それを<a href="/pages/5#title1-2-3-view" target="_blank"><strong>htmlで表示</strong></a>させます。
+  <br><br>
+  データを表示させるかどうかは別にして後で追加する可能性もあるので、上のように<strong>「<a href="/pages/5#title1-2" target="_blank">index</a>」</strong>のデータ操作の設定を加えましょう。
+  <hr class="red-hr">
+  最後にページの設定をしてみましょう！
+  <br>
+  まずは、<strong>「app > views > welcome」に「index.html.erb」を保存</strong>してみましょう！（保存の方法は<a href="/pages/how_to_save#title1" target="_blank"><strong>こちら</strong></a>から）
+  <br>
+  <strong><u>この「index.html.erb」ファイル</u></strong>がページを表示させるための設定ファイルになります。
+  <br><br>
+  試しに内容を変更してみて、実際に表示させてみましょう！
+  <br>
+  まずは内容を下のように変更してみましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（welcomeファルダ）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ようこそ&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;投稿一覧を見る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  内容は大丈夫でしょうか？
+  <br>
+  <a href="/pages/7#title1-3" target="_blank"><strong>「/posts」のリンク</strong></a>を<strong><a href="/pages/7#title2-2-5-btn" target="_blank">Bootstrapの「btn」</a></strong>で作っていますね。
+  <br><br>
+  ではこれを開いてみましょう！
+  <br>
+  「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して再起動して、<strong>「<a href="http://localhost:3000" target="_blank">localhost:3000</a>」</strong>を開いてみましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_before.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_before.png",
+              :target => ["_blank"] %>
+  このように表示されたでしょうか？
+  <hr class="red-hr">
+  <strong>「<a href="http://localhost:3000" target="_blank">localhost:3000</a>」</strong>へのページの設定もできましたね。
+  <br>
+  次はこのページに内容を加えて、下のようなトップページにしてみましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
+              :target => ["_blank"] %>
+</h4>

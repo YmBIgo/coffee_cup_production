@@ -1,0 +1,111 @@
+<h4 id="chapter7-1-2">
+  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : newページへのリンクを設定する</strong></p>
+  <br>
+  <strong>「edit」ページへの移動もできたので、<strong>「<a href="/pages/6#title1-3" target="_blank">新しいデータの記入（new）</a>」</strong>をするページへの移動をするリンクの設定をしてみましょう！</strong>
+  <br><br>
+  <strong>「<a href="/pages/5#title1-2" target="_blank">データの全表示（index）</a>」</strong>をするページに下のようなリンクを加えましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  「データの全表示（index）」をするページを設定するので、<strong>「<u>index.html.erb</u>」</strong>に設定を加えます。ではやってみましょう！
+  <br><br>
+  「myapp」をSublime Textで開いてみて（開き方は<a href="/pages/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）、<strong>「<a href="/pages/5#title1-2-3-view" target="_blank">index.html.erb</a>」</strong>を開いてみましょう！
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>
+<strong>
+「新しいデータの記入（new）」をするページへのリンクはどのようにして設定すればいいでしょうか？
+</strong>
+<br>
+<small>
+※　「新しいデータの記入（new）」をするページには、「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localohost:3000/posts/new</strong></a>」をブラウザで入力することで移動できます（詳細は<a href="/pages/6#title1-3-2-chrome" target="_blank"><strong>こちら</strong></a>）。</small>
+<br><br>
+<input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+<br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  では、これを<strong>「<u>index.html.erb</u>」</strong>に設定しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（9行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+<span class="color-red"><strong>9</strong></span>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  できたら<u>「Command」と「c」を一緒に押して</u>サーバーを停止させて、<strong>「<u>rails s</u>」</strong>でサーバーを再起動させましょう！
+  <br><br>
+  サーバーが立ち上がったら、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+              :target => ["_blank"] %>
+  リンクは追加されたでしょうか？
+  <br>
+  リンクが追加されたら、リンクを開いてみましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
+              :target => ["_blank"] %>
+  ページの移動はできたでしょうか？
+  <br><br>
+  このように「新しいデータの記入（new）」をするページへのリンクは、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  で設定します。
+  <br>
+  <strong><u>データベースの名前が変わったらそれに応じた設定に変えましょう！</u></strong>
+  <hr class="red-hr">
+  <i class="fa fa-question-circle color-green"></i>　<strong>「tweets」データベースの「新しいデータの記入（new）」をするページへ移動するリンクは、どのように設定すればいいでしょうか？</strong>
+  <br><br>
+  <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/tweets/new"</span>&gt;ツイートする&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+</h4>

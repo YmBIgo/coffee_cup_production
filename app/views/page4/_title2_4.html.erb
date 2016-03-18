@@ -1,0 +1,102 @@
+<h4 id="chapter4-2-4">
+        <p id="title2-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : まとめ</strong></p>
+        <br>
+        <u>データの保存などの操作は、「rails c」に入力する命令で行う。</u>
+        <br>
+        <small>※　ここでの入力は、後でページのデータ操作を設定する時にも使う</small>
+        <hr class="red-hr">
+        データ操作の方法は<strong>「<u>作成・変更・削除</u>」</strong>の３つがある。
+        <br><br>
+        <ul class="number_ul">
+          <strong><li>データの作成</li></strong>
+          <br>
+<pre>
+データベースのタイトル.create(:枠組み => "内容", :枠組み => "内容", あるだけ...)
+</pre>
+<small>※　データベースのタイトルは大文字から始める単数形にする</small>
+<hr class="red-hr">
+<small>例：「name」が「山田太郎」、「content」が「春からSFC」のデータを作成</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "山田太郎", :content =&gt; "春からSFC")</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>データの選択</li></strong>
+        <br>
+<pre>
+データベースのタイトル.find(変更するデータのid)
+</pre>
+<small>※　データベースのタイトルは大文字から始める単数形にする</small>
+<hr class="red-hr">
+<small>例：「id」が「2018」のデータを選択</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(2018)</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>データの変更</li></strong>
+        <br>
+<pre>
+データベースのタイトル.find(変更するデータのid).update(:枠組み => "内容", :枠組み => "内容", あるだけ...)
+</pre>
+<small>※　データベースのタイトルは大文字から始める単数形にする</small>
+<hr class="red-hr">
+<small>例：「id」が「29」のデータの、「content」を「春からSFC」・「place」を「藤沢」に変更</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(29).(:content =&gt; "春からSFC", :place =&gt; "藤沢")</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>データの削除</li></strong>
+        <br>
+<pre>
+データベースのタイトル.find(変更するデータのid).destroy
+</pre>
+<small>※　データベースのタイトルは大文字から始める単数形にする</small>
+<hr class="red-hr">
+<small>例：「id」が「1900」のデータを削除</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1900).destroy</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>データの全選択</li></strong>
+        <br>
+<pre>
+データベースのタイトル.all
+</pre>
+<small>※　データベースのタイトルは大文字から始める単数形にする</small>
+<hr class="red-hr">
+<small>例：全てのデータを選択</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.all</span>
+</td>
+</tr>
+</table>
+        </ul>
+        <hr>
+        <i class="fa fa-star color-blue"></i><strong>
+        　これらのデータの操作がウェブページの裏で行われています。
+        <br>
+        <u>ウェブページでも同じようにしてデータの操作を設定していきます！</u>
+        </strong>
+</h4>

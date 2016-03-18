@@ -1,0 +1,404 @@
+<h4 id="chapter6-1-5-1">
+        <p id="title1-5-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : ページを設定する</strong></p>
+        <br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>復習から始めます。ページを設定するには、どの設定が必要なのでしょうか？</strong>
+        <br><br>
+        <u>⑴ : どのページを使うかの設定 ⑵ : データ操作の設定 ⑶ : ページ内容の設定</u>
+        <br>
+        の３つになります。
+        <hr class="red-hr">
+        「編集するデータの記入（edit）」をするページでは、変更するデータを指定してページの入力欄を作ります。
+        <br><br>
+        具体的には、
+        <strong>
+        <ul class="number_ul">
+          <li>変更するデータの選択</li>
+          <li>データの記入欄・送信ボタンの設定</li>
+          <li>変更するデータと記入欄の対応づけ</li>
+        </ul>
+        </strong>
+        をやっていきます
+        <hr class="red-hr">
+          では、「７つのページの設定」からやってみましょう！
+          <br>
+          ７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル</strong>（configフォルダに入っている）を見てみましょう。
+                 <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        内容は前に変更しましたよね。
+        <br><br>
+        <strong><u>上のように３行目に「edit」は追加されていますか？</u></strong>
+        <br>
+        追加されていれば「編集するデータの記入（edit）」をするページを使うことを設定できています。
+        <hr class="red-hr">
+        では、「<u>データ操作</u>」の設定をしましょう。データ操作は「データベース名_controller.rb」ファイルで設定します。
+        <br>
+        <strong>「posts」データベースのデータ操作を設定する「posts_controller.rb」ファイルから設定を始めましょう。</strong>
+        <br><br>
+        まずは「app」フォルダの中にある「controllers」フォルダから、「<strong>posts_controller.rb</strong>」を開きましょう。（Sublime Textの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちら</strong></a>）
+        <br><br>
+        開けたら、<u>「def edit」と「end」の間</u>を下のように設定しましょう。
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb（20行目を追加）</strong>
+        <br>
+        <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>19
+<span class="color-red"><strong>20</strong></span>
+21
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line remarkable-code'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>この追加した１行では、なにをしているのでしょうか？</strong>
+        <br><br>
+        <u>この１行で、変更するデータを選択しています。</u>
+        <br><br>
+        <i class="fa fa-play-circle color-red"></i>　これは「一つのデータの選択（show）」でやった、
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        と全く同じことをやっています。
+        <br><br>
+        変更するデータはここで選択します。
+        <br>
+        <strong><u>「編集するデータの記入（edit）」でも忘れずにこのデータの選択をしましょう！</u></strong>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　「tweets」データベースの「編集するデータの記入（edit）」はどのように設定すればいいのでしょうか？</strong>
+        <br><br>
+        <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="3"></textarea>
+        <br>
+        <i class="fa fa-file color-red"></i><strong>　tweets_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content answer-code'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @tweet = <span class='word-blue'>Tweet</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        では、ページの設定をしましょう。
+        <br>
+        ここでは下のような内容を記入させる画面を設定します。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
+                    :target => ["_blank"] %>
+        まずは、Sublime Textで開いた「myapp」で<strong>「<i>app > views > posts</i>」</strong>を開いてみましょう。
+        <br>
+        その中に<strong>「<u>edit.html.erb</u>」</strong>ファイルはあるでしょうか？あったら開きましょう！
+        <br><br>
+        <strong>このファイルに「編集するデータの記入（edit）」をするページを表示する設定を、追加していきます。</strong>
+        <br><br>
+        <u>では、ページの設定をやってみましょう！</u>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　edit.html.erb</strong>
+        <br>
+        <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"変更する"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        今回の設定もなんとなく見覚えはありませんか？
+        <br>
+        この章の始めで説明した「<a href="/pages/6#title1-3-1" target="_blank"><strong>new.html.erb</strong></a>」と似ている内容になっていますね。
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　new.html.erb</strong>
+        <br>
+        <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を作る&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登録する"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class='word-red'>end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <i class="fa fa-question-circle color-green"></i><strong>　復習をしましょう。この<u>「new.html.erb」ファイルの中で、「name」の入力欄とボタンを設定している部分</u>はどこでしょうか？</strong>
+        <br><br>
+        <i class="fa fa-play-circle color-red"></i>　<strong>「name」の入力欄</strong>
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <i class="fa fa-play-circle color-red"></i>　<strong>ボタン</strong>
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;%= f.submit <span class='word-yellow'>"登録する"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        「new.html.erb」ファイルでは、
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+</td>
+</tr>
+</table>
+        <p style="margin-top:10px;">と</p>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>12
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        の間に入力欄とボタンの表示をしました。
+        <br><br>
+        <i class="fa fa-play-circle color-red"></i><strong>　「edit.html.erb」ファイルでもやっていることは全く同じです。</strong>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+</td>
+</tr>
+</table>
+        <p style="margin-top:10px;">と</p>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <p style="margin-top:10px;">の間にある</p>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"変更する"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        で、ページを表示させています。
+        <br>
+        ここでは、「content」と「place」を入力する設定をしています。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i><strong>　下のデータ操作をした「<u>@user</u>」の<u>名字「family_name（短い文字列）」</u>と<u>名前「first_name（長い文字列）」</u>と<u>年齢「age（数字）」</u>を記入するページを設定してみましょう。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　users_controller.rb</strong>
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="10"></textarea>
+        <br>
+        <i class="fa fa-file color-red"></i><strong>　edit.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center small-code'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</td>
+<td class='code-content answer-code small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:family_name</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:first_name</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;年齢&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.number_field <span class='word-purple'>:age</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"変更する"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        では、ページを表示させてみましょう！
+        <br>
+        一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して下さい。
+        <br>
+        これで内容の変更が適用されます。
+        <br><br>
+        できたらブラウザで、「<a href="/posts/1/edit" target="_blank"><strong>localhost:3000/posts/1/edit</strong></a>」を入力して下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
+                    :target => ["_blank"] %>
+        上のような入力欄のあるページが出てきたでしょうか？
+        <hr class="red-hr">
+        上のような<strong>「<u>localhost:3000/データベース名/idの番号/edit</u>」</strong>で、<strong>「<u>編集するデータの入力（edit）</u>」</strong>をするページをブラウザで開きます。
+        <br><br>
+        今回は「posts」データベースの「idが1」のデータベースの内容を記入するページだったので、
+        <br><br>
+        <i class="fa fa-chrome color-red"></i>　<strong>ブラウザ</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>localhost:3000/posts/1/edit</span>
+</td>
+</tr>
+</table>
+        <br>
+        で開きました。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　<u>「videos」データベースの「編集するデータの入力」をするページ</u>をブラウザで開くにはどのように入力すればいいのでしょうか？</strong>
+        <br><br>
+        <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+        <br>
+        <i class="fa fa-chrome color-red"></i><strong>　ブラウザ</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>localhost:3000/posts/1/edit</span>
+</td>
+</tr>
+</table>
+</h4>

@@ -1,0 +1,44 @@
+<h4 id="chapter6-1-4">
+        <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : データを作成する（create）</strong></p>
+        <br>
+        ここまでで「新しいデータの記入（new）」が終わりました。
+        <br>
+        <strong>データの入力はできるようになったのですが、このままだとまだデータの保存ができません。</strong>
+        <br>
+        このデータの保存をやってみましょう！
+        <br><br>
+        今回の内容は、<a href="/pages/4#title2-1" target="_blank"><strong>第４章</strong></a>でやった
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "山田太郎", :content =&gt; "春からSFC", :place =&gt; "新宿")</span>
+</td>
+</tr>
+</table>
+        <br>
+        をデータ操作の部分（<i>posts_controller.rb</i>）で設定する、と考えてもらえれば分かりやすいと思います。
+        <br>
+        <strong>
+        「新しいデータの記入（new）」をするページからデータを受け取って、それを上のようなデータ操作で保存します。
+        </strong>
+        <br>
+        <small>※　データは「新しいデータの記入（new）」をするページから移動するので、ブラウザにURLを入力する必要はありません。</small>
+        <br><br>
+        具体的には、
+        <br>
+        <strong>
+        <ul class="number_ul">
+          <li>「新しいデータの記入（new）」をするページから来た情報にそったデータ作成</li>
+          <li>データ作成完了のページの設定</li>
+        </ul>
+        </strong>
+        をやっていきます。
+        <br><br>
+        では、「７つのページの設定」「データ操作の設定」と「ページ内容の設定」をそれぞれやっていきましょう！
+        <hr>
+        <%= render "page6/title1_4_1" %>
+        <hr>
+        <%= render "page6/title1_4_2" %>
+</h4>

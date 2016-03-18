@@ -1,0 +1,117 @@
+<h4 id="chapter3-1-1">
+          <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 簡単なページを作ろう！</strong></p>
+          <br>
+          まずは、FinderでDesktop内に<strong class="little-remarkable"><u>「rails_project」</u></strong>というフォルダを作ってください。
+          <br>
+          <i class="fa fa-exclamation color-red"></i>　<strong class="color-red">これから作るファイルはrails_projectに保存して下さい。</strong>
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_mkdir_rails_project.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_mkdir_rails_project.png",
+                      :target => ["_blank"] %>
+          <br>
+          前の章でインストールした<strong class="little-remarkable"><u>Sublime Text</u></strong>を使って、HTMLファイルを作っていきます。
+          <br>
+          <small>※　場所が分からなくなったら、右上の虫眼鏡マークをクリックして「Sublime Text」と入力して探してみましょう</small>
+          <br>
+          <br>
+          このSublime Textで、HTMLファイルやRails設定ファイルを<strong>自分の表示させたいように設定していきます</strong>。
+          <hr class="red-hr">
+          まずは、Sublime Textを開いてみましょう。下の手順に従い開いてみて下さい。
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_New_Window.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_New_Window.png",
+                      :target => ["_blank"] %>
+          下のようなウィンドウが開けたでしょうか？
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text.png",
+                      :target => ["_blank"] %>
+          ウィンドウは出てきたら、<strong class="color-blue">「File > Save」</strong>をクリックして下さい。
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Save.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Save.png",
+                      :target => ["_blank"] %>
+          ウィンドウが出てきたら、下のように選択してファイルを保存してください。
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Save_After.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Save_After.png",
+                      :target => ["_blank"] %>
+          Finderのrails_projectフォルダを確認すると、sample.htmlが作成されていることを確認できると思います。
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_sample_html.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_sample_html.png",
+                      :target => ["_blank"] %>
+          <hr>
+          では実際に手を動かして、ページを作ってみましょう！
+          <br>
+          作成したファイルに下の文字列を入力してみて下さい。(<strong>左の数字は行数なので無視して下さい。</strong>)
+          <br>
+          <strong class="remarkable">また設定するファイルは半角英数字でないと動きませんので、日本語以外の部分は<span class="color-red">半角英数字</span>で入力して下さい。</strong>
+          <hr class="red-hr">
+          <i class="fa fa-file color-red"></i>　<strong>sample.html（半角英数で入力）</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;テスト&lt;/<span class='word-red'>p</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_sample_html1.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_sample_html1.png",
+                      :target => ["_blank"] %>
+          <hr class="red-hr">
+          <strong class="remarkable">入力が終わったら、<span class="color-red">「Command」と「s」</span>を一緒に押してください。<br>これをしないと内容は変更されません。</strong>
+          <hr class="red-hr">
+          Finderでrails_projectのフォルダを開き、それを下の手順で開いてみて下さい。
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png",
+                      :target => ["_blank"] %>
+          下のようなページが表示されましたでしょうか？
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_sample_html.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_sample_html.png",
+                      :target => ["_blank"] %>
+          <br>
+          <strong class="remarkable color-red">「テスト」</strong>とだけ表示されていますね。
+          <br>
+          長い文章を打ち込んだ（もしくはコピペした）のに、表示されたのがこれだけでは少し悲しいですね...
+          <br>
+          <strong>それも実はウェブページの表示をさせているのは、「<i>&lt;body&gt;</i>」と「<i>&lt;/body&gt;</i>」で囲まれた「<i>&lt;p&gt;</i>テスト<i>&lt;/p&gt;</i>」の部分だけだからです。</strong>
+          <br><br>
+          <i class="fa fa-exclamation color-red"></i>　なのでこれからは、<u>「<i>&lt;body&gt;</i>」と「<i>&lt;/body&gt;</i>」で囲まれた部分以外は基本的にコピペして貼り付ければ問題ないです</u>
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>sample.html（半角英数で入力）</strong>
+          <br>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;テスト&lt;/<span class='word-red'>p</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+          <br>
+          <strong>「<i>&lt;p&gt;</i>」と「<i>&lt;/p&gt;</i>」で囲まれた部分に入力された文字列</strong>がウェブページで表示されます。
+          <br>
+          <i><u>&lt;p&gt;</u></i>は普通の大きさの文字を出しますが、<i><u>&lt;h1&gt;</u></i>で大きい字・<i><u>&lt;h2&gt;</u></i>でまぁまぁ大きい字・<i><u>&lt;h3&gt;</u></i>で少し大きい字・<i><u>&lt;img&gt;</u></i>で画像表示・<i><u>&lt;br&gt;</u></i>で改行など...たくさんの表記の仕方があります。
+          <br>
+          <a href="http://techacademy.jp/magazine/5827" target="_blank"><strong>→<i>&lt;img&gt;</i>画像の貼り方</strong></a>
+          <br><br>
+          <strong>興味があったら
+          <br>
+          <a href="http://dotinstall.com/lessons/basic_html_v3">HTML入門 (全24回)</a>とか
+          <br>
+          <a href="http://techacademy.jp/magazine/4843" target="_blank">今さら聞けない！HTMLとは【初心者向け】</a>とか
+          <br>
+          <a href="http://techacademy.jp/magazine/4808" target="_blank">まずはここから！HTMLの書き方【初心者向け】</a>なんかを参考にして下さい</strong>
+          <hr class="red-hr">
+          <i class="fa fa-star color-blue"></i>　ウェブページを作る際に表示させる文章・画像などは<strong><u>「<i>&lt;body&gt;</i>」と「<i>&lt;/body&gt;</i>」で囲まれた部分</u></strong>に記述される。
+          <br><br>
+          <i class="fa fa-question-circle color-green"></i>　<strong>sample.htmlファイル内の、<i>&lt;p&gt;</i>の代わりに<i>&lt;h1&gt;</i>を使ってページを表示させてみよう！</strong>
+          <br>
+          ファイルを閉じてしまったら<a href="/pages/how_to_open" target="_blank"><strong>ファイルの開き方</strong></a>をみて下さい
+          <br>
+          <small>※　設定の変更が終わったら、「Command」と「s」を一緒に押して変更を保存して下さい。変更が保存されないと結果は反映されません。</small>
+</h4>

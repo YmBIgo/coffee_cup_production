@@ -1,0 +1,221 @@
+<h4 id="chapter3-1-2">
+          <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : ページを装飾しよう！</strong></p>
+          <br>
+          ここまででページの表示の仕方を説明しました。
+          <br>
+          <strong class="little-remarkable">ですが、正直言って思ったよりもダサくって失望した人も多いのではないかと思います。</strong>
+          <br><br>
+          それもそのはずです。
+          <br>
+          HTMLは単に文章や画像などのデータを表示させるだけで、<u>どのように表示させるかは別の設定ファイルを使わなければならないからです。</u>
+          <br>
+          そのファイルのことを、<strong class="little-remarkable color-red"><u>CSSファイル</u></strong>と言います。
+          <br><br>
+          <strong>早速、このCSSファイルを作って、少しだけ装飾してみましょう！</strong>
+          <hr class="red-hr">
+          まずは、「rails_project」のフォルダに「style.css」というファイルを保存してみましょう！
+          <br>
+          <small>※　「style.css」という名前にしたのは、この名前がよく使われているからというだけであって深い理由はありません。</small>
+          <br>
+          ファイルの保存の仕方が分からなくなったら、<a href="/pages/how_to_save" target="_blank"><strong>ここを参照。</strong></a>
+          <br><br>
+          下のように表示されたでしょうか？
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Style_Css.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Style_Css.png",
+                      :target => ["_blank"] %>
+          Finderには、下のようにStyle.cssとSample.htmlが入っているでしょうか？
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_rails_project.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_rails_project.png",
+                      :target => ["_blank"] %>
+          ファイルが保存できたら、下のように内容を変更して下さい。（ファイルの開き方は<strong><a href="/pages/how_to_open" target="_blank">こちら</a></strong>から）
+          <hr class="red-hr">
+          <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>red</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+<small>※　半角英数で入力してください</small>
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Style_Css.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Style_Css.png",
+                      :target => ["_blank"] %>
+          <i class="fa fa-file color-red"></i>　<strong>sample.html（5,8行目を変更/コピペして下さい）</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+<small>※　半角英数で入力してください</small>
+<br>
+          文字列の変更ができたら、<strong class="little-remarkable color-red"><u>「Command」と「s」</u></strong>を一緒に押して内容を保存しましょう！
+          <hr class="red-hr">
+          変更が完了したら、下の手順にしたがって「sample.html」をブラウザで開いてみましょう！
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png",
+                      :target => ["_blank"] %>
+          下のように表示されましたか？
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html2.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html2.png",
+                      :target => ["_blank"] %>
+          文字が赤色に変わりましたね。<strong>まだ簡単なものでしかないですが、このような装飾をCSSファイルで設定します。</strong>
+          <br>
+          では、変更した内容を説明していきます！
+          <hr>
+          まずは、変更を加えた<strong class="little-remarkable"><u>htmlファイル</u></strong>から説明しましょう。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>sample.html</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+<br>
+        <strong class="little-remarkable color-red">「&lt;body&gt;と&lt;/body&gt;の間以外は基本的にコピペでいい！」</strong>と言ったのに早速例外が出てきましたね笑
+        <br>
+        <strong>この１行で、装飾に「style.css」というCSSファイルを使うことを設定しています。</strong>
+        <br>
+        中に「style.css」という名前が入っているのが見えますね。ここでどのCSSファイルを使い装飾するかを決めています。<u>使う時はCSSファイル名以外の部分はコピペで、<strong><i>&lt;head&gt;</i>と<i>&lt;/head&gt;</i>の間に書き加える</strong>ことで適用されます。</u>
+        <hr class="red-hr">
+        例えば「style2.css」というCSSファイルを指定する時は、
+        <br>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br></td><td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style2.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span></td></tr>
+</table>
+        を<i>&lt;head&gt;</i>と<i>&lt;/head&gt;</i>の間に記述します。
+        <strong></strong>
+        <br><br>
+        <strong class="remarkable">CSSファイルで設定をする時は、この１行を付け加え忘れないようにしましょう！</strong>
+        <hr>
+        では、装飾をする<strong class="little-remarkable"><u>CSSファイル</u></strong>について説明しましょう。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>red</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+<br>
+        装飾をするCSSファイルは
+        <pre class="japanese-code">
+装飾をしたい部分の名前{
+  装飾の方法
+}</pre>
+        のように設定します。
+        <hr class="red-hr">
+        装飾の方法の一つである色の変更は、
+<pre>
+color:色の名前;
+</pre>
+        と書いて設定します。
+        <br><br>
+        この場合は、
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br></td><td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span></td></tr>
+</table>
+        の行の<i>&lt;h1&gt;</i>と<i>&lt;/h1&gt;</i>の間を指定して、赤色にする設定をしています。
+        <br><br>
+        <i class="fa fa-exclamation color-red"></i>　試しに別の色に変えてみましょう！
+        <br><br>
+<i class="fa fa-file color-red"></i>　<strong>style.css</strong>（半角英数で入力して下さい）
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>color</span>:<span class='word-blue'>blue</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+        <small>※　変更ができたら「Command」と「s」を一緒に押して、内容を保存しましょう。</small>
+        <br>
+        終わったらページを再度読み込んでみて下さい。内容は変わったでしょうか？
+        <br>
+        （ブラウザでの開き方は<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>こちら</strong></a>から）
+        <hr class="red-hr">
+        ここまでで色を変更する設定をしてみましたが、<u>装飾の方法はこれだけではありません。</u>
+        <br>
+        他にも<strong><u>文字の大きさを変える設定や、背景色を変える設定</u></strong>などがあります。下のようにファイルの設定を変更してみましょう！
+        <br><br>
+<i class="fa fa-file color-red"></i>　<strong>style.css</strong>（半角英数で入力して下さい）
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>blue</span>;<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>50</span><span class='word-red'>px</span></span>;<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>background-color</span>:<span class='word-blue'>yellow</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+        <small>※　「Command」と「s」を押して内容を保存しましょう</small>
+        <br><br>
+        終わったら再度読み込んでみましょう。下のように表示されたでしょうか？
+        <br>
+        （ブラウザでの開き方は<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>こちら</strong></a>から）
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html3.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html3.png",
+                    :target => ["_blank"] %>
+        文字の大きさは、
+<pre>
+font-size:文字の大きさpx;
+</pre>
+        と書いて設定します。
+        <br>
+        pxはコンピューター内の大きさの単位なので、適当に変更して表示させていきながら確認するのがいいでしょう。
+        <br><br>
+        背景色は、
+<pre>
+background-color:色の名前;
+</pre>
+        と書いて設定します。
+        <br><br>
+        <u>装飾は他にもたくさんありますので、興味があったら調べてみましょう！</u>
+        <hr>
+        <p id="title1-2-css-class" class="fix-link-nav"><i class="fa fa-play-circle color-red"></i>　<strong class="little-remarkable">CSSとClass</strong></p>
+        <br>
+        ここまでで、ページの装飾の方法について説明しました。
+        <br><br>
+        今の方法のままでも装飾はできますが、これだと<strong><i>&lt;h1&gt;</i>は色が青で文字の大きさが50px/背景色が黄色の文字しか表示できません。</strong>
+        <br>
+        文字などの装飾はできても、そのバラエティが少なければあまり使い勝手は良くないですよね。
+        <br>
+        なので<strong class="little-remarkable">CSSファイルではページの装飾に名前をつけて、それをhtmlファイルの中身と関連づけさせることができます。</strong>
+        <hr class="red-hr">
+        <strong class="remarkable">早速、やってみます！</strong>
+        <br><br>
+        ファイルの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちらから</strong></a>
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>sample.html</strong>（半角英数で入力）
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1 </span><span class='word-green'>class</span>=<span class='word-yellow'>"title"</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+<br>
+        <i class="fa fa-file color-red"></i>　<strong>style.css</strong>（半角英数で入力/もしくはコピペ）
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br></td><td class='code-content'><span class='code-line remarkable-code'><span class='word-green'>.title</span>{<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>color</span>:<span class='word-blue'>white</span>;<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>30</span><span class='word-red'>px</span></span>;<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>background-color</span>:<span class='word-blue'>black</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+        <small>※　「Command」と「s」を一緒に押して保存して下さい。</small>
+        <br><br>
+        終わったら再度読み込んでみましょう。下のように表示されたでしょうか？
+        <br>
+        （ブラウザでの開き方は<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>こちら</strong></a>から）
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html4.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html4.png",
+                    :target => ["_blank"] %>
+        上がなにも装飾を設定していない<i>&lt;h1&gt;</i>、下が装飾を設定した<i>&lt;/h1&gt;</i>になります。
+        <hr class="red-hr">
+        CSSファイル内で、
+<pre>
+.名前{
+  装飾の内容
+}
+</pre>
+        と書くことで、<strong><u>いくつかの装飾の集まりに名前を設定</u></strong>することができます。
+        <br>
+        今回の名前は「title」になっていますがこれは適当につけたものなので、自由につけて大丈夫です。
+        <br><br>
+        htmlファイル内での表示には、
+<pre>
+class="名前"
+</pre>
+        を<u><i>&lt;h1&gt;</i>や<i>&lt;p&gt;</i>などの中に入れる</u>ことで適用されます。<u>こちらには「.」をつける必要はありません。</u>
+        <br>
+        ここの名前が、CSSファイルで設定した名前と一致すると装飾は適用されます。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>装飾をしなかった上の<i>&lt;h1&gt;</i>とCSSファイルを変更して装飾をしてみよう！</strong>
+        <br>
+        <small>※　半角英数字での入力と、「Command」と「s」で保存することを忘れずに</small>
+</h4>

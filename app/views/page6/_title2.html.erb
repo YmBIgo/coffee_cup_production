@@ -1,0 +1,198 @@
+<h2 class="textbook-section-title" id="title2"><strong>2 : まとめ</strong></h2>
+        <h4 id="chapter6-2">
+          Ruby on Railsで作ることができるページは、<strong><u>データの操作の方法にそって７つある。</u></strong>
+          <br><br>
+          <ul class="number_ul">
+          <strong><li>データの全表示　　　　　<u>index</u></li></strong>
+          <small>例：タイムライン<br>→<strong>「<i>Post.all</i>」</strong>を裏で設定</small>
+          <strong><li>一つのデータの表示　　　<u>show</u></li></strong>
+          <small>例：一つのツイート<br>→<strong>「<i>Post.find(idの数字)</i>」</strong>を裏で設定</small>
+          <strong><li>新しいデータの記入　　　<u>new</u></li></strong>
+          <strong><li>データの作成　　　　　　<u>create</u></li></strong>
+          <small>例：ツイートする画面<br>→<strong>「<i>Post.create(いろいろ)</i>」</strong>を裏で設定</small>
+          <strong><li>編集するデータの記入　　<u>edit</u></li></strong>
+          <strong><li>データの変更　　　　　　<u>update</u></li></strong>
+          <small>例：プロフィールを変更する画面<br>→<strong>「<i>Post.find(idの数字).update(いろいろ)</i>」</strong>を裏で設定</small>
+          <strong><li>データの削除　　　　　　<u>destroy</u></li></strong>
+          <small>例：ツイートを削除する画面<br>→<strong>「<i>Post.find(idの数字).destroy</i>」</strong>を裏で設定</small>
+        </ul>
+        <hr class="red-hr">
+        それぞれのページを表示させるには、
+        <ul class="number_ul">
+          <strong><li>７つのページのうちどれを使うかを設定</li></strong>
+          <small>「config > route.rb」で設定</small>
+          <strong><li>データ操作の設定</li></strong>
+          <small>「app > controllers」の中にある「データベース名_controller.rb」ファイルで設定</small>
+          <strong><li>ページの設定</li></strong>
+          <small>「 app > views > データベース名」の中に、htmlファイルを作って設定</small>
+        </ul>
+        を設定する。
+        <br>
+        それぞれの設定について説明する
+        <hr class="red-hr">
+        <p id="title2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i><strong>　７つのページのうちどれを使うかを設定（route.rb）</strong></p>
+        <br>
+        <strong>「config」フォルダの中にある「route.rb」ファイルに設定する</strong>
+        <br><br>
+        ページを作りたいデータベースに応じた設定をする。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb（例：3行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <p id="title2-data-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>データ操作の設定/ページの設定</strong></p>
+        <br>
+        データ操作とページの設定をするには、設定をするためのファイルとフォルダを作る必要がある。
+        <br>
+        それをするにはターミナルで、
+        <br><br>
+        <strong>　ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>rails g controller データベース名</span>
+</td>
+</tr>
+</table>
+        <br>
+        を入力する。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Terminal_rails_g_controller_posts.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Terminal_rails_g_controller_posts.png",
+                    :target => ["_blank"] %>
+        このような表示が出て来れば問題ない。
+        <br><br>
+        これで生成された
+        <ul class="number_ul">
+        <strong><li>「app > controllers > データベース名_controller.rb」にデータ操作</li></strong>
+        <br>
+        <strong><li>「app > views」フォルダにページの内容</li></strong>
+        </ul>
+        をそれぞれ設定することでページ表示の設定をする。
+        <br>
+        内容を加える前に設定する必要があることをまとめる。
+        <hr class="red-hr">
+        <ul class="number_ul">
+          <strong class="little-remarkable"><li>データ操作</li></strong>
+            <strong>「app > controllers > データベース名_controller.rb」</strong>に使うページの分だけ、下のように設定を加える。
+            <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>PostsController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>new</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+          <br>
+          <strong class="little-remarkable"><li>ページ</li></strong>
+          <strong>「app > views > データベース名」</strong>に使うページの分だけ、下のファイルを作る。（ファイルの保存の方法は<a href="/pages/how_to_save" target="_blank"><strong>こちら</strong></a>）
+          <br>
+          <br>
+          <ul class="number_ul">
+          <strong>
+            <li>「show.html.erb」（１つのデータを表示するページ）</li>
+            <li>「index.html.erb」（データの全表示をするページ）</li>
+            <li>「new.html.erb」（新しいデータの記入をするページ）</li>
+            <li>「create.html.erb」（データの作成）</li>
+            <li>「edit.html.erb」（編集するデータの記入をするページ）</li>
+            <li>「update.html.erb」（データを変更するページ）</li>
+            <li>「destroy.html.erb」（データの削除をするページ）</li>
+          </strong>
+          </ul>
+        </ul>
+        <hr class="red-hr">
+        <strong>この「データベース名_controller.rb」にそれぞれのデータ操作を、それぞれのhtmlファイルに内容を付け加えていく。</strong>
+        <br>
+        それぞれの説明は下から見てみましょう！
+        <br><br>
+        <div class="list-group">
+          <a href="/pages/5#title1-1" class="list-group-item" target="_blank"><strong>show</strong></a>
+          <a href="/pages/5#title1-2" class="list-group-item" target="_blank"><strong>index</strong></a>
+          <a href="/pages/6#title1-3" class="list-group-item" target="_blank"><strong>new</strong></a>
+          <a href="/pages/6#title1-4" class="list-group-item" target="_blank"><strong>create</strong></a>
+          <a href="/pages/6#title1-5" class="list-group-item" target="_blank"><strong>edit</strong></a>
+          <a href="/pages/6#title1-6" class="list-group-item" target="_blank"><strong>update</strong></a>
+          <a href="/pages/6#title1-7" class="list-group-item" target="_blank"><strong>destroy</strong></a>
+        </div>
+        </li>
+        <hr>
+        <i class="fa fa-star color-blue"></i>　<strong>ここまででRuby on Railsで作るページの説明は終了です。これで簡単なページはできるようになったのではないでしょうか？<br><br>でも今のままではすごくダサくて不便なので、次はページを便利にしましょう！</strong>
+        </h4>

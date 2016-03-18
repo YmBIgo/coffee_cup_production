@@ -1,0 +1,149 @@
+<h4 id="chapter5-1-1-1">
+        <p id="title1-1-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : <u>７つのページを設定する</u></strong></p>
+        <strong><u>まずは、７つのページのうちからどのページを使うのかを設定してみましょう。</u></strong>
+        <br><br>
+        設定ファイルを変更するので、Sublime Textで作った雛形ウェブページの「myapp」を開いてみましょう！
+        <br>
+        （Sublime Textでのフォルダの開き方は<a href="/pages/how_to_open" target="_blank"><strong>こちら</strong></a>から）
+        <br><br>
+        開けたら下の手順に従って、<strong>「<u>route.rb</u>」</strong>というファイルを開いて下さい。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Open_route_rb.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Open_route_rb.png",
+                    :target => ["_blank"] %>
+        この<strong>「<u>route.rb</u>」</strong>というファイルが、７つのページからどのページを使うかを決めるファイルになります。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+...
+56
+57
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># Example of regular route:</span></span>
+<span class='code-line'>  <span class='word-gray'>#   get 'products/:id' => 'catalog#view'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+<br>
+この設定ファイルに、<u>データに対してどのページを使うのかを設定します。</u>
+<br>
+一見長そうに見えますが、<strong><u>「#」から始まる行は全て無視される</u></strong>ので実質なにも設定されていません。
+<br>
+<strong><u>設定は「<i>do</i>」から「<i>end</i>」の間の行に決めていきます。</u></strong>
+<hr class="red-hr">
+では下の１行を追加して、設定をしましょう！
+<br><br>
+<i class="fa fa-file color-red"></i>　<strong>route.rb（2行目を追加）</strong>
+<br>
+<small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># Example of regular route:</span></span>
+<span class='code-line'>  <span class='word-gray'>#   get 'products/:id' => 'catalog#view'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        これで「posts」というデータベースに対して、
+        <br><br>
+        <strong>
+        データの全表示（<i><u>index</u></i>）・一つのデータの表示（<i><u>show</u></i>）
+        <br>
+        新しいデータの記入（<i><u>new</u></i>）・データの作成（<i><u>create</u></i>）
+        <br>
+        編集するデータの記入（<i><u>edit</u></i>）・データの変更（<i><u>update</u></i>）
+        <br>
+        データの削除（<i><u>destroy</u></i>）
+        </strong>
+        <br><br>
+        のページを使うことを設定しています。
+        <hr class="red-hr">
+        もしデータを削除したくない時は、
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb（２行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>2
+</td>
+<td class='code-content'><span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong>のように「<i>:only =></i>」の後で、「<i>destroy</i>」以外のものを指定します。</strong>
+        <br>
+        <small>※　相変わらず「:」はついていますが、仕様なんで許してやって下さい</small>
+        <br><br>
+        なのでページの設定は、
+<pre>
+resources :データベース名, :only => [:加えたいページ...]
+</pre>
+        を<strong>「<i>route.rb</i>」</strong>に追加することで設定します。
+        <br>
+        <small>※　７つ以外にページはありません。</small>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>「<u>messages</u>」というデータベースで「<u>データの全表示（index）</u>・<u>データの作成（create）</u>・<u>一つのデータの削除（destroy）</u>」のページを作りたい場合は「route.rb」にどのような設定を追加すればいいのでしょうか？</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb（2行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>  resources <span class='word-purple'>:messages</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:destroy</span>]</span>
+</td>
+</tr>
+</table>
+        <br>
+</h4>

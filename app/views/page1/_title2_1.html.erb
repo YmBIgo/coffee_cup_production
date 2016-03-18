@@ -1,0 +1,39 @@
+<h4 id="chapter1-2-1">
+  <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : データの表示</strong></p>
+  <br>
+  ウェブページはデータを表示させています。
+  <br>
+  ここでは、ウェブページがなにで表示されているのか見てみましょう！
+  <br><br>
+  Facebookのトップページは大体このようになっていると思います。
+  <br>
+  <%= link_to (image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB1.png",
+                         :width => "90%",
+                         :class => "textbook-title-img hover_img"),
+               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB1.png",
+               :target=>["_blank"] %>
+  <br>
+  では、実際にこのページを表示させているものを見てみましょう！
+  <hr>
+  Google Chrome を使用している場合は、
+  <br>
+  上のバーの<strong class="little-remarkable color-blue">「View > Developer > ViewSource」</strong>を選択してみて下さい。(下の画像を参考にしてみて下さい)
+  <%= link_to (image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/Chrome_View_Developer_ViewSource.png",
+                         :width => "90%",
+                         :class => "textbook-title-img hover_img"),
+               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/Chrome_View_Developer_ViewSource.png",
+               :target=>["_blank"] %>
+  <br>
+  下のようなウィンドウが表示されると思います。
+          <%= link_to (image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Code.png",
+                                 :width => "90%",
+                                 :class => "textbook-title-img hover_img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Code.png",
+                      :target=>["_blank"] %>
+          この長い文字列がページを表示させています。これがページにどのような文字や画像・動画を表示するのかを決めています。
+          <br>
+          <small>※死ぬほど長いですが、探そうと思えば自分の名前なんかも見つかると思います。</small>
+          <br><br>
+          上に出てきた文字や画像・動画の表示をさせているものを<strong class="little-remarkable"><u>HTMLファイル</strong></u>と言います。
+          <hr>
+          </h4>

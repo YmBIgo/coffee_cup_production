@@ -1,0 +1,79 @@
+<h4 id="chapter4-1-4">
+        <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : まとめ</strong></p>
+        <br>
+        利用者の発信した情報の保存は、データの保存をするための表・データベースに書き込まれる。ウェブページを作る時には、その表にどのような情報を入れるかの枠組みを決めなくてはいけない。
+        <br><br>
+        <strong>
+        このデータベースの枠組みの設定は、ターミナルと設定ファイルの変更で行う。
+        </strong>
+        <hr class="red-hr">
+        <i class="fa fa-terminal"></i>　<strong class="little-remarkable">ターミナル</strong>
+        <ul class="number_ul" style="margin-top:10px">
+          <strong><li>「<u>rails g model タイトル名（単数形）</u>」</li></strong>
+          タイトル名（複数形）のデータベースの設定ファイルを作る
+          <strong><li>「<u>rails g migration 設定ファイル名</u>」</li></strong>
+          データベースを変更する設定ファイルを作る
+          <strong><li>「<u>rake db:migrate</u>」</li></strong>
+          設定ファイルの設定を実際のデータベースに適用させる。
+          <strong><li>「<u>rake db:rollback</u>」</li></strong>
+          適用された内容を直前の状態に戻す。
+        </ul>
+        <hr class="red-hr">
+        <i class="fa fa-file"></i>　<strong class="little-remarkable">設定ファイル</strong>
+        <ul class="number_ul" style="margin-top:10px">
+        <strong><li>データベースを作る時の設定</li></strong>
+        <br>
+        「データの種類」の「枠組み」を作る
+<pre>
+t.データの種類 :枠組みの名前
+</pre>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>例
+</td>
+<td class='code-content'><span class='code-line'>  t.integer <span class='word-purple'>:age</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>データベースを変更する時の設定</li></strong>
+        <br>
+<pre>
+add_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>例
+</td>
+<td class='code-content'><span class='code-line'>  add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        同じような感じですでにある枠組みに対しては、
+<pre>
+remove_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+<pre>
+change_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+        で変更と削除を行います。
+        <strong><p id="title1-4-data-type" class="fix-link-nav"><li>データ種類</li></p></strong>
+        枠組みに入れるデータの種類も自分で決めなければならない。
+        <br>
+        具体的には、
+        <br>
+        <ul class="number_ul">
+          <strong><li>「短い文字列」の「string」</li></strong>
+          <strong><li>「長い文字列」の「text」</li></strong>
+          <strong><li>「数字」の「integer」</li></strong>
+          <strong><li>「時間」の「date」</li></strong>
+        </ul>
+        <br>
+        などである。
+        </ul>
+        <hr>
+        <i class="fa fa-question-circle color-green"></i>　<strong>余力があれば、自分が作ってみたいウェブページのデータベースを作ってみましょう！</strong>
+        <br>
+        <br>
+        </h4>

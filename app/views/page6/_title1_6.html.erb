@@ -1,0 +1,42 @@
+<h4 id="chapter6-1-6">
+          <p id="title1-6"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑥ : データの変更をする（update）</strong></p>
+          <br>
+          ここまでで「編集するデータの記入（edit）」を設定しました。
+          <br>
+          <strong>これも「データの作成（create）」と同じように、データを記入するだけではなくデータを変更をするページが必要になります。</strong>
+          <br>
+          ここでは、そのデータの変更をやってみましょう！
+          <br><br>
+          今回の内容は、<a href="/pages/4#title2-2" target="_blank"><strong>第4章</strong></a>でやった
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "SFC入学式")</span>
+</td>
+</tr>
+</table>
+        <br>
+        をデータ操作の部分（<i>posts_controller.rb</i>）で設定する、と考えてもらえれば分かりやすいと思います。
+        <strong>
+        「編集するデータの記入（edit）」をするページからデータを受け取って、それを上のようなデータ操作で変更します。
+        </strong>
+        <br>
+        <small>※　データは「編集するデータの記入（edit）」をするページから移動するので、ブラウザにURLを入力する必要はありません。</small>
+        <br><br>
+        具体的には、
+        <strong>
+        <ul class="number_ul">
+          <li>「編集するデータの記入（edit）」をするページから来た情報にそったデータ変更</li>
+          <li>データ変更完了のページの設定</li>
+        </ul>
+        </strong>
+        をやっていきます。
+        <br><br>
+        では、「７つのページの設定」「データ操作の設定」と「ページ内容の設定」をそれぞれやっていきましょう！
+        </h4>
+        <hr>
+        <%= render "page6/title1_6_1" %>
+        <hr>
+        <%= render "page6/title1_6_2" %>

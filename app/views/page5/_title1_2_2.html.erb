@@ -1,0 +1,167 @@
+<h4 id="chapter5-1-2-2">
+        <p id="title1-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : ページの移動をする</strong></p>
+        <br>
+        <strong>ここまででページの全表示は終わりましました。</strong>
+        <br><br>
+        <strong>
+        ですが、いちいちブラウザで入力してページを移動するのは面倒だと思いませんか？<u>ページはワンクリックで移動したいですよね？</u>
+        </strong>
+        <br><br>
+        <u>最後に、全部のデータのページから一つのデータのページへ・一つのデータのページから全部のデータのページへも移動</u>をやってみたいと思います。
+        <br>
+        <br>
+        ページの移動は全て、ページの設定をしている「html.erb」ファイルでやっていきます。まずは<u>「show.html.erb」に、データを全表示するページに移動できるような設定<strong>（リンク）</strong></u>を加えましょう。
+        <br><br>
+        ページを移動させるのは
+<pre>
+&lt;a href="飛びたいページ"&gt;文字&lt;/a&gt;
+</pre>
+        <strong>と設定して、<u>クリックすると指定したページに移動する文字（リンク）を表示</u>します。</strong>
+        <br><br>
+        <u>では試してみましょう。「show.html.erb」を下のように変更してみましょう。</u>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（4行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"https://amazon.com"</span>&gt;amazon&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong>一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+        <br>
+        <u>これで変更した内容が反映されます。</u>
+        <br><br>
+        変更ができたらブラウザで「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」を開いてみましょう。下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_3.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_3.png",
+                    :target => ["_blank"] %>
+        「amazon」の部分をクリックしたら、amazonのページに移動できたでしょうか？
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>Facebookのページ（<a href="http://facebook.com" target="_blank">http://facebook.com</a>）へ移動する「クリック」の文字（リンク）を設定してみてください。</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://facebook.com"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        同じような具合で、<strong><u>「１つのデータを表示する（show）」ページから「全てのデータを表示する（index）」ページに移動</u>できるようにしましょう。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（4行目を変更）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。
+        <br>
+        <u>これで変更した内容が反映されます。</u>
+        <br><br>
+        変更ができたら、ブラウザで「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」を開いてみましょう。
+        <br>
+        変更をした「トップに戻る」を押したら、「データの全表示（index）」をするページ「<a href="http://localhost:3000/posts" target="_blank"><strong>locahost:3000/posts</strong></a>」に移動はできたでしょうか？
+        <br><br>
+        <i class="fa fa-arrow-right color-red"></i>　内容を説明すると、<strong>「/posts」の「/」がそのページ自身の<u>url「localhost:3000」を示している</u>のでページを移動できるようになっています。</strong>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　photosデータベースの「index」ページに移動する「クリック」の文字（リンク）を設定をしてみて下さい。</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/photos"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <strong>では、「index」のページから「show」のページに移動できるようにしましょう。</strong>
+        <br>
+        <u>「show.html.erb」ファイルを下のように変更して下さい。</u>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　index.html.erb（4行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @posts.each do |p| %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% end %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。
+        <br>
+        <u>これで変更した内容が反映されます。</u>
+        <br><br>
+        変更ができたら、ブラウザで「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみましょう。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_3.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_3.png",
+                    :target => ["_blank"] %>
+        このように表示されたでしょうか？
+        <br>
+        「id」の部分をクリックしてみて、ページが移動できるかを確認してみましょう！
+        <br><br>
+        <i class="fa fa-arrow-right color-red"></i>　内容を説明しましょう
+        <br>
+        「<u>localhost:3000/posts/idの番号」省略して「/posts/idの番号</u>」をブラウザで入力することで、「一つのデータを表示（show）」するページに移動します。
+        <br><br>
+        ここでは「<u>/posts/idの番号</u>」を指定するために、<strong>「<u>idの番号</u>」の部分にデータベースからidを入れる「<u>&lt;%= p.id %&gt;</u>」の設定をしています。</strong>
+        <br>
+        これでデータの「id」に応じたページの移動をしています。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i><strong>　<u>booksデータベースの「idが10」の「show」ページに移動する「クリック」のリンク</u>を設定してみて下さい。</strong>
+        <br><br>
+        <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/10"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+</h4>

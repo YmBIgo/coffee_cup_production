@@ -1,0 +1,169 @@
+<h4 id="chapter4-2-2">
+        <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : データを変更しよう！</strong></p>
+        <br>
+        ここまででデータの作成をしましたが、データの操作は作成のみではありません。他に<strong class="little-remarkable"><u>データの変更・削除</u></strong>があります。
+        <br><br>
+        ここではデータの変更をやってみましょう。<strong><u>作成した投稿の内容を「SFC入学式」に変えてみましょう。</u></strong>
+        <br><br>
+        データの変更をするには、まず<strong><u>どのデータを変更するのかを選択</u></strong>する必要があります。
+        <br>
+        <strong class="little-remarkable">変更をする前に、このデータの選択を説明します！</strong>
+        <hr class="red-hr">
+        データの選択の方法は２つあります。
+        <br>
+        <strong>
+        ⑴ : idからデータを選択する方法
+        <br>
+        ⑵ : 他の枠組みから内容を検索する方法です。
+        </strong>
+        <br><br>
+        <i class="fa fa-play-circle color-red"></i>　まずは<u>一つ目の方法・idから選択する方法</u>をやってみましょう。まず、<strong>「<i>rails c</i>」</strong>を入力して、下の入力をしてみて下さい。
+        <br><br>
+        <strong>　ターミナル（半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1)</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように保存したデータが表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1.png",
+                    :target => ["_blank"] %>
+        今回の入力、「<strong>Post.find(1)</strong>」は「<u>postsから、idが1のデータを選択</u>」する入力になります。
+        <br><br>
+        idからデータを選択するには、
+<pre>
+データベースのタイトル.find(数字)
+</pre>
+        を入力します。（データベースのタイトルは大文字から始める単数形）
+        <hr class="red-hr">
+        <i class="fa fa-play-circle color-red"></i>　<u>二つ目の方法・id以外の枠組みから検索して選択する方法</u>をやってみましょう。
+        <br>
+        下の入力をしてみて下さい。
+        <br><br>
+        <strong>　ターミナル（日本語以外は半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.where(:name =&gt; "山田太郎")</span>
+</td>
+</tr>
+</table>
+        <br>
+        下のように保存したデータが表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_where_name.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_where_name.png",
+                    :target => ["_blank"] %>
+        今回の入力、「<strong><u>Post.where(:name => "山田太郎")</u></strong>」は、「nameの枠組みが山田太郎のデータを選択」する入力になります。
+        <br><br>
+        id以外から検索するには、
+<pre>
+データベースにタイトル.where(:枠組み => "内容", あるだけ...)
+</pre>
+        を入力します。（データベースのタイトルは大文字から始める単数形）
+        <br>
+        なので「<u>名前が湘南花子・場所が藤沢</u>」のデータを検索するには、
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.where(:name =&gt; "湘南花子", :place =&gt; "藤沢")</span>
+</td>
+</tr>
+</table>
+        <br>
+        と入力します。
+        <hr class="red-hr">
+        ここまででデータの選択ができたので、内容の変更をしてみましょう！
+        <br><br>
+        内容の変更は、
+<pre>
+findで選択したデータ.update(:枠組み => "内容", あるだけ...)
+</pre>
+        で行います。
+        <br>
+        <small>※　whereでの変更はまた後で説明します。</small>
+        <br><br>
+        <strong>　ターミナル（日本語以外は半角英数で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "SFC入学式")</span>
+</td>
+</tr>
+</table>
+        <br>
+        を入力してみましょう。下のように表示されたでしょうか？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1_update.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1_update.png",
+                    :target => ["_blank"] %>
+        できたら、Sequel Proで開いて内容が変わったかを確認しましょう！（開き方は<a href="/pages/how_to_open#title2" target="_balnk"><strong>こちら</strong></a>）
+        <br>
+        <small>※　内容が変わっていなかったら、<u>内容を更新する必要があります。</u>内容の更新は下のようにします。</small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Update.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Update.png",
+                    :target => ["_blank"] %>
+        contentの部分が「SFC入学式」に変わっていますか？
+        <br><br>
+        では試しに、他のデータも変更してみましょう！
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>今回変更した投稿のデータを元の『contentが「春からSFC」の投稿』に戻しましょう。（マウスを上に置くと答えがでます）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "春からSFC")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>投稿者の名前を「斉藤さん」に変えてみましょう！（マウスを上に置くと答えがでます）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:name =&gt; "斉藤さん")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>投稿した場所を「六本木」、投稿を「ORF」に変えてみましょう！（マウスを上に置くと答えがでます）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:place =&gt; "六本木", :content =&gt; "ORF")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        最後にSequel Proで内容が変更されたかを確認しましょう！（Sequel Proの使い方は<a href="/pages/how_to_open#title2" target="_blank"><strong>こちら</strong></a>から）<u>更新も忘れずに</u>
+        <br><br>
+        <i class="fa fa-star color-blue"></i>　<strong>データの変更は「<u>データベースのタイトル.find(idの番号).update(:枠組み => "内容")</u>」で行う</strong>
+        <br>
+        <small>※　データベースのタイトルは大文字から始めて、単数形にする。</small>
+</h4>

@@ -1,0 +1,42 @@
+<h2 class="textbook-section-title" id="title2"><strong>2 : Bootstrapでページを装飾する</strong></h2>
+<h4 id="chapter7-2">
+  ページの移動もできて基本的なウェブページもできたんで、<strong><u>ページをもっと綺麗にしてみましょう！</u></strong>
+  <br>
+  htmlで作ったページの装飾は、
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.title</span>{</span>
+<span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>white</span>;</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>30</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class='word-blue'>background-color</span>:<span class='word-blue'>black</span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <br>
+  上のような<a href="/pages/3#title1-2" target="_blank"><strong>CSSファイル</strong></a>を使って設定をしました。
+  <hr class="red-hr">
+  Ruby on Railsで作ったページも同じようにして設定します。
+  <br><br>
+  <u>でも、このCSSファイルを０から設定してページを装飾するのは結構大変です。</u>
+  <br>
+  この装飾・デザインの大変な作業を軽減してくれるために、<strong>公開されているCSSファイルを使ってページを作ることがあります。</strong>
+  <br><br>
+  今回はこの公開されているCSSファイルの中、<strong>Twitter社が開発をした「<a href="http://getbootstrap.com/" target="_blank"><u>Bootstrap</u></a>」</strong>を使って装飾をしたいと思います。
+  <br><br>
+  この章では、<strong><u>Bootstrap</u></strong>が作ってくれたページの装飾に合わせて、ページを装飾してみましょう！
+  <hr>
+  <%= render "page7/title2_1" %>
+  <hr>
+  <%= render "page7/title2_2" %>
+  <hr>
+  <%= render "page7/title2_3" %>
+</h4>

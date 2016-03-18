@@ -1,0 +1,106 @@
+<h4 id="chapter6-1-6-2">
+        <p id="title1-6-2"><i class="fa fa-tags color-red"></i>　<strong>⑵ : まとめ</strong></p>
+        <strong>「データの変更（update）」</strong>をするページの３つの設定をまとめる。
+        <hr class="red-hr">
+        <p id="title1-6-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>７つのページの設定</strong></p>
+        <br>
+        <strong>「config」フォルダの中にある「route.rb」ファイルに「<u>update</u>」を設定する</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <p id="title1-6-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>データ操作の設定</strong></p>
+        <br>
+        <strong>「app > controllers」フォルダにある「データベース名_controller」ファイルの「<u>update</u>」を設定する</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>変更するデータを選択してから、データを変更する「update」の中にデータベースの指定（require）と枠組みの指定（permit）</u>を設定する</strong>
+        <hr class="red-hr">
+        <p id="title1-6-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ページ設定</strong></p>
+        <br>
+        <strong>「app > views」フォルダ内にある「データベース名」のファルダの中にある、「<u>update.html.erb</u>」に内容を設定していく。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>update.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を変更しました。&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.name %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.content %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.place %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>なにも書かなくてもデータの変更は行えますが、使う人にとって不便なのでちゃんと設定しましょう！</u></strong>
+        <hr class="red-hr">
+        <p id="title1-6-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i><strong>　ブラウザでの表示</strong></p>
+        <br>
+        <strong>「データの変更（update）」をするページは「編集するデータの記入（edit）」のボタンを押して移動してくるページなので、URLを記入する必要はありません。</strong>
+        <br>
+        <small>※　ページのURLは、「localhost:3000/posts/idの番号」になっていると思います。</small>
+        <hr class="red-hr">
+        ここまででデータの変更もできました。お疲れさまです。
+        <br>
+        <strong>残すのもデータの削除だけになりますので、頑張りましょう！</strong>
+</h4>

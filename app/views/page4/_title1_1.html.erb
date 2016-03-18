@@ -1,0 +1,79 @@
+<h4 id="chapter4-1-1">
+          <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 自分のデータの枠組みを決めよう！</strong></p>
+          <br>
+          利用者の発信した情報はデータベースというExcelの表のようなものに保存され、それがページに表示されていきます。
+          <br>
+          ここではRailsで作ったウェブページでの、<strong><u>データベースの枠組み・Excelの１番上の行の作り方</u></strong>を説明していきます。
+          <hr class="red-hr">
+          <strong>まずは作ってみたいデータベースを考えてみましょう！</strong>
+          <br>
+          下に枠があるので、例にそって作ってみたいデータベースの枠組みと内容を入力してみましょう。
+          <br>
+          <strong>内容は「商品」「ツイート」から「授業」「ご飯」までなんでも大丈夫です。１番上の行も２行以上あれば大丈夫です</strong>
+          <br>
+          <small>※　作りたいデータベースがないのであれば、入力しなくても大丈夫です。</small>
+          <br><br>
+          <i class="fa fa-facebook color-blue"></i>　<strong>Facebook投稿のデータベース例</strong>
+          <br><br>
+          <strong>投稿の情報</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>投稿番号</th>
+                <th>投稿者</th>
+                <th>投稿内容</th>
+                <th>投稿時間</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>１</td>
+                <td>山田太郎</td>
+                <td>春からSFC</td>
+                <td>2016/03/02 16:26</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr class="red-hr">
+          <i class="fa fa-user color-red"></i>　<strong>入力してみよう！</strong>
+          <br><br>
+          <strong><input type="input" class="form-control table-title" placeholder="データベースのタイトル"></strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+              </tr>
+            </tbody>
+          </table>
+          <u>「データベースの枠組みの定義」などと小難しい言葉</u>を使いましたが、これからやろうとすることの基本は今やってもらった入力の作業です。
+          <br>
+          <strong><u>今回やっていくデータベースの枠組みの定義は、</u></strong>
+          <br><br>
+          <strong><input type="input" class="form-control table-title" placeholder="データベースのタイトル"></strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+                <th><input type="input" class="form-control table-form" placeholder="枠組み"></th>
+              </tr>
+            </thead>
+          </table>
+          をウェブサイトのデータベースで設定していくことになります。
+          <br>
+          <small>※　データの操作は、枠組みの下にある内容の追加・変更・削除のことを言います。</small>
+          <br><br>
+          簡単な説明はここまでにして、ここから実際にそのデータベースを作っていきましょう！
+</h4>
