@@ -1,0 +1,278 @@
+<h4 id="chapter9-2-2-2">
+  <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : ログインの通知を設定する</strong></p>
+  <br>
+  ここまでで、ログインしないとページを見れないようになりました。
+  <br>
+  すぐに登録してみてログインしてみてもいいのですが、<strong><u>その前にログインしたかの通知を設定</u></strong>したいと思います。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_after.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
+              :target => ["_blank"] %>
+  これも少し設定を加えるだけでできるのでやってみます。
+  <hr class="red-hr">
+  まずは<strong>「app > views > layouts > application.html.erb」</strong>の<strong>「<a href="/pages/7#title2-2-1" target="_blank">&lt;div class="container main-page"&gt;</a>」</strong>の中を下のように変更してみて下さい。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（&lt;div class="container main-page"&gt;の後に内容を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>36
+37
+<strong class="color-red">38
+39
+40
+41
+42
+43
+44
+45</strong>
+46
+47
+</td>
+<td class='code-content'><span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container main-page"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">if</span> notice %&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;&lt;%= notice %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">if</span> alert %&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-danger"</span>&gt;&lt;%= alert %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  内容を変更できたら「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動してから、
+  <br>
+  ログインしないと見れない<strong>「<a href="/pages/6#title1-3" target="_blank">new</a>」</strong>のページ<strong>「<a href="http://0.0.0.0:3000/posts/new" target="_blank">0.0.0.0:3000/posts/new</a>」</strong>を開いてみましょう。
+  <br>
+  下のように表示されたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle color-red"></i>　<strong>この設定の内容を説明しましょう。</strong>
+  <br><br>
+  今回の設定の中で新しく
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> notice %&gt;</span>
+</td>
+</tr>
+</table>
+  と
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> alert %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  という設定が加わったと思います。<u>これはなにをしているのでしょうか？</u>
+  <br><br>
+  これらは
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  とセットで、条件分岐による表示の設定をしています。
+  <br><br>
+  条件を
+<pre>
+&lt;% if 条件 %&gt;
+</pre>
+  で指定して、条件にあっていれば
+<pre>
+&lt;% end %&gt;
+</pre>
+  までの内容を表示させています。
+  <br><br>
+  今回の条件の
+  <br><br>
+<pre>
+&lt;% if notice %&gt;
+</pre>
+  は通知が来た時の条件を
+<pre>
+&lt;% if alert %&gt;
+</pre>
+  はエラーの通知が来た時の条件を設定しています。
+  <hr class="red-hr">
+  <strong>「<u>&lt;% if notice %&gt;</u>」（通知が来た時:notice）</strong>は、
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;&lt;%= notice %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+<br>
+<strong>「<u>&lt;% if alert %&gt;</u>」（エラーの通知:alert）</strong>は、
+<br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-danger"</span>&gt;&lt;%= alert %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  にそれぞれ表示していて、
+  <br><br>
+  noticeなら
+  <p class="alert alert-success" style="margin-bottom:0px">Signed in successfuly.</p>
+  <br>
+  alertなら
+  <p class="alert alert-danger" style="margin-bottom:0px">You need to sign in or sign up before continuing.</p>
+  <br>
+  のような通知の内容が、
+<pre>
+&lt;%= notice %&gt;　&lt;%= alert %&gt;
+</pre>
+  に入って表示されます。
+  <hr class="red-hr">
+  それに加えて、表示された文字列には色がついていますね。
+  <br>
+  これは、文字の<strong>「<a href="/pages/3#title1-2-css-class" target="_blank">class</a>」</strong>に指定された<strong><u>「alert」と「alert-success」「alert-danger」</u></strong>が実は「Bootstrap」の設定で色付きの表示をしているからです。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>2
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow remarkable-code'>"alert alert-success"</span>&gt;&lt;%= notice %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+<br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>2
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow remarkable-code'>"alert alert-danger"</span>&gt;&lt;%= alert %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br><br>
+  緑色の通知は
+<p class="alert alert-success">&lt;p class="alert alert-success"&gt;表示する文字列&lt;/p&gt;</p>
+  赤色の通知は
+<p class="alert alert-danger">&lt;p class="alert alert-danger"&gt;表示する文字列&lt;/p&gt;</p>
+  で表示させます。
+  <br><br>
+  ここまでをまとめると、
+  <br>
+  <strong>
+  <ul class="number_ul">
+  <li><u>「&lt;% if notice %&gt;」と「&lt;% end %&gt;」の間がページに通知が来た時の表示</u></li>
+  <li><u>「&lt;% if alert %&gt;」と「&lt;% end %&gt;」の間がページにエラーの通知が来た時の表示</u></li>
+  </ul>
+  </strong>
+  になります。
+  <br><br>
+  その内容はそれぞれ<strong><u>「&lt;%= notice %&gt;」「&lt;%= alert %&gt;」</u></strong>でその通知を表示させています。
+  <hr class="red-hr">
+  <u>
+  ではこの通知はどこから来ているのでしょうか？
+  <br>
+  <strong>実はこの通知は作ることもできるので、試しに一回この通知を作ってみたいと思います。</strong>
+  </u>
+  <br><br>
+  <strong>通知（notice）</strong>は「controllerファイル」に
+<pre>
+flash[:notice] = "表示する文字"
+</pre>
+  <strong>エラーの通知（alert）</strong>も「controllerファイル」に
+<pre>
+flash[:alert] = "表示する文字"
+</pre>
+  を設定することで表示させることができます。
+  <br><br>
+  ここで設定された通知がページ内の
+<pre>
+&lt;%= notice %&gt;  &lt;%= alert %&gt;
+</pre>
+  に表示されます。
+  <br><br>
+  <strong>「<a href="/pages/5#title1-1" target="_blank">show</a>」のページの「<a href="http://0.0.0.0:3000/posts/1">0.0.0.0:3000/posts/1</a>」</strong>に自分で作った通知を表示させてみましょう。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（7行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+<strong class="color-red">7</strong>
+8
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>  @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>  flash[<span class='word-purple'>:notice</span>] = <span class='word-yellow'>"投稿"</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  内容を変更できたら「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動してから、
+  <br>
+  <strong>「<a href="http://0.0.0.0:3000/posts/1" target="_blank">0.0.0.0:3000/posts/1</a>」</strong>を開いてみましょう。
+  <br>
+  下のように表示されたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_1_flash.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              :target => ["_blank"] %>
+  この通知があまり多すぎても無駄なので、今回設定した通知は消してください。
+  <hr class="red-hr">
+  「devise」の通知でもこれを使っています。
+  <br>
+  中身は「devise」が自動で作ってくれますが、なんとなく内容を理解してもらえれば幸いです。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>「posts_controller.rb」の<u>「<a href="/pages/6#title1-5" target="_blank">edit</a>」ページに、「@post」の「content」の通知を表示</u>させる設定はどのようにすればいいでしょうか？</strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="4"></textarea>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>  @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>  flash[<span class='word-purple'>:notice</span>] = @post.content</span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+</h4>

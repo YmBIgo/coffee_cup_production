@@ -1,0 +1,26 @@
+<h2 class="textbook-section-title" id="title2"><strong>2 : ログイン機能</strong></h2>
+<h4 id="chapter9-2">
+deviseの導入も終わったので、まずはログイン機能から見てみましょう！
+<hr class="red-hr">
+まずは「<u>rails s</u>」でサーバーを起動させて下さい。
+<br>
+サーバーが起動したら、「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank"><strong>0.0.0.0:3000/users/sign_up</strong></a>」を開いてみましょう！<strong><u>このページが登録ページになります。</u></strong>
+<%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_before.png",
+                      :width => "90%",
+                      :class => "hover_img textbook-title-img"),
+            "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_before.png",
+            :target => ["_blank"] %>
+<br>
+今度は「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank"><strong>0.0.0.0:3000/users/sign_in</strong></a>」を開いてみましょう！<strong><u>これがログインページになります。</u></strong>
+<%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_before.png",
+                      :width => "90%",
+                      :class => "hover_img textbook-title-img"),
+            "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_before.png",
+            :target => ["_blank"] %>
+<hr>
+<%= render "page9/title2_1" %>
+<hr>
+<%= render "page9/title2_2" %>
+<hr>
+<%= render "page9/title2_3" %>
+</h4>

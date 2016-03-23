@@ -1,0 +1,51 @@
+<% provide :title, "ユーザー管理をする①" %>
+<div class="row">
+  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+    <div class="textbook-area">
+      <div class="textbook-area-inner fadeIn wow">
+        <div id="title" class="textbook-title">
+          <h1><strong>9 : ユーザー管理をする①</strong></h1>
+        </div>
+        <h4><u><a href="/pages/8" class="text-left ">前の章：トップページを作ろう！</a></u></h4>
+        <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header9.jpg",
+                      :width => "90%",
+                      :class => "textbook-title-img hover_img" %>
+        <%= render "page9/title0" %>
+        <br>
+        <%= render "page9/title1" %>
+        <br>
+        <%= render "page9/title2" %>
+        <div class="next-page">
+            <a href="/pages/10" class="btn btn-primary">次の章に進む</a>
+          </div>
+          <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+    <br>
+    <div id="slide-bar" class="clear-fix">
+    <strong>
+      <div class="list-group nomargin">
+        <a href="#title" class="list-group-item list-title"><h4>ユーザー管理をする①</h4></a>
+        <a href="#title0" class="list-group-item">0 : この章の目的</a>
+        <a href="#title1" class="list-group-item">1 : deviseの導入</a>
+        <a href="#title1-1" class="list-group-item">　<small>① : gem "devise"のインストール</small></a>
+        <a href="#title1-2" class="list-group-item">　<small>② : usersデータベースの作成</small></a>
+        <a href="#title1-3" class="list-group-item">　<small>③ : 「devise」のページ導入</small></a>
+        <a href="#title1-4" class="list-group-item">　<small>④ : まとめ</small>
+        <a href="#title2" class="list-group-item">2 : ログイン機能</a>
+        <a href="#title2-1" class="list-group-item">　<small>① : 登録ログイン画面を綺麗にする</small></a>
+        <a href="#title2-1-1" class="list-group-item">　　<small>⑴ : btnとform-control</small></a>
+        <a href="#title2-1-2" class="list-group-item">　　<small>⑵ : navigation-bar</small></a>
+        <a href="#title2-2" class="list-group-item">　<small>② : ログイン機能を設定</small></a>
+        <a href="#title2-2-1" class="list-group-item">　　<small>⑴ : ページ表示の制限</small></a>
+        <a href="#title2-2-2" class="list-group-item">　　<small>⑵ : ログインの通知を加える</small></a>
+        <a href="#title2-2-3" class="list-group-item">　　<small>⑶ : ログインする</small></a>
+        <a href="#title2-3" class="list-group-item">　<small>③ : まとめ</small></a>
+      </div>
+    </strong>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

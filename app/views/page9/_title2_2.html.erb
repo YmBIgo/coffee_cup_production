@@ -1,0 +1,32 @@
+<h4 id="chapter9-2-2">
+  <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : ログイン機能を設定する</strong></p>
+  <br>
+  今のままだと<strong><u>会員登録をしてもしなくても投稿ができるという謎の状態</u></strong>になっているので、
+  <ul class="number_ul">
+    <strong><li>ログインしている会員にだけ、投稿（posts）のページを見せる設定</li></strong>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_sign_in_before_alert.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_sign_in_before_alert.png",
+                :target => ["_blank"] %>
+    <hr class="red-hr">
+    <strong><li>ログインに成功した時・間違った時に表示させる通知の設定</li></strong>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_after.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_after.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
+                :target => ["_blank"] %>
+  </ul>
+  をしたいと思います。
+  <hr class="red-hr">
+  <%= render "page9/title2_2_1" %>
+  <hr class="red-hr">
+  <%= render "page9/title2_2_2" %>
+  <hr class="red-hr">
+  <%= render "page9/title2_2_3" %>
+</h4>

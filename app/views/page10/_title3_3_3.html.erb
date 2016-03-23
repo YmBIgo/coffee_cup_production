@@ -1,0 +1,82 @@
+<h4 id="chapter10-3-3-3">
+  <p id="title3-3-3" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : まとめ</strong></p>
+  <br>
+  ここでは<a href="/pages/css#title2-3" target="_blank"><strong>navigation-bar</strong></a>の設定をログインしているかしていないかで変更した。
+  <br>
+  その設定をするために、以下の3つの設定を使った。
+  <br>
+  <strong>
+  <ul class="number_ul">
+    <li><u>current_user</u>（ログインしている会員の情報を取得）</li>
+    <li><u>user_signed_in?</u>（会員がログインしているか判定）</li>
+    <li><u>&lt;% else %&gt;</u>（条件にあわない場合表示）</li>
+  </ul>
+  </strong>
+  それぞれについて説明していきたい。
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li><u>current_user</u></li></strong>
+    <br>
+    「devise」の設定でもしログインしている会員の情報を取って来たければ、
+<pre>
+current_user
+</pre>
+    を「&lt;% %&gt;」「&lt;%= %&gt;」タグの中に設定する。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow remarkable-code'>"/users/&lt;%= current_user.id %&gt;"</span>&gt;ユーザー情報&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li><u>user_signed_in?</u></li></strong>
+    <br>
+    「devise」の設定でログインしているかどうかの判定をしたいなら、
+<pre>
+user_signed_in?
+</pre>
+    を「&lt;% %&gt;」タグの中に設定する。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> <span class="remarkable-code">user_signed_in?</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li><u>&lt;% else %&gt;</u></li></strong>
+    <br>
+<pre>
+&lt;% if 条件 %&gt;
+</pre>
+    で条件にそった表示をする時に、条件から外れたものを表示させる時に使う。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"ログアウト"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;登録する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;ログインする&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+  </ul>
+  ここまでで「users」ページを設定することができました。
+  <br>
+  最後にまとめをしましょう。
+</h4>

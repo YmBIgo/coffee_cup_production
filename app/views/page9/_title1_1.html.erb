@@ -1,0 +1,88 @@
+<h4 id="chapter9-1-1">
+  <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : gem "devise"をインストール</strong></p>
+  <br>
+  まずはSublime Textで「myapp」を開いて下さい。（開き方は<a href="/pages/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）
+  <br><br>
+  「devise」は<a href="/pages/3#title2-2-1" target="_blank"><strong>gem</strong></a>になりますので、<strong>「<u>Gemfile</u>」</strong>にその設定を加えます。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>Gemfile（「<u>gem 'twitter-bootstrap-rails'</u>」の下に「<u>gem 'devise'</u>」を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>26
+27
+28
+29
+<strong class="color-red">30</strong>
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'therubyracer'</span></span>
+<span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'less-rails'</span></span>
+<span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'twitter-bootstrap-rails'</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'><span class='word-red'>gem </span><span class='word-yellow'>'devise'</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>「<u>Gemfile</u>」</strong>への設定が終わったら、ターミナルで<strong>「<a href="/pages/3#title2-2-1" target="_blank">bundle install</a>」</strong>するだけですね。
+  <br>
+  まずはターミナルで「myapp」まで移動します。
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+  <br>
+  その後で<strong>「<u>bundle install</u>」</strong>をします。
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+  <br>
+  下のような画面は出てきたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Terminal_bundle_install_bootstrap.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Terminal_bundle_install_bootstrap.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  終わったら「gem」の内容を作っているウェブページに適用させるので、ターミナルで
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:install</span>
+</td>
+</tr>
+</table>
+  <br>
+  を入力して下さい。下のような表示は出てきたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_install.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_install.png",
+              :target => ["_blank"] %>
+  これで<strong>「<u>devise</u>」</strong>の導入は終了です。
+  <hr class="red-hr">
+  でも実際に使うには、データベースの作成と表示の設定をする必要があります。
+  <br>
+  <strong><u>次はまずデータベースの作成をやっていきます。</u></strong>
+</h4>

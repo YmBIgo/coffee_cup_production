@@ -1,0 +1,37 @@
+<h4 id="chapter9-1-3">
+  <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 「devise」のページの導入</strong></p>
+  <br>
+  <strong>次は「devise」で使うページの導入をします。</strong>
+  <hr class="red-hr">
+  ページの導入もターミナルへの入力だけで自分で作る必要はないのでご安心を。
+  <br>
+  ではターミナルで下の入力をして下さい。
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:views</span>
+</td>
+</tr>
+</table>
+  <br>
+  下のような表示は出てきたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_views.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_views.png",
+              :target => ["_blank"] %>
+  一応中身ができたかを確認しましょう。
+  <br>
+  <strong>「app > views > devise」</strong>フォルダはできているでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Sublime_Text_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Sublime_Text_devise.png",
+              :target => ["_blank"] %>
+  フォルダはたくさんありますが、使うのは<strong><u>「registrations」の「new.html.erb」（登録画面）</u>と<u>「sessions」の「new.html.erb」（ログイン画面）</u></strong>になります。
+  <hr class="red-hr">
+  導入はここまでです。最後にまとめをしたいと思います。
+</h4>

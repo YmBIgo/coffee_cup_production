@@ -1,0 +1,177 @@
+<h4 id="chapter10-3-3-2">
+  <p id="title3-3-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : user_signed_in?</strong></p>
+  <br>
+  まずは作ったばっかりの「ログアウト」のリンクをクリックしてみましょう。ログアウトはできるでしょうか？
+  <br>
+  押したら下のようなページが出てくるのではないかと思います。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_after_logout.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_after_logout.png",
+              :target => ["_blank"] %>
+  <strong>これはログアウトをして<u>ログインしている会員の情報がないのに、「current_user」でログインしている会員の情報を取得しようとして出てくるエラーページ</u>です。</strong>
+  <br>
+  ログアウトはできたんですが、このようなエラーページが出てきてしまってはどうしようもないですね。
+  <br><br>
+  このようなエラーがあるので、ログインしている時とログアウトしている時で表示を変更する必要があります。
+  <ul class="number_ul">
+    <strong><li>ログインしている時</li></strong>
+    「ユーザー一覧」「ユーザー情報」「新しく投稿する」「ログアウト」のリンクを表示する
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+              :target => ["_blank"] %>
+    <strong><li>ログアウトしている時</li></strong>
+    「ログインする」「登録する」のリンクを表示する
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+              :target => ["_blank"] %>
+  </ul>
+  <hr class="red-hr">
+  ログインをしているかしていないかで表示を変えるには、<a href="/pages/9#title2-2-2" target="_blank"><strong>ログインの通知</strong></a>で使った
+<pre>
+&lt;% if 条件 %&gt;
+  内容
+&lt;% end %&gt;
+</pre>
+  を使います。
+  <br><br>
+  ユーザーがログインしているかどうかは「devise」の設定で、
+<pre>
+user_signed_in?
+</pre>
+  で条件にあっているかどうかを判定します。
+  <br><br>
+   <strong>では、この「user_signed_in?」と「&lt;% if %&gt;」を使い、<u>ログインした時にだけ「ユーザー一覧」「ユーザー情報」「新しく投稿する」「ログアウト」のリンクを表示する設定</u>を加えてみます。</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（25、30行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>21
+22
+23
+24
+<strong class="color-red">25</strong>
+26
+27
+28
+29
+<strong class="color-red">30</strong>
+31
+32
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;登録する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;ログインする&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span>&gt;ユーザー一覧&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span>&gt;ユーザー情報&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"ログアウト"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  サーバーを再起動（「Command」「c」で止めて「rails s」）させて、もう一度同じページを読み込んでみましょう。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_logout.png",
+                        :width => "90%",
+                        :class =>" hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_logout.png",
+              :target => ["_blank"] %>
+  今回は普通にページが出てきたのではないでしょうか？
+  <hr class="red-hr">
+  もう一度ログインしてみましょう。
+  <br>
+  下のようにログインはできたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_login.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_login.png",
+              :target => ["_blank"] %>
+  <strong>こう見るとログインしたのに、まだ「ログインする」「登録する」のリンクが残っていますね。</strong>
+  <br>
+  これも「&lt;% if %&gt;」の条件を使って消しちゃいましょう。
+  <br><br>
+  条件にあうものは
+<pre>
+&lt;% if 条件 %&gt;
+  内容
+&lt;% end %&gt;
+</pre>
+  で表示させましたが、逆に条件にあわないものはこの続きに
+<pre>
+&lt;% if 条件 %&gt;
+  内容（条件に合ってた時に表示）
+&lt;% else %&gt;
+  内容（条件に合ってなかった時に表示）
+&lt;% end %&gt;
+</pre>
+  を指定することで表示させることができます。
+  <br><br>
+  <strong><u>では、ログインして会員に「登録する」「ログインする」のリンクを見せないようにしたいと思います。</u></strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（28〜30行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>21
+22
+23
+24
+25
+26
+27
+<strong class="color-red">28
+29
+30</strong>
+31
+32
+33
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span>&gt;ユーザー一覧&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span>&gt;ユーザー情報&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"ログアウト"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;登録する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;ログインする&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  サーバーを再起動（「Command」「c」で止めて「rails s」）させて、もう一度同じページを読み込んでみましょう。
+  <br>
+  再起動ができたら、もう一度ログインした状態で好きなページを開いてみましょう。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+              :target => ["_blank"] %>
+  「ログインする」「登録する」のリンクは消えたでしょうか？
+  <br>
+  消えてたらもう一度ログアウトしてみましょう。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+              :target => ["_blank"] %>
+  ログインしていない時の上のバーの表示も大丈夫でしょうか？
+  <hr class="red-hr">
+  <strong><u>最後に内容のまとめをしたいと思います</u></strong>
+</h4>

@@ -1,0 +1,100 @@
+<h4 id="chapter9-1-4">
+  <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : まとめ</strong></p>
+  <br>
+  「devise」を導入するには、
+  <strong>
+  <ul class="number_ul">
+    <li><u>Gemfile</u>の設定とインストール</li>
+    <li><u>deviseの導入</u></li>
+    <li>usersの<u>枠組みの導入</u></li>
+    <li>表示する<u>viewsの導入</u></li>
+  </ul>
+  </strong>
+  の4つの準備が必要になります。それぞれについてまとめます。
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li>Gemfileの設定とインストール</li></strong>
+    <br>
+    「devise」の<a href="/pages/3#title2-2-1" target="_blank"><strong>gem</strong></a>は、Gemfileに
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>Gemfile</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'devise'</span></span>
+</td>
+</tr>
+</table>
+    を追加して、ターミナルで
+    <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+    を入力することで設定する。
+    <hr class="red-hr">
+    <strong><li>deviseの導入</li></strong>
+    <br>
+    「devise」のgemをインストールすることができたらターミナルで
+    <br><br>
+    　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:install</span>
+</td>
+</tr>
+</table>
+    を入力することで設定する。
+    <hr class="red-hr">
+    <strong><li>usersの枠組みの設定</li></strong>
+    <br>
+    会員データベースの枠組みの設定でまず
+    <br><br>
+    　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise user</span>
+</td>
+</tr>
+</table>
+    を入力して、<u>「devise」の「users」データベースを作るための設定ファイル</u>を作る。
+    <br><br>
+    内容を自分の好きなように変更したらターミナルで、
+    <br><br>
+    　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+    を入力して、「users」データベースを作る。
+    <hr class="red-hr">
+    <strong><li>表示するviewの設定</li></strong>
+    <br>
+    「devise」のページもターミナルへの入力で作る。
+    <br><br>
+    　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:views</span>
+</td>
+</tr>
+</table>
+  を入力して、「devise」のページを作る。
+  </ul>
+</h4>

@@ -106,7 +106,7 @@
         <br>
         サーバーが立ち上がったんで、これでページもみられるようになりました。
         <br><br>
-        では、「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」をブラウザで開いてみましょう！
+        では、「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」をブラウザで開いてみましょう！
         <br>
         下のようなページは出てきたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_1.png",
@@ -114,11 +114,11 @@
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_1.png",
                     :target => ["_blank"] %>
-        「１つのデータを表示する（show）」のページは、<strong>「<u>localhost:3000/データベース名/idの番号</u>」</strong>で「idの番号」のデータを選択することができます。
+        「１つのデータを表示する（show）」のページは、<strong>「<u>0.0.0.0:3000/データベース名/idの番号</u>」</strong>で「idの番号」のデータを選択することができます。
         <br><br>
         このページは<strong>「<u>postsデータベースの中から、idが1</u>」</strong>のデータを選択しています。
         <br>
-        では、「<a href="http://localhost:3000/posts/2016" target="_blank"><strong>localhost:3000/posts/2016</strong></a>」をブラウザで開いてみて下さい。
+        では、「<a href="http://0.0.0.0:3000/posts/2016" target="_blank"><strong>0.0.0.0:3000/posts/2016</strong></a>」をブラウザで開いてみて下さい。
         <br><br>
         下のようなエラーの表示っぽいものはでてきたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_2016.png",
@@ -139,7 +139,7 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line small-code'>localhost:3000/tweets/9028</span>
+<td class='code-content answer-code'><span class='code-line small-code'>0.0.0.0:3000/tweets/9028</span>
 </td>
 </tr>
 </table>
@@ -167,7 +167,7 @@
 </tr>
 </table>
         <br>
-        内容が変更できたら、ターミナルで「<u>myapp</u>」に移動してから<strong>「<i>rails s</i>」</strong>でサーバを立ち上げて、「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」を開いてみましょう！
+        内容が変更できたら、ターミナルで「<u>myapp</u>」に移動してから<strong>「<i>rails s</i>」</strong>でサーバを立ち上げて、「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう！
         <br><br>
         下のように保存されたデータが表示されたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",

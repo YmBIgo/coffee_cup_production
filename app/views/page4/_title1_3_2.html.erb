@@ -9,7 +9,7 @@
         新しく設定ファイルを作って、内容を変更するできるでしょうか？
         <br>
         （「<strong><u>rails g migration 設定ファイル名</u></strong>」で設定ファイルを作り、「<strong>change_column :posts, :content, :text</strong>」を入力）
-        <br>
+        <br><br>
         もちろんそれでも枠組みは変更できますが、もっと簡単な方法があります。
         <br><br>
         Railsでは、直前に行ったデータベースの変更を取り消すことができます。
@@ -32,5 +32,5 @@
         <br><br>
         この入力は<strong><u>１つずつしか戻せません</u></strong>が、間違えてしまった時などは利用してみてください。
         <hr class="red-hr">
-        <i class="fa fa-star color-blue"></i>　<strong>「<u>rake db:rollback</u>」で、データベースを一つ前の設定を適用させる前に戻せる。</strong>
+        <i class="fa fa-star color-blue"></i>　<strong>「<u>rake db:rollback</u>」で、データベースを一つ前の設定を適用させる前に戻せる。<br><br>この後で、設定ファイルを変更して「<u>rake db:migrate</u>」をすることで間違った設定を直す</strong>
 </h4>

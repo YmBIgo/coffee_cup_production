@@ -1,0 +1,106 @@
+<h4 id="chapter9-2-1-2">
+  <p id="title2-1-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : navigation-bar</strong></p>
+  <br>
+  <strong><a href="/pages/css#title2-3" target="_blank">navigation-bar</a></strong>に<strong>「<a href="/users/sign_up" target="_blank">登録する</a>」</strong>と<strong>「<a href="/users/sign_in" target="_blank">ログインする</a>」</strong>のリンクを作ってみましょう！
+  <br>
+  今回はnavigation-barの右側にこの二つにリンクを追加します。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>登録画面のページ「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」への<a href="/pages/5#title1-2-2" target="_blank">リンク</a>を設定してみましょう。</strong>
+  <br>
+  <small>※　「0.0.0.0:3000」へのリンクは「/」と省略することができます。</small>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;登録する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  同じように<strong>「<a href="/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</strong>への「<a href="/users/sign_in" target="_blank">ログインする</a>」のリンクは
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;ログインする&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  で設定します（マウスを上に載せれば答えがでます）。
+  <br><br>
+  このリンクを<strong>「application.html.erb」</strong>にあるnavigation-barに加えます。
+  <hr class="red-hr">
+  まずSublime Textで、<strong>「<u>app > views > layouts</u>」</strong>フォルダにある<strong>「application.html.erb」</strong>を開いて、下の内容を加えましょう。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+<strong class="color-red">23
+24</strong>
+25
+26
+27
+28
+29
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse" data-target="#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;登録する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;ログインする&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>※　navigation-barの使い方は<a href="/pages/css#title2-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  変更ができたら、「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動して、<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>など好きなページを開いてみましょう。
+  <br>
+  下のようなページは表示されたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_nav_add_log_in.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_nav_add_log_in.png",
+              :target => ["_blank"] %>
+  <br>
+  <strong>
+  装飾も意外と簡単にできたんではなかったでしょうか？
+  <br>
+  次から実際のログイン機能を作って、<u>ログインしないと「posts」のページに入れないようにしましょう。</u>
+  </strong>
+</h4>

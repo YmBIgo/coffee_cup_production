@@ -1,0 +1,115 @@
+<h4 id="chapter9-2-2-1">
+  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : ログインした会員に「posts」ページを見せる</strong></p>
+  <br>
+  ではログイン会員以外には「posts」のページを見れないようにしましょう。
+  <br>
+  方法は簡単で、<strong><u>見せたくないページの「controller」ファイルに下の設定を加えるだけです。</u></strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>before_action <span class='word-purple'>:authenticate_user!</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ではやってみます。
+  <br>
+  <strong><u>「posts_controller.rb」を下のように変更してみましょう。</u></strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controler.rb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>PostsController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  before_action <span class='word-purple'>:authenticate_user!</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class="code-line">  <span class="word-gray">#以下省略</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  変更ができたら「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動して、<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>を開いてみましょう。
+  <br><br>
+  <strong>まだログインができていないので、ログイン画面がでてきたのではないのでしょうか？</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_sign_in_before_alert.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_sign_in_before_alert.png",
+              :target => ["_blank"] %>
+  <strong>「<a href="http://0.0.0.0:3000/posts/1" target="_blank">0.0.0.0:3000/posts/1</a>」</strong>などの他のページでもそうなるかみてみましょう。
+  <hr class="red-hr">
+  今の状態だと全ての「posts」ページが見れなくなっているのですが、<strong><u>例えば「show」「index」だけは会員でなくても見れる</u></strong>ようにすることもできます。
+  <br><br>
+  <strong><u>「show」と「index」だけの表示をやってみましょう！</u>
+  <br>
+  さっきの「posts_controller」の設定を少し変更してみましょう。</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>PostsController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>  <span class="word-gray">#以下省略</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  後半の<strong>「<i>only => [...]</i>」</strong>の部分を追加しました。
+  <br>
+  この設定方法は<strong>「<a href="/pages/6#title2-route" target="_blank">route.rb</a>」</strong>と似ている、というより全く同じですね。
+  <br><br>
+  今回は<strong>「<a href="/pages/6#title1-3" target="_blank">new</a>」「<a href="/pages/6#title1-4" target="_blank">create</a>」「<a href="/pages/6#title1-5" target="_blank">edit</a>」「<a href="/pages/6#title1-6" target="_blank">update</a>」「<a href="/pages/6#title1-7" target="_blank">destroy</a>」</strong>の5つのページで、ログインしているかのチェックをしています。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong><u>「new」と「create」のみでログインしているかをチェックする</u>にはどのような設定を「controller」ファイルに追加すればいいでしょうか？</strong>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>]</span>
+</td>
+</tr>
+</table>
+</h4>

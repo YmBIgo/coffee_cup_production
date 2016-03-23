@@ -1,0 +1,89 @@
+<h4 id="chapter10-3-2-4">
+  <p id="title3-2-4" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : updateページ</strong></p>
+  <br>
+  「update」ページのデータ操作は、「edit」ページから受け取ったデータを更新します。
+  <br>
+  下のように設定しましょう。
+  <br>
+  <small>※　詳しい説明は<strong><u>「posts」データベースの「<a href="/pages/6#title1-6" target="_blank">update</a>」</u></strong>をページを参考にして下さい。</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>15
+<strong class="color-red">16
+17</strong>
+18
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  更新するデータを選択して、「edit」ページで記入したようにデータを更新します。
+  <br><br>
+  また変なデータ（idやemailなど）を更新されることを防ぐために、更新できるデータを「users」データベースの「family_name」と「first_name」と「self_introduction」だけに設定しています。
+  <hr class="red-hr">
+  次に<strong>「<u>app > views > users > update.html.erb</u>」</strong>に設定を加えます。<strong>「<u>update.html.erb</u>」</strong>を下のように変更します。
+  <br>
+  <small>※　詳しい説明は<strong><u>「posts」データベースの「<a href="/pages/6#title1-6" target="_blank">update</a>」</u></strong>をページを参考にして下さい。</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>update.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報を変更しました。&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ユーザー情報に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報の編集に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  変更ができたら、「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動して、
+  <br>
+  <strong>「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank">0.0.0.0:3000/users/1/edit</a>」</strong>で編集するデータを記入して、「登録する」ボタンを押しましょう。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_edit.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_edit.png",
+              :target => ["_blank"] %>
+  変更完了ページに移動したでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_update.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_update.png",
+              :target => ["_blank"] %>
+  ページが出てきたら、<strong>「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」</strong>を開いてみましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_1_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_1_after.png",
+              :target => ["_blank"] %>
+  編集したデータで「show」ページは表示されたでしょうか？
+  <hr class="red-hr">
+  ここまでで「users」データベースのページの設定は完了しました。
+  <br>
+  復習の内容なので難しい部分は少なかったと思います。
+  <br>
+  <strong>次は便利にするために上のバーに「users」ページへのリンクを加えてみましょう。</strong>
+</h4>

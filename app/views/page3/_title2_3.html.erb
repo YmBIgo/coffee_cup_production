@@ -31,13 +31,15 @@
         <hr class="red-hr">
         これでウェブページを表示させることができました。
         <br>
-        ブラウザで、<a href="http://localhost:3000" target="_blank"><strong class="little-remarkable">localhost:3000</strong></a>を開いてみて下さい。
+        ブラウザで、<a href="http://0.0.0.0:3000" target="_blank"><strong class="little-remarkable">0.0.0.0:3000</strong></a>を開いてみて下さい。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
                     :target => ["_blank"] %>
         このようなページは出てきたでしょうか？これがページの雛形になります。
+        <br>
+        以後Ruby on Railsで作ったページはこの<a href="http://0.0.0.0:3000" target="_blank"><strong class="little-remarkable">0.0.0.0:3000</strong></a>で開きます。
         <hr class="red-hr">
         それでは、「rails s」で動かしたサーバーを一回止めましょう。
         <br>
@@ -49,11 +51,11 @@
                     :target => ["_blank"] %>
         これでページの表示と保存をしているサーバーを止めることができました。
         <br>
-        もう一度ブラウザで、<a href="http://localhost:3000" target="_blank"><strong class="little-remarkable">localhost:3000</strong></a>を開いてみましょう。
+        もう一度ブラウザで、<a href="http://0.0.0.0:3000" target="_blank"><strong class="little-remarkable">0.0.0.0:3000</strong></a>を開いてみましょう。
         <br>
         <strong>今回はサーバーが動いていないので、<u>ページは表示されないはずです。</u></strong>
         <br>
         Railsでページを表示させる必要はない時には、「Command」と「c」を一緒に押してサーバーを停止させて下さい。<strong class="little-remarkable"><u>そうしないと電池が無駄に使われます。</u></strong>
         <hr>
-        <i class="fa fa-star color-blue"></i>　<strong>設定が終わった雛形は、「<u>rails s</u>」をターミナルで入力した状態で「<u>localhost:3000</u>」をブラウザで開くことで見ることができる。</strong>
+        <i class="fa fa-star color-blue"></i>　<strong>設定が終わった雛形は、「<u>rails s</u>」をターミナルで入力した状態で「<a href="http://0.0.0.0:3000" target="_blank"><u>0.0.0.0:3000</u></a>」をブラウザで開くことで見ることができる。</strong>
 </h4>

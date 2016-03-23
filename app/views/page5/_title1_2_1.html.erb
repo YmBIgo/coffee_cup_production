@@ -120,7 +120,7 @@
         <hr class="red-hr">
         できたらターミナルで「myapp」に移動してから、<strong>「<i>rails s</i>」</strong>を入力して下さい。
         <br>
-        サーバーが立ち上がったら、ブラウザで「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+        サーバーが立ち上がったら、ブラウザで「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみて下さい。
         <br>
         上のような表示は出てきたでしょうか？
         <hr class="red-hr">
@@ -166,7 +166,7 @@
         <br>
         <small>※　設定ファイルを変更してちゃんと保存したのにページが変更されなかった時は、この「Command」と「c」でサーバーを止めてからまた「rails s」でサーバーを起動させてください。</small>
         <br><br>
-        できたらブラウザで「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+        できたらブラウザで「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみて下さい。
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
                               :width => "90%",
@@ -366,7 +366,7 @@
         <hr class="red-hr">
         <i class="fa fa-play-circle color-red"></i>　もう開いた後ですが、ブラウザでの開き方について説明します。
         <br><br>
-        <strong>「<u>localhost:3000/データベース名</u>」</strong>をブラウザで開けば、<strong>「<u>データの全表示（index）</u>」</strong>をするページを開くことができます。
+        <strong>「<u>0.0.0.0:3000/データベース名</u>」</strong>をブラウザで開けば、<strong>「<u>データの全表示（index）</u>」</strong>をするページを開くことができます。
         <br>
         今回は「posts」データベースの内容をすべて表示させるためのページだったので、
         <br><br>
@@ -375,7 +375,7 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line small-code'>localhost:3000/posts</span>
+<td class='code-content'><span class='code-line small-code'>0.0.0.0:3000/posts</span>
 </td>
 </tr>
 </table>
@@ -391,7 +391,7 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line small-code'>localhost:3000/tweets</span>
+<td class='code-content answer-code'><span class='code-line small-code'>0.0.0.0:3000/tweets</span>
 </td>
 </tr>
 </table>

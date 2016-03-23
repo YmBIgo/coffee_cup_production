@@ -22,7 +22,7 @@
 </table>
         <br>
         移動できたら、下の入力をしてみて下さい。
-        <br>
+        <br><br>
         <strong>　ターミナル（半角英数で入力）</strong>
 <table class="highlight">
 <tr>
@@ -67,7 +67,7 @@ rails g migration 設定ファイル名
 3
 4
 </td>
-<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost < <span class='word-purple'>ActiveRecord:</span><span class='word-purple'>:Migration</span></span>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost <span class="word-green">< ActiveRecord::Migration</span></span>
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 <span class='code-line'><span class='word-red'>end</span></span>
@@ -139,7 +139,7 @@ add_column :データベース名, :枠組みの名前, :データの種類
 4
 5
 </td>
-<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost < <span class='word-purple'>ActiveRecord:</span><span class='word-purple'>:Migration</span></span>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost <span class="word-green">< ActiveRecord::Migration</span></span>
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
 <span class='code-line remarkable-code'>    add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:place</span>, <span class='word-purple'>:string</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
@@ -154,7 +154,7 @@ add_column :データベース名, :枠組みの名前, :データの種類
         <br>
         <small>※　なぜか「:」が入っていますが、これは設定ファイルの仕様なんで許してやってください。</small>
         <hr class="red-hr">
-        <p><i class="fa fa-question-circle color-green"></i>　では例えば、<strong>「<u>数字を入れるreputationの枠組みを、postsというデータベースに追加する</u>」</strong>にはどのような設定が必要でしょうか？（マウスを上に置けば答えがでます）</p>
+        <p><i class="fa fa-question-circle color-green"></i>　 <strong>では例えば、「<u>数字を入れるreputationの枠組みを、postsというデータベースに追加する</u>」にはどのような設定が必要でしょうか？（マウスを上に置けば答えがでます）</strong></p>
         <br>
         <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb（３行目）</strong>
         <br><br>
@@ -213,7 +213,7 @@ change_column :データベース名, :枠組みの名前, :データの種類
 </tr>
 </table>
         <br>
-        のように設定します。（stringを書く必要はありません。）
+        のように設定します。
         <hr class="red-hr">
         ここまでで、設定ファイルの設定の方法について説明しました。
         <br>

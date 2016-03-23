@@ -1,0 +1,99 @@
+<h4 id="chapter10-3-2-1">
+  <p id="title3-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : showページ</strong></p>
+  <br>
+  「show」ページのデータ操作は、idにそったページを表示するものになり、下のように設定します。
+  <br>
+  <small>※　詳しい説明は<strong><u>「posts」データベースの「<a href="/pages/5#title1-1-2" target="_blank">show</a>」ページ</u></strong>を参考にして下さい。</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（4行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+<strong class="color-red">4</strong>
+5
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  この「@user」をページで表示させます。
+  <hr class="red-hr">
+  次に、<strong>「<u>app > views > users > show.html.erb</u>」</strong>に表示の設定を加えます。<strong>「<u>show.html.erb</u>」</strong>を下のように変更しましょう。
+  <br>
+  <small>※　詳しい説明は<strong><u>「posts」データベースの「<a href="/pages/5#title1-1" target="_blank">show</a>」ページ</u></strong>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ユーザー一覧に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  変更ができたら、「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動して、
+  <br>
+  <strong>「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」</strong>を開きましょう！
+  <br>
+  下のようなページが表示されたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1.png",
+              :target => ["_blank"] %>
+  まだ「users」データベースの「family_name」「first_name」「self_introduction」に内容を保存していないので、内容は表示されません。
+  <br>
+  「edit」「update」ページができたらデータを保存して内容を表示してみましょう！
+  <hr class="red-hr">
+  リンクのうち
+  <br>
+  <ul class="number_ul">
+    <strong><li>「users」データベースの「index」ページへのリンク</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ユーザー一覧に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+      <a href="/users" class="btn btn-primary" style="margin:15px 0" target="_blank">ユーザー一覧に戻る</a>
+    <strong><li>「users」データベースの「edit」ページへのリンク</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+      <p><a href="/users/1/edit" class="btn btn-success" style="margin:15px 0" target="_blank">ユーザー情報を編集する</a>
+  </ul>
+  はまだ内容を加えていないページになります。
+  <br>
+  今はページに移動しても真っ白のページしか出てきませんが、これから内容を付け加えていきましょう。
+</h4>

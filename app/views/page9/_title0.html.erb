@@ -1,0 +1,49 @@
+<h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+<h4 id="chapter9-0">
+<i class="fa fa-bookmark color-red"></i>　<strong>世の中に広くあるウェブサービスのように<u>ユーザー管理</u>ができるようにしましょう。</strong>
+<hr>
+世の中にある多くのウェブサービスでは、利用者はそのウェブページの会員となってサービスを利用します。
+<br>
+このような<strong><u>会員制のサイトのユーザー管理</u></strong>をこの章で設定してみたいと思います。
+<br><br>
+Ruby on Railsでは、このユーザー管理をするための<strong><a href="/pages/3#title2-2-1" target="_blank">gem</a>「<u>devise</u>」</strong>を使って会員制のウェブページを作ります。
+<br><br>
+<strong>「<u>devise</u>」</strong>で作る会員制のサイトの簡単な概要について説明しましょう。
+<hr class="red-hr">
+<ul class="number_ul">
+  <strong><li>ログイン機能</li></strong>
+  <br>
+  postデータベースのページ（<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>など）を見るためには<strong><u>会員登録が必要</u></strong>になり、会員登録をせずページを見ようとすると<u>「ログイン」画面に移動</u>する。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+              :target => ["_blank"] %>
+  ログインすれば、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+              :target => ["_blank"] %>
+  のようにページが表示されます。
+  <hr class="red-hr">
+  <strong><li>ユーザーの情報の登録</li></strong>
+  <br>
+  登録された会員情報は<strong>「users」データベース</strong>（<u>データベースは「devise」が作ってくれます</u>）に保存されます。
+  <br>
+  この「users」データベースを使って、会員情報のページを作ることもできます。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_1_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_1_after.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <strong><li>他のデータベースとの紐付け</li></strong>
+  <br>
+  会員の設定ができれば、他のデータがどの会員のものであるかという情報の紐付けをすることもできます。
+  <br><br>
+  例えば、投稿（posts）で言えば、ある投稿を作るときにどの会員がそれを作ったかも設定でき、会員ごとのタイムラインも作ることができます。
+</ul>
+<hr class="red-hr">
+<strong>この章では、この３つについてやりますが、その前に<u>「devise」の導入</u>についてやってます。</strong>
+</h4>

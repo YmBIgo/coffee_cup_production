@@ -1,0 +1,95 @@
+<h4 id="chapter10-3-1">
+  <p id="title3-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 7つのページの設定</strong></p>
+  <br>
+  ページを設定するには<strong><u>「config > route.rb」</u></strong>にどのページを使うかを設定します。
+  <br>
+  まずはSublime Textで「myapp」を開いて（開き方は<a href="/pages/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）、<strong><u>「config > route.rb」</u></strong>の内容を下のように変更しましょう。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>route.rb（7行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+<strong class="color-red">7</strong>
+8
+9
+10
+11
+12
+13
+14
+15
+16
+...
+61
+62
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  devise_for <span class='word-purple'>:users</span></span>
+<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:users</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># Example of regular route:</span></span>
+<span class='code-line'>  <span class='word-gray'>#   get 'products/:id' => 'catalog#view'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  追加した内容は「posts」データベースの<strong>「<a href="/pages/6#title2-route" target="_blank">7つのページの設定</a>」</strong>の内容を「users」データベースに変えただけなので分かると思います。<u>「users」データベースの「<a href="/pages/5#title1-1" target="_blank">show</a>」「<a href="/pages/5#title1-2" target="_blank">index</a>」「<a href="/pages/6#title1-5" target="_blank">edit</a>」「<a href="/pages/6#title1-6" target="_blank">update</a>」のページを使う</u>ことをここで設定しています。
+  <hr class="red-hr">
+  内容を見ると3行目に今までに追加していなかった設定があると思います。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content'><span class='code-line'>devise_for <span class='word-purple'>:users</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  この設定は「devise」で<a href="/pages/9#title1-2" target="_blank"><strong>「users」データベースの枠組みを加えた下の入力</strong></a>
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise user</span>
+</td>
+</tr>
+</table>
+  <br>
+  で「users」データベースを作った時に自動的に追加された設定で、
+  <br>
+  <strong>
+  <ul class="number_ul">
+  <li>登録画面　　「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</li>
+  <li>ログイン画面「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</li>
+  </ul>
+  </strong>
+  などの「devise」が作ったページを使うための設定になります。
+  <hr class="red-hr">
+  ここまでで、<strong><u>「users」データベースの「<a href="/pages/5#title1-1" target="_blank">show</a>」「<a href="/pages/5#title1-2" target="_blank">index</a>」「<a href="/pages/6#title1-5" target="_blank">edit</a>」「<a href="/pages/6#title1-6" target="_blank">update</a>」</u></strong>をページで使うことを設定しました。
+  <br>
+  次は、データ操作を設定しましょう。
+</h4>

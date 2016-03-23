@@ -1,6 +1,7 @@
 <h4 id="chapter2-1-2-2">
-        <p id="title1-2-2"><i class="fa fa-check-square color-blue"></i>　<strong>⑵ : データの代入と保存</strong></p>
-        <p>ウェブページでは入力された情報に応じて、新しいデータがデータベースに追加されていきます。
+        <p id="title1-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : データの代入と保存</strong></p>
+        <br>
+        ウェブページでは入力された情報に応じて、新しいデータがデータベースに追加されていきます。
         <br>
         Facebookの投稿で言うと、あなたが投稿するたびにデータベースにはあなたの投稿のデータが追加されていきます。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_database.png",
@@ -8,12 +9,20 @@
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_database.png",
                     :target => ["_blank"] %>
-        Railsでは、データベースへの代入・保存の方法に応じたページの役割があります。
-        <br>
-        ですが、ページではデータの操作（データの表示・作成・変更・削除）は行いません。<strong class="little-remarkable color-red">データの操作はページの役割とは別に自分で設定しなければなりません。</strong>
+        データベースへの代入・保存の方法に応じたページの役割は上で説明した通りありますが、<u>実際のデータの表示・保存・変更・削除は行いません。</u>
         <br><br>
-        具体的には、ページに作った入力欄・表示する部分とそれに対応する<strong>データの操作のやり方（データの表示・作成・変更・削除）</strong>を設定することでデータの保存をしていきます。
-        </p>
+        <strong class="little-remarkable color-red">データの操作はページの役割とは別に自分で設定しなければなりません。</strong>
+        <br><br>
+        具体的には、それぞれの役割のページに
+        <strong>
+        <ul style="margin:15px 0">
+            <li>「どのデータを、<u>表示</u>させるか」</li>
+            <li>「どのデータを、<u>作成</u>するか」</li>
+            <li>「どのデータを、<u>変更</u>するか」</li>
+            <li>「どのデータを、<u>削除</u>するか」</li>
+        </ul>
+        </strong>
+        などの<u>データの操作の方法（データの表示・作成・変更・削除）</u>を設定することでデータの保存をしていきます。
         <hr class="red-hr">
-        <i class="fa fa-star color-blue"></i>　<strong>Rails内のデータ保存は、データベースの枠組みの定義とデータの操作のやり方を自分で設定していくことで実現する。</strong>
+        <i class="fa fa-star color-blue"></i>　<strong>Ruby on Rails内のデータ保存は、データベースの枠組みの定義とデータの操作のやり方を自分で設定して行う。</strong>
 </h4>
