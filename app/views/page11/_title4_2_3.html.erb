@@ -1,0 +1,127 @@
+<h4 id="chapter10-4-2-3">
+  <p id="title4-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : まとめ</strong></p>
+  <br>
+  ここでは、
+  <br>
+  <strong>今までは「<a href="/pages/6#title1-3" target="_blank">new</a>」ページ設定していた「name」の入力欄をなくして、ログインしている会員の情報で投稿ができるようにしました。</strong>
+  <br><br>
+  そのために
+  <strong>
+    <ul class="number_ul">
+      <li>データ操作</li>
+      <li>会員情報の表示</li>
+    </ul>
+  </strong>
+  の設定をした。
+  <br>
+  ここでそれぞれの内容をまとめる。
+  <ul class="number_ul">
+    <hr class="red-hr">
+    <strong><li>データ操作</li></strong>
+    <br>
+    データ操作は
+    <strong>
+      <ul style="margin:20px 0;">
+        <li>データの作成（<a href="/pages/6#title1-4" target="_blank"><strong>create</strong></a>）時に「user_id」に内容を追加</li>
+        <li>表示する「@user」の設定</li>
+      </ul>
+    </strong>
+    の2つがある。
+    <hr class="red-hr">
+    <i class="fa fa-play-circle"></i>　データ作成をするためには<u>「posts_controller.rb」の「create」に「user_id」に内容を入れる設定を加える。</u>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center small-code'>17
+<strong class="color-red">18</strong>
+19
+</td>
+<td class='code-content small-code'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.create(params.require(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span><span class="remarkable-code">, <span class='word-purple'>:user_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id)</span>)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <i class="fa fa-play-circle"></i>　表示するページのデータ操作の設定に<u>「@user」の標識を設定する。</u>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+<strong class="color-red">7</strong>
+8
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li>会員情報の表示</li></strong>
+    <br>
+    会員情報はデータ操作の「@user」からデータを表示させる。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2
+3
+4</strong>
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>h4</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>small</span>&gt;&lt;%= @post.created_at %&gt;：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;投稿を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    長い設定になるが、「@user」を使わないで表示をすることもできる。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4</strong>
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= p.user.id %&gt;"</span>&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;様&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h3</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <strong>
+    会員の情報で投稿ができるようになったでしょうか？
+    <br><br>
+    もう結構ページの形にはなりましたが、今のままだと<u>ログインさえしていれば自分以外の投稿を変更・削除もできてしまう</u>状態になっています。
+    <br><br>
+    次はこれを直すために「<u>会員のチェック</u>」を設定したいと思います。
+  </strong>
+  </ul>
+</h4>

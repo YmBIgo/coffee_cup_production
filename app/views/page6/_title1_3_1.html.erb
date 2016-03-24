@@ -24,9 +24,9 @@
           具体的には、
           <strong>
           <ul class="number_ul">
-            <li>空のデータの作成</li>
-            <li>データの記入欄・送信ボタンの設定</li>
-            <li>空のデータと記入欄の対応づけ</li>
+            <li>空のデータの作成（<u>posts_controller.rb</u>）</li>
+            <li>データの記入欄・送信ボタンの設定（<u>new.html.erb</u>）</li>
+            <li>空のデータと記入欄を関連させる（<u>new.html.erb</u>）</li>
           </ul>
           </strong>
           をやっていきます。
@@ -367,7 +367,7 @@
         <br>
         <strong>このボタンをクリックすると「データの作成（create）」をするページに移動して、入力された情報をデータベースに保存します。</strong>
         <br>
-        <small>※　まだ「データの作成（create）」をするページのデータ操作を設定していないので、データベースにデータは保存されませんが（実際にやってみて、<a href="/pages/how_to_open#title2" target="_blank"><strong>Sequel Pro</strong></a>で確認してみてください）</small>
+        <small>※　まだ「データの作成（create）」をするページのデータ操作を設定していないので、データベースにデータは保存されません（実際にやってみて、<a href="/pages/how_to_open#title2" target="_blank"><strong>Sequel Pro</strong></a>で確認してみてください）</small>
         <hr class="red-hr">
         ここまでで、入力欄とボタンの表示の説明をしました。
         <br>
@@ -457,7 +457,7 @@
         <br><br>
         「データを作成（create）」するページへ移動するためのボタンは、
 <pre>
-&lt; f.submit "文字列" %&gt;
+&lt;%= f.submit "文字列" %&gt;
 </pre>
         で設定します。
         <hr class="red-hr">

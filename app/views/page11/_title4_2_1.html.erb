@@ -1,0 +1,229 @@
+<h4 id="chapter10-4-2-1">
+  <p id="title4-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : データ操作</strong></p>
+  <br>
+  まずはデータ操作・「posts_controller.rb」の内容を<u>「name」でなく「user_id」を使ったデータ</u>に変えていきます。
+  <br><br>
+  この変更をするには、2つの設定が必要になります。
+  <strong>
+    <ul class="number_ul">
+      <li>データ作成時（<a href="/pages/6#title1-3" target="_blank">create</a>）に「user_id」に会員情報を入れる設定</li>
+      <li>ページに会員情報を表示させる標識「@user」の設定</li>
+    </ul>
+  </strong>
+  それぞれについてやってみます！
+  <br>
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li>データを作成した時「user_id」に会員情報を入れる</li></strong>
+    <br>
+    <i class="fa fa-question-circle color-green"></i>　<strong>まずは復習で、「def create」の部分から、<u>「name」を設定から消して「user_id」を追加する設定</u>をしましょう（マウスを上におけば答えが出ます）</strong>
+    <br>
+    <small>※　分からなければ<a href="/pages/6#title1-4" target="_blank"><strong>こちら</strong></a>を見て下さい</small>
+    <br><br>
+    <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+    <br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（17〜19行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>17
+<strong class="color-red">18</strong>
+19
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line answer-code'>    @post = <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span><span class="remarkable-code">, <span class="word-purple">:user_id</span></span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    データの作成・変更をする時は、
+<pre>
+.require(:データベース名（単数形）.permit(:データベースの枠組み...))
+</pre>
+    で変更をするデータベースを制限していました（詳しい内容は<a href="/pages/6#title1-4-1" target="_blank"><strong>こちら</strong></a>）。
+    <hr class="red-hr">
+    これで「user_id」をデータに入れる設定はできたのですが、「user_id」に内容を入れる設定はまだできていません。
+    <br>
+    <strong><u>次は「user_id」に会員の情報をいれましょう。</u></strong>
+    <br><br>
+    でも、この「user_id」は入力欄には使えません。
+    <br>
+    <strong>もし会員情報の入力欄があったら、<u>他人の会員情報で投稿ができてしまう</u>危険なサイトになることでしょう・・・</strong>
+    <br><br>
+    <strong>「user_id」の内容は、ログインしている会員の情報を取得する「<a href="/pages/10#title3-3-3" target="_blank">current_user</a>」を使って「posts_controller.rb」に設定します。</strong>
+    <br><br>
+    「posts_controller.rb」を下のように変更しましょう。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（17〜19行目、半角英数字で入力）</strong>
+    <br>
+    <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center small-code'>17
+<strong class="color-red">18</strong>
+19
+</td>
+<td class='code-content small-code'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.create(params.require(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>, <span class='word-purple'>:user_id</span>)<span class="remarkable-code">.merge(<span class='word-purple'>:user_id</span> => current_user.id)</span>)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    18行<strong>「<u>... , :user_id)</u>」</strong>の後ろに、
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">18</strong>
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>.merge(<span class='word-purple'>:user_id</span> => current_user.id)</span>
+</td>
+</tr>
+</table>
+    <br>
+    を加えました
+    <br>
+    <u>これで「user_id」に「current_user」の「id」を入れる設定ができました。</u>
+    <hr class="red-hr">
+    内容を見ると、
+<pre>
+:user_id => current_user.id
+</pre>
+    で<strong><u>「user_id」に「current_user」の「id」を入れている</u></strong>のが、なんとなく理解できるでしょうか？
+    <br>
+    この設定は「rails c」でデータを<a href="/pages/4#title2-1" target="_blank"><strong>作成（create）</strong></a>・<a href="/pages/4#title1-3" target="_blank"><strong>変更（update）</strong></a>した時の設定と同じなので分かりやすいと思います。
+    <br>
+    <u>「user_id」に「current_user」の「id」を入れています。</u>
+    <br><br>
+    では、
+<pre>
+.merge()
+</pre>
+    はなにをしているのでしょうか？
+    <br><br>
+    これは、<strong><u>追加の設定を加える</u></strong>時の設定になります。今回のように入力欄から送られてこなかったデータを保存したい時に使います。
+    <hr class="red-hr">
+    <strong><li>「@user」の設定</li></strong>
+    <br>
+    次はページに会員情報を表示させるための標識「@user」を設定しましょう。
+    <br>
+    <a href="/pages/10#title3-2-1" target="_blank"><strong>「users」ページを作った時</strong></a>と同じように、<u>ページで表示させるための「@user」を「posts_controller.rb」に設定</u>します。
+    <br><br>
+    ここでは投稿をした会員の情報を表示させるので、
+    <strong>
+      <ul class="number_ul">
+        <li>投稿データを表示する「<u>show</u>」</li>
+        <li>作成されたデータを表示する「<u>create</u>」</li>
+        <li>変更されたデータを表示する「<u>update</u>」</li>
+        <li>削除したデータを表示する「<u>destroy</u>」</li>
+      </ul>
+      <br>
+    </strong>
+    のデータ操作の部分「posts_controller.rb」に「@user」を設定します。
+    <hr class="red-hr">
+    「@user」には投稿をした会員情報を設定するのですが、これは
+<pre>
+User.find(idの番号)
+</pre>
+    を使って設定します。
+    <br>
+    この後ろに入る「idの番号」に、<strong><u>「posts」データベースの「user_id」を入れます。</u></strong>
+    <br><br>
+    <i class="fa fa-play-circle color-red"></i>　例えば「id」が「890」の会員の情報は、
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@user = <span class='word-blue'>User</span>.find(890)</span>
+</td>
+</tr>
+</table>
+    <br>
+    で選択することができますが、この後ろの「id」の部分を「posts」データベースの「user_id」を使って選択することで投稿をした会員情報を選択します。
+    <hr class="red-hr">
+    ではまずは「show」で設定をしてみます。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（5〜8行目）</strong>
+    <br>
+    <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+<strong class="color-red">7</strong>
+8
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    これで「@user」に「@post」の投稿をした会員の情報が入りました。「@post」を投稿した会員のid「user_id」の会員を「@user」で選択しています。
+    <br>
+    この「@user」の<u>「family_name」「first_name」をページで表示</u>させます。
+    <br><br>
+    <i class="fa fa-play-circle color-red"></i>　<strong>ページの設定をする前に、残っている「create」「update」「destroy」でも、同じように設定を加えましょう！</strong>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（18〜39行目）</strong>
+    <br>
+    <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>18
+19
+<strong class="color-red">20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong class="color-red">30</strong>
+31
+32
+33
+34
+35
+<strong class="color-red">36</strong>
+37
+38
+39
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.create(params.require(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>, <span class='word-purple'>:user_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @post.update(params.require(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @post.destroy</span>
+<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  </ul>
+  <br>
+  ここまでで<strong><u>「user_id」とページに表示させる「@user」の設定</u></strong>をすることができました。
+  <br><br>
+  <strong>次は「name」を消して、設定した「@user」を表示させてみましょう！</strong>
+</h4>

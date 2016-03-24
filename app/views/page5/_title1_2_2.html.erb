@@ -120,12 +120,12 @@
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;% @posts.each do |p| %&gt;</span>
+<span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;% end %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 </td>
 </tr>
 </table>

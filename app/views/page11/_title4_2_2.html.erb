@@ -1,0 +1,363 @@
+<h4 id="chapter10-4-2-2">
+  <p id="title4-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : ページ表示</strong></p>
+  <br>
+  では、ページ表示を設定しましょう。
+  <br>
+  「posts」データベースの「name」を表示している部分を、<strong><u>「users」データベースの「family_name」「first_name」に変更</u></strong>していきます。
+  <br><br>
+  この表示の変更には
+  <strong>
+    <ul class="number_ul">
+      <li>入力欄の変更</li>
+      <li>「@user」の表示</li>
+    </ul>
+  </strong>
+  の二つがあります。
+  <br>
+  <strong>まずは入力欄の変更からやってみます。</strong>
+  <ul class="number_ul">
+    <hr class="red-hr">
+    <strong><li>入力欄の変更</li></strong>
+      <br>
+      「name」の枠組みは無くなって「user_id」の設定も「posts_controller」で行えるようにしたので、<strong><u>「name」を設定している入力欄を消しましょう。</u></strong>
+      <br>
+      入力欄の設定をしているページは、
+      <strong>
+      <ul class="number_ul">
+        <li>new.html.erb</li>
+        <li>edit.html.erb</li>
+      </ul>
+      </strong>
+      になりますので、この2つのファイルを設定してみます。
+      <hr class="red-hr">
+      まずは「new.html.erb」からやってみます。
+      <br><br>
+      <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
+      <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.text_field :name, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+</td>
+</tr>
+</table>
+      <br>
+      の行を消しましょう。<strong><u>消せたら「Command」と「s」を一緒に押し、内容を保存しましょう。</u></strong>
+      <hr class="red-hr">
+      これができたら、「update.html.erb」でも同じように、
+      <br><br>
+      <i class="fa fa-file color-red"></i>　<strong>update.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.text_field :name, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+</td>
+</tr>
+</table>
+      <br>
+      を消しましょう。
+      <br>
+      こちらも変更が完了したら、<strong><u>「Command」と「s」を一緒に押して内容を保存しましょう。</u></strong>
+      <br><br>
+      入力欄も消せたので、次は「name」の代わりに「@user」を表示させるようにしましょう。
+      <hr class="red-hr">
+    <strong><li>@userの表示</li></strong>
+    <br>
+    では、会員の情報を表示させてみましょう。
+    <br><br>
+    <i class="fa fa-question-circle color-green"></i>　<strong>ページで「@user」の「family_name」を表示させるにはどのような設定をすればいいでしょうか？</strong>
+    <br><br>
+    <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;%= @user.family_name %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    この設定を使って「@user」を設定した
+    <strong>
+    <ul class="number_ul">
+      <li><u>show.html.erb</u></li>
+      <li><u>create.html.erb</u></li>
+      <li><u>update.html.erb</u></li>
+      <li><u>destroy.html.erb</u></li>
+    </ul>
+    </strong>
+    <br>
+    に、<u>会員の情報「family_name」「first_name」</u>を表示させます。
+    <hr class="red-hr">
+  まずは「@user」の「family_name」「first_name」を、<strong>「<a href="/pages/5#title1-1" target="_blank">show</a>」</strong>ページに表示させてみましょう！
+  <br>
+  <strong>「<u>app > views > posts > show.html.erb</u>」</strong>を開いて下のように内容を変更してみましょう。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（半角英数字で入力）</strong>
+  <br>
+  <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2
+3
+4</strong>
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>h4</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>small</span>&gt;&lt;%= @post.created_at %&gt;：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;投稿を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  これで投稿のページに会員の情報を表示させる設定ができました。
+  <br>
+  ついでにページを綺麗にするために3,4行目も変更したので、忘れず変更しましょう。
+  <hr class="red-hr">
+  <strong>同じように「<u>create.html.erb</u>」「<u>update.html.erb</u>」「<u>destroy.html.erb</u>」も下のように設定しましょう！</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>create.html.erb（半角英数字で入力）</strong>
+  <br>
+  <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2
+3</strong>
+4
+5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿が完了しました&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class="code-line remarkable-code">&lt;<span class="word-red">hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;様&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <i class="fa fa-file color-red"></i>　<strong>update.html.erb（半角英数字で入力）</strong>
+    <br>
+    <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を変更しました。&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <i class="fa fa-file color-red"></i>　<strong>destroy.html.erb（半角英数字で入力）</strong>
+    <br>
+    <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を削除しました&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    <i class="fa fa-exclamation color-red"></i>　<strong>これで「create」「update」「destroy」のページの設定ができました！</strong>
+    <hr class="red-hr">
+    ここまでで大体終わったんですが、実は<strong><u>「index.html.erb」の設定</u></strong>はまだやっていなかったのでやってみたいと思います。
+    <br><br>
+    「index.html.erb」で設定する<strong><u>「@posts」は複数のデータを表示させるため「@user」を指定できない</u></strong>ので、ここまででは説明してきませんでした。（詳細は<a href="/codes/5#title1-2" target="_blank"><strong>こちら</strong></a>）
+    <br><br>
+    ですが会員の情報を指定した
+<pre>
+User.find(idの番号)
+</pre>
+    はhtmlファイルの
+<pre>
+&lt;%= %&gt;
+</pre>
+    の中でも使うこともできるので、それを使って設定してみます。
+    <br><br>
+    例えば「id」が「90」の会員の「family_name」を表示させるなら、
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= <span class="word-blue">User</span>.find(<span class="word-purple">90</span>).family_name %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    と設定すれば、「id」が「90」の会員の「family_name」を表示させることができます。
+    <br><br>
+    <strong><u>ここでは「id」の部分に「user_id」を入れることで、その設定をしてみたいと思います。</u></strong>
+    <hr class="red-hr">
+    <strong>「<u>app > views > posts > index.html.erb</u>」</strong>を開いて、下のように内容を変更しましょう。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>index.html.erb（半角英数字で入力）</strong>
+    <br>
+    <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4</strong>
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= p.user.id %&gt;"</span>&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;様&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h3</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  変更をした部分は
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">4</strong>
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;様</span>
+</td>
+</tr>
+</table>
+    <br>
+    になります。
+    <hr class="red-hr">
+    今回の<strong>「<a href="/pages/5#title1-2" target="_blank">index</a>」</strong>ページでは全ての投稿データを選択している
+<pre>
+Post.all
+</pre>
+    を
+<pre>
+&lt;% @post.each do |p| %&gt;
+</pre>
+    で、<strong>一つ一つの投稿データ「p」</strong>に分けています（詳細は<a href="/pages/5#title1-2-1" target="_blank"><strong>こちら</strong></a>）。
+    <br><br>
+    この<strong>「p」</strong>から「user_id」を取得することで、<strong><u>会員の選択と「family_name」「first_name」の表示</u></strong>を行っています。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">4</strong>
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;様</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    ここまでできたら、<u>「rails s」で動いているサーバーを「Command」と「c」を押し停止させ、また「rails s」でサーバーを立ち上げましょう。</u>
+    <br><br>
+    再起動ができたら<strong>「<a href="http://0.0.0.0:3000/posts/new" target="_blank">0.0.0.0:posts/new</a>」</strong>を開いてみましょう！
+    <br>
+    下のようなページは出てきたでしょうか？
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise_before.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise_before.png",
+                :target => ["_blank"] %>
+    出てきたら内容を記入して、
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise.png",
+                :target => ["_blank"] %>
+    「登録する」ボタンを押しましょう！下のようなページが出てきたでしょうか？
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_create_after_devise.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_create_after_devise.png",
+                :target => ["_blank"] %>
+    これで投稿の内容は保存されました。
+    <br>
+    <strong><u><a href="/pages/how_to_open#title2" target="_blank">Sequel Pro</a>や「<a href="/pages/5#title1-1" target="_blank">show</a>」ページ</u></strong>を開いて保存ができているか確認してみましょう！
+    <hr class="red-hr">
+    <strong>
+    「<a href="/pages/5#title1-2" target="_blank">index</a>」ページ「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」や「<a href="/pages/6#title1-5" target="_blank">edit</a>」ページなどを開いてみて内容を確認してみましょう。
+    </strong>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_after_devise_create_post.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_after_devise_create_post.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_edit_after_devise.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_edit_after_devise.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_update_after_devise.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_update_after_devise.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_destroy_after_devise.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_destroy_after_devise.png",
+                :target => ["_blank"] %>
+  </ul>
+  <hr class="red-hr">
+  <strong>
+  最後に内容のまとめをします。
+  </strong>
+</h4>

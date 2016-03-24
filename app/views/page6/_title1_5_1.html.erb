@@ -14,7 +14,7 @@
         <ul class="number_ul">
           <li>変更するデータの選択</li>
           <li>データの記入欄・送信ボタンの設定</li>
-          <li>変更するデータと記入欄の対応づけ</li>
+          <li>変更するデータと記入欄の関連づけ</li>
         </ul>
         </strong>
         をやっていきます
@@ -364,7 +364,7 @@
         <br>
         これで内容の変更が適用されます。
         <br><br>
-        できたらブラウザで、「<a href="/posts/1/edit" target="_blank"><strong>localhost:3000/posts/1/edit</strong></a>」を入力して下さい。
+        できたらブラウザで、「<a href="/posts/1/edit" target="_blank"><strong>0.0.0.0:3000/posts/1/edit</strong></a>」を入力して下さい。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -372,7 +372,7 @@
                     :target => ["_blank"] %>
         上のような入力欄のあるページが出てきたでしょうか？
         <hr class="red-hr">
-        上のような<strong>「<u>localhost:3000/データベース名/idの番号/edit</u>」</strong>で、<strong>「<u>編集するデータの入力（edit）</u>」</strong>をするページをブラウザで開きます。
+        上のような<strong>「<u>0.0.0.0:3000/データベース名/idの番号/edit</u>」</strong>で、<strong>「<u>編集するデータの入力（edit）</u>」</strong>をするページをブラウザで開きます。
         <br><br>
         今回は「posts」データベースの「idが1」のデータベースの内容を記入するページだったので、
         <br><br>
@@ -381,7 +381,7 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line small-code'>localhost:3000/posts/1/edit</span>
+<td class='code-content'><span class='code-line small-code'>0.0.0.0:3000/posts/1/edit</span>
 </td>
 </tr>
 </table>
@@ -397,7 +397,7 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line small-code'>localhost:3000/posts/1/edit</span>
+<td class='code-content answer-code'><span class='code-line small-code'>0.0.0.0:3000/posts/1/edit</span>
 </td>
 </tr>
 </table>

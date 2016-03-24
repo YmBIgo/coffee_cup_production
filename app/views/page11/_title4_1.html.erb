@@ -1,0 +1,174 @@
+<h4 id="chapter10-4-1">
+  <p id="title4-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑴ : 「posts」データベースの変更</strong></p>
+  <br>
+  これまでに作った「posts」データベースでは「name」の枠組みがあったので、投稿の作成ページ（<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>）には「name」の入力欄がありました。
+  <br><br>
+  ですがここでは、<strong>会員情報（id）を使った枠組みを追加してそれを使う</strong>ので<u>「name」の入力欄はいりません。</u>
+  <hr class="red-hr">
+  まずは、<strong>「name」の入力欄と今残っているデータはいらないので消しちゃいましょう！</strong>
+  <br>
+  <i class="fa fa-exclamation color-red"></i>　<strong><u>残っているデータ全てを「show」のページの<a class="btn btn-danger">投稿を削除する</a>で消して下さい。</u></strong>
+  <br><br>
+  データを全て消したら、枠組みを削除しましょう。
+  <br>
+  枠組みの削除は、削除するための設定ファイルを作りそこに削除の設定をします（詳細は<a href="/pages/4#title1-4" target="_blank"><strong>こちら</strong></a>）。
+  <br><br>
+  まずは設定ファイルを作るために、ターミナルで下の入力をしましょう
+  <br><br>
+  　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+  <br>
+  　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g migration removeColumnFromPost</span>
+</td>
+</tr>
+</table>
+  <br>
+  久々ですが、
+<pre>
+rails g migration 設定ファイル名
+</pre>
+  で枠組みの変更をする設定ファイルを作りました。
+  <br>
+  名前はなんでも良いのですが、分かりやすい名前にすることをおすすめします。
+  <br><br>
+  <strong>「<u>db > migrate > 日時_remove_column_from_post.rb</u>」</strong>が作成された設定ファイルになるので、下のように変更しましょう！
+<br><br>
+<i class="fa fa-file color-red"></i>　<strong>日時_remove_column_from_post.rb（半角英数字で入力）</strong>
+<br>
+<small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>RemoveColumnFromPost <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    remove_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  この
+<pre>
+remove_column :データベース名, :枠組みの名前, :データの種類
+</pre>
+  で枠組みの削除をします。（詳細は<strong><a href="/pages/4#title1-4" target="_blank">こちら</a></strong>）
+  <br><br>
+  設定ができたら設定を適用させるために、
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  を入力して下さい。
+  <br><br>
+  ここまでできたら、Sequel Proでデータベースを確認してみましょう！（Sequel Proの開き方は<a href="/pages/how_to_open#title2" target="_blank"><strong>こちら</strong></a>）
+  <br>
+  <u>「name」の枠組みは無くなっているでしょうか？</u>
+  <hr class="red-hr">
+  <strong><u>では、「posts」データベースに会員の情報を入れる枠組みを設定しましょう。</u></strong>
+  <br>
+  先ほど消した「name」の代わりに<u>会員情報「users」データベースの「id」</u>を入れる<strong>会員情報の枠組み「user_id」</strong>を、「posts」データベースに追加します。
+  <br><br>
+  「users」の「id」と対応させるので、<u>枠組みのデータの種類は「数字」・名前は「user_id」</u>にします。
+  <br><br>
+  例えば「idが189」の会員が投稿をしたら、「posts」データベースの「user_id」に「189」のデータが入って、この会員番号を使って名前を表示させます。
+  <br><br>
+  ではやってみます。
+  <br>
+  まずは設定ファイルを作りましょう！
+  <br>
+  <small>※　詳細は<a href="/pages/4#title1-4" target="_blank"><strong>こちら</strong></a></small>
+  <br><br>
+  　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g migration addColumnToPost2</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>※　名前がかぶらないように最後に「2」を加えていますが、後で見てなにをしているかが分かれば名前はなんでも大丈夫です。</small>
+  <br><br>
+  できたら<strong>「<u>db > 日時_add_column_to_post2.rb</u>」</strong>を下のように設定しましょう。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日時_add_column_to_post2.rb（半角英数字で入力）</strong>
+  <br>
+  <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost2 <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:user_id</span>, <span class='word-purple'>:integer</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  この
+<pre>
+add_column :データベース名, :名前, :データの種類
+</pre>
+  で枠組みの追加をします。数字を入れるデータの種類は「integer」でした。（詳細は<a href="/pages/4#title1-3-1" target="_blank"><strong>こちら</strong></a>）
+  <br>
+  設定ファイルができたら設定を適用させるために、
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  これで枠組みの変更ができました。
+  <br>
+  こっちもSequel Proで内容を確認しましょう（確認の方法は<a href="/pages/how_to_open#title2" target="_blank"><strong>こちら</strong></a>）
+  <br>
+  <strong>「user_id」は追加されてるでしょうか？</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Sequel_Pro_add_user_id.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Sequel_Pro_add_user_id.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <strong><u>この「user_id」を使って、ページに投稿をした会員の情報を表示させます</u></strong>
+</h4>

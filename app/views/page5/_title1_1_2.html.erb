@@ -200,9 +200,9 @@
         <br>
         これがページに「<u>１つのデータの表示（show）</u>」をするデータ操作の設定です。
         <br>
-        気づいたらすごいですが、「<u>Post.find(選択するid)</u>」が使われていますね。
+        よく見たら、「<u>Post.find(選択するid)</u>」が使われていますね。
         <br>
-        後ろの<strong>「<u>params[:id]</u>」</strong>という部分は<strong>「<u>ページからidを取ってくる</u>」</strong>ことを示しているんですが、ここらへんは適当に覚えて下さい。
+        後ろの<strong>「<u>params[:id]</u>」</strong>という部分は<strong>「<u>ページからidを取ってくる</u>」</strong>ことを示しているんですが、ここらへんは覚えて下さい。
         <hr class="red-hr">
         <strong class="little-remarkable">では、「@post」はなんなのでしょうか？これはいるのでしょうか？</strong>
         <br><br>
@@ -224,7 +224,7 @@
 5
 </td>
 <td class='code-content answer-code'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
-<span class='code-line'>    <span class='word-blue'>Tweet</span>.find(<span class='word-purple'>:params</span>[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @tweet = <span class='word-blue'>Tweet</span>.find(<span class='word-purple'>:params</span>[<span class='word-purple'>:id</span>])</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>

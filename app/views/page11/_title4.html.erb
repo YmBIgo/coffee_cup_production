@@ -1,0 +1,71 @@
+<h2 class="textbook-section-title" id="title4"><strong>4 : ログインしている会員で投稿する</strong></h2>
+<h4 id="chapter10-4">
+  ここまでで<strong>
+  <ul class="number_ul">
+    <li><a href="/pages/9#title1" target="_blank">「devise」の導入</a></li>
+    <li><a href="/pages/9#title2" target="_blank">ログイン機能の設定</a></li>
+    <li><a href="/pages/10#title3" target="_blank">「users」ページの設定</a></li>
+  </ul>
+  </strong>ができました。
+  <br><br>
+  <strong><u>次は、設定した会員の情報で投稿ができるようにしましょう！</u></strong>
+  <hr class="red-hr">
+  流れとしては、
+  <br>
+  ログインした会員であれば、下のような名前のない投稿ページを出し、そこで投稿・変更ができるようにします。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_edit_after_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_edit_after_devise.png",
+              :target => ["_blank"] %>
+  投稿完了ページ・投稿ページでは、<strong><u>その投稿をした会員の情報が表示</u></strong>されるようにします。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_create_after_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_create_after_devise.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_after_devise_create_post.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_after_devise_create_post.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_update_after_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_update_after_devise.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_destroy_after_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_destroy_after_devise.png",
+              :target => ["_blank"] %>
+  このような表示をするためには、<strong><u>「posts」データベースに誰が投稿をしたかの情報を入れる枠組みを追加</u></strong>し、設定しています。
+  <br><br>
+  その後で、<br><strong>データ操作ページ表示の設定をして投稿変更ができるようにして、自分の投稿以外は変更削除を行えない</strong>ようにしなければなりません。
+  <hr class="red-hr">
+  なのでこの章では下の3つの設定をします。
+  <strong>
+  <ul class="number_ul">
+    <li>「posts」データベースの変更</li>
+    <li>データ操作ページ表示の設定</li>
+    <li>投稿の変更・削除をしていいかのチェック</li>
+  </ul>
+  </strong>
+  では、やっていきましょう！
+  <hr>
+  <%= render "page11/title4_1" %>
+  <hr>
+  <%= render "page11/title4_2" %>
+  <hr>
+  <%= render "page11/title4_3" %>
+</h4>

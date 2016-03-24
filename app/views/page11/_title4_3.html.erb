@@ -1,0 +1,41 @@
+<h4 id="chapter10-4-3">
+  <p id="title4-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑶ : 会員のチェックをする</strong></p>
+  <br>
+  最後に投稿の変更・削除をできる会員のチェックをする設定を加え、「ユーザー管理」の説明も終わりにしたいと思います。
+  <br><br>
+  <strong>流れとしては、他の人の投稿ページでは「編集する」「削除する」のボタンを表示させず
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+              :target => ["_blank"] %>
+  他の人が作った投稿の「<a href="/pages/6#title1-5" target="_blank">edit</a>」「<a href="/pages/6#title1-6" target="_blank">update</a>」「<a href="/pages/6#title1-7" target="_blank">destroy</a>」ページに移動しようとした時は、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_invalid_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_invalid_user.png",
+              :target => ["_blank"] %>
+  トップページに戻らせて、このような<a href="/pages/9#title2-2-2" target="_blank">通知の表示</a>をさせたいと思います。</strong>
+  <br><br>
+  会員のチェックは前に使った
+  <br>
+  <strong><a href="/pages/9#title2-2-2" target="_blank">if</a>・<a href="/pages/10#title3-3-3" target="_blank">else</a></strong>
+<pre>
+if 条件
+  内容
+else
+  内容
+end
+</pre>
+  をデータ操作の設定「posts_controller.rb」に入れることで設定します。
+  <br>
+  条件に合っていれば「if」の設定を、合っていなければ「else」の設定を実行させます。
+  <br>
+  <strong><u>ではやってみましょう！</u></strong>
+  <hr class="red-hr">
+  <%= render "page11/title4_3_1" %>
+  <hr class="red-hr">
+  <%= render "page11/title4_3_2" %>
+  <hr class="red-hr">
+  <%= render "page11/title4_3_3" %>
+</h4>

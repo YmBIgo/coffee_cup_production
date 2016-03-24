@@ -1,0 +1,181 @@
+<h4 id="chapter10-4-3-1">
+  <p id="title4-3-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : ページで条件分岐する</strong></p>
+  <br>
+  「正しい会員かどうか」のチェックをするとは言いましたが、正しい会員かどうかはどのようにして判定すればいいのでしょうか？
+  <br><br>
+  これは<strong><u>「@post」の「<a href="/pages/11#title4-1" target="_blank">user_id</a>」</u></strong>と<strong><u>「<a href="/pages/10#title3-3-3" target="_blank">current_user</a>」の「id」</u></strong>が一致するかで判定します。
+  <br><br>
+  この一致するかどうかの条件は、
+<pre>
+判定されるもの == 判定されるもの
+</pre>
+  で設定します。<strong><u>イコールが2つあるので注意して下さい。</u></strong>
+  <br><br>
+  なので例えば、「@user」の「id」が「1」かどうかの条件を「if」で判定するには、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>if </span>@user.id <span class="word-red">==</span> 1</span>
+<span class='code-line'>  <span class="word-gray">#内容</span></span>
+<span class='code-line'><span class="word-red">else</span></span>
+<span class='code-line'>  <span class="word-gray">#内容</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  と書いて設定します。
+  <br>
+  一致しない場合は「else」の方の内容を実行もしくは表示します。
+  <hr class="red-hr">
+  この条件の判定の方法で、<strong><u>「posts」データベースの「user_id」と「current_user」の「id」が一致するかを判定</u></strong>します。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>では、「posts」データベースの「user_id」と「current_user」の「id」が一致するかの条件を「if」で判定しましょう。<br>（1行目の上にマウスを置けば答えがでます）</strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="5"></textarea>
+  <br>
+  <table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1</strong>
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line answer-code remarkable-code'><span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>  <span class="word-gray">#内容</span></span>
+<span class='code-line'><span class="word-red">else</span></span>
+<span class='code-line'>  <span class="word-gray">#内容</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  これを使って「正しいユーザーかどうか」を判定します。
+  <hr class="red-hr">
+  ではまず、<strong><u>「posts」データベースの「show」ページで投稿した会員の場合のみ</u></strong>
+  <br><br>
+  <p><a class="btn btn-success">投稿を編集する</a></p>
+  <p><a class="btn btn-danger">投稿を削除する</a></p>
+  <br>
+  を出すようにしましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+              :target => ["_blank"] %>
+  これは「show」ページを設定する<strong>「<u>app > views > posts > show.html.erb</u>」</strong>に下の設定を追加して下さい。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（半角英数字で入力）</strong>
+  <br>
+  <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+<strong class="color-red">7</strong>
+8
+9
+<strong class="color-red">10</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>small</span>&gt;&lt;%= @post.created_at %&gt;：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">if</span> @post.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;投稿を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  変更ができたら「Command」と「c」でサーバーを止めて、「rails s」でサーバーを再度立ち上げましょう。
+  <br><br>
+  サーバーを立ち上げられたら、<u>新しい会員を登録してその新しい会員で作ってある投稿ページを見てみましょう。</u>
+  <br>
+  ボタンが表示されていなければ大丈夫です。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+              :target => ["_blank"] %>
+  <br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>「users」データベースの「show」ページ「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」の
+  <p style="margin:10px 0"><a class="btn btn-success">ユーザー情報を編集する</a></p>
+  にも正しい会員かどうかのチェックを追加しましょう。
+  <br>
+  <small>※　「users_controller.rb」の「show」で設定した<strong><u>「@user」の「id」と「current_user」の「id」で一致するか</u></strong>を判定します。</small>
+  </strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="5"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（8,10行目の上のマウスを置くと答えが出ます）</strong>
+  <br>
+  <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+<strong class="color-red">8</strong>
+9
+<strong class="color-red">10</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ユーザー一覧に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code answer-code'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code answer-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  ここまでで「正しい会員かどうか」でのボタンの表示の変更ができました！
+  <br><br>
+  ボタンの変更はできたのですが、今のままだとままだと<strong>「users」データベースの「edit」ページ「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank">0.0.0.0:3000/users/1/edit</a>」に誰でもアクセスできます。</strong>
+  <br><br>
+  もし正しくない会員であれば、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_invalid_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_invalid_user.png",
+              :target => ["_blank"] %>
+  のように「posts」データベースの「index」ページ<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>に飛ばし、通知を表示させるようにしましょう！
+  <br><br>
+  これも今回取り扱った
+<pre>
+if @post.user_id == current_user.id
+  #内容
+else
+  #内容
+end
+</pre>
+  を「controller」ファイルに設定して直してみましょう！
+</h4>
