@@ -3,13 +3,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <title><%= yield :title %></title>
-  <!-- <%= stylesheet_link_tag    "application", :media => "all" %> -->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+      </button>
+      <a href="/posts" class="navbar-brand">myapp</a>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/posts/new">新しく投稿する</a></li>
+      </ul>
+      </div>
+  </div>
+</nav>
+<div class="container main-page">
+  <%= yield %>
+</div>
 </body>
 </html>
