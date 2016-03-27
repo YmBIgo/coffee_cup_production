@@ -1,0 +1,153 @@
+<% provide :title, "8：設定一覧" %>
+<div class="row">
+  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+    <div class="textbook-area">
+      <div class="textbook-area-inner fadeIn wow">
+        <div id="title" class="textbook-title">
+          <h1><strong>トップページを作ろう！：設定一覧</strong></h1>
+        </div>
+        <h4>
+        <u>
+        <a href="/pages/8" class="text-left" target="_blank">トップページを作ろう！</a>
+        </u>
+        </h4>
+        <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header8.jpg",
+                      :width => "90%",
+                      :class => "textbook-title-img hover_img" %>
+        <hr>
+        <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+        <h4>
+          <i class="fa fa-bookmark color-red"></i>　<strong>「トップページを作ろう！」の設定一覧の確認をする</strong>
+        </h4>
+        <br>
+        <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+        <h4 id="code-8">
+          <strong>「<a href="/pages/8" target="_blank">トップページを作ろう！</a>」では、トップページの設定を行った。</strong>
+          <br><br>
+          ここで変更した内容をまとめる。
+          <hr class="red-hr">
+          トップページのページ設定をするために、
+          <br><br>
+          　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>ralis g controller welcome</span>
+</td>
+</tr>
+</table>
+        <br>
+        この入力で作成された
+        <strong>
+        <ul class="number_ul">
+        <li>ページ設定のためのフォルダ「<u>app > views > welcome</u>」</li>
+        <li>データ操作をするファイル「<u>app > controllers > welcome_controller.rb</u>」</li>
+        </ul>
+        </strong>
+        と
+        <br><br>
+        <strong style="margin-left:10px">3. どのページを使うかの設定ファイル「<u>config > route.rb</u>」</strong>
+        <br><br>
+        の3つを設定してページを作る。
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong><u>7つのページの設定（route.rb）</u></strong>は、
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>route.rb</strong>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+5
+6
+7
+8
+9
+...
+58
+59
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line remarkable-code'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'>  <span class='word-gray'>#   end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong><u>データ操作の設定（controllerファイル）</u></strong>は、
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>welcome_controller.rb</strong>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>WelcomeController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong><u>ページの設定（viewsフォルダ）</u></strong>は、
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center header-content"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;ようこそ&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;投稿一覧を見る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        になる
+        <hr>
+        <div class="next-page">
+            <a href="/pages/8" class="btn btn-primary">戻る</a>
+        </div>
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+    <br>
+    <div id="slide-bar" class="clear-fix">
+    <strong>
+      <div class="list-group nomargin">
+        <a href="#title" class="list-group-item list-title"><h4>8：設定一覧</h4></a>
+        <a href="#title0" class="list-group-item">0 : この章の目的</a>
+        <a href="#title1" class="list-group-item">1 : 設定一覧</a>
+      </div>
+    </strong>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

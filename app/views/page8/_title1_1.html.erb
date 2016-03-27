@@ -1,7 +1,7 @@
 <h4 id="chapter8-1-1">
   <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : ページを設定しよう！</strong></p>
   <br>
-  まずは「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」を開いてみましょう！
+  まずは「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」を開いてみましょう！
   <br>
   下のような画面はでてきたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
@@ -156,9 +156,9 @@ rails g controller 名前（単数形）
 <pre>
 root "表示させるページの設定フォルダ#表示させるページ"
 </pre>
-  が「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」で指定したページを表示する設定になります。
+  が「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」で指定したページを表示する設定になります。
   <br>
-  今回は<strong>「views > welcome」の「index.html.erb」の設定ファイル</strong>を「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」で表示するよう設定しています。
+  今回は<strong>「views > welcome」の「index.html.erb」の設定ファイル</strong>を「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」で表示するよう設定しています。
   <br><br>
   また普通に<strong><u>「posts」の「<a href="/pages/5#title1-2" target="_blank">index</a>」ページ</u></strong>をトップページにするなら、
   <br><br>
@@ -173,13 +173,13 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <br>
   のように設定します。
   <br><br>
-  このように「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」にページを表示するには、
+  このように「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」にページを表示するには、
 <pre>
 root "表示させるページの設定フォルダ#表示させるページ"
 </pre>
   で設定する。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong><u>「views > top」にある「index.html.erb」</u>を「<a href="http://localhost:3000" target="_blank">localhost:3000</a>」に表示させるには「route.rb」にどのような設定をすればいいでしょうか？</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong><u>「views > top」にある「index.html.erb」</u>を「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」に表示させるには「route.rb」にどのような設定をすればいいでしょうか？</strong>
   <br><br>
   <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
   <br>
@@ -270,7 +270,7 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <br><br>
   ではこれを開いてみましょう！
   <br>
-  「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して再起動して、<strong>「<a href="http://localhost:3000" target="_blank">localhost:3000</a>」</strong>を開いてみましょう！
+  「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して再起動して、<strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>を開いてみましょう！
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_before.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -278,7 +278,7 @@ root "表示させるページの設定フォルダ#表示させるページ"
               :target => ["_blank"] %>
   このように表示されたでしょうか？
   <hr class="red-hr">
-  <strong>「<a href="http://localhost:3000" target="_blank">localhost:3000</a>」</strong>へのページの設定もできましたね。
+  <strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>へのページの設定もできましたね。
   <br>
   次はこのページに内容を加えて、下のようなトップページにしてみましょう！
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",

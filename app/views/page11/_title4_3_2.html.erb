@@ -128,11 +128,11 @@ if @user == current_user
   <br><br>
   <strong>ですがこのページの移動は、htmlファイルだけでなく「controller」でも設定することができます。</strong>
   <br><br>
-  その設定方法は、
+  「controller」でのページの移動は
 <pre>
 redirect_to "移動先のページ"
 </pre>
-  になります。
+  と設定して、これで設定されたページでページの移動をします。
   <br><br>
   これを使って「正しい会員」でなかった場合に、<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>にページ移動させるようにしましょう。
   <hr class="red-hr">
@@ -274,24 +274,24 @@ redirect_to "移動先のページ"
   <small>※　変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
 <table class='highlight'>
 <tr>
-<td class='code-line-no text-center'>11
-12
-<strong class="color-red">13
+<td class='code-line-no text-center'>13
 14
-15
+<strong class="color-red">15
 16
-17</strong>
+17
 18
-19
+19</strong>
 20
 21
-<strong class="color-red">22
+22
 23
-24
+<strong class="color-red">24
 25
 26
-27</strong>
+27
 28
+29</strong>
+30
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
 <span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>

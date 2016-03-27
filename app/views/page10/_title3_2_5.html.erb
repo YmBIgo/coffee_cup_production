@@ -1,0 +1,35 @@
+<h4 id="chapter10-3-2-5">
+  <p id="title3-2-5" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑸ : ログイン機能</strong></p>
+  <br>
+  最後にログインしていないとページを見れないようにします。
+  <br>
+  下のように設定をしましょう。
+  <br>
+  <small>※　詳しい説明は<strong><u><a href="/pages/9#title2" target="_blank">ログイン機能</a></u></strong>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（3行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  今回は、「users」データベースの<strong>「<u>show</u>」「<u>index</u>」「<u>edit</u>」「<u>update</u>」</strong>ページはログインしないと見れないように設定した。
+</h4>

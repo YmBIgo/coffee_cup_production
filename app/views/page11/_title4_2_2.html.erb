@@ -9,7 +9,7 @@
   <strong>
     <ul class="number_ul">
       <li>入力欄の変更</li>
-      <li>「@user」の表示</li>
+      <li>「@user」の情報「family_name」「first_name」の表示</li>
     </ul>
   </strong>
   の二つがあります。
@@ -41,7 +41,7 @@
 3
 </td>
 <td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>    &lt;%= f.text_field :name, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>    &lt;%= f.text_field <span class="word-purple">:name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
 </td>
 </tr>
@@ -49,9 +49,9 @@
       <br>
       の行を消しましょう。<strong><u>消せたら「Command」と「s」を一緒に押し、内容を保存しましょう。</u></strong>
       <hr class="red-hr">
-      これができたら、「update.html.erb」でも同じように、
+      これができたら、「edit.html.erb」でも同じように、
       <br><br>
-      <i class="fa fa-file color-red"></i>　<strong>update.html.erb</strong>
+      <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -59,7 +59,7 @@
 3
 </td>
 <td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>    &lt;%= f.text_field :name, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>    &lt;%= f.text_field <span class="word-purple">:name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
 </td>
 </tr>
@@ -143,17 +143,17 @@
 <tr>
 <td class='code-line-no text-center'>1
 <strong class="color-red">2
-3</strong>
+3
 4
-5
+5</strong>
 6
 7
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿が完了しました&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class="code-line remarkable-code">&lt;<span class="word-red">hr</span>&gt;</span>
 <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;様&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
@@ -167,17 +167,17 @@
 <tr>
 <td class='code-line-no text-center'>1
 2
-<strong class="color-red">3</strong>
+<strong class="color-red">3
 4
-5
+5</strong>
 6
 7
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を変更しました。&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
@@ -191,17 +191,17 @@
 <tr>
 <td class='code-line-no text-center'>1
 2
-<strong class="color-red">3</strong>
+<strong class="color-red">3
 4
-5
+5</strong>
 6
 7
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を削除しました&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
@@ -249,8 +249,8 @@ User.find(idの番号)
 <td class='code-line-no text-center'>1
 2
 3
-<strong class="color-red">4</strong>
-5
+<strong class="color-red">4
+5</strong>
 6
 7
 8
@@ -258,8 +258,8 @@ User.find(idの番号)
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
-<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= p.user.id %&gt;"</span>&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;様&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>h3</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= p.user_id %&gt;"</span>&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;様&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>h3</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>h3</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
@@ -268,6 +268,17 @@ User.find(idの番号)
 </table>
   <br>
   変更をした部分は
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">4</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow remarkable-code'>"/users/&lt;%= p.user_id %&gt;"</span>&gt;...</span>
+</td>
+</tr>
+</table>
+  <br>
+  と
   <br><br>
 <table class='highlight'>
 <tr>
