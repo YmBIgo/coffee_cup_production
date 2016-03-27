@@ -1,49 +1,51 @@
 <% provide :title, "Ruby on Rails の基本" %>
-<div class="row">
-  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
-    <div class="textbook-area">
-      <div class="textbook-area-inner fadeIn wow">
-        <div id="title" class="textbook-title">
-          <h1><strong>2 : Ruby on Rails の基本</strong></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>2 : Ruby on Rails の基本</strong></h1>
+          </div>
+          <h4><u><a href="/mugcups/1" class="text-left ">前の章：ウェブページとは？</a></u></h4>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header2.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <%= render "page2/title0" %>
+          <br>
+          <%= render "page2/title1" %>
+          <br><br>
+          <%= render "page2/title2" %>
+          <br>
+          <div class="next-page">
+            <a href="/mugcups/3" class="btn btn-primary">次の章に進む</a>
+          </div>
+          <br>
         </div>
-        <h4><u><a href="/mugcups/1" class="text-left ">前の章：ウェブページとは？</a></u></h4>
-        <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header2.jpg",
-                      :width => "90%",
-                      :class => "textbook-title-img hover_img" %>
-        <%= render "page2/title0" %>
-        <br>
-        <%= render "page2/title1" %>
-        <br><br>
-        <%= render "page2/title2" %>
-        <br>
-        <div class="next-page">
-          <a href="/mugcups/3" class="btn btn-primary">次の章に進む</a>
-        </div>
-        <br>
       </div>
     </div>
-  </div>
-  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
-    <br>
-    <div id="slide-bar" class="clear-fix">
-    <strong>
-      <div class="list-group nomargin">
-        <a href="#title" class="list-group-item list-title"><h5>Ruby on Rails の基本</h5></a>
-        <a href="#title0" class="list-group-item">0 : この章の目的</a>
-        <a href="#title1" class="list-group-item">1 : Ruby on Rails </a>
-        <a href="#title1-1" class="list-group-item"><small>　① : Ruby on Railsのページ</small></a>
-        <a href="#title1-2" class="list-group-item"><small>　② : Ruby on Railsのデータ</small></a>
-        <a href="#title1-2-1" class="list-group-item"><small>　　⑴ : データベースの定義</small></a>
-        <a href="#title1-2-2" class="list-group-item"><small>　　⑵ : データの代入と保存</small></a>
-        <a href="#title1-3" class="list-group-item"><small>　③ : まとめ</small></a>
-        <a href="#title2" class="list-group-item">2 : Railsの準備</a>
-        <a href="#title2-1" class="list-group-item"><small>　① : ターミナル</small></a>
-        <a href="#title2-2" class="list-group-item"><small>　② : Ruby on Railsのインストール</small></a>
-        <a href="#title2-3" class="list-group-item"><small>　③ : Sublime Textのインストール</small></a>
-        <a href="#title2-4" class="list-group-item"><small>　④ : MySQLのインストール</small></a>
-        <a href="#title2-5" class="list-group-item"><small>　⑤ : Sequel Proのインストール</small></a>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h5>Ruby on Rails の基本</h5></a>
+          <a href="#title0" class="list-group-item">0 : この章の目的</a>
+          <a href="#title1" class="list-group-item">1 : Ruby on Rails </a>
+          <a href="#title1-1" class="list-group-item"><small>　① : Ruby on Railsのページ</small></a>
+          <a href="#title1-2" class="list-group-item"><small>　② : Ruby on Railsのデータ</small></a>
+          <a href="#title1-2-1" class="list-group-item"><small>　　⑴ : データベースの定義</small></a>
+          <a href="#title1-2-2" class="list-group-item"><small>　　⑵ : データの代入と保存</small></a>
+          <a href="#title1-3" class="list-group-item"><small>　③ : まとめ</small></a>
+          <a href="#title2" class="list-group-item">2 : Railsの準備</a>
+          <a href="#title2-1" class="list-group-item"><small>　① : ターミナル</small></a>
+          <a href="#title2-2" class="list-group-item"><small>　② : Ruby on Railsのインストール</small></a>
+          <a href="#title2-3" class="list-group-item"><small>　③ : Sublime Textのインストール</small></a>
+          <a href="#title2-4" class="list-group-item"><small>　④ : MySQLのインストール</small></a>
+          <a href="#title2-5" class="list-group-item"><small>　⑤ : Sequel Proのインストール</small></a>
+        </div>
+      </strong>
       </div>
-    </strong>
     </div>
   </div>
 </div>

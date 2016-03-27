@@ -1,217 +1,219 @@
 <% provide :title, "htmlのタグ一覧" %>
-<div class="row">
-  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
-    <div class="textbook-area">
-      <div class="textbook-area-inner fadeIn wow">
-        <div id="title" class="textbook-title">
-          <h1><strong>htmlタグ一覧</strong></h1>
-        </div>
-        <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header11.jpg",
-                              :width => "90%",
-                              :class => "hover_img textbook-title-img") %>
-        <hr>
-        <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
-          <h4>
-            <i class="fa fa-star color-red"></i>　htmlファイルでの表示の設定（タグ）について説明します。
-            <hr>
-            htmlファイルでの表示の設定とは言っても、2種類のものがある。
-            <strong>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>htmlタグ一覧</strong></h1>
+          </div>
+          <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header11.jpg",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img") %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+            <h4>
+              <i class="fa fa-star color-red"></i>　htmlファイルでの表示の設定（タグ）について説明します。
+              <hr>
+              htmlファイルでの表示の設定とは言っても、2種類のものがある。
+              <strong>
+              <ul class="number_ul">
+                <li>文字列を表示させる設定</li>
+                <li>その他、領域の設定</li>
+              </ul>
+              </strong>
+              この2種類の設定について説明する
+            </h4>
+            <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 文字列を表示するタグ</strong></h2>
+            <h4>
+            まずは文字を表示させる設定ということで、
             <ul class="number_ul">
-              <li>文字列を表示させる設定</li>
-              <li>その他、領域の設定</li>
+            <strong><li>「<a href="#html-h1"><u>&lt;h1&gt;</u></a>」大きい文字の表示</li></strong>
+            <strong><li>「<a href="#html-p"><u>&lt;p&gt;</u></a>」普通の大きさの文字の表示</li></strong>
+            <strong><li>「<a href="#html-small"><u>&lt;small&gt;</u></a>」小さい文字の表示</li></strong>
             </ul>
-            </strong>
-            この2種類の設定について説明する
-          </h4>
-          <br>
-        <h2 class="textbook-section-title" id="title1"><strong>1 : 文字列を表示するタグ</strong></h2>
-          <h4>
-          まずは文字を表示させる設定ということで、
-          <ul class="number_ul">
-          <strong><li>「<a href="#html-h1"><u>&lt;h1&gt;</u></a>」大きい文字の表示</li></strong>
-          <strong><li>「<a href="#html-p"><u>&lt;p&gt;</u></a>」普通の大きさの文字の表示</li></strong>
-          <strong><li>「<a href="#html-small"><u>&lt;small&gt;</u></a>」小さい文字の表示</li></strong>
-          </ul>
-          の3つについて説明します。
-          <hr>
-          <ul class="number_ul">
-            <h1 id="html-h1" class="fix-link-nav"><strong><li>&lt;h1&gt;:大きい文字の表示</li></strong></h1>
-            <br>
-            大きい文字の表示は、
-<pre>
-&lt;h1&gt;表示する文字列&lt;/h1&gt;
-</pre>
-            で設定します。
-            <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;大きい文字の表示&lt;/<span class='word-red'>h1</span>&gt;</span>
-</td>
-</tr>
-</table>
-            <br><br>
-            もう少し小さい文字列なら「&lt;h2&gt;」を、それよりも小さい文字列なら「&lt;h3&gt;」を・・・
-            <br>
-            と最小「&lt;h6&gt;」まで使える。
+            の3つについて説明します。
+            <hr>
+            <ul class="number_ul">
+              <h1 id="html-h1" class="fix-link-nav"><strong><li>&lt;h1&gt;:大きい文字の表示</li></strong></h1>
+              <br>
+              大きい文字の表示は、
+  <pre>
+  &lt;h1&gt;表示する文字列&lt;/h1&gt;
+  </pre>
+              で設定します。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+  <td class='code-line-no text-center'>1
+  </td>
+  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;大きい文字の表示&lt;/<span class='word-red'>h1</span>&gt;</span>
+  </td>
+  </tr>
+  </table>
+              <br><br>
+              もう少し小さい文字列なら「&lt;h2&gt;」を、それよりも小さい文字列なら「&lt;h3&gt;」を・・・
+              <br>
+              と最小「&lt;h6&gt;」まで使える。
+              <hr class="red-hr">
+              <p id="html-p" class="fix-link-nav"><strong><li>&lt;p&gt;:普通の大きさの文字の表示</li></strong></p>
+              <br>
+              普通の大きさの文字の表示は、
+  <pre>
+  &lt;p&gt;表示する文字列&lt;/p&gt;
+  </pre>
+              で設定します。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+  <td class='code-line-no text-center'>1
+  </td>
+  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;普通の大きさの文字の表示&lt;/<span class='word-red'>p</span>&gt;</span>
+  </td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <small id="html-small" class="fix-link-nav"><strong><li>&lt;small&gt;:小さい文字の表示</li></strong></small>
+              <br>
+              小さい文字の表示は、
+  <pre>
+  &lt;small&gt;表示する文字列&lt;/small&gt;
+  </pre>
+              で設定します。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+  <td class='code-line-no text-center'>1
+  </td>
+  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>small</span>&gt;小さい文字の表示&lt;/<span class='word-red'>small</span>&gt;</span>
+  </td>
+  </tr>
+  </table>
             <hr class="red-hr">
-            <p id="html-p" class="fix-link-nav"><strong><li>&lt;p&gt;:普通の大きさの文字の表示</li></strong></p>
+            </ul>
+            <strong class="little-remarkable">表示させる文字列の大きさは適宜見ながら調節してみましょう！</strong>
+            </h4>
             <br>
-            普通の大きさの文字の表示は、
-<pre>
-&lt;p&gt;表示する文字列&lt;/p&gt;
-</pre>
-            で設定します。
-            <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;普通の大きさの文字の表示&lt;/<span class='word-red'>p</span>&gt;</span>
-</td>
-</tr>
-</table>
+          <h2 class="textbook-section-title" id="title2"><strong>2 : その他のタグ</strong></h2>
+            <h4>
+            <strong>「<a href="#html-hr"><u>&lt;hr&gt;</u></a>」線の表示</strong>・<strong>「<a href="#html-br"><u>&lt;br&gt;</u></a>」改行</strong>・<strong>「<a href="#html-a"><u>&lt;a&gt;</u></a>」ページの移動/リンク</strong>・<strong>「<a href="#html-div"><u>&lt;div&gt;</u></a>」CSSを適用させるための領域</strong>に４つについて説明します。
+            <hr>
+            <ul class="number_ul">
+              <p id="html-hr" class="fix-link-nav"><strong><li>&lt;hr&gt;:線の表示</li></strong></p>
+              <br>
+              線の表示は、
+  <pre>
+  &lt;hr&gt;
+  </pre>
+              で設定します。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+  <td class='code-line-no text-center'>1
+  </td>
+  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+  </td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <p id="html-br" class="fix-link-nav"><strong><li>&lt;br&gt;:改行</li></strong></p>
+              <br>
+              改行の設定は、
+  <pre>
+  &lt;br&gt;
+  </pre>
+              で設定します。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+  <td class='code-line-no text-center'>1
+  </td>
+  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+  </td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <p id="html-a" class="fix-link-nav"><strong><li>&lt;a&gt;:リンク/ページの移動</li></strong></p>
+              <br>
+              ページの移動の設定は、
+  <pre>
+  &lt;a href="移動するページ"&gt;表示する文字&lt;/a&gt;
+  </pre>
+              で設定します。
+              <br><br>
+              詳細は<a href="/mugcups/5#title1-2-2" target="_blank"><strong>こちら</strong></a>
+              <br><br>
+  <table class='highlight'>
+  <tr>
+  <td class='code-line-no text-center'>1
+  </td>
+  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://amazon.com"</span>&gt;Amazon&lt;/<span class='word-red'>a</span>&gt;</span>
+  </td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <p id="html-div" class="fix-link-nav"><strong><li>&lt;div&gt;:領域の設定</li></strong></p>
+              <br>
+              領域は、
+  <pre>
+  &lt;div&gt;
+  内容
+  &lt;/div&gt;
+  </pre>
+              で設定します。
+              <br><br>
+              <strong>この「&lt;div&gt;」の中に「<a href="/mugcups/3#title1-2-css-class" target="_blank">class</a>」を設定することで、領域内に設定した「class」の装飾を行います。</strong>
+              <br><br>
+              詳細は<a href="/mugcups/7#title2-2-1-css-div" target="_blank"><strong>こちら</strong></a>
+              <br><br>
+  <table class='highlight'>
+  <tr>
+  <td class='code-line-no text-center'>1
+  2
+  3
+  4
+  5
+  </td>
+  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div </span><span class='word-green'>class</span>=<span class='word-yellow'>"mystyle"</span>&gt;</span>
+  <span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;SFC&lt;/<span class='word-red'>h1</span>&gt;</span>
+  <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;ORF&lt;/<span class='word-red'>p</span>&gt;</span>
+  <span class='code-line'>  &lt;<span class='word-red'>small</span>&gt;SBC&lt;/<span class='word-red'>small</span>&gt;</span>
+  <span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+  </td>
+  </tr>
+  </table>
             <hr class="red-hr">
-            <small id="html-small" class="fix-link-nav"><strong><li>&lt;small&gt;:小さい文字の表示</li></strong></small>
-            <br>
-            小さい文字の表示は、
-<pre>
-&lt;small&gt;表示する文字列&lt;/small&gt;
-</pre>
-            で設定します。
-            <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>small</span>&gt;小さい文字の表示&lt;/<span class='word-red'>small</span>&gt;</span>
-</td>
-</tr>
-</table>
-          <hr class="red-hr">
-          </ul>
-          <strong class="little-remarkable">表示させる文字列の大きさは適宜見ながら調節してみましょう！</strong>
-          </h4>
-          <br>
-        <h2 class="textbook-section-title" id="title2"><strong>2 : その他のタグ</strong></h2>
-          <h4>
-          <strong>「<a href="#html-hr"><u>&lt;hr&gt;</u></a>」線の表示</strong>・<strong>「<a href="#html-br"><u>&lt;br&gt;</u></a>」改行</strong>・<strong>「<a href="#html-a"><u>&lt;a&gt;</u></a>」ページの移動/リンク</strong>・<strong>「<a href="#html-div"><u>&lt;div&gt;</u></a>」CSSを適用させるための領域</strong>に４つについて説明します。
-          <hr>
-          <ul class="number_ul">
-            <p id="html-hr" class="fix-link-nav"><strong><li>&lt;hr&gt;:線の表示</li></strong></p>
-            <br>
-            線の表示は、
-<pre>
-&lt;hr&gt;
-</pre>
-            で設定します。
-            <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-</td>
-</tr>
-</table>
-            <hr class="red-hr">
-            <p id="html-br" class="fix-link-nav"><strong><li>&lt;br&gt;:改行</li></strong></p>
-            <br>
-            改行の設定は、
-<pre>
-&lt;br&gt;
-</pre>
-            で設定します。
-            <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
-</td>
-</tr>
-</table>
-            <hr class="red-hr">
-            <p id="html-a" class="fix-link-nav"><strong><li>&lt;a&gt;:リンク/ページの移動</li></strong></p>
-            <br>
-            ページの移動の設定は、
-<pre>
-&lt;a href="移動するページ"&gt;表示する文字&lt;/a&gt;
-</pre>
-            で設定します。
-            <br><br>
-            詳細は<a href="/mugcups/5#title1-2-2" target="_blank"><strong>こちら</strong></a>
-            <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://amazon.com"</span>&gt;Amazon&lt;/<span class='word-red'>a</span>&gt;</span>
-</td>
-</tr>
-</table>
-            <hr class="red-hr">
-            <p id="html-div" class="fix-link-nav"><strong><li>&lt;div&gt;:領域の設定</li></strong></p>
-            <br>
-            領域は、
-<pre>
-&lt;div&gt;
-内容
-&lt;/div&gt;
-</pre>
-            で設定します。
-            <br><br>
-            <strong>この「&lt;div&gt;」の中に「<a href="/mugcups/3#title1-2-css-class" target="_blank">class</a>」を設定することで、領域内に設定した「class」の装飾を行います。</strong>
-            <br><br>
-            詳細は<a href="/mugcups/7#title2-2-1-css-div" target="_blank"><strong>こちら</strong></a>
-            <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-4
-5
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div </span><span class='word-green'>class</span>=<span class='word-yellow'>"mystyle"</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;SFC&lt;/<span class='word-red'>h1</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;ORF&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>small</span>&gt;SBC&lt;/<span class='word-red'>small</span>&gt;</span>
-<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
-</td>
-</tr>
-</table>
-          <hr class="red-hr">
-          </ul>
-          <strong>このほかにもhtmlを表示させる設定はあるので、自分で調べてみよう！</strong>
-          <hr>
-          </h4>
-        <div class="next-page">
-          <a href="javascript:history.back()" class="btn btn-primary">戻る</a>
+            </ul>
+            <strong>このほかにもhtmlを表示させる設定はあるので、自分で調べてみよう！</strong>
+            <hr>
+            </h4>
+          <div class="next-page">
+            <a href="javascript:history.back()" class="btn btn-primary">戻る</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
-    <br>
-    <strong>
-    <div id="slide-bar" class="clear-fix">
-      <div class="list-group nomargin">
-        <a href="#title" class="list-group-item list-title"><h4>htmlタグ一覧</h4></a>
-        <a href="#title0" class="list-group-item">0 : この章の目的</a>
-        <a href="#title1" class="list-group-item">1 : 文字列を出すタグ</a>
-        <a href="#html-h1" class="list-group-item"><small>　① : &lt;h1&gt;大きい文字の表示</small></a>
-        <a href="#html-p" class="list-group-item"><small>　② : &lt;p&gt;普通の文字の表示</small></a>
-        <a href="#html-small" class="list-group-item"><small>　③ : &lt;small&gt;小さい文字の表示</small></a>
-        <a href="#title2" class="list-group-item">2 : その他のタグ</a>
-        <a href="#html-hr" class="list-group-item"><small>　① : &lt;hr&gt;線の表示</small></a>
-        <a href="#html-br" class="list-group-item"><small>　② : &lt;br&gt;改行</small></a>
-        <a href="#html-a" class="list-group-item"><small>　③ : &lt;a&gt;ページの移動/リンク</small></a>
-        <a href="#html-div" class="list-group-item"><small>　④ : &lt;div&gt;領域の確保</small></a>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <strong>
+      <div id="slide-bar" class="clear-fix">
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>htmlタグ一覧</h4></a>
+          <a href="#title0" class="list-group-item">0 : この章の目的</a>
+          <a href="#title1" class="list-group-item">1 : 文字列を出すタグ</a>
+          <a href="#html-h1" class="list-group-item"><small>　① : &lt;h1&gt;大きい文字の表示</small></a>
+          <a href="#html-p" class="list-group-item"><small>　② : &lt;p&gt;普通の文字の表示</small></a>
+          <a href="#html-small" class="list-group-item"><small>　③ : &lt;small&gt;小さい文字の表示</small></a>
+          <a href="#title2" class="list-group-item">2 : その他のタグ</a>
+          <a href="#html-hr" class="list-group-item"><small>　① : &lt;hr&gt;線の表示</small></a>
+          <a href="#html-br" class="list-group-item"><small>　② : &lt;br&gt;改行</small></a>
+          <a href="#html-a" class="list-group-item"><small>　③ : &lt;a&gt;ページの移動/リンク</small></a>
+          <a href="#html-div" class="list-group-item"><small>　④ : &lt;div&gt;領域の確保</small></a>
+        </div>
       </div>
+      </strong>
     </div>
-    </strong>
   </div>
 </div>
 <%= render 'pages/fixedjs' %>

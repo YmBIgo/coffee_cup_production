@@ -1,356 +1,358 @@
 <% provide :title, "6：設定一覧" %>
-<div class="row">
-  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
-    <div class="textbook-area">
-      <div class="textbook-area-inner fadeIn wow">
-        <div id="title" class="textbook-title">
-          <h1><strong>ページを作ろう！②：設定一覧</strong></h1>
+<div class="container">
+    <div class="row">
+      <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+        <div class="textbook-area">
+          <div class="textbook-area-inner fadeIn wow">
+            <div id="title" class="textbook-title">
+              <h1><strong>ページを作ろう！②：設定一覧</strong></h1>
+            </div>
+            <h4>
+            <u>
+            <a href="/mugcups/6" class="text-left" target="_blank">ページを作ろう！②</a>
+            </u>
+            </h4>
+            <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header6.jpg",
+                          :width => "90%",
+                          :class => "textbook-title-img hover_img" %>
+            <hr>
+            <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+            <h4>
+              <i class="fa fa-bookmark color-red"></i>　<strong>「ページを作ろう！②」の設定一覧の確認をする</strong>
+            </h4>
+            <br>
+            <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+            <h4 id="code5-1">
+            <strong>「<a href="/mugcups/6" target="_blank">ページを作ろう！②</a>」では、「posts」データベースのページ<u>「new」「create」「edit」「update」「destroy」</u>の設定を行った。</strong>
+            <hr class="red-hr">
+            ページの設定には、
+            <strong>
+              <ul class="number_ul">
+                <li>7つのページの設定（route.rb）</li>
+                <li>データ操作の設定（controllerファイル）</li>
+                <li>ページの設定（viewsフォルダ）</li>
+              </ul>
+            </strong>
+            の3つが必要になる。
+            <hr class="red-hr">
+            <p id="title1-1"><i class="fa fa-play-circle"></i>　<strong><u>7つのページの設定（route.rb）</u></strong>は、</p>
+            <br>
+            <i class="fa fa-file color-red"></i>　<strong>route.rb</strong>
+            <br><br>
+    <table class='highlight'>
+    <tr>
+    <td class='code-line-no text-center'>1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    ...
+    57
+    58
+    </td>
+    <td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+    <span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+    <span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+    <span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+    <span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'>  <span class='word-gray'># Example of regular route:</span></span>
+    <span class='code-line'>  <span class='word-gray'>#   get 'products/:id' => 'catalog#view'</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'>  <span class='word-gray'># 省略</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'><span class='word-red'>end</span></span>
+    </td>
+    </tr>
+    </table>
+            <hr class="red-hr">
+            <p id="title1-2"><i class="fa fa-play-circle"></i>　<strong><u>データ操作の設定（controllerファイル）</u></strong>は、</p>
+            <br>
+            <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
+            <br><br>
+    <table class='highlight'>
+    <tr>
+    <td class='code-line-no text-center'>1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    13
+    14
+    15
+    16
+    17
+    18
+    19
+    20
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    </td>
+    <td class='code-content'><span class='code-line'><span class='word-red'>class </span>PostsController <span class="word-green">< ApplicationController</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+    <span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+    <span class='code-line'>  <span class='word-red'>end</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+    <span class='code-line'>    @posts = <span class='word-blue'>Post</span>.all</span>
+    <span class='code-line'>  <span class='word-red'>end</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>new</span></span>
+    <span class='code-line'>    @post = Post<span class='word-red'>.new</span></span>
+    <span class='code-line'>  <span class='word-red'>end</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+    <span class='code-line'>    @post = <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+    <span class='code-line'>  <span class='word-red'>end</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+    <span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+    <span class='code-line'>  <span class='word-red'>end</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+    <span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+    <span class='code-line'>    @post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+    <span class='code-line'>  <span class='word-red'>end</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
+    <span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+    <span class='code-line'>    @post.destroy</span>
+    <span class='code-line'>  <span class='word-red'>end</span></span>
+    <span class='code-line'></span>
+    <span class='code-line'><span class='word-red'>end</span></span>
+    </td>
+    </tr>
+    </table>
+            <hr class="red-hr">
+            <p id="title1-3"><i class="fa fa-play-circle"></i>　<strong>ページの設定（viewsフォルダ）</strong>は、</p>
+            <strong>
+              <ul class="number_ul">
+                <li>new.html.erb</li>
+                <li>create.html.erb</li>
+                <li>edit.html.erb</li>
+                <li>update.html.erb</li>
+                <li>destroy.html.erb</li>
+                <li>show.html.erb</li>
+              </ul>
+            </strong>
+            <br>
+            を設定した。それぞれの内容は、
+            <br><br>
+            <ul class="number_ul">
+              <strong><li>　<i class="fa fa-file color-red"></i>　new.html.erb</li></strong>
+              <br>
+    <table class='highlight'>
+    <tr>
+    <td class='code-line-no text-center'>1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    13
+    </td>
+    <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を作る&lt;/<span class='word-red'>h1</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+    <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+    <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
+    <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
+    <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
+    <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+    <span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登録する"</span> %&gt;</span>
+    <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+    </td>
+    </tr>
+    </table>
+            <br>
+            <strong><li>　<i class="fa fa-file color-red"></i>　create.html.erb</li></strong>
+            <br>
+    <table class='highlight'>
+    <tr>
+    <td class='code-line-no text-center'>1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    </td>
+    <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿が完了しました&lt;/<span class='word-red'>h1</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>&lt;%= @post.name %&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>&lt;%= @post.content %&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>&lt;%= @post.place %&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+    </td>
+    </tr>
+    </table>
+            <br>
+            <strong><li>　<i class="fa fa-file color-red"></i>　edit.html.erb</li></strong>
+            <br>
+    <table class='highlight'>
+    <tr>
+    <td class='code-line-no text-center'>1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    </td>
+    <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+    <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+    <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
+    <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
+    <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+    <span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"変更する"</span> %&gt;</span>
+    <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+    </td>
+    </tr>
+    </table>
+            <br>
+            <strong><li>　<i class="fa fa-file color-red"></i>　update.html.erb</li></strong>
+            <br>
+    <table class='highlight'>
+    <tr>
+    <td class='code-line-no text-center'>1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    </td>
+    <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を変更しました。&lt;/<span class='word-red'>h1</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>&lt;%= @post.name %&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>&lt;%= @post.content %&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>&lt;%= @post.place %&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+    </td>
+    </tr>
+    </table>
+            <br>
+            <strong><li>　<i class="fa fa-file color-red"></i>　destroy.html.erb</li></strong>
+            <br>
+    <table class='highlight'>
+    <tr>
+    <td class='code-line-no text-center'>1
+    2
+    3
+    4
+    5
+    </td>
+    <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+    </td>
+    </tr>
+    </table>
+            <br>
+            <strong><li>　<i class="fa fa-file color-red"></i>　show.html.erb（６行目を追加）</li></strong>
+            <br>
+    <table class='highlight'>
+    <tr>
+    <td class='code-line-no text-center'>1
+    2
+    3
+    4
+    5
+    <strong class="color-red">6</strong>
+    </td>
+    <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;</span>
+    <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+    <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+    </td>
+    </tr>
+    </table>
+            <br>
+            </ul>
+            になる
+            <hr>
+            <div class="next-page">
+                <a href="/mugcups/6" class="btn btn-primary">戻る</a>
+            </div>
+            </h4>
+          </div>
         </div>
-        <h4>
-        <u>
-        <a href="/mugcups/6" class="text-left" target="_blank">ページを作ろう！②</a>
-        </u>
-        </h4>
-        <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header6.jpg",
-                      :width => "90%",
-                      :class => "textbook-title-img hover_img" %>
-        <hr>
-        <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
-        <h4>
-          <i class="fa fa-bookmark color-red"></i>　<strong>「ページを作ろう！②」の設定一覧の確認をする</strong>
-        </h4>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
         <br>
-        <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
-        <h4 id="code5-1">
-        <strong>「<a href="/mugcups/6" target="_blank">ページを作ろう！②</a>」では、「posts」データベースのページ<u>「new」「create」「edit」「update」「destroy」</u>の設定を行った。</strong>
-        <hr class="red-hr">
-        ページの設定には、
+        <div id="slide-bar" class="clear-fix">
         <strong>
-          <ul class="number_ul">
-            <li>7つのページの設定（route.rb）</li>
-            <li>データ操作の設定（controllerファイル）</li>
-            <li>ページの設定（viewsフォルダ）</li>
-          </ul>
+          <div class="list-group nomargin">
+            <a href="#title" class="list-group-item list-title"><h4>6：設定一覧</h4></a>
+            <a href="#title0" class="list-group-item">0 : この章の目的</a>
+            <a href="#title1" class="list-group-item">1 : 設定一覧</a>
+            <a href="#title1-1" class="list-group-item">　<small>① : route.rb</small></a>
+            <a href="#title1-2" class="list-group-item">　<small>② : posts_controller.rb</small></a>
+            <a href="#title1-3" class="list-group-item">　<small>③ : ページの表示</small></a>
+          </div>
         </strong>
-        の3つが必要になる。
-        <hr class="red-hr">
-        <p id="title1-1"><i class="fa fa-play-circle"></i>　<strong><u>7つのページの設定（route.rb）</u></strong>は、</p>
-        <br>
-        <i class="fa fa-file color-red"></i>　<strong>route.rb</strong>
-        <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-...
-57
-58
-</td>
-<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
-<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
-<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
-<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
-<span class='code-line'></span>
-<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
-<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
-<span class='code-line'></span>
-<span class='code-line'>  <span class='word-gray'># Example of regular route:</span></span>
-<span class='code-line'>  <span class='word-gray'>#   get 'products/:id' => 'catalog#view'</span></span>
-<span class='code-line'></span>
-<span class='code-line'>  <span class='word-gray'># 省略</span></span>
-<span class='code-line'></span>
-<span class='code-line'><span class='word-red'>end</span></span>
-</td>
-</tr>
-</table>
-        <hr class="red-hr">
-        <p id="title1-2"><i class="fa fa-play-circle"></i>　<strong><u>データ操作の設定（controllerファイル）</u></strong>は、</p>
-        <br>
-        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
-        <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-</td>
-<td class='code-content'><span class='code-line'><span class='word-red'>class </span>PostsController <span class="word-green">< ApplicationController</span></span>
-<span class='code-line'></span>
-<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
-<span class='code-line'>  <span class='word-red'>end</span></span>
-<span class='code-line'></span>
-<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
-<span class='code-line'>    @posts = <span class='word-blue'>Post</span>.all</span>
-<span class='code-line'>  <span class='word-red'>end</span></span>
-<span class='code-line'></span>
-<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>new</span></span>
-<span class='code-line'>    @post = Post<span class='word-red'>.new</span></span>
-<span class='code-line'>  <span class='word-red'>end</span></span>
-<span class='code-line'></span>
-<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
-<span class='code-line'>  <span class='word-red'>end</span></span>
-<span class='code-line'></span>
-<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
-<span class='code-line'>  <span class='word-red'>end</span></span>
-<span class='code-line'></span>
-<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
-<span class='code-line'>    @post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
-<span class='code-line'>  <span class='word-red'>end</span></span>
-<span class='code-line'></span>
-<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
-<span class='code-line'>    @post.destroy</span>
-<span class='code-line'>  <span class='word-red'>end</span></span>
-<span class='code-line'></span>
-<span class='code-line'><span class='word-red'>end</span></span>
-</td>
-</tr>
-</table>
-        <hr class="red-hr">
-        <p id="title1-3"><i class="fa fa-play-circle"></i>　<strong>ページの設定（viewsフォルダ）</strong>は、</p>
-        <strong>
-          <ul class="number_ul">
-            <li>new.html.erb</li>
-            <li>create.html.erb</li>
-            <li>edit.html.erb</li>
-            <li>update.html.erb</li>
-            <li>destroy.html.erb</li>
-            <li>show.html.erb</li>
-          </ul>
-        </strong>
-        <br>
-        を設定した。それぞれの内容は、
-        <br><br>
-        <ul class="number_ul">
-          <strong><li>　<i class="fa fa-file color-red"></i>　new.html.erb</li></strong>
-          <br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を作る&lt;/<span class='word-red'>h1</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登録する"</span> %&gt;</span>
-<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
-</td>
-</tr>
-</table>
-        <br>
-        <strong><li>　<i class="fa fa-file color-red"></i>　create.html.erb</li></strong>
-        <br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-4
-5
-6
-7
-8
-9
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿が完了しました&lt;/<span class='word-red'>h1</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;%= @post.name %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;%= @post.content %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;%= @post.place %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
-</td>
-</tr>
-</table>
-        <br>
-        <strong><li>　<i class="fa fa-file color-red"></i>　edit.html.erb</li></strong>
-        <br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"変更する"</span> %&gt;</span>
-<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
-</td>
-</tr>
-</table>
-        <br>
-        <strong><li>　<i class="fa fa-file color-red"></i>　update.html.erb</li></strong>
-        <br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を変更しました。&lt;/<span class='word-red'>h1</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;%= @post.name %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;%= @post.content %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;%= @post.place %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
-</td>
-</tr>
-</table>
-        <br>
-        <strong><li>　<i class="fa fa-file color-red"></i>　destroy.html.erb</li></strong>
-        <br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-4
-5
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-</td>
-</tr>
-</table>
-        <br>
-        <strong><li>　<i class="fa fa-file color-red"></i>　show.html.erb（６行目を追加）</li></strong>
-        <br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-4
-5
-<strong class="color-red">6</strong>
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-</td>
-</tr>
-</table>
-        <br>
-        </ul>
-        になる
-        <hr>
-        <div class="next-page">
-            <a href="/mugcups/6" class="btn btn-primary">戻る</a>
         </div>
-        </h4>
       </div>
     </div>
-  </div>
-  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
-    <br>
-    <div id="slide-bar" class="clear-fix">
-    <strong>
-      <div class="list-group nomargin">
-        <a href="#title" class="list-group-item list-title"><h4>6：設定一覧</h4></a>
-        <a href="#title0" class="list-group-item">0 : この章の目的</a>
-        <a href="#title1" class="list-group-item">1 : 設定一覧</a>
-        <a href="#title1-1" class="list-group-item">　<small>① : route.rb</small></a>
-        <a href="#title1-2" class="list-group-item">　<small>② : posts_controller.rb</small></a>
-        <a href="#title1-3" class="list-group-item">　<small>③ : ページの表示</small></a>
-      </div>
-    </strong>
-    </div>
-  </div>
 </div>
 <%= render 'pages/fixedjs' %>
