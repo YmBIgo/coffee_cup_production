@@ -2,15 +2,14 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
-  get "/pages/:page" => "pages#show"
+  get "/mugcups/:page" => "pages#show"
 
   get "/codes/:page" => "codes#show"
 
-  get "/pages" => "pages#index"
+  get "/mugcups" => "pages#index"
 
   get "/codes" => "codes#index"
 
-  resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

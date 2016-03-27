@@ -6,7 +6,7 @@
   この変更をするには、2つの設定が必要になります。
   <strong>
     <ul class="number_ul">
-      <li>データ作成時（<a href="/pages/6#title1-3" target="_blank">create</a>）に「user_id」に会員情報を入れる設定</li>
+      <li>データ作成時（<a href="/mugcups/6#title1-3" target="_blank">create</a>）に「user_id」に会員情報を入れる設定</li>
       <li>ページに会員情報を表示させる標識「@user」の設定</li>
     </ul>
   </strong>
@@ -18,7 +18,7 @@
     <br>
     <i class="fa fa-question-circle color-green"></i>　<strong>まずは復習で、「def create」の部分から、<u>「name」を設定から消して「user_id」を追加する設定</u>をしましょう（マウスを上におけば答えが出ます）</strong>
     <br>
-    <small>※　分からなければ<a href="/pages/6#title1-4" target="_blank"><strong>こちら</strong></a>を見て下さい</small>
+    <small>※　分からなければ<a href="/mugcups/6#title1-4" target="_blank"><strong>こちら</strong></a>を見て下さい</small>
     <br><br>
     <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
     <br>
@@ -40,7 +40,7 @@
 <pre>
 .require(:データベース名（単数形）.permit(:データベースの枠組み...))
 </pre>
-    で変更をするデータベースを制限していました（詳しい内容は<a href="/pages/6#title1-4-1" target="_blank"><strong>こちら</strong></a>）。
+    で変更をするデータベースを制限していました（詳しい内容は<a href="/mugcups/6#title1-4-1" target="_blank"><strong>こちら</strong></a>）。
     <hr class="red-hr">
     これで「user_id」をデータに入れる設定はできたのですが、「user_id」に内容を入れる設定はまだできていません。
     <br>
@@ -50,7 +50,7 @@
     <br>
     <strong>もし会員情報の入力欄があったら、<u>他人の会員情報で投稿ができてしまう</u>危険なサイトになることでしょう・・・</strong>
     <br><br>
-    <strong>「user_id」の内容は、ログインしている会員の情報を取得する「<a href="/pages/10#title3-3-3" target="_blank">current_user</a>」を使って「posts_controller.rb」に設定します。</strong>
+    <strong>「user_id」の内容は、ログインしている会員の情報を取得する「<a href="/mugcups/10#title3-3-3" target="_blank">current_user</a>」を使って「posts_controller.rb」に設定します。</strong>
     <br><br>
     「posts_controller.rb」を下のように変更しましょう。
     <br><br>
@@ -91,7 +91,7 @@
 </pre>
     で<strong><u>「user_id」に「current_user」の「id」を入れている</u></strong>のが、なんとなく理解できるでしょうか？
     <br>
-    この設定は「rails c」でデータを<a href="/pages/4#title2-1" target="_blank"><strong>作成（create）</strong></a>・<a href="/pages/4#title1-3" target="_blank"><strong>変更（update）</strong></a>した時の設定と同じなので分かりやすいと思います。
+    この設定は「rails c」でデータを<a href="/mugcups/4#title2-1" target="_blank"><strong>作成（create）</strong></a>・<a href="/mugcups/4#title1-3" target="_blank"><strong>変更（update）</strong></a>した時の設定と同じなので分かりやすいと思います。
     <br>
     <u>「user_id」に「current_user」の「id」を入れています。</u>
     <br><br>
@@ -107,7 +107,7 @@
     <br>
     次はページに会員情報を表示させるための標識「@user」を設定しましょう。
     <br>
-    <a href="/pages/10#title3-2-1" target="_blank"><strong>「users」ページを作った時</strong></a>と同じように、<u>ページで表示させるための「@user」を「posts_controller.rb」に設定</u>します。
+    <a href="/mugcups/10#title3-2-1" target="_blank"><strong>「users」ページを作った時</strong></a>と同じように、<u>ページで表示させるための「@user」を「posts_controller.rb」に設定</u>します。
     <br><br>
     ここでは投稿をした会員の情報を表示させるので、
     <strong>

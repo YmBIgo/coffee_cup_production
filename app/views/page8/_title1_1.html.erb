@@ -9,7 +9,7 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
               :target => ["_blank"] %>
-  これは最初の<strong>「<a href="/pages/3#title2-1" target="_blank">rails new</a>」</strong>で作った雛形のページになります。
+  これは最初の<strong>「<a href="/mugcups/3#title2-1" target="_blank">rails new</a>」</strong>で作った雛形のページになります。
   <br>
   ここに自分のページを設定してみましょう。
   <hr class="red-hr">
@@ -19,15 +19,15 @@
     <strong><li>データ操作の設定</li></strong>
     <strong><li>ページの設定</li></strong>
   </ul>
-  の<a href="/pages/5#title1" target="_blank"><strong>３つ</strong></a>でしたね。
+  の<a href="/mugcups/5#title1" target="_blank"><strong>３つ</strong></a>でしたね。
   <br><br>
   今回は<strong>トップページなのでデータ操作をしないページを作ります。</strong>
   <br>
   今までデータ操作をするページしか作ってこなかったので、<strong>「データ操作をしないページを作ってもいいのか」という問題はありますが、<u>実はできました。</u></strong>
   <br>
-  データ操作をしない分だけ、このページでは<strong><a href="/pages/4#title1" target="_blank">データベースの定義（Excelの表を決めること）</a></strong>は必要ありません。
+  データ操作をしない分だけ、このページでは<strong><a href="/mugcups/4#title1" target="_blank">データベースの定義（Excelの表を決めること）</a></strong>は必要ありません。
   <br><br>
-  このようなデータ操作をしないページは<strong>「<a href="/pages/5#title1-2" target="_blank">index</a>」ページ</strong>で設定します。
+  このようなデータ操作をしないページは<strong>「<a href="/mugcups/5#title1-2" target="_blank">index</a>」ページ</strong>で設定します。
   <br>
   では実際にやってみます。
   <hr class="red-hr">
@@ -69,7 +69,7 @@
 <pre>
 rails g controller データベース名
 </pre>
-  の入力は、<a href="/pages/6#title2-data-view" target="_blank"><strong>データベースにそったデータ操作とページの設定ファイルを作る入力</strong></a>でしたね。
+  の入力は、<a href="/mugcups/6#title2-data-view" target="_blank"><strong>データベースにそったデータ操作とページの設定ファイルを作る入力</strong></a>でしたね。
   <br><br>
   今回はその「welcome」データベースは作っていませんね。
   <br>
@@ -87,18 +87,18 @@ rails g controller 名前（単数形）
   <br><br>
   <ul class="number_ul">
     <strong><li><i>rails g controller 名前（複数形）</i></li></strong>
-    データベースを<u>使う</u>ページ設定をします。（詳細は<a href="/pages/6#title2-data-view" target="_blank"><strong>こちら</strong></a>）
+    データベースを<u>使う</u>ページ設定をします。（詳細は<a href="/mugcups/6#title2-data-view" target="_blank"><strong>こちら</strong></a>）
     <strong><li><i>rails g controller 名前（単数形）</i></li></strong>
     データベースを<u>使わない</u>ページ設定をします。
   </ul>
   <hr class="red-hr">
   まずは<strong><u>「どのページを使うか」</u></strong>から設定しましょう。
   <br>
-  Sublime Textで「myapp」を開き（開き方は<a href="/pages/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）、<strong>「config > route.rb」</strong>を開いて下さい。
+  Sublime Textで「myapp」を開き（開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）、<strong>「config > route.rb」</strong>を開いて下さい。
   <br>
   このファイルに設定を加えます。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>まずは復習からです。<u>「welcome」の「<a href="/pages/5#title1-2" target="_blank">index</a>」ページを使用する</u>にはどのような設定を加えればいいでしょうか？<br>（分からなかったら<a href="/pages/6#title2-route" target="_blank">こちら</a>を参考）</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>まずは復習からです。<u>「welcome」の「<a href="/mugcups/5#title1-2" target="_blank">index</a>」ページを使用する</u>にはどのような設定を加えればいいでしょうか？<br>（分からなかったら<a href="/mugcups/6#title2-route" target="_blank">こちら</a>を参考）</strong>
   <br><br>
   <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
   <br>
@@ -160,7 +160,7 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <br>
   今回は<strong>「views > welcome」の「index.html.erb」の設定ファイル</strong>を「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」で表示するよう設定しています。
   <br><br>
-  また普通に<strong><u>「posts」の「<a href="/pages/5#title1-2" target="_blank">index</a>」ページ</u></strong>をトップページにするなら、
+  また普通に<strong><u>「posts」の「<a href="/mugcups/5#title1-2" target="_blank">index</a>」ページ</u></strong>をトップページにするなら、
   <br><br>
 <table class='highlight'>
 <tr>
@@ -221,7 +221,7 @@ root "表示させるページの設定フォルダ#表示させるページ"
 </tr>
 </table>
   <br>
-  「welcome」では<strong>「<a href="/pages/5#title1-2" target="_blank">index</a>」</strong>のページのみを使うのでこのように設定しました。
+  「welcome」では<strong>「<a href="/mugcups/5#title1-2" target="_blank">index</a>」</strong>のページのみを使うのでこのように設定しました。
   <br><br>
   今回はデータを表示させたりはしないのでなにも設定しませんが、例えば「post」のデータベースの情報を表示させたいなら、
   <br><br>
@@ -234,13 +234,13 @@ root "表示させるページの設定フォルダ#表示させるページ"
 </tr>
 </table>
   <br>
-  のように「@posts」の標識を設定して、それを<a href="/pages/5#title1-2-3-view" target="_blank"><strong>htmlで表示</strong></a>させます。
+  のように「@posts」の標識を設定して、それを<a href="/mugcups/5#title1-2-3-view" target="_blank"><strong>htmlで表示</strong></a>させます。
   <br><br>
-  データを表示させるかどうかは別にして後で追加する可能性もあるので、上のように<strong>「<a href="/pages/5#title1-2" target="_blank">index</a>」</strong>のデータ操作の設定を加えましょう。
+  データを表示させるかどうかは別にして後で追加する可能性もあるので、上のように<strong>「<a href="/mugcups/5#title1-2" target="_blank">index</a>」</strong>のデータ操作の設定を加えましょう。
   <hr class="red-hr">
   最後にページの設定をしてみましょう！
   <br>
-  まずは、<strong>「app > views > welcome」に「index.html.erb」を保存</strong>してみましょう！（保存の方法は<a href="/pages/how_to_save#title1" target="_blank"><strong>こちら</strong></a>から）
+  まずは、<strong>「app > views > welcome」に「index.html.erb」を保存</strong>してみましょう！（保存の方法は<a href="/mugcups/how_to_save#title1" target="_blank"><strong>こちら</strong></a>から）
   <br>
   <strong><u>この「index.html.erb」ファイル</u></strong>がページを表示させるための設定ファイルになります。
   <br><br>
@@ -266,7 +266,7 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <br>
   内容は大丈夫でしょうか？
   <br>
-  <a href="/pages/7#title1-3" target="_blank"><strong>「/posts」のリンク</strong></a>を<strong><a href="/pages/7#title2-2-5-btn" target="_blank">Bootstrapの「btn」</a></strong>で作っていますね。
+  <a href="/mugcups/7#title1-3" target="_blank"><strong>「/posts」のリンク</strong></a>を<strong><a href="/mugcups/7#title2-2-5-btn" target="_blank">Bootstrapの「btn」</a></strong>で作っていますね。
   <br><br>
   ではこれを開いてみましょう！
   <br>

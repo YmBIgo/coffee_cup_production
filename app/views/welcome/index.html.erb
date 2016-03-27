@@ -1,6 +1,46 @@
 <% provide :title, "Mugcup" %>
-<%= render 'common/header' %>
 <br>
-<div class="text-center">
-  <%= link_to "Let's get started!" ,pages_path, :class => "btn btn-primary" %>
+<header>
+  <div class="header-content fadeIn wow">
+    <div class="header-content-word">
+      <h1 class="text-center">
+        <strong>
+          テクノロジーを、<br><br>あなたのものにしよう！
+        </strong>
+        <hr class="red-hr">
+        <span style="font-size:15px;">
+        日頃の生活を支えていると言っても過言でもないインターネット。
+        <br>
+        そのウェブページの作り方について教えます！
+        </span>
+      </h1>
+    </div>
+  </div>
+</header>
+<br>
+<h2 class="text-center">3つのコース</h2>
+<hr class="red-hr">
+<div class="row text-center">
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+    <strong>
+    <a href="/mugcups" target="_blank" class="btn btn-primary">
+          <%= image_tag("logo/mugcup_logo_link.png",
+                        :class => "nav-img") %>
+          Mugcup(基礎編)</a>
+    </strong>
+  </div>
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+    <a href="/mugcups" target="_blank" class="btn btn-success">
+          <%= image_tag("logo/teacup_logo_link.png",
+                        :class => "nav-img") %>
+          Teacup（応用編①）
+    </a>
+  </div>
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+    <a href="/mugcups" target="_blank" class="btn btn-danger">
+          <%= image_tag("logo/wineglass_logo_link.png",
+                        :class => "nav-img") %>
+          Wine Glass（応用編②）
+    </a>
+  </div>
 </div>

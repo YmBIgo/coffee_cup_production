@@ -16,7 +16,7 @@
               :target => ["_blank"] %>
   これも少し設定を加えるだけでできるのでやってみます。
   <hr class="red-hr">
-  まずは<strong>「app > views > layouts > application.html.erb」</strong>の<strong>「<a href="/pages/7#title2-2-1" target="_blank">&lt;div class="container main-page"&gt;</a>」</strong>の中を下のように変更してみて下さい。
+  まずは<strong>「app > views > layouts > application.html.erb」</strong>の<strong>「<a href="/mugcups/7#title2-2-1" target="_blank">&lt;div class="container main-page"&gt;</a>」</strong>の中を下のように変更してみて下さい。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（&lt;div class="container main-page"&gt;の後に内容を追加）</strong>
   <br>
@@ -54,7 +54,7 @@
   <br>
   内容を変更できたら「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動してから、
   <br>
-  ログインしないと見れない<strong>「<a href="/pages/6#title1-3" target="_blank">new</a>」</strong>のページ<strong>「<a href="http://0.0.0.0:3000/posts/new" target="_blank">0.0.0.0:3000/posts/new</a>」</strong>を開いてみましょう。
+  ログインしないと見れない<strong>「<a href="/mugcups/6#title1-3" target="_blank">new</a>」</strong>のページ<strong>「<a href="http://0.0.0.0:3000/posts/new" target="_blank">0.0.0.0:3000/posts/new</a>」</strong>を開いてみましょう。
   <br>
   下のように表示されたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
@@ -162,7 +162,7 @@
   <hr class="red-hr">
   それに加えて、表示された文字列には色がついていますね。
   <br>
-  これは、文字の<strong>「<a href="/pages/3#title1-2-css-class" target="_blank">class</a>」</strong>に指定された<strong><u>「alert」と「alert-success」「alert-danger」</u></strong>が実は「Bootstrap」の設定で色付きの表示をしているからです。
+  これは、文字の<strong>「<a href="/mugcups/3#title1-2-css-class" target="_blank">class</a>」</strong>に指定された<strong><u>「alert」と「alert-success」「alert-danger」</u></strong>が実は「Bootstrap」の設定で色付きの表示をしているからです。
   <br><br>
 <table class='highlight'>
 <tr>
@@ -222,7 +222,7 @@ flash[:alert] = "表示する文字"
 </pre>
   に表示されます。
   <br><br>
-  <strong>「<a href="/pages/5#title1-1" target="_blank">show</a>」のページの「<a href="http://0.0.0.0:3000/posts/1">0.0.0.0:3000/posts/1</a>」</strong>に自分で作った通知を表示させてみましょう。
+  <strong>「<a href="/mugcups/5#title1-1" target="_blank">show</a>」のページの「<a href="http://0.0.0.0:3000/posts/1">0.0.0.0:3000/posts/1</a>」</strong>に自分で作った通知を表示させてみましょう。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（7行目を追加）</strong>
   <br>
@@ -250,7 +250,7 @@ flash[:alert] = "表示する文字"
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_1_flash.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
-              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_1_flash.png"
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_1_flash.png",
               :target => ["_blank"] %>
   <strong><u>この通知があまり多すぎても無駄なので、今回設定した通知は消してください。</u></strong>
   <hr class="red-hr">
@@ -258,7 +258,7 @@ flash[:alert] = "表示する文字"
   <br>
   中身は「devise」が自動で作ってくれますが、なんとなく内容を理解してもらえれば幸いです。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>「posts_controller.rb」の<u>「<a href="/pages/6#title1-5" target="_blank">edit</a>」ページに、「@post」の「content」の通知を表示</u>させる設定はどのようにすればいいでしょうか？</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>「posts_controller.rb」の<u>「<a href="/mugcups/6#title1-5" target="_blank">edit</a>」ページに、「@post」の「content」の通知を表示</u>させる設定はどのようにすればいいでしょうか？</strong>
   <br><br>
   <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="4"></textarea>
   <br>
