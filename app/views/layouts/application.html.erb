@@ -5,6 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= display_meta_tags({
+      :title => 'Mugcup',
+      :site  => t('site'),
+      :description => 'Mugcup ウェブサイトを作ってみよう！',
+      :keywords => 'ウェブサイト作り方, Ruby on rails, プログラミング初心者',
+      :open_graph => {
+        :title => '',
+        :url   => root_url,
+      },
+      :viewport => "width=device-width, initial-scale=1.0" ,
+      :reverse => true
+    }) %>
 </head>
 <body>
 
