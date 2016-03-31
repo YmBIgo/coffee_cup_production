@@ -1,0 +1,135 @@
+<h4 id="coffee-chapter1-2-3">
+  <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : ページの設定</strong></p>
+  <br>
+  <strong>次はページ表示を設定します。</strong>
+  <hr class="red-hr">
+  ページ表示は<strong><u>「app > views」フォルダにある「welcome」</u></strong>に設定します。
+  <br>
+  まずは<strong>「welcome」フォルダに「<u>index.html.erb</u>」を保存</strong>して（保存の方法は<a href="/mugcups/how_to_save" target="_blank"><strong>こちら</strong></a>）、下のように内容を変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（「<u>app > views > welcome</u>」フォルダに保存）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center header-content"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;ようこそ&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  htmlで設定できる内容はここまでになります。
+  <hr class="red-hr">
+  次は「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」を
+  <%= link_to image_tag("coffee1/Chrome_messages_root_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee1/Chrome_messages_root_1.png",
+              :target => ["_blank"] %>
+  のように表示させてみます。
+  <br><br>
+  この表示をするために、
+  <strong>
+  <ul class="number_ul">
+    <li>表示させる画像の保存</li>
+    <li>CSSファイルの設定</li>
+  </ul>
+  </strong>
+  をやってみます。
+  <br>
+  <small>※　分からなかったら、<a href="/mugcups/8#title1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <hr class="red-hr">
+  まずは、トップページに設定したい画像を<strong>「<u>message-app</u>」の「<u>app > assets > images</u>」</strong>に保存しましょう。
+  <br>
+  もし表示させたい画像がなければ、<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header12.jpg" target="_blank"><strong>こちら</strong></a>の画像を下の手順で保存してみて下さい。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets1.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets2.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets2.png",
+              :target => ["_blank"] %>
+  終わったら、<strong>「<u>app > assets > stylesheets</u>」</strong>に<strong>「<u>style.scss</u>」</strong>を保存して（保存の方法は<a href="/mugcups/how_to_save#title1" target="_blank"><strong>こちら</strong></a>を参考）、下のように内容を変更して下さい。
+  <br>
+  <small>※　中身の詳細は<a href="/mugcups/8#title1-2" target="_blank">こちら</a></small></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange">/assets/保存した画像名</span>);</span>
+<span class='code-line'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>400</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class="word-blue">-webkit-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-moz-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-o-background-size</span>: cover;</span>
+<span class='code-line'>}</span>
+<span class='code-line'><span class='word-green'>.header-content</span>{</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>75</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class='word-blue'>padding-top</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <br>
+  では最後に<strong>「<a href="/coffee_cups/1#title1-2" target="_blank">gemの追加</a>」</strong>で設定した<strong>「<a href="/mugcups/7#title2-1" target="_blank">Bootstrap</a>」</strong>を導入しましょう！
+  <br>
+  ターミナルで下の入力をして下さい。
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g bootstrap:install</span>
+</td>
+</tr>
+</table>
+  <br>
+  これで<strong>「Bootstrap」</strong>の導入が完了しました！
+  <hr class="red-hr">
+  ここまでできたらターミナルの「message-app」で、
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails s</span>
+</td>
+</tr>
+</table>
+  <br>
+  を入力して<a href="/mugcups/3#title2-3" target="_blank"><strong>サーバー</strong></a>を立ち上げて、「<a href="0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」を開いてみましょう！
+  <%= link_to image_tag("coffee1/Chrome_messages_root_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee1/Chrome_messages_root_1.png",
+              :target => ["_blank"] %>
+  のように表示されたでしょうか？これでトップページが完成しました！
+  <br><br>
+  <strong>次は「<a href="/mugcups/7#title2-1" target="_blank">Bootstrap</a>」を使って、上につけるバーを設定してみましょう！</strong>
+</h4>

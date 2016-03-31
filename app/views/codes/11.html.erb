@@ -30,34 +30,34 @@
             まずはデータベースの枠組みを変更するために、<u>データベース変更のための設定ファイルを作成する。</u>
             <br><br>
             　<strong>ターミナル</strong>
-  <table class='highlight'>
-  <tr>
-  <td class='code-line-no text-center'>1
-  </td>
-  <td class='code-content'><span class='code-line'>ralis g migration removeColumnFromPost</span>
-  </td>
-  </tr>
-  </table>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>ralis g migration removeColumnFromPost</span>
+</td>
+</tr>
+</table>
             <br>
             作成された<strong>「<u>日時_remove_column_from_post.rb</u>」</strong>に下の内容を追加する。
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>日時_remove_column_from_post.rb</strong>
-  <table class='highlight'>
-  <tr>
-  <td class='code-line-no text-center'>1
-  2
-  <strong class="color-red">3</strong>
-  4
-  5
-  </td>
-  <td class='code-content'><span class='code-line'><span class='word-red'>class </span>RemoveColumnFromPost <span class="word-green">< ActiveRecord::Migration</span></span>
-  <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
-  <span class='code-line remarkable-code'>    remove_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
-  <span class='code-line'>  <span class='word-red'>end</span></span>
-  <span class='code-line'><span class='word-red'>end</span></span>
-  </td>
-  </tr>
-  </table>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>RemoveColumnFromPost <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    remove_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
             <hr class="red-hr">
             次は、「user_id」を追加する設定を加える。
             <br>
@@ -65,30 +65,29 @@
             <br><br>
             　<strong>ターミナル</strong>
   <table class='highlight'>
-  <tr>
-  <td class='code-line-no text-center'>1
-  </td>
-  <td class='code-content'><span class='code-line'>ralis g migration addColumnFromPost2</span>
-  </td>
-  </tr>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>ralis g migration addColumnFromPost2</span>
+</td>
+</tr>
   </table>
             <br>
             作成された<strong>「<u>日時_add_column_from_post2.rb</u>」</strong>に下の内容を追加する。
             <br><br>
-  <table class='highlight'>
-  <tr>
-  <td class='code-line-no text-center'>1
-  2
-  <strong class="color-red">3</strong>
-  4
-  5
-  </td>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
   <td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost2 <span class="word-green">< ActiveRecord::Migration</span></span>
   <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
   <span class='code-line remarkable-code'>    add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:user_id</span>, <span class='word-purple'>:integer</span></span>
   <span class='code-line'>  <span class='word-red'>end</span></span>
-  <span class='code-line'><span class='word-red'>end</span></span>
-  </td>
+  <span class='code-line'><span class='word-red'>end</span></span></td>
   </tr>
   </table>
             <br>
@@ -98,9 +97,9 @@
   <table class='highlight'>
   <tr>
   <td class='code-line-no text-center'>1
-  </td>
+</td>
   <td class='code-content'><span class='code-line'>rake db:migrate</span>
-  </td>
+</td>
   </tr>
   </table>
             <br>
@@ -112,61 +111,61 @@
   <table class='highlight'>
   <tr>
   <td class='code-line-no text-center'>1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
-  13
-  14
-  15
-  16
-  17
-  18
-  <strong class="color-red">19</strong>
-  20
-  21
-  22
-  23
-  24
-  <strong class="color-red">25
-  26
-  27
-  28
-  29</strong>
-  30
-  31
-  32
-  33
-  34
-  <strong class="color-red">35
-  36
-  37
-  38
-  39
-  40</strong>
-  41
-  42
-  43
-  44
-  45
-  <strong class="color-red">46
-  47
-  48
-  49
-  50
-  51</strong>
-  52
-  53
-  54
-  </td>
-  <td class='code-content'><span class='code-line'><span class='word-red'>class </span>PostsController <span class="word-green">< ApplicationController</span></span>
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+<strong class="color-red">19</strong>
+20
+21
+22
+23
+24
+<strong class="color-red">25
+26
+27
+28
+29</strong>
+30
+31
+32
+33
+34
+<strong class="color-red">35
+36
+37
+38
+39
+40</strong>
+41
+42
+43
+44
+45
+<strong class="color-red">46
+47
+48
+49
+50
+51</strong>
+52
+53
+54
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>PostsController <span class="word-green">< ApplicationController</span></span>
   <span class='code-line'></span>
   <span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
   <span class='code-line'></span>
@@ -190,7 +189,7 @@
   <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
   <span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
   <span class='code-line'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
-  <span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
   <span class='code-line'>    <span class="word-red">else</span></span>
   <span class='code-line'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
   <span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無効なユーザー"</span></span>
@@ -200,7 +199,7 @@
   <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
   <span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
   <span class='code-line'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
-  <span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
   <span class='code-line'>      @post.update(params.require(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
   <span class='code-line'>    <span class="word-red">else</span></span>
   <span class='code-line'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
@@ -211,7 +210,7 @@
   <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
   <span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
   <span class='code-line'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
-  <span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
   <span class='code-line'>      @post.destroy</span>
   <span class='code-line'>    <span class="word-red">else</span></span>
   <span class='code-line'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
@@ -219,48 +218,47 @@
   <span class='code-line'>    <span class='word-red'>end</span></span></span>
   <span class='code-line'>  <span class='word-red'>end</span></span>
   <span class='code-line'></span>
-  <span class='code-line'><span class='word-red'>end</span></span>
-  </td>
+  <span class='code-line'><span class='word-red'>end</span></span></td>
   </tr>
   </table>
             <br>
             <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
   <table class='highlight'>
   <tr>
-  <td class='code-line-no text-center'>1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
-  13
-  <strong class="color-red">14
-  15
-  16
-  17
-  18</strong>
-  19
-  20
-  21
-  22
-  <strong class="color-red">23
-  24
-  25
-  26
-  27
-  28</strong>
-  29
-  30
-  31
-  32
-  </td>
-  <td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+<strong class="color-red">15
+16
+17
+18
+19</strong>
+20
+21
+22
+23
+<strong class="color-red">24
+25
+26
+27
+28
+29</strong>
+30
+31
+32
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
   <span class="code-line"></span>
   <span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
   <span class='code-line'></span>
@@ -274,7 +272,7 @@
   <span class='code-line'></span>
   <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
   <span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
-  <span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@user.id == current_user.id</span>
+<span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@user.id == current_user.id</span>
   <span class='code-line'>    <span class="word-red">else</span></span>
   <span class='code-line'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
   <span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無効なユーザー"</span></span>
@@ -283,7 +281,7 @@
   <span class='code-line'></span>
   <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
   <span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
-  <span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@user.id == current_user.id</span>
+<span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@user.id == current_user.id</span>
   <span class='code-line'>      @user.update(params.require(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>))</span>
   <span class='code-line'>    <span class="word-red">else</span></span>
   <span class='code-line'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
@@ -292,7 +290,7 @@
   <span class='code-line'>  <span class='word-red'>end</span></span>
   <span class='code-line'></span>
   <span class='code-line'><span class='word-red'>end</span></span>
-  </td>
+</td>
   </tr>
   </table>
             <hr class="red-hr">
@@ -317,21 +315,21 @@
             <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
   <table class='highlight'>
   <tr>
-  <td class='code-line-no text-center'>1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
-  13
-  </td>
-  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を作る&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を作る&lt;/<span class='word-red'>h1</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
   <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -344,7 +342,7 @@
   <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
-  </td>
+</td>
   </tr>
   </table>
             <br>
@@ -352,39 +350,39 @@
   <table class='highlight'>
   <tr>
   <td class='code-line-no text-center'>1
-  2
-  <strong class="color-red">3
-  4
-  5</strong>
-  6
-  7
-  </td>
-  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿が完了しました&lt;/<span class='word-red'>h1</span>&gt;</span>
+2
+<strong class="color-red">3
+4
+5</strong>
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿が完了しました&lt;/<span class='word-red'>h1</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;様&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
-  </td>
+</td>
   </tr>
   </table>
             <br>
             <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
   <table class='highlight'>
   <tr>
-  <td class='code-line-no text-center'>1
-  <strong class="color-red">2
-  3
-  4</strong>
-  5
-  6
-  <strong class="color-red">7
-  8
-  9
-  10</strong>
-  </td>
-  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2
+3
+4</strong>
+5
+6
+<strong class="color-red">7
+8
+9
+10</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>h4</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>small</span>&gt;&lt;%= @post.created_at %&gt;：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
@@ -394,23 +392,23 @@
   <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;投稿を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
-  </td>
+</td>
   </tr>
   </table>
             <br>
             <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
   <table class='highlight'>
   <tr>
-  <td class='code-line-no text-center'>1
-  2
-  3
-  <strong class="color-red">4
-  5</strong>
-  6
-  7
-  8
-  </td>
-  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4
+5</strong>
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
   <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= p.user_id %&gt;"</span>&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;様&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -418,28 +416,28 @@
   <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
-  </td>
+</td>
   </tr>
   </table>
             <br>
             <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
   <table class='highlight'>
   <tr>
-  <td class='code-line-no text-center'>1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
-  13
-  </td>
-  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
   <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -452,51 +450,51 @@
   <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
-  </td>
+</td>
   </tr>
   </table>
             <br>
             <i class="fa fa-file color-red"></i>　<strong>update.html.erb</strong>
   <table class='highlight'>
   <tr>
-  <td class='code-line-no text-center'>1
-  2
-  <strong class="color-red">3
-  4
-  5</strong>
-  6
-  7
-  </td>
-  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を変更しました。&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5</strong>
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を変更しました。&lt;/<span class='word-red'>h1</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
-  </td>
+</td>
   </tr>
   </table>
             <br>
             <i class="fa fa-file color-red"></i>　<strong>destroy.html.erb</strong>
   <table class='highlight'>
   <tr>
-  <td class='code-line-no text-center'>1
-  2
-  <strong class="color-red">3
-  4
-  5</strong>
-  6
-  7
-  </td>
-  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を削除しました&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5</strong>
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を削除しました&lt;/<span class='word-red'>h1</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
-  </td>
+</td>
   </tr>
   </table>
             <hr class="red-hr">
@@ -513,18 +511,18 @@
             <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
   <table class='highlight'>
   <tr>
-  <td class='code-line-no text-center'>1
-  2
-  <strong class="color-red">3</strong>
-  4
-  5
-  6
-  7
-  <strong class="color-red">8
-  9
-  10</strong>
-  </td>
-  <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+6
+7
+<strong class="color-red">8
+9
+10</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
   <span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん&lt;/<span class='word-red'>p</span>&gt;</span>
   <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -534,7 +532,7 @@
   <span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
   <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>a</span>&gt;</span>
   <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
-  </td>
+</td>
   </tr>
   </table>
             <br>

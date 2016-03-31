@@ -1,15 +1,30 @@
 Rails.application.routes.draw do
 
+# top page
+
   root to: "welcome#index"
+
+# mugcups page
 
   get "/mugcups/:page" => "pages#show"
 
-  get "/codes/:page" => "codes#show"
-
   get "/mugcups" => "pages#index"
+
+# coffee_cups page
+
+  get "/coffee_cups/:page" => "coffeecups#show"
+
+  get "/coffee_cups" => "coffeecups#index"
+
+# code page
 
   get "/codes" => "codes#index"
 
+  get "/codes/:page" => "codes#show"
+
+# 404
+
+  match '*path' => 'application#error404', via: :all
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

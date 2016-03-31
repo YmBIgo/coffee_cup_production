@@ -1,0 +1,51 @@
+<h4 id="coffee-chapter1-2-1">
+  <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : ７つのページの設定</strong></p>
+  <br>
+  <strong>7つのページ（詳細は<a href="/mugcups/5" target="_blank">こちら</a>）のどれを使うかを設定しましょう。</strong>
+  <hr class="red-hr">
+  ここでは<strong><u>「welcome」の「<a href="/mugcups/5#title1-2" target="_blank">index</a>」のページを「<a href="http://0.0.0.0:3000">0.0.0.0:3000</a>」に表示</u></strong>させる設定をしましょう！
+  <br><br>
+  ページの設定は、<strong>「<u>config > route.rb</u>」</strong>に設定を加えます。
+  <br>
+  下のように内容を変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>route.rb（3、4行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4</strong>
+5
+6
+7
+8
+...
+60
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line remarkable-code'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  3行目で<strong><u>「welcome」の「index」ページを使う</u></strong>ことを指定し、
+  <br>
+  4行目で<strong><u>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」に「welcome」の「index」ページを表示</u></strong>させることを指定しました。
+  <br>
+  <small>※　詳細は<a href="/mugcups/8#title1-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  これでどのページを使うかの設定ができました。
+  <br><br>
+  次は、<strong><u>データ操作の設定</u></strong>をやりましょう。
+</h4>

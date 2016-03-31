@@ -8,10 +8,13 @@
                                 :width => "90%",
                                 :class => "hover_img textbook-title-img")%>
         <h4>
-          <hr>
           各章の設定をまとめます
         </h4>
-          <div id="main-section-inner" class="row">
+          <hr>
+          <div id="main-section-inner">
+          <p class="text-center"><a href="/mugcups" target="_blank" class="btn btn-primary"><%= image_tag("logo/mugcup_logo_link.png",:class => "nav-img") %> mugcup（基礎編）</a></p>
+          <br>
+          <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <a href="/codes/4">
                 <div class="table-content">
@@ -68,6 +71,9 @@
                 </div>
               </a>
             </div>
+          </div>
+          <hr class="red-hr">
+          <p class="text-center"><a href="/coffee_cups" class="btn btn-danger"><%= image_tag("logo/coffee_logo_link.png",:class => "nav-img") %> Coffee(応用編)</a></p>
           </div>
       </div>
     </div>

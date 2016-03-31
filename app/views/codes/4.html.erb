@@ -24,14 +24,14 @@
           「posts」データベースの設定は、
           <br><br>
           　<strong>ターミナル</strong>
-  <table class='highlight'>
-  <tr>
-  <td class='code-line-no text-center'>1
-  </td>
-  <td class='code-content'><span class='code-line'>rails g model post</span>
-  </td>
-  </tr>
-  </table>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model post</span>
+</td>
+</tr>
+</table>
           <br>
           で作成する<strong><u>「posts」データベースの設定ファイル「2016..._create_posts.rb」</u></strong>で行う。
           <br><br>
@@ -39,32 +39,32 @@
           <br><br>
           <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb</strong>
           <br><br>
-  <table class="highlight">
-  <tr>
-  <td class='code-line-no text-center'>1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  </td>
-  <td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreatePosts <span class='word-green'>< ActiveRecord::Migration</span></span>
-  <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
-  <span class='code-line'>    create_table <span class='word-purple'>:posts</span><span class='word-red'> do</span> |t|</span>
-  <span class='code-line'></span>
-  <span class='code-line'>      t.string     <span class='word-purple'>   :name</span></span>
-  <span class='code-line'>      t.text       <span class='word-purple'>    :content</span></span>
-  <span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
-  <span class='code-line'>    <span class='word-red'>end</span></span>
-  <span class='code-line'>  <span class='word-red'>end</span></span>
-  <span class='code-line'><span class='word-red'>end</span></span>
-  </td>
-  </tr>
-  </table>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreatePosts <span class='word-green'>< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:posts</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line'>      t.string     <span class='word-purple'>   :name</span></span>
+<span class='code-line'>      t.text       <span class='word-purple'>    :content</span></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
         <hr class="red-hr">
         加えて、上のファイルで加えなかった設定を後から加えるために、
         <br><br>
@@ -84,22 +84,22 @@
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb</strong>
         <br><br>
-  <table class='highlight'>
-  <tr>
-  <td class='code-line-no text-center'>1
-  2
-  3
-  4
-  5
-  </td>
-  <td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost <span class='word-green'>< ActiveRecord::Migration</span></span>
-  <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
-  <span class='code-line'>    add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:place</span>, <span class='word-purple'>:string</span></span>
-  <span class='code-line'>  <span class='word-red'>end</span></span>
-  <span class='code-line'><span class='word-red'>end</span></span>
-  </td>
-  </tr>
-  </table>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost <span class='word-green'>< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:place</span>, <span class='word-purple'>:string</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
         <br>
         ここまでで、
         <br><br>

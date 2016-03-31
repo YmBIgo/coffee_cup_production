@@ -1,0 +1,52 @@
+<h2 class="textbook-section-title" id="title2"><strong>2 : トップページを作る！</strong></h2>
+<h4 id="coffee-chapter1-2">
+  雛形もできたので、まずはトップページを作ってみましょう！
+  <br>
+  <small>※　詳細は<a href="/mugcups/8" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <hr class="red-hr">
+  流れとしては、
+  <strong>
+  <ul class="number_ul">
+    <li>７つのページの設定（詳細は<a href="/mugcups/8#title1-1" target="_blank"><strong>こちら</strong></a>）</li>
+    <li>データ操作ファイルの設定（詳細は<a href="/mugcups/8#title1-1" target="_blank"><strong>こちら</strong></a>）</li>
+    <li>ページ表示ファイルの設定（詳細は<a href="/mugcups/8#title1-1" target="_blank"><strong>こちら</strong></a>）</li>
+    <li>ページに画像を表示させる（詳細は<a href="/mugcups/8#title1-2" target="_blank"><strong>こちら</strong></a>）</li>
+  </ul>
+  </strong>
+  をやってみます。
+  <hr class="red-hr">
+  まずは、データ操作ファイル（controllerファイル）・ページ設定フォルダ（viewsフォルダ）を作成しましょう！
+  <br>
+  <small>※　詳細は<a href="/mugcups/8#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  controllerファイル・viewsフォルダの作成のためにターミナルで、
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller welcome</span>
+</td>
+</tr>
+</table>
+  <br>
+  を入力して下さい。
+  <br><br>
+  これで
+  <strong>
+  <ul class="number_ul">
+    <li><strong>データ操作設定ファイル「<u>app > controllers > welcome_controller.rb</u>」</strong></li>
+    <li><strong>ページ表示設定フォルダ「<u>app > views > welcome</u>」</strong></li>
+  </ul>
+  </strong>
+  が作成されました。この2つを設定していきます。
+  <br><br>
+  その前に「7つのページの設定」をやってみます。
+  <hr>
+  <%= render "coffee1/title2_1" %>
+  <hr>
+  <%= render "coffee1/title2_2" %>
+  <hr>
+  <%= render "coffee1/title2_3" %>
+</h4>
