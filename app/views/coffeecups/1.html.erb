@@ -1,3 +1,4 @@
+<% unless Rails.env.production? %>
 <% provide :title, 'Mugcup（基礎編）の復習' %>
 <div class="container">
   <div class="row">
@@ -19,6 +20,15 @@
           <br>
           <%= render "coffee1/title3" %>
           <br>
+          <%= render "coffee1/title4" %>
+          <hr class="red-hr">
+          <h4>
+          <strong>ここまでで「message-app」のトップページが完成しました！
+          <br>
+          ここまでは復習だったので、比較的楽だったのではないかと思います。</strong>
+          <hr>
+          <strong>次の章から、メッセージアプリケーションのページを作ってみましょう！</strong>
+          </h4>
           <div class="next-page">
               <a href="/coffee_cups/2" class="btn btn-primary">次の章に進む</a>
           </div>
@@ -41,6 +51,7 @@
           <a href="#title2-2" class="list-group-item">　<small>② : データ操作</small></a>
           <a href="#title2-3" class="list-group-item">　<small>③ : ページ表示</small></a>
           <a href="#title3" class="list-group-item">3 : Bootstrapを使おう！</a>
+          <a href="#title4" class="list-group-item">4 : ユーザー管理をする</a>
         </div>
       </strong>
       </div>
@@ -48,3 +59,6 @@
   </div>
 </div>
 <%= render 'pages/fixedjs' %>
+<% else %>
+<%= render "application/error404" %>
+<% end %>
