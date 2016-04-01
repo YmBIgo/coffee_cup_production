@@ -19,6 +19,160 @@
   を入力して行いました。
   <br>
   出来ていなかったら、もう一度やり直してみましょう！
+  <hr class="red-hr">
+  では、上のバーを設定します！
+  <br>
+  上のバーは全てのページに設定するので、<strong>「<u>app > views > layouts</u>」フォルダにある「<u>application.html.erb</u>」</strong>に内容を設定します。
+  <br>
+  <strong>「<u>application.html.erb</u>」</strong>を下のように変更して下さい。
+  <br>
+  <small>※　詳細は<a href="/mugcups/7#title2-2-4" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
   <br><br>
-  次は、
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（11〜27、29、30行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+<strong class="color-red">11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</strong>
+28
+<strong class="color-red">29</strong>
+30
+<strong class="color-red">31</strong>
+32
+33
+34
+</td>
+<td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>html</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>title</span>&gt;MessageApp&lt;/<span class='word-red'>title</span>&gt;</span>
+<span class='code-line'>  &lt;%= stylesheet_link_tag    <span class="word-yellow">'application'</span>, <span class='word-purple'>media:</span> <span class="word-yellow">'all'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= javascript_include_tag <span class="word-yellow">'application'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= csrf_meta_tags %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse"</span> <span class="word-green">data-target</span>=<span class="word-yellow">"#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;Message-app&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container main-page"</span>&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line remarkable-code'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>「<a href="/mugcups/7#title2-2-4" target="_blank">navigation-bar</a>」</strong>の設定とは別に<strong>「<a href="/mugcups/7#title2-2-1" target="_blank">container</a>」と「main-page」</strong>の設定も行いました。
+  <br>
+  <small>※　詳細は<a href="/mugcups/7#title2-2-4" target="_blank"><strong>こちら</strong></a>を参考にして下さい。</small>
+  <hr class="red-hr">
+  今のままだと<strong>「navigation-bar」が画像にかぶってしまう</strong>ので、「main-page」のCSSを設定して、これをずらします。
+  <br><br>
+  <strong>「<u>style.scss</u>」</strong>を下のように設定してみましょう。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss（1〜3行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1
+2
+3</strong>
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</td>
+<td class='code-content'><span class='code-line remarkable-code'><span class='word-green'>.main-page</span>{</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>margin-top</span>:<span class='word-blue'><span class='word-purple'>50</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line remarkable-code'>}</span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange">/assets/保存した画像名</span>);</span>
+<span class='code-line'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>400</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class="word-blue">-webkit-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-moz-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-o-background-size</span>: cover;</span>
+<span class='code-line'>}</span>
+<span class='code-line'><span class='word-green'>.header-content</span>{</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>75</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class='word-blue'>padding-top</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <br>
+  ここまででページを被らないようにすることができました。
+  <hr class="red-hr">
+  では一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して下さい。
+  <br>
+  これで変更した内容が適用されました。
+  <br><br>
+  サーバーを再起動できたら、<strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>を開いてみましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_2.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_2.png",
+              :target => ["_blank"] %>
+  ページは表示されたでしょうか？
+  <hr class="red-hr">
+  <strong>ここまでで「message-app」のトップページが完成しました！
+  <br>
+  ここまでは復習だったので、比較的楽だったのではないかと思います。</strong>
+  <hr>
+  <strong>次の章から、メッセージアプリケーションのページを作ってみましょう！</strong>
 </h4>

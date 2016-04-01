@@ -6,17 +6,29 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= display_meta_tags({
-      :title => 'Mugcup',
-      :site  => t('site'),
-      :description => 'Mugcup ウェブサイトを作ってみよう！',
+      :title => 'CoffeeCup',
+      :description => 'インターネットを使うだけで満足ですか？ウェブサイトを作れる人になりたいならCoffeeCup',
       :keywords => 'ウェブサイト作り方, Ruby on rails, プログラミング初心者',
       :open_graph => {
-        :title => '',
-        :url   => root_url,
+        :url   => 'http://www.coffee-cup.jp/',
       },
       :viewport => "width=device-width, initial-scale=1.0" ,
       :reverse => true
     }) %>
+  <meta property="og:site_name" content="CoffeeCup">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_cup_logo.png">
+  <meta property="og:title" content="CoffeeCup">
+
+  <!-- facebook -->
+
+  <meta property="fb:admins" content="1716720158603405">
+  <meta property="fb:app_id" content="1691672587760043">
+  <meta property="article:publisher" content="https://www.facebook.com/CoffeeCupJapan/">
+
+  <!-- icon -->
+  <link rel="shortcut icon" href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_cup_logo.png">
+
 </head>
 <body>
 
