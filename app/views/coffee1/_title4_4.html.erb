@@ -1,0 +1,623 @@
+<h4 id="coffee-chapter1-4-4">
+  <p id="title4-4" class="fix-link-nav"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : 会員ページの作成</strong></p>
+  <br>
+  <strong>最後に「users」データベースを使ったページを作ってみます</strong>
+  <hr class="red-hr">
+  データベースを使ったページを作成するには、
+  <strong>
+    <ul class="number_ul">
+      <li>7つのページのうちどれを使うかの設定（route.rb）</li>
+      <li>データ操作の設定（controller）</li>
+      <li>ページ表示の設定（views）</li>
+    </ul>
+  </strong>
+  の3つが必要になります。
+  <br><br>
+  まずは<strong><u>「users」データベースのデータ操作・ページ表示の設定ファイルを作成</u></strong>するために、ターミナルで下の入力をします。
+  <br>
+  <small>※　詳細は<a href="/mugcups/10#title3-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller users</span>
+</td>
+</tr>
+</table>
+  <br>
+  これで
+  <strong>
+  <ul class="number_ul">
+    <li>データ操作設定ファイル「<u>app > controllers > users_controller.rb</u>」</li>
+    <li>ページ表示設定フォルダ「<u>app > views > users</u>」</li>
+  </ul>
+  </strong>
+  が作成されました。
+  <br>
+  このファイル・フォルダに内容を設定を加えていきます。
+  <hr class="red-hr">
+  今回の「users」データベースでは<u>「devise」が会員の作成をしてくれる</u>ので、
+  <strong>
+  <ul class="number_ul">
+    <li><a href="/mugcups/10#title3-2-1" target="_blank">show</a></li>
+    <li><a href="/mugcups/10#title3-2-2" target="_blank">index</a></li>
+    <li><a href="/mugcups/10#title3-2-3" target="_blank">edit</a></li>
+    <li><a href="/mugcups/10#title3-2-4" target="_blank">update</a></li>
+  </ul>
+  </strong>
+  の4つを設定します。
+  <br><br>
+  なので表示を設定している<strong>「<u>app > views > users</u>」</strong>に、これら4つを表示する設定ファイル
+  <strong>
+  <ul class="number_ul">
+    <li>show.html.erb</li>
+    <li>index.html.erb</li>
+    <li>edit.html.erb</li>
+    <li>update.html.erb</li>
+  </ul>
+  </strong>
+  を保存してみましょう（ファイルの保存の方法は<a href="/mugcups/how_to_save" target="_blank"><strong>ここ</strong></a>を参考）
+  <br><br>
+  <strong>ここまでできたら、まず「7つのページの設定」をしてみましょう！</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>７つのページの設定</strong>
+  <br><br>
+  「7つのページの設定」は、<strong>「<u>config > route.rb</u>」</strong>に設定を加えます。<strong>「<u>route.rb</u>」</strong>を下のように設定してみましょう！
+  <br>
+  <small>※　内容は<a href="/mugcups/10#title3-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>route.rb（6行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6</strong>
+7
+8
+9
+...
+62
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  devise_for <span class='word-purple'>:users</span></span>
+<span class='code-line'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:users</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  これで、<strong><u>「users」データベースで「show」「index」「edit」「update」のページを使う設定</u></strong>ができました！
+  <br><br>
+  では一つ一つのページの設定を加えていきましょう！
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>showページ</strong>
+  <br><br>
+  ページを設定するには、
+  <strong>
+  <ul class="number_ul">
+    <li>データ操作（<u>users_controller.rb</u>）</li>
+    <li>ページ表示の設定（<u>html.erb</u>）</li>
+  </ul>
+  </strong>
+  の2種類が必要になります。
+  <hr class="red-hr">
+  まずは<u>データ操作の設定</u>からやってみましょう。<strong>「<u>app > controllers > users_controller.rb</u>」</strong>にデータ操作の設定を加えます。
+  <br><br>
+  この<strong>「<u>users_controller.rb</u>」</strong>を下のように変更してみて下さい。
+  <br>
+  <small>※　内容は<a href="/mugcups/10#title3-2-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（3〜7行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5
+6
+7</strong>
+8
+9
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line remarkable-code'></span>
+<span class='code-line remarkable-code'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでは、
+  <strong>
+  <ul class="number_ul">
+  <li>「<u>show.html.erb</u>」で表示するための「<u>@user</u>」の標識</li>
+  <li>ログインした会員でなければ内容を見れないようにするための設定（<a href="/mugcups/10#title3-2-5" target="_blank">こちら</a>を参考）</li>
+  </ul>
+  </strong>
+  を加えました。
+  <hr class="red-hr">
+  次はページの表示を設定してみましょう！
+  <br>
+  <strong>「<u>app > views > users > show.html.erb</u>」</strong>を下のように設定してみましょう。
+  <br>
+  <small>※　内容は<a href="/mugcups/10#title3-2-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ユーザー一覧に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <u>「@user」の情報の表示</u>に加えて、
+  <br>
+  <u>「if」「else」を使い</u>、ログインしている会員が表示している会員と一致している場合だけ
+  <br><br>
+  <a class="btn btn-success">ユーザー情報を編集する</a>
+  <br><br>
+  を表示させています。
+  <br>
+  <small>※　内容の説明は<a href="/mugcups/11#title4-3-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  これで<u>「show」ページの設定</u>が完了しました！
+  <br><br>
+  ここまでできたら、
+  <br>
+  <strong>登録ページ「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</strong>で新しい会員を作成し、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up_enter_info.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up_enter_info.png",
+              :target => ["_blank"] %>
+  <strong>会員ページ「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」</strong>を確認してみましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_no_info.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_no_info.png",
+              :target => ["_blank"] %>
+  このように表示されたでしょうか？
+  <br><br>
+  <strong><u>次は「index」ページをやってみます！</u></strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>indexページ</strong>
+  <br><br>
+  まず、<u>データ操作（controller）</u>からやってみたいと思います。
+  <br>
+  <strong>「<u>app > controllers > users_controller.rb</u>」</strong>を下のように設定して下さい。
+  <br>
+  <small>※　内容の説明は<a href="/mugcups/10#title3-2-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（9〜11行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+<strong class="color-red">9
+10
+11</strong>
+12
+13
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line remarkable-code'>    @users = <span class='word-blue'>User</span>.all</span>
+<span class='code-line remarkable-code'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  これで、<strong><u>ページに表示させる「@users」の標識</u></strong>を設定しました。
+  <hr class="red-hr">
+  次にページの表示をしてみます。
+  <br><br>
+  「index」ページの表示は、<strong>「<u>app > views > users > index.html.erb</u>」</strong>ファイルに表示内容を設定します。
+  <br>
+  <strong>「<u>index.html.erb</u>」</strong>の内容を下のように設定してみましょう！
+  <br>
+  <small>※　詳細は<a href="/mugcups/10#title3-2-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @users.each <span class="word-red">do</span> |u| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= u.id %&gt;"</span>&gt;&lt;%= u.family_name %&gt;&lt;%= u.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  この設定で、<strong>「<u>users_controller.rb</u>」で設定した「<u>@users</u>」を一つ一つのデータにして表示</strong>させています。
+  <br><br>
+  ここまでできたら、<u>「command」と「c」を一緒に押して</u>サーバーを停止させて、「<u>rails s</u>」でもう一度サーバを立ち上げてみましょう！
+  <br><br>
+  サーバーを再起動できたら、<strong>「<a href="http://0.0.0.0:3000/users" target="_blank">0.0.0.0:3000/users</a>」</strong>を開いてみましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users.png",
+              :target => ["_blank"] %>
+  このように表示されたでしょうか？
+  <br><br>
+  <strong><u>次は「edit」ページをやってみます</u></strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>editページ</strong>
+  <br><br>
+  まずはデータ操作からやってみます。
+  <br>
+  <strong>「<u>app > controllers > users_controller.rb</u>」</strong>を下のように設定して下さい。
+  <br>
+  <small>※　内容は<a href="/mugcups/10#title3-2-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（13〜20行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+10
+11
+12
+<strong class="color-red">13
+14
+15
+16
+17
+18
+19
+20</strong>
+21
+22
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>    @users = <span class='word-blue'>User</span>.all</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでも<strong><u>「if」「else」</u></strong>を使って、
+  <ul class="number_ul">
+    <strong><li>会員情報が一致する場合</li></strong>
+    <br>
+    そのまま表示
+    <br><br>
+    <strong><li>会員情報が一致しない場合</li></strong>
+    <br>
+    <strong>"/"「<a href="http://0.0.0.0:3000/" target="_blank">0.0.0.0:3000</a>」</strong>に移動して
+    <p class="alert alert-danger" style="margin-top:20px">無効なユーザー</p>
+    を表示
+  </ul>
+  するような設定をした。
+  <br>
+  <small>※　詳細は<a href="/mugcups/11#title4-3-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <hr class="red-hr">
+  次にページの表示をしてみます。
+  <br><br>
+  「edit」ページの表示は、<strong>「<u>app > views > users > edit.html.erb</u>」</strong>ファイルに表示内容を設定します。
+  <br>
+  <strong>「<u>edit.html.erb</u>」</strong>を下のように変更してみましょう！
+  <br>
+  <small>※　内容の説明は<a href="/mugcups/10#title3-2-3" target="_blank"><strong>こちら</strong></a>を参考にしてみて下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:family_name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:first_name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;年齢&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.number_field <span class="word-purple">:age</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;自己紹介&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:self_introduction</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登録する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;ユーザー情報に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  今回は、8,9行目に<strong>「<a href="/mugcups/6#title1-3-2-view" target="_blank">number_field</a>」</strong>という数字を入れる入力欄を追加しました。
+  <hr class="red-hr">
+  ここまでできたら、<u>「command」と「c」を一緒に押してサーバーを停止</u>させて、「<u>rails s</u>」でもう一度サーバーを立ち上げましょう！
+  <br><br>
+  サーバーを再起動できたら、<strong>「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank">0.0.0.0:3000/users/1/edit</a>」</strong>を開いてみましょう。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_edit.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_edit.png",
+              :target => ["_blank"] %>
+  このようなページは表示されたでしょうか？
+  <br><br>
+  <strong>次は「update」ページの設定をやってみましょう！</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>updateページ</strong>
+  <br><br>
+  今回の「update」ページは、
+  <br>
+  <a href="/mugcups/6#title1-6-2-view" target="_blank"><strong>編集完了のページ</strong></a>ではなく、<strong>「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank">0.0.0.0:3000/users/1/edit</a>」</strong>のような編集ページに移動させるような設定にしてみます。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_update_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_update_after.png",
+              :target => ["_blank"] %>
+  「edit」ページで「登録ボタン」を押したら、このようなページを表示させます。
+  <br><br>
+  これは<strong>データ操作の「controller」ファイルで「<a href="/mugcups/11#title4-3-3" target="_blank">redirect_to</a>」と「<a href="/mugcups/9#title2-2-2" target="_blank">通知:flash</a>」を使用</strong>して設定します。
+  <br>
+  では<strong>「<u>app > controllers > users_controller.rb</u>」</strong>に設定を加えてみましょう。
+  <br>
+  <small>内容は<a href="/mugcups/10#title3-2-4" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>13
+14
+15
+16
+17
+18
+19
+20
+21
+<strong class="color-red">22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</strong>
+33
+34
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>    else</span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>      @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>, <span class='word-purple'>:age</span>))</span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] = <span class='word-yellow'>"編集が完了しました"</span></span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  今回も<u>「if」「else」</u>で条件分岐をしました（詳細は<a href="/mugcups/11#title4-3-2" target="_blank"><strong>こちら</strong></a>を参考）。
+  <hr class="red-hr">
+  この「if」「else」に加えて、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>26
+27
+</td>
+<td class='code-content'><span class='code-line'>redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
+<span class='code-line'>flash[<span class='word-purple'>:notice</span>] = <span class='word-yellow'>"編集が完了しました"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  が加わりました。
+  <br><br>
+  27行目で、
+  <p class="alert alert-success" style="margin-top:20px">編集が完了しました</p>
+  を表示させているのは分かると思いますが、
+  <br><br>
+  28行目は、<strong>「<a href="/mugcups/11#title4-3-3" target="_blank">redirect_to</a>」</strong>でどこのページに移動しているのでしょうか？
+  <br>
+  なんとなく<u>「users」データベースの「edit」ページに移動</u>しようとしている、と予測することもできると思います。
+  <br><br>
+  <strong><u>ページの表示をする「html.erb」</u></strong>では、標識などの表示は
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span>&gt;ユーザー情報を編集&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  のように
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= @user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  表示しました。
+  <hr class="red-hr">
+  今回の、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  同じことを「controller」ファイルで行った設定になります。
+  <br><br>
+  なぜか<strong>「<u>#{@user.id}</u>」</strong>という表示になっていて、おかしいと感じるかもしれません。
+  <br>
+  <strong>「""」</strong>の中のこの
+<pre>
+#{}
+</pre>
+  が<u>「html.erb」ファイル</u>の
+<pre>
+&lt;%= %&gt;
+</pre>
+  と同じようなものになります。
+  <br><br>
+  もしこの「#{}」がなかったら、「""」の中の「@user」の部分は変換されず、
+  <br>
+  <strong>「<a href="http://0.0.0.0:3000/users/@user.id/edit" target="_blank">0.0.0.0:3000/users/@user.id/edit</a>」</strong>に飛んでしまいます。
+  <br><br>
+  このように、<strong>「@user」のような標識を「""」の中で使うには「#{}」で表示をします。</strong>
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>「posts」データベースの「show」ページへの移動は、「<a href="/mugcups/11#title4-3-3" target="_blank">redirect_to</a>」を使うとどのように設定すればいいでしょうか？</strong>
+  <br><br>
+  <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>redirect_to <span class='word-yellow'>"/posts/#{@post.id}/edit"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここまでができたら、<u>「Command」と「c」を一緒に押してサーバーを停止</u>させて、「<u>rails s</u>」でサーバーを再起動させましょう。
+  <br><br>
+  再起動ができたら、<strong>「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank">0.0.0.0:3000/users/1/edit</a>」</strong>に移動して、<strong><u>情報を入力して「登録する」ボタンを押してみましょう！</u></strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_update_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_update_after.png",
+              :target => ["_blank"] %>
+  こんな感じなページはでてきたでしょうか？
+  <br>
+  ついでに<strong>「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」</strong>で内容が変更されたかを確認してみましょう！
+  <br><br>
+  最後に「update.html.erb」は使わないので削除できたら削除して下さい。
+  <br><br>
+  <strong>設定した内容は<a href="/codes/c_1#title1-4" target="_blank">こちら</a>にまとめてあります。</strong>
+</h4>

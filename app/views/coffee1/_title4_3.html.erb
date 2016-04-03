@@ -1,0 +1,453 @@
+<h4 id="coffee-chapter1-4-3">
+  <p id="title4-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 登録・ログイン画面の装飾</strong></p>
+  <br>
+  <strong>
+  「devise」で登録・ログイン画面を作成し、それを装飾してみましょう！
+  </strong>
+  <hr class="red-hr">
+  ここで<strong><u>「devise」を使った登録・ログイン画面を作成</u></strong>し、それを<a href="/mugcups/7#title2" target="_blank"><strong>Bootstrap</strong></a>で装飾してみたいと思います。
+  <br>
+  <strong><u>「devise」を使った画面を作成</u></strong>するには、ターミナルで下の入力をします。
+  <br>
+  <small>※　詳細は<a href="/mugcups/9#title1-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:views</span>
+</td>
+</tr>
+</table>
+  <br>
+  これで作成されたファイル・フォルダの内、
+  <strong>
+  <ul class="number_ul">
+    <li>登録画面</li>
+    「<u>app > views > devise > registrations</u>」にある「new.html.erb」
+    <li>ログイン画面</li>
+    「<u>app > views > devise > sessions</u>」にある「new.html.erb」
+  </ul>
+  </strong>
+  にそれぞれの設定を加えます。それぞれのファイルを装飾をしていきます。
+  <br>
+  <small>※　詳細は<a href="/mugcups/9#title2-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  ここでは、
+  <strong>
+    <ul class="number_ul">
+      <li>登録・ログイン画面の入力欄・ボタンの装飾（詳細は<a href="/mugcups/9#title2-1-1" target="_blank">こちら</a>）</li>
+      <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_in.png",
+                            :width => "90%",
+                            :class => "hover_img textbook-title-img"),
+                  "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_in.png",
+                  :target => ["_blank"] %>
+      <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up.png",
+                            :width => "90%",
+                            :class => "hover_img textbook-title-img"),
+                  "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up.png",
+                  :target => ["_blank"] %>
+      <li>上のバー（navigation-bar）に登録・ログイン画面へのリンクの追加（詳細は<a href="/mugcups/9#title2-1-2" target="_blank">こちら</a>）</li>
+      <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_add_nav_users_sign_in_up.png",
+                            :width => "90%",
+                            :class => "hover_img textbook-title-img"),
+                  "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_add_nav_users_sign_in_up.png",
+                  :target => ["_blank"] %>
+      <li>登録・ログインの通知の追加（詳細は<a href="/mugcups/9#title2-2-2" target="_blank">こちら</a>）</li>
+      <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_in_notice.png",
+                            :width => "90%",
+                            :class => "hover_img textbook-title-img"),
+                  "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_in_notice.png",
+                  :target => ["_blank"] %>
+    </ul>
+  </strong>
+  の3つをやってみたいと思います
+  <br><br>
+    <i class="fa fa-play-circle"></i>　<strong>登録・ログイン画面の入力欄・ボタンの装飾</strong>
+    <br><br>
+    入力欄とボタンの装飾は<a href="/mugcups/css#title2" target="_blank"><strong>Bootstrap</strong></a>の設定を使って行いました。
+    <hr class="red-hr">
+    <i class="fa fa-arrow-right"></i>　<strong>まずは、<u>登録画面</u>から装飾を始めます。</strong>
+    <br><br>
+    登録画面の表示をする設定ファイルは、<strong>「<u>app > views > devise > registrations</u>」</strong>にある<strong>「<u>new.html.erb</u>」</strong>になります。
+    <br><br>
+    早速、この<strong>「<u>new.html.erb</u>」</strong>を下のように変更しましょう！
+    <br>
+    <small>※　内容の説明は<a href="/mugcups/9#title2-1-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>new.html.erb（8、16、21、23、25行目を変更）</strong>
+    <br>
+    <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+12
+13
+14
+15
+<strong class="color-red">16</strong>
+17
+18
+19
+20
+<strong class="color-red">21</strong>
+22
+<strong class="color-red">23</strong>
+24
+<strong class="color-red">25</strong>
+26
+27
+28
+29
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h2</span>&gt;Sign up&lt;/<span class='word-red'>h2</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= form_for(resource, <span class='word-purple'>as:</span> resource_name, <span class='word-purple'>url:</span> registration_path(resource_name)) <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= devise_error_messages! %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:email</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.email_field <span class='word-purple'>:email</span>, <span class='word-purple'>autofocus:</span> <span class='word-purple'>true</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @minimum_password_length %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>em</span>&gt;(&lt;%= @minimum_password_length %&gt; characters minimum)&lt;/<span class='word-red'>em</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.password_field <span class='word-purple'>:password</span>, <span class='word-purple'>autocomplete:</span> <span class="word-yellow">"off"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password_confirmation</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.password_field <span class='word-purple'>:password_confirmation</span>, <span class='word-purple'>autocomplete:</span> <span class="word-yellow">"off"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"actions"</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.submit <span class="word-yellow">"Sign up"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= <span class="word-blue">render</span> <span class='word-yellow'>"devise/shared/links"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    これに加え<strong>「<u>app > assets > stylesheets > style.scss</u>」</strong>に、<u>入力欄の大きさを指定するCSSの設定「my-form」</u>を加えます。
+    <br>
+    <small>※　内容は<a href="/mugcups/7#title2-2-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+    <br>
+    <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4
+5
+6</strong>
+7
+...
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.main-page</span>{</span>
+<span class='code-line'>  <span class='word-blue'>margin-top</span>:<span class='word-blue'><span class='word-purple'>50</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+<span class='code-line remarkable-code'><span class='word-green'>.my-form</span>{</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>width</span>:<span class='word-blue'><span class='word-purple'>500</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line remarkable-code'>}</span>
+<span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-gray">/* 以下省略 */</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    ここまでできたら、<u>「command」と「c」を一緒に押してサーバを停止</u>させて、もう一度「<u>rails s</u>」でサーバを立ち上げましょう。
+    <br><br>
+    サーバーを立ち上げられたら、登録ページ<strong>「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</strong>を開いてみましょう！
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up.png",
+                :target => ["_blank"] %>
+    <strong><u>
+    このように登録ページが綺麗に表示されたでしょうか？
+    <br>
+    次はログインページをやってみます！
+    </u></strong>
+    <hr class="red-hr">
+    <i class="fa fa-arrow-right"></i>　<strong>次に、<u>ログイン画面</u>を装飾してみましょう</strong>
+    <br><br>
+    ログイン画面の表示をする設定ファイルは、<strong>「<u>app > views > devise > sessions</u>」</strong>にある<strong>「<u>new.html.erb</u>」</strong>になります。
+    <br><br>
+    この<strong>「<u>sessions</u>」</strong>の<strong>「<u>new.html.erb</u>」</strong>を下のように変更して下さい
+    <br>
+    <small>※　内容の説明は<a href="/mugcups/9#title2-1-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
+    <br>
+    <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6</strong>
+7
+8
+9
+10
+<strong class="color-red">11</strong>
+12
+13
+14
+15
+16
+17
+18
+19
+<strong class="color-red">20</strong>
+21
+<strong class="color-red">22</strong>
+23
+24
+25
+26
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h2</span>&gt;Log in&lt;/<span class='word-red'>h2</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= form_for(resource, <span class="word-purple">as:</span> resource_name, <span class="word-purple">url:</span> session_path(resource_name)) do |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:email</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.email_field <span class="word-purple">:email</span>, <span class="word-purple">autofocus:</span> <span class="word-purple">true</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.password_field <span class="word-purple">:password</span>, <span class="word-purple">autocomplete:</span> <span class="word-yellow">"off"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;% <span class="word-red">if</span> devise_mapping.rememberable? -%&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>      &lt;%= f.check_box <span class='word-purple'>:remember_me</span> %&gt;</span>
+<span class='code-line'>      &lt;%= f.label <span class='word-purple'>:remember_me</span> %&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> -%&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"actions"</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.submit <span class="word-yellow">"Log in"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= <span class="word-blue">render</span> <span class='word-yellow'>"devise/shared/links"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    ここまでできたら、<u>「command」と「c」を一緒に押してサーバを停止</u>させて、もう一度「<u>rails s</u>」でサーバを立ち上げましょう。
+    <br><br>
+    サーバーが立ち上げられたら、ログイン画面<strong>「<a href="http://0.0.0.0.:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</strong>を開いてみましょう！
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_in.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_in.png",
+                :target => ["_blank"] %>
+    <strong><u>
+    このように表示されたでしょうか？
+    <br>
+    次は上のバー（navigation-bar）に、登録・ログインページへのリンクを加えます。
+    </u></strong>
+    <hr class="red-hr">
+    <i class="fa fa-play-circle"></i>　<strong>上のバー（navigation-bar）に登録・ログイン画面へのリンクの追加</strong>
+    <br><br>
+    <u>「navigation-bar」の設定</u>は、<strong>「<u>application.html.erb</u>」</strong>に<a href="/mugcups/css#title2-3" target="_blank"><strong>Bootstrap</strong></a>の設定を加えて設定しました。
+    <br>
+    <small>※　詳細は<a href="/mugcups/9#title2-1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+    <br><br>
+    この章で設定したこの「navigation-bar」に、
+    <strong>
+    <ul class="number_ul">
+    <li>登録ページ「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</li>
+    <li>ログインページ「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</li>
+    </ul>
+    </strong>
+    へのリンクを追加しましょう！
+    <br><br>
+    <strong>「<u>app > views > layouts > application.html.erb</u>」</strong>を開いて、下のように内容を変更して下さい！
+    <br>
+    <small>※　内容の説明は<a href="/mugcups/10#title3-3-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>application.html.erb（24〜28行目を追加）</strong>
+    <br>
+    <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+<strong class="color-red">24
+25
+26
+27
+28
+29</strong>
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+</td>
+<td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>html</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>title</span>&gt;MessageApp&lt;/<span class='word-red'>title</span>&gt;</span>
+<span class='code-line'>  &lt;%= stylesheet_link_tag    <span class="word-yellow">'application'</span>, <span class='word-purple'>media:</span> <span class="word-yellow">'all'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= javascript_include_tag <span class="word-yellow">'application'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= csrf_meta_tags %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse"</span> <span class="word-green">data-target</span>=<span class="word-yellow">"#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;Message-app&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"ログアウト"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;登録する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;ログインする&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container main-page"</span>&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong>
+    「<u>if</u>」「<u>else</u>」と「<u>user_signed_in?</u>」で
+    <br>
+    <ul class="number_ul">
+      <li>会員でない場合は、「登録する」「ログインする」のリンク</li>
+      <li>会員の場合は、「ログアウトする」のリンク</li>
+    </ul>
+    </strong>
+    を表示させています。
+    <br>
+    <small>※　内容の説明は<a href="/mugcups/10#title3-3-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+    <br><br>
+    <u>これで上のバーの設定が完了しました！</u>
+    <hr class="red-hr">
+    変更ができたら、<u>「command」と「c」を一緒に押してサーバを停止</u>させて、もう一度「<u>rails s</u>」でサーバを立ち上げましょう。
+    <br><br>
+    サーバーを再起動させられたら、<strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>を開いてみましょう！
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_add_nav_users_sign_in_up.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_add_nav_users_sign_in_up.png",
+                :target => ["_blank"] %>
+    上のバー（navigation-bar）にリンクが表示されたでしょうか？
+    <br>
+    できていたら、リンクが正しく使えるかも確認しましょう！
+    <hr class="red-hr">
+    <i class="fa fa-play-circle"></i>　<strong>登録・ログインの通知の追加</strong>
+    <br><br>
+    <u>登録・ログインの通知の設定</u>は、<strong>「<u>application.html.erb</u>」</strong>にBootstrapと「if」「else」を使った分岐を使って設定しました。
+    <br>
+    <small>※　詳細は<a href="/mugcups/9#title2-2-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+    <br><br>
+    さっき設定を加えた<strong>「<u>application.html.erb</u>」</strong>を下のように変更してみましょう！
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>application.html.erb（36〜43行目を追加）</strong>
+    <br>
+    <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>35
+<strong class="color-red">36
+37
+38
+39
+40
+41
+42
+43</strong>
+44
+45
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container main-page"</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;% <span class="word-red">if</span> notice %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;&lt;%= notice %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">if</span> alert %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-danger"</span>&gt;&lt;%= alert %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    これで通知の設定ができました！
+    <hr class="red-hr">
+    <u>次は「users」データベースを使ってページを作ってみましょう！</u>
+</h4>
