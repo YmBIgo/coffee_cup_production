@@ -1,3 +1,4 @@
+<% if Rails.env.development? %>
 <% provide :title, 'メッセージを作る' %>
 <div class="container">
   <div class="row">
@@ -14,6 +15,8 @@
           <%= render "coffee2/title0" %>
           <br>
           <%= render "coffee2/title1" %>
+          <br>
+          <%= render "coffee2/title2" %>
           <div class="next-page">
               <a href="/coffee_cups/3" class="btn btn-primary">次の章に進む</a>
           </div>
@@ -28,9 +31,14 @@
           <a href="#title" class="list-group-item list-title"><h5>メッセージを作る</h5></a>
           <a href="#title0" class="list-group-item">0 : この章の目的</a>
           <a href="#title1" class="list-group-item">1 : データベースを作る</a>
+          <a href="#title2" class="list-group-item">2 : ページを設定する</a>
+          <a href="#title2-1" class="list-group-item">　<small>① : route.rb</small></a>
         </div>
       </strong>
     </div>
   </div>
 </div>
 <%= render 'pages/fixedjs' %>
+<% else %>
+<% raise RuntimeError %>
+<% end %>

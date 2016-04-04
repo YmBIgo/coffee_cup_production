@@ -1,0 +1,42 @@
+<h2 class="textbook-section-title" id="title2"><strong>2 : ページを設定する</strong></h2>
+<h4 id="coffee-chapter2-2">
+  <strong>データベースもできたので、次はページを設定しましょう！</strong>
+  <hr>
+  ページの設定には、
+  <strong>
+  <ul class="number_ul">
+    <li>7つのページのうちどれを使うかの設定（<u>route.rb</u>）</li>
+    <li>データ操作の設定（<u>controller</u>）</li>
+    <li>ページ表示の設定（<u>views</u>）</li>
+  </ul>
+  </strong>
+  の3つをします。
+  <br><br>
+  設定を始める前に、<strong><u>データ操作・ページ表示の設定ファイルをターミナルへの入力で作成しましょう！</u></strong>
+  <br>
+  <small>※　内容は<a href="/mugcups/5#title1-1-2" target="_blank"><strong>こちら</strong></a>を参考にしてみて下さい</small>
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller messages</span>
+</td>
+</tr>
+</table>
+  <br>
+  この入力で、
+  <br>
+  <strong>
+    <ul class="number_ul">
+      <li>データ操作ファイル「<u>app > controllers > messages_controller.rb</u>」</li>
+      <li>ページ表示フォルダ「<u>app > views > messages</u>」</li>
+    </ul>
+  </strong>
+  を作成しました。
+  <hr class="red-hr">
+  では、まずは<strong>「7つのページのうちどれを使うかの設定（<u>route.rb</u>）」</strong>から始めてみましょう！
+  <hr>
+  <%= render "coffee2/title2_1" %>
+</h4>

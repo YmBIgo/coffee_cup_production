@@ -1,4 +1,124 @@
 <h2 class="textbook-section-title" id="title1"><strong>1 : データベースを作る</strong></h2>
 <h4 id="coffee-chapter2-1">
-  伝言板を作るにあたって、まずは「messages」データベースを作ってみましょう！
+  <strong>伝言板を作るにあたって、まずは「messages」データベースを作ってみましょう！</strong>
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>最初に「message」データベースの枠組みを作る設定ファイルはどのようにすれば作れるんでしょうか？</strong>
+  <br>
+  <small>※　分からなければ<a href="/mugcups/4#title1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+  <br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>rails g model message</span>
+</td>
+</tr>
+</table>
+  <br>
+  入力をしたでしょうか？
+  <br>
+  <strong>「<u>db > migrate > 日時_create_messages.rb</u>」</strong>がその設定ファイルになります。
+  <hr class="red-hr">
+  次に、作成した設定ファイルに設定を加えてみましょう！
+  <br>
+  ここでは下のようなデータベースを作ってみます。
+  <br><br>
+  <strong>messages</strong>
+    <table class="table table-striped">
+      <thead>
+        <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th>user_id</th>
+        <th>receiver</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>192</td>
+      <td>おはよう</td>
+      <td>91</td>
+      <td>20</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <strong>
+  「<u>user_id</u>」に投稿した会員の「<u>id</u>」、「<u>receiver</u>」に受け取った会員の「<u>id</u>」を入れるようにします。
+  <br>
+  上にあるデータは、<u>「idが91」の会員が「idが20」の会員へ送った「おはよう」というメッセージ</u>になります。
+  <br><br>
+  メッセージアプリケーションはこのようにしてデータベースにメッセージを保存しているんですね。
+  </strong>
+  <hr class="red-hr">
+  Sublime Textで<strong>「<u>db > migrate > 日時_create_messages.rb</u>」</strong>を開いて、下のように内容を変更してみましょう！（Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考）
+  <br>
+  <small>※　内容は<a href="/mugcups/4#title1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日時_create_messages.rb（5〜7行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6
+7</strong>
+8
+9
+10
+11
+12
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreateMessages < <span class='word-green'>ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:messages</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.text        <span class='word-purple'>:content</span></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:user_id</span></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:receiver</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  この設定で、<strong>長い文字列を入れる「<u>content</u>」、短い文字列を入れる「<u>user_id</u>」、短い文字列を入れる「<u>receiver</u>」</strong>を作ります。
+  <br><br>
+  設定ができたら、設定内容のデータベースを作成しましょう！
+  <br>
+  ターミナルで下のように入力して下さい。
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong><u>これで「messages」データベースが完成しました！</u></strong>
+  <hr class="red-hr">
+  ここまでできたら、<strong><u>Sequel Proで「messages」データベースができたかを確認</u></strong>してみましょう！（Sequel Proの開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい）
+  <%= link_to image_tag("coffee2/Sequel_Pro_messages_database.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee2/Sequel_Pro_messages_database.png",
+              :target => ["_blank"] %>
+  <strong>データベースの設定ができたので、次はページの設定をしましょう！</strong>
 </h4>
