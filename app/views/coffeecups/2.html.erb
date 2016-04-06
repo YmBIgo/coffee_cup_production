@@ -1,4 +1,3 @@
-<% if Rails.env.development? %>
 <% provide :title, 'メッセージを作る' %>
 <div class="container">
   <div class="row">
@@ -17,6 +16,11 @@
           <%= render "coffee2/title1" %>
           <br>
           <%= render "coffee2/title2" %>
+          <hr class="red-hr">
+          <h4>
+            <strong>ここまででメッセージ機能を設定することができました。</strong>
+          </h4>
+          <hr>
           <div class="next-page">
               <a href="/coffee_cups/3" class="btn btn-primary">次の章に進む</a>
           </div>
@@ -33,12 +37,19 @@
           <a href="#title1" class="list-group-item">1 : データベースを作る</a>
           <a href="#title2" class="list-group-item">2 : ページを設定する</a>
           <a href="#title2-1" class="list-group-item">　<small>① : route.rb</small></a>
+          <a href="#title2-2" class="list-group-item">　<small>② : データ操作</small></a>
+          <a href="#title2-2-1" class="list-group-item">　　<small>⑴ : messages</small></a>
+          <a href="#title2-2-2" class="list-group-item">　　<small>⑵ : users</small></a>
+          <a href="#title2-2-3" class="list-group-item">　　<small>⑶ : まとめ</small></a>
+          <a href="#title2-3" class="list-group-item">　<small>③ : ページ設定</small></a>
+          <a href="#title2-3-1" class="list-group-item">　　<small>⑴ : 上のバーの設定</small></a>
+          <a href="#title2-3-2" class="list-group-item">　　<small>⑵ : メッセージの表示</small></a>
+          <a href="#title2-3-3" class="list-group-item">　　<small>⑶ : 入力欄・ボタンの表示</small></a>
+          <a href="#title2-3-4" class="list-group-item">　　<small>⑷ : まとめ</small></a>
         </div>
       </strong>
     </div>
   </div>
 </div>
+</div>
 <%= render 'pages/fixedjs' %>
-<% else %>
-<% raise RuntimeError %>
-<% end %>

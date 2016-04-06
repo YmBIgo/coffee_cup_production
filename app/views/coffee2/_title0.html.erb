@@ -6,25 +6,86 @@
   </strong>
   <hr class="red-hr">
   基本的にこれまでで習ってきた内容で、
-  <%= link_to image_tag("coffee2/Chrome_messages_users_1_final_version.png",
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
-              "/assets/coffee2/Chrome_messages_users_1_final_version.png",
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
               :target => ["_blank"] %>
   のような、<strong><u>それぞれのユーザーの「show」ページで表示する伝言板</u></strong>を作ってみます。
+  <hr class="red-hr">
+  例えば、<strong><u>「湘南花子」さんでログインした状態で「山田太郎」さん会員の情報を表示するページに移動</u></strong>すると、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+              :target => ["_blank"] %>
+  のように伝言板のついたページが表示されます。
   <br><br>
-  ここで設定する内容は、
+  このページでメッセージを入力して、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+              :target => ["_blank"] %>
+  投稿すると、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+              :target => ["_blank"] %>
+  のようにメッセージが表示されるようにします。
+  <br><br>
+  今度は「山田太郎」でログインしてみると、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner.png",
+              :target => ["_blank"] %>
+  このように投稿されたメッセージが表示されるようにします。
+  <br><br>
+  またここで投稿に入力をして、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_input.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_input.png",
+              :target => ["_blank"] %>
+  投稿をすると下のような表示がされるようにします。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+              :target => ["_blank"] %>
+  <strong><u>「messages」データベースのページはメッセージを作る（create）だけ</u></strong>で、他のデータ操作はしません。
+  <hr class="red-hr">
+  この伝言板でも<strong><u>データベースに保存したデータを表示させている</u></strong>のですが、そのデータベースは下のようなものになります。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Sequel_Pro_messages_database_content.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Sequel_Pro_messages_database_content.png",
+              :target => ["_blank"] %>
+  <strong>
+  <ul class="number_ul">
+    <li>「user_id」に投稿をした会員の「id」</li>
+    <li>「receiver」に受け取った会員の「id」</li>
+    <li>「content」にメッセージの内容</li>
+  </ul>
+  が入っています。
+  <br><br>
+  このデータベースから内容を表示させています。
+  </strong>
+  <hr class="red-hr">
+  この章で設定する内容は、
   <strong>
     <ul class="number_ul">
-      <li>「messages」データベースの作成</li>
-      <li>「7つのページの内、どれを使うか」の設定（route.rb）</li>
-      <li>データ操作の設定（controller）</li>
-      <li>ページ表示の設定（views）</li>
+      <li>「messages」データベースの作成（<a href="/mugcups/4" target="_blank">ここ</a>を参考）</li>
+      <li>「7つのページの内、どれを使うか」の設定（<a href="/mugcups/5#title1-1-1" target="_blank">ここ</a>を参考）</li>
+      <li>データ操作の設定（<a href="/mugcups/5#title1-1-2" target="_blank">ここ</a>を参考）</li>
+      <li>ページ表示の設定（<a href="/mugcups/5#title1-1-3" target="_blank">ここ</a>を参考）</li>
     </ul>
   </strong>
   の4つになります。
   <br><br>
-  全て「posts」データベースでやった内容になると思います。
+  全て「posts」データベースのページを作った時にやった内容になると思います。
   <br>
   <strong>では、始めてみましょう！</strong>
 </h4>

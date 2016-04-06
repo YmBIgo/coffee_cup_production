@@ -31,9 +31,9 @@
           </strong>
           をやっていきます。
           <hr class="red-hr">
-          では、「７つのページの設定」からやってみましょう！
-          <br>
-          ７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル</strong>（configフォルダに入っている）を見てみましょう。
+          <i class="fa fa-play-circle"></i>　<strong>まず「７つのページの設定」からやってみましょう！</strong>
+          <br><br>
+          <strong>「<u>config</u>」フォルダ</strong>にある、７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル</strong>を見てみましょう。
                  <br><br>
         <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
 <table class='highlight'>
@@ -53,7 +53,7 @@
 </td>
 <td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
 <span class='code-line'></span>
-<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple remarkable-code'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
 <span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
 <span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
 <span class='code-line'></span>
@@ -73,13 +73,13 @@
         <br>
         追加されていれば「新しいデータの記入（new）」をするページを使うことを設定できています。
         <hr class="red-hr">
-        では、「<u>データ操作</u>」の設定をしましょう。データ操作は「データベース名_controller.rb」ファイルで設定します。
+        <i class="fa fa-play-circle"></i>　<strong>では「<u>データ操作</u>」の設定をしましょう。</strong>
+        <br><br>
+        まずは、Sublime Textで<strong>「<u>app > controllers</u>」</strong>フォルダにある、<strong>「<u>posts_controller.rb</u>」</strong>ファイルを開きましょう。
         <br>
-        <strong>「posts」データベースのデータ操作を設定する「posts_controller.rb」ファイルから設定を始めましょう。</strong>
+        <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a></small>
         <br><br>
-        まずは「app」フォルダの中にある「controllers」フォルダから、「<strong>posts_controller.rb</strong>」を開きましょう。（Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>）
-        <br><br>
-        開けたら、<u>「def new」と「end」の間</u>を下のように設定しましょう。
+        開けたら、<strong><u>「def new」と「end」の間</u></strong>を下のように設定しましょう。
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb（12行目を追加）</strong>
         <br>
@@ -91,7 +91,7 @@
 13
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>new</span></span>
-<span class='code-line remarkable-code'>    @post = <span class="word-blue">Post</span>.<span class='word-red'>new</span></span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class="word-blue">Post</span>.<span class='word-red'>new</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
@@ -105,9 +105,9 @@
 </pre>
         で設定します。
         <br><br>
-        「<i>Post.new</i>」では、<strong>中になにも入っていないデータを作成</strong>しています。
-        <br>
-        流れとしては、ここで作った空のデータにページで入力させた情報を入れて、それを「データの作成（create）」をするページでデータベースに保存させます。
+        <strong>「<i>Post.new</i>」</strong>では、<u>中になにも入っていないデータを作成</u>しています。
+        <br><br>
+        流れとしては、<strong>ここで作った空のデータに<u>ページで入力させた情報を入れて</u>、それを「データの作成（create）」をするページでデータベースに保存</strong>させます。
         <br>
         <small>※　設定する標識は、htmlファイルで同じものを指定できればなんでも大丈夫です。</small>
         <br><br>
@@ -131,8 +131,8 @@
 </tr>
 </table>
         <hr class="red-hr">
-        では、ページの設定をしましょう。
-        <br>
+        <i class="fa fa-play-circle"></i>　<strong>では、ページの設定をしましょう。</strong>
+        <br><br>
         ここでは下のような内容を記入させる画面を設定します。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
                               :width => "90%",
@@ -183,11 +183,11 @@
 </tr>
 </table>
         <br>
-        一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して下さい。
+        では、ページを表示させてみましょう！
         <br>
-        これで内容の変更が適用されます。
+        <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
         <br><br>
-        できたらブラウザで、「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」を開いてみて下さい。
+        ブラウザで「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」を開いてみて下さい。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -288,7 +288,7 @@
 </table>
         <br>
         で、<u>入力欄３つとボタン１つが設定された</u>のはなんとなく推測できるのではないかと思います。
-        <br>
+        <br><br>
         実際その通りで、例えば中にある
         <br><br>
 <table class='highlight'>
@@ -300,7 +300,7 @@
 </tr>
 </table>
         <br>
-        で<u>「name」をデータベースに保存するための入力欄</u>を作っています。
+        で<strong><u>「name」をデータベースに保存するための入力欄</u></strong>を作っています。
         <br>
         これと比べると、「content」の入力欄を作っている
         <br><br>
@@ -314,10 +314,12 @@
 </table>
         <br>
         は少し内容が違いますね。
-        <br>
-        これは入力欄の表示は、データベースの枠組みの設定をした時（<a href="/mugcups/4#title1-2" target="_blank"><strong>ここらへん</strong></a>を参照）の<u>データの種類に応じた表記になっている</u>からです。
         <br><br>
-        この<strong><u>「posts」のデータベースでは「name」は短い文字列・「content」は長い文字列・「place」は短い文字列を入れる設定</u></strong>をしましたよね？
+        これは入力欄の表示は、データベースの枠組みの設定をした時（<a href="/mugcups/4#title1-2" target="_blank"><strong>こちら</strong></a>を参照）の<u>データの種類に応じた表記になっている</u>からです。
+        <br><br>
+        この<strong><u>「posts」のデータベースでは「name」は短い文字列・「content」は長い文字列・「place」は短い文字列を入れる設定</u></strong>をしました。
+        <br>
+        <small>※　内容は<a href="/mugcups/4#title1-2" target="_blank"><strong>こちら</strong></a>を参考</small>
         <br><br>
         <i class="fa fa-arrow-right color-red"></i>　入力欄もそれに応じた設定をしていきます。
         <br><br>
@@ -415,7 +417,7 @@
 3
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>new</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.<span class='word-red'>new</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
@@ -446,7 +448,7 @@
 &lt;% end %&gt;
 </pre>
         までの間で入力欄と作成をするためのボタンを設定します。
-        <br><br>
+        <hr class="red-hr">
         中に設定する入力欄は、例えば短い文字列だったら、
 <pre>
 &lt;%= 名前.text_field :枠組みの名前 %&gt;

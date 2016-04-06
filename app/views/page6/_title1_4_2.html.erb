@@ -52,7 +52,7 @@
 3
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
-<span class='code-line remarkable-code'>    @post = <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
@@ -96,7 +96,7 @@
         <br>
         <strong>「データの作成（create）」をするページは、「新しいデータの記入（new）」のボタンを押して移動してくるページなので、URLを記入する必要はありません。</strong>
         <br>
-        <small>※　ページのURLは、「0.0.0.0:3000/posts」になっていると思います。</small>
+        <small>※　ページのURLは、<strong>「<u>0.0.0.0:3000/posts</u>」</strong>になっていると思います。</small>
         <hr class="red-hr">
         ここまでで、データの作成をするページを作りました。
         <br>

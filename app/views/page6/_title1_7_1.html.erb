@@ -11,10 +11,10 @@
         </strong>
         の３つですね。
         <hr class="red-hr">
-        それでは<strong>「７つのページのうち、どのページを使うか」</strong>の設定から始めましょう！
-        <br>
-          ７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル</strong>（configフォルダに入っている）を見てみましょう。
-                 <br><br>
+        <i class="fa fa-play-circle"></i>　<strong>まず、「７つのページのうち、どのページを使うか」の設定をします。</strong>
+        <br><br>
+        では、その設定ファイルである<strong>「config > route.rb」</strong>を開いてみましょう！ 
+        <br><br>
         <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
 <table class='highlight'>
 <tr>
@@ -53,13 +53,15 @@
         <br>
         追加されていれば「データの削除（destroy）」をするページを使うことを設定できています。
         <hr class="red-hr">
-        では、「<u>データ操作</u>」の設定をしましょう。データ操作は「データベース名_controller.rb」ファイルで設定します。
+        <i class="fa fa-play-circle"></i><strong>　では、「データ操作」の設定をしましょう。</strong>
+        <br><br>
+        「posts」データベースのデータ操作を設定する<strong>「posts_controller.rb」</strong>ファイルから設定を加えます。
+        <br><br>
+        <strong>「<u>app > controllers</u>」</strong>フォルダにある<strong>「<u>posts_controller.rb</u>」</strong>を、Sublime Textで開きましょう。
         <br>
-        <strong>「posts」データベースのデータ操作を設定する「posts_controller.rb」ファイルから設定を始めましょう。</strong>
+        <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a></small>
         <br><br>
-        まずは「app」フォルダの中にある「controllers」フォルダから、「<strong>posts_controller.rb</strong>」を開きましょう。（Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>）
-        <br><br>
-        開けたら、<u>「def destroy」と「end」の間</u>を下のように設定しましょう。
+        開けたら、<strong><u>「def destroy」と「end」の間</u></strong>を下のように設定しましょう。
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb（29、30行目を追加）</strong>
         <br>
@@ -72,7 +74,7 @@
 31
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
-<span class='code-line remarkable-code'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line remarkable-code'>    @post.destroy</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
@@ -87,12 +89,12 @@
 <tr>
 <td class='code-line-no text-center'>29
 </td>
-<td class='code-content'><span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<td class='code-content'><span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
 </td>
 </tr>
 </table>
         <br>
-        で削除するデータを選択して（<a href="/mugcups/5#title1-1" target="_blank">show</a>、<a href="/mugcups/6#title1-5" target="_blank">edit</a>を参照）、それを削除しています。
+        で削除するデータを選択して（<a href="/mugcups/5#title1-1" target="_blank"><strong>show</strong></a>、<a href="/mugcups/6#title1-5" target="_blank"><strong>edit</strong></a>を参照）、それを削除しています。
         <br><br>
         実は下のように１行で書くこともできます
         <br><br>
@@ -131,7 +133,7 @@
 </tr>
 </table>
         <hr class="red-hr">
-        では、ページの設定をしてみましょう！
+        <i class="fa fa-play-circle"></i>　<strong>では、ページの設定をしてみましょう！</strong>
         <br><br>
         まずはクリックしたらデータ削除のページに移動する「データを削除する」のリンクを、下のようにページに設定してみたいと思います。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
@@ -139,9 +141,9 @@
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
                     :target => ["_blank"] %>
-        <u>「１つのデータの表示」をするページ「show.html.erb」</u>にこの設定を追加します。
+        <u>「１つのデータの表示」をするページ<strong>「show.html.erb」</strong></u>にこの設定を追加します。
         <br>
-        まずは、Sublime Textで開いた「myapp」で<strong>「<i>app > views > posts</i>」</strong>を開いてみましょう。
+        まずは、Sublime Textで開いた「myapp」で<strong>「<u>app > views > posts</u>」</strong>を開いてみましょう。
         <br>
         そこから<strong>「<u>show.html.erb</u>」</strong>を選択して開いてみましょう！
         <br><br>
@@ -235,7 +237,7 @@
 5
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
-<span class='code-line remarkable-code'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
@@ -247,7 +249,7 @@
         <br>
 <table class='highlight'>
 <tr>
-<td class='code-line-no text-center'><span class="color-red"><strong>1</strong>
+<td class='code-line-no text-center'><span class="color-red"><strong>6</strong>
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/<span class="remarkable-code">&lt;%= @post.id %&gt;</span>"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
@@ -271,15 +273,15 @@
 </tr>
 </table>
         <hr class="red-hr">
-        では、削除が完了した後のページを設定しましょう！
-        <br>
+        次に、削除が完了した後のページを設定しましょう！
+        <br><br>
         「投稿を削除する」ボタンを押したら、下のようなページが出るようにします。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
                     :target => ["_blank"] %>
-        まずは、Sublime Textで開いた「myapp」で<strong>「app > views > posts」</strong>を開いてみましょう。
+        まずは、Sublime Textで開いた「myapp」で<strong>「<u>app > views > posts</u>」</strong>を開いてみましょう。
         <br>
         この中にある<strong>「<u>destroy.html.erb</u>」</strong>が、「データの削除（destroy）」の終わった後に表示されるページになります。
         <br><br>
@@ -321,11 +323,9 @@
         <hr class="red-hr">
         では、実際にページでデータを削除しましょう！
         <br>
-        一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して下さい。
-        <br>
-        これで内容の変更が適用されます。
+        <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
         <br><br>
-        できたらブラウザで削除したいデータを表示させている「show」ページに移動しましょう。
+        ブラウザで削除したいデータを表示させている「show」ページに移動しましょう。
         <br><br>
         <i class="fa fa-question-circle color-green"></i>　<strong>「posts」データベースの「idが3」のデータのページはブラウザでどのように入力すれば出てくるでしょうか？</strong>
         <br><br>

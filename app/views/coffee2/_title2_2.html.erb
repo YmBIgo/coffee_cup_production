@@ -1,0 +1,82 @@
+<h4 id="coffee-chapter2-2-2">
+  <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : データ操作</strong></p>
+  <br>
+  次に、<strong><u>データ操作</u></strong>をやってみます。
+  <hr class="red-hr">
+  データ操作は、<strong>「<u>messages_controller.rb</u>」「<u>users_controller.rb</u>」</strong>の2つのファイルでそれを設定します。
+  <br><br>
+  <ul class="number_ul">
+    <strong><li>messages_controller.rbでは、</li></strong>
+    <br>
+    「messages」データベースの<strong>「<a href="/mugcups/6#title1-4" target="_blank">データの作成（create）</a>」</strong>のデータ操作を指定します。
+    <br>
+    <small>※　内容は<a href="/mugcups/11#title4-2-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:receiver</span>, <span class='word-purple'>:content</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>users_controller.rbでは、</li></strong>
+    <br>
+    <strong>「users」データベースの「show」ページのデータ操作の設定で、</strong>
+    <br><br>
+    「messages」データベースの<strong>「<a href="/mugcups/5#title1-2" target="_blank">全てのデータの表示（index）</a>」</strong>と<strong>「<a href="/mugcups/6#title1-3" target="_blank">新しいデータの記入（new）</a>」</strong>のデータ操作を指定します。
+    <br><br>
+    <strong>「<a href="/mugcups/5#title1-2" target="_blank">全てのデータの表示（index）</a>」</strong>でメッセージデータの表示
+    <br>
+    <strong>「<a href="/mugcups/6#title1-3" target="_blank">新しいデータの記入（new）</a>」</strong>で投稿の入力欄のデータ操作を行います。
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                :target => ["_blank"] %>
+    <hr class="red-hr">
+    メッセージデータの表示は、
+    <br>
+    <small>※　詳細は<a href="/mugcups/5#title1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @messages <span class="word-red">=</span> <span class='word-blue'>Message</span>.where(指定する条件)</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>※　whereを使って、条件にあったデータを選択を行いました。少し前の内容なんですが<a href="/mugcups/4#title2-2" target="_blank"><strong>こちら</strong></a>を参考</small>
+  <br><br>
+  例：「first_name」が「太郎」のデータを選択
+<pre>
+User.where(:first_name => "太郎")
+</pre>
+  <br><br>
+    新しいデータの記入欄のデータ操作は、
+    <br>
+    <small>※　詳細は<a href="/mugcups/6#title1-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.<span class='word-red'>new</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  </ul>
+  のような感じで設定します。
+  <br><br>
+  <strong>ではやってみましょう！</strong>
+  <hr class="red-hr">
+  <%= render "coffee2/title2_2_1" %>
+  <hr class="red-hr">
+  <%= render "coffee2/title2_2_2" %>
+  <hr class="red-hr">
+  <%= render "coffee2/title2_2_3" %>
+</h4>

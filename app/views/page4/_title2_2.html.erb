@@ -12,12 +12,16 @@
         データの選択の方法は２つあります。
         <br>
         <strong>
-        ⑴ : idからデータを選択する方法
-        <br>
-        ⑵ : 他の枠組みから内容を検索する方法です。
+          <ul class="number_ul">
+            <li>idからデータを選択する方法（<u>find</u>）</li>
+            <li>他の枠組みから内容を検索する方法（<u>where</u>）</li>
+          </ul>
         </strong>
+        の2つになります。
         <br><br>
-        <i class="fa fa-play-circle color-red"></i>　まずは<u>一つ目の方法・idから選択する方法</u>をやってみましょう。まず、<strong>「<i>rails c</i>」</strong>を入力して、下の入力をしてみて下さい。
+        <i class="fa fa-play-circle color-red"></i>　<strong><u>一つ目の方法・idから選択する方法</u></strong>をやってみましょう。
+        <br><br>
+        まず、<strong>「<i>rails c</i>」</strong>を入力して、下の入力をしてみて下さい。
         <br><br>
         <strong>　ターミナル（半角英数で入力）</strong>
 <table class='highlight'>
@@ -43,9 +47,9 @@
 </pre>
         を入力します。（データベースのタイトルは大文字から始める単数形）
         <hr class="red-hr">
-        <i class="fa fa-play-circle color-red"></i>　<u>二つ目の方法・id以外の枠組みから検索して選択する方法</u>をやってみましょう。
-        <br>
-        下の入力をしてみて下さい。
+        <i class="fa fa-play-circle color-red"></i>　次に<strong><u>二つ目の方法・id以外の枠組みから検索して選択する方法</u></strong>をやってみましょう。
+        <br><br>
+        <strong>「<u>rails c</u>」</strong>で下の入力をしてみて下さい。
         <br><br>
         <strong>　ターミナル（日本語以外は半角英数で入力）</strong>
 <table class='highlight'>
@@ -70,7 +74,7 @@
 データベースにタイトル.where(:枠組み => "内容", あるだけ...)
 </pre>
         を入力します。（データベースのタイトルは大文字から始める単数形）
-        <br>
+        <br><br>
         なので「<u>名前が湘南花子・場所が藤沢</u>」のデータを検索するには、
         <br><br>
 <table class='highlight'>

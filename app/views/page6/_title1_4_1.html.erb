@@ -1,7 +1,7 @@
 <h4 id="chapter6-1-4-1">
         <p id="title1-4-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : ページを設定する</strong></p>
         <br>
-        まずは<strong>「<u>７つのページのうち、どのページを使うか</u>」</strong>の設定をします。
+        <i class="fa fa-play-circle"></i>　<strong>まずは「<u>７つのページのうち、どのページを使うか</u>」の設定をします。</strong>
          <br><br>
          ７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル</strong>（configフォルダにある）を見てみましょう。
                  <br><br>
@@ -41,13 +41,15 @@
         <br><br>
         <strong><u>上のように「create」を追加した</u></strong>と思います。これで「データを作成（create）」するページを使うことを設定できました。
         <hr class="red-hr">
-        では、「<u>データ操作</u>」の設定をしましょう。データ操作は「データベース名_controller.rb」ファイルで設定します。
+        <i class="fa fa-play-circle"></i>　<strong>では、「<u>データ操作</u>」の設定をしましょう。</strong>
+        <br><br>
+        「posts」データベースのデータ操作を設定する「<u>posts_controller.rb</u>」ファイルに設定を加えます。
+        <br><br>
+        Sublime Textで、<strong>「<u>app > controllers</u>」</strong>フォルダにある<strong>「<u>posts_controller.rb</u>」</strong>を開きましょう。
         <br>
-        <strong>「posts」データベースのデータ操作を設定する「posts_controller.rb」ファイルから設定を始めましょう。</strong>
+        <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
         <br><br>
-        まずは「app」フォルダの中にある「controllers」フォルダから、「<strong>posts_controller.rb</strong>」を開きましょう。（Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>）
-        <br><br>
-        開けたら、<u>「def create」と「end」の間</u>を下のように設定しましょう。
+        開けたら、<strong><u>「def create」と「end」の間</u></strong>を下のように設定しましょう。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（16行目を追加）</strong>
 <table class='highlight'>
@@ -57,15 +59,15 @@
 17
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
         <br>
         今回は少し内容が複雑ですね。
-        <br>
-        「<u>@post</u>」がhtmlファイルで表示させる時に標識、「<u>Post.create</u>」でデータを作っているのはわかると思うので、
+        <br><br>
+        <strong>「<u>@post</u>」</strong>がhtmlファイルで表示させる時の標識、<strong>「<u>Post.create</u>」</strong>でデータを作っているのはわかると思うので、
         <br><br>
 <table class='highlight'>
 <tr>
@@ -77,7 +79,7 @@
 </table>
         <br>
         の部分が少し分からないと思います。
-        <br><br>
+        <hr class="red-hr">
         実は「新しいデータの記入（new）」をしたページから送られた、例えば「<u>nameは'山田太郎'、contentは'春からSFC'、placeは'新宿'</u>」のようなデータは、全てこの<strong>「params」</strong>の部分に集約されています。
         <br><br>
         なのでこの<strong>「params」</strong>が、
@@ -92,7 +94,7 @@
 </table>
         <br>
         を示しています。
-        <br><br>
+        <hr class="red-hr">
         その後ろの
         <br><br>
 <table class='highlight'>
@@ -104,8 +106,8 @@
 </tr>
 </table>
         <br>
-        では、<strong>「<u>postsのデータベースのname、content、placeの値以外は保存しない</u>」</strong>ことを設定しています。
-        <br>
+        で、<strong>「<u>postsのデータベースのname、content、placeの値以外は保存しない</u>」</strong>ことを設定しています。
+        <br><br>
         これはセキュリティー上、他のデータを改ざんされたりされるのを防ぐための設定になります。<strong><u>セキュリティーのために必要と思って下さい。</u></strong>
         <br><br>
         「require」の後ろに変更する「:データベース名（単数形）」、「permit」の後ろに作成する「:枠組みの名前」を設定します。
@@ -144,7 +146,7 @@
         <br><br>
         <strong>このファイルに「データを作成（create）」するページを表示する設定を追加していきます。</strong>
         <br><br>
-        では、この「create.html.erb」を下のように変更してみましょう！
+        では、<strong>「<u>create.html.erb</u>」</strong>を下のように変更してみましょう！
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　create.html.erb</strong>
         <br>
@@ -174,11 +176,15 @@
 </tr>
 </table>
         <br>
-        内容が変更できたら、ターミナルで「<u>myapp</u>」に移動してから<strong>「<i>rails s</i>」</strong>でサーバを立ち上げて、「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」を開いてみましょう！
-        <br><br>
-        データの入力欄のページは表示されると思うで、そこで好きなデータを入力してみて「登録する」ボタンを押してみて下さい。
+        では、ページを表示させてみましょう！
         <br>
-        下のように「投稿が完了しました」の画面に移動できたでしょうか？
+        <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+        <br><br>
+        ブラウザで「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」を開いてみましょう！
+        <br><br>
+        データの入力欄のページは表示されると思うで、<strong>そこで好きなデータを入力してみて「<u>登録する</u>」ボタンを押してみて下さい。</strong>
+        <br>
+        下のように<strong>「<u>投稿が完了しました</u>」</strong>の画面に移動できたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_create_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -209,7 +215,7 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>@post = <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<td class='code-content'><span class='code-line'>@post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
 </td>
 </tr>
 </table>

@@ -3,11 +3,17 @@
         <br>
         <i class="fa fa-question-circle color-green"></i>　<strong>復習から始めます。ページを設定するには、どの設定が必要なのでしょうか？</strong>
         <br><br>
-        <u>⑴ : どのページを使うかの設定 ⑵ : データ操作の設定 ⑶ : ページ内容の設定</u>
+        <strong>
+            <ul class="number_ul">
+                <li>どのページを使うかの設定</li>
+                <li>データ操作の設定</li>
+                <li>ページ内容の設定</li>
+            </ul>
+        </strong>
         <br>
         の３つになります。
         <hr class="red-hr">
-        「編集するデータの記入（edit）」をするページでは、変更するデータを指定してページの入力欄を作ります。
+        <strong>「<u>編集するデータの記入（edit）</u>」</strong>をするページでは、変更するデータを指定してページの入力欄を作ります。
         <br><br>
         具体的には、
         <strong>
@@ -19,10 +25,10 @@
         </strong>
         をやっていきます
         <hr class="red-hr">
-          では、「７つのページの設定」からやってみましょう！
-          <br>
-          ７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル</strong>（configフォルダに入っている）を見てみましょう。
-                 <br><br>
+          <i class="fa fa-play-circle"></i>　<strong>まず「７つのページの設定」からやってみましょう！</strong>
+          <br><br>
+          では、その設定ファイルである<strong>「<u>config > route.rb</u>」</strong>を開いてみましょう！
+          <br><br>
         <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
 <table class='highlight'>
 <tr>
@@ -59,15 +65,17 @@
         <br><br>
         <strong><u>上のように３行目に「edit」は追加されていますか？</u></strong>
         <br>
-        追加されていれば「編集するデータの記入（edit）」をするページを使うことを設定できています。
+        追加されていれば<strong>「<u>編集するデータの記入（edit）</u>」</strong>をするページを使うことを設定できています。
         <hr class="red-hr">
-        では、「<u>データ操作</u>」の設定をしましょう。データ操作は「データベース名_controller.rb」ファイルで設定します。
+        <i class="fa fa-play-circle"></i>　<strong>では、「<u>データ操作</u>」の設定をしましょう。</strong>
+        <br><br>
+        「posts」データベースのデータ操作を設定する<strong>「posts_controller.rb」</strong>ファイルから設定を加えます。
+        <br><br>
+        <strong>「<u>app > controllers</u>」</strong>フォルダにある「<strong><u>posts_controller.rb</u></strong>」を、Sublime Textで開きましょう。
         <br>
-        <strong>「posts」データベースのデータ操作を設定する「posts_controller.rb」ファイルから設定を始めましょう。</strong>
+        <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a></small>
         <br><br>
-        まずは「app」フォルダの中にある「controllers」フォルダから、「<strong>posts_controller.rb</strong>」を開きましょう。（Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>）
-        <br><br>
-        開けたら、<u>「def edit」と「end」の間</u>を下のように設定しましょう。
+        開けたら、<strong><u>「def edit」と「end」の間</u></strong>を下のように設定しましょう。
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb（20行目を追加）</strong>
         <br>
@@ -88,6 +96,8 @@
         <i class="fa fa-question-circle color-green"></i>　<strong>この追加した１行では、なにをしているのでしょうか？</strong>
         <br><br>
         <u>この１行で、変更するデータを選択しています。</u>
+        <br>
+        <small>※　詳細は<a href="/mugcups/5#title1-1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
         <br><br>
         <i class="fa fa-play-circle color-red"></i>　これは「一つのデータの選択（show）」でやった、
         <br><br>
@@ -128,8 +138,8 @@
 </tr>
 </table>
         <hr class="red-hr">
-        では、ページの設定をしましょう。
-        <br>
+        <i class="fa fa-play-circle"></i>　<strong>では、ページの設定をしましょう。</strong>
+        <br><br>
         ここでは下のような内容を記入させる画面を設定します。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
                               :width => "90%",
@@ -303,7 +313,33 @@
         <br>
         で、ページを表示させています。
         <br>
-        ここでは、「content」と「place」を入力する設定をしています。
+        ここでは、<strong><u>「content」と「place」を入力する設定</u></strong>をしています。
+        <hr class="red-hr">
+        加えて
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（3行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        にある「@post」が<strong>「<u>posts_controller.rb</u>」</strong>で設定した
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（20行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>20
+</td>
+<td class='code-content'><span class='code-line'>@post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+</td>
+</tr>
+</table>
+        <br>
+        で選択した「posts」データベースのデータになっていて、<strong><u>変更するデータの選択</u></strong>を行っています。
         <hr class="red-hr">
         <i class="fa fa-question-circle color-green"></i><strong>　下のデータ操作をした「<u>@user</u>」の<u>名字「family_name（短い文字列）」</u>と<u>名前「first_name（長い文字列）」</u>と<u>年齢「age（数字）」</u>を記入するページを設定してみましょう。</strong>
         <br><br>
@@ -360,11 +396,9 @@
         <hr class="red-hr">
         では、ページを表示させてみましょう！
         <br>
-        一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して下さい。
-        <br>
-        これで内容の変更が適用されます。
+        <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
         <br><br>
-        できたらブラウザで、「<a href="/posts/1/edit" target="_blank"><strong>0.0.0.0:3000/posts/1/edit</strong></a>」を入力して下さい。
+        ブラウザで、「<a href="/posts/1/edit" target="_blank"><strong>0.0.0.0:3000/posts/1/edit</strong></a>」を入力して下さい。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -397,7 +431,7 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line small-code'>0.0.0.0:3000/posts/1/edit</span>
+<td class='code-content answer-code'><span class='code-line small-code'>0.0.0.0:3000/videos/1/edit</span>
 </td>
 </tr>
 </table>

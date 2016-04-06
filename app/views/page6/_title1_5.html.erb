@@ -6,7 +6,7 @@
         <strong>残っているデータ操作は、「データの変更」と「データの削除」をするページのみになります。</strong>
         <br>
         まずは「データの変更」からやってみましょう！
-        <br><br>
+        <hr class="red-hr">
         データの変更は「<a href="/mugcups/4#title2-2" target="_blank"><strong>rails c</strong></a>」でやった、
         <br><br>
 <table class='highlight'>
@@ -22,7 +22,13 @@
         <hr class="red-hr">
         データの変更もデータの作成と同じように、「編集するデータの記入（edit）」と「データの変更（update）」の2つがあります。
         <br>
-        <strong><u>「edit」でデータを記入する画面を出し、「update」で入力された情報をデータベースに保存する</u></strong>流れになります。
+        <strong>
+        <ul class="number_ul">
+            <li>「edit」でデータを記入する画面を表示</li>
+            <li>「update」で入力された情報をデータベースに保存</li>
+        </ul>
+        </strong>
+        する流れになります。
         <br><br>
         具体的には、「編集するデータの記入（edit）」をするページでデータを入力して「変更する」ボタンを押すと、
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",

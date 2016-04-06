@@ -1,0 +1,83 @@
+<h4 id="coffee-chapter2-2-3">
+  <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : ページ設定</strong></p>
+  <br>
+  次に、<strong><u>ページ表示</u></strong>をやってみます。
+  <hr class="red-hr">
+  ページ表示は、<strong>「<u>users</u>」データベースの「<u>show.html.erb</u>」</strong>に設定内容を追加します。
+  <br>
+  上で設定した<strong>「<u>messages</u>」データベースの「<u>create</u>」</strong>は、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  で表示されないので、表示の設定は<strong>「<u>users</u>」データベースの「<u>show.html.erb</u>」</strong>のみになります。
+  <hr class="red-hr">
+  ここでは、
+  <ul class="number_ul">
+    <strong><li>メッセージの表示</li></strong>
+    <br>
+    <strong>「<a href="/mugcups/5#title1-2" target="_blank">データの全表示（index）</a>」</strong>で説明した、データを繰り返す表示する設定を使って、複数データある「@messages」を表示させてみます。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= p.user_id %&gt;"</span>&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;様&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h3</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>入力欄とボタンの作成</li></strong>
+    <br>
+    <strong>「<a href="/mugcups/6#title1-3" target="_blank">新しいデータの記入（new）</a>」</strong>で説明した、データの記入欄・ボタンの表示をする設定を使います。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登録する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+  </ul>
+  の2つを、<strong><u>「messages」データベースで設定</u></strong>してみたいと思います。
+  <hr class="red-hr">
+  <%= render "coffee2/title2_3_1" %>
+  <hr class="red-hr">
+  <%= render "coffee2/title2_3_2" %>
+  <hr class="red-hr">
+  <%= render "coffee2/title2_3_3" %>
+  <hr class="red-hr">
+  <%= render "coffee2/title2_3_4" %>
+</h4>

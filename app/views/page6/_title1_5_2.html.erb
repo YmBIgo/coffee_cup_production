@@ -1,5 +1,6 @@
 <h4 id="chapter6-1-5-2">
         <p id="title1-5-2"><i class="fa fa-tags color-red"></i>　<strong>⑵ : まとめ</strong></p>
+        <br>
         <strong>「編集するデータの記入（edit）」</strong>ページの３つの設定をまとめる。
         <br><br>
         <strong>設定した内容は<a href="/codes/6" target="_blank">こちら</a>を参考にしてみて下さい</strong>
@@ -52,7 +53,7 @@
 3
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
-<span class='code-line remarkable-code'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
@@ -96,13 +97,15 @@
         <br>
         ページでは、<strong><u>「controller」ファイルで選択したデータの内容を変更する入力欄の設定と選択したデータを表示する設定</u>をします。</strong>
         <br><br>
-        <strong>「<u>&lt;%= form_for @設定した標識 do |好きな名前| %&gt;</u>」</strong>で空のデータを指定して、<strong>「<u>&lt;% end %&gt;</u>」</strong>との間に<u>データの入力欄と「データを変更（update）」するボタンを作ります。</u>
+        <strong>「<u>&lt;%= form_for @設定した標識 do |好きな名前| %&gt;</u>」</strong>で変更するデータを指定して、
+        <br>
+        <strong>「<u>&lt;% end %&gt;</u>」</strong>との間に<u>データの入力欄と「データを変更（update）」するボタンを作ります。</u>
         <br><br>
         <strong>「<u>&lt;%= 名前.入力欄 :枠組みの名前 %&gt;</u>」</strong>でデータの入力欄を作り、
         <br>
         <strong>「<u>&lt;%= 名前.submit "表示する文字列" %&gt;</u>」</strong>で「データを変更（update）」するボタンを作ります。
         <br>
-        <small>※　短い文字列は「名前.text_field」で、長い文字列は「名前.text_area」で、数字は「名前.number_field」で設定する</small>
+        <small>※　短い文字列は<strong>「名前.text_field」</strong>で、長い文字列は<strong>「名前.text_area」</strong>で、数字は<strong>「名前.number_field」</strong>で設定する</small>
         <hr class="red-hr">
         <p id="title1-5-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ブラウザでの表示</strong></p>
         <br>
@@ -111,7 +114,7 @@
         「編集したデータの入力」をするページは、<strong>「<u>0.0.0.0:3000/データベース名/idの番号/edit</u>」</strong>で開く。
         <hr class="red-hr">
         ここまでで、「編集するデータの記入（edit）」をするページを作りました。
-        <br>
+        <br><br>
         <strong>次は、入力された「データの変更（update）」するページを作りましょう。
         <br><br>
         設定した内容は<a href="/codes/6" target="_blank">ここ</a>にまとめてあるので見てみて下さい</strong>

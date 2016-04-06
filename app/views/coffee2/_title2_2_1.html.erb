@@ -1,0 +1,141 @@
+<h4 id="coffee-chapter2-2-2-1">
+  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : messsages_controller.rb</strong></p>
+  <br>
+  まず、<strong>「messages_controller.rb」の「<a href="/mugcups/6#title1-4" target="_blank">データの作成（create）</a>」</strong>からやってみます。
+  <br><br>
+  <strong>「<u>app > controllers > messages_controller.rb</u>」</strong>を開いて、下のような内容に変更してみましょう。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5
+6
+7
+8</strong>
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>MessagesController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:receiver</span>, <span class='word-purple'>:content</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+<span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  内容の説明をしましょう！
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>まずは3行目</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content'><span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>]</span>
+</td>
+</tr>
+</table>
+  <br>
+  これは、<strong><u>ログインしている会員にのみページを見せるための設定</u></strong>でしたね。
+  <br>
+  <small>※　詳細は<a href="/mugcups/9#title2-2" target="_blank"><strong>こちら</strong></a>を参考</small>
+  <br>
+  今回は「messages」データベースの「create」にだけこの制限をかけました。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>次に6行目</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>  @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:receiver</span>, <span class='word-purple'>:content</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+</td>
+</tr>
+</table>
+  <br>
+  この<strong>「Message.create(...)」</strong>で、データの作成をします。
+  <br>
+  <small>※　詳細は<a href="/mugcups/6#title1-3" target="_blank"><strong>こちら</strong></a>を参考にしてください</small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>  .merge(<span class='word-purple'>:user_id</span> => current_user.id)</span>
+</td>
+</tr>
+</table>
+  <br>
+  が後ろについていることで、<strong>「user_id」に「<a href="/mugcups/10#title3-3-3" target="_blank">current_user</a>」ログインしている会員の「id」を入れる設定</strong>をしています。
+  <br>
+  <small>※　詳細は<a href="/mugcups/11#title4-2-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>最後に7行目</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでは、<strong>「<a href="/mugcups/11#title4-3-3" target="_blank">redirect_to</a>」</strong>を使ってページの移動をします。
+  <br>
+  <small>※　詳細は<a href="/mugcups/11#title4-3-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  今回は<strong>「<u>:back</u>」</strong>という設定を使っていますが、これは前のページを示す設定になります。
+  <br>
+  なので、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  は前のページに戻る設定になります。
+  <hr class="red-hr">
+  今回のページは、入力欄にメッセージを入力して、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+              :target => ["_blank"] %>
+  登録ボタンを押したら、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+              :target => ["_blank"] %>
+  のように元のページに戻るようにしますので、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  のような設定になりました。
+  <br><br>
+  <strong>次は「users_controller.rb」の設定をしてみます。</strong>
+</h4>

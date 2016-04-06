@@ -1,0 +1,51 @@
+<h4 id="coffee-chapter2-2-2-3">
+  <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : まとめ</strong></p>
+  <br>
+  今回、新しく設定した内容は2つありました。
+  <br>
+  <strong>
+    <ul class="number_ul">
+      <li>redirect_to :back</li>
+      <li>Message.where(条件)</li>
+    </ul>
+  </strong>
+  の2つになります。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>redirect_to :back</strong>
+  <br><br>
+  前のページに戻る設定として、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  を今回設定した。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>Message.where(条件)</strong>
+  <br><br>
+  「messages」データベースからデータを選択する設定として、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>    @messages <span class='word-red'>=</span> <span class='word-blue'>Message</span>.where(<span class='word-purple'>:receiver</span> => @user.id)</span>
+</td>
+</tr>
+</table>
+  <br>
+  を設定した。
+  <br><br>
+  今回の設定は、<strong><u>「receiver」が「@user」の「id」と一致するものを選択</u></strong>する設定になる。
+  <hr class="red-hr">
+  <strong>
+  ここまででデータ操作の設定ができました。
+  <br><br>
+  次はページ表示の設定をしてみましょう！
+  </strong>
+</h4>

@@ -2,7 +2,7 @@
           <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 新しいデータを記入する（new）</strong></p>
           <br>
           ここまでで<u>「１つのデータの表示（show）」と「全てのデータの表示（index）」</u>をやってみました。
-          <br>
+          <hr class="red-hr">
           <strong><u>ですが、データを表示させるだけで、追加することができなかったら意味はありませんですよね。</u></strong>
           <br><br>
           ここでページでのデータの作成をやってみましょう。
@@ -20,9 +20,16 @@
           <br>
           を設定する感じだと思ってもらえれば分かりやすいと思います。
           <hr class="red-hr">
-          データの作成にはなぜか「new」と「create」の２つがありますが、
+          データの作成には「new」と「create」の２つがありますが、
+          <br><br>
+          <strong>
+          <ul class="number_ul">
+          <li>「new」でデータを記入する画面を表示</li>
+          <li>「create」でデータを実際に保存してその保存完了画面を表示</li>
+          </ul>
+          </strong>
           <br>
-          <strong><u>「new」でデータを記入する画面を出して、「create」でデータを実際に保存してその保存完了画面を出す</u></strong>流れになります。
+          する流れになります。
           <br><br>
           具体的には、「新しいデータの記入（new）」をするページでデータを入力して「登録する」ボタンを押すと、
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_2.png",

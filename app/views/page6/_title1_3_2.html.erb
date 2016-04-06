@@ -50,7 +50,7 @@
 3
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>new</span></span>
-<span class='code-line remarkable-code'>    @post = <span class='word-blue'>Post</span>.new</span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.new</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
@@ -81,7 +81,7 @@
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を作る&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;%= form_for @post do |f| %&gt;</span>
+<span class='code-line remarkable-code'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -90,7 +90,7 @@
 <span class='code-line remarkable-code'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.submit <span class='word-yellow'>"登録する"</span> %&gt;</span>
-<span class='code-line remarkable-code'>&lt;% end %&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
@@ -98,13 +98,13 @@
         <br>
         ページでは、<strong><u>「controller」ファイルで作った空のデータに内容を加える入力欄の設定をします。</u></strong>
         <br><br>
-        <strong>「<u>&lt;%= form_for @設定した標識 do |好きな名前| %&gt;</u>」</strong>で空のデータを指定して、<strong>「<u>&lt;% end %&gt;</u>」</strong>との間に<u>データの入力欄と「データを作成（create）」するボタンを作ります。</u>
+        <strong>「<u>&lt;%= form_for @設定した標識 do |好きな名前| %&gt;</u>」</strong>で空のデータを指定して、<br><strong>「<u>&lt;% end %&gt;</u>」</strong>との間に<u>データの入力欄と「データを作成（create）」するボタンを作ります。</u>
         <br><br>
         <strong>「<u>&lt;%= 名前.入力欄 :枠組みの名前 %&gt;</u>」</strong>でデータの入力欄を作り、
         <br>
         <strong>「<u>&lt;%= 名前.submit "表示する文字列" %&gt;</u>」</strong>で「データを作成（create）」するボタンを作ります。
         <br>
-        <small>※　短い文字列は「名前.text_field」で、長い文字列ば「名前.text_area」で、数字は「名前.number_field」で設定する</small>
+        <small>※　短い文字列は<strong>「名前.text_field」</strong>で、長い文字列は<strong>「名前.text_area」</strong>で、数字は<strong>「名前.number_field」</strong>で設定する</small>
         <hr class="red-hr">
         <p id="title1-3-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ブラウザでの表示</strong></p>
         <br>
@@ -113,7 +113,7 @@
         「新しいデータの記入（create）」をするページは、<strong>「<u>0.0.0.0:3000/データベース名/new</u>」</strong>で開く。
         <hr class="red-hr">
         ここまででデータの記入をするページを作りました。
-        <br>
+        <br><br>
         <strong>次は、入力された「データの作成（create）」をするページを作りましょう。
         <br><br>
         設定した内容は<a href="/codes/6" target="_blank">ここ</a>にまとめてあるので見てみて下さい</strong>
