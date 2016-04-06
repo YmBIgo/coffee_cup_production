@@ -7,10 +7,10 @@
         ですが、いちいちブラウザで入力してページを移動するのは面倒だと思いませんか？<u>ページはワンクリックで移動したいですよね？</u>
         </strong>
         <br><br>
-        最後に、全部のデータのページから一つのデータのページへ・一つのデータのページから全部のデータのページへも移動をやってみたいと思います。
+        最後に、<strong>全てのデータのページから一つのデータのページへ・一つのデータのページから全部のデータのページへの<u>移動</u></strong>をやってみたいと思います。
         <br>
         <br>
-        ページの移動は全て、ページの設定をしている「html.erb」ファイルでやっていきます。まずは<u>「show.html.erb」に、データを全表示するページに移動できるような設定<strong>（リンク）</strong></u>を加えましょう。
+        ページの移動は全て、ページの設定をしている「html.erb」ファイルでやっていきます。まずは<u><strong>「show.html.erb」</strong>に、データを全表示するページに移動できるような設定<strong>（リンク）</strong></u>を加えましょう。
         <br><br>
         ページを移動させるのは
 <pre>
@@ -18,7 +18,7 @@
 </pre>
         <strong>と設定して、<u>クリックすると指定したページに移動する文字（リンク）を表示</u>します。</strong>
         <br><br>
-        <u>では試してみましょう。「show.html.erb」を下のように変更してみましょう。</u>
+        <u>では試してみましょう。<strong>「show.html.erb」</strong>を下のように変更してみましょう。</u>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>show.html.erb（4行目）</strong>
 <table class='highlight'>
@@ -36,9 +36,7 @@
 </tr>
 </table>
         <br>
-        <strong>一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
-        <br>
-        <u>これで変更した内容が反映されます。</u>
+        <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<u><strong>「Command」と「c」を一緒に押して止めて</strong></u>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。 </small>
         <br><br>
         変更ができたらブラウザで「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう。下のように表示されたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_3.png",
@@ -79,15 +77,13 @@
 </tr>
 </table>
         <br>
-        一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。
-        <br>
-        <u>これで変更した内容が反映されます。</u>
+        <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<u><strong>「Command」と「c」を一緒に押して止めて</strong></u>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。 </small>
         <br><br>
         変更ができたら、ブラウザで「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう。
         <br>
-        変更をした「トップに戻る」を押したら、「データの全表示（index）」をするページ「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」に移動はできたでしょうか？
+        変更をした「トップに戻る」を押したら、<strong>「データの全表示（index）」</strong>をするページ「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」に移動はできたでしょうか？
         <br><br>
-        <i class="fa fa-arrow-right color-red"></i>　内容を説明すると、<strong>「/posts」の「/」がそのページ自身の<u>url「0.0.0.0:3000」を示している</u>のでページを移動できるようになっています。</strong>
+        <i class="fa fa-arrow-right color-red"></i>　<strong>「/posts」の「/」がそのページ自身の<u>url「0.0.0.0:3000」を示している</u>のでページを移動できるようになっています。</strong>
         <br><br>
         <i class="fa fa-question-circle color-green"></i><strong>　photosデータベースの「index」ページに移動する「クリック」の文字（リンク）を設定をしてみて下さい。</strong>
         <br><br>
@@ -104,7 +100,7 @@
         <hr class="red-hr">
         <strong>では、「index」のページから「show」のページに移動できるようにしましょう。</strong>
         <br>
-        <u>「show.html.erb」ファイルを下のように変更して下さい。</u>
+        <u><strong>「index.html.erb」</strong>ファイルを下のように変更して下さい。</u>
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　index.html.erb（4行目）</strong>
 <table class='highlight'>
@@ -130,9 +126,7 @@
 </tr>
 </table>
         <br>
-        一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。
-        <br>
-        <u>これで変更した内容が反映されます。</u>
+        <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<u><strong>「Command」と「c」を一緒に押して止めて</strong></u>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。 </small>
         <br><br>
         変更ができたら、ブラウザで「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみましょう。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_3.png",

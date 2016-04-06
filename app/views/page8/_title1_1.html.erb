@@ -21,8 +21,8 @@
   </ul>
   の<a href="/mugcups/5#title1" target="_blank"><strong>３つ</strong></a>でしたね。
   <br><br>
-  今回は<strong>トップページなのでデータ操作をしないページを作ります。</strong>
-  <br>
+  今回は<strong>トップページなので<u>データ操作をしないページ</u>を作ります。</strong>
+  <br><br>
   今までデータ操作をするページしか作ってこなかったので、<strong>「データ操作をしないページを作ってもいいのか」という問題はありますが、<u>実はできました。</u></strong>
   <br>
   データ操作をしない分だけ、このページでは<strong><a href="/mugcups/4#title1" target="_blank">データベースの定義（Excelの表を決めること）</a></strong>は必要ありません。
@@ -31,7 +31,7 @@
   <br>
   では実際にやってみます。
   <hr class="red-hr">
-  まずはターミナルで「myapp」にまで移動して下さい。
+  まずはターミナルで<strong>「<u>myapp</u>」</strong>にまで移動して下さい。
   <br><br>
   　<strong>ターミナル</strong>
 <table class='highlight'>
@@ -79,7 +79,7 @@ rails g controller 名前（単数形）
 </pre>
   を入力して「controller」の設定ファイルとページの設定ファイルを作ります。
   <br><br>
-  「welcome」データベースのデータ操作はする必要はないのですが、ページの設定のためにこの入力をします。
+  「welcome」データベースのデータ操作はする必要はないのですが、<strong><u>ページの設定</u></strong>のためにこの入力をします。
   <br>
   <small>※　もしこのページでデータベースの保存された投稿を表示させるなら、作成された「controller」ファイルに「@post」などの設定を加える必要があります。</small>
   <br><br>
@@ -94,9 +94,11 @@ rails g controller 名前（単数形）
   <hr class="red-hr">
   まずは<strong><u>「どのページを使うか」</u></strong>から設定しましょう。
   <br>
-  Sublime Textで「myapp」を開き（開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）、<strong>「config > route.rb」</strong>を開いて下さい。
+  Sublime Textで<strong>「<u>myapp</u>」</strong>を開き、<strong>「config > route.rb」</strong>を開いて下さい。
   <br>
-  このファイルに設定を加えます。
+  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  この<strong>「<u>route.rb</u>」ファイル</strong>に設定を加えます。
   <br><br>
   <i class="fa fa-question-circle color-green"></i>　<strong>まずは復習からです。<u>「welcome」の「<a href="/mugcups/5#title1-2" target="_blank">index</a>」ページを使用する</u>にはどのような設定を加えればいいでしょうか？<br>（分からなかったら<a href="/mugcups/6#title2-route" target="_blank">こちら</a>を参考）</strong>
   <br><br>
@@ -112,9 +114,9 @@ rails g controller 名前（単数形）
 </tr>
 </table>
   <br>
-  この１行を「route.rb」に追加しましょう！
+  この１行を<strong>「<u>route.rb</u>」</strong>に追加しましょう！
   <hr class="red-hr">
-  上の１行を追加したら、「route.rb」に下の設定を加えましょう。
+  上の１行を追加したら、<strong>「<u>route.rb</u>」</strong>に下の設定を加えましょう。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>route.rb（4行目を追加）</strong>
   <br>
@@ -157,10 +159,10 @@ rails g controller 名前（単数形）
 root "表示させるページの設定フォルダ#表示させるページ"
 </pre>
   が「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」で指定したページを表示する設定になります。
-  <br>
+  <br><br>
   今回は<strong>「views > welcome」の「index.html.erb」の設定ファイル</strong>を「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」で表示するよう設定しています。
   <br><br>
-  また普通に<strong><u>「posts」の「<a href="/mugcups/5#title1-2" target="_blank">index</a>」ページ</u></strong>をトップページにするなら、
+  また逆に<strong><u>「posts」の「<a href="/mugcups/5#title1-2" target="_blank">index</a>」ページ</u></strong>をトップページにするなら、
   <br><br>
 <table class='highlight'>
 <tr>
@@ -197,9 +199,9 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <br>
   とは言っても設定することはありませんのですぐに終わります。
   <br><br>
-  まずは<strong>「app > controllers > welcome_controller.rb」</strong>を開いてみましょう！
+  まずは<strong>「<u>app > controllers > welcome_controller.rb</u>」</strong>を開いてみましょう！
   <br>
-  これはさっきの<u>「rails g controller welcome」で作られた設定ファイル</u>で、ここにページごとのデータ操作を設定します。
+  これはさっきの<u><strong>「rails g controller welcome」</strong>で作られた設定ファイル</u>で、ここにページごとのデータ操作を設定します。
   <br>
   このファイルを下のように設定してみましょう！
   <br><br>
@@ -240,8 +242,10 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <hr class="red-hr">
   最後にページの設定をしてみましょう！
   <br>
-  まずは、<strong>「app > views > welcome」に「index.html.erb」を保存</strong>してみましょう！（保存の方法は<a href="/mugcups/how_to_save#title1" target="_blank"><strong>こちら</strong></a>から）
+  まずは、<strong>「app > views > welcome」に「index.html.erb」を保存</strong>してみましょう！
   <br>
+  <small>※　保存の方法は<a href="/mugcups/how_to_save#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
   <strong><u>この「index.html.erb」ファイル</u></strong>がページを表示させるための設定ファイルになります。
   <br><br>
   試しに内容を変更してみて、実際に表示させてみましょう！
@@ -270,7 +274,9 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <br><br>
   ではこれを開いてみましょう！
   <br>
-  「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して再起動して、<strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>を開いてみましょう！
+  <small>※　内容を適用させるために、「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+  <br><br>
+  <strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>を開いてみましょう！
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_before.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),

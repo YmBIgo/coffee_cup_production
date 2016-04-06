@@ -43,9 +43,8 @@
                     :target => ["_blank"] %>
         この<strong>「<i>rails c</i>」</strong>は、<u>Ruby on Railsで作ったウェブページの<strong>データベースの操作などを行う機能</strong></u>です。ここでは、この機能を使ってデータを作っていきます。
         <br>
-        この<strong>「<i>rails c</i>」</strong>で入力する操作は、
         <br>
-        一回、<strong>「<i>exit</i>」</strong>と入力してみて下さい。
+        では一回、<strong>「<u><i>exit</i></u>」</strong>と入力してみて下さい。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c_exit.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -79,8 +78,10 @@
                     :target => ["_blank"] %>
         <strong>これでデータベースへのデータの保存は完了しました！</strong>
         <br><br>
-        ではSequel Proで中身を確認してみましょう！（開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>から）
+        ではSequel Proで中身を確認してみましょう！
         <br>
+        <small>※　開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+        <br><br>
         下のようにデータが追加されたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Posts_Data1.png",
                               :width => "90%",
@@ -107,7 +108,7 @@
         <br>
         具体的な例を出すので、考えてみましょう！
         <hr class="red-hr">
-        <i class="fa fa-question-circle color-green"></i>　<strong>では、『湘南花子さんが藤沢で投稿した「おはよう」という投稿』はどのようにして入力して作ればいいでしょうか？
+        <i class="fa fa-question-circle color-green"></i>　<strong>では、<u>『湘南花子さんが藤沢で投稿した「おはよう」という投稿』</u>はどのようにして入力して作ればいいでしょうか？
         <br>（マウスを上に置けば答えが出ます）</strong>
         <br><br>
         <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
@@ -121,7 +122,7 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <i class="fa fa-question-circle color-green"></i>　<strong>下のデータベースの枠組みがあった時、『藤沢太郎さんの「六本木なう」というツイート』はどのように入力すれば作れるでしょうか？<br>（マウスを上に置けば答えが出ます）</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>下のデータベースの枠組みがあった時、<u>『藤沢太郎さんの「六本木に着いた」というツイート』</u>はどのように入力すれば作れるでしょうか？<br>（マウスを上に置けば答えが出ます）</strong>
         <br><br>
         <strong>tweets</strong>
           <table class="table table-striped">
@@ -142,7 +143,7 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line small-code'>Tweet.create(:user =&gt; "藤沢太郎", :content =&gt; "六本木なう")</span>
+<td class='code-content answer-code'><span class='code-line small-code'>Tweet.create(:user =&gt; "藤沢太郎", :content =&gt; "六本木に着いた")</span>
 </td>
 </tr>
 </table>

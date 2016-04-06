@@ -40,10 +40,11 @@
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Terminal_rails_g_controller_posts.png",
                     :target => ["_blank"] %>
-        では、それを確認しましょう！まずはSublime Textで「myapp」を開いてみましょう！
-        （Sublime Textを使ったフォルダの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>から）
+        では、それを確認しましょう！まずは、Sublime Textで<strong>「<u>myapp</u>」</strong>を開いてみましょう！
         <br>
-        ウィンドウが出てきたら「app」を開いてみましょう。
+        <small>※　Sublime Textを使ったフォルダの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+        <hr class="red-hr">
+        ウィンドウが出てきたら<strong>「<u>app</u>」</strong>を開いてみましょう。
         <br>
         下のように、その中に<strong>「<u>controllers</u>」</strong>と<strong>「<u>views</u>」</strong>というフォルダが入っていると思います。
         <br>
@@ -55,7 +56,7 @@
                     :target => ["_blank"] %>
         <strong>「<u>controllers</u>」</strong>には<strong>「<u>posts_controller.rb</u>」</strong>というファイルが、<strong>「<u>views</u>」</strong>には<strong>「<u>posts</u>」</strong>というフォルダがあると思います。
         <br><br>
-        これらがさっきの<strong>「<i>rails g controller posts</i>」</strong>で作られたファイル・フォルダになり、それぞれでデータ操作の設定とページの設定をします。
+        これらがさっきの<strong>「<u>rails g controller posts</u>」</strong>で作られたファイル・フォルダになり、それぞれでデータ操作の設定とページの設定をします。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_post_controller_and_post_view.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -198,11 +199,11 @@
 </tr>
 </table>
         <br>
-        これがページに「<u>１つのデータの表示（show）</u>」をするデータ操作の設定です。
-        <br>
+        <strong>これがページに「<u>１つのデータの表示（show）</u>」をするデータ操作の設定です。</strong>
+        <br><br>
         よく見たら、「<u>Post.find(選択するid)</u>」が使われていますね。
         <br>
-        後ろの<strong>「<u>params[:id]</u>」</strong>という部分は<strong>「<u>ページからidを取ってくる</u>」</strong>ことを示しているんですが、ここらへんは覚えて下さい。
+        後ろの<strong>「<u>params[:id]</u>」</strong>という部分は<strong>「<u>ページからidを取ってくる</u>」</strong>ことを示しているんですが、ここらへんは覚えるなりコピペして下さい。
         <hr class="red-hr">
         <strong class="little-remarkable">では、「@post」はなんなのでしょうか？これはいるのでしょうか？</strong>
         <br><br>

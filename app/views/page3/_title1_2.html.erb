@@ -17,7 +17,7 @@
           <br>
           <small>※　「style.css」という名前にしたのは、この名前がよく使われているからというだけであって深い理由はありません。</small>
           <br>
-          ファイルの保存の仕方が分からなくなったら、<a href="/mugcups/how_to_save" target="_blank"><strong>ここを参照。</strong></a>
+          ファイルの保存の仕方が分からなくなったら、<a href="/mugcups/how_to_save" target="_blank"><strong>ここを参考にして下さい。</strong></a>
           <br><br>
           下のように表示されたでしょうか？
           <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Style_Css.png",
@@ -31,7 +31,9 @@
                                 :class => "hover_img textbook-title-img"),
                       "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_rails_project.png",
                       :target => ["_blank"] %>
-          ファイルが保存できたら、下のように内容を変更して下さい。（ファイルの開き方は<strong><a href="/mugcups/how_to_open" target="_blank">こちら</a></strong>から）
+          ファイルが保存できたら、下のように内容を変更して下さい。
+          <br>
+          <small>※　ファイルの開き方は<strong><a href="/mugcups/how_to_open" target="_blank">こちら</a></strong>を参考にして下さい</small>
           <hr class="red-hr">
           <i class="fa fa-file color-red"></i>　<strong>style.css（半角英数字で入力）</strong>
 <table class="highlight">
@@ -79,10 +81,11 @@
         中に「style.css」という名前が入っているのが見えますね。ここでどのCSSファイルを使い装飾するかを決めています。<u>使う時はCSSファイル名以外の部分はコピペで、<strong><i>&lt;head&gt;</i>と<i>&lt;/head&gt;</i>の間に書き加える</strong>ことで適用されます。</u>
         <hr class="red-hr">
         例えば「style2.css」というCSSファイルを指定する時は、
-        <br>
+        <br><br>
 <table class="highlight">
 <tr><td class='code-line-no text-center'>1<br></td><td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style2.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span></td></tr>
 </table>
+        <br>
         を<i>&lt;head&gt;</i>と<i>&lt;/head&gt;</i>の間に記述します。
         <strong></strong>
         <br><br>
@@ -114,7 +117,7 @@ color:色の名前;
 <tr><td class='code-line-no text-center'>1<br></td><td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span></td></tr>
 </table>
         <br>
-        の行の<i>&lt;h1&gt;</i>と<i>&lt;/h1&gt;</i>の間を指定して、赤色にする設定をしています。
+        の行の<strong><u>&lt;h1&gt;と&lt;/h1&gt;の間</u></strong>を指定して、赤色にする設定をしています。
         <br><br>
         <i class="fa fa-exclamation color-red"></i>　試しに別の色に変えてみましょう！
         <br><br>
@@ -127,7 +130,7 @@ color:色の名前;
         <br>
         終わったらページを再度読み込んでみて下さい。内容は変わったでしょうか？
         <br>
-        （ブラウザでの開き方は<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>こちら</strong></a>から）
+        <small>※　ブラウザでの開き方は<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
         <hr class="red-hr">
         ここまでで色を変更する設定をしてみましたが、<u>装飾の方法はこれだけではありません。</u>
         <br>
@@ -142,7 +145,7 @@ color:色の名前;
         <br>
         終わったら再度読み込んでみましょう。下のように表示されたでしょうか？
         <br>
-        （ブラウザでの開き方は<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>こちら</strong></a>から）
+        <small>※　ブラウザでの開き方は<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html3.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -153,8 +156,8 @@ color:色の名前;
 font-size:文字の大きさpx;
 </pre>
         と書いて設定します。
-        <br>
-        pxはコンピューター内の大きさの単位なので、適当に変更して表示させていきながら確認するのがいいでしょう。
+        <br><br>
+        <strong><u>pxはコンピューター内の大きさの単位</u></strong>なので、適当に変更して表示させていきながら確認するのがいいでしょう。
         <br><br>
         背景色は、
 <pre>
@@ -176,9 +179,11 @@ background-color:色の名前;
         <br><br>
         なので<strong class="little-remarkable">CSSファイルではページの装飾に名前をつけて、それをhtmlファイルの中身と対応させることができます。</strong>
         <hr class="red-hr">
-        <strong class="remarkable">早速、やってみましょう！</strong>
+        <strong><u>では、やってみましょう！</u></strong>
         <br><br>
-        「rails_projects」フォルダの「sample.html」と「style.css」を開いてみましょう（ファイルの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちらから</strong></a>）
+        <strong>「rails_projects」フォルダの「sample.html」と「style.css」</strong>を開いてみましょう！
+        <br>
+        <small>※　ファイルの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>sample.html（半角英数で入力）</strong>
         <br>
@@ -196,13 +201,13 @@ background-color:色の名前;
         <br><br>
         終わったら再度読み込んでみましょう。下のように表示されたでしょうか？
         <br>
-        （ブラウザでの開き方は<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>こちら</strong></a>から）
+        <small>※　ブラウザでの開き方は<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html4.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html4.png",
                     :target => ["_blank"] %>
-        上がなにも装飾を設定していない<i>&lt;h1&gt;</i>、下が装飾を設定した<i>&lt;/h1&gt;</i>になります。
+        上が<strong><u>なにも装飾を設定していない<i>&lt;h1&gt;</i></u></strong>、下が<strong><u>装飾を設定した<i>&lt;h1&gt;</i></u></strong>になります。
         <hr class="red-hr">
         CSSファイル内で、
 <pre>
@@ -212,7 +217,7 @@ background-color:色の名前;
 </pre>
         と書くことで、<strong><u>いくつかの装飾の集まりに名前を設定</u></strong>することができます。
         <br>
-        今回の名前は「title」になっていますがこれは適当につけたものなので、自由につけて大丈夫です。
+        今回の名前は<strong>「<u>title</u>」</strong>になっていますがこれは適当につけたものなので、自由につけて大丈夫です。
         <br><br>
         htmlファイル内での表示には、
 <pre>

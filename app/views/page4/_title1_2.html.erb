@@ -1,7 +1,7 @@
 <h4 id="chapter4-1-2">
           <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : データの枠組みを作ろう！</strong></p>
           <br>
-          <strong class="little-remarkable">Facebookの投稿のデータベースをウェブページのデータベースに作ってみましょう！</strong>
+          <strong class="little-remarkable">ここでは、<a href="https://gentle-cove-48435.herokuapp.com/" target="_blank">作ってみるウェブページ</a>のデータベースに作ってみましょう！</strong>
           <br>
           <br>
           <strong>Railsでのデータベースの定義はターミナルを使って行います。</strong>まず右上の虫眼鏡マークで探して開いてみましょう。開けたら前章で作った「myapp」に移動しましょう！
@@ -20,7 +20,7 @@
 </tr>
 </table>
         <br>
-        では始めましょう！まず、
+        では始めましょう！まずは
         <br><br>
         　<strong>ターミナル（半角英数字で入力）</strong>
 <table class="highlight">
@@ -39,7 +39,7 @@
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_model_post.png",
                     :target => ["_blank"] %>
         このように表示されたでしょうか？
-        <br>
+        <br><br>
         この入力で<strong>タイトルが「posts」のデータベースを作るための設定ファイルを作ります。</strong><u>gは「generate」の略です。</u>
         <br>
         赤線が引かれた「<strong>2016..._create_posts.rb</strong>」がその設定ファイルになります。
@@ -53,17 +53,17 @@
 rails g model データベースのタイトル名（単数形）
 </pre>
         を入力して、その設定ファイルを作ります。
-        <br>
+        <br><br>
         「<strong>rails g model タイトル名（単数形）</strong>」で作られた設定ファイル名は、「<strong>作った日時_create_タイトル名（複数形）.rb</strong>」になります。
         <hr class="red-hr">
         <strong>では、その設定ファイルを変更していきましょう！</strong>
         <br>
         <br>
         「<strong><u>Sublime Text</u></strong>」でその設定ファイルを変更してみましょう！まずは右上の虫眼鏡マークで探して開きましょう！
-        <br>
+        <br><br>
         開けたら、「myapp」のフォルダを「Sublime Text」で開いてみましょう！
         <br>
-        （ファイル・フォルダの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>から）
+        <small>※　ファイル・フォルダの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
         <br>
         下のようなウィンドウはでてきましたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",

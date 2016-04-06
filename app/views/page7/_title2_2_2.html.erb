@@ -1,9 +1,9 @@
 <h4 id="chapter7-2-2-2">
   <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : btn</strong></p>
   <br>
-  余白の設定もできたので、まずはボタンから綺麗にしてみましょう！
-  <br>
-  まずは「データの全表示」をするページに作った<strong>「<a href="/mugcups/6#title1-3" target="_blank">新しいデータの記入（new）</a>」</strong>へのリンク（ページ移動するための文字列）を、
+  余白の設定もできたので、<strong>まずは<u>ボタン</u>から綺麗にしてみましょう！</strong>
+  <hr class="red-hr">
+  まずは<strong>「<a href="/mugcups/5#title1-2" target="_blank">データの全表示（index）</a>」</strong>をするページに作った<strong>「<a href="/mugcups/6#title1-3" target="_blank">新しいデータの記入（new）</a>」</strong>へのリンク（ページ移動するための文字列）を、
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_btn.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -13,7 +13,10 @@
   <hr class="red-hr">
   Bootstrapでボタンを作るには、「<a href="/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」に<strong><u>「btn」と「btn-primary」</u></strong>を指定します。
   <br><br>
-  Sublime Textで「myapp」を開いて（開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）、<strong>「app > views > posts > index.html.erb」</strong>を開いて下さい。
+  Sublime Textで<strong>「<u>myapp</u>」</strong>を開いて、<strong>「<u>app > views > posts > index.html.erb</u>」</strong>を開いて下さい。
+  <br>
+  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br>
   <br>
   開けたら内容を下のように変更して下さい。
   <br><br>
@@ -43,11 +46,11 @@
 </tr>
 </table>
   <br>
-  ボタンの変更ついでに、４行目も変更しましたので忘れないで下さい。<u>「１つのデータの表示（show）」をするページへの移動の文字列を「id:名前」にしました。</u>
-  <hr class="red-hr">
-  これが終わったら、一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して止めて</u>から、もう一度「<u>rails s</u>」を入力して下さい。
+  ボタンの変更ついでに、４行目も変更しましたので忘れないで下さい。
   <br>
-  これで内容の変更が適用されます。
+  <u><strong>「<a href="/mugcups/5#title1-1" target="_blank">１つのデータの表示（show）</a>」</strong>をするページへの移動の文字列を「id:名前」にしました。</u>
+  <br>
+  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
   <br><br>
   サーバーを再起動させたら、「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみましょう。
   <br>
@@ -111,7 +114,9 @@
   <br>
   詳しくは、<a href="http://getbootstrap.com/css#buttons-options" target="_blank"><strong>ここのページ</strong></a>を参考にしてみて下さい。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong><u>緑色のボタンの「http://amazon.com」へのリンク（<a href="/mugcups/5#title1-2-2" target="_blank"><strong>&lt;a&gt;</strong></a>）</u>を作る設定を答えてください。</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong><u>緑色のボタンの「http://amazon.com」へのリンク（<a href="/mugcups/5#title1-2-2" target="_blank"><strong>&lt;a&gt;</strong></a>）</u> <a href="http://amazon.com" class="btn btn-success" target="_blank">amazon</a>
+  <br>
+  を作る設定を答えてください。</strong>
   <br><br>
   <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
   <br>
@@ -125,8 +130,8 @@
 </table>
   <hr class="red-hr">
   このボタンの設定はなにに対してもできるので、<strong><u>「&lt;a&gt;」だけでなく「&lt;h1&gt;」や「&lt;p&gt;」などの普通の文字列に対しても使うことができます。</u></strong>
-  <br>
-  ボタンの設定の最後に、「<a href="/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」ページや「<a href="/mugcups/6#title1-5" target="_blank"><strong>edit</strong></a>」ページで設定した<u>送信ボタン</u>にこの設定をして、
+  <br><br>
+  ボタンの設定の最後に、「<a href="/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」ページや「<a href="/mugcups/6#title1-5" target="_blank"><strong>edit</strong></a>」ページで設定した<strong><u>送信ボタン</u></strong>にこの設定をして、
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_btn.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -141,11 +146,11 @@
   <br>
   まずは「new」ページからやっていきます。
   <hr class="red-hr">
-  まずは「app > views > posts > new.html.erb」を開いてみて下さい。
+  まずは<strong>「<u>app > views > posts > new.html.erb</u>」</strong>を開いてみて下さい。
   <br>
-  開けたら、この「new.html.erb」を下のように変更してみて下さい。
+  開けたら、この<strong>「<u>new.html.erb</u>」</strong>を下のように変更してみて下さい。
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（11、13、14行目を追加）</strong>
   <br>
   <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
 <table class='highlight'>
@@ -235,11 +240,17 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_edit_bootstrap_btn.png",
               :target => ["_blank"] %>
-  <strong>のようにボタンが表示されるようにしましょう！</strong>
+  <strong>
+  のようにボタンが表示されるようにしましょう！
+  </strong>
+  <br>
+  <small>※　マウスを行の上に置けば、答えが表示されます。</small>
   <br><br>
   <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="10"></textarea>
   <br>
-  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（9、11、12行目を変更）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center small-code'>1
@@ -255,7 +266,7 @@
 <strong class="color-red">11</strong>
 <strong class="color-red">12</strong>
 </td>
-<td class='code-content answer-code small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -263,10 +274,10 @@
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"変更する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line answer-code'>  &lt;%= f.submit <span class="word-yellow">"変更する"</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span></span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code answer-code'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line answer-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span></span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -283,9 +294,12 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_show_bootstrap_btn.png",
               :target => ["_blank"] %>
+  <small>※　マウスを行の上に置けば、答えがでます</small>
   <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="9"></textarea>
   <br>
   <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -297,14 +311,14 @@
 <strong class="color-red">7</strong>
 <strong class="color-red">8</strong>
 </td>
-<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;投稿を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line answer-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span></span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line answer-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span></span>&gt;投稿を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line answer-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span></span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>

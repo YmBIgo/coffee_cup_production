@@ -51,8 +51,10 @@ rails g migration 設定ファイル名
         <hr class="red-hr">
         では、この設定ファイルを見てみましょう！
         <br>
-        まず「Sublime Text」で「myapp」を開いてみましょう！（ファイル・フォルダの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>から）
+        <strong>まず「Sublime Text」で「myapp」を開いてみましょう！</strong>
         <br>
+        <small>※　ファイル・フォルダの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+        <br><br>
         開けたら、下の手順でファイルを開いてみましょう！
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Open_migration_add_column_to_post.png",
                               :width => "90%",
@@ -77,7 +79,7 @@ rails g migration 設定ファイル名
         <br>
         こんな感じのファイルが表示されたでしょうか？
         <br>
-        このファイルの「<u><i>def change</i></u>」とその次の「<u><i>end</i></u>」の間に、枠組みを変更する設定を追加します。
+        このファイルの<strong>「<u><i>def change</i></u>」とその次の「<u><i>end</i></u>」の間</strong>に、枠組みを変更する設定を追加します。
         <br><br>
         枠組みの変更には、<strong class="little-remarkable">枠組みの追加、変更、削除</strong>があります。
         <br>
@@ -99,7 +101,7 @@ rails g migration 設定ファイル名
 add_column :データベース名, :枠組みの名前, :データの種類
 </pre>
         になります。
-        <br>
+        <br><br>
         すでに作ってある<strong><u>「posts」のデータベースに「place」を加える</u></strong>のを例にして見てみましょう！
         <br><br>
         <strong>posts</strong>
@@ -150,9 +152,9 @@ add_column :データベース名, :枠組みの名前, :データの種類
         <br>
         これが、<strong>「<u>postsというデータベースに、placeというstring・短い文字列の枠組みを追加するよ</u>」</strong>という設定になります。このような設定はいくつでも追加することができます。
         <br><br>
-        データの種類だけ難しいですが、もし種類が長い文字列だったら<u>stringはtext</u>に、数字なら<u>stringはinteger</u>になります。
+        データの種類だけ難しいですが、もし種類が長い文字列だったら<strong><u>stringはtext</u></strong>に、数字なら<strong><u>stringはinteger</u></strong>になります。
         <br>
-        <small>※　なぜか「:」が入っていますが、これは設定ファイルの仕様なんで許してやってください。</small>
+        <small>※　なぜか「:」が入っていますが、これは設定ファイルの仕様なんで許して下さい。</small>
         <hr class="red-hr">
         <p><i class="fa fa-question-circle color-green"></i>　 <strong>では例えば、「<u>数字を入れるreputationの枠組みを、postsというデータベースに追加する</u>」にはどのような設定が必要でしょうか？（マウスを上に置けば答えがでます）</strong></p>
         <br>
@@ -171,8 +173,8 @@ add_column :データベース名, :枠組みの名前, :データの種類
         <br>
         みたいな感じになります。
         <hr class="red-hr">
-        ここまでで追加について説明しましたが、<strong>削除・変更についても少し説明しましょう。</strong>
-        <br>
+        ここまでで追加について説明しましたが、<strong><u>削除・変更</u>についても少し説明しましょう。</strong>
+        <br><br>
         削除と変更も、追加と同じように<strong><u>データベース名・枠組み・データの種類</u></strong>の３つを指定します。
         <br>
         内容を変える設定なので追加の時と違って、<strong>枠組みとデータの種類はすでに作成されているものを指定しないといけません。</strong>
@@ -257,9 +259,11 @@ change_column :データベース名, :枠組みの名前, :データの種類
                     :target => ["_blank"] %>
         <u>これで枠組みの変更は完了しました！</u>
         <hr class="red-hr">
-        データベースが変更されているかを「Sequel Pro」で確認してみましょう！（開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>）
+        データベースが変更されているかを「Sequel Pro」で確認してみましょう！
         <br>
-        <u>枠組みに「place」は追加されているでしょうか？</u>
-        <hr class="red-hr">
+        <small>※　開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+        <br><br>
+        <u>枠組みに<strong>「place」</strong>は追加されているでしょうか？</u>
+        <br><br>
         <i class="fa fa-star color-blue"></i>　<strong>枠組みの変更を設定するファイルは「<u><i>rails g migration 設定ファイル名</i></u>」で作り、ターミナルで「<u><i>rake db:migrate</i></u>」を入力することでその設定を適用させる。</strong>
 </h4>

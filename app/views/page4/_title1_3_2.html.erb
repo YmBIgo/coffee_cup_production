@@ -5,17 +5,17 @@
         ですが、もし設定を間違えて「<strong><u>rake db:migrate</u></strong>」をした時はどうすればいいのでしょうか？
         <br><br>
         例えば、<strong><u>「text・長い文字列」を入れる「content」なのに、「string・短い文字列」で設定してしまったとした時など</u></strong>
-        <hr class="red-hr">
+        <br><br>
         新しく設定ファイルを作って、内容を変更するできるでしょうか？
         <br>
         （「<strong><u>rails g migration 設定ファイル名</u></strong>」で設定ファイルを作り、「<strong>change_column :posts, :content, :text</strong>」を入力）
-        <br><br>
+        <hr class="red-hr">
         もちろんそれでも枠組みは変更できますが、もっと簡単な方法があります。
         <br><br>
         Railsでは、直前に行ったデータベースの変更を取り消すことができます。
         <br>
         つまり、<strong class="little-remarkable"><u>間違えた設定を取り消して、設定ファイルの内容が適用される前の状態に戻す</u></strong>こともできるのです。
-        <br>
+        <br><br>
         ターミナルで下の入力をすることでそれはできます。
         <br><br>
         <strong>　ターミナル（半角英数で入力）</strong>
@@ -28,7 +28,7 @@
 </tr>
 </table>
         <br>
-        これを入力すれば、前の設定ファイルから適用された内容はなくなります。設定ファイルを直して「<u><i>rake db:migrate</i></u>」でもう一度設定ファイルを適用させることで間違いを直すことができます。
+        これを入力すれば、前の設定ファイルから適用された内容はなくなります。設定ファイルを直して<strong>「<u><i>rake db:migrate</i></u>」</strong>で、もう一度設定ファイルを適用させることで間違いを直すことができます。
         <br><br>
         この入力は<strong><u>１つずつしか戻せません</u></strong>が、間違えてしまった時などは利用してみてください。
         <hr class="red-hr">

@@ -1,9 +1,9 @@
 <h4 id="chapter5-1-2-1">
          <p id="title1-2-1"><i class="fa fa-check-square color-red"></i>　<strong>　⑴ : ページを設定する</strong></p>
          <br>
-         まずは<strong>「<u>どのページを使うか</u>」</strong>の設定をします。
+         <i class="fa fa-play-circle"></i><strong>　まず「７つのページの設定」からやってみましょう！</strong>
          <br><br>
-         ７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」ファイル</strong>（configフォルダにある）を見てみましょう。
+         <strong>「<u>config</u>」</strong>フォルダにある、７つのページのうちどのページを使うかを決める<strong>「<u>route.rb</u>」</strong>ファイルを見てみましょう。
                  <br><br>
         <i class="fa fa-file color-red"></i>　<strong>route.rb（3行目）</strong>
 <table class='highlight'>
@@ -39,15 +39,19 @@
         <br>
         内容は前に変更しましたよね。
         <br><br>
-        <strong><u>上のように「index」を追加した</u></strong>と思います。これで「データの全表示をする（index）」ページを使うことを設定できました。
-        <hr class="red-hr">
-        では、「<u>データ操作</u>」の設定をしましょう。データ操作は「データベース名_controller.rb」ファイルで設定します。
+        <strong><u>上のように「index」を追加した</u></strong>と思います。
         <br>
-        <strong>「posts」データベースのデータ操作を設定する「posts_controller.rb」ファイルから設定を始めましょう。</strong>
+        これで<strong>「<u>データの全表示をする（index）</u>」</strong>ページを使うことを設定できました。
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i><strong>　では「データ操作」の設定をしましょう。</strong>
         <br><br>
-        まずは「app」フォルダの中にある「controllers」フォルダから、「<strong>posts_controller.rb</strong>」を開きましょう。（Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>）
+        「posts」データベースのデータ操作は、<strong>「<u>posts_controller.rb</u>」</strong>ファイルに設定します。
         <br><br>
-        開けたら、<u>「def index」と「end」の間</u>を下のように設定しましょう。
+        まずは、Sublime Textで<strong>「<u>app > controllers</u>」</strong>フォルダにある、<strong>「<u>posts_controller.rb</u>」</strong>ファイルを開きましょう。
+        <br>
+        <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+        <br><br>
+        開けたら、<strong><u>「def index」と「end」の間</u></strong>を下のように設定しましょう。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（8行目を追加）</strong>
 <table class='highlight'>
@@ -63,13 +67,17 @@
 </tr>
 </table>
         <br>
-        <strong>「<u>Post.all</u>」</strong>の部分は全く同じですね。<u>これでデータを全て選択します。</u>（信じられないのであれば、「<a href="/mugcups/4#title2" target="_blank"><i>rails c</i></a>」で入力して確認してみてください。）
+        <strong>「<u>Post.all</u>」</strong>の部分は全く同じですね。<strong><u>これでデータを全て選択します。</u></strong>
+        <br>
+        <small>※　信じられないのであれば、「<a href="/mugcups/4#title2" target="_blank"><strong><i>rails c</i></strong></a>」で入力して確認してみてください。</small>
         <br><br>
         <strong>ページ（html）で表示させる時の標識の「<u>@posts</u>」が複数形になっていますね。</strong>
         <br>
         別に名前はなんでもいいんですけど、データを全て表示するなら<u>複数形のほうが分かりやすい</u>のでこんな感じになっています。
         <br><br>
-        データ操作はこんな感じになります。<strong class="little-remarkable">「データベース.all」でデータを全て選択して、標識を設定して下さい。</strong>
+        データ操作はこんな感じになります。
+        <br>
+        <strong class="little-remarkable">「index」では、「データベース.all」でデータを全て選択して、標識を設定して下さい。</strong>
         <br><br>
         <i class="fa fa-question-circle color-green"></i>　<strong><u>tweetsデータベースにある全てのデータを選択</u>するデータ操作を設定して下さい。</strong>
         <br><br>
@@ -84,9 +92,9 @@
 </tr>
 </table>
         <hr class="red-hr">
-        データ操作はここまでなので、<strong><u>ページの設定をやってみましょう！</u></strong>
+        <i class="fa fa-play-circle"></i><strong>　では、ページの設定をしましょう。</strong>
         <br><br>
-        まずは、Sublime Textで開いた「myapp」で<strong>「<i>app > views > posts</i>」</strong>を開いてみましょう。
+        まずは、Sublime Textで開いた<strong>「<u>myapp</u>」</strong>で<strong>「<u>app > views > posts</u>」</strong>を開いてみましょう。
         <br>
         その中に<strong>「<u>index.html.erb</u>」</strong>ファイルはあるでしょうか？あったら開きましょう！
         <br><br>
@@ -118,19 +126,18 @@
 </tr>
 </table>
         <hr class="red-hr">
-        できたらターミナルで「myapp」に移動してから、<strong>「<i>rails s</i>」</strong>を入力して下さい。
-        <br>
+        できたらターミナルで<strong>「<u>myapp</u>」</strong>に移動してから、<strong>「<i>rails s</i>」</strong>を入力して下さい。
+        <br><br>
         サーバーが立ち上がったら、ブラウザで「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみて下さい。
         <br>
         上のような表示は出てきたでしょうか？
         <hr class="red-hr">
-        ここでは、下のような表示を出せるようにしましょう！
+        ここでは、下のような<strong><u>簡単なSNSのようなページ表示</u></strong>をしてみましょう！
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
                     :target => ["_blank"] %>
-        <strong class="remarkable">簡単なSNSですね。</strong>
         <hr class="red-hr">
         では、下のように<strong>「<u>index.html.erb</u>」</strong>ファイルを変更しましょう。
         <br><br>
@@ -173,7 +180,7 @@
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
                     :target => ["_blank"] %>
-        <strong class="remarkable">SNSのトップページのようななにか</strong>はでましたか？
+        <strong><u>SNSのトップページのようなページ</u></strong>が表示されたでしょうか？
         <hr class="red-hr">
         さっきの変更でなにをやったかを説明します。
         <br><br>
@@ -231,7 +238,7 @@
 </tr>
 </table>
         <br>
-        <u>で名前を、idで投稿番号を、contentで内容を表示しています。</u>
+        <u>で名前を、<strong>id</strong>で投稿番号を、<strong>content</strong>で内容を表示しています。</u>
         <hr class="red-hr">
         では、<strong>3行目と7行目</strong>はなにをしているのでしょうか？
         <br><br>
@@ -275,8 +282,8 @@
 </tr>
 </table>
         <br>
-        この「<u>&lt;% @posts.each.do |p| %&gt;</u>」と「<u>&lt;% end %&gt;</u>」を使って、複数あるデータを繰り返し表示させます。
-        <br>
+        この<strong>「<u>&lt;% @posts.each.do |p| %&gt;</u>」</strong>と<strong>「<u>&lt;% end %&gt;</u>」</strong>を使って、複数あるデータを繰り返し表示させます。
+        <br><br>
         そして、<strong>それぞれの繰り返しで「p」にデータを入り、それが表示されます。</strong>
         <br>
         <small>※　この「p」も名前はなんでもいいのですが、<strong><u>「post」の頭文字をとって「p」にしています。</u></strong>名前は自由につけて大丈夫です。</small>
@@ -285,23 +292,23 @@
         <br>
         <strong>「<u>Post.all</u>」のように複数のデータを扱う時は、それを一つ一つのデータに分けて表示する必要があります。</strong>
         <br><br>
-        このような複数のデータは、
+        <i class="fa fa-play-circle"></i>　<strong><u>このような複数のデータ</u></strong>は、
 <pre>
 &lt;% @設定した標識.each do |好きな名前| %&gt;
 </pre>
-        で一つ一つのデータに分けます。
+        で<strong><u>一つ一つのデータに分けます。</u></strong>
         <br>
         <small>※　「&lt;%」で「&lt;%=」でないので注意。</small>
         <br><br>
-        分けたデータは、
+        <i class="fa fa-play-circle"></i>　<strong><u>分けたデータ</u></strong>は、
 <pre>
 &lt;% end %&gt;
 </pre>
-        までの部分で繰り返し表示します。
+        までの部分で<strong><u>繰り返し表示</u></strong>します。
         <br>
         <small>※　ここも「&lt;%」で「&lt;%=」でないので注意。</small>
         <br><br>
-        中のデータの表示は「１つのデータを表示（show）」と同じような感じで
+        <i class="fa fa-play-circle"></i>　<strong><u>中のデータの表示</u></strong>は、<strong>「<a href="/mugcups/5#title1-1" target="_blank">１つのデータを表示（show）</a>」</strong>と同じような感じで
 <pre>
 &lt;%= 設定した名前.枠組みの名前 %&gt;
 </pre>

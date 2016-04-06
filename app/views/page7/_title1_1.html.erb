@@ -5,7 +5,7 @@
   <br><br>
   ページの移動はどのようにして設定するか覚えているでしょうか？
   <br>
-  覚えていなかったら、<a href="/mugcups/5#title1-2-2" target="_blank"><strong>ここ</strong></a>を参考にしてみて下さい！
+  <small>※　覚えていなかったら、<a href="/mugcups/5#title1-2-2" target="_blank"><strong>ここ</strong></a>を参考にしてみて下さい！</small>
   <br><br>
   「<a href="/mugcups/5#title1-1" target="_blank"><strong>１つのデータの表示（show）</strong></a>」をするページに、「<a href="/mugcups/6#title1-5" target="_blank"><strong>編集するデータの記入（edit）</strong></a>」をするページへのリンクを加えましょう。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_1_add_edit.png",
@@ -14,9 +14,11 @@
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_1_add_edit.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  「１つのデータの表示（show）」をするページに設定を加えるので、<strong>「<u>show.html.erb</u>」</strong>に設定を加えていきます。<strong>「<u>show.html.erb</u>」</strong>をまず開きましょう。
+  <strong>「<a href="/mugcups/5#title1-1" target="_blank">１つのデータの表示（show）</a>」</strong>をするページに設定を加えるので、<strong>「<u>show.html.erb</u>」</strong>に設定を加えていきます。
   <br><br>
-  「myapp」をSublime Textで開いてみて（開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>）、中の<strong>「<u>app > views > posts</u>」</strong>の中にある<strong>「<a href="/mugcups/5#title1-1-4-view" target="_blank"><u>show.html.erb</u></a>」</strong>を開きましょう。
+  <strong>「<u>myapp</u>」</strong>をSublime Textで開いてみて、中の<strong>「<u>app > views > posts</u>」</strong>の中にある<strong>「<a href="/mugcups/5#title1-1-4-view" target="_blank"><u>show.html.erb</u></a>」</strong>を開きましょう。
+  <br>
+  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にしてみて下さい</small>
   <br><br>
   開けたら下のように内容を編集しましょう！
   <br><br>
@@ -130,7 +132,7 @@
   <br>
   で設定します。
   <hr class="red-hr">
-  上のままだと全ての「１つのデータの表示」をするページで「idが1」の編集画面に移動するので、<strong><u>この設定を「idが1」のページのみならずページのidにそったものに対応づけます。</u></strong>
+  上のままだと全ての「１つのデータの表示」をするページで「idが1」の編集画面に移動してしまうので、<strong><u>この設定を「idが1」のページのみならずページのidにそったものに対応づけます。</u></strong>
   <br><br>
   <i class="fa fa-question-circle color-green"></i>
   <strong>
@@ -152,7 +154,7 @@
 </table>
   <br>
   <strong>
-  これを参考にして、それぞれのidにそった「編集するデータの記入（edit）」をするページへの移動をするリンクを設定してみましょう！
+  これを参考にして、それぞれの<u>「@post」のidにそった「編集するデータの記入（edit）」をするページへの移動をするリンク</u>を設定してみましょう！
   <br>
   <small>※　分からなかったら<a href="/mugcups/5#title1-2-3-chrome" target="_blank"><strong>ここらへん</strong></a>を参考にしてみましょう</small>
   </strong>

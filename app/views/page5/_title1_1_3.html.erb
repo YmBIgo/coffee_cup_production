@@ -1,11 +1,13 @@
 <h4 id="chapter5-1-1-3">
         <p id="title1-1-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : ページを設定する</strong></p>
         ここまでで<u>「７つのページの設定」と「データ操作の設定」</u>が終わりました。
-        <br>
+        <br><br>
         <strong>いよいよ、保存したデータをページに表示してみましょう！</strong>
         ページの作成は、前に少し触れた<strong class="little-remarkable"><u>「views」フォルダにhtmlファイルを作る</u></strong>ことでやっていきます。
         <hr class="red-hr">
-        まずは下の手順に従って、Sublime Textで開いた「myapp > app」から「views」フォルダを開いてみましょう！（Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>から）
+        まずは下の手順に従って、Sublime Textで開いた<strong>「<u>myapp > app</u>」</strong>から<strong>「<u>views</u>」</strong>フォルダを開いてみましょう！
+        <br>
+        <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Select_views.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -13,9 +15,11 @@
                     :target => ["_blank"] %>
         この「views」フォルダに入っている<strong><u>「posts」ファルダ</u>に、ページを表示させるための設定ファイル・htmlファイルを作っていきます。</strong>
         <br><br>
-        まずはこの<strong>「<u>posts</u>」ファルダにページを設定するファイル、「<u>show.html.erb</u>」を保存してみましょう！</strong>（ファイルの保存の方法は<a href="/mugcups/how_to_save" target="_blank"><strong>こちら</strong></a>から）
+        まずはこの<strong>「<u>posts</u>」ファルダにページを設定するファイル、「<u>show.html.erb</u>」を保存してみましょう！</strong>
         <br>
-        <small>※　「show.html」でなくて「show.html.erb」などという変な名前なのは、Ruby on Railsでデータを扱うためのファイルだからです。</small>
+        <small>※　ファイルの保存の方法は<a href="/mugcups/how_to_save" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+        <br>
+        <small>※　<strong><u>「show.html」でなくて「show.html.erb」</u></strong>などという変な名前なのは、Ruby on Railsでデータを扱うためのファイルだからです。</small>
         <br><br>
         できたら、下の手順で<strong>「<u>show.html.erb</u>」</strong>を開いてみましょう。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_posts_show_html_erb.png",
@@ -46,9 +50,9 @@
                     :target => ["_blank"] %>
         これらのファイルを使って、他のページの設定をしていきます。
         <hr class="red-hr">
-        では、ページの設定をしてみましょう！
-        <br>
-        <u>まずは、htmlの復習を兼ねて文字を表示させましょう。</u>
+        <i class="fa fa-play-circle"></i>　<strong>では、ページの設定をしてみましょう！</strong>
+        <br><br>
+        まずはhtmlの復習を兼ねて、<strong><u>文字を表示させましょう。</u></strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
         <br>
@@ -63,8 +67,10 @@
 </table>
         <br>
         <u>これで内容が保存できたら、ブラウザで表示させてみましょう！</u>
+        <br><br>
+        Ruby on Railsで作ったウェブページでは、<strong><u>まずサーバーを立ちあげてからページを表示させます。</u></strong>
         <br>
-        Ruby on Railsで作ったウェブページでは、<strong><u>まずサーバーを立ちあげてからページを表示させます。</u></strong>（詳しい内容は<a href="/mugcups/3#title2-3" target="_blank"><strong>こちら</strong></a>から）
+        <small>※　詳しい内容は<a href="/mugcups/3#title2-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
         <br><br>
         <strong class="little-remarkable">サーバーを立ちあげて、ページを見てみましょう！</strong>
         <hr class="red-hr">
@@ -115,10 +121,10 @@
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_1.png",
                     :target => ["_blank"] %>
         「１つのデータを表示する（show）」のページは、<strong>「<u>0.0.0.0:3000/データベース名/idの番号</u>」</strong>で「idの番号」のデータを選択することができます。
-        <br><br>
-        このページは<strong>「<u>postsデータベースの中から、idが1</u>」</strong>のデータを選択しています。
         <br>
-        では、「<a href="http://0.0.0.0:3000/posts/2016" target="_blank"><strong>0.0.0.0:3000/posts/2016</strong></a>」をブラウザで開いてみて下さい。
+        このページは<strong>「<u>postsデータベースの中から、idが1</u>」</strong>のデータを選択しています。
+        <hr class="red-hr">
+        では次に試しに、「<a href="http://0.0.0.0:3000/posts/2016" target="_blank"><strong>0.0.0.0:3000/posts/2016</strong></a>」をブラウザで開いてみて下さい。
         <br><br>
         下のようなエラーの表示っぽいものはでてきたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_2016.png",
@@ -146,10 +152,10 @@
         <br>
         <hr class="red-hr">
         ここまでで各データのページを作ってみました。
-        <br>
+        <br><br>
         <strong><u>でもこれだけではなにも変わらなくて面白くないので、保存したデータを表示させてみましょう！</u></strong>
         <br>
-        <u>下のように「show.html.erb」を変更してみましょう！</u>
+        <u>下のように<strong>「show.html.erb」</strong>を変更してみましょう！</u>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>show.html.erb（2〜4行目を変更）</strong>
         <br>
@@ -167,7 +173,7 @@
 </tr>
 </table>
         <br>
-        内容が変更できたら、ターミナルで「<u>myapp</u>」に移動してから<strong>「<i>rails s</i>」</strong>でサーバを立ち上げて、「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう！
+        内容が変更できたら、ターミナルで<strong>「<u>myapp</u>」</strong>に移動してから<strong>「<i>rails s</i>」</strong>でサーバを立ち上げて、「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう！
         <br><br>
         下のように保存されたデータが表示されたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
@@ -196,10 +202,10 @@
 </table>
         <br>
         内容はなんとなく想像できるのではないかと思います。
-        <br>
-        <strong><a href="/mugcups/5#title1-1-2" target="_blank">さっきデータ操作の部分</a>で設定した「<u>@post</u>」</strong>がありますね。この<strong>「<u>@post</u>」</strong>がページで選択されたデータになります。
         <br><br>
-        <u>なので、もしデータ操作の部分・「posts_controller.rb」で「@post」を設定しなければ、このようなデータは表示されません。</u>
+        <strong><a href="/mugcups/5#title1-1-2" target="_blank">先程データ操作の部分</a>で設定した「<u>@post</u>」</strong>がありますね。この<strong>「<u>@post</u>」</strong>がページで選択されたデータになります。
+        <br><br>
+        <u>なので、もしデータ操作の部分・<strong>「posts_controller.rb」</strong>で<strong>「@post」</strong>を設定しなければ、このようなデータは表示されません。</u>
         <br><br>
 <table class='highlight'>
 <tr>
@@ -227,7 +233,7 @@
         <hr class="red-hr">
         少しだけ説明を加えます。
         <br><br>
-        <strong>Ruby on Railsで作るhtmlファイルでは、データベースからデータを取ってくる必要があります。</strong>
+        <strong>Ruby on Railsで作るhtmlファイルでは、<u>データベースからデータを取ってくる</u>必要があります。</strong>
         <br><br>
         そのような部分は、
 <pre>
@@ -237,7 +243,9 @@
 <pre>
 &lt;% 内容 %&gt;
 </pre>
-        のように設定します。<strong>この<u>「&lt;%=」もしくは「&lt;%」</u>と、<u>「%&gt;」</u>の間でデータベースからの情報をとってきます。
+        のように設定します。
+        <br><br>
+        <strong>この<u>「&lt;%=」もしくは「&lt;%」</u>と、<u>「%&gt;」</u>の間でデータベースからの情報をとってきます。
         <br>
         <u>「&lt;%=」と「%&gt;」</u>の間の内容はページに表示されますが、<u>「&lt;%」と「%&gt;」</u>の間の内容は表示されません。</strong>
         <br><br>
