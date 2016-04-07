@@ -25,11 +25,11 @@
 <span class='code-line remarkable-code'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
 <span class='code-line'></span>
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
-<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
   <br>
-  今回は、「users」データベースの<strong>「<u>show</u>」「<u>index</u>」「<u>edit</u>」「<u>update</u>」</strong>ページはログインしないと見れないように設定した。
+  今回は、<strong>「users」データベースの「<u>show</u>」「<u>index</u>」「<u>edit</u>」「<u>update</u>」ページは<u>ログインしないと見れない</u></strong>ように設定しました。
 </h4>

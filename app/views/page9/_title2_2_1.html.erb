@@ -39,7 +39,7 @@
 <span class='code-line remarkable-code'>  before_action <span class='word-purple'>:authenticate_user!</span></span>
 <span class='code-line'></span>
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 <span class='code-line'></span>
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
@@ -48,7 +48,9 @@
 </tr>
 </table>
   <br>
-  変更ができたら「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動して、<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>を開いてみましょう。
+  <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」を一緒に押して止めて</u></strong>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br>
+  <strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>を開いてみましょう。
   <br><br>
   <strong>まだログインができていないので、ログイン画面がでてきたのではないのでしょうか？</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_sign_in_before_alert.png",
@@ -60,9 +62,9 @@
   <hr class="red-hr">
   今の状態だと全ての「posts」ページが見れなくなっているのですが、<strong><u>例えば「show」「index」だけは会員でなくても見れる</u></strong>ようにすることもできます。
   <br><br>
-  <strong><u>「show」と「index」だけの表示をやってみましょう！</u>
+  <strong><u>「show」と「index」だけで表示をさせるように設定してみましょう！</u>
   <br>
-  さっきの「posts_controller」の設定を少し変更してみましょう。</strong>
+  さっきの「posts_controller」の設定を少し変更してみます。</strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
   <br>
@@ -85,7 +87,7 @@
 <span class='code-line remarkable-code'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
 <span class='code-line'></span>
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 <span class='code-line'></span>
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>

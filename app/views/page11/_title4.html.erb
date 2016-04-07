@@ -12,7 +12,7 @@
   <hr class="red-hr">
   流れとしては、
   <br>
-  ログインした会員であれば、下のような名前のない投稿ページを出し、そこで投稿・変更ができるようにします。
+  <strong>ログインした会員であれば、下のような投稿を記入するページを出し、そこで<u>新しい投稿・変更</u>ができるようにします。</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -23,7 +23,7 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_edit_after_devise.png",
               :target => ["_blank"] %>
-  投稿完了ページ・投稿ページでは、<strong><u>その投稿をした会員の情報が表示</u></strong>されるようにします。
+  投稿完了ページ・投稿ページでは、<strong><u>投稿とその投稿をした会員の情報が表示</u></strong>されるようにします。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_create_after_devise.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -51,7 +51,7 @@
               :target => ["_blank"] %>
   このような表示をするためには、<strong><u>「posts」データベースに誰が投稿をしたかの情報を入れる枠組みを追加</u></strong>し、設定しています。
   <br><br>
-  その後で、<br><strong>データ操作ページ表示の設定をして投稿変更ができるようにして、自分の投稿以外は変更削除を行えない</strong>ようにしなければなりません。
+  その後で、<br><strong>データ操作ページ表示の設定をして投稿変更ができるようにして、<u>自分の投稿以外は変更削除を行えない</u></strong>ようにしなければなりません。
   <hr class="red-hr">
   なのでこの章では下の3つの設定をします。
   <strong>

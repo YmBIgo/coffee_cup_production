@@ -89,13 +89,13 @@ redirect_to "移動先のページ"
 37
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
-<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
 <span class='code-line'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
 <span class='code-line'>      @post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
 <span class='code-line'>    <span class="word-red">else</span></span>
 <span class='code-line remarkable-code'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
-<span class='code-line remarkable-code'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line remarkable-code'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
 <span class='code-line'>    <span class='word-red'>end</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>

@@ -1,7 +1,7 @@
 <h4 id="chapter10-3-2-4">
   <p id="title3-2-4" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : updateページ</strong></p>
   <br>
-  「update」ページのデータ操作は、「edit」ページから受け取ったデータを更新します。
+  <strong>「<u>update</u>」ページのデータ操作</strong>は、「edit」ページから受け取ったデータを更新します。
   <br>
   下のように設定しましょう。
   <br>
@@ -18,16 +18,23 @@
 18
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
-<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line remarkable-code'>    @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>))</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
   <br>
-  更新するデータを選択して、「edit」ページで記入したようにデータを更新します。
+  更新するデータを選択して、<strong>「edit」ページで記入したデータ通りにデータを更新します。</strong>
   <br><br>
-  また変なデータ（idやemailなど）を更新されることを防ぐために、更新できるデータを「users」データベースの「family_name」と「first_name」と「self_introduction」だけに設定しています。
+  また変なデータ（idやemailなど）を更新されることを防ぐために、更新できるデータを<strong>「users」データベースの
+    <ul class="number_ul">
+      <li>「<u>family_name</u>」</li>
+      <li>「<u>first_name</u>」</li>
+      <li>「<u>self_introduction</u>」</li>
+    </ul>
+  だけに設定しています。
+  </strong>
   <hr class="red-hr">
   次に<strong>「<u>app > views > users > update.html.erb</u>」</strong>に設定を加えます。<strong>「<u>update.html.erb</u>」</strong>を下のように変更します。
   <br>
@@ -59,8 +66,8 @@
 </tr>
 </table>
   <br>
-  変更ができたら、「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動して、
-  <br>
+  <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」を一緒に押して止めて</u></strong>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br>
   <strong>「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank">0.0.0.0:3000/users/1/edit</a>」</strong>で編集するデータを記入して、「登録する」ボタンを押しましょう。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_edit.png",
                         :width => "90%",

@@ -6,7 +6,7 @@
   データベースの作成とは言っても、<u>０から作るわけではないのでご安心を。</u>メールアドレス・パスワード・ログインした日時などの枠組みは「devise」が作ってくれます。
   <br>
   <strong>ここでは<u>「devise」が作ってくれない「名字」「名前」「自己紹介」の枠組み</u>を作ります。</strong>
-  <br><br>
+  <hr class="red-hr">
   まずはターミナルで、
   <br><br>
   　<strong>ターミナル</strong>
@@ -40,6 +40,8 @@ rails g devise customer
   この設定ファイルの中に「名字」「名前」「自己紹介」の枠組みを追加しますが、その前に中身を見てみます！
   <br>
   Sublime Textで<strong>「<u>db > migrate > 日時_devise_create_users.rb</u>」</strong>を開いてみましょう！
+  <br>
+  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>日時_devise_create_users.rb</strong>
 <table class='highlight'>
@@ -135,9 +137,18 @@ rails g devise customer
   <br>
   このようなファイルは出てきたでしょうか？
   <br>
-  では<u>「名字」「名前」「自己紹介」の設定</u>を加えましょう。
+  では<strong><u>「名字」「名前」「自己紹介」</u>の設定</strong>を加えましょう。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong><u>短い文字列を入れる「family_name（名字）」・短い文字列を入れる「first_name（名前）」・長い文字列を入れる「self_introduction（自己紹介）」の枠組み</u>は、どのように設定すればいいでしょうか？</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>3つの枠組み
+  <br>
+  <u>
+  <ul class="number_ul">
+    <li>短い文字列を入れる「family_name（名字）」</li>
+    <li>短い文字列を入れる「first_name（名前）」</li>
+    <li>長い文字列を入れる「self_introduction（自己紹介）」</li>
+  </ul>
+  </u>
+  はどのように設定すればいいでしょうか？</strong>
   <br>
   <small>※　分からなかったら<a href="/mugcups/4#title1-4" target="_blank"><strong>こちら</strong></a>を参考にしてみて下さい。</small>
   <br><br>
@@ -278,9 +289,11 @@ rails g devise customer
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rake_db_migrate_model_users.png",
               :target => ["_blank"] %>
-  こんな風な表示がでてきたら、Sequel Proでデータベースを確認してみましょう！（<a href="/mugcups/how_to_open#title2" target="_blank"><strong>Sequel Proのデータベースの開き方</strong></a>）
+  こんな風な表示がでてきたら、Sequel Proでデータベースを確認してみましょう！
   <br>
-  <strong>「myapp_development」を選択して、「users」があるか確認してみましょう。</strong>
+  <small>※　<a href="/mugcups/how_to_open#title2" target="_blank"><strong>Sequel Proのデータベースの開き方</strong></a>を参考にして下さい</small>
+  <hr class="red-hr">
+  <strong>「myapp_development」を選択して、「users」データベースがあるか確認してみましょう。</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Sequel_Pro_users.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),

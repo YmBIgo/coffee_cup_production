@@ -11,7 +11,7 @@
 </pre>
   で設定します。<strong><u>イコールが2つあるので注意して下さい。</u></strong>
   <br><br>
-  なので例えば、「@user」の「id」が「1」かどうかの条件を「if」で判定するには、
+  なので例えば、<strong>「<u>@user</u>」の「<u>id</u>」が「1」かどうかの条件を「<u>if</u>」</strong>で判定するには、
   <br><br>
 <table class='highlight'>
 <tr>
@@ -32,11 +32,11 @@
   <br>
   と書いて設定します。
   <br>
-  一致しない場合は「else」の方の内容を実行もしくは表示します。
+  一致しない場合は、<strong>「<u>else</u>」</strong>の方の内容を実行もしくは表示します。
   <hr class="red-hr">
   この条件の判定の方法で、<strong><u>「posts」データベースの「user_id」と「current_user」の「id」が一致するかを判定</u></strong>します。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>では、「posts」データベースの「user_id」と「current_user」の「id」が一致するかの条件を「if」で判定しましょう。<br>（1行目の上にマウスを置けば答えがでます）</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>では、<u>「posts」データベースの「user_id」と「current_user」の「id」が一致するかの条件を「if」で判定</u>しましょう。<br>（1行目の上にマウスを置けば答えがでます）</strong>
   <br><br>
   <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="5"></textarea>
   <br>
@@ -57,7 +57,7 @@
 </tr>
 </table>
   <br>
-  これを使って「正しいユーザーかどうか」を判定します。
+  <i class="fa fa-play-circle"></i>　<strong>これを使って「正しいユーザーかどうか」を判定します。</strong>
   <hr class="red-hr">
   ではまず、<strong><u>「posts」データベースの「show」ページで投稿した会員の場合のみ</u></strong>
   <br><br>
@@ -75,7 +75,7 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
               :target => ["_blank"] %>
-  これは「show」ページを設定する<strong>「<u>app > views > posts > show.html.erb</u>」</strong>に下の設定を追加して下さい。
+  これは<strong>「<u>show</u>」</strong>ページを設定する<strong>「<u>app > views > posts > show.html.erb</u>」</strong>に下の設定を追加して下さい。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>show.html.erb（半角英数字で入力）</strong>
   <br>
@@ -107,10 +107,10 @@
 </tr>
 </table>
   <br>
-  変更ができたら「Command」と「c」でサーバーを止めて、「rails s」でサーバーを再度立ち上げましょう。
-  <br><br>
-  サーバーを立ち上げられたら、<u>新しい会員を登録してその新しい会員で作ってある投稿ページを見てみましょう。</u>
+  <strong><u>新しい会員を登録してその新しい会員で作ってある投稿ページを見てみましょう。</u></strong>
   <br>
+  <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」を一緒に押して止めて</u></strong>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br>
   ボタンが表示されていなければ大丈夫です。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
                         :width => "90%",
@@ -157,8 +157,8 @@
 </tr>
 </table>
   <br>
-  ここまでで「正しい会員かどうか」でのボタンの表示の変更ができました！
-  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>ここまでで「正しい会員かどうか」でのボタンの表示の変更ができました！</strong>
+  <hr class="red-hr">
   ボタンの変更はできたのですが、今のままだとままだと<strong>「users」データベースの「edit」ページ「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank">0.0.0.0:3000/users/1/edit</a>」に誰でもアクセスできます。</strong>
   <br><br>
   もし正しくない会員であれば、
@@ -167,8 +167,10 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_invalid_user.png",
               :target => ["_blank"] %>
-  のように「posts」データベースの「index」ページ<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>に飛ばし、通知を表示させるようにしましょう！
-  <br><br>
+  のように<strong>「<u>posts</u>」データベースの「<u>index</u>」ページ「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>に飛ばし、
+  <br>
+  <p class="alert alert-success">通知を表示させるようにしましょう！</p>
+  <br>
   これも今回取り扱った
 <pre>
 if @post.user_id == current_user.id
@@ -177,5 +179,5 @@ else
   #内容
 end
 </pre>
-  を「controller」ファイルに設定して直してみましょう！
+  を<strong>「<u>controller</u>」</strong>ファイルに設定して直してみます！
 </h4>

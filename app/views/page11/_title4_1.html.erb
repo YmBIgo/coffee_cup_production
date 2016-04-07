@@ -3,17 +3,19 @@
   <br>
   これまでに作った「posts」データベースでは「name」の枠組みがあったので、投稿の作成ページ（<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>）には「name」の入力欄がありました。
   <br><br>
-  ですがここでは、<strong>会員情報（id）を使った枠組みを追加してそれを使う</strong>ので<u>「name」の入力欄はいりません。</u>
+  ですがここでは、<strong>会員情報（id）を使った枠組みを追加して<u>名前を表示させる</u></strong>ので、<u>「name」の入力欄はいりません。</u>
   <hr class="red-hr">
-  まずは、<strong>「name」の入力欄と今残っているデータはいらないので消しちゃいましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>まずは、「name」の入力欄と今残っているデータはいらないので消しちゃいましょう！</strong>
   <br><br>
   <strong class="remarkable"><i class="fa fa-exclamation color-red"></i>　残っているデータ全てを「show」のページの
   <a class="btn btn-danger">投稿を削除する</a>
   で消して下さい。</strong>
   <br><br>
-  データを全て消したら、枠組みを削除しましょう。
+  <i class="fa fa-play-circle"></i>　<strong><u>データを全て消したら、次は枠組みを削除しましょう。</u></strong>
+  <br><br>
+  枠組みの削除は、削除するための設定ファイルを作りそこに削除の設定をします
   <br>
-  枠組みの削除は、削除するための設定ファイルを作りそこに削除の設定をします（詳細は<a href="/mugcups/4#title1-4" target="_blank"><strong>こちら</strong></a>）。
+  <small>※　枠組みの削除の詳細は、<a href="/mugcups/4#title1-4" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
   <br><br>
   まずは設定ファイルを作るために、ターミナルで下の入力をしましょう
   <br><br>
@@ -75,7 +77,9 @@ rails g migration 設定ファイル名
 <pre>
 remove_column :データベース名, :枠組みの名前, :データの種類
 </pre>
-  で枠組みの削除をします。（詳細は<strong><a href="/mugcups/4#title1-4" target="_blank">こちら</a></strong>）
+  で枠組みの削除をします。
+  <br>
+  <small>※　詳細は<strong><a href="/mugcups/4#title1-4" target="_blank">こちら</a></strong>を参考にして下さい</small>
   <br><br>
   設定ができたら設定を適用させるために、
   <br><br>
@@ -91,21 +95,23 @@ remove_column :データベース名, :枠組みの名前, :データの種類
   <br>
   を入力して下さい。
   <br><br>
-  ここまでできたら、Sequel Proでデータベースを確認してみましょう！（Sequel Proの開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>）
+  ここまでできたら、<strong><u>Sequel Pro</u></strong>でデータベースを確認してみましょう！
   <br>
-  <u>「name」の枠組みは無くなっているでしょうか？</u>
+  <small>※　Sequel Proの開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <u><strong>「name」の枠組み</strong>は無くなっているでしょうか？</u>
   <hr class="red-hr">
-  <strong><u>では、「posts」データベースに会員の情報を入れる枠組みを設定しましょう。</u></strong>
-  <br>
+  <i class="fa fa-play-circle"></i>　<strong><u>では、「posts」データベースに会員の情報を入れる枠組みを設定しましょう。</u></strong>
+  <br><br>
   先ほど消した「name」の代わりに<u>会員情報「users」データベースの「id」</u>を入れる<strong>会員情報の枠組み「user_id」</strong>を、「posts」データベースに追加します。
   <br><br>
-  「users」の「id」と対応させるので、<u>枠組みのデータの種類は「数字」・名前は「user_id」</u>にします。
+  「users」の「id」と対応させるので、<u>枠組みのデータの種類は<strong>「数字」</strong>・名前は<strong>「user_id」</strong></u>にします。
   <br><br>
-  例えば「idが189」の会員が投稿をしたら、「posts」データベースの「user_id」に「189」のデータが入って、この会員番号を使って名前を表示させます。
+  例えば「idが189」の会員が投稿をしたら、<strong>「<u>posts</u>」データベースの「<u>user_id</u>」に「<u>189</u>」のデータが入って、この会員番号を使って名前を表示</strong>させます。
+  <hr class="red-hr">
+  <strong>ではやってみましょう！</strong>
   <br><br>
-  ではやってみます。
-  <br>
-  まずは設定ファイルを作りましょう！
+  まずは設定ファイルを作ってみます！
   <br>
   <small>※　詳細は<a href="/mugcups/4#title1-4" target="_blank"><strong>こちら</strong></a></small>
   <br><br>
@@ -147,8 +153,10 @@ remove_column :データベース名, :枠組みの名前, :データの種類
 <pre>
 add_column :データベース名, :名前, :データの種類
 </pre>
-  で枠組みの追加をします。数字を入れるデータの種類は「integer」でした。（詳細は<a href="/mugcups/4#title1-3-1" target="_blank"><strong>こちら</strong></a>）
+  で枠組みの追加をします。数字を入れるデータの種類は<strong>「<u>integer</u>」</strong>でした。
   <br>
+  <small>※　詳細は<a href="/mugcups/4#title1-3-1" target="_blank"><strong>こちら</strong></a>になります</small>
+  <hr class="red-hr">
   設定ファイルができたら設定を適用させるために、
   <br><br>
   　<strong>ターミナル</strong>
@@ -163,8 +171,10 @@ add_column :データベース名, :名前, :データの種類
   <br>
   これで枠組みの変更ができました。
   <br>
-  こっちもSequel Proで内容を確認しましょう（確認の方法は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>）
+  こっちも<strong><u>Sequel Pro</u></strong>で内容を確認しましょう
   <br>
+  <small>確認の方法は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
   <strong>「user_id」は追加されてるでしょうか？</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Sequel_Pro_add_user_id.png",
                         :width => "90%",

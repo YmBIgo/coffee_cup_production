@@ -8,6 +8,8 @@
   まずは登録ページ（<a href="http://0.0.0.0:3000/users/sign_up" target="_blank"><strong>0.0.0.0:3000/users/sign_up</strong></a>）を見てみます。
   <br>
   <strong><u>「app > views > devise > registrations」</u></strong>のフォルダに入っている<strong>「<u>new.html.erb</u>」</strong>を開いてみましょう！
+  <br>
+  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>new.html.erb（registrationsフォルダ）</strong>
 <table class='highlight'>
@@ -94,7 +96,7 @@ f.password_field :password
   <br><br>
   <i class="fa fa-question-circle color-green"></i>　<strong><u>new.html.erbの「f.email_field」</u>に、Bootstrapの入力欄の設定を加えて下さい。</strong>
   <br>
-  <small>※　分からなくなったら、<a href="/mugcups/7#title2-2-3" target="_blank">こちらを参考</a></small>
+  <small>※　分からなくなったら、<a href="/mugcups/7#title2-2-3" target="_blank"><strong>こちら</strong></a>を参考</small>
   <br><br>
   <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
   <br>
@@ -102,14 +104,21 @@ f.password_field :password
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line'>&lt;%= f.email_field <span class="word-purple">:email</span>, <span class="word-purple">autofocus:</span> <span class="word-purple">true</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span> %&gt;</span>
+<td class='code-content answer-code'><span class='code-line'>&lt;%= f.email_field <span class="word-purple">:email</span>, <span class="word-purple">autofocus:</span> <span class="word-purple">true</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span></span> %&gt;</span>
 </td>
 </tr>
 </table>
   <hr class="red-hr">
   これでもBootstrapの入力欄の設定はできますが、<strong><u>長すぎる</u>ので<a href="/mugcups/7#title2-2-3" target="_blank">前に作った「my-form」</a>を加えて長さを短くしましょう。</strong>
   <br><br>
-  「f.email_field」が終わったら、「f.password_field」に<a href="/mugcups/7#title2-2-3" target="_blank"><strong>入力欄の設定</strong></a>を「f.submit」に<a href="/mugcups/7#title2-2-2" target="_blank"><strong>ボタンの設定</strong></a>を加えましょう。
+  <strong>「f.email_field」の設定</strong>が終わったら、
+  <strong>
+  <ul class="number_ul">
+    <li>「f.password_field」に<a href="/mugcups/7#title2-2-3" target="_blank">入力欄の設定</a></li>
+    <li>「f.submit」に<a href="/mugcups/7#title2-2-2" target="_blank">ボタンの設定</a></li>
+  </ul>
+  </strong>
+  を加えましょう。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>new.html.erb（8、16、21、23、25行目を変更）</strong>
   <br>
@@ -179,7 +188,9 @@ f.password_field :password
 </tr>
 </table>
   <br>
-  変更ができたら、「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動して、<strong>「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</strong>を開いてみましょう！
+  <small>※　内容を適用させるために、一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+  <br><br>
+  <strong>「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</strong>を開いてみましょう！
   <br>
   下のように表示されたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_bootstrap.png",
@@ -256,7 +267,9 @@ f.password_field :password
 </tr>
 </table>
   <br>
-  変更ができたら、「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動して、<strong>「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</strong>を開いてみましょう！
+  <small>※　内容を適用させるために、一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+  <br><br>
+  <strong>「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</strong>を開いてみましょう！
   <br>
   下のように表示されたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_bootstrap.png",

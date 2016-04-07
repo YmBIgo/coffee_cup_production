@@ -1,8 +1,8 @@
 <h4 id="chapter10-3-3-2">
   <p id="title3-3-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : user_signed_in?</strong></p>
   <br>
-  まずは作ったばっかりの「ログアウト」のリンクをクリックしてみましょう。ログアウトはできるでしょうか？
-  <br>
+  <strong>まずは作ったばっかりの<u>「ログアウト」のリンクをクリック</u>してみましょう。ログアウトはできるでしょうか？</strong>
+  <br><br>
   押したら下のようなページが出てくるのではないかと思います。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_after_logout.png",
                         :width => "90%",
@@ -10,20 +10,24 @@
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_after_logout.png",
               :target => ["_blank"] %>
   <strong>これはログアウトをして<u>ログインしている会員の情報がないのに、「current_user」でログインしている会員の情報を取得しようとして出てくるエラーページ</u>です。</strong>
-  <br>
-  ログアウトはできたんですが、このようなエラーページが出てきてしまってはどうしようもないですね。
   <br><br>
+  ログアウトはできたんですが、このようなエラーページが出てきてしまってはどうしようもないですね。
+  <hr class="red-hr">
   このようなエラーがあるので、ログインしている時とログアウトしている時で表示を変更する必要があります。
   <ul class="number_ul">
+    <br>
     <strong><li>ログインしている時</li></strong>
-    「ユーザー一覧」「ユーザー情報」「新しく投稿する」「ログアウト」のリンクを表示する
+    <br>
+    <strong><u>「ユーザー一覧」「ユーザー情報」「新しく投稿する」「ログアウト」</u></strong>のリンクを表示する
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
               :target => ["_blank"] %>
+    <br>
     <strong><li>ログアウトしている時</li></strong>
-    「ログインする」「登録する」のリンクを表示する
+    <br>
+    <strong><u>「ログインする」「登録する」</u></strong>のリンクを表示する
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -45,7 +49,9 @@ user_signed_in?
 </pre>
   で条件にあっているかどうかを判定します。
   <br><br>
-   <strong>では、この「user_signed_in?」と「&lt;% if %&gt;」を使い、<u>ログインした時にだけ「ユーザー一覧」「ユーザー情報」「新しく投稿する」「ログアウト」のリンクを表示する設定</u>を加えてみます。</strong>
+   <strong>では、この「user_signed_in?」と「&lt;% if %&gt;」を使って、<u>
+   <br>
+   ログインしている時にだけ「ユーザー一覧」「ユーザー情報」「新しく投稿する」「ログアウト」のリンクを表示する設定</u>を加えてみます。</strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（25、30行目を追加）</strong>
   <br>
@@ -81,7 +87,9 @@ user_signed_in?
 </tr>
 </table>
   <br>
-  サーバーを再起動（「Command」「c」で止めて「rails s」）させて、もう一度同じページを読み込んでみましょう。
+  <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」を一緒に押して止めて</u></strong>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br>
+  <strong>もう一度同じページを読み込んでみましょう。</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_logout.png",
                         :width => "90%",
                         :class =>" hover_img textbook-title-img"),
@@ -97,9 +105,9 @@ user_signed_in?
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_login.png",
               :target => ["_blank"] %>
-  <strong>こう見るとログインしたのに、まだ「ログインする」「登録する」のリンクが残っていますね。</strong>
+  <strong>こう見るとログインしたのに、まだ<u>「ログインする」「登録する」のリンク</u>が残っていますね。</strong>
   <br>
-  これも「&lt;% if %&gt;」の条件を使って消しちゃいましょう。
+  これも<strong>「<u>&lt;% if %&gt;</u>」</strong>の条件を使って消しちゃいましょう。
   <br><br>
   条件にあうものは
 <pre>
@@ -155,9 +163,9 @@ user_signed_in?
 </tr>
 </table>
   <br>
-  サーバーを再起動（「Command」「c」で止めて「rails s」）させて、もう一度同じページを読み込んでみましょう。
-  <br>
-  再起動ができたら、もう一度ログインした状態で好きなページを開いてみましょう。
+  <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」を一緒に押して止めて</u></strong>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br>
+  <strong><u>変更ができたら、もう一度ログインした状態で好きなページを開いてみましょう。</u></strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),

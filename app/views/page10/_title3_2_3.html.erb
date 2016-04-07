@@ -1,7 +1,7 @@
 <h4 id="chapter10-3-2-3">
   <p id="title3-2-3" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : editページ</strong></p>
   <br>
-  「edit」ページのデータ操作は、編集するデータを選択します。
+  <strong>「<u>edit</u>」ページのデータ操作</strong>は、編集するデータを選択します。
   <br>
   下のように設定しましょう！
   <br>
@@ -17,13 +17,13 @@
 13
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
-<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
   <br>
-  この「@user」の情報を記入する入力欄と送信ボタンを設定します。
+  この<strong>「<u>@user</u>」の<u>情報を記入する入力欄</u>と<u>送信ボタン</u>を設定</strong>します。
   <hr class="red-hr">
   次に<strong>「<u>app > views > users > edit.html.erb</u>」</strong>に設定を加えます。<strong>「<u>edit.html.erb</u>」</strong>を下のように変更します。
   <br>
@@ -69,8 +69,8 @@
 </tr>
 </table>
   <br>
-  変更ができたら、「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動して、
-  <br>
+  <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」を一緒に押して止めて</u></strong>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br>
   <strong>「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank">0.0.0.0:3000/users/1/edit</a>」</strong>を開きましょう！
   <br>
   下のようなページは表示されたでしょうか？

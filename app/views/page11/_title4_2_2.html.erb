@@ -1,44 +1,36 @@
 <h4 id="chapter10-4-2-2">
   <p id="title4-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : ページ表示</strong></p>
   <br>
-  では、ページ表示を設定しましょう。
-  <br>
+  <i class="fa fa-play-circle"></i>　<strong>では、ページ表示を設定しましょう。</strong>
+  <hr class="red-hr">
   「posts」データベースの「name」を表示している部分を、<strong><u>「users」データベースの「family_name」「first_name」に変更</u></strong>していきます。
   <br><br>
   この表示の変更には
   <strong>
     <ul class="number_ul">
       <li>入力欄の変更</li>
-      <li>「@user」の情報「family_name」「first_name」の表示</li>
+      <li>「<u>@user</u>」の情報「<u>family_name</u>」「<u>first_name</u>」の表示</li>
     </ul>
-  </strong>
   の二つがあります。
   <br>
-  <strong>まずは入力欄の変更からやってみます。</strong>
+  まずは入力欄の変更からやってみます。</strong>
   <ul class="number_ul">
     <hr class="red-hr">
     <strong><li>入力欄の変更</li></strong>
       <br>
-      「name」の枠組みは無くなって「user_id」の設定も「posts_controller」で行えるようにしたので、<strong><u>「name」を設定している入力欄を消しましょう。</u></strong>
-      <br>
-      入力欄の設定をしているページは、
-      <strong>
-      <ul class="number_ul">
-        <li>new.html.erb</li>
-        <li>edit.html.erb</li>
-      </ul>
-      </strong>
-      になりますので、この2つのファイルを設定してみます。
-      <hr class="red-hr">
-      まずは「new.html.erb」からやってみます。
+      「name」の代わりに「user_id」を使って<strong>「<u>posts_controller.rb</u>」での<u>データ操作</u></strong>をしたので、今度は<strong><u>ページ表示</u>で「name」を設定している入力欄を消しましょう。</strong>
+      <br><br>
+      「name」の入力欄の設定をしているページは、<strong><u>new.html.erb</u></strong>になります。
+      <br><br>
+      <i class="fa fa-play-circle"></i>　<strong>では「<u>new.html.erb</u>」を変更してみましょう！</strong>
       <br><br>
       <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
       <br>
 <table class='highlight'>
 <tr>
-<td class='code-line-no text-center'>1
-2
-3
+<td class='code-line-no text-center'>4
+5
+6
 </td>
 <td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>    &lt;%= f.text_field <span class="word-purple">:name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
@@ -48,34 +40,16 @@
 </table>
       <br>
       の行を消しましょう。<strong><u>消せたら「Command」と「s」を一緒に押し、内容を保存しましょう。</u></strong>
-      <hr class="red-hr">
-      これができたら、「edit.html.erb」でも同じように、
       <br><br>
-      <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-</td>
-<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>    &lt;%= f.text_field <span class="word-purple">:name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
-</td>
-</tr>
-</table>
+      これで入力欄も消せたので、
       <br>
-      を消しましょう。
-      <br>
-      こちらも変更が完了したら、<strong><u>「Command」と「s」を一緒に押して内容を保存しましょう。</u></strong>
-      <br><br>
-      入力欄も消せたので、次は「name」の代わりに「@user」を表示させるようにしましょう。
+      <strong>次は「<u>@post</u>」の「<u>name</u>」の代わりに、「<u>@user</u>」の「<u>family_name</u>」「<u>first_name</u>」を表示</strong>させるようにしましょう。
       <hr class="red-hr">
     <strong><li>@userの表示</li></strong>
     <br>
     では、会員の情報を表示させてみましょう。
     <br><br>
-    <i class="fa fa-question-circle color-green"></i>　<strong>ページで「@user」の「family_name」を表示させるにはどのような設定をすればいいでしょうか？</strong>
+    <i class="fa fa-question-circle color-green"></i>　<strong><u>ページで「@user」の「family_name」を表示</u>させるにはどのような設定をすればいいでしょうか？</strong>
     <br><br>
     <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
     <br>
@@ -88,7 +62,7 @@
 </tr>
 </table>
     <br>
-    この設定を使って「@user」を設定した
+    この設定を使って<strong>「<u>@user</u>」</strong>を設定した
     <strong>
     <ul class="number_ul">
       <li><u>show.html.erb</u></li>
@@ -98,9 +72,9 @@
     </ul>
     </strong>
     <br>
-    に、<u>会員の情報「family_name」「first_name」</u>を表示させます。
+    に、<strong>会員の情報「<u>family_name</u>」「<u>first_name</u>」</strong>を表示させます。
     <hr class="red-hr">
-  まずは「@user」の「family_name」「first_name」を、<strong>「<a href="/mugcups/5#title1-1" target="_blank">show</a>」</strong>ページに表示させてみましょう！
+  まずは<strong>「<u>@user</u>」</strong>の<strong>「<u>family_name</u>」「<u>first_name</u>」</strong>を、<strong>「<a href="/mugcups/5#title1-1" target="_blank">show</a>」</strong>ページに表示させてみましょう！
   <br>
   <strong>「<u>app > views > posts > show.html.erb</u>」</strong>を開いて下のように内容を変更してみましょう。
   <br><br>
@@ -130,11 +104,19 @@
 </tr>
 </table>
   <br>
-  これで投稿のページに会員の情報を表示させる設定ができました。
-  <br>
+  これで、<strong>投稿のページに<u>会員の情報を表示</u>させる設定</strong>ができました。
+  <br><br>
   ついでにページを綺麗にするために3,4行目も変更したので、忘れず変更しましょう。
   <hr class="red-hr">
-  <strong>同じように「<u>create.html.erb</u>」「<u>update.html.erb</u>」「<u>destroy.html.erb</u>」も下のように設定しましょう！</strong>
+  <strong>
+    同じようにして、
+    <ul class="number_ul" style="margin-bottom:10px;">
+      <li>「<u>create.html.erb</u>」</li>
+      <li>「<u>update.html.erb</u>」</li>
+      <li>「<u>destroy.html.erb</u>」</li>
+    </ul>
+    も下のように設定しましょう！
+  </strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>create.html.erb（半角英数字で入力）</strong>
   <br>
@@ -208,11 +190,13 @@
 </tr>
 </table>
     <br>
-    <i class="fa fa-exclamation color-red"></i>　<strong>これで「create」「update」「destroy」のページの設定ができました！</strong>
+    <i class="fa fa-exclamation color-red"></i>　<strong>これで「<u>create</u>」「<u>update</u>」「<u>destroy</u>」のページの設定ができました！</strong>
     <hr class="red-hr">
     ここまでで大体終わったんですが、実は<strong><u>「index.html.erb」の設定</u></strong>はまだやっていなかったのでやってみたいと思います。
     <br><br>
-    「index.html.erb」で設定する<strong><u>「@posts」は複数のデータを表示させるため「@user」を指定できない</u></strong>ので、ここまででは説明してきませんでした。（詳細は<a href="/codes/5#title1-2" target="_blank"><strong>こちら</strong></a>）
+    「index.html.erb」で設定する<strong><u>「@posts」は複数のデータを表示させるため「@user」を指定できない</u></strong>ので、ここまででは説明してきませんでした。
+    <br>
+    <small>※　詳細は<a href="/codes/5#title1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
     <br><br>
     ですが会員の情報を指定した
 <pre>
@@ -224,7 +208,7 @@ User.find(idの番号)
 </pre>
     の中でも使うこともできるので、それを使って設定してみます。
     <br><br>
-    例えば「id」が「90」の会員の「family_name」を表示させるなら、
+    <i class="fa fa-play-circle"></i>　<strong>例えば、「id」が「90」の会員の「<u>family_name</u>」を表示させるなら、</strong>
     <br><br>
 <table class='highlight'>
 <tr>
@@ -312,10 +296,10 @@ Post.all
 </tr>
 </table>
     <hr class="red-hr">
-    ここまでできたら、<u>「rails s」で動いているサーバーを「Command」と「c」を押し停止させ、また「rails s」でサーバーを立ち上げましょう。</u>
-    <br><br>
-    再起動ができたら<strong>「<a href="http://0.0.0.0:3000/posts/new" target="_blank">0.0.0.0:posts/new</a>」</strong>を開いてみましょう！
+    <strong>「<a href="http://0.0.0.0:3000/posts/new" target="_blank">0.0.0.0:posts/new</a>」</strong>を開いてみましょう！
     <br>
+    <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」を一緒に押して止めて</u></strong>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+    <br><br>
     下のようなページは出てきたでしょうか？
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise_before.png",
                           :width => "90%",

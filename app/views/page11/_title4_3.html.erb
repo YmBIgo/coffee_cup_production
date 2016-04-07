@@ -4,7 +4,7 @@
   最後に投稿の変更・削除をできる会員のチェックをする設定を加え、「ユーザー管理」の説明も終わりにしたいと思います。
   <br>
   <strong>今の状態だと、<u>他の人の投稿の変更・削除ができてしまう</u>のでそれを直しましょう！</strong>
-  <br><br>
+  <hr class="red-hr">
   <strong>流れとしては、他の人の投稿ページでは「編集する」「削除する」のボタンを表示させず
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
                         :width => "90%",
@@ -29,9 +29,9 @@ else
   内容
 end
 </pre>
-  をデータ操作の設定「posts_controller.rb」に入れることで設定します。
+  をデータ操作の設定<strong>「<u>posts_controller.rb</u>」</strong>に入れることで設定します。
   <br>
-  条件に合っていれば「if」の設定を、合っていなければ「else」の設定を実行させます。
+  条件に合っていれば<strong>「<u>if</u>」</strong>の設定を、合っていなければ<strong>「<u>else</u>」</strong>の設定を実行させます。
   <br>
   <strong><u>ではやってみましょう！</u></strong>
   <hr class="red-hr">

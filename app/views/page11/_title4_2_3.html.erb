@@ -12,9 +12,7 @@
       <li>会員情報の表示</li>
     </ul>
   </strong>
-  の設定をした。
-  <br>
-  ここでそれぞれの内容をまとめる。
+  の設定をしました。ここでそれぞれの内容をまとめます。
   <br><br>
   <strong>設定した内容は<a href="/codes/11" target="_blank">こちら</a>を参考にしてみて下さい</strong>
   <ul class="number_ul">
@@ -30,7 +28,7 @@
     </strong>
     の2つがある。
     <hr class="red-hr">
-    <i class="fa fa-play-circle"></i>　データ作成をするためには<u>「posts_controller.rb」の「create」に「user_id」に内容を入れる設定を加える。</u>
+    <i class="fa fa-play-circle"></i>　データ作成をするためには<u><strong>「posts_controller.rb」</strong>の<strong>「create」</strong>に<strong>「user_id」</strong>に内容を入れる設定を加える。</u>
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
 <table class='highlight'>
@@ -40,13 +38,13 @@
 19
 </td>
 <td class='code-content small-code'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.create(params.require(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span><span class="remarkable-code">, <span class='word-purple'>:user_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id)</span>)</span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span><span class="remarkable-code">, <span class='word-purple'>:user_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id)</span>)</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
     <hr class="red-hr">
-    <i class="fa fa-play-circle"></i>　表示するページのデータ操作の設定に<u>「@user」の標識を設定する。</u>
+    <i class="fa fa-play-circle"></i>　表示するページのデータ操作の設定に<u><strong>「@user」</strong>の標識を設定する。</u>
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
 <table class='highlight'>
@@ -57,8 +55,8 @@
 8
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
-<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
-<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
@@ -66,7 +64,7 @@
     <hr class="red-hr">
     <strong><li>会員情報の表示</li></strong>
     <br>
-    会員情報はデータ操作の「@user」からデータを表示させる。
+    会員情報はデータ操作の<strong>「<u>@user</u>」</strong>からデータを表示させる。
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
 <table class='highlight'>
@@ -92,7 +90,7 @@
 </tr>
 </table>
     <hr class="red-hr">
-    長い設定になるが、「@user」を使わないで表示をすることもできる。
+    長い設定になるが、<strong>「<u>@user</u>」</strong>を使わないで表示をすることもできる。
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
 <table class='highlight'>

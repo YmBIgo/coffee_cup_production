@@ -1,7 +1,7 @@
 <h4 id="chapter10-3-2-2">
   <p id="title3-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : indexページ</strong></p>
   <br>
-  「index」ページのデータ操作は、「users」データベースから全てのデータを取り出すデータ操作になります。
+  <strong>「<u>index</u>」ページのデータ操作</strong>は、「users」データベースから全てのデータを取り出すデータ操作になります。
   <br>
   <small>※　詳しい説明は<strong><u>「posts」データベースの「<a href="/mugcups/5#title1-2" target="_blank">index</a>」ページ</u></strong>を参考にして下さい</small>
   <br><br>
@@ -15,13 +15,13 @@
 9
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
-<span class='code-line remarkable-code'>    @users = <span class='word-blue'>User</span>.all</span>
+<span class='code-line remarkable-code'>    @users <span class="word-red">=</span> <span class='word-blue'>User</span>.all</span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
   <br>
-  「users」データベースの全てのデータ「@users」をページに表示させます。
+  「users」データベースの全てのデータ<strong>「<u>@users</u>」をページに表示させます。</strong>
   <hr class="red-hr">
   次に<strong>「<u>app > views > users > index.html.erb</u>」</strong>に表示の設定を加えます。<strong>「<u>index.html.erb</u>」</strong>を下のように変更しましょう。
   <br>
@@ -51,8 +51,8 @@
 </tr>
 </table>
   <br>
-  変更ができたら、「Command」と「c」を一緒に押してサーバーを停止させて「rails s」でサーバーを再起動して、
-  <br>
+  <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」を一緒に押して止めて</u></strong>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br>
   <strong>「<a href="http://0.0.0.0:3000/users" target="_blank">0.0.0.0:3000/users</a>」</strong>を開きましょう！
   <br>
   下のようなページが表示されたでしょうか？
@@ -61,5 +61,5 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users.png",
               :target => ["_blank"] %>
-  こっちでも「family_name」と「first_name」に内容が入っていないので、「さん」としか表示されていませんね。
+  こっちでも<strong>「<u>family_name</u>」と「<u>first_name</u>」</strong>に内容が入っていないので、「さん」としか表示されていませんね。
 </h4>
