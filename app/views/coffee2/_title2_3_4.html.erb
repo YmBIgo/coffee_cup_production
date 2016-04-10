@@ -1,7 +1,74 @@
 <h4 id="coffee-chapter2-2-3-4">
   <p id="title2-3-4" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : まとめ</strong></p>
   <br>
-  今回新しく、<strong><u>hidden_field</u></strong>を設定しました。
+  今回新しく、
+  <strong>
+  <ul class="number_ul">
+    <li>has_many / belongs_to</li>
+    <li>hidden_field</li>
+  </strong>
+  <br>
+  を設定しました。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>has_many / belongs_to</strong>
+  <br><br>
+  あるデータベースが他のデータベースのデータを複数持っている場合、
+  <br>
+  データの選択を簡単にするための設定として、<strong>「<u>has_many</u>」と「<u>belongs_to</u>」</strong>がある。
+  <br><br>
+  これを設定するには、<strong>「<u>app > models > データベース名（単数形）.rb</u>」</strong>を
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>主人のデータベース名（単数形）.rb</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>has_many <span class='word-purple'>:配下のデータベース名（複数形）</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>配下のデータベース名（単数形）.rb</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>belongs_to <span class='word-purple'>:主人のデータベース名（単数形）</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  の設定を追加し、
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong><u>データの選択で、</u></strong>
+  <ul class="number_ul">
+  <br>
+  <li><strong>メッセージデータを作った会員データを選択</strong></li>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @user <span class="word-red">=</span> @message.user</span>
+</td>
+</tr>
+</table>
+  <br>
+  <li><strong>会員が作成したメッセージデータを選択</strong></li>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @messages <span class="word-red">=</span> @user.messages</span>
+</td>
+</tr>
+</table>
+  <br>
+  </ul>
+  のようにしてデータの選択をします。
   <hr class="red-hr">
   <i class="fa fa-play-circle"></i>　<strong>hidden_field</strong>
   <br><br>

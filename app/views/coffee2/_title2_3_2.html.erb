@@ -19,9 +19,9 @@
 3
 4
 5
-6
+<strong class="color-red">6
 7
-<strong class="color-red">8
+8
 9
 10
 11
@@ -38,11 +38,11 @@
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;伝言板&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;伝言板&lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'></span>
-<span class="remarkable-code"><span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; <span class='word-purple'>:</span> &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= m.user.id %&gt;"</span></span>&gt;&lt;%= m.user.family_name %&gt;&lt;%= m.user.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>h5</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= <span class="word-blue">User</span>.find(m.user_id).id %&gt;"</span></span>&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>h5</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span></span>
 <span class='code-line'></span>
@@ -85,9 +85,9 @@
   <br>
   <small>※　内容の詳しい説明は<a href="/mugcups/5#title1-2-1" target="_blank"><strong>こちら</strong></a>を参考</small>
   <br><br>
-  <strong>「<u>messages_controller.rb</u>」で設定した「<u>@messages</u>」を、</strong>
+  <strong>「<u>users_controller.rb</u>」で設定した「<u>@messages</u>」を、</strong>
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb（5〜9行目）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（5〜9行目）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>5
@@ -118,20 +118,334 @@
 10
 11
 </td>
-<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= m.user.id %&gt;"</span></span>&gt;&lt;%= m.user.family_name %&gt;&lt;%= m.user.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>h5</span>&gt;</span>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= <span class="word-blue">User</span>.find(m.user_id).id %&gt;"</span></span>&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>h5</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  ここで、<strong><u>分解したデータ「m」を表示</u></strong>させています。
+  ここでは、
+  <strong>
+  <ul class="number_ul">
+    <li>分解したデータ「m」を表示</li>
+    <li>「m」の「user_id」を使って、投稿をした会員のデータを表示</li>
+  </ul>
+  </strong>
+  させています。
   <br>
   <small>※　内容の詳しい説明は<a href="/mugcups/5#title1-2-1" target="_blank"><strong>こちら</strong></a>を参考</small>
+    <hr class="red-hr">
+  ですが、この
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（9行目）</strong>
+<table class="highlight">
+<tr>
+<td class="code-line-no text-center">9</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= <span class="word-blue">User</span>.find(m.user_id).id %&gt;"</span></span>&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>h5</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  は、少し長い設定になって少し面倒臭いですよね。<strong><u>これを短くして、</u></strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（9行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= m.user.id %&gt;"</span></span>&gt;&lt;%= m.user.family_name %&gt;&lt;%= m.user.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>h5</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  のように設定することもできます。
+  <br>
+  <strong>分解したデータ「<u>m</u>」の「<u>user</u>」の「<u>id</u>」</strong>と分かりやすいのではないかと思います。
+  <hr class="red-hr">
+  <strong>ですが、今設定をしても実は<u>エラー</u>が出てきてしまします。</strong>
+  <br><br>
+  この設定を加えるには、<strong>「<u>app > models</u>」</strong>フォルダにあるファイルに設定を加えます。
+  <br><br>
+  まずは<strong>「<u>app > models</u>」</strong>フォルダを見てみましょう！
+  <br>
+  中には、
+  <strong>
+  <ul class="number_ul">
+    <li>「concerns」フォルダ</li>
+    <li>「<u>user.rb</u>」ファイル</li>
+    <li>「<u>message.rb</u>」ファイル</li>
+  </ul>
+  </strong>
+  の3つが入っていると思います。
+  <br><br>
+  この2つのファイルはそれぞれ、<strong>データベース作成の設定ファイル</strong>を作った、
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise user</span>
+</td>
+</tr>
+</table>
+  <br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model message</span>
+</td>
+</tr>
+</table>
+  <br>
+  の入力の際に作成されました。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>では設定を加えてみましょう！</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= m.user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  を適用させるには、<strong>「<u>user.rb</u>」と「<u>message.rb</u>」</strong>に下の設定を加えます。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>user.rb（7行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+<strong class="color-red">7</strong>
+8
+9
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>User <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'>  <span class='word-gray'># Include default devise modules. Others available are:</span></span>
+<span class='code-line'>  <span class='word-gray'># :confirmable, :lockable, :timeoutable and :omniauthable</span></span>
+<span class='code-line'>  devise <span class='word-purple'>:database_authenticatable</span>, <span class='word-purple'>:registerable</span>,</span>
+<span class='code-line'>         <span class='word-purple'>:recoverable</span>, <span class='word-purple'>:rememberable</span>, <span class='word-purple'>:trackable</span>, <span class='word-purple'>:validatable</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  has_many <span class='word-purple'>:messages</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>message.rb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>Message <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  belongs_to <span class='word-purple'>:user</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>内容を説明しましょう！</strong>
+  <br><br>
+  上の設定は、今回の<strong>「<u>user</u>」と「<u>message</u>」</strong>のように、
+  <br><br>
+  <strong>あるデータベースのデータ（今回は「<u>users</u>」）が、
+  <br>
+  他のデータベースのデータ（今回は「<u>messages</u>」）を<u>複数持つことができる</u>時に、データの選択を簡単にするための設定です。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right color-red"></i>　<strong>設定方法は、</strong>
+  <ul class="number_ul">
+    <br>
+    <strong><li>主人の方のデータベース（今回は「<u>users</u>」）</li></strong>
+    <br>
+    <strong>「<u>app > models > データベース名（単数形）.rb</u>」</strong>に下の内容を追加する。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>has_many <span class='word-purple'>:配下のデータベース名（複数形）</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>配下の方のデータベース（今回は「<u>messages</u>」）</li></strong>
+    <br>
+    <strong>「<u>app > models > データベース名（単数形）.rb</u>」</strong>に下の内容を追加する。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>belongs_to <span class='word-purple'>:主人のデータベース名（単数形）</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  </ul>
+  <strong>になります。</strong>
+  <hr class="red-hr">
+  上では
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= m.user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  と、<u>「messages」データベースから「users」データベースのデータを選択</u>できるようにしましたが、
+  <br>
+  <strong>
+  逆に<u>「users」データベースから「messages」データベースのデータを選択</u>することもできます。
+  </strong>
+  <br><br>
+  それには、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @messages <span class="word-red">=</span> @user.messages</span>
+</td>
+</tr>
+</table>
+  <br>
+  のようにして、<strong>選択した「users」データベースの後に「.messages」を入力</strong>することで選択します。
+  <hr class="red-hr">
+  <i class="fa fa-question-circle color-green"></i>　<strong>では<u>「posts」データベースのデータを複数持っている「users」データベース</u>で、</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= @post.user.first_name %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>
+  と表示させるには、
+  <ul class="number_ul">
+    <li>「<u>app > models > post.rb</u>」</li>
+    <li>「<u>app > models > user.rb</u>」</li>
+  </ul>
+  をどのように設定すればいいでしょうか？
+  </strong>
+  <br>
+  <small>※　マウスを上に置けば、答えが表示されます。</small>
+  <br><br>
+  <textarea class="form-control input-code" placeholder="答えを入力して下さい"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>post.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>Post <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code answer-code'>  belongs_to <span class='word-purple'>:user</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>user.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>User <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code answer-code'>  belongs_to <span class='word-purple'>:post</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  最後に設定した内容を確認してみましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6
+7
+8
+9
+10
+11
+12</strong>
+13
+14
+15
+16
+17
+18
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;伝言板&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= m.user.id %&gt;"</span></span>&gt;&lt;%= m.user.family_name %&gt;&lt;%= m.user.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;の投稿&lt;/<span class='word-red'>h5</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ユーザー一覧に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <strong>次は、<u>入力欄・ボタンの表示の設定</u>をしてみます。</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
               :target => ["_blank"] %>
-  <strong>次は、<u>入力欄・ボタンの表示の設定</u>をしてみます。</strong>
 </h4>
