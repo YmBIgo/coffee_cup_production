@@ -18,8 +18,8 @@
 2
 3
 4
-5
-<strong class="color-red">6
+<strong class="color-red">5
+6
 7
 8
 9
@@ -37,8 +37,8 @@
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;伝言板&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;伝言板&lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'></span>
 <span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
@@ -147,7 +147,9 @@
 </tr>
 </table>
   <br>
-  は、少し長い設定になって少し面倒臭いですよね。<strong><u>これを短くして、</u></strong>
+  は、少し長い設定になって少し面倒臭いですよね。
+  <br>
+  <strong><u>実はこれは短くして、</u></strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>show.html.erb（9行目）</strong>
 <table class='highlight'>
@@ -387,13 +389,13 @@
 </td>
 <td class='code-content'><span class='code-line'><span class='word-red'>class </span>User <span class="word-green">< ActiveRecord::Base</span></span>
 <span class='code-line'></span>
-<span class='code-line remarkable-code answer-code'>  belongs_to <span class='word-purple'>:post</span></span>
+<span class='code-line remarkable-code answer-code'>  has_many <span class='word-purple'>:posts</span></span>
 <span class='code-line'></span>
 <span class='code-line'><span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
-  <br>
+  <hr class="red-hr">
   最後に設定した内容を確認してみましょう！
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
@@ -441,7 +443,7 @@
 </td>
 </tr>
 </table>
-  <hr class="red-hr">
+  <br>
   <strong>次は、<u>入力欄・ボタンの表示の設定</u>をしてみます。</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
                         :width => "90%",
