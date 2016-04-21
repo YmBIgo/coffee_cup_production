@@ -1,0 +1,64 @@
+<h4 id="coffee-chapter3-2-1-6">
+  <p id="title2-1-6" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑹ : update</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>「<u>rooms</u>」データベースの「<u>update</u>」ページを作ってみます！</strong>
+  <hr class="red-hr">
+  <strong>「<u>update</u>」</strong>ページで内容を変更したら、<strong>「<a href="/#title2-1-5" target="_blank">edit</a>」ページ</strong>にページ移動させます。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>※　内容は<a href="/coffee_cups/2#title2-2-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <strong>「<u>update</u>」</strong>ページでは、データ操作のみを行います。
+  <br><br>
+  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を下のように変更してみましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（26〜29行目を変更）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>25
+26
+27
+28
+29
+30
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @room.update(params.<span class="word-red">require</span>(<span class='word-purple'>:room</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:explain</span>))</span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャット情報が変更されました"</span></span>
+<span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  これで変更は完了しました。
+  <hr class="red-hr">
+  では、ページを表示させてみましょう！
+  <br><br>
+  <strong>「<a href="http://0.0.0.0:3000/rooms/1/edit" target="_blank">0.0.0.0:3000/rooms/1/edit</a>」</strong>を開きましょう！
+  <br>
+  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
+              :target => ["_blank"] %>
+  ページを表示できたら、内容を変更して <a class="btn btn-success">変更する</a> をクリックしましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
+              :target => ["_blank"] %>
+  のように表示されたでしょうか？
+</h4>

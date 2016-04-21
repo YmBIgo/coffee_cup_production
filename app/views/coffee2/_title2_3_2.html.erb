@@ -147,9 +147,34 @@
 </tr>
 </table>
   <br>
-  は、少し長い設定になって少し面倒臭いですよね。
-  <br>
-  <strong><u>実はこれは短くして、</u></strong>
+  は、少し長い設定になって少し面倒臭いです（特に<strong>「User.find...」</strong>の部分）。
+  <br><br>
+  今回の<strong>「<u>messages</u>」データベース</strong>のように
+  <br><br>
+  <strong>messages</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>receiver</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>192</td>
+      <td style="font-size:15px">おはよう</td>
+      <td style="background-color: #f2dede;">91</td>
+      <td>20</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      </tr>
+    </tbody>
+  </table>
+  データベースの中にそのデータを持っているデータの枠組みがある時は（ここでは<strong>「<u>messages</u>」データベースの中の「<u>user_id</u>」</strong>）、
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>show.html.erb（9行目）</strong>
 <table class='highlight'>
@@ -161,12 +186,12 @@
 </tr>
 </table>
   <br>
-  のように設定することもできます。
+  のようにもっと短く設定することができます。
   <br>
-  <strong>分解したデータ「<u>m</u>」の「<u>user</u>」の「<u>id</u>」</strong>と分かりやすいのではないかと思います。
-  <hr class="red-hr">
-  <strong>ですが、今設定をしても実は<u>エラー</u>が出てきてしまします。</strong>
+  <strong>分解した「<u>messages</u>」データ「<u>m</u>」の「<u>user</u>」の「<u>id</u>」</strong>と分かりやすいのではないかと思います。
   <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>今のままでは、まだこの設定は使えないので、ここで追加の設定をしてみます。</strong>
+  <hr class="red-hr">
   この設定を加えるには、<strong>「<u>app > models</u>」</strong>フォルダにあるファイルに設定を加えます。
   <br><br>
   まずは<strong>「<u>app > models</u>」</strong>フォルダを見てみましょう！
@@ -203,7 +228,7 @@
 </tr>
 </table>
   <br>
-  の入力の際に作成されました。
+  の入力の際に作成されたファイル・フォルダになります。
   <hr class="red-hr">
   <i class="fa fa-play-circle"></i>　<strong>では設定を加えてみましょう！</strong>
   <br><br>
@@ -277,6 +302,35 @@
   <i class="fa fa-arrow-right color-red"></i>　<strong>設定方法は、</strong>
   <ul class="number_ul">
     <br>
+    <strong><li>枠組みの設定</li></strong>
+    <br>
+    <strong>主人の枠組みはそのままで、
+    <br>
+    配下のそれに<u>「主人のデータベース名（単数形）_id」の枠組みを追加</u>します</strong>
+    <br><br>
+  <strong>messages</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>receiver</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>192</td>
+      <td style="font-size:15px">おはよう</td>
+      <td style="background-color: #f2dede;">91</td>
+      <td>20</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      </tr>
+    </tbody>
+  </table>
     <strong><li>主人の方のデータベース（今回は「<u>users</u>」）</li></strong>
     <br>
     <strong>「<u>app > models > データベース名（単数形）.rb</u>」</strong>に下の内容を追加する。
@@ -334,21 +388,75 @@
 </tr>
 </table>
   <br>
-  のようにして、<strong>選択した「users」データベースの後に「.messages」を入力</strong>することで選択します。
+  のようにして、<strong>選択した「users」データベースの後に「.messages」（<u class="color-red">複数形</u>）を入力</strong>することで選択します。
   <hr class="red-hr">
   <i class="fa fa-question-circle color-green"></i>　<strong>では<u>「posts」データベースのデータを複数持っている「users」データベース</u>で、</strong>
   <br><br>
+  <strong>posts</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>192</td>
+      <td style="font-size:15px">SFCなう</td>
+      <td style="background-color: #f2dede;">91</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>users</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+        <th>id</th>
+        <th>family_name</th>
+        <th>first_name</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>91</td>
+      <td>山田</td>
+      <td>太郎</td>
+      <td style="font-size:11px;">2016-02-02 10:42:18</td>
+      <td style="font-size:11px;">2016-02-02 16:42:18</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>@postから会員情報を選択</strong></p>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;%= @post.user.first_name %&gt;</span>
+<td class='code-content'><span class='code-line'>@user <span class="word-red">=</span> @post.user</span>
+</td>
+</tr>
+</table>
+  <br>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>@userから投稿情報を選択</strong></p>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@posts <span class="word-red">=</span> @user.posts</span>
 </td>
 </tr>
 </table>
   <br>
   <strong>
-  と表示させるには、
+  のような設定をするには、
   <ul class="number_ul">
     <li>「<u>app > models > post.rb</u>」</li>
     <li>「<u>app > models > user.rb</u>」</li>
@@ -358,6 +466,8 @@
   <br>
   <small>※　マウスを上に置けば、答えが表示されます。</small>
   <br><br>
+  <textarea class="form-control input-code" placeholder="答えを入力して下さい"></textarea>
+  <br>
   <textarea class="form-control input-code" placeholder="答えを入力して下さい"></textarea>
   <br>
   <i class="fa fa-file color-red"></i>　<strong>post.rb</strong>

@@ -1,0 +1,466 @@
+<h4 id="coffee-chapter3-2-1-2">
+  <p id="title2-1-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : create</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>まずは「<u>rooms</u>」データベースの「<u>create</u>」ページから始めてみたいと思います！</strong>
+  <hr class="red-hr">
+  まずは<strong>「<u>rooms</u>」データベースの「<u>データ操作</u>」を設定するファイルと「<u>ページ表示</u>」をする設定フォルダ</strong>を作成しましょう！
+  <br>
+  <strong>ターミナルで下の入力をしましょう！</strong>
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller rooms</span>
+</td>
+</tr>
+</table>
+  <br>
+  この入力で<strong>「<u>rooms</u>」データベース</strong>の
+  <strong>
+  <ul class="number_ul">
+    <li>データ操作の設定ファイル「<u>app > controllers > rooms_controller.rb</u>」</li>
+    <li>ページ表示の設定フォルダ「<u>app > views > rooms</u>」</li>
+  </ul>
+  </strong>
+  の2つを作成しました。
+  <hr class="red-hr">
+  まずは作成したファイル・フォルダの、それぞれに最初のなにもない設定を加えます！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（3〜18行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</strong>
+19
+20
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>RoomsController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>, <span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  この設定で、<strong><u>会員の制限</u>と<u>なにもないデータ操作</u></strong>を設定できました。
+  <br>
+  <small>※　会員の制限の内容は<a href="/mugcups/9#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  次はページ設定ファイルを作成します。
+  <br>
+  <strong>
+  「<u>app > views > rooms</u>」に、
+  <ul class="number_ul">
+    <li>show.html.erb</li>
+    <li>index.html.erb</li>
+    <li>edit.html</li>
+  </ul>
+  を保存しましょう！
+  <br>
+  <small>※　保存の方法は<a href="/mugcups/how_to_save" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  </strong>
+  「create」は「users」データベースの「show」ページに、「update」は「edit」ページに移動させるので、ファイルを保存する必要はありません。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>では「<u>create</u>」ページの設定をやってみましょう！</strong>
+  <br><br>
+  <strong>「<u>create</u>」</strong>ページの設定では、
+  <ul class="number_ul">
+    <strong><li>「users」データベースのデータ操作ファイル「<u>users_controller.rb</u>」に</li></strong>
+    <br>
+    新しい<strong>「<u>rooms</u>」データ</strong>の作成
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@room <span class="word-red">=</span> <span class="word-blue">Room</span>.<span class='word-red'>new</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>「users」データーベースの表示設定ファイル「<u>show.html.erb</u>」</li></strong>
+    <br>
+    登録ボタン <a class="btn btn-warning">チャットを始める</a> の表示</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"チャットを始める"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                :target => ["_blank"] %>
+    <strong><li>「rooms」データベースのデータ操作設定ファイル「<u>rooms_controller.rb</u>」</li></strong>
+    <br>
+    新しい<strong>「<u>rooms</u>」</strong>データベースの保存
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+</td>
+</tr>
+</table>
+  <br>
+  </ul>
+  の3つの内容を設定します。
+  <br><br>
+  <strong>一つ一つやってみます。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>まずは「users_controller.rb」に設定を加えます。</strong>
+  <br><br>
+  <strong>「<u>app > controllers > users_controller.rb</u>」</strong>を開いて、内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（7〜10行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+<strong class="color-red">7
+8
+9
+10</strong>
+11
+12
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      @room <span class="word-red">=</span> <span class="word-blue">Room</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class="word-gray"># 省略</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここはどのような設定になっているのでしょうか？
+  <br><br>
+  ここでは表示している<strong>「users」データベースの「show」ページの会員が、<u>ログインしている会員と同じでない</u></strong>時に、
+  <br>
+  新しい<strong>「<u>rooms</u>」</strong>データベースのデータの標識<strong>「<u>@room</u>」</strong>を作成しています。
+  <br>
+  <small>※　「if/else」は<a href="/mugcups/11#title4-3-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  この<strong>「<u>@room</u>」</strong>を使って、 <a class="btn btn-warning">チャットを作成する</a> ボタンを作成します。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>次に「<u>users</u>」データベースの「<u>show.html.erb</u>」に設定を加えましょう！</strong>
+  <br><br>
+  <strong>「<u>app > views > users > show.html.erb</u>」</strong>を開いて、下のように設定を変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1
+2</strong>
+3
+4
+5
+6
+7
+8
+9
+<strong class="color-red">10
+11
+12
+13</strong>
+14
+<strong class="color-red">15
+16</strong>
+17
+18
+</td>
+<td class='code-content'><span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span></span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>      &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"チャットを始める"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span></span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ユーザー一覧に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  内容を説明しましょう！
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>まずは、10〜13行目</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>8
+9
+<strong class="color-red">10
+11
+12
+13</strong>
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>&lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>  &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>    &lt;%= f.submit <span class="word-yellow">"チャットを始める"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでは<strong>「users」ページの会員情報とログインしている会員が一致するかどうか</strong>で、
+  <br>
+  <a class="btn btn-warning">チャットを始める</a> の表示非表示をしています。
+  <br>
+  <small>※　「if/else」の内容は<a href="/mugcups/11#title4-3-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  ここでは入力欄はありませんが、これでもデータの作成はできます。
+  <br>
+  先ほど初期値に設定したので、ボタンを押せば<strong><u>「name」に「新規チャット」</u>・<u>「explain」に「説明を入力」</u>が入ったデータが保存</strong>されます。
+  <br>
+  <small>※　初期値の設定は<a href="#title1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>次に、1、2、15、16行目</strong>
+  <br><br>
+  中身だけを取り出すと、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1
+2
+...
+15
+16</strong>
+</td>
+<td class='code-content'><span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+<span class='code-line'>    内容</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  のようになっていると思います。
+  <br>
+  この<strong>「<u>row</u>」と「<u>col-xs-6</u>」</strong>は、画面の横の長さのを決める<strong>「<u>Bootstrap</u>」</strong>の設定になります。
+  <br><br>
+  <strong>「<u>row</u>」</strong>で囲まれた部分の横の長さを<strong>「<i>12</i>」</strong>として、その中身に<strong>「<u>col-xs-数字</u>」</strong>の設定を追加することによって分割して表示をします。
+  <hr class="red-hr">
+  今回は<strong>「<u>col-xs-6</u>」</strong>と、ちょうど<strong>「<i>12</i>」</strong>の半分の長さになっているので、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  半分の長さで内容が表示されます。
+</h4>
+  <h1>ユーザー情報</h1>
+<h4>
+  の下の線が短くなっていることから分かると思います。
+  <hr class="red-hr">
+  同じようにして画面に
+  <div class="row">
+    <div class="col-xs-3" style="margin-top:20px; padding:0">
+      <p class="alert alert-success">内容1(長さ3)</p>
+    </div>
+    <div class="col-xs-9" style="margin-top:20px; padding:0">
+      <p class="alert alert-danger">内容2(長さ9)</p>
+    </div>
+  </div>
+  のような表示をさせたい場合は
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-3"</span>&gt;</span>
+<span class='code-line'>    内容1</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+<span class='code-line'>    内容2</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  のように設定します。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>最後に「rooms_controller.rb」に「rooms」データを作成する設定を加えます。</strong>
+  <br><br>
+  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を開いて、内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（6〜8行目を変更）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6
+7
+8</strong>
+9
+10
+11
+12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>RoomsController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>, <span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class="remarkable-code"><span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+<span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャットを作成しました！"</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="word-gray"># 以下省略</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  内容を説明しましょう！
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>まずは6行目</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>@room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでは、<strong>「<u>id</u>」「<u>created_at</u>」「<u>updated_at</u>」以外のデータが入っていない「<u>rooms</u>」データを作成</strong>しています。
+  <br>
+  <small>※　内容は<a href="/mugcups/4#title2-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>次に7行目</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>7
+</td>
+<td class='code-content'><span class='code-line'>redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでは、<strong>作成した「<u>rooms</u>」データへのページ移動</strong>をしています。
+  <br>
+  作成した<strong>「<u>@room</u>」の「<u>id</u>」の「<u>rooms</u>」データベースの「<u>show</u>」ページに移動</strong>しています。
+  <br>
+  <small>※　内容は<a href="/coffee_cups/1#title4-4" target="_blank"><strong>こちらの「update」ページ</strong></a>を参考にして下さい</small>
+  <br><br>
+  ここではページの移動をするので、<strong>「<u>create.html.erb</u>」を作成する必要はありません。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>最後に8行目</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>8
+</td>
+<td class='code-content'><span class='code-line'>flash[<span class='word-purple'>:notice</span>] = <span class='word-yellow'>"チャットを作成しました！"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでは
+  <p class="alert alert-success" style="margin:20px 0">チャットを作成しました！</p>
+  を移動した先のページで表示させています。
+  <br>
+  <small>※　内容は<a href="/mugcups/9#title2-2-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <strong>
+  ここまでで「rooms」データベースの「create」の設定が完了しました。
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>次は「show」ページの設定をしてみましょう！</strong>
+</h4>

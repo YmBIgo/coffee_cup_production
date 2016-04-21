@@ -1,0 +1,120 @@
+<h4 id="coffee-chapter3-1-3">
+  <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : entriesデータベース</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>最後に、<u>どの会員がどのチャットルームに所属しているかの情報を入れる「entries」データベース</u>の作成をしてみます。</strong>
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <i class="fa fa-arrow-right"></i>　<strong>この「id」が「1」のデータは、チャットルーム「1」に会員「1」が所属していることを指定しています。</strong>
+  <hr class="red-hr">
+  まずは、データベースの作成をしてみましょう！ターミナルで下の入力をして下さい。
+  <br><br>
+  　<strong>ターミナル</strong>
+  <br>
+  <small>※　こちらの入力は<strong class="color-red"><u>単数形</u></strong>なので注意して下さい！</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model entry</span>
+</td>
+</tr>
+</table>
+  <br>
+  この入力ができたら、<strong>「<u>db > migrate</u>」フォルダに「日時_create_entries.rb」ファイルが作成</strong>されるので、このファイルに設定を加えます。
+  <br>
+  <small>※　内容は<a href="/mugcups/4#title1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日時_create_entries.rb（5、6行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreateEntries <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:entries</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:user_id</span></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:room_id</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  これで
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  のデータベースを作成する設定ができました。
+  <br><br>
+  次はこの設定を適用させましょう！ターミナルで下の入力をして下さい！
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  これで設定が適用され、データベースが作成されました。
+  <br><br>
+  <strong>最後に<u>Sequel Pro</u>で内容の確認をしてみましょう！</strong>
+  <br>
+  <small>※　Sequel Proの開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+</h4>

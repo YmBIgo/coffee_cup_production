@@ -61,12 +61,14 @@
   // index
   // index の textbook へのリンク
   .table-content{
+    transition: background .5s;
     border:1px solid;
     border-color:rgba(90, 90, 90, .6);
     border-radius:10px;
     margin-bottom:20px;
     p{
       margin:10px;
+      color:black;
     }
   }
   .table-content:hover{

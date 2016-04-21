@@ -7,15 +7,15 @@
         <br>
         <small>※　Sublime Textでのフォルダの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
         <br><br>
-        開けたら下の手順に従って、<strong>「<u>route.rb</u>」</strong>というファイルを開いて下さい。
+        開けたら下の手順に従って、<strong>「<u>routes.rb</u>」</strong>というファイルを開いて下さい。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Open_route_rb.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Open_route_rb.png",
                     :target => ["_blank"] %>
-        この<strong>「<u>route.rb</u>」</strong>というファイルが、７つのページからどのページを使うかを決めるファイルになります。
+        この<strong>「<u>routes.rb</u>」</strong>というファイルが、７つのページからどのページを使うかを決めるファイルになります。
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>route.rb</strong>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -57,7 +57,7 @@
 <hr class="red-hr">
 では下の１行を追加して、設定をしましょう！
 <br><br>
-<i class="fa fa-file color-red"></i>　<strong>route.rb（2行目を追加）</strong>
+<i class="fa fa-file color-red"></i>　<strong>routes.rb（2行目を追加）</strong>
 <br>
 <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
 <table class='highlight'>
@@ -111,7 +111,7 @@
         <hr class="red-hr">
         もしデータを削除したくない時は、
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>route.rb（２行目）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（２行目）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>2
@@ -129,15 +129,15 @@
 <pre>
 resources :データベース名, :only => [:加えたいページ...]
 </pre>
-        を<strong>「<i>route.rb</i>」</strong>に追加することで設定します。
+        を<strong>「<i>routes.rb</i>」</strong>に追加することで設定します。
         <br>
         <small>※　７つ以外にページはありません。</small>
         <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>「<u>messages</u>」というデータベースで「<u>データの全表示（index）</u>・<u>データの作成（create）</u>・<u>一つのデータの削除（destroy）</u>」のページを作りたい場合は「route.rb」にどのような設定を追加すればいいのでしょうか？</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>「<u>messages</u>」というデータベースで「<u>データの全表示（index）</u>・<u>データの作成（create）</u>・<u>一つのデータの削除（destroy）</u>」のページを作りたい場合は「routes.rb」にどのような設定を追加すればいいのでしょうか？</strong>
         <br><br>
         <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
         <br>
-        <i class="fa fa-file color-red"></i>　<strong>route.rb（2行目）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（2行目）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1

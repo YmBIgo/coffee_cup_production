@@ -1,0 +1,865 @@
+<h4 id="coffee-chapter3-2-2-2">
+  <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 「entries」データの表示</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>次に「<u>entries</u>」データの表示をやってみましょう！</strong>
+  <hr class="red-hr">
+  「entries」データの中には、
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  のように、
+  <strong>
+  <ul class="number_ul">
+    <li>「rooms」データを設定する枠組み「room_id」</li>
+    <li>「users」データを設定する枠組み「user_id」</li>
+  </ul>
+  </strong>
+  があり、
+  <br>
+  <strong>「<u>rooms</u>」データ・「<u>users</u>」データがそれぞれ複数の「<u>entries</u>」データを所持</strong>できるので、
+  <br><br>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>チャットルーム「@room」から「entries」データを選択</strong></p>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@entries <span class="word-red">=</span> @room.entries</span>
+</td>
+</tr>
+</table>
+  <br>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>会員「@user」から「@entries」データを選択</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@entries <span class="word-red">=</span> @user.entries</span>
+</td>
+</tr>
+</table>
+  <br>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>「@entry」データから会員「@user」データを選択</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@user <span class="word-red">=</span> @entry.user</span>
+</td>
+</tr>
+</table>
+  <br>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>「@entry」からチャットルーム「@room」を選択</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@user <span class="word-red">=</span> @entry.room</span>
+</td>
+</tr>
+</table>
+  <br>
+  をできるようにします。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>上の設定ができるようにします。</strong>
+  <br><br>
+  ここでは
+  <br>
+  <strong>
+  <ul class="number_ul">
+    <li>「<u>app > models > entry.rb</u>」</li>
+    <li>「<u>app > models > room.rb</u>」</li>
+    <li>「<u>app > models > user.rb</u>」</li>
+  </ul>
+  </strong>
+  にそれぞれ設定を加えていきます。
+  <br>
+  <small>※　詳細は<a href="/coffee_cups/2#title2-3-4" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  それぞれのファイルの設定を変更してみます！
+  <br>
+  <small>※　詳細は<a href="/coffee_cups/2#title2-3-4" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>entry.rb（3、4行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4</strong>
+5
+6
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>Entry <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  belongs_to  <span class='word-purple'>:room</span></span>
+<span class='code-line remarkable-code'>  belongs_to  <span class='word-purple'>:user</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>room.rb（4行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4</strong>
+5
+6
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>Room <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  has_many <span class='word-purple'>:messages</span></span>
+<span class='code-line remarkable-code'>  has_many <span class='word-purple'>:entries</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>user.rb（8行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>User <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'>  <span class='word-gray'># Include default devise modules. Others available are:</span></span>
+<span class='code-line'>  <span class='word-gray'># :confirmable, :lockable, :timeoutable and :omniauthable</span></span>
+<span class='code-line'>  devise <span class='word-purple'>:database_authenticatable</span>, <span class='word-purple'>:registerable</span>,</span>
+<span class='code-line'>         <span class='word-purple'>:recoverable</span>, <span class='word-purple'>:rememberable</span>, <span class='word-purple'>:trackable</span>, <span class='word-purple'>:validatable</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  has_many <span class='word-purple'>:messages</span></span>
+<span class='code-line remarkable-code'>  has_many <span class='word-purple'>:entries</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  ここまでで
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@entries <span class="word-red">=</span> @room.entries</span>
+</td>
+</tr>
+</table>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@entries <span class="word-red">=</span> @user.entries</span>
+</td>
+</tr>
+</table>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@user <span class="word-red">=</span> @entry.user</span>
+</td>
+</tr>
+</table>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@user <span class="word-red">=</span> @entry.room</span>
+</td>
+</tr>
+</table>
+  <br>
+  を設定できるようになりました！
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>これを使って
+  <ul class="number_ul">
+    <li>参加者の情報の表示</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                :target => ["_blank"] %>
+    <li>ログインしている会員の参加しているチャットルームの情報の表示</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                :target => ["_blank"] %>
+  </ul>
+  をやってみます！
+  </strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>まずは「参加者の情報の表示」からやってみます！</strong>
+  <br><br>
+  参加者の情報を表示させるのは<strong>「<u>rooms</u>」データベースの「<u>show</u>」ページ</strong>になりますので、
+  <br>
+  <strong>
+  <ul class="number_ul">
+    <li>rooms_controller.rb（データ操作）</li>
+    <li>show.html.erb（ページ表示）</li>
+  </ul>
+  </strong>
+  にそれぞれ設定を加えていきます。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>まずはデータ操作からやってみます！</strong>
+  <br><br>
+  データ操作をするファイルは<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>になるので、その内容を下のように変更します。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（17行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>13
+14
+15
+16
+<strong class="color-red">17</strong>
+18
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @messages <span class="word-red">=</span> @room.messages</span>
+<span class='code-line'>    @message <span class="word-red">=</span> <span class="word-blue">Message</span>.<span class='word-red'>new</span></span>
+<span class='code-line remarkable-code'>    @entries <span class="word-red">=</span> @room.entries</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  この<strong>「<u>@entries</u>」</strong>を使って、会員の表示をしていきます！
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>次にページ表示をしてみましょう！</strong>
+  <br><br>
+  ここでは
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  のように左側のチャットの説明の下に、参加者のデータを表示させます。
+  <br><br>
+  このような表示をするには、先ほど設定した
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@entries <span class="word-red">=</span> @room.entries</span>
+</td>
+</tr>
+</table>
+  <br>
+  を
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% @entries.each <span class="word-red">do</span> |e| %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  で一つ一つのデータに分解して、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= e.user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  のような会員情報に変換します。
+  <br><br>
+  では<strong>「<u>app > views > rooms > show.html.erb</u>」</strong>を開いて内容を設定しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（6〜10行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6
+7
+8
+9
+10</strong>
+11
+12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-3 text-center"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;%= @room.name %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;<span class='word-red'>small</span>&gt;&lt;%= @room.explain %&gt;&lt;/<span class='word-red'>small</span>&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;参加者&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;% @entries.each <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h5</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= e.user.id %&gt;"</span>&gt;&lt;%= e.user.family_name %&gt; &lt;%= e.user.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h5</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;情報を編集する&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  内容は上で説明した
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% @entries.each <span class="word-red">do</span> |e| %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  で
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@entries <span class="word-red">=</span> @room.entries</span>
+</td>
+</tr>
+</table>
+  <br>
+  「@room」が持っている「@entries」データを1つ1つのデータ<strong>「e」</strong>に分けます。
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>2</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  この1つ1つのデータ<strong>「e」</strong>を使って、会員データの表示をします。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= <span class="remarkable-code">e.user.id</span> %&gt;"</span>&gt;&lt;%= <span class="remarkable-code">e.user.family_name</span> %&gt; &lt;%= <span class="remarkable-code">e.user.first_name</span> %&gt;さん&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>では参加者のデータが表示されるかを確認しましょう！</strong>
+  <br><br>
+  <strong>「<a href="http://0.0.0.0:3000/rooms/2">0.0.0.0:3000/rooms/2</a>」</strong>を開いてみましょう！
+  <br>
+  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  のように参加者のデータが表示されたでしょうか？
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>次に、ログインしている会員の参加しているチャットルームの情報を表示をします</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  これをするには、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@entries <span class="word-red">=</span> current_user.entries</span>
+</td>
+</tr>
+</table>
+  <br>
+  でログインしている会員の情報が含まれている「entries」データを選択し、
+  <br>
+  それを表示させます。
+  <br><br>
+  ここでは、
+  <strong>
+  <ul class="number_ul">
+    <li>「users」データベースの「show」ページ</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                :target => ["_blank"] %>
+    <li>「rooms」データベースの「index」ページ</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                :target => ["_blank"] %>
+  </ul>
+  </strong>
+  の2つのページでこの設定を加えます。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>まずは「users」データベースの「show」ページからやってみましょう！</strong>
+  <br><br>
+  ここでも
+  <strong>
+  <ul class="number_ul">
+    <li>データ操作（users_controller.rb）</li>
+    <li>ページ表示（show.html.erb）</li>
+  </ul>
+  </strong>
+  の2つのファイルに設定を加えます。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>まずはデータ操作からやってみます！</strong>
+  <br><br>
+  <strong>「<u>app > controllers > users_controller.rb</u>」</strong>を開いて内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（8行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+12
+13
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id == current_user.id</span>
+<span class='code-line remarkable-code'>      @entries <span class="word-red">=</span> current_user.entries.limit(<span class="word-purple">3</span>)</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      @room <span class="word-red">=</span> <span class="word-blue">Room</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>      @entry <span class="word-red">=</span> <span class="word-blue">Entry</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでは
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>7
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+</td>
+</tr>
+</table>
+  <br>
+  の条件に合う時（表示しているページの会員とログインしている会員が一致している時）に、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+</td>
+<td class='code-content'><span class='code-line'>@entries <span class="word-red">=</span> @user.entries.limit(<span class="word-purple">3</span>)</span>
+</td>
+</tr>
+</table>
+  <br>
+  で、「@user」の持っている「entries」データを選択しています。
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;"><strong class="color-red">1</strong></td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>3</td>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="background-color: #f2dede;"><strong class="color-red">1</strong></td>
+        <td style="font-size:11px;">2016-04-12 20:30:49</td>
+        <td style="font-size:11px;">2016-04-12 20:30:49</td>
+      </tr>
+    </tbody>
+  </table>
+  行の最後に、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+</td>
+<td class='code-content'><span class='code-line'>@entries <span class="word-red">=</span> @user.entries<span class="remarkable-code">.limit(<span class="word-purple">3</span></span>)</span>
+</td>
+</tr>
+</table>
+  <br>
+  と<strong>「limit(3)」</strong>という設定が入っていますが、これは<strong>最大で3個までデータを選択</strong>する設定になります。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>次に「ページ表示」の設定をしていきます</strong>
+  <br><br>
+  上で設定した<strong>「@entries」</strong>を表示させます。
+  <br>
+  <strong>「<u>app > views > users > show.html.erb</u>」</strong>を開いて内容を下のように変更してみましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（19〜29行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+<strong class="color-red">19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</strong>
+30
+31
+32
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>      &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>        &lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>          &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"チャットを始める"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h1</span>&gt;チャット一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>      &lt;% @entries.each <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>        &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= e.room.id %&gt;"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;%= e.room.name %&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>        &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;チャット一覧を見る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ユーザー一覧に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでは
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>19
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  でログインしている会員と「@user」が一致する時にだけ、内容を表示する設定をしています。
+  <br><br>
+  表示する内容は、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>20
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  で
+  <div class="row">
+    <div class="col-xs-6" style="margin-top:20px; padding:0">
+      <p class="alert alert-success">ユーザー情報</p>
+    </div>
+    <div class="col-xs-6" style="margin-top:20px; padding:0">
+      <p class="alert alert-danger">チャット情報</p>
+    </div>
+  </div>
+  でページの表示を分け、
+  <br>
+  <small>※　詳細は<a href="/coffee_cups/4#title2-1-2" target="_blank"><strong>こちら</strong></a>を参考</small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>23
+</td>
+<td class='code-content'><span class='code-line'>&lt;% @entries.each <span class="word-red">do</span> |e| %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  で<strong>「<u>@entries</u>」</strong>を一つ一つのデータ<strong>「e」</strong>に分け、
+  <br>
+  それを一つ一つ表示させています。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>24
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= e.room.id %&gt;"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;%= e.room.name %&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>ここまでできたら、表示できるかを確認しましょう！</strong>
+  <br><br>
+  ログインしている会員のページ、<strong>「0.0.0.0:3000/users/数字」</strong>を開いてみましょう！
+  <br>
+  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+              :target => ["_blank"] %>
+  のように左側にログインしている会員が参加しているチャット情報が表示されたでしょうか？
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>次に「rooms」データベースの「index」ページをやってみます！</strong>
+  <br><br>
+  ここでも
+  <strong>
+  <ul class="number_ul">
+    <li>データ操作（users_controller.rb）</li>
+    <li>ページ表示（index.html.erb）</li>
+  </ul>
+  </strong>
+  の2つのファイルに設定を加えるんですが、<a href="/coffee_cups/4#title2-1-4" target="_blank"><strong>前に一回設定をした</strong></a>ので、その設定を変更してみます。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>まずはデータ操作からやってみます！</strong>
+  <br><br>
+  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を開いて内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（21行目を変更）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>20
+<strong class="color-red">21</strong>
+22
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line remarkable-code'>  @entries <span class="word-red">=</span> current_user.entries</span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  これで<strong>「current_user」が持っている<u>「entries」データの選択</u></strong>をすることができました！
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>次にページ表示をやってみます！</strong>
+  <br><br>
+  上で設定した<strong>「@entries」</strong>を表示させます！
+  <br>
+  <strong>「<u>app > views > rooms > index.html.erb</u>」</strong>を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（3〜6行目を変更）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5
+6</strong>
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;チャット一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>&lt;% @entries.each <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= e.room_id %&gt;"</span>&gt;&lt;%= e.room.name %&gt;&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span> <span class="word-green">class</span>=<span class='word-yellow'>"btn btn-primary"</span></span>&gt;&lt;%= current_user.family_name %&gt; &lt;%= current_user.first_name %&gt;さんの情報に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでも上と同じように<strong>「<u>@entries</u>」</strong>を一つ一つのデータ<strong>「e」</strong>に分けて表示させています。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>ここまでできたら、表示できるかを確認しましょう！</strong>
+  <br><br>
+  「rooms」データベースの「index」ページ<strong>「<a href="http://0.0.0.0:3000/rooms/" target="_blank">0.0.0.0:3000/rooms</a>」</strong>を開いてみましょう！
+  <br>
+  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+              :target => ["_blank"] %>
+  のような表示がでてきたでしょうか？
+  <hr class="red-hr">
+  <strong>
+  ここまででチャットルームの作成ができました。
+  <br><br>
+  せっかくチャットルームの参加状況を示す「<u>entries</u>」データを作成したのに、
+  <br>
+  今のままでは参加していないユーザーからもチャットルームの情報を見れるようになっています。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  <i class="fa fa-play-circle"></i>　次はチャットルームに参加している会員以外がチャットルームを見ようとしたら、
+  </strong>
+  <p class="alert alert-danger" style="margin-top:20px;">無効なユーザー</p>
+  <strong>
+  を表示させるようにしましょう！
+  </strong>
+</h4>

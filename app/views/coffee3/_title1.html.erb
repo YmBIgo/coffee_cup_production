@@ -1,0 +1,255 @@
+<h2 class="textbook-section-title" id="title1"><strong>1 : データベースを作る</strong></h2>
+<h4 id="coffee-chapter3-1">
+  <strong>チャットルームを作るにあたって、まずはデータベースを作ってみます。</strong>
+  <hr class="red-hr">
+  チャットルームのデータベースはどのようになっているのでしょうか？
+  <br><br>
+  チャットルームのデータベースを作るには、下の4つのデータベースが必要になります。
+  <strong>
+  <ul class="number_ul">
+    <br>
+    <li>usersデータベース</li>
+    <br>
+    「<u>どの会員がメッセージを投稿したか</u>」と、<br>「<u>会員がどのチャットルームにいるか</u>」を設定するために必要になります。
+    <br><br>
+    <li>messagesデータベース</li>
+    <br>
+    「<u>投稿をした会員（user_id）</u>」と、<br>「<u>投稿されたチャットルームの情報（room_id）</u>」の2つを設定します。
+    <br><br>
+    <strong>messages</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+          <th>id</th>
+          <th>content</th>
+          <th style="background-color: #f2dede;">user_id</th>
+          <th style="background-color: #f2dede;">room_id</th>
+          <th>created_at</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td>1</td>
+          <td style="font-size:12px">おはよう！</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="font-size:11px;">2016-04-12 20:33:43</td>
+          <td style="font-size:11px;">2016-04-12 20:33:43</td>
+        </tr>
+      </tbody>
+    </table>
+    <i class="fa fa-arrow-right color-red"></i>　これはチャットルーム（room_id）「1」に会員（user_id）「1」が投稿した「おはよう！」というメッセージ「1」を示している。
+    <br><br>
+    <li>roomsデータベース</li>
+    <br>
+    「<u>チャットルームの情報（チャット名と説明）</u>」を設定します。
+    <br><br>
+    <strong>rooms</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+          <th style="background-color: #f2dede;">id</th>
+          <th style="background-color: #f2dede;">name</th>
+          <th style="background-color: #f2dede;">explain</th>
+          <th>created_at</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;font-size:12px;">新規チャット</td>
+          <td style="background-color: #f2dede;font-size:12px;">説明を入力</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        </tr>
+      </tbody>
+    </table>
+    <i class="fa fa-arrow-right color-red"></i>　名前（name）が「新規チャット」、説明（explain）が「説明を入力」のチャットルーム（id）「1」を示している
+    <br><br>
+    <li>entiesデータベース</li>
+    <br>
+    「<u>どの会員がどのチャットルームに所属しているかの情報</u>」を設定します。
+    <br><br>
+    <strong>entries</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+          <th style="background-color: #f2dede;">id</th>
+          <th style="background-color: #f2dede;">room_id</th>
+          <th style="background-color: #f2dede;">user_id</th>
+          <th>created_at</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">2</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        </tr>
+      </tbody>
+    </table>
+    <i class="fa fa-arrow-right color-red"></i>　チャットルーム（room_id）「1」には会員（user_id）「2」が所属していることを示している。
+  </ul>
+  </strong>
+  <hr class="red-hr">
+  流れとしては、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  の <a class="btn btn-warning">チャットを始める</a> をクリックすると、
+  <br><br>
+  <strong>rooms</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">name</th>
+        <th style="background-color: #f2dede;">explain</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;font-size:12px;">新規チャット</td>
+        <td style="background-color: #f2dede;font-size:12px;">説明を入力</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>チャットルーム「1」</strong>
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>チャットルーム「1」に、会員「1」と「2」が所属していることを示すデータ</strong>
+  <br><br>
+  が作成され、チャットルームのページに移動します。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  このページで投稿を入力して、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_input_word.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_input_word.png",
+              :target => ["_blank"] %>
+  <a class="btn btn-primary">投稿する</a> をクリックすると、
+  <br><br>
+  <strong>messages</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>1</td>
+        <td style="font-size:12px">おはよう！</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+      </tr>
+    </tbody>
+  </table>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>チャットルーム（room_id）「1」で会員（user_id）「1」が投稿した「おはよう！」のメッセージデータ</strong>
+  <br><br>
+  が作成され、作成したメッセージが表示されます。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_show_message_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_show_message_1.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  ここでは
+  <strong>
+  <ul class="number_ul">
+    <li>messagesデータベース</li>
+    <li>roomsデータベース</li>
+    <li>entriesデータベース</li>
+  </ul>
+  の3つを変更・作成してみます。早速やってみましょう！
+  </strong>
+</h4>
+  <hr>
+  <%= render "coffee3/title1_1" %>
+  <hr>
+  <%= render "coffee3/title1_2" %>
+  <hr>
+  <%= render "coffee3/title1_3" %>
+  <hr>
+<h4>
+  <strong>
+  これでデータベースの作成が完了しました！このデータベースを使って、ページを作っていきます。
+  <hr class="red-hr">
+  まずは、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  他の会員の <a class="btn btn-warning">チャットを始める</a> をクリックすると、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  のようなチャットルームの作成ができるようにしましょう！
+  </strong>
+</h4>
