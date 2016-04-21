@@ -1,0 +1,296 @@
+<h4 id="coffee-chapter3-2-2-3">
+  <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : チャットルーム閲覧の制限</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>次に、<u>参加者だけ</u>に「rooms」データベースのページ・<u>チャットルームの閲覧</u>をできるようにしてみましょう！</strong>
+  <hr class="red-hr">
+  チャットルームの参加者のデータは<strong>「<u>entries</u>」データ</strong>で示しました。
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  この<strong>「<u>entries</u>」データ</strong>を使って、チャットルームに<strong>ログインしている会員（<u>current_user</u>）</strong>が参加しているかを判定します。
+  <br><br>
+  これには、<strong>「<u>entries</u>」データベース</strong>の
+  <strong>
+  <ul class="number_ul">
+    <li>「room_id」に、チャットルームの「id」</li>
+    <li>「user_id」に、「current_user」の「id」</li>
+  </ul>
+  </strong>
+  が入っているデータがあるかどうかで判定します。
+  <br><br>
+  これを設定するには、
+  <strong>
+  <ul class="number_ul">
+    <li>「if/else」（詳細は<a href="/mugcups/11#title4-3-2" target="_blank">こちら</a>を参考）</li>
+    <li>「where」を使ったデータの検索（詳細は<a href="/mugcups/4#title2-2" target="_blank">こちら</a>を参考）</li>
+    <li>「present?」でデータがあるかを確認</li>
+  </ul>
+  </strong>
+  の3つを使います。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>この判定を「<u>rooms_controller.rb</u>」に追加してみたいと思います！</strong>
+  <br><br>
+  ここで制限をかける<strong>「<u>rooms</u>」データベースのページ</strong>は、
+  <strong>
+  <ul class="number_ul">
+    <li>show</li>
+      <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                            :width => "90%",
+                            :class => "hover_img textbook-title-img"),
+                  "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                  :target => ["_blank"] %>
+    <li>edit</li>
+      <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
+                            :width => "90%",
+                            :class => "hover_img textbook-title-img"),
+                  "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
+                  :target => ["_blank"] %>
+    <li>update</li>
+      <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
+                            :width => "90%",
+                            :class => "hover_img textbook-title-img"),
+                  "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
+                  :target => ["_blank"] %>
+  </ul>
+  </strong>
+  の3つになります。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>まずは「show」ページでの設定からやってみます！</strong>
+  <br><br>
+  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を開いて、内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（20、24〜26行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>18
+19
+<strong class="color-red">20</strong>
+21
+22
+23
+<strong class="color-red">24
+25
+26
+27</strong>
+28
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    <span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => @room.id).present?</span>
+<span class='code-line'>      @messages <span class="word-red">=</span> @room.messages</span>
+<span class='code-line'>      @message <span class="word-red">=</span> Message.<span class='word-red'>new</span></span>
+<span class='code-line'>      @entries <span class="word-red">=</span> @room.entries</span>
+<span class="remarkable-code"><span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>では、内容を説明しましょう！</strong>
+  <br><br>
+  今回の設定で難しいのは、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>20
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => @room.id).present?</span>
+</td>
+</tr>
+</table>
+  <br>
+  の1行だと思います。
+  <br><br>
+  ここでは前に触れた、
+  <strong>
+  <ul class="number_ul">
+    <li>「if/else」</li>
+    <li>「where」を使ったデータの検索</li>
+    <li>「present?」でデータがあるかを確認</li>
+  </ul>
+  </strong>
+  を使っています。
+  <br>
+  1つ目については分かると思うので、2つ目から説明していきます。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>2. 「where」を使ったデータの検索</strong>
+  <br><br>
+  ここでは<strong>「<u>entries</u>」データ</strong>から
+  <strong>
+  <ul class="number_ul">
+    <li>「room_id」が、<u>「@room」の「id」</u></li>
+    <li>「user_id」が、<u>「current_user」の「id」</u></li>
+  </ul>
+  </strong>
+  の2つを満たすデータを検索して、選択しています。
+  <br>
+  <small>※　詳細は<a href="/mugcups/4#title2-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>3 . 「present?」でデータがあるかを確認</strong>
+  <br><br>
+  ここでは
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => @room.id)</span>
+</td>
+</tr>
+</table>
+  <br>
+  で選択した<strong>「<u>entries</u>」データ</strong>があるかないかを判定しています。
+  <br>
+  ここでの判定結果に従って、
+  <br><br>
+  <ul class="number_ul">
+    <strong><li>あった場合は「if」の内容を設定</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>21
+22
+23
+</td>
+<td class='code-content'><span class='code-line'>@messages <span class="word-red">=</span> @room.messages</span>
+<span class='code-line'>@message <span class="word-red">=</span> Message.<span class='word-red'>new</span></span>
+<span class='code-line'>@entries <spna class="word-red">=</spna> @room.entries</span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>なかった場合は「else」の設定</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>25
+26
+</td>
+<td class='code-content'><span class='code-line'>redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    </ul>
+  を適用させます。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>今回の設定内容をまとめます。</strong>
+  <br><br>
+  <strong>チャットルーム「<u>@room</u>」にログインしている会員「<u>current_user</u>」が参加しているかを判定</strong>するには、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => @room.id).present?</span>
+</td>
+</tr>
+</table>
+  <br>
+  と設定して判定をします。
+  <br><br>
+  <strong>これと同じ方法を使って「edit」「update」ページにも設定を追加します。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>次に「edit」ページの設定をやります。</strong>
+  <br><br>
+  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を開いて、内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（36〜40行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>34
+35
+<strong class="color-red">36
+37
+38
+39
+40</strong>
+41
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => @room.id).present?</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>      redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  これでチャットルームに参加していないユーザーは、「edit」ページに移動できないようになりました。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>最後に「update」ページをやります。</strong>
+  <br><br>
+  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を開いて、内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（39、43〜46行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>37
+38
+<strong class="color-red">39</strong>
+40
+41
+42
+<strong class="color-red">43
+44
+45
+46</strong>
+47
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    <span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => @room.id).present?</span>
+<span class='code-line'>      @room.update(params.require(<span class='word-purple'>:room</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:explain</span>))</span>
+<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャット情報が変更されました"</span></span>
+<span class='code-line'>      redirect_to <span class='word-purple'>:back</span></span>
+<span class="remarkable-code"><span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>      redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  これで「rooms」データベースの
+  <strong>
+  <ul class="number_ul">
+    <li>「show」ページ</li>
+    <li>「edit」ページ</li>
+    <li>「update」ページ</li>
+  </ul>
+  </strong>
+  に閲覧する会員の制限をかけることができました！
+</h4>
