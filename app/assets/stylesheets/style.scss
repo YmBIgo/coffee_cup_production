@@ -61,7 +61,7 @@
   // index
   // index の textbook へのリンク
   .table-content{
-    transition: background .5s;
+    transition: all .5s;
 
     background-color: #fff;
     border: 2px solid #47ea7e;
@@ -78,14 +78,19 @@
     text-decoration: none;
     p{
       margin:5px 10px;
-      font-size:15px;
       font-weight: 700;
     }
   }
   .table-content:hover{
-    background-color:rgba(71, 234, 126, 1);
+/*    background-color:rgba(71, 234, 126, 1);
     color:#fff;
-    border: 2px solid #eee;
+    border: 2px solid #eee;*/
+    background-color:#0bda51;
+    color:white;
+    border: 2px solid #0bda51;
+    transition: all .5s;
+    letter-spacing: 3px;
+    font-size:16px;
   }
 
   // textbook
