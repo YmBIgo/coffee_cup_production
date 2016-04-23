@@ -1,8 +1,8 @@
 <% provide :title, "Coffee" %>
-<header>
-  <div class="header-content fadeIn wow">
-    <div class="header-content-word" style="padding-bottom:20px">
-      <h1 class="text-center">
+<div class="container">
+  <div id="top-page" class="textbook-area">
+    <div class="textbook-area-inner fadeIn wow">
+      <h1 class="text-center" style="margin:20px auto;">
         <strong>
         <a href="/coffee_cups" class="btn btn-lg btn-danger" style="font-size:32px">
         <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
@@ -10,12 +10,11 @@
         Coffee(応用編)</a>
         </strong>
       </h1>
-    </div>
-  </div>
-</header>
-<div class="container">
-  <div id="top-page" class="textbook-area">
-    <div class="textbook-area-inner fadeIn wow">
+      <header>
+        <div class="header-content">
+        </div>
+      </header>
+      <br>
       <h5>
       ウェブページ作成の続きになります（基礎編は<a href="/mugcups" target="_blank"><strong>こちら</strong></a>）。
       <br><br>
@@ -61,4 +60,5 @@
         </div>
     </div>
   </div>
+</div>
 </div>

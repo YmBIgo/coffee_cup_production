@@ -1,0 +1,337 @@
+<% provide :title, "3：設定一覧" %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>チャットルームを作成する①：設定一覧</strong></h1>
+          </div>
+          <h4><u><a href="/coffee_cups/3" class="text-left ">チャットルームを作成する①</a></u></h4>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header3.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h4>
+            <i class="fa fa-bookmark color-red"></i>　<strong>「チャットルームを作成する①」の設定一覧の確認をする</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+          <h4 id="code-coffee-1">
+            <br>
+            <strong>
+            「<a href="/coffee_cups/3" target="_blank">チャットルーム作る①</a>」では、
+            <ul class="number_ul">
+              <li>「messages」データベースの変更</li>
+              <li>「rooms」データベースの作成</li>
+              <li>「entries」データベースの作成</li>
+            </ul>
+            の3つをしました。
+            </strong>
+            <br><br>
+            ここでその設定をまとめます。
+            <hr class="red-hr">
+            <ul class="number_ul">
+              <p id="title1-1"><strong><li>「messages」データベースの変更</li></strong></p>
+              <br>
+              <strong>「<u>messages</u>」データベース</strong>から、<br><strong>「room_id」を追加・「receiver」を削除</strong>し、中身を下のように変更します。
+              <br><br>
+                <strong>messages</strong>
+                <table class="table table-striped" style="width:50%">
+                  <thead style="font-size:0.8em">
+                    <tr class="active">
+                      <th>id</th>
+                      <th>content</th>
+                      <th style="background-color: #f2dede;">user_id</th>
+                      <th style="background-color: #f2dede;">room_id</th>
+                      <th>created_at</th>
+                      <th>updated_at</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-center">
+                    <tr>
+                      <td>1</td>
+                      <td style="font-size:12px">おはよう！</td>
+                      <td style="background-color: #f2dede;">1</td>
+                      <td style="background-color: #f2dede;">1</td>
+                      <td style="font-size:11px;">2016-04-12 20:33:43</td>
+                      <td style="font-size:11px;">2016-04-12 20:33:43</td>
+                    </tr>
+                  </tbody>
+                </table>
+                まずは、データベースを変更する設定ファイルをターミナルで作成します。
+                <br><br>
+                　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g migration changeColumnMessages</span>
+</td>
+</tr>
+</table>
+              <br>
+              これで作成された<strong>「<u>db > migrate > 日時_change_column_messages.rb</u>」</strong>の内容を下のように変更します。
+              <br><br>
+              <i class="fa fa-file color-red"></i>　<strong>日時_change_column_messages.rb（3、4行目を追加）</strong>
+              <br>
+              <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4</strong>
+5
+6
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>ChangeColumnMessages <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    add_column <span class='word-purple'>:messages</span>, <span class='word-purple'>:room_id</span>, <span class='word-purple'>:integer</span></span>
+<span class='code-line remarkable-code'>    remove_column <span class='word-purple'>:messages</span>, <span class='word-purple'>:receiver</span>, <span class='word-purple'>:integer</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+              <br>
+              これで<strong>「<u>messages</u>」データベース</strong>の
+              <strong>
+                <ul class="number_ul" style="margin-bottom:10px">
+                  <li>「room_id」の枠組みの追加</li>
+                  <li>「receiver」の枠組みの削除</li>
+                </ul>
+              </strong>
+              の2つを設定しました。
+              <hr class="red-hr">
+              設定内容を適用させるために、
+              <br><br>
+              　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+              <br>
+              をして完了です。
+              <br><br>
+              <p id="title1-2"><strong><li>「rooms」データベースの作成</li></strong></p>
+              <br>
+              今度はチャットルームのデータを入れるための<strong>「<u>rooms</u>」データベース</strong>を作成します。
+              <br><br>
+              <strong>rooms</strong>
+              <table class="table table-striped" style="width:50%">
+                <thead style="font-size:0.8em">
+                  <tr class="active">
+                    <th style="background-color: #f2dede;">id</th>
+                    <th style="background-color: #f2dede;">name</th>
+                    <th style="background-color: #f2dede;">explain</th>
+                    <th>created_at</th>
+                    <th>updated_at</th>
+                  </tr>
+                </thead>
+                <tbody class="text-center">
+                  <tr>
+                    <td style="background-color: #f2dede;">1</td>
+                    <td style="background-color: #f2dede;font-size:12px;">新規チャット</td>
+                    <td style="background-color: #f2dede;font-size:12px;">説明を入力</td>
+                    <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                    <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                  </tr>
+                </tbody>
+              </table>
+              「rooms」データを作成するための設定ファイルを作成するために、ターミナルで下の入力をします。
+              <br><br>
+              　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model room</span>
+</td>
+</tr>
+</table>
+              <br>
+              この入力で作成される<strong>「<u>db > migrate > 日時_create_rooms.rb</u>」</strong>の内容を下のように変更します。
+              <br><br>
+              <i class="fa fa-file color-red"></i>　<strong>日時_create_rooms.rb（5、6行目を追加）</strong>
+              <br>
+              <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreateRooms <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:rooms</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>:name</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"新規チャット"</span></span>
+<span class='code-line'>      t.text       <span class='word-purple'>:explain</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"説明を入力"</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+              <br>
+              これで<strong>「<u>rooms</u>」データベース</strong>に
+              <strong>
+              <ul class="number_ul" style="margin-bottom:10px">
+                <li>初期値に「新規チャット」が入る「<u>name</u>」の枠組み</li>
+                <li>初期値に「説明を入力」が入る「<u>explain</u>」の枠組み</li>
+              </ul>
+              </strong>
+              の2つを追加で設定しました。
+              <hr class="red-hr">
+              設定を適用させるために、
+              <br><br>
+              　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+              <br>
+              をして完了です。
+              <br><br>
+              <p id="title1-3"><strong><li>「entries」データベースの作成</li></strong></p>
+              <br>
+              最後にチャットルームに参加している会員のデータを入れる<strong>「<u>entries</u>」データベース</strong>を作成します。
+              <br><br>
+              <strong>entries</strong>
+              <table class="table table-striped" style="width:50%">
+                <thead style="font-size:0.8em">
+                  <tr class="active">
+                    <th style="background-color: #f2dede;">id</th>
+                    <th style="background-color: #f2dede;">room_id</th>
+                    <th style="background-color: #f2dede;">user_id</th>
+                    <th>created_at</th>
+                    <th>updated_at</th>
+                  </tr>
+                </thead>
+                <tbody class="text-center">
+                  <tr>
+                    <td style="background-color: #f2dede;">1</td>
+                    <td style="background-color: #f2dede;">1</td>
+                    <td style="background-color: #f2dede;">1</td>
+                    <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                    <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                  </tr>
+                </tbody>
+              </table>
+              <i class="fa fa-arrow-right"></i>　このデータは、<strong>会員「1」がチャットルーム「1」に参加していることを示すデータ</strong>になります。
+              <br><br>
+              まずは「entries」データを作成するための設定ファイルを下の入力で作成します。
+              <br><br>
+              　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model entry</span>
+</td>
+</tr>
+</table>
+            <br>
+            この入力で作成された<strong>「<u>db > migrate > 日時_create_entries.rb</u>」</strong>を下のような内容に変更します。
+            <br><br>
+            <i class="fa fa-file color-red"></i>　<strong>日時_create_entries.rb（5、6行目を追加）</strong>
+            <br>
+            <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreateEntries <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:entries</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:user_id</span></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:room_id</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+            <br>
+            これで<strong>「<u>entries</u>」データベース</strong>に
+            <strong>
+            <ul class="number_ul" style="margin-bottom:10px">
+              <li>「user_id」の枠組み</li>
+              <li>「room_id」の枠組み</li>
+            </ul>
+            </strong>
+            の2つを追加で設定できました。
+            <hr class="red-hr">
+            設定を適用させるために、
+            <br><br>
+              　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+            <br>
+            を入力して完了です。
+            </ul>
+            <hr>
+            <div class="next-page">
+                <a href="/coffee_cups/3" class="btn btn-primary">戻る</a>
+            </div>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>第3章：設定一覧</h4></a>
+          <a href="#title0" class="list-group-item">0 : この章の目的</a>
+          <a href="#title1" class="list-group-item">1 : 設定一覧</a>
+          <a href="#title1-1" class="list-group-item">　<small>① : messagesデータベース</small></a>
+          <a href="#title1-2" class="list-group-item">　<small>② : roomsデータベース</small></a>
+          <a href="#title1-3" class="list-group-item">　<small>③ : entriesデータベース</small></a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

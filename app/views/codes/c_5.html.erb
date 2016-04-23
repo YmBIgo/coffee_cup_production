@@ -1,0 +1,187 @@
+<% provide :title, "5：設定一覧" %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>チャットルームを作成する③：設定一覧</strong></h1>
+          </div>
+          <h4><u><a href="/coffee_cups/5" class="text-left ">チャットルームを作成する③</a></u></h4>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header5.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h4>
+            <i class="fa fa-bookmark color-red"></i>　<strong>「チャットルームを作成する③」の設定一覧の確認をする</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+          <h4 id="code-coffee-1">
+            <strong>「<a href="/coffee_cups/5" target="_blank">チャットルームを作成する③</a>」では、「<u>entries」データ</u>の作成・表示をします。</strong>
+            <br><br>
+            具体的には、
+            <strong>
+              <ul class="number_ul">
+                <li>「<u>rooms</u>」データの作成時に「<u>entries</u>」データを作成</li>
+                <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                                      :width => "90%",
+                                      :class => "hover_img textbook-title-img"),
+                            "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                            :target => ["_blank"] %>
+                    の <a class="btn btn-warning">チャットを始める</a> をクリックすると、
+                    <br><br>
+                    <strong>entries</strong>
+                    <table class="table table-striped" style="width:50%">
+                      <thead style="font-size:0.8em">
+                        <tr class="active">
+                          <th style="background-color: #f2dede;">id</th>
+                          <th style="background-color: #f2dede;">room_id</th>
+                          <th style="background-color: #f2dede;">user_id</th>
+                          <th>created_at</th>
+                          <th>updated_at</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-center">
+                        <tr>
+                          <td style="background-color: #f2dede;">1</td>
+                          <td style="background-color: #f2dede;">1</td>
+                          <td style="background-color: #f2dede;">1</td>
+                          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-striped" style="width:50%">
+                      <thead style="font-size:0.8em">
+                        <tr class="active">
+                          <th style="background-color: #f2dede;">id</th>
+                          <th style="background-color: #f2dede;">room_id</th>
+                          <th style="background-color: #f2dede;">user_id</th>
+                          <th>created_at</th>
+                          <th>updated_at</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-center">
+                        <tr>
+                          <td style="background-color: #f2dede;">1</td>
+                          <td style="background-color: #f2dede;">1</td>
+                          <td style="background-color: #f2dede;">2</td>
+                          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    の作成をします。
+                    <br><br>
+                <li>「<u>entries</u>」データベースを使ったデータの表示</li>
+                <br>
+                <i class="fa fa-arrow-right"></i>　チャットルームに参加している会員の表示
+                <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                                      :width => "90%",
+                                      :class => "hover_img textbook-title-img"),
+                            "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                            :target => ["_blank"] %>
+                <hr class="red-hr">
+                <i class="fa fa-arrow-right"></i>　ログインしている会員の参加しているチャットルームの表示
+                <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                                      :width => "90%",
+                                      :class => "hover_img textbook-title-img"),
+                            "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                            :target => ["_blank"] %>
+                <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                                      :width => "90%",
+                                      :class => "hover_img textbook-title-img"),
+                            "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                            :target => ["_blank"] %>
+                <li>「<u>entries</u>」データを使ったチャットルームの制限</li>
+                <br>
+                上で作成した
+                <br><br>
+                <strong>entries</strong>
+                    <table class="table table-striped" style="width:50%">
+                      <thead style="font-size:0.8em">
+                        <tr class="active">
+                          <th style="background-color: #f2dede;">id</th>
+                          <th style="background-color: #f2dede;">room_id</th>
+                          <th style="background-color: #f2dede;">user_id</th>
+                          <th>created_at</th>
+                          <th>updated_at</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-center">
+                        <tr>
+                          <td style="background-color: #f2dede;">1</td>
+                          <td style="background-color: #f2dede;">1</td>
+                          <td style="background-color: #f2dede;">1</td>
+                          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-striped" style="width:50%">
+                      <thead style="font-size:0.8em">
+                        <tr class="active">
+                          <th style="background-color: #f2dede;">id</th>
+                          <th style="background-color: #f2dede;">room_id</th>
+                          <th style="background-color: #f2dede;">user_id</th>
+                          <th>created_at</th>
+                          <th>updated_at</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-center">
+                        <tr>
+                          <td style="background-color: #f2dede;">1</td>
+                          <td style="background-color: #f2dede;">1</td>
+                          <td style="background-color: #f2dede;">2</td>
+                          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                のような「entries」データを使って、チャットルームに参加者が参加しているかを判定します。
+              </ul>
+            </strong>
+            <br>
+            これらの設定内容を復習します。
+            <hr class="red-hr">
+            <i class="fa fa-play-circle"></i>　<strong>「entries」データの作成</strong>
+            <br><br>
+            <strong>「<u>entries</u>」データ</strong>は、<strong>「<u>rooms</u>」データベースを作成する時に</strong>作成しました。
+            <br><br>
+            なので<strong>「<u>rooms</u>」データベース</strong>の作成をした
+            <strong>
+              <ul class="number_ul">
+                <li>「<u>app > controllers > rooms_controller.rb</u>」</li>
+                <li>「<u>app > views > users > show.html.erb</u>」</li>
+              </ul>
+            </strong>
+            で設定をしました。
+            <br><br>
+            <i class="fa fa-arrow-right"></i>　<strong>まずは「<u>rooms_controller.rb</u>」から</strong>
+            <br><br>
+            <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb</strong>
+            <hr>
+            <div class="next-page">
+                <a href="/coffee_cups/5" class="btn btn-primary">戻る</a>
+            </div>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>第3章：設定一覧</h4></a>
+          <a href="#title0" class="list-group-item">0 : この章の目的</a>
+          <a href="#title1" class="list-group-item">1 : 設定一覧</a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

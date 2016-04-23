@@ -77,10 +77,39 @@
                           :class => "hover_img textbook-title-img"),
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                 :target => ["_blank"] %>
+    <br><br>
+    <li>チャットルームを閲覧できるユーザーの制限</li>
+    <br>
+    チャットルームに参加している会員でなければ、チャットルームを見れないようにします。
+    <br><br>
+    <i class="fa fa-arrow-right"></i>　ログインしている会員がチャットルームに参加しているかどうかは、
+    <br><br>
+    <strong>entries</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+          <th style="background-color: #f2dede;">id</th>
+          <th style="background-color: #f2dede;">room_id</th>
+          <th style="background-color: #f2dede;">user_id</th>
+          <th>created_at</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        </tr>
+      </tbody>
+    </table>
+    「entries」データを使って判定します。
   </ul>
   </strong>
   <br>
-  の2つをしてみます。
+  の3つをしてみます。
   <br><br>
   まずは<strong>「<u>entries</u>」データの作成（<u>create</u>）</strong>からやってみましょう！
   <hr class="red-hr">
@@ -89,4 +118,20 @@
   <%= render "coffee3/title2_2_2" %>
   <hr class="red-hr">
   <%= render "coffee3/title2_2_3" %>
+</h4>
+<h4>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>
+  ここまでで、チャットルームに参加している会員の情報「<u>entries</u>」データについて触れました。
+  <br><br>
+  具体的には、
+  <ul class="number_ul">
+    <li>「entries」データの作成</li>
+    <li>「entries」データの表示</li>
+    <li>「entries」データを使った、チャットルーム閲覧の制限</li>
+  </ul>
+  の3つをやりました。
+  </strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>一回、この章で設定した内容をまとめましょう！</strong>
 </h4>

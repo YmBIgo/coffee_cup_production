@@ -293,4 +293,234 @@
   </ul>
   </strong>
   に閲覧する会員の制限をかけることができました！
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>ついでに「messages」データの作成でも、同じ<u>「チャットルームに参加しているか」の判定</u>をしてみます。</strong>
+  <br><br>
+  メッセージデータの作成は<strong>「<u>app > controllers > messages_controller.rb</u>」</strong>で行いました。
+  <br>
+  内容は下のような感じだったと思います。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>MessagesController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+<span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここにさきほど設定した、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => @room.id).present?</span>
+</td>
+</tr>
+</table>
+  <br>
+  を設定します。
+  <hr class="red-hr">
+  ですが今回は<strong>「<u>@room</u>」</strong>がないので、
+  <br>
+  「messages」データの入力欄を表示した<strong>「<u>rooms</u>」データベースの「<u>show</u>」ページ</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+              :target => ["_blank"] %>
+  のページの表示を設定した<strong>「<u>app > views > rooms > show.html.erb</u>」</strong>の
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（36〜43行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>36
+37
+38
+39
+40
+41
+42
+43
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @message <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control myform"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"メッセージを入力して下さい"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.hidden_field <span class="word-purple">:room_id</span>, <span class='word-purple'>:value</span> =&gt; @room.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"投稿する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  の
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>38
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= f.hidden_field <span class="word-purple">:room_id</span>, <span class='word-purple'>:value</span> =&gt; @room.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  に入っている<strong>「room_id」のデータ</strong>を、<strong>データ操作の「<u>controller</u>」ファイル</strong>で設定します。
+  <hr class="red-hr">
+  「controller」ファイルで送られてきたデータは、
+<pre>
+params
+</pre>
+  に集約されました。
+  <br>
+  <small>※　内容は<a href="/mugcups/6#title1-4-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  この<strong>「<u>params</u>」</strong>を使って、チャットルームの情報を取得します。
+  <br>
+  <strong>「<u>params</u>」</strong>は
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+</td>
+</tr>
+</table>
+  <br>
+  のような形で使いました。
+  <br><br>
+  今回はこの<strong>「<u>params</u>」</strong>からデータを取り出します。
+  <hr class="red-hr">
+  では<strong>「<u>app > controllers > messages_controller.rb</u>」</strong>の内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb（6、8〜10行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+<strong class="color-red">6</strong>
+7
+<strong class="color-red">8
+9
+10</strong>
+11
+12
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line remarkable-code'>    <span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => params[<span class='word-purple'>:message</span>][<span class='word-purple'>:room_id</span>]).present?</span>
+<span class='code-line'>      @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+<span class="remarkable-code"><span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  6行目で判定をしていますね。判定の条件は、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => params[<span class='word-purple'>:message</span>][<span class='word-purple'>:room_id</span>]).present?</span>
+</td>
+</tr>
+</table>
+  <br>
+  で<strong>「user_id」と「room_id」</strong>の条件に合った検索をしています。
+  <br><br>
+  <strong>「user_id」</strong>は<strong>「current_user」の「id」</strong>なのですが、
+  <br>
+  <strong>「room_id」</strong>は、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-purple'>:room_id</span> => params[<span class='word-purple'>:message</span>][<span class='word-purple'>:room_id</span>]</span>
+</td>
+</tr>
+</table>
+  <br>
+  のようになっています。この中にある
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>params[<span class='word-purple'>:message</span>][<span class='word-purple'>:room_id</span>]</span>
+</td>
+</tr>
+</table>
+  <br>
+  で、送信されてきたデータ<strong>「<u>params</u>」</strong>の中の<strong>「<u>message</u>」データの「<u>room_id</u>」の枠組み</strong>を選択しています。
+  <hr class="red-hr">
+  ここまでの条件判定で、
+  <ul class="number_ul">
+    <strong><li>条件に合うときは</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>7
+</td>
+<td class='code-content'><span class='code-line'>@message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+</td>
+</tr>
+</table>
+  <br>
+  でデータの作成
+  <br><br>
+  <strong><li>条件に合わないときは</li></strong>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+</td>
+<td class='code-content'><span class='code-line'>flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無効なユーザー"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  で
+  <p class="alert alert-danger" style="margin-top:10px;">無効なユーザー</p>
+  </ul>
+  を表示させ
+  <br>
+  最後の
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  で一つ前のページに移動させています。
 </h4>
