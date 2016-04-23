@@ -47,13 +47,6 @@
       -moz-background-size: cover;
       background-size: cover;
       -o-background-size: cover;
-      opacity:.8;
-      transition: all .5s;
-  }
-
-  header:hover{
-    opacity:1;
-    transition: all .5s;
   }
 
   header .header-content {
@@ -217,6 +210,16 @@
   opacity:.7;
 }
 
+.hover_img_reverse{
+  opacity:.8;
+  transition: all .5s;
+}
+
+.hover_img_reverse:hover{
+  opacity:1;
+  transition: all .5s;
+}
+
 // 共通設定
 
 .highlight{
@@ -342,7 +345,7 @@ hr{
 }
 
 .color-green{
-  color:#009944;
+  color:#1e6439;
 }
 
 .color-purple{
