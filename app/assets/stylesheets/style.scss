@@ -38,7 +38,8 @@
   header {
       position: relative;
       width: 100%;
-      min-height: auto;
+      min-height: 300px;
+      height:auto;
       text-align: center;
       background-image: url("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffee_header.jpg");
       background-position: center;
@@ -46,6 +47,13 @@
       -moz-background-size: cover;
       background-size: cover;
       -o-background-size: cover;
+      opacity:.8;
+      transition: all .5s;
+  }
+
+  header:hover{
+    opacity:1;
+    transition: all .5s;
   }
 
   header .header-content {
@@ -55,14 +63,14 @@
       text-align: center;
       /**/
       overflow: hidden;
+      background-color:rgba(255,255,255,.6);
   }
 
   header .header-content .header-content-word{
-    background-color:rgba(255,255,153,.9);
+    color:#1e543e;
     padding:15px 20px;
-    max-width:500px;
     margin:0 auto;
-    border-radius:10px
+    border-radius:10px;
   }
 
   // root_page
