@@ -528,7 +528,7 @@
 </td>
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
 <span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
-<span class='code-line'>    <span class='word-red'>if </span>@user.id == current_user.id</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
 <span class='code-line remarkable-code'>      @entries <span class="word-red">=</span> current_user.entries.limit(<span class="word-purple">3</span>)</span>
 <span class='code-line'>    <span class="word-red">else</span></span>
 <span class='code-line'>      @room <span class="word-red">=</span> <span class="word-blue">Room</span>.<span class='word-red'>new</span></span>

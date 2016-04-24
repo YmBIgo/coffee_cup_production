@@ -14,8 +14,8 @@
 // Components
 
   // navbar
-  .kbc-navbar{
-    opacity:.97;
+  .coffee-navbar{
+    opacity:.98;
     padding:10px;
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
   }
@@ -58,6 +58,12 @@
       /**/
       overflow: hidden;
       background-color:rgba(255,255,255,.4);
+      transition: all .5s;
+  }
+
+  header .header-content:hover{
+    transition: all .5s;
+    background-color:rgba(255,255,255,.5);
   }
 
   header .header-content .header-content-word{
