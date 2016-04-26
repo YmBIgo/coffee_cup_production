@@ -1,0 +1,91 @@
+<h4 id="coffee-chapter4-2-1">
+  <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 画像アップロードの仕組み</strong></p>
+  <br>
+  この章では<strong>「<u>Paperclip</u>」</strong>を使って画像のアップロードをしていきますが、これはどのような仕組みになっているのでしょうか？
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>大体の流れをもう一度確認しましょう。</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　
+  <strong>
+  まず「<u>users</u>」データベースの「<u>edit</u>」ページを開いて、
+  <%= link_to image_tag("coffee7/Chrome_messages_users_1_edit_no_image.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Chrome_messages_users_1_edit_no_image.png",
+              :target => ["_blank"] %>
+  画像の入力欄を開いて画像を選択して、
+  <%= link_to image_tag("coffee7/Chrome_messages_users_1_edit_select_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Chrome_messages_users_1_edit_select_images.png",
+              :target => ["_blank"] %>
+  <a class="btn btn-primary">登録する</a> をクリックすると、
+  <%= link_to image_tag("coffee7/Chrome_messages_users_1_edit_upload_image.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Chrome_messages_users_1_edit_upload_image.png",
+              :target => ["_blank"] %>
+  のように画像が保存されて表示されます。
+  </strong>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>ではこの保存した画像はどこにあるのでしょうか？</strong>
+  <br><br>
+  これらの画像は、<strong>「<u>public > system</u>」</strong>に保存されます。
+  <%= link_to image_tag("coffee7/Sublime_Text_public_system_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Sublime_Text_public_system_images.png",
+              :target => ["_blank"] %>
+  ここに保存された画像をページで表示させています。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>次に、保存した画像の表示の方法について説明します。</strong>
+  <br><br>
+  画像と会員の紐付けをするために、<strong>「<u>users</u>」データベース</strong>に<u>画像名を入れる枠組み</u>を追加して、
+  <br><br>
+  <strong>users</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.6em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">image_file_name</th>
+        <th style="background-color: #f2dede;">image_content_type</th>
+        <th style="background-color: #f2dede;">image_file_size</th>
+        <th style="background-color: #f2dede;">image_updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center" style="font-size:0.6em">
+      <tr>
+        <td style="background-color: #f2dede;">トーニオ・クレーガー.jpg</td>
+        <td style="background-color: #f2dede;">image/jpeg</td>
+        <td style="background-color: #f2dede;">164788</td>
+        <td style="background-color: #f2dede; font-size:11px;">2016-04-25 04:45:48</td>
+      </tr>
+    </tbody>
+  </table>
+  この枠組みのデータを使って、画像の表示をしています。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>例えば、「<u>id</u>」が「1」の会員であれば</strong>
+  <%= link_to image_tag("coffee7/Sublime_Text_public_system.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Sublime_Text_public_system.png",
+              :target => ["_blank"] %>
+  <strong>「<u>public > system > users > images > 000 > 000 > <span class="color-red">001</span> > medium > 画像名</u>」</strong>の画像を表示させます。
+  <br><br>
+  追加した<strong>「image_file_name」の枠組み</strong>の内容を、上にある<strong>「<u>画像名</u>」</strong>に入れて画像を表示させています。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>途中に「<u>medium</u>」というフォルダがありますが、これは<u>画像の大きさ</u>になります。</strong>
+  <br><br>
+  画像の大きさは
+  <strong>
+    <ul class="number_ul">
+      <li>original（元の大きさ）</li>
+      <li>medium（中）</li>
+      <li>thumb（小）</li>
+    </ul>
+  </strong>
+  の3つがあり、それぞれのフォルダに画像ファイルが保存されます。
+  <br>
+  これらの大きさは自分で決めるので、後で設定してみましょう！
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>では実際に「<u>Paperclip</u>」を使ってみましょう！</strong>
+</h4>

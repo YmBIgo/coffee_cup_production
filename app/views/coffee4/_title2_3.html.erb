@@ -1,0 +1,105 @@
+<h4 id="coffee-chapter4-2-3">
+  <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : まとめ</strong></p>
+  <br>
+  <strong>「<u>Paperclip</u>」</strong>の使いかたをまとめる。
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li>データベースの追加</li></strong>
+    <br>
+    データベースを追加するための設定ファイルを作成します。
+    <br><br>
+    　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>rails g paperclip user image</span>
+</td>
+</tr>
+</table>
+    <br>
+    今回は、<strong>「<u>users</u>」データベースに「<u>image</u>」の枠組みを加える</strong>ための入力になります。
+    <br><br>
+    この入力で<strong>「日時_add_attachment_image_to_users.rb」</strong>ファイルが作成されます。
+    <br><br>
+    これが終わったら設定を適用させます。
+    <br><br>
+    　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li>データ操作</li></strong>
+    <br>
+    データ操作には、
+    <strong>
+    <ul class="number_ul" style="margin-bottom:10px;">
+      <li>users_controller.rb</li>
+      <li>user.rb</li>
+    </ul>
+    </strong>
+    の2つのファイルに設定を追加します。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>@user.update(params.require(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>, <span class='word-purple'>:age</span>, <span class='word-purple remarkable-code'>:image</span>))</span>
+</td>
+</tr>
+</table>
+    <br>
+    <i class="fa fa-file color-red"></i>　<strong>user.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+2
+</td>
+<td class='code-content'><span class='code-line'>has_attached_file <span class='word-purple'>:image</span>, <span class='word-purple'>styles:</span> { <span class='word-purple'>medium:</span> <span class='word-yellow'>"300x300>", <span class='word-purple'>thumb:</span> "50x50>"</span> }</span>
+<span class='code-line'>validates_attachment <span class='word-purple'>:image</span>, <span class='word-purple'>content_type:</span> { <span class='word-purple'>content_type:</span> [<span class='word-yellow'>"image/jpg", "image/jpeg", "image/png", "image/gif"</span>] }</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li>ページ表示</li></strong>
+    <br>
+    ページ表示には、
+    <strong>
+    <ul class="number_ul" style="margin-bottom:10px">
+      <li>入力欄の表示</li>
+      <li>画像の表示</li>
+    </ul>
+    </strong>
+    の2つをやります。
+    <br><br>
+    <i class="fa fa-arrow-right"></i>　<strong>入力欄の表示</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    <i class="fa fa-arrow-right"></i>　<strong>画像の表示</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+  </ul>
+  <i class="fa fa-play-circle"></i>　<strong>「<u>Paperclip</u>」を使った画像の表示はここまでです。</strong>
+</h4>

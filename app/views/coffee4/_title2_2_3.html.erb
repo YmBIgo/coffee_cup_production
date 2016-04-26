@@ -1,0 +1,342 @@
+<h4 id="coffee-chapter4-2-2-3">
+  <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : ページ表示</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>次にページ表示をやってみましょう！</strong>
+  <br><br>
+  ページ表示には
+  <strong>
+  <ul class="number_ul">
+    <li>入力欄の設定</li>
+    <%= link_to image_tag("coffee7/Chrome_messages_users_1_edit_no_image.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "/assets/coffee7/Chrome_messages_users_1_edit_no_image.png",
+                :target => ["_blank"] %>
+    <li>画像の表示</li>
+    <br>
+    <i class="fa fa-arrow-right"></i>　大きさ「medium」の画像（300x300）の表示
+    <%= link_to image_tag("coffee7/Chrome_messages_users_1_after_upload_images.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "/assets/coffee7/Chrome_messages_users_1_after_upload_images.png",
+                :target => ["_blank"] %>
+    <i class="fa fa-arrow-right"></i>　大きさ「thumb」の画像（50x50）の表示
+    <%= link_to image_tag("coffee7/Chrome_messages_rooms_1_messages_with_images.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "/assets/coffee7/Chrome_messages_rooms_1_messages_with_images.png",
+                :target => ["_blank"] %>
+  </ul>
+  </strong>
+  の2つがあります。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>まずは入力欄の設定をしてみます。</strong>
+  <br><br>
+  会員情報を編集するページ、<strong>「<u>users</u>」データベースの「<u>edit</u>」ページ</strong>にファイルの入力欄を追加します。
+  <input type="file" style="margin:20px 0" class="form-control my-form">
+  では<strong>「<u>app > views > users > edit.html.erb</u>」</strong>の内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（4〜6行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4
+5
+6</strong>
+7
+...
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;プロフィール画像&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span></span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class="code-line word-gray">  &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  これでファイルの入力欄を設定できました。
+  <br><br>
+  このようにファイルの入力欄は、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  のように<strong>「file_field」</strong>を使って設定します。
+  <br>
+  ここでも<strong>「<a href="/mugcups/7#title2-2-3" target="_blank">form-control</a>」</strong>を使って入力欄を装飾しています。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right color-red"></i>　<strong>入力欄の設定とデータ操作ができたので、一度画像を保存してみましょう！</strong>
+  <br><br>
+  まずは会員でログインして、会員の情報編集ページに移動しましょう！
+  <br>
+  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+  <%= link_to image_tag("coffee7/Chrome_messages_users_1_edit_no_images_no_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Chrome_messages_users_1_edit_no_images_no_message.png",
+              :target => ["_blank"] %>
+  このようなページは出てきたでしょうか？
+  <br>
+  ページが出てきたら、画像の入力欄をクリックし画像を選択して、
+  <%= link_to image_tag("coffee7/Chrome_messages_users_1_edit_select_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Chrome_messages_users_1_edit_select_images.png",
+              :target => ["_blank"] %>
+  <a class="btn btn-primary">登録する</a> をクリックしましょう！
+  <br><br>
+  これで画像は保存されたので、
+  <br>
+  まずは<strong>「<u>public > system</u>」</strong>以下に画像があるかを確認しましょう！
+  <%= link_to image_tag("coffee7/Sublime_Text_public_system_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Sublime_Text_public_system_images.png",
+              :target => ["_blank"] %>
+  ついでに、<strong>「<u>Sequel Pro</u>」</strong>にデータが保存されたかを確認しましょう！
+  <%= link_to image_tag("coffee7/Sequel_Pro_images_user_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Sequel_Pro_images_user_1.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>次に画像の表示をします。</strong>
+  <br><br>
+  今度は保存した画像を表示してみます。
+  <br><br>
+  <i class="fa fa-arrow-right color-red"></i>　まずは<strong>「<u>medium</u>」（縦300横300）</strong>の画像を
+  <strong>
+  <ul class="number_ul">
+    <li>「<u>users</u>」データベースの「<u>show</u>」ページ</li>
+    <%= link_to image_tag("coffee7/Chrome_messages_users_1_after_upload_images.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "/assets/coffee7/Chrome_messages_users_1_after_upload_images.png",
+                :target => ["_blank"] %>
+    <li>「<u>users</u>」データベースの「<u>edit</u>」ページ</li>
+    <%= link_to image_tag("coffee7/Chrome_messages_users_1_edit_upload_image.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "/assets/coffee7/Chrome_messages_users_1_edit_upload_image.png",
+                :target => ["_blank"] %>
+  </ul>
+  </strong>に表示させましょう！
+  <hr class="red-hr">
+  まずは、<strong>「<u>app > views > users > show.html.erb</u>」</strong>の内容を下のように変更して下さい。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（5、6行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+...
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line word-gray'>    &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  中にある
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  で画像の表示をしています。
+  <br><br>
+  <strong>「<u>@user</u>」</strong>で会員のデータの選択をし、
+  <br>
+  その会員データに対応する<strong>「大きさ <u>medium</u>」の「<u>image</u>」</strong>を表示させています。
+  <br>
+  <small>※　後ろに「&lt;br&gt;」を2つつけて、画像と名前の間に隙間を入れています</small>
+  <%= link_to image_tag("coffee7/Chrome_messages_users_1_after_upload_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Chrome_messages_users_1_after_upload_images.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  同じようにして<strong>「<u>users</u>」データベースの「<u>edit</u>」ページ</strong>に画像を表示させてみます。
+  <br><br>
+  <strong>「<u>app > views > users > edit.html.erb</u>」</strong>の内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（5、6行目を追加）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;プロフィール画像&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line word-gray'>  &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  5行目の設定で、上と同じように画像の表示をします。
+  <%= link_to image_tag("coffee7/Chrome_messages_users_1_edit_upload_image.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Chrome_messages_users_1_edit_upload_image.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　次に<strong>「<u>thumb</u>」（縦50横50）</strong>の画像を
+  <strong>
+  <ul class="number_ul">
+    <li>「<u>rooms</u>」データベースの「<u>show</u>」ページ</li>
+    <%= link_to image_tag("coffee7/Chrome_messages_rooms_1_messages_with_images.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "/assets/coffee7/Chrome_messages_rooms_1_messages_with_images.png",
+                :target => ["_blank"] %>
+  </ul>
+  </strong>
+  に表示させましょう。
+  <br><br>
+  <strong>「<u>thumb</u>」</strong>の大きさの画像は、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= image_tag @user.image.url(<span class='word-purple'>:thumb</span>) %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  のように設定して表示させます。
+  <hr class="red-hr">
+  では<strong>「<u>app > views > rooms > show.html.erb</u>」</strong>の内容を下のように変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（22、30行目を変更）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>14
+15
+16
+17
+18
+19
+20
+21
+<strong class="color-red">22</strong>
+23
+24
+25
+26
+27
+28
+29
+<strong class="color-red">30</strong>
+31
+32
+33
+34
+35
+...
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @messages.present? %&gt;</span>
+<span class='code-line'>      &lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">if</span> m.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-right"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;さん　&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-left"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-info"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;　&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class="code-line word-gray">    &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  22、30行目のそれぞれ名前を表示させている部分の前/後ろに、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  を設定して、会員の画像を表示させています。
+  <br>
+  <small>※　<strong>「<u>m.user</u>」</strong>で<strong>「<u>messages</u>」データベース</strong>を持っている会員を選択しています。</small>
+  <%= link_to image_tag("coffee7/Chrome_messages_rooms_1_messages_with_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "/assets/coffee7/Chrome_messages_rooms_1_messages_with_images.png",
+              :target => ["_blank"] %>
+  <i class="fa fa-play-circle"></i>　<strong>ここまでで画像を表示させることができました！</strong>
+</h4>

@@ -1,0 +1,42 @@
+<h4 id="coffee-chapter4-2-2">
+  <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 「Paperclip」を使う</strong></p>
+  <br>
+  このような流れで<strong>「<u>Paperclip</u>」</strong>は画像のアップロードをしていました。
+  <br>
+  実際の<strong>「<u>Paperclip</u>」</strong>で設定することは、
+  <ul class="number_ul">
+    <strong><li style="margin-bottom:5px">データベースにへの枠組みの追加</li></strong>
+    <strong>users</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.5em">
+        <tr class="active">
+          <th style="background-color: #f2dede;">image_file_name</th>
+          <th style="background-color: #f2dede;">image_content_type</th>
+          <th style="background-color: #f2dede;">image_file_size</th>
+          <th style="background-color: #f2dede;">image_updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center" style="font-size:0.6em">
+        <tr>
+          <td style="background-color: #f2dede;">トーニオ・クレーガー.jpg</td>
+          <td style="background-color: #f2dede;">image/jpeg</td>
+          <td style="background-color: #f2dede;">164788</td>
+          <td style="background-color: #f2dede; font-size:11px;">2016-04-25 04:45:48</td>
+        </tr>
+      </tbody>
+    </table>
+    <strong><li>データ操作の設定</li></strong>
+      <p style="margin:10px 0">画像を保存して、上のデータベースの枠組みに変更を加える設定をします。</p>
+    <strong><li>ページ表示の設定</li></strong>
+      <p style="margin:10px 0">ページに画像を表示させる設定をします。</p>
+  </ul>
+  の3つになります。
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>ではやってみましょう！</strong>
+  <hr class="red-hr">
+  <%= render "coffee4/title2_2_1" %>
+  <hr class="red-hr">
+  <%= render "coffee4/title2_2_2" %>
+  <hr class="red-hr">
+  <%= render "coffee4/title2_2_3" %>
+</h4>
