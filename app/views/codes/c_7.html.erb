@@ -1,0 +1,411 @@
+<% provide :title, "画像のアップロード：設定一覧" %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>画像のアップロード：設定一覧</strong></h1>
+          </div>
+          <h4><u><a href="/coffee_cups/7" class="text-left ">画像のアップロード</a></u></h4>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffeecup_header7.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h4>
+            <i class="fa fa-bookmark color-red"></i>　<strong>「画像のアップロード」の設定一覧の確認をする</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+          <h4 id="code-coffee-1">
+            <strong>「<a href="/coffee_cups/7" target="_blank">画像のアップロード</a>」では「<u>Paperclip</u>」というgemを使い、画像をアップロードできるようにしました。</strong>
+            <br><br>
+            具体的には、
+            <strong>
+            <ul class="number_ul">
+              <li>「Paperclip」の導入</li>
+              <li>データベースへの枠組みの追加</li>
+              <li>画像のデータ操作</li>
+              <li>ページでの画像表示</li>
+            </ul>
+            </strong>
+            の3つをやってみます。
+            <hr class="red-hr">
+            <p id="title1-1"><i class="fa fa-play-circle"></i>　<strong>まずは「<u>Paperclip</u>」の導入から</strong></p>
+            <br>
+            ターミナルで
+            <br><br>
+            　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>brew install imagemagick</span>
+</td>
+</tr>
+</table>
+            <br>
+            をして<strong>「<u>Paperclip</u>」を使うのに必要になるツール「<u>imagemagick</u>」</strong>をインストールします。
+            <br>
+            <small>※　これでインストールできたので、今後インストールする必要はありません。</small>
+            <br><br>
+            これができたら<strong>「<u>Gemfile</u>」</strong>に下の内容を加え、
+            <br><br>
+            <i class="fa fa-file color-red"></i>　<strong>Gemfile</strong>
+            <br>
+            <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>32
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>"paperclip"</span></span>
+</td>
+</tr>
+</table>
+            <br>
+            gemの導入をターミナルでします。
+            <br><br>
+            　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+            <hr class="red-hr">
+            <p id="title1-2"><i class="fa fa-play-circle"></i>　<strong>次は枠組みの追加</strong></p>
+            <br><br>
+            まずはターミナルで下の入力をして、枠組みを変更するための設定ファイルを作成します。
+            <br><br>
+            　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g paperclip user image</span>
+</td>
+</tr>
+</table>
+            <br>
+            これで<strong>「<u>db > migrate</u>」フォルダに「<u>日時_add_attachment_image_to_users.rb</u>」</strong>が作成されました。
+            <br><br>
+            <i class="fa fa-file color-red"></i>　<strong>日時_add_attachment_image_to_users.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddAttachmentImageToUsers <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>self.up</span></span>
+<span class='code-line'>    change_table <span class='word-purple'>:users</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'>      t.attachment <span class='word-purple'>:image</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>self.down</span></span>
+<span class='code-line'>    remove_attachment <span class='word-purple'>:users</span>, <span class='word-purple'>:image</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+            <br>
+            この設定内容を適用させます。
+            <br><br>
+            　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+            <br>
+            これで
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sequel_Pro_images.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sequel_Pro_images.png",
+                        :target => ["_blank"]  %>
+              のようにデータベースに枠組みが追加されました。
+              <hr class="red-hr">
+              <p id="title1-3"><i class="fa fa-play-circle"></i>　<strong>データ操作をやってみましょう！</strong></p>
+              <br><br>
+              データ操作は
+              <strong>
+              <ul class="number_ul">
+                <li>「app > controllers > users_controller.rb」</li>
+                <li>「app > models > user.rb」</li>
+              </ul>
+              </strong>
+              の2つのファイルに設定します。
+              <br><br>
+              <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（31行目を変更）</strong>
+              <br>
+              <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>28
+29
+30
+<strong class="color-red">31</strong>
+32
+33
+34
+35
+36
+37
+38
+</td>
+<td class='code-content'>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line remarkable-code'>      @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>, <span class='word-purple'>:age</span>, <span class='word-purple'>:image</span>))</span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"編集が完了しました"</span></span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+            <br>
+            <i class="fa fa-file color-red"></i>　<strong>user.rb（10〜12行目を追加）</strong>
+            <br>
+            <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong class="color-red">10
+11
+12</strong>
+13
+14
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>User <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'>  <span class='word-gray'># Include default devise modules. Others available are:</span></span>
+<span class='code-line'>  <span class='word-gray'># :confirmable, :lockable, :timeoutable and :omniauthable</span></span>
+<span class='code-line'>  devise <span class='word-purple'>:database_authenticatable</span>, <span class='word-purple'>:registerable</span>,</span>
+<span class='code-line'>         <span class='word-purple'>:recoverable</span>, <span class='word-purple'>:rememberable</span>, <span class='word-purple'>:trackable</span>, <span class='word-purple'>:validatable</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  has_many <span class='word-purple'>:messages</span></span>
+<span class='code-line'>  has_many <span class='word-purple'>:entries</span></span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>  has_attached_file <span class='word-purple'>:image</span>, <span class='word-purple'>styles:</span> { <span class='word-purple'>medium:</span> <span class='word-yellow'>"300x300>", <span class='word-purple'>thumb:</span> "50x50>"</span> }</span>
+<span class='code-line'></span>
+<span class='code-line'>  validates_attachment <span class='word-purple'>:image</span>, <span class='word-purple'>content_type:</span> { <span class='word-purple'>content_type:</span> [<span class='word-yellow'>"image/jpg", "image/jpeg", "image/png", "image/gif"</span>] }</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+            <hr class="red-hr">
+            <p id="title1-4"><i class="fa fa-play-circle"></i>　<strong>最後にページ表示をしましょう</strong></p>
+            <br><br>
+            ページ表示は
+            <strong>
+            <ul class="number_ul">
+              <li>「app > views > users > edit.html.erb」</li>
+              <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_image.png",
+                                    :width => "90%",
+                                    :class => "hover_img textbook-title-img"),
+                          "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_image.png",
+                          :target => ["_blank"] %>
+              <li>「app > views > users > show.html.erb」</li>
+              <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_after_upload_images.png",
+                                    :width => "90%",
+                                    :class => "hover_img textbook-title-img"),
+                          "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_after_upload_images.png",
+                          :target => ["_blank"] %>
+              <li>「app > views > rooms > show.html.erb」</li>
+              <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_rooms_1_messages_with_images.png",
+                                    :width => "90%",
+                                    :class => "hover_img textbook-title-img"),
+                          "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_rooms_1_messages_with_images.png",
+                          :target => ["_blank"] %>
+            </ul>
+            </strong>
+            の3つのページで画像の入力欄・表示の設定を加えます。
+            <br><br>
+            <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「users」フォルダ）</strong>
+            <br>
+            <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6
+7
+8
+9
+10</strong>
+11
+12
+...
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">if</span> @user.image.present? %&gt;</span>
+<span class='code-line'>      &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h4</span>&gt;画像はありません&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line word-gray'>    &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+            <br>
+            <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（「users」フォルダ）</strong>
+            <br>
+            <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4
+5
+6
+7
+8
+9
+10
+11
+12</strong>
+13
+...
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;プロフィール画像&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">if</span> @user.image.present? %&gt;</span>
+<span class='code-line'>    &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;画像はまだ登録されていません&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span></span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line word-gray'>  &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+          <br>
+          <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「rooms」フォルダ）</strong>
+          <br>
+          <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>14
+15
+16
+17
+18
+19
+20
+21
+<strong class="color-red">22</strong>
+23
+24
+25
+26
+27
+28
+29
+<strong class="color-red">30</strong>
+31
+32
+33
+34
+35
+...
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @messages.present? %&gt;</span>
+<span class='code-line'>      &lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">if</span> m.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-right"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;さん　&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-left"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-info"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;　&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class="code-line word-gray">    &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+            <br>
+            <i class="fa fa-play-circle"></i>　<strong>ここまでで「<u>Paperclip</u>」の設定ができました。</strong>
+            </h4>
+            <hr>
+            <div class="next-page">
+                <a href="/coffee_cups/7" class="btn btn-primary">戻る</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>画像をアップロードする：設定一覧</h4></a>
+          <a href="#title0" class="list-group-item">0 : この章の目的</a>
+          <a href="#title1" class="list-group-item">1 : 設定一覧</a>
+          <a href="#title1-1" class="list-group-item">　<small>① : 「Paperclip」の導入</small></a>
+          <a href="#title1-2" class="list-group-item">　<small>② : 枠組みの追加</small></a>
+          <a href="#title1-3" class="list-group-item">　<small>③ : データ操作</small></a>
+          <a href="#title1-4" class="list-group-item">　<small>④ : ページ表示</small></a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>
