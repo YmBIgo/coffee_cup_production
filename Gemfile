@@ -35,6 +35,8 @@ gem 'activeadmin', '~> 1.0.0.pre2'
 
 gem 'devise-i18n'
 
+gem 'jquery-turbolinks'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
