@@ -90,6 +90,15 @@
     padding:15px 20px;
     margin:0 auto;
     border-radius:10px;
+
+    .header-content-word-form{
+      background-color:white;
+      width:50%;
+      margin:0 auto;
+      padding:20px;
+      color:#222;
+      border-radius:20px;
+    }
   }
 
   header .log-area{
@@ -107,6 +116,15 @@
       opacity:.7;
       width:300px;
       margin:0 auto;
+    }
+    label.log-label{
+      background-color:white;
+      opacity:.7;
+      width:140px;
+      border-radius:5px;
+      padding:2px 0;
+      margin:8px 0 0 0;
+      color:rgba(0, 0, 0, .5);
     }
     h2{
       margin-top:10px;

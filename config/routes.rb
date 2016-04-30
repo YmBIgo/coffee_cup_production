@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   get "/dashboard" => "users#index"
 
+  get "/pay_info" => "users#pay_info"
+
 # 404
 
   match '*path' => 'application#error404', via: :all

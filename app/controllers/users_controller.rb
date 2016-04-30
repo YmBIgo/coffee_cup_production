@@ -18,6 +18,9 @@ class UsersController < ApplicationController
     flash[:notice] = "ユーザー情報を編集しました"
   end
 
+  def pay_info
+  end
+
   private
 
   def current_ok_user!
@@ -31,7 +34,7 @@ class UsersController < ApplicationController
   end
 
   def update_params
-    params.require(:user).permit(:first_name, :family_name, :company_name, :phone_number)
+    params.require(:user).permit(:first_name, :family_name, :company_name, :phone_number, :sex, :prefecture)
   end
 
 end

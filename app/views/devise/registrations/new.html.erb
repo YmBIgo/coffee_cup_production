@@ -32,6 +32,13 @@
         <div class="field">
           <%= f.text_field :company_name, autofocus: "off", :class => "form-control", :placeholder => "会社名・学校名" %>
         </div>
+        <div class="field">
+          <%= f.text_field :prefecture, :autofocus => "off", :class => "form-control", :placeholder => "都道府県名" %>
+        </div>
+        <div class="field">
+          <label class="log-label"><%= f.radio_button :sex, "1" %> 男性</label>　
+          <label class="log-label"><%= f.radio_button :sex, "2" %> 女性</label>
+        </div>
         <br>
         <div class="actions text-center">
           <%= f.submit "登録する", :class => "btn btn-green" %>
