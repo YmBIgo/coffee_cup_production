@@ -2,8 +2,11 @@ ja:
   attributes:
     email: メールアドレス
     password: パスワード
-    group_id: グループ名
     user: ユーザー
+    family_name: 名字
+    first_name: 名前
+    phone_number: 電話番号
+    company_name: 会社名・学校名
   date:
     abbr_day_names:
     - 日

@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # http_basic_authenticate_with :name => ENV['EDIT_USER'], :password => ENV['EDIT_PASS']
 
+  http_basic_authenticate_with :name => ENV['ADMIN_USER'], :password => ENV['ADMIN_PASS'], :if => :admin_controller?
+
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
   rescue_from Exception, with: :error500
   rescue_from ActiveRecord::RecordNotFound, ActionController::RoutingError, with: :error404
 
@@ -14,6 +18,24 @@ class ApplicationController < ActionController::Base
   def error500(e)
     logger.error [e, *e.backtrace].join("\n")
     render 'error500', status: 500, formats: [:html]
+  end
+
+  def after_sign_in_path_for(resource)
+    "/dashboard"
+  end
+
+  def after_sign_out_path_for(resource)
+    root_path
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:family_name, :first_name, :phone_number, :company_name, :email, :password, :password_confirmation) }
+  end
+
+  def admin_controller?
+    self.class < ActiveAdmin::BaseController
   end
 
 end

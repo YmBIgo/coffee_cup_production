@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :users
 # top page
 
   root to: "welcome#index"
@@ -21,6 +24,12 @@ Rails.application.routes.draw do
   get "/codes" => "codes#index"
 
   get "/codes/:page" => "codes#show"
+
+# users page
+
+  resources :users, :only => [:edit, :update]
+
+  get "/dashboard" => "users#index"
 
 # 404
 

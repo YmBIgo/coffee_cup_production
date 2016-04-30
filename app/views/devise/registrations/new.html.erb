@@ -1,0 +1,44 @@
+<% provide :title, "登録する" %>
+<header class="text-center header-img-desk">
+  <div id="top-page" class="log-area">
+    <%= render "common/alert" %>
+    <div class="log-area-inner fadeIn wow">
+      <div class="text-left">
+        <%= devise_error_messages! %>
+      </div>
+      <div>
+        <h2><%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_nav_gray.png") %> <strong>登録する</strong></h2>
+      </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "メールアドレス" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "off", :class => "form-control coffee-form", :placeholder => "パスワード（8文字以上）" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "パスワード（確認）" %>
+        </div>
+        <br>
+        <div class="field">
+          <%= f.text_field :family_name, autofocus: "off", :class => "form-control", :placeholder => "名字" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :first_name, autofocus: "off", :class => "form-control", :placeholder => "名前" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :phone_number, autofocus: "off", :class => "form-control", :placeholder => "電話番号（例：0399999999）" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :company_name, autofocus: "off", :class => "form-control", :placeholder => "会社名・学校名" %>
+        </div>
+        <br>
+        <div class="actions text-center">
+          <%= f.submit "登録する", :class => "btn btn-green" %>
+        </div>
+      <% end %>
+      <hr class="log-hr">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</header>

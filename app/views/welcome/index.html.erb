@@ -1,5 +1,6 @@
 <% provide :title, "CoffeeCup" %>
-<header class="text-center">
+<header class="text-center header-img-desk">
+  <%= render "common/alert" %>
   <div class="header-content fadeIn wow">
     <div class="header-content-word">
       <h1>
@@ -7,20 +8,56 @@
           <span style="line-height:1.6; font-size:50px">テクノロジーを<br>あなたのものにしよう！</span>
           <br>
           <span style="font-size:16px;">
-          日頃の生活を支えていると言っても過言でもない<u>ウェブページ</u>。
+          日頃の生活を支えている<u>ウェブページ</u>。
           <br>
-          そのウェブページの作り方について教えます！
+          そのウェブページの作り方を教えます！
           </span>
         </strong>
       </h1>
       <hr class="red-hr">
-      <a href="#lesson-title" class="btn btn-success" style="background-color:#1e6439">詳しく見る</a>
+      <a href="#service-title" class="btn btn-green">詳しく見る</a>
     </div>
   </div>
 </header>
 <div class="container">
   <div id="top-page" class="textbook-area">
     <div class="textbook-area-inner fadeIn wow">
+      <br>
+      <div class="service-section">
+        <br>
+        <h2 class="text-center fix-link-nav" id="service-title">サービス内容</h2>
+        <hr class="red-hr">
+        <div class="row text-center">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+            <div class="service-box">
+              <i class="fa fa-clock-o fa-4x color-green" style="margin-bottom:4px"></i>
+              <h3 style="margin-top:16px">40時間で身につく教材</h3>
+              <p class="text-muted">
+              <strong><u>40時間の勉強</u></strong>でアイデアを形にする基礎体力をつけます！
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+            <div class="service-box">
+              <i class="fa fa-mortar-board fa-4x color-green" style="margin-bottom:2px"></i>
+              <h3 style="margin-top:16px">直接指導</h3>
+              <p class="text-muted">メッセンジャーなどのアプリケーションで分からない部分にお答えします。
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+            <div class="service-box">
+              <i class="fa fa-yen fa-4x color-green" style="margin-top:3px"></i>
+              <h3 style="margin-top:17px">10800円(税込)</h3>
+              <p class="text-muted">
+              <strong><u>1ヶ月10800円 / 1ヶ月延長2160円</u></strong>でサービスを提供いたします。
+              </p>
+            </div>
+          </div>
+          <a href="#lesson-section" class="btn btn-success" style="margin:20px auto 10px auto">なにを勉強するのか？</a>
+        </div>
+      </div>
+      <hr>
       <br>
       <div id="lesson-section">
         <h2 id="lesson-title" class="text-center fix-link-nav">2つのコース</h2>
@@ -33,7 +70,16 @@
                   Mugcup(基礎編)
             </a>
             <br><br>
-            <p class="text-left text-muted">「Ruby on Rails」というソフトウェアを使うウェブページの作り方を説明します。<br><a href="https://gentle-cove-48435.herokuapp.com/" target="_blank"><strong>こちらのページ</strong></a>を作ります！</p>
+            <p class="text-left text-muted">
+            「Ruby on Rails」というソフトウェアを使ったウェブページの作り方を説明します。
+            <br>
+            </p>
+            <h5 class="text-left">
+              <small>
+              <i class="fa fa-arrow-right"></i>　デモページは<a href="https://gentle-cove-48435.herokuapp.com/" target="_blank"><strong>こちら</strong></a>
+              </small>
+            </h5>
+            <br>
           </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <a href="/coffee_cups" target="_blank" class="btn btn-danger">
@@ -42,43 +88,18 @@
                   Coffee（応用編）
             </a>
             <br><br>
-            <p class="text-left text-muted">「Ruby on Rails」でメッセージアプリケーションを作ります。<br><small>※　デモページは<a href="https://guarded-gorge-84479.herokuapp.com/" target="_blank"><strong>こちら</strong></a></small></p>
+            <p class="text-left text-muted">
+            解説した「Ruby on Rails」の実践として、メッセージアプリケーションを作ります。
+            <br>
+            </p>
+            <h5 class="text-left">
+            <small>
+            <i class="fa fa-arrow-right"></i>　デモページは<a href="https://guarded-gorge-84479.herokuapp.com/" target="_blank"><strong>こちら</strong></a>
+            </small>
+            </h5>
+            <br>
           </div>
-        </div>
-      </div>
-      <hr>
-      <br>
-      <div class="service-section">
-        <br>
-        <h2 class="text-center">サービス内容</h2>
-        <hr class="red-hr">
-        <div class="row text-center">
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-            <div class="service-box">
-              <i class="fa fa-book fa-4x color-green"></i>
-              <h3>分かりやすい解説</h3>
-              <p class="text-muted text-left">
-              初心者でも分かるように、必要な知識だけを体系的にまとめました！
-              </p>
-            </div>
-          </div>
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-            <div class="service-box">
-              <i class="fa fa-clock-o fa-4x color-green" style="margin-bottom:4px"></i>
-              <h3 style="margin-top:16px">40時間</h3>
-              <p class="text-muted text-left">
-              40時間の勉強でアイデアを形にする基礎体力をつけます！
-              </p>
-            </div>
-          </div>
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-            <div class="service-box">
-              <i class="fa fa-mortar-board fa-4x color-green" style="margin-bottom:2px"></i>
-              <h3 style="margin-top:16px">直接指導</h3>
-              <p class="text-muted text-left">メッセンジャーなどのアプリケーションで分からない部分にお答えします。
-              </p>
-            </div>
-          </div>
+          <a href="/users/sign_up" class="btn btn-warning" style="margin:20px auto 10px auto">エントリーする</a>
         </div>
       </div>
       <hr>
@@ -125,19 +146,30 @@
         <hr class="red-hr">
         <div class="row">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-            <div class="service-box">
-              <h3 class="text-center"><i class="fa fa-apple color-green"></i>　MacのPC</h3>
+            <div class="service-box text-center">
+              <h3><i class="fa fa-apple color-green"></i>　<u>MacのPC</u> と <u>Apple ID</u></h3>
+              <p class="text-muted">
+              申し訳ございませんが、Mac以外では使えません
+              <br>
+              AppleIDもご用意下さい
+              </p>
             </div>
           </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="service-box text-center">
               <h3><i class="fa fa-calendar color-green"></i>　時間</h3>
-              <p class="text-muted">基礎編：20〜40時間</p>
-              <p class="text-muted">応用編：20〜40時間</p>
+              <p class="text-muted">基礎編：20〜40時間（目安）<br>
+              応用編：20〜40時間（目安）</p>
             </div>
           </div>
         </div>
         <br>
+      </div>
+      <hr>
+      <br>
+      <div id="recommend-section" class="text-center">
+        <h1><img src="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png">　<strong>テクノロジーをあなたのものにしよう！</strong></h1>
+        <a href="/users/sign_up" class="btn btn-warning" style="margin:20px auto 10px auto"><strong>エントリーする</strong></a>
       </div>
       <br>
     </div>

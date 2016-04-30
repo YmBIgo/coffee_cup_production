@@ -33,6 +33,8 @@ gem 'newrelic_rpm'
 gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre2'
 
+gem 'devise-i18n'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -28,10 +28,18 @@
   .hover-nav{
     margin:-3px;
     transition: all .5s;
+    color:white;
   }
 
   .hover-nav:hover{
     font-size:1.25em;
+  }
+
+  .nav-word{
+    margin-top:15px;
+    a{
+      color:white;
+    }
   }
 
   // header
@@ -41,12 +49,23 @@
       min-height: 300px;
       height:auto;
       text-align: center;
-      background-image: url("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffee_header.jpg");
       background-position: center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       background-size: cover;
       -o-background-size: cover;
+  }
+
+  header.header-img-desk{
+    background-image: url("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffee_header.jpg");
+  }
+
+  header.header-img-shop{
+    background-image: url("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffee_header2.jpg");
+  }
+
+  header.header-img-pen{
+    background-image: url("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffee_header3.jpg");
   }
 
   header .header-content {
@@ -73,9 +92,49 @@
     border-radius:10px;
   }
 
+  header .log-area{
+    background-color:rgba(200, 200, 200, .6);
+    margin: 0 auto;
+    padding:20px 0;
+  }
+
+  header .log-area .log-area-inner{
+    padding:5px 20px;
+    margin:20px auto;
+    border-radius:10px;
+    color:#351d09;
+    input.form-control{
+      opacity:.7;
+      width:300px;
+      margin:0 auto;
+    }
+    h2{
+      margin-top:10px;
+    }
+    hr.log-hr{
+      box-shadow:1px 1px 1px 1px rgba(0,0,0,0.3);
+      border-color:#351d09;
+      opacity:.5;
+      width:400px;
+    }
+    a{
+      color:#351d09;
+      font-weight: 700;
+    }
+    a:hover{
+      color:#4F2702;
+    }
+  }
+
   // root_page
   .service-box{
     margin:20px auto 0;
+  }
+
+  #recommend-section{
+    background-color:#222;
+    color:#eee;
+    padding:10px;
   }
 
   // index
@@ -151,6 +210,20 @@
       padding-bottom:10px;
       border-bottom:3px solid #FF3300;
     }
+    .study-text-section{
+      background-color:rgba(255, 192, 203, .5);
+      color:#444;
+      padding-bottom:20px;
+      min-height:550px;
+      max-height:650px;
+    }
+    .teach-text-section{
+      background-color:rgba(188, 226, 232, .5);
+      color:#444;
+      padding-bottom:20px;
+      min-height:550px;
+      max-height:650px;
+    }
     h4{
       margin-top:30px;
       line-height:1.5;
@@ -159,6 +232,34 @@
     }
     .next-page{
       text-align:center;
+    }
+  }
+
+  .my-info-card{
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    height:auto;
+    text-align: center;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-image: url("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffee_header3.jpg");
+    padding:20px 0;
+
+    .my-info-card-inner{
+      margin:0 auto;
+      background-color:rgba(240, 240, 240, .6);
+      width:75%;
+      color:#222;
+      padding:10px 40px 40px 10px;
+      border-radius:20px;
+      h4{
+        margin-top:10px;
+        padding:0 20px;
+      }
     }
   }
 
@@ -369,6 +470,20 @@ hr{
   color:#351d09;
 }
 
+.btn-green{
+  background-color:#1e543e;
+  color:#eee;
+}
+
+.btn-green:hover{
+  background-color:#1e6439;
+  color:#eee;
+}
+
+.btn-green:link{
+  color:#eee;
+}
+
 .text-mured{
   color:#777;
 }
@@ -396,6 +511,12 @@ hr{
   opacity:.9;
 }
 
+.green-hr-long{
+  border-color: #1e6439;
+  border-width: 2px;
+  opacity:.9;
+}
+
 .white-hr{
   border-color:white;
   border-width:3px;
@@ -415,6 +536,13 @@ hr{
 .clear-fix{
   display:block;
   clear:both;
+}
+
+.alert-coffee{
+/*  background-color:rgba(179, 131, 89, .85);
+  color:#411C00;*/
+  background-color:rgba(107, 191, 63, .85);
+  color:#1e6439;
 }
 
 // demopage

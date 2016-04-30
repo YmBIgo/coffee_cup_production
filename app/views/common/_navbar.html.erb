@@ -20,21 +20,38 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <strong>
         <ul class="nav navbar-nav navbar-right">
-          <li class="hover-nav" style="margin-top:10px;">
-            <a href="/codes" target="_blank" style="color:white"><i class="fa fa-hashtag"></i> 各章設定一覧</a>
-          </li>
-          <li class="hover-nav" style="margin-top:10px;">
-            <a href="/mugcups/html_tags" target="_blank" style="color:white"><i class="fa fa-code"></i> html</a>
-          </li>
-          <li class="hover-nav" style="margin-top:10px;">
-            <a href="/mugcups/css" target="_blank" style="color:white"><i class="fa fa-file"></i> css</a>
-          </li>
-          <li style="margin-top:5px;">
-            <a><input type="submit" value="文字小" onclick="smaller();" class="btn btn-primary"></a>
-          </li>
-          <li style="margin-top:5px;">
-            <a><input type="submit" value="文字大" onclick="larger();" class="btn btn-danger"></a>
-          </li>
+          <% if user_signed_in? %>
+            <% if user_studiable? %>
+              <li class="hover-nav">
+                <a href="/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 設定一覧</a>
+              </li>
+              <li class="hover-nav">
+                <a href="/mugcups/html_tags" target="_blank" class="nav-word"><i class="fa fa-code"></i> html</a>
+              </li>
+              <li class="hover-nav">
+                <a href="/mugcups/css" target="_blank" class="nav-word"><i class="fa fa-file"></i> css</a>
+              </li>
+            <% end %>
+            <li class="hover-nav">
+              <a href="/dashboard" class="nav-word"><i class="fa fa-user"></i> ユーザー情報</a>
+            </li>
+            <li class="hover-nav">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => "nav-word" %>
+            </li>
+          <% else %>
+            <li class="hover-nav">
+              <a href="/users/sign_up" class="nav-word">登録する</a>
+            </li>
+            <li class="hover-nav">
+              <a href="/users/sign_in" class="nav-word">ログインする</a>
+            </li>
+          <% end %>
+            <li style="margin-top:5px;">
+              <a><input type="submit" value="文字小" onclick="smaller();" class="btn btn-primary"></a>
+            </li>
+            <li style="margin-top:5px;">
+              <a><input type="submit" value="文字大" onclick="larger();" class="btn btn-danger"></a>
+            </li>
         </ul>
         </strong>
       </div>
