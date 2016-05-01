@@ -1,20 +1,22 @@
+<% provide :title, "認証メールを再送信する" %>
 <header class="text-center header-img-desk">
-<%= render "common/alert" %>
   <div id="top-page" class="log-area">
+    <%= render "common/alert" %>
     <div class="log-area-inner fadeIn wow">
+      <div class="text-left">
+        <%= devise_error_messages! %>
+      </div>
       <div>
-      <h2>Resend confirmation instructions</h2>
+      <h2><%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_nav_gray.png") %> 認証メールを再送信する</h2>
 
       <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-        <%= devise_error_messages! %>
 
         <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %> 
+          <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), :class => "form-control", :placeholder => "メールアドレスを入力" %> 
         </div>
-
+        <br>
         <div class="actions">
-          <%= f.submit "Resend confirmation instructions" %>
+          <%= f.submit "認証メールを再送信する", :class => "btn btn-green" %>
         </div>
       <% end %>
       <hr class="log-hr">
