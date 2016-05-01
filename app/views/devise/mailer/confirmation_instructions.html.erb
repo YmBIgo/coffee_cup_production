@@ -93,7 +93,7 @@
     <h1 class="welcome-title">ようこそ <%= @email %>！</h1>
     <hr class="red-hr">
     <h4>下のリンクからメールの認証ができます</h4>
-    <%= link_to '認証はこちら', confirmation_url(@resource, confirmation_token: @token), :class => "button" %>
+    <%= "<%" %><%= link_to '認証はこちら', confirmation_url(@resource, confirmation_token: @token), :class => "button" %><%= "%>" %>
   </div>
 </div>
 <hr>
