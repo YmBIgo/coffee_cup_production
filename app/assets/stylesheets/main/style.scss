@@ -169,11 +169,12 @@
     }
     h2.privacy-word{
       margin:50px 0 80px 0;
-      letter-spacing: 7px;
+      letter-spacing: 3px;
     }
     h4{
       margin:10px 0;
       font-weight:700;
+      border-bottom:1px solid #ddd;
     }
     p{
       letter-spacing: 1.5px;
@@ -329,6 +330,8 @@
       background-color:(255, 255, 255, .2);
       box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
       .list-group-item{
+        width:300px;
+        overflow-x: scroll;
         background-color:rgba(255, 255, 255, .8);
         transition: all .5s;
       }
@@ -339,7 +342,7 @@
       }
       .list-group-item.list-title{
         color: #fff;
-        background-color: #1e6439;
+        background-color: #004714;
         padding:12px 20px;
       }
       a{
@@ -348,6 +351,10 @@
       .nomargin{
         margin:0;
       }
+    }
+
+    .small-slide{
+      height:150px;
     }
 
   // table内のform
@@ -377,11 +384,11 @@
       text-decoration: none;
       color:#888;
       border-bottom:1px solid;
-      transition: all .5s;
+      transition: all .4s;
     }
     a:hover{
-      color:#6bbf3f;
-      transition: all .5s;
+      color:#91ae69;
+      transition: all .4s;
     }
     h4{
       color:#aaa;
