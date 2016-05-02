@@ -14,7 +14,6 @@ class CodesController < ApplicationController
   end
   def index
     if current_user.study_enabled == true
-      render template: "codes/#{params[:page]}"
     else
       redirect_to "/dashboard"
       flash[:alert] = "閲覧権限がありません"

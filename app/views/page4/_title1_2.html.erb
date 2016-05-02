@@ -4,7 +4,9 @@
           <strong class="little-remarkable">ここでは、<a href="https://gentle-cove-48435.herokuapp.com/" target="_blank">作ってみるウェブページ</a>のデータベースに作ってみましょう！</strong>
           <br>
           <br>
-          <strong>Railsでのデータベースの定義はターミナルを使って行います。</strong>まず右上の虫眼鏡マークで探して開いてみましょう。開けたら前章で作った「myapp」に移動しましょう！
+          <strong>Railsでのデータベースの定義はターミナルを使って行います。</strong>
+          <br>
+          まず右上の虫眼鏡マークで探して開いてみましょう。開けたら前章で作った<strong>「<u>myapp</u>」</strong>に移動しましょう！
           <br><br>
           　<strong>ターミナル（半角英数字で入力）</strong>
 <table class="highlight">
@@ -56,7 +58,7 @@ rails g model データベースのタイトル名（単数形）
         <br><br>
         「<strong>rails g model タイトル名（単数形）</strong>」で作られた設定ファイル名は、「<strong>作った日時_create_タイトル名（複数形）.rb</strong>」になります。
         <hr class="red-hr">
-        <strong>では、その設定ファイルを変更していきましょう！</strong>
+        <i class="fa fa-play-circle"></i>　<strong>では、その設定ファイルを変更していきましょう！</strong>
         <br>
         <br>
         「<strong><u>Sublime Text</u></strong>」でその設定ファイルを変更してみましょう！まずは右上の虫眼鏡マークで探して開きましょう！
@@ -225,7 +227,13 @@ rails g model データベースのタイトル名（単数形）
         <br><br>
         <ul class="number_ul">
         <strong><li>データの種類の設定</li></strong>
-          数字の時は<strong>「<u>t.integer</u>」</strong>、短い文字列の時は<strong>「<u>t.string</u>」</strong>、長い文字列の時は<strong>「<u>t.text</u>」</strong>、細かい日時の時は<strong>「<u>t.timestamps</u>」</strong>と書いて行います。
+          <ul class="number_ul">
+            <li>数字の時は<strong>「<u>t.integer</u>」</strong></li>
+            <li>短い文字列の時は<strong>「<u>t.string</u>」</strong></li>
+            <li>長い文字列の時は<strong>「<u>t.text</u>」</strong></li>
+            <li>細かい日時の時は<strong>「<u>t.timestamps</u>」</strong></li>
+          </ul>
+          と書いて行います。
           <br>
           <small>※　他にも、正偽の「t.boolean」や日時の「t.date」などがある。</small>
         <strong><li>名前の設定</li></strong>
