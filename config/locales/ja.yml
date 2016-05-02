@@ -9,6 +9,7 @@ ja:
     company_name: 会社名・学校名
     sex: 性別
     prefecture: 都道府県名
+    agreement: 利用規約
   date:
     abbr_day_names:
     - 日

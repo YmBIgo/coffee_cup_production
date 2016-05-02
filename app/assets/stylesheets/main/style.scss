@@ -147,12 +147,37 @@
   // root_page
   .service-box{
     margin:20px auto 0;
+    h4.contact-detail{
+      margin-bottom:20px;
+      margin-top:5px;
+      letter-spacing:1px
+    }
   }
 
   #recommend-section{
     background-color:#222;
     color:#eee;
     padding:10px;
+  }
+
+
+  // company
+  .company-info-section{
+    h2{
+      margin:50px 0 80px 0;
+      letter-spacing: 16px;
+    }
+    h2.privacy-word{
+      margin:50px 0 80px 0;
+      letter-spacing: 7px;
+    }
+    h4{
+      margin:10px 0;
+      font-weight:700;
+    }
+    p{
+      letter-spacing: 1.5px;
+    }
   }
 
   // index
@@ -301,11 +326,21 @@
       padding-right:10px;
       max-height:400px;
       overflow-y: scroll;
-      background-color:white;
+      background-color:(255, 255, 255, .2);
       box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
-      .list-title{
-        color: #818a91;
-        background-color: #eceeef;
+      .list-group-item{
+        background-color:rgba(255, 255, 255, .8);
+        transition: all .5s;
+      }
+      .list-group-item:hover{
+        color:#7E4D25;
+        font-size:16px;
+        transition: all .5s;
+      }
+      .list-group-item.list-title{
+        color: #fff;
+        background-color: #1e6439;
+        padding:12px 20px;
       }
       a{
         padding:10px 20px;
@@ -327,8 +362,32 @@
   }
 
   // footer
+
   .footer{
     padding:10px;
+    background-color:rgba(40, 40, 40, .9);
+    color:#888;
+    hr{
+      border-color:rgba(150, 150, 150, .8);
+    }
+    p{
+      line-height:1.8;
+    }
+    a{
+      text-decoration: none;
+      color:#888;
+      border-bottom:1px solid;
+      transition: all .5s;
+    }
+    a:hover{
+      color:#6bbf3f;
+      transition: all .5s;
+    }
+    h4{
+      color:#aaa;
+      font-weight:700;
+      margin-bottom:15px;
+    }
   }
 
 // 各アクション
@@ -488,12 +547,12 @@ hr{
   color:#351d09;
 }
 
-.btn-green{
+.btn-green:hover{
   background-color:#1e543e;
   color:#eee;
 }
 
-.btn-green:hover{
+.btn-green{
   background-color:#1e6439;
   color:#eee;
 }
@@ -561,6 +620,14 @@ hr{
   color:#411C00;*/
   background-color:rgba(107, 191, 63, .85);
   color:#1e6439;
+}
+
+.btn{
+  transition: all .7s;
+}
+
+.btn:hover{
+  transition: all .7s;
 }
 
 // demopage

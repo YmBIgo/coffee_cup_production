@@ -39,7 +39,10 @@
           <label class="log-label"><%= f.radio_button :sex, "1" %> 男性</label>　
           <label class="log-label"><%= f.radio_button :sex, "2" %> 女性</label>
         </div>
-        <br>
+        <div class="field">
+          <p style="margin:10px auto;">
+          <%= f.check_box :agreement %> <a href="/term" target="_blank">利用規約</a> <span style="letter-spacing:1.5px">に同意する</span>
+          </p>
         <div class="actions text-center">
           <%= f.submit "登録する", :class => "btn btn-green" %>
         </div>

@@ -33,6 +33,16 @@ Rails.application.routes.draw do
 
   get "/pay_info" => "users#pay_info"
 
+# info_page
+
+  get "/privacypolicy" => "info_page#privacypolicy"
+
+  get "/company"       => "info_page#company"
+
+  get "/term"          => "info_page#term"
+
+  get "/tokusho"       => "info_page#tokusho"
+
 # 404
 
   match '*path' => 'application#error404', via: :all
