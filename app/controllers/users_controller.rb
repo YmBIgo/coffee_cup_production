@@ -21,6 +21,9 @@ class UsersController < ApplicationController
   def pay_info
   end
 
+  def pay_warning
+  end
+
   private
 
   def current_ok_user!

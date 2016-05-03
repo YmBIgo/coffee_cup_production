@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable
 
   validates :family_name,   presence: true, length: {maximum: 20, message: "は、20文字までで入力して下さい"}
   validates :first_name,    presence: true, length: {maximum: 20, message: "は、20文字までで入力して下さい"}
@@ -22,6 +22,16 @@ class User < ActiveRecord::Base
 
   def sex_name
     self.sex_list[self.sex] || ''
+  end
+
+  def limit_time
+    if self.study_limit_at?
+      l = self.study_limit_at
+      limit_datetime = l.strftime("%Y年%m月%d日24時")
+      return limit_datetime
+    else
+      return "教材を購入して下さい"
+    end
   end
 
   def time_left

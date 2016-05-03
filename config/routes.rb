@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   get "/pay_info" => "users#pay_info"
 
+  get "/pay_warning" => "users#pay_warning"
+
 # info_page
 
   get "/privacypolicy" => "info_page#privacypolicy"

@@ -29,7 +29,11 @@
                         :width => "90%",
                         :class => "textbook-title-img hover_img zoom_img") %>
           <% if user_studiable? %>
-            <h4>残り<strong><u><%= current_user.time_left %>日</u></strong>です</h4>
+            <h4>
+            <strong><u><%= current_user.limit_time %></u></strong>まで
+            <br>
+            残り<strong><u><%= current_user.time_left %>日</u></strong>です
+            </h4>
             <a href="/pay_info" class="btn btn-green">閲覧期間を延長する</a>
             <hr class="red-hr">
             <p>
@@ -46,7 +50,7 @@
             </p>
           <% else %>
             <h4>教材を購入しておりません</h4>
-            <a href="/pay_info" class="btn btn-green">購入はこちらから</a>
+            <a href="/pay_warning" class="btn btn-green">購入はこちらから</a>
             <hr class="red-hr">
             <p>
             <a target="_blank" class="btn btn-primary disabled">
@@ -84,23 +88,23 @@
           <h2 class="text-center">
             <strong><i class="fa fa-user"></i>　<%= current_user.full_name %></strong>
             <br>
-            <a href="/users/<%= current_user.id %>/edit" class="btn btn-warning" style="margin-top:15px">ユーザー情報を編集</a>
+            <p><a href="/users/<%= current_user.id %>/edit" class="btn btn-success" style="margin-top:15px">ユーザー情報を編集</a></p>
           </h2>
           <hr class="red-hr">
           <h4 class="text-left">
-          <strong>Id</strong>　　　　　　 : <%= current_user.id %>
-          <br>
-          <strong>性別</strong>　　　　　 : <%= current_user.sex_name %>
-          <br>
-          <strong>Email</strong>　　　　 : <%= current_user.email %>
-          <br>
-          <strong>電話番号</strong>　　　 : <%= current_user.phone_number %>
-          <br>
-          <strong>会社・学校名</strong>　 : <%= current_user.company_name %>
-          <br>
-          <strong>都道府県名</strong>　　 : <%= current_user.prefecture %>
-          <br>
+            <strong>Id</strong>　　　　　　 : <%= current_user.id %>
+            <br>
+            <strong>性別</strong>　　　　　 : <%= current_user.sex_name %>
+            <br>
+            <strong>Email</strong>　　　　 : <%= current_user.email %>
+            <br>
+            <strong>電話番号</strong>　　　 : <%= current_user.phone_number %>
+            <br>
+            <strong>会社・学校名</strong>　 : <%= current_user.company_name %>
+            <br>
+            <strong>都道府県名</strong>　　 : <%= current_user.prefecture %>
           </h4>
+          <p><%= link_to "基本情報の編集", edit_user_registration_path, :class => "btn btn-warning" %></p>
         </div>
       </div>
       <br>
