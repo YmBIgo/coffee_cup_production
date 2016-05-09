@@ -77,15 +77,15 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => 'cryptic-fortress-83909.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'coffee-cup.jp' }
 
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
+    :address        => 'smtp8.gmoserver.jp',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com',
+    :user_name      => 'support@coffee-cup.info',
+    :password       => ENV['EMAIL_PASSWORD'],
+    :domain         => 'coffee-cup.info',
     :enable_starttls_auto => true
   }
 

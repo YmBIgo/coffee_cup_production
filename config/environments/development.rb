@@ -38,4 +38,21 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { :host => '0.0.0.0:3000' }
+
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp8.gmoserver.jp',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => 'support@coffee-cup.info',
+    :password       => ENV['EMAIL_PASSWORD'],
+    :domain         => 'coffee-cup.info',
+    :enable_starttls_auto => true
+  }
+
+  ActionMailer::Base.delivery_method = :smtp
+
 end
