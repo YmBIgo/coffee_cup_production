@@ -39,7 +39,11 @@ class User < ActiveRecord::Base
       l = self.study_limit_at
       limit_day = Date.new(l.year, l.month, l.day)
       l_t = (limit_day - Date.today).to_i
-      return l_t
+      if l_t == 0
+        return "今日まで"
+      else
+        return "#{l_t}日"
+      end
     else
       return 0
     end
