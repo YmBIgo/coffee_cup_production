@@ -10,6 +10,8 @@ ja:
     sex: 性別
     prefecture: 都道府県名
     agreement: 利用規約
+    money_amount: お支払い累計金額
+    month_amount: 学習月数
   date:
     abbr_day_names:
     - 日
