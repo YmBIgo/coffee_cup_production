@@ -3,7 +3,7 @@
         <br>
         ここまででデータの作成をしましたが、データの操作は作成のみではありません。他に<strong class="little-remarkable"><u>データの変更・削除</u></strong>があります。
         <br><br>
-        ここではデータの変更をやってみましょう。<strong><u>作成した投稿の内容を「SFC入学式」に変えてみましょう。</u></strong>
+        ここではデータの変更をやってみましょう。<strong><u>作成した投稿の内容を「入学式」に変えてみましょう。</u></strong>
         <br><br>
         データの変更・削除をするには、まず<strong><u>どのデータを変更するのかを選択</u></strong>する必要があります。
         <br>
@@ -52,6 +52,8 @@
         <strong>「<u>rails c</u>」</strong>で下の入力をしてみて下さい。
         <br><br>
         <strong>　ターミナル（日本語以外は半角英数で入力）</strong>
+        <br>
+        <small>　<i class="fa fa-windows"></i>　Windowsをお使いの方は文字化けするので、<strong><u>すべて英数字で入力</u></strong>して下さい。</small>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -99,11 +101,13 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
         <small>※　whereでの変更はまた後で説明します。</small>
         <br><br>
         <strong>　ターミナル（日本語以外は半角英数で入力）</strong>
+        <br>
+        <small>　<i class="fa fa-windows"></i>　Windowsをお使いの方は文字化けするので、<strong><u>すべて英数字で入力</u></strong>して下さい。</small>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "SFC入学式")</span>
+<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "入学式")</span>
 </td>
 </tr>
 </table>
@@ -136,7 +140,7 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "春からSFC")</span>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "春から学校")</span>
 </td>
 </tr>
 </table>
@@ -154,7 +158,7 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
 </tr>
 </table>
         <hr class="red-hr">
-        <i class="fa fa-question-circle color-green"></i>　<strong>投稿した場所を「六本木」、投稿を「ORF」に変えてみましょう！（マウスを上に置くと答えがでます）</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>投稿した場所を「六本木」、投稿を「パーティー」に変えてみましょう！（マウスを上に置くと答えがでます）</strong>
         <br><br>
         <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
         <br>
@@ -162,7 +166,7 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:place =&gt; "六本木", :content =&gt; "ORF")</span>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:place =&gt; "六本木", :content =&gt; "パーティー")</span>
 </td>
 </tr>
 </table>

@@ -1,0 +1,59 @@
+<% provide :title, "Rails環境構築（Windows版）" %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>Rails環境構築（Windows版）</strong></h1>
+          </div>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header2.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <br>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h4>
+            <i class="fa fa-windows color-blue"></i>　<strong>Windowsでの、Ruby on Railsの環境構築を行う。</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 環境構築</strong></h2>
+          <h4>
+            ここでWindowsでの、Ruby on Railsの環境構築を説明します。
+            <hr class="red-hr">
+            <i class="fa fa-arrow-right"></i>　<strong>まず、インストールする時に必要になる<span class="color-blue">「コマンドプロンプト」</span>というアプリケーションについて説明します。</strong>
+            <hr>
+          </h4>
+          <%= render "windows/rails_title1_1" %>
+          <hr>
+          <%= render "windows/rails_title1_2" %>
+          <hr>
+          <%= render "windows/rails_title1_3" %>
+          <hr>
+          <%= render "windows/rails_title1_4" %>
+          <br>
+          <div class="next-page">
+            <a href="/mugcups/3" class="btn btn-primary">次の章に進む</a>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title">Rails環境構築（Windows版）</a>
+          <a href="#title0" class="list-group-item">0 : この章の目的</a>
+          <a href="#title1" class="list-group-item">1 : 環境構築</a>
+          <a href="#title1-1" class="list-group-item">　<small>① コマンドプロンプト</small></a>
+          <a href="#title1-2" class="list-group-item">　<small>② Ruby on Railsのインストール</small></a>
+          <a href="#title1-3" class="list-group-item">　<small>③ Sublime Textのインストール</small></a>
+          <a href="#title1-4" class="list-group-item">　<small>④ SQLite Browserのインストール</small></a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

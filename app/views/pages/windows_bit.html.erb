@@ -1,0 +1,73 @@
+<% provide :title, "Windowsのbit確認" %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>Windowsのbit確認</strong></h1>
+          </div>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header3.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <br>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h4>
+            <i class="fa fa-windows color-blue"></i>　<strong>Windowsでのbitの確認方法を説明する。</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : bitの確認</strong></h2>
+          <h4>
+            <br>
+            まずは「コントロールパネル」を開いてみます。
+            <br>
+            <ul class="number_ul">
+              <li><strong><u>Windows10</u></strong>であれば、<strong>「<u>Cortana</u>」</strong></li>
+              <li><strong><u>Windows8以下</u></strong>であれば、<strong>「<u>アプリ検索</u>」</strong></li>
+            </ul>
+            で<strong>「<u>コントロールパネル</u>」</strong>を検索して開いてみて下さい。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm1.png",
+                                  :class => "hover_img textbook-title-img",
+                                  :width => "90%"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm1.png",
+                        :target => ["_blank"] %>
+            下のような表示が出てきたら、<strong>「<u>システムとセキュリティ</u>」</strong>をクリックして下さい。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm2.png",
+                                  :class => "hover_img textbook-title-img",
+                                  :width => "90%"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm2.png",
+                        :target => ["_blank"] %>
+            下のような表示が出てくるので、<strong>「<u>システム</u>」</strong>をクリックして下さい。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm3.png",
+                                  :class => "hover_img textbook-title-img",
+                                  :width => "90%"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm3.png",
+                        :target => ["_blank"] %>
+            ここに出てくる表示が、お使いのPCのbitになります。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm4.png",
+                                  :class => "hover_img textbook-title-img",
+                                  :width => "90%"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm4.png",
+                        :target => ["_blank"] %>
+          </h4>
+          <div class="next-page">
+            <a href="javascript:history.back()" class="btn btn-primary">戻る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title">Rails環境構築（Windows版）</a>
+          <a href="#title0" class="list-group-item">0 : この章の目的</a>
+          <a href="#title1" class="list-group-item">1 : bitの確認</a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>
