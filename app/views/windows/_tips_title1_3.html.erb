@@ -1,0 +1,41 @@
+<h4 id="chapter1-3">
+  <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : Gemfile</strong></p>
+  <br>
+  WindowsでRuby on Railsのウェブサイトを作る時には、<strong><u>事前にGemfileに追加の設定を加える必要があります。</u></strong>
+  <br><br>
+  <i class="fa fa-exclamation color-red"></i>　<strong>ここではその設定について説明します。</strong>
+  <hr class="red-hr">
+  <strong>「<u>Gemfile</u>」</strong>を開いて、下の設定を追加して下さい。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>Gemfile（24〜26行目）</strong>
+  <br>
+  <small>※　半角英数字で入力。変更が完了したら「ctrl」と「s」を一緒に押して内容を保存して下さい。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>24
+25
+<strong class="color-red">26</strong>
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'sdoc', '~> 0.4.0'</span>, <span class='word-purple'>group:</span> <span class='word-purple'>:doc</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'><span class='word-red'>gem </span><span class='word-yellow'>'coffee-script-source', '1.8.0'</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  変更が完了したら、コマンドプロンプトで次の入力をして下さい。
+  <br><br>
+  　<strong>コマンドプロンプト</strong>
+  <br>
+  <small>※　半角英数字で入力</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle update coffee-script-source</span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-arrow-right"></i>　<strong>ここまでが事前に必要になる設定になります。</strong>
+</h4>
