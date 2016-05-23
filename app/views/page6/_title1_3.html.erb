@@ -1,7 +1,14 @@
 <h4 id="chapter6-1-3">
           <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 新しいデータを記入する（new）</strong></p>
           <br>
-          ここまでで<u>「１つのデータの表示（show）」と「全てのデータの表示（index）」</u>をやってみました。
+          ここまでで
+          <strong>
+          <ul class="number_ul">
+            <li>「<a href="/mugcups/5#title1-1" target="_blank">１つのデータの表示（show）</a>」</li>
+            <li>「<a href="/mugcups/5#title1-2" target="_blank">全てのデータの表示（index）</a>」</li>
+          </ul>
+          </strong>
+          をやってみました。
           <hr class="red-hr">
           <strong><u>ですが、データを表示させるだけで、追加することができなかったら意味はありませんですよね。</u></strong>
           <br><br>
@@ -13,7 +20,7 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "山田太郎", :content =&gt; "春からSFC", :place =&gt; "新宿")</span>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "名前", :content =&gt; "内容", :place =&gt; "場所")</span>
 </td>
 </tr>
 </table>
@@ -31,7 +38,7 @@
           <br>
           する流れになります。
           <br><br>
-          具体的には、「新しいデータの記入（new）」をするページでデータを入力して「登録する」ボタンを押すと、
+          具体的には、<strong>「<u>新しいデータの記入（new）</u>」</strong>をするページでデータを入力して<strong>「<u>登録する</u>」</strong>ボタンを押すと、
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_2.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -44,13 +51,15 @@
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_create_1.png",
                     :target => ["_blank"] %>
         Sequel Proでデータベースを確認すると、下のようにデータが保存されるようになることを目指します。
+        <br>
+        <small><i class="fa fa-windows color-blue"></i>　Windowsでは、SqliteBrowserを使って開きます。</small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Sequel_Pro_myapp_posts_3.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Sequel_Pro_myapp_posts_3.png",
                     :target => ["_blank"] %>
           <br>
-          まずはこの「新しいデータを記入する（new）」ページから作っていきましょう。
+          まずは、この<strong>「<u>新しいデータを記入する（new）</u>」</strong>ページから作っていきましょう。
           <hr>
           <%= render "page6/title1_3_1" %>
           <hr>

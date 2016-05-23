@@ -79,8 +79,8 @@
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;メッセージ一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @message.each <span class="word-red">do</span> |m| %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.name %&gt;さんのメッセージ&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.send_to %&gt;さんから&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.name %&gt;さんからのメッセージ&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.send_to %&gt;さん宛&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
@@ -100,7 +100,9 @@
         <br>
         設定が完了したら<strong>ターミナルで「rails s」をした後で</strong>、ブラウザでページを開く。
         <br>
-        全てのデータを表示する（index）ページは、<strong>「<u>locahost:3000/データベース名</u>」</strong>で開く。
+        全てのデータを表示する（index）ページは、<strong>「<u>0.0.0.0:3000/データベース名</u>」</strong>で開く。
+        <br>
+        <small><i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong>「<u>localhost:3000/データベース名</u>」</strong>で開く。</small>
         <hr class="red-hr">
         <i class="fa fa-play-circle"></i>　<strong>ページの移動（リンク）</strong>
         <br><br>

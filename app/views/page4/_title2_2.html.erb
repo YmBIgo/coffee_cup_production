@@ -121,18 +121,26 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
         できたら、Sequel Proで開いて内容が変わったかを確認しましょう！
         <br><br>
         <small>※　Sequel Proの開き方は<a href="/mugcups/how_to_open#title2" target="_balnk"><strong>こちら</strong></a>を参考にして下さい</small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <strong>
+          <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、SqliteBrowserを使います。
+          <br>
+          <i class="fa fa-arrow-right"></i>　<a href="/mugcups/how_to_open#title4" target="_blank">こちら</a>を参考にして「<u>db > development.sqlite3</u>」を開き、「posts」データベースの中身を確認して下さい。
+          </strong>
+        </p>
         <br>
-        <small>※　内容が変わっていなかったら、<u>内容を更新する必要があります。</u>内容の更新は下のようにします。</small>
+        <i class="fa fa-arrow-right"></i>　内容が変わっていなかったら、<u>内容を更新する必要があります。</u>内容の更新は下のようにします。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Update.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Update.png",
                     :target => ["_blank"] %>
-        contentの部分が「SFC入学式」に変わっていますか？
+        contentの部分が「入学式」に変わっていますか？
         <br><br>
         では試しに、他のデータも変更してみましょう！
         <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>今回変更した投稿のデータを元の『contentが「春からSFC」の投稿』に戻しましょう。（マウスを上に置くと答えがでます）</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>今回変更した投稿のデータを元の『contentが「春から学校」の投稿』に戻しましょう。（マウスを上に置くと答えがでます）</strong>
         <br><br>
         <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
         <br>
@@ -171,10 +179,16 @@ findで選択したデータ.update(:枠組み => "内容", あるだけ...)
 </tr>
 </table>
         <hr class="red-hr">
-        最後にSequel Proで内容が変更されたかを確認しましょう！
+        最後に、<strong><u>Sequel Pro</u></strong>で内容が変更されたかを確認しましょう！
         <br>
         <small>※　Sequel Proの使い方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
-        <br><br>
+        <br><br><br>
+        <p class="alert alert-success">
+          <strong>
+          <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<a href="/mugcups/how_to_open#title4" target="_blank">こちら</a>を参考にして「<u>db > development.sqlite3</u>」を開き、「posts」データベースの中身を確認して下さい。
+          </strong>
+        </p>
+        <br>
         <strong><u>Sequel Proのデータベースの更新も忘れずに</u></strong>
         <br><br>
         <i class="fa fa-star color-blue"></i>　<strong>データの変更は「<u>データベースのタイトル.find(idの番号).update(:枠組み => "内容")</u>」で行う</strong>

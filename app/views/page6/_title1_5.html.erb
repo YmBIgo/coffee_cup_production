@@ -1,54 +1,65 @@
 <h4 id="chapter6-1-5">
         <p id="title1-5"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑤ : 編集するデータの記入(edit)</strong></p>
         <br>
-        <u>「１つのデータの表示（show）」「全てのデータの表示（index）」「新しいデータの記入（new）」「データの作成（create）」</u>をする４つのページをここまでで作りました。
-        <br><br>
-        <strong>残っているデータ操作は、「データの変更」と「データの削除」をするページのみになります。</strong>
+        <strong>
+        <ul class="number_ul">
+            <li>「<a href="/mugcups/5#title1-1" target="_blank">１つのデータの表示（show）</a>」</li>
+            <li>「<a href="/mugcups/5#title1-2" target="_blank">全てのデータの表示（index）</a>」</li>
+            <li>「<a href="/mugcups/6#title1-3" target="_blank">新しいデータの記入（new）</a>」</li>
+            <li>「<a href="/mugcups/6#title1-4" target="_blank">データの作成（create）</a>」</li>
+        </ul>
+        </strong>
         <br>
-        まずは「データの変更」からやってみましょう！
+        をする４つのページをここまでで作りました。
+        <br><br>
+        <strong>残っているデータ操作は、「<u>データの変更</u>」と「<u>データの削除</u>」をするページのみになります。</strong>
+        <br>
+        まずは<strong>「<u>データの変更</u>」</strong>からやってみましょう！
         <hr class="red-hr">
-        データの変更は「<a href="/mugcups/4#title2-2" target="_blank"><strong>rails c</strong></a>」でやった、
+        データの変更は<a href="/mugcups/4#title2-2" target="_blank"><strong>「rails c」のデータ変更</strong></a>で行った、
         <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "SFC入学式")</span>
+<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "入学式")</span>
 </td>
 </tr>
 </table>
         <br>
         をデータ操作の部分で設定していきます。
         <hr class="red-hr">
-        データの変更もデータの作成と同じように、「編集するデータの記入（edit）」と「データの変更（update）」の2つがあります。
+        データの変更もデータの作成と同じように、
+        <br>
+        <strong>「<u>編集するデータの記入（edit）</u>」</strong>と<strong>「<u>データの変更（update）</u>」</strong>の2つがあります。
         <br>
         <strong>
         <ul class="number_ul">
-            <li>「edit」でデータを記入する画面を表示</li>
-            <li>「update」で入力された情報をデータベースに保存</li>
+            <li>「<u>edit</u>」でデータを記入する画面を表示</li>
+            <li>「<u>update</u>」で入力された情報をデータベースに保存</li>
         </ul>
         </strong>
         する流れになります。
         <br><br>
-        具体的には、「編集するデータの記入（edit）」をするページでデータを入力して「変更する」ボタンを押すと、
+        具体的には、<strong>「<u>編集するデータの記入（edit）</u>」</strong>をするページでデータを入力して<strong>「<u>変更する</u>」</strong>ボタンを押すと、
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
                     :target => ["_blank"] %>
-        「データの変更（update）」ページに移動して、
+        <strong>「<u>データの変更（update）</u>」</strong>ページに移動して、
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
                     :target => ["_blank"] %>
-        変更したデータのページ「0.0.0.0:3000/posts/idの番号」をブラウザで開いて、変更ができたかを確認します。
+        変更したデータのページ<strong>「<u>0.0.0.0:3000/posts/idの番号</u>」</strong>をブラウザで開いて、変更ができたかを確認します。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edited.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edited.png",
                     :target => ["_blank"] %>
-        まずはこの「編集するデータの記入する（edit）」ページから作っていきましょう！
+        まずはこの<strong>「<u>編集するデータの記入する（edit）</u>」</strong>ページから作っていきましょう！
 </h4>
         <hr>
         <%= render "page6/title1_5_1" %>

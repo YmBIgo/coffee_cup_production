@@ -21,6 +21,12 @@
         <u>では試してみましょう。<strong>「show.html.erb」</strong>を下のように変更してみましょう。</u>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>show.html.erb（4行目）</strong>
+        <br>
+            <small>※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+            </small>
+        <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -39,7 +45,11 @@
         変更ができたらブラウザで「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう。
         <br>
         <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<u><strong>「Command」と「c」を一緒に押して止めて</strong></u>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。 </small>
-        <br><br>
+        <br><br><br>
+        <p class="alert alert-success">
+          <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、<br>　　<u>「ctrl」と「c」</u>でサーバーを止め「<u>rails s</u>」を入力し、「<a href="http://localhost:3000/posts/1">localhost:3000/posts/1</a>」を開いて下さい。</strong>
+        </p>
+        <br>
         下のように表示されたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_3.png",
                               :width => "90%",
@@ -64,6 +74,12 @@
         同じような具合で、<strong><u>「１つのデータを表示する（show）」ページから「全てのデータを表示する（index）」ページに移動</u>できるようにしましょう。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>show.html.erb（4行目を変更）</strong>
+        <br>
+        <small>※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <br>
+        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        </small>
+        <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -82,10 +98,18 @@
         変更ができたら、ブラウザで「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう。
         <br>
         <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<u><strong>「Command」と「c」を一緒に押して止めて</strong></u>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。 </small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、<br>　　<u>「ctrl」と「c」</u>でサーバーを止め「<u>rails s</u>」を入力し、「<a href="http://localhost:3000/posts/1">localhost:3000/posts/1</a>」を開いて下さい。</strong>
+        </p>
+        <br>
+        変更をした「トップに戻る」を押したら、
+        <br>
+        <strong>「データの全表示（index）」</strong>をするページ「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」に移動はできたでしょうか？
         <br><br>
-        変更をした「トップに戻る」を押したら、<strong>「データの全表示（index）」</strong>をするページ「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」に移動はできたでしょうか？
-        <br><br>
-        <i class="fa fa-arrow-right color-red"></i>　<strong>「/posts」の「/」がそのページ自身の<u>url「0.0.0.0:3000」を示している</u>のでページを移動できるようになっています。</strong>
+        <i class="fa fa-arrow-right color-red"></i>　<strong>「/posts」の「/」が、
+        <br>
+        そのページ自身の<u>url「0.0.0.0:3000」（Windowsの場合は「localhost:3000」）を示している</u>のでページを移動できるようになっています。</strong>
         <br><br>
         <i class="fa fa-question-circle color-green"></i><strong>　photosデータベースの「index」ページに移動する「クリック」の文字（リンク）を設定をしてみて下さい。</strong>
         <br><br>
@@ -105,6 +129,12 @@
         <u><strong>「index.html.erb」</strong>ファイルを下のように変更して下さい。</u>
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　index.html.erb（4行目）</strong>
+        <br>
+        <small>※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <br>
+        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        </small>
+        <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -131,6 +161,11 @@
         変更ができたら、ブラウザで「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみましょう。
         <br>
         <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<u><strong>「Command」と「c」を一緒に押して止めて</strong></u>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。 </small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、<br>　　<u>「ctrl」と「c」</u>でサーバーを止め「<u>rails s</u>」を入力し、「<a href="http://localhost:3000/posts">localhost:3000/posts</a>」を開いて下さい。</strong>
+        </p>
+        <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_3.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -138,11 +173,11 @@
                     :target => ["_blank"] %>
         このように表示されたでしょうか？
         <br>
-        「id」の部分をクリックしてみて、ページが移動できるかを確認してみましょう！
+        「id」の部分をクリックしてみて、<strong>ページ移動できるかを確認してみましょう！</strong>
         <br><br>
-        <i class="fa fa-arrow-right color-red"></i>　内容を説明しましょう
-        <br>
-        「<u>0.0.0.0:3000/posts/idの番号」省略して「/posts/idの番号</u>」をブラウザで入力することで、「一つのデータを表示（show）」するページに移動します。
+        <i class="fa fa-play-circle"></i>　<strong>内容を説明しましょう！</strong>
+        <br><br>
+        <strong>「<u>0.0.0.0:3000/posts/idの番号」省略して「/posts/idの番号</u>」</strong>をブラウザで入力することで、「一つのデータを表示（show）」するページに移動します。
         <br><br>
         ここでは「<u>/posts/idの番号</u>」を指定するために、<strong>「<u>idの番号</u>」の部分にデータベースからidを入れる「<u>&lt;%= p.id %&gt;</u>」の設定をしています。</strong>
         <br>

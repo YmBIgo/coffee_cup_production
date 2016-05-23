@@ -5,8 +5,12 @@
         <br>
         データベースの枠組みを設定する時は、<strong><u>後から内容を追加する</u></strong>ことがよくあります。その枠組みの追加を説明していきます。
         <br><br>
-        まずは、ターミナルで「myapp」にまで移動して下さい。
-        <br><br>
+        まずは、<strong>ターミナルで「<u>myapp</u>」にまで移動</strong>して下さい。
+        <br><br><br>
+        <p class="alert alert-success">
+        <span><strong><i class="fa fa-windows color-blue"></i>　Windowsでの移動の方法は<a href="/mugcups/windows_tips#title1-2" target="_blank">こちら</a>を参考</strong></span>
+        </p>
+        <br>
         　<strong>ターミナル</strong>
 <table class='highlight'>
 <tr>
@@ -53,7 +57,11 @@ rails g migration 設定ファイル名
         <br>
         <strong>まず「Sublime Text」で「myapp」を開いてみましょう！</strong>
         <br>
-        <small>※　ファイル・フォルダの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+        <small>
+        ※　ファイル・フォルダの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>を参考にして下さい。
+        <br>
+        <i class="fa fa-windows"></i>　Windowsでのファイル・フォルダの開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい。
+        </small>
         <br><br>
         開けたら、下の手順でファイルを開いてみましょう！
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Open_migration_add_column_to_post.png",
@@ -130,9 +138,13 @@ add_column :データベース名, :枠組みの名前, :データの種類
           <hr class="red-hr">
           <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb（半角英数で３行目を追加）</strong>
           <br>
-          <small>※　変更ができたら、「Command」と「s」を一緒に押して内容を保存しましょう！</small>
+          <small>※　変更ができたら、<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存しましょう！
           <br>
-          <small>※　空白は少なくても多くても大丈夫です。</small>
+          ※　空白は少なくても多くても大丈夫です。
+          <br>
+          <i class="fa fa-windows"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+          </small>
+          <br><br>
 <table class="highlight">
 <tr>
 <td class='code-line-no text-center'>1
@@ -224,7 +236,11 @@ change_column :データベース名, :枠組みの名前, :データの種類
         <strong class="little-remarkable">ここでその設定を適用させましょう！</strong>
         <br><br>
         設定の適用はターミナルを使って行います。まずはターミナルで「myapp」まで移動しましょう。
-        <br><br>
+        <br><br><br>
+          <p class="alert alert-success">
+          <span><strong><i class="fa fa-windows color-blue"></i>　Windowsでの移動の方法は<a href="/mugcups/windows_tips#title1-2" target="_blank">こちら</a>を参考</strong></span>
+          </p>
+        <br>
         <strong>　ターミナル（半角英数で入力）</strong>
 <table class="highlight">
 <tr>
@@ -262,7 +278,15 @@ change_column :データベース名, :枠組みの名前, :データの種類
         データベースが変更されているかを<strong>「Sequel Pro」</strong>で確認してみましょう！
         <br>
         <small>※　開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
-        <br><br>
+        <br><br><br>
+        <p class="alert alert-success">
+          <strong>
+          <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、SqliteBrowserを使います。
+          <br>
+          <i class="fa fa-arrow-right"></i>　<a href="/mugcups/how_to_open#title4" target="_blank">こちら</a>を参考にして「<u>db > development.sqlite3</u>」を開き、「posts」データベースの中身を確認して下さい。
+          </strong>
+        </p>
+        <br>
         <u>枠組みに<strong>「place」</strong>は追加されているでしょうか？</u>
         <br><br>
         <i class="fa fa-star color-blue"></i>　<strong>枠組みの変更を設定するファイルは「<u><i>rails g migration 設定ファイル名</i></u>」で作り、ターミナルで「<u><i>rake db:migrate</i></u>」を入力することでその設定を適用させる。</strong>

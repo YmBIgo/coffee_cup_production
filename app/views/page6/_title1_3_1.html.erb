@@ -19,7 +19,9 @@
           の３つになります。
           <% # ７つのページの設定（new） %>
           <hr class="red-hr">
-          「新しいデータの記入（new）」をするページでは、<u>なにも入っていないデータを作り、そこに内容をいれるためのページの入力欄を作ります。</u>
+          <strong>「新しいデータの記入（new）」</strong>をするページでは、
+          <br>
+          <u>なにも入っていないデータを作り、そこに内容をいれるためのページの入力欄を作ります。</u>
           <br><br>
           具体的には、
           <strong>
@@ -29,7 +31,7 @@
             <li>空のデータと記入欄を関連させる（<u>new.html.erb</u>）</li>
           </ul>
           </strong>
-          をやっていきます。
+          の3つをやっていきます。
           <hr class="red-hr">
           <i class="fa fa-play-circle"></i>　<strong>まず「７つのページの設定」からやってみましょう！</strong>
           <br><br>
@@ -77,13 +79,18 @@
         <br><br>
         まずは、Sublime Textで<strong>「<u>app > controllers</u>」</strong>フォルダにある、<strong>「<u>posts_controller.rb</u>」</strong>ファイルを開きましょう。
         <br>
-        <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a></small>
+        <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open" target="_blank"><strong>こちら</strong></a>を参考にして下さい。</small>
         <br><br>
         開けたら、<strong><u>「def new」と「end」の間</u></strong>を下のように設定しましょう。
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb（12行目を追加）</strong>
         <br>
-        <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+        <small>
+        ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <br>
+        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        </small>
+        <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>11
@@ -107,7 +114,9 @@
         <br><br>
         <strong>「<i>Post.new</i>」</strong>では、<u>中になにも入っていないデータを作成</u>しています。
         <br><br>
-        流れとしては、<strong>ここで作った空のデータに<u>ページで入力させた情報を入れて</u>、それを「データの作成（create）」をするページでデータベースに保存</strong>させます。
+        流れとしては、
+        <br>
+        <strong>ここで作った空のデータに<u>ページで入力させた情報を入れて</u>、それを「データの作成（create）」をするページでデータベースに保存</strong>させます。
         <br>
         <small>※　設定する標識は、htmlファイルで同じものを指定できればなんでも大丈夫です。</small>
         <br><br>
@@ -149,7 +158,12 @@
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　new.html.erb</strong>
         <br>
-        <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+        <small>
+        ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <br>
+        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        </small>
+        <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -186,8 +200,18 @@
         では、ページを表示させてみましょう！
         <br>
         <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
-        <br><br>
+        <br><br><br>
+        <p class="alert alert-success">
+          <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+          <br>
+          　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+        </p>
+        <br>
         ブラウザで「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」を開いてみて下さい。
+        <br>
+        <small>
+        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」を開いてみて下さい。
+        </small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -197,7 +221,7 @@
         <hr class="red-hr">
         上のような<strong>「<u>0.0.0.0:3000/データベース名/new</u>」</strong>が、<strong>「<u>新しいデータの記入（new）</u>」</strong>をするページになります。
         <br><br>
-        今回は「posts」データベースの「新しいデータの記入（new）」をするページなので、
+        今回は「posts」データベースの<strong>「<u>新しいデータの記入（new）</u>」</strong>をするページなので、
         <br><br>
         <i class="fa fa-chrome color-red"></i><strong>　ブラウザ</strong>
 <table class='highlight'>
@@ -352,7 +376,7 @@
         <hr class="red-hr">
         ここまでで、表示された３つの入力欄について説明しました。
         <br>
-        <u>もう１つ表示された「登録する」ボタンについて説明します。</u>
+        <u>もう１つ表示された<strong>「登録する」</strong>ボタンについて説明します。</u>
         <br>
         このボタンは、
         <br><br>
@@ -367,9 +391,9 @@
         <br>
         で表示させています。
         <br>
-        <strong>このボタンをクリックすると「データの作成（create）」をするページに移動して、入力された情報をデータベースに保存します。</strong>
+        <strong>このボタンをクリックすると「<u>データの作成（create）</u>」をするページに移動して、入力された情報をデータベースに保存します。</strong>
         <br>
-        <small>※　まだ「データの作成（create）」をするページのデータ操作を設定していないので、データベースにデータは保存されません（実際にやってみて、<a href="/mugcups/how_to_open#title2" target="_blank"><strong>Sequel Pro</strong></a>で確認してみてください）</small>
+        <small>※　まだ<strong>「<u>データの作成（create）</u>」</strong>をするページのデータ操作を設定していないので、データベースにデータは保存されません（実際にやってみて、<a href="/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a>/<strong><a href="/mugcups/how_to_open#title4" target="_blank">SqliteBrowser</a></strong>で確認してみてください）</small>
         <hr class="red-hr">
         ここまでで、入力欄とボタンの表示の説明をしました。
         <br>

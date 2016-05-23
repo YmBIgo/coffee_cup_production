@@ -3,12 +3,16 @@
         <br>
         簡単な枠組みもできたので、データを入れていきましょう！
         <br><br>
-        <strong class="little-remarkable">ここでは『<u>新宿にいた山田太郎さんの「春からSFC」という投稿</u>』をできた枠組みに追加しましょう！</strong>
+        <strong class="little-remarkable">ここでは『<u>新宿にいた山田太郎さんの「春から学校」という投稿</u>』をできた枠組みに追加しましょう！</strong>
         <hr class="red-hr">
         本来ならデータの保存はウェブページで行うものなのですが、ページの作り方はまだやっていないので、ここでは<strong><u>ターミナル</u></strong>を使ってデータを作っていきます。
         <br><br>
         まずは、ターミナルで<strong>「myapp」</strong>まで移動して下さい。
-        <br><br>
+        <br><br><br>
+          <p class="alert alert-success">
+          <span><strong><i class="fa fa-windows color-blue"></i>　Windowsでの移動の方法は<a href="/mugcups/windows_tips#title1-2" target="_blank">こちら</a>を参考</strong></span>
+          </p>
+        <br>
         　<strong>ターミナル</strong>
 <table class='highlight'>
 <tr>
@@ -83,7 +87,15 @@
         では<strong>「Sequel Pro」</strong>で中身を確認してみましょう！
         <br>
         <small>※　開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
-        <br><br>
+        <br><br><br>
+        <p class="alert alert-success">
+          <strong>
+          <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、SqliteBrowserを使います。
+          <br>
+          <i class="fa fa-arrow-right"></i>　<a href="/mugcups/how_to_open#title4" target="_blank">こちら</a>を参考にして「<u>db > development.sqlite3</u>」を開き、「posts」データベースの中身を確認して下さい。
+          </strong>
+        </p>
+        <br>
         下のようにデータが追加されたでしょうか？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Posts_Data1.png",
                               :width => "90%",

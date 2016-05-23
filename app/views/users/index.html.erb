@@ -36,18 +36,24 @@
             </h4>
             <a href="/pay_info" class="btn btn-green">閲覧期間を延長する</a>
             <hr class="red-hr">
-            <p>
-            <a href="/mugcups" target="_blank" class="btn btn-primary">
-                  <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
-                                :class => "nav-img") %>
-                  Mugcup(基礎編)
-            </a>　
-            <a href="/coffee_cups" target="_blank" class="btn btn-danger">
+            <div class="row">
+            <div class="col-lg-6">
+              <a href="/mugcups" target="_blank" class="btn btn-primary">
+                    <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
+                                  :class => "nav-img") %>
+                    Mugcup(基礎編)
+              </a>
+              <br><br>
+            </div>
+            <div class="col-lg-6">
+              <a href="/coffee_cups" target="_blank" class="btn btn-danger">
                   <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
                                 :class => "nav-img") %>
                   Coffee（応用編）
-            </a>
-            </p>
+              </a>
+              <br><br>
+            </div>
+          </div>
           <% else %>
             <h4>教材を購入しておりません</h4>
             <a href="/pay_warning" class="btn btn-green">購入はこちらから</a>

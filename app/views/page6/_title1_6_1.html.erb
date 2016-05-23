@@ -52,6 +52,13 @@
         開けたら、<strong><u>「def update」と「end」の間</u></strong>を下のように設定しましょう。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（24、25行目を追加）</strong>
+        <br>
+        <small>
+        ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <br>
+        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        </small>
+        <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>23
@@ -75,7 +82,7 @@
         <br><br>
         <i class="fa fa-question-circle color-green"></i>　<strong>では、２行目はなにをしているのでしょうか？</strong>
         <br><br>
-        この２行目では、選択したデータ「<u>@post</u>」を入力されたデータ「<u>params</u>」に「<u>変更（update）</u>」しています。
+        この２行目では、選択したデータ「<u>@post</u>」を入力されたデータ「<u>params</u>」に<strong>「<u>変更（update）</u>」</strong>しています。
         <br>
         <small>※　詳細は<a href="/mugcups/4#title2-2" target="_blank"><strong>こちら</strong></a>を参考</small>
         <hr class="red-hr">
@@ -95,13 +102,22 @@
 </tr>
 </table>
         <br>
-        この「params」の部分に、<u>送られてきたデータが全て集約されます。</u>この「params」に「nameは'山田太郎'、contentは'春からSFC'、placeは'江ノ島'」のような情報が入ります。
+        この「params」の部分に、<u>送られてきたデータが全て入っています。</u>
+        <br><br>
+        この「params」に<strong>「<u>nameは'名前'、contentは'内容'、placeは'場所'</u>」</strong>のような情報が入ります。
         <br>
         そしてこのデータベースの内容以外は変更させないために、<strong><u>「require」と「permit」を設定しています。</u></strong>
         <br><br>
-        こうして設定したデータベースの内容だけを「作成（create）」するような設定になっています。
+        ここで
+        <strong>
+        <ul class="number_ul">
+            <li>「posts」データベースの、「<u>name</u>」の枠組み</li>
+            <li>「posts」データベースの、「<u>content</u>」の枠組み</li>
+            <li>「posts」データベースの、「<u>place</u>」の枠組み</li>
+        </ul>
+        の枠組みのみでデータを「<u>作成（create）</u>」</strong>するような設定をしています。
         <br><br>
-        <i class="fa fa-play-circle color-red"></i>　<strong>「データの変更（update）」も同じです。</strong>
+        <i class="fa fa-play-circle color-red"></i>　<strong>「<u>データの変更（update）</u>」も同じです。</strong>
         <br><br>
 <table class='highlight'>
 <tr>
@@ -112,9 +128,26 @@
 </tr>
 </table>
         <br>
-        この設定では「データの変更」の「update」が使われているので、
+        ここでは「データの変更」の「update」が使われているので、<strong>設定した「<u>@post</u>」</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>post_controller.rb（24行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>24
+</td>
+<td class='code-content'><span class='code-line'>@post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+</td>
+</tr>
+</table>
         <br>
-        <strong>「<u>@post</u>」</strong>を「<u>params（受け取った内容のうち、「posts」データベースの「content」と「place」）</u>」に<strong>「<u>変更（update）</u>」</strong>するデータ操作になります。
+        のうち、
+        <strong>
+            <ul class="number_ul">
+                <li>「posts」データベースの、「<u>content</u>」の枠組み</li>
+                <li>「posts」データベースの、「<u>place</u>」の枠組み</li>
+            </ul>
+        </strong>
+        の変更だけを許可するデータ操作になります。
         <br><br>
         <i class="fa fa-question-circle color-green"></i><strong>　「編集するデータの記入（edit）」するページから受け取った、<u>「books」データベースの「name」「price」「page」の「データの変更（update）」</u>をするページのデータ操作はどのようになるでしょう？</strong>
         <br><br>
@@ -137,7 +170,7 @@
         <hr class="red-hr">
         <i class="fa fa-play-circle"></i>　<strong><u>最後に、ページの設定をやってみましょう！</u></strong>
         <br><br>
-        編集するデータの入力が終えて「登録する」ボタンを押したら、下のようなページを表示させるようにしてみます。
+        編集するデータの入力が終えて<strong>「登録する」</strong>ボタンを押したら、下のようなページを表示させるようにしてみます。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -153,7 +186,12 @@
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　update.html.erb</strong>
         <br>
-        <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+        <small>
+        ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <br>
+        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        </small>
+        <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -191,10 +229,20 @@
         <br>
         <small>※　一回、「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。これで内容の変更が適用されます。
         </small>
-        <br><br>
+        <br><br><br>
+        <p class="alert alert-success">
+          <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+          <br>
+          　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+        </p>
+        <br>
         できたらブラウザで、「<a href="http://0.0.0.0:3000/posts/edit/1" target="_blank"><strong>0.0.0.0:3000/posts/1/edit</strong></a>」を開いてみましょう！
         <br>
-        開けたら好きな情報を入力して、「変更する」ボタンを押しましょう！
+        開けたら好きな情報を入力して、<strong>「<u>変更する</u>」</strong>ボタンを押しましょう！
+        <br><br>
+        <small>
+            <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts/1/edit" target="_blank"><strong>localhost:3000/posts/1/edit</strong></a>」を開いて、内容を入力し<strong>「<u>変更する</u>」</strong>ボタンをクリックして下さい。
+        </small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -202,5 +250,5 @@
                     :target => ["_blank"] %>
         上のようなページは表示されたでしょうか？
         <br><br>
-        出てきたら<a href="/mugcups/how_to_open" target="_blank"><strong>Sequel Pro</strong></a>を見るなり、「<a href="http://0.0.0.0:3000/posts/1"><strong>0.0.0.0:3000/posts/1</strong></a>」を見るなりして、内容が変更されたかを確認してみましょう！
+        出てきたら<a href="/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a> / <a href="/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>を見るなり、「<a href="http://0.0.0.0:3000/posts/1"><strong>0.0.0.0:3000/posts/1</strong></a>」を見るなりして、内容が変更されたかを確認してみましょう！
 </h4>
