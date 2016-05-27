@@ -75,12 +75,33 @@
 </tr>
 </table>
   <br>
-  をコピペして追加して下さい。（自分で打つのは大変なので・・・）
+  を
+  <strong>
+  <ul class="number_ul">
+    <li>コピー　　<u>「Command」と「c」</u></li>
+    <small><i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は<strong>「ctrl」と「c」</strong></small>
+    <br><br>
+    <li>ペースト　<u>「Command」と「v」</u></li>
+    <small><i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は<strong>「ctrl」と「v」</strong></small>
+  </ul>
+  </strong>
   <br>
-  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+  して追加して下さい。（自分で打つのは大変なので・・・）
   <br><br>
+  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  </p>
+  <br>
   <strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>を開いてみましょう！
   <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
   下のような表示は出たでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_1.png",
                         :width => "90%",
@@ -130,6 +151,14 @@
   <br><br>
   <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="3"></textarea>
   <br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（10〜12行目）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>10
@@ -165,7 +194,14 @@ margin-top:50px;
   <br><br>
   開けたら下の設定を加えましょう！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss（4〜6行目）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>4
@@ -180,11 +216,21 @@ margin-top:50px;
 </table>
   <br>
   <u>これで「main-page」のclassの部分の上に<strong>50pxの空白</strong>ができました。</u>
-  <br>
-  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
   <br><br>
+  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  </p>
+  <br>
   「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみましょう！
   <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
   下のように表示されたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_2.png",
                         :width => "90%",
@@ -198,7 +244,7 @@ margin-top:50px;
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
               :target => ["_blank"] %>
-  右側にも「新しく投稿する」ボタンを追加して、「<a href="/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」ページに移動できるようにしましょう！
+  右側にも<strong>「<u>新しく投稿する</u>」</strong>ボタンを追加して、「<a href="/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」ページに移動できるようにしましょう！
   <br><br>
   右側のボタンの設定は、
   <br><br>
@@ -231,6 +277,13 @@ margin-top:50px;
   ではやってみます。上の22行目の下に内容を追加して下さい。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（23行目を追加）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>22
@@ -250,10 +303,20 @@ margin-top:50px;
   <br><br>
   では実際に見てみましょう！
   <br>
-  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
-  <br><br>
+  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  </p>
+  <br>
   「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみましょう！
   <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
   下のように表示されたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
                         :width => "90%",
@@ -269,11 +332,11 @@ margin-top:50px;
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>22
-23
+<strong class="color-red">23</strong>
 24
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
-<span class='code-line answer-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line answer-code remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
 <span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
 </td>
 </tr>

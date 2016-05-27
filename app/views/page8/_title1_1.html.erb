@@ -3,6 +3,10 @@
   <br>
   まずは「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」を開いてみましょう！
   <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
   下のような画面はでてきたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
                         :width => "90%",
@@ -32,7 +36,11 @@
   では実際にやってみます。
   <hr class="red-hr">
   まずはターミナルで<strong>「<u>myapp</u>」</strong>にまで移動して下さい。
-  <br><br>
+  <br><br><br>
+  <p class="alert alert-success">
+  <span><strong><i class="fa fa-windows color-blue"></i>　Windowsでの移動の方法は<a href="/mugcups/windows_tips#title1-2" target="_blank">こちら</a>を参考</strong></span>
+  </p>
+  <br>
   　<strong>ターミナル</strong>
 <table class='highlight'>
 <tr>
@@ -71,7 +79,7 @@ rails g controller データベース名
 </pre>
   の入力は、<a href="/mugcups/6#title2-data-view" target="_blank"><strong>データベースにそったデータ操作とページの設定ファイルを作る入力</strong></a>でしたね。
   <br><br>
-  今回はその「welcome」データベースは作っていませんね。
+  今回はその<strong>「<u>welcome</u>」</strong>データベースは作っていませんね。
   <br>
   今回のようにデータ操作をせずページだけを表示させたい時は、ターミナルで
 <pre>
@@ -83,7 +91,7 @@ rails g controller 名前（単数形）
   <br>
   <small>※　もしこのページでデータベースの保存された投稿を表示させるなら、作成された「controller」ファイルに「@post」などの設定を加える必要があります。</small>
   <br><br>
-  少し例外になりますが覚えて下されば幸いです。
+  少し例外になりますが、覚えて下されば幸いです。
   <br><br>
   <ul class="number_ul">
     <strong><li><i>rails g controller 名前（複数形）</i></li></strong>
@@ -120,7 +128,12 @@ rails g controller 名前（単数形）
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>routes.rb（4行目を追加）</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -205,9 +218,14 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <br>
   このファイルを下のように設定してみましょう！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>welcome_controller.rb</strong>
+  <i class="fa fa-file color-red"></i>　<strong>welcome_controller.rb（2、3行目を追加）</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -244,7 +262,7 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <br>
   まずは、<strong>「app > views > welcome」に「index.html.erb」を保存</strong>してみましょう！
   <br>
-  <small>※　保存の方法は<a href="/mugcups/how_to_save#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>※　保存の方法は<a href="/mugcups/how_to_save" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
   <br><br>
   <strong><u>この「index.html.erb」ファイル</u></strong>がページを表示させるための設定ファイルになります。
   <br><br>
@@ -254,7 +272,12 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>index.html.erb（welcomeファルダ）</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -274,9 +297,19 @@ root "表示させるページの設定フォルダ#表示させるページ"
   <br><br>
   ではこれを開いてみましょう！
   <br>
-  <small>※　内容を適用させるために、「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
-  <br><br>
+  <small>※　内容を適用させるために、<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  </p>
+  <br>
   <strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>を開いてみましょう！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」を開いてみて下さい。
+  </small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_before.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),

@@ -100,9 +100,17 @@ f.password_field :password
   <br><br>
   <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
   <br>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（8行目）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
-<td class='code-line-no text-center'>1
+<td class='code-line-no text-center'>8
 </td>
 <td class='code-content answer-code'><span class='code-line'>&lt;%= f.email_field <span class="word-purple">:email</span>, <span class="word-purple">autofocus:</span> <span class="word-purple">true</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span></span> %&gt;</span>
 </td>
@@ -122,7 +130,12 @@ f.password_field :password
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>new.html.erb（8、16、21、23、25行目を変更）</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -188,10 +201,20 @@ f.password_field :password
 </tr>
 </table>
   <br>
-  <small>※　内容を適用させるために、一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
-  <br><br>
-  <strong>「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</strong>を開いてみましょう！
+  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
   <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  </p>
+  <br>
+  できたら、「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank"><strong>0.0.0.0:3000/users/sign_up</strong></a>」を開いてみましょう！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/users/sign_up" target="_blank"><strong>localhost:3000/users/sign_up</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
   下のように表示されたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_bootstrap.png",
                         :width => "90%",
@@ -203,11 +226,23 @@ f.password_field :password
   <br>
   ログイン画面は<strong>「<u>app > views > devise > sessions</u>」</strong>フォルダの中にある<strong>「<u>new.html.erb</u>」</strong>に設定します。
   <br><br>
-  では、中身の入力欄に<strong>「<u>form-control</u>」と「<u>my-form</u>」</strong>を、ボタンに<strong>「<u>btn</u>」と「<u>btn-primary</u>」</strong>を加えてみましょう！
+  では、
+  <strong>
+  <ul class="number_ul">
+    <li>入力欄に「<u>form-control</u>」と「<u>my-form</u>」</li>
+    <li>ボタンに「<u>btn</u>」と「<u>btn-primary</u>」</li>
+  </ul>
+  </strong>
+  を加えてみましょう！
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>new.html.erb（sessionsフォルダ）</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -267,10 +302,20 @@ f.password_field :password
 </tr>
 </table>
   <br>
-  <small>※　内容を適用させるために、一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
-  <br><br>
-  <strong>「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</strong>を開いてみましょう！
+  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
   <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  </p>
+  <br>
+  できたら、「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank"><strong>0.0.0.0:3000/users/sign_in</strong></a>」を開いてみましょう！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/users/sign_in" target="_blank"><strong>localhost:3000/users/sign_in</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
   下のように表示されたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_bootstrap.png",
                         :width => "90%",

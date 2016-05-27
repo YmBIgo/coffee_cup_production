@@ -5,7 +5,7 @@
   <br><br>
   まずは、Sequel Proで<strong>「messages-app_development」</strong>を開いて、その中の<strong>「messages」データベース</strong>のデータを下の手順で削除してみましょう。
   <br>
-  <small>※　Sequel Proの開き方は<strong><a href="/mugcups/how_to_open#title2" target="_blank">こちら</a></strong>を参考にして下さい</small>
+  <small>※　Sequel Proの開き方は<a href="/mugcups/how_to_open#title3" target="_blank"><strong>こちら</strong></a>を、SqliteBrowserの開き方は<a href="/mugcups/how_to_open#title4" target="_blank"><strong>こちら</strong></a>を参考</small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Sequel_Pro_destroy.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -38,12 +38,16 @@
       </tr>
     </tbody>
   </table>
+  <br><br>
+  <small>※　データベースの変更方法は<a href="/mugcups/4#title1-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
   データベースの変更は、<strong><u>ターミナルで作成する設定ファイル</u></strong>を使って行います。
   <br>
-  まずはターミナルで下の入力をしましょう！
+  まずはターミナルで<strong>「<u>message-app</u>」</strong>に移動して下さい。
+  <br><br><br>
+  <p class="alert alert-success">
+  <span><strong><i class="fa fa-windows color-blue"></i>　Windowsでの移動の方法は<a href="/mugcups/windows_tips#title1-2" target="_blank">こちら</a>を参考</strong></span>
+  </p>
   <br>
-  <small>※　データベースの変更方法は<a href="/mugcups/4#title1-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
-  <br><br>
   　<strong>ターミナル</strong>
 <table class='highlight'>
 <tr>
@@ -58,7 +62,7 @@
 </tr>
 </table>
   <br>
-  これで<strong>「<u>message-app</u>」</strong>に移動できました。ここでデータベース変更の設定ファイルを作成します。
+  ここでデータベース変更の設定ファイルを作成します。
   <br><br>
   　<strong>ターミナル</strong>
 <table class='highlight'>
@@ -78,7 +82,12 @@
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>日時_change_column_messages.rb（3、4行目を追加）</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -123,7 +132,7 @@
   <br><br>
   <strong>最後に<u>Sequel Pro</u>で内容の確認をしてみましょう。</strong>
   <br>
-  <small>※　Sequel Proの開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考</small>
+  <small>※　Sequel Proの開き方は<a href="/mugcups/how_to_open#title3" target="_blank"><strong>こちら</strong></a>を、SqliteBrowserの開き方は<a href="/mugcups/how_to_open#title4" target="_blank"><strong>こちら</strong></a>を参考</small>
   <hr class="red-hr">
   ここまでで、
   <br>
@@ -135,9 +144,14 @@
   <br><br>
   <strong>「<u>app > controllers > messages_controller.rb</u>」</strong>を下のように変更しましょう！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
+  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb（6行目を追加）</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1

@@ -1,27 +1,95 @@
 <h4 id="coffee-chapter1-1-2">
-  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : データベースの用意</strong></p>
+  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : Gemの導入</strong></p>
   <br>
-  <strong>データベースの用意をしましょう！</strong>
-  <hr class="red-hr">
-  ウェブページでデータを保存するためにデータベースを用意する必要があります。
-  <br>
-  <small>※　分からなかったら、<a href="/mugcups/3#title2-2-2" target="_blank"><strong>こちら</strong></a>を参考にしてみて下さい</small>
+  <i class="fa fa-play-circle"></i>　<strong>ここで、ツール・gemの導入をしましょう！</strong>
   <br><br>
-  ではそのデータベースを作ってみましょう。ターミナルで下の入力をしてみましょう！
+  ウェブページ作成で使う<strong>「<u>Gem</u>」</strong>を導入します。
+  <br>
+  <small>※　分からなかったら、<a href="/mugcups/3#title2-2-1" target="_blank"><strong>こちら</strong></a>を参考にしてみて下さい</small>
+  <br><br>
+  <strong>「<u>gem</u>」</strong>の設定をしている<strong>「<u>Gemfile</u>」</strong>の内容を変更しましょう。
+  <hr class="red-hr">
+  <span style="font-size:30px;"><i class="fa fa-apple color-red"></i>　<strong>Macをご利用の方</strong></span>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>Gemfile（「<u>gem 'sdoc', '~> 0.4.0', group: :doc</u>」の後ろに追加）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>26
+25
+27
+28
+29
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'therubyracer'</span></span>
+<span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'less-rails'</span></span>
+<span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'twitter-bootstrap-rails'</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'devise'</span></span>
+</td>
+</tr>
+</table>
+  <br><br>
+  設定ができたら、ターミナルで下の入力をして下さい。
   <br><br>
   　<strong>ターミナル</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>rake db:create</span>
+<td class='code-content'><span class='code-line'>bundle install</span>
 </td>
 </tr>
 </table>
   <br>
-  で行います。やってみましょう！
-  <hr class="red-hr">
-  終わったら、Sequel Proで<strong>「message-app_development」</strong>というデータベースがあるかを確認してみましょう！（Sequel Proの開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>）
+  <strong>「<u>gem</u>」</strong>をインストールできたら、<strong><u>Bootstrap</u>のインストール</strong>をします。
   <br><br>
-  <strong>設定した内容は<a href="/codes/c_1#title1-1" target="_blank">こちら</a>にまとめてあります。</strong>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g bootstrap:install</span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-arrow-right"></i>　<strong>これで、Macでの「<u>gem</u>」の導入ができました。</strong>
+  <hr class="red-hr">
+  <span style="font-size:30px"><i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方</strong></span>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>Gemfile（「<u>gem 'sdoc', '~> 0.4.0', group: :doc</u>」の後ろに追加）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>26
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'devise'</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  設定ができたら、ターミナルで下の入力をして下さい。
+  <br><br>
+  　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong><u>gem</u>のインストール</strong>ができたら、<a href="/mugcups/windows_tips#title1-4" target="_blank"><strong>こちら</strong></a>を参考にして<strong><u>Bootstrap</u>を導入</strong>して下さい。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>これで、Windowsでの「<u>gem</u>」の導入ができました。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>ここまでで「<u>gem</u>」の設定が完了しました。</strong>
 </h4>

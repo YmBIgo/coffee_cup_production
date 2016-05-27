@@ -20,7 +20,12 @@
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（&lt;div class="container main-page"&gt;の後に内容を追加）</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>36
@@ -52,10 +57,20 @@
 </tr>
 </table>
   <br>
-  <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」を一緒に押して止めて</u></strong>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
-  <br><br>
-  ログインしないと見れない<strong>「<a href="/mugcups/6#title1-3" target="_blank">new</a>」</strong>のページ<strong>「<a href="http://0.0.0.0:3000/posts/new" target="_blank">0.0.0.0:3000/posts/new</a>」</strong>を開いてみましょう。
+  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
   <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  </p>
+  <br>
+  できたら、「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」を開いてみましょう！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
   下のように表示されたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
                         :width => "90%",
@@ -229,7 +244,12 @@ flash[:alert] = "表示する文字"
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（7行目を追加）</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>5
@@ -245,10 +265,20 @@ flash[:alert] = "表示する文字"
 </tr>
 </table>
   <br>
-  <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」を一緒に押して止めて</u></strong>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
-  <br><br>
-  <strong>「<a href="http://0.0.0.0:3000/posts/1" target="_blank">0.0.0.0:3000/posts/1</a>」</strong>を開いてみましょう。
+  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
   <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  </p>
+  <br>
+  できたら、「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
   下のように表示されたでしょうか？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_1_flash.png",
                         :width => "90%",
