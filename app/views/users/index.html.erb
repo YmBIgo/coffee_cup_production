@@ -3,6 +3,13 @@
   <div class="header-content fadeIn wow">
   <%= render "common/alert" %>
     <div class="header-content-word">
+      <% unless user_studiable? %>
+        <h3 class="alert alert-success">
+          <strong>
+          教材のご購入は、<a href="/pay_warning" target="_blank">こちら</a>からできます。
+          </strong>
+        </h3>
+      <% end %>
       <h1 style="line-height:1.5">
         <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_grains_logo.png") %>
         <br>
@@ -34,7 +41,7 @@
             <br>
             残り<strong><u><%= current_user.time_left %></u></strong>です
             </h4>
-            <a href="/pay_info" class="btn btn-green">閲覧期間を延長する</a>
+            <a href="/pay_info#title2-2-2" class="btn btn-green">閲覧期間を延長する</a>
             <hr class="red-hr">
             <div class="row">
             <div class="col-lg-6">
@@ -79,8 +86,6 @@
                         :class => "hover_img textbook-title-img zoom_img") %>
           <h4>
           <a href="https://facebook.com" target="_blank">Facebook</a>に登録した上、<a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank">Facebookページ</a>にて投稿・質問下さい。
-<!--           <hr class="red-hr" style="margin-top:40px">
-          <small>※　学習に支障が生じる場合は、当社員が直接教えることもできます。その場合はメールで<a href="mailto:support@coffee-cup.info"><strong>support@coffee-cup.info</strong></a>までご相談下さい。</small> -->
           </h4>
         </div>
       </div>
