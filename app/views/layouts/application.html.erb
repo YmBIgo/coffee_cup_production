@@ -34,21 +34,21 @@
 
 </head>
 <body>
-  <% if admin_user_signed_in? %>
-    <%= render 'common/navbar' %>
-    <div id="main-section">
-      <%= yield %>
-      <br>
-    </div>
-    <%= render "common/footer" %>
-    <script>
-      new WOW().init();
-    </script>
-    <script>
 
+  <%= render 'common/navbar' %>
 
-    </script>
-    <% if Rails.env.production? %>
+  <div id="main-section">
+    <%= yield %>
+    <br>
+  </div>
+
+  <%= render "common/footer" %>
+
+  <script>
+    new WOW().init();
+  </script>
+
+  <% if Rails.env.production? %>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -58,16 +58,6 @@
       ga('create', 'UA-75857156-1', 'auto');
       ga('send', 'pageview');
     </script>
-    <% end %>
-  <% else %>
-    <div class="text-center">
-      <br>
-      <h1>
-      <%= image_tag ("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_nav_gray.png") %>
-      <span class="color-coffee">ページを改装中です。</span>
-      <br>
-      <small>しばらくお待ち下さい...</small></h1>
-    </div>
   <% end %>
 </body>
 </html>
