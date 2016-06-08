@@ -3,9 +3,14 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
+
 # top page
 
   root to: "welcome#index"
+
+# send_mail
+
+  resources :mail_senders, :only => [:create]
 
 # mugcups page
 

@@ -2,22 +2,36 @@
 <header class="text-center header-img-desk">
   <div class="header-content fadeIn wow">
   <%= render "common/alert" %>
-    <div class="header-content-word">
+    <div class="header-content-word row">
       <h1>
         <strong>
           <span style="line-height:1.6; font-size:50px">テクノロジーを<br>あなたのものにしよう！</span>
           <br>
-          <span style="font-size:16px;">
+        </strong>
+      </h1>
+      <hr class="red-hr">
+      <p><a href="#service-title" class="btn btn-danger">詳しく見る</a></p>
+      <br><br>
+      <div class="col-xs-6">
+        <h5 style="line-height:1.8">
+        <strong>
           日頃の生活を支えているウェブページ。
           <br>
           そのウェブページの作り方を学んでみましょう！
           <br>
           ※　<u>WindowsかMacのPC</u>をご用意下さい。
-          </span>
         </strong>
-      </h1>
-      <hr class="red-hr">
-      <p><a href="#service-title" class="btn btn-green">詳しく見る</a>　<a href="/users/sign_up" class="btn btn-warning">始めてみる</a></p>
+        </h5>
+        <p><a href="/users/sign_up" class="btn btn-warning">始めてみる</a></p>
+        <br>
+      </div>
+      <div class="col-xs-6">
+        <%= form_for @mail_sender do |f| %>
+          <h4><i class="fa fa-envelope"></i>　<strong>ページのURLを送る</strong></h4>
+          <%= f.text_field :email, :class => "form-control mail-area", :placeholder => "メールアドレスを入力" %>
+          <%= f.submit "送信する", :class => "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </header>
