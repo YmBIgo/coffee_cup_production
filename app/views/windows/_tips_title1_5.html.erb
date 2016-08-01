@@ -1,0 +1,83 @@
+<h4 id="chapter1-5">
+  <p id="title1-5"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑤ : gem導入時の設定</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>
+  ここではWindowsで下のようになって、「gem」が入力できない場合の対処方法を説明します。
+  </strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl1.png",
+              :target => ["_blank"] %>
+  まずは<a href="https://github.com/rubygems/rubygems/releases/tag/v2.2.3" target="_blank"><strong>こちらのページ</strong></a>を開いて、<strong>「<u>rubygems-update-2.2.3.gem</u>」</strong>をクリックしてダウンロードして下さい。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl2.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl2.png",
+              :target => ["_blank"] %>
+  ダウンロードが終了したら<strong>「<u>フォルダを開く</u>」</strong>を押して、保存したファイルを確認しましょう。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl3.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl3.png",
+              :target => ["_blank"] %>
+  新しくエクスプローラを開いて、<strong>左側の「<u>PC</u>」</strong>をクリックして、そこに出てくる<strong>「<u>Windows(C:)</u>」</strong>をクリックして下さい。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl4.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl4.png",
+              :target => ["_blank"] %>
+  ここまでで出来たら、<strong>「<u>ダウンロード</u>」フォルダにあるダウンロードしたファイルを「<u>Windows(C:)</u>」に移動</strong>させて下さい。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl5.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl5.png",
+              :target => ["_blank"] %>
+  ではコマンドプロンプトを開いて、設定を加えます。下の入力をして下さい。
+  <br><br>
+  <strong>　コマンドプロンプト（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>gem install --local C:¥rubygems-update-2.2.3.gem</span>
+</td>
+</tr>
+</table>
+  <br><br>
+  <strong>　コマンドプロンプト（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>update_rubygems --no-ri --no-rdoc</span>
+</td>
+</tr>
+</table>
+  <br><br>
+  <strong>　コマンドプロンプト（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>gem uninstall rubygems-update -x</span>
+</td>
+</tr>
+</table>
+  <br>
+  ここまでが出来たら、
+  <br><br>
+  <strong>　コマンドプロンプト（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>gem update</span>
+</td>
+</tr>
+</table>
+  <br>
+  を入力してみて下さい。
+  <br><br>
+  <strong><i class="fa fa-windows color-blue"></i>　これで「<u>gem</u>」が入力できるようになったのではないかと思います。</strong>
+</h4>
