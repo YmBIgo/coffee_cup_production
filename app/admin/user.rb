@@ -13,6 +13,6 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
-  permit_params :family_name, :first_name, :company_name, :phone_number, :study_limit_at, :study_enabled, :money_amount, :month_amount
+  permit_params :family_name, :first_name, :company_name, :phone_number, :study_limit_at, :study_enabled, :money_amount, :month_amount, :birth_year, :age
 
 end

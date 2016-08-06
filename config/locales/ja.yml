@@ -12,6 +12,7 @@ ja:
     agreement: 利用規約
     money_amount: お支払い累計金額
     month_amount: 学習月数
+    birth_year: 誕生年
   date:
     abbr_day_names:
     - 日
