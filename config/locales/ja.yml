@@ -13,6 +13,8 @@ ja:
     money_amount: お支払い累計金額
     month_amount: 学習月数
     birth_year: 誕生年
+    age: 年齢
+    study_months: 学習した月
   date:
     abbr_day_names:
     - 日
