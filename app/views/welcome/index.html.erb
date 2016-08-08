@@ -18,7 +18,7 @@
         </strong>
       </h1>
       <br>
-      <p><a href="#service-title" class="btn btn-danger">詳しく見る</a></p>
+      <p><a href="#lesson-title" class="btn btn-danger">詳しく見る</a></p>
       <hr class="red-hr">
       <div class="col-xs-6">
         <h4 style="line-height:1.8; margin-bottom:8px">
@@ -46,9 +46,89 @@
   <div id="top-page" class="textbook-area">
     <div class="textbook-area-inner fadeIn wow">
       <br>
+      <div id="lesson-section">
+        <h2 id="lesson-title" class="text-center fix-link-nav">2つのコース</h2>
+        <hr class="red-hr">
+        <div class="row text-center">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <a href="/mugcups" target="_blank" class="btn btn-primary">
+                  <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
+                                :class => "nav-img") %>
+                  Mugcup(基礎編)
+            </a>
+            <br>
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/mugcup_demo_page.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://gentle-cove-48435.herokuapp.com/",
+                        :target => ["blank"] %>
+            <h5 class="text-left">
+            <small>
+            <i class="fa fa-arrow-right"></i>　デモページは<a href="https://guarded-gorge-84479.herokuapp.com/" target="_blank"><strong>こちら</strong></a>
+            </small>
+            </h5>
+            <br>
+            <p class="text-left text-muted">
+            「Ruby on Rails」というソフトウェアを使ったウェブページの作り方を説明します。
+            </p>
+            <ul class="alert alert-warning text-left" style="margin:20px auto; line-height:20px; padding:25px 30px;">
+              <strong>
+              <a href="/mugcups/0" target="_blank"><li>0 : はじめに</li></a>
+              <a href="/mugcups/1" target="_blank"><li>1 : ウェブページとは？</li></a>
+              <a href="/mugcups/2" target="_blank"><li>2 : Ruby on Rails の基本</li></a>
+              <br>
+              <li>他 ... <a href="/mugcups/" target="_blank">(全12章)</a></li>
+              </strong>
+            </ul>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <a href="/coffee_cups" target="_blank" class="btn btn-danger">
+                  <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
+                                :class => "nav-img") %>
+                  Coffee（応用編）
+            </a>
+            <br>
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffee_demo_page.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://guarded-gorge-84479.herokuapp.com/users/sign_in",
+                        :target => ["blank"] %>
+            <h5 class="text-left">
+            <small>
+            <i class="fa fa-arrow-right"></i>　デモページは<a href="https://guarded-gorge-84479.herokuapp.com/users/sign_in" target="_blank"><strong>こちら</strong></a>
+            </small>
+            </h5>
+            <br>
+            <p class="text-left text-muted">
+            解説した「Ruby on Rails」の実践として、メッセージアプリケーションを作ります。
+            </p>
+            <ul class="alert alert-success text-left" style="margin:20px auto; line-height:20px; padding:25px 30px;">
+              <strong>
+              <a href="/coffee_cups/0" target="_blank"><li>1 : Mugcup（基礎編）の復習</li></a>
+              <a href="/coffee_cups/1" target="_blank"><li>2 : メッセージを作る</li></a>
+              <a href="/coffee_cups/2" target="_blank"><li>3 : チャットルームの作成①</li></a>
+              <br>
+              <li>他 ... <a href="/coffee_cups/" target="_blank">(全8章)</a></li>
+              </strong>
+            </ul>
+            <br>
+          </div>
+        </div>
+        <p class="alert alert-info text-left" style="margin:20px auto; line-height:20px">
+              <i class="fa fa-windows color-blue"></i>　<strong><u>Windows</u>をご利用の方は</strong>、
+              <br><br>
+              機種の関係で<strong>「<u>7 : 画像のアップロード</u>」</strong>の内容が勉強することはできません。ご了承下さい。
+        </p>
+        <br>
+        <div class="text-center">
+          <a href="#service-section" class="btn btn-warning">サービスの詳細は？</a>
+        </div>
+      </div>
+      <hr>
+      <br>
       <div class="service-section">
         <br>
-        <h2 class="text-center fix-link-nav" id="service-title">サービス内容</h2>
+        <h2 class="text-center fix-link-nav" id="service-title">サービス詳細</h2>
         <hr class="red-hr">
         <div class="row text-center">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
@@ -99,56 +179,7 @@
         </div>
         <div class="text-center">
           <p>
-          <a href="#lesson-section" class="btn btn-success" style="margin:20px auto 10px auto">なにを勉強するのか？</a>
-        </div>
-      </div>
-      <hr>
-      <br>
-      <div id="lesson-section">
-        <h2 id="lesson-title" class="text-center fix-link-nav">2つのコース</h2>
-        <hr class="red-hr">
-        <div class="row text-center">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-            <a href="/mugcups" target="_blank" class="btn btn-primary">
-                  <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
-                                :class => "nav-img") %>
-                  Mugcup(基礎編)
-            </a>
-            <br><br>
-            <p class="text-left text-muted">
-            「Ruby on Rails」というソフトウェアを使ったウェブページの作り方を説明します。
-            <br>
-            </p>
-            <h5 class="text-left">
-              <small>
-              <i class="fa fa-arrow-right"></i>　デモページは<a href="https://gentle-cove-48435.herokuapp.com/" target="_blank"><strong>こちら</strong></a>
-              </small>
-            </h5>
-            <br>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-            <a href="/coffee_cups" target="_blank" class="btn btn-danger">
-                  <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
-                                :class => "nav-img") %>
-                  Coffee（応用編）
-            </a>
-            <br><br>
-            <p class="text-left text-muted">
-            解説した「Ruby on Rails」の実践として、メッセージアプリケーションを作ります。
-            <br>
-            </p>
-            <h5 class="text-left">
-            <small>
-            <i class="fa fa-arrow-right"></i>　デモページは<a href="https://guarded-gorge-84479.herokuapp.com/" target="_blank"><strong>こちら</strong></a>
-            </small>
-            <p class="alert alert-info" style="margin:20px auto; line-height:20px">
-              <i class="fa fa-windows color-blue"></i>　<strong><u>Windows</u>をご利用の方は</strong>、機種の関係で<strong>「<u>7 : 画像のアップロード</u>」</strong>の内容が勉強することはできません。ご了承下さい。
-            </p>
-            </h5>
-            <br>
-          </div>
-          <p>
-          <a href="#pc-type-section" class="btn btn-warning">なにが必要になるか？</a>
+          <a href="#pc-type-section" class="btn btn-success">なにが必要になるか？</a>
         </div>
       </div>
       <hr>
