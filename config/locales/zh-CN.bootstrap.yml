@@ -1,0 +1,41 @@
+ja:
+  helpers:
+    actions: "动作"
+    links:
+      back: "返回"
+      cancel: "取消"
+      confirm: "可以吗？"
+      edit: 編集
+      destroy: "删除"
+      new: "新規"
+      sending: 送信中...
+    titles:
+      edit: "编辑%{model}"
+      index: "%{model}的一览"
+      save: "储存"
+      new: "新規%{model}"
+      delete: "删除"
+    notices:
+      created: "新增%{model}"
+      updated: "更新%{model}"
+      destroyed: "删除%{model}"
+      logged_in: 登录了。
+      logged_out: 退出了。
+      login_failed: 不能登录。
+
+  views:
+    pagination:
+      first: "<<"
+      last: ">>"
+      previous: "<"
+      next: ">"
+      truncate: "..."
+
+  simple_form:
+    error_notification:
+      default_message: 还有地方要改正。
+    required:
+      text: 必须
+
+  ransack:
+    search: 検索する
