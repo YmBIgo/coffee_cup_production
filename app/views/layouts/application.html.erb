@@ -5,17 +5,55 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= display_meta_tags({
-      :title => 'Coffee-Cup',
-      :description => 'あなたにウェブサイトの作り方を教えるサイト「Coffee-Cup」',
-      :keywords => 'ウェブサイト作り方, Ruby on rails, プログラミング初心者',
-      :open_graph => {
-        :title => "Coffee-Cup | ウェブサイトの作り方を学習できるサイト",
-        :url   => 'http://www.coffee-cup.jp/',
-      },
-      :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
-      :reverse => true
+  <% if I18n.locale == :ja %>
+    <%= display_meta_tags({
+        :title => 'Coffee-Cup',
+        :description => 'あなたにウェブサイトの作り方を教えるサイト「Coffee-Cup」',
+        :keywords => 'ウェブサイト作り方, Ruby on rails, プログラミング初心者',
+        :open_graph => {
+          :title => "Coffee-Cup | ウェブサイトの作り方を学習できるサイト",
+          :url   => 'http://www.coffee-cup.jp/',
+        },
+        :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
+        :reverse => true
     }) %>
+  <% elsif I18n.locale == :en %>
+    <%= display_meta_tags({
+        :title => 'Coffee-Cup',
+        :description => 'Website for people who wanna study programing \'Coffee-Cup\'',
+        :keywords => '作网路, Ruby on rails, 程序设计',
+        :open_graph => {
+          :title => "Coffee-Cup | Let's study programing！",
+          :url   => 'http://www.coffee-cup.jp/',
+        },
+        :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
+        :reverse => true
+    }) %>
+  <% elsif I18n.locale == :"zh-TW" %>
+    <%= display_meta_tags({
+        :title => 'Coffee-Cup',
+        :description => '想學學看電腦的你。在 \'Coffee-Cup\' 學學看這麼樣？',
+        :keywords => 'programing, Ruby on rails, website',
+        :open_graph => {
+          :title => "Coffee-Cup | Let's study programing",
+          :url   => 'http://www.coffee-cup.jp/',
+        },
+        :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
+        :reverse => true
+    }) %>
+  <% elsif I18n.locale == :"zh-CN" %>
+    <%= display_meta_tags({
+        :title => 'Coffee-Cup',
+        :description => '想学学看电脑的你。在 \'Coffee-Cup\' 学学看这么样？',
+        :keywords => 'programing, Ruby on rails, website',
+        :open_graph => {
+          :title => "Coffee-Cup | Let's study programing",
+          :url   => 'http://www.coffee-cup.jp/',
+        },
+        :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
+        :reverse => true
+    }) %>
+  <% end %>
   <meta property="og:site_name" content="Coffee-Cup">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/Coffee_Cup_Main_Page_Header.png">
@@ -44,14 +82,30 @@
 </head>
 <body>
 
-  <%= render 'common/navbar' %>
+  <% if I18n.locale == :ja %>
+    <%= render 'common/navbar' %>
+  <% elsif I18n.locale == :en %>
+    <%= render "common/navbar" %>
+  <% elsif I18n.locale == :"zh-CN" %>
+    <%= render "common/navbar_zh_cn" %>
+  <% elsif I18n.locale == :"zh-TW" %>
+    <%= render "common/navbar_zh_tw" %>
+  <% end %>
 
   <div id="main-section">
     <%= yield %>
     <br>
   </div>
 
-  <%= render "common/footer" %>
+  <% if I18n.locale == :ja %>
+    <%= render "common/footer" %>
+  <% elsif I18n.locale == :en %>
+    <%= render "common/footer" %>
+  <% elsif I18n.locale == :"zh-CN" %>
+    <%= render "common/footer_zh_cn" %>
+  <% elsif I18n.locale == :"zh-tw" %>
+    <%= render "common/footer_zh_TW" %>
+  <% end %>
 
   <script>
     new WOW().init();

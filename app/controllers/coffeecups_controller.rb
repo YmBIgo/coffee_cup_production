@@ -7,7 +7,7 @@ class CoffeecupsController < ApplicationController
     if current_user.study_enabled == true
       render template: "coffeecups/#{params[:page]}"
     else
-      redirect_to "/dashboard"
+      redirect_to dashboard_path
       flash[:alert] = "閲覧権限がありません"
     end
   end

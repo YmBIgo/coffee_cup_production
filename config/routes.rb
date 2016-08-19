@@ -2,110 +2,113 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
 
-# top page
+  scope "(:locale)" do
+  # top page
 
-  root to: "welcome#index"
+    devise_for :users
 
-# send_mail
+    root to: "welcome#index"
 
-  resources :mail_senders, :only => [:create]
+  # send_mail
 
-# mugcups page
+    resources :mail_senders, :only => [:create]
 
-  get "/mugcups/:page" => "pages#show"
+  # mugcups page
 
-  get "/mugcups" => "pages#index"
+    get "mugcups/:page" => "pages#show"
 
-# coffee_cups page
+    get "mugcups" => "pages#index"
 
-  get "/coffee_cups/:page" => "coffeecups#show"
+  # coffee_cups page
 
-  get "/coffee_cups" => "coffeecups#index"
+    get "coffee_cups/:page" => "coffeecups#show"
 
-# code page
+    get "coffee_cups" => "coffeecups#index"
 
-  get "/codes" => "codes#index"
+  # code page
 
-  get "/codes/:page" => "codes#show"
+    get "codes" => "codes#index"
 
-# users page
+    get "codes/:page" => "codes#show"
 
-  resources :users, :only => [:edit, :update]
+  # users page
 
-  get "/dashboard" => "users#index"
+    resources :users, :only => [:edit, :update]
 
-  get "/pay_info" => "users#pay_info"
+    get "dashboard" => "users#index"
 
-  get "/pay_warning" => "users#pay_warning"
+    get "pay_info" => "users#pay_info"
 
-# info_page
+    get "pay_warning" => "users#pay_warning"
 
-  get "/privacypolicy" => "info_page#privacypolicy"
+  # info_page
 
-  get "/company"       => "info_page#company"
+    get "privacypolicy" => "info_page#privacypolicy"
 
-  get "/term"          => "info_page#term"
+    get "company"       => "info_page#company"
 
-  get "/tokusho"       => "info_page#tokusho"
+    get "term"          => "info_page#term"
 
-# 404
+    get "tokusho"       => "info_page#tokusho"
 
-  match '*path' => 'application#error404', via: :all
+  # 404
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+    match '*path' => 'application#error404', via: :all
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+    # The priority is based upon order of creation: first created -> highest priority.
+    # See how all your routes lay out with "rake routes".
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+    # You can have the root of your site routed with "root"
+    # root 'welcome#index'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+    # Example of regular route:
+    #   get 'products/:id' => 'catalog#view'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    # Example of named route that can be invoked with purchase_url(id: product.id)
+    #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+    # Example resource route (maps HTTP verbs to controller actions automatically):
+    #   resources :products
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+    # Example resource route with options:
+    #   resources :products do
+    #     member do
+    #       get 'short'
+    #       post 'toggle'
+    #     end
+    #
+    #     collection do
+    #       get 'sold'
+    #     end
+    #   end
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+    # Example resource route with sub-resources:
+    #   resources :products do
+    #     resources :comments, :sales
+    #     resource :seller
+    #   end
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+    # Example resource route with more complex sub-resources:
+    #   resources :products do
+    #     resources :comments
+    #     resources :sales do
+    #       get 'recent', on: :collection
+    #     end
+    #   end
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+    # Example resource route with concerns:
+    #   concern :toggleable do
+    #     post 'toggle'
+    #   end
+    #   resources :posts, concerns: :toggleable
+    #   resources :photos, concerns: :toggleable
+
+    # Example resource route within a namespace:
+    #   namespace :admin do
+    #     # Directs /admin/products/* to Admin::ProductsController
+    #     # (app/controllers/admin/products_controller.rb)
+    #     resources :products
+    #   end
+  end
 end

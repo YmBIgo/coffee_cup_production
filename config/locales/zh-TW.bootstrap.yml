@@ -1,27 +1,27 @@
 zh-CN:
   helpers:
-    actions: "动作"
+    actions: "動作"
     links:
       back: "返回"
       cancel: "取消"
-      confirm: "可以吗？"
+      confirm: "可以嗎？"
       edit: 編輯
-      destroy: "删除"
+      destroy: "刪除"
       new: "新增"
       sending: 送信中...
     titles:
-      edit: "编辑%{model}"
+      edit: "編輯%{model}"
       index: "%{model}的一覽"
-      save: "储存"
-      new: "新規%{model}"
+      save: "儲存"
+      new: "新增%{model}"
       delete: "删除"
     notices:
       created: "新增%{model}"
       updated: "更新%{model}"
       destroyed: "删除%{model}"
-      logged_in: 登录了。
+      logged_in: 登錄了。
       logged_out: 退出了。
-      login_failed: 不能登录。
+      login_failed: 不能登錄。
 
   views:
     pagination:
@@ -33,7 +33,7 @@ zh-CN:
 
   simple_form:
     error_notification:
-      default_message: 还有地方要必須改正。
+      default_message: 還有地方要必須改正。
     required:
       text: 必须
 

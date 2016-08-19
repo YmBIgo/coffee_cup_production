@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     if current_user == user
       return true
     else
-      redirect_to "/dashboard"
+      redirect_to dashboard_path
       flash[:alert] = "閲覧権限はありません"
     end
   end

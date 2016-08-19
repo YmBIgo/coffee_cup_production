@@ -1,0 +1,329 @@
+<% provide :title, "Coffee-Cup" %>
+<header class="text-center header-img-desk">
+  <div class="header-content fadeIn wow">
+  <%= render "common/alert" %>
+    <div class="header-content-word row">
+      <h1>
+        <strong>
+          <span style="line-height:1.6; font-size:50px">
+            体验体验
+            <br>
+            电脑里面的世界吧！
+          </span>
+          <br>
+          <span style="line-height:1.4; font-size:25px">
+            〜 学会怎么作网路吧！ 〜
+          </span>
+          <br>
+        </strong>
+      </h1>
+      <br>
+      <p><a href="#lesson-title" class="btn btn-danger">详细</a></p>
+      <hr class="red-hr">
+      <div class="col-xs-6">
+        <h4 style="line-height:1.8; margin-bottom:8px">
+        <strong>
+          在我們日常生活中，不可缺少的网路。
+          <br>
+          我们提供作网路的教材(10800日元/月)！
+        </strong>
+        </h4>
+        <p><strong>※　请准备 <u>Windows 或者 Mac 的电脑</u></strong></p>
+        <p><%= link_to "开始！", new_user_registration_path, :class => "btn btn-warning", :target => ["_blank"] %></p>
+        <br>
+      </div>
+      <div class="col-xs-6">
+        <%= form_for @mail_sender do |f| %>
+          <h4><i class="fa fa-envelope"></i>　<strong>送这个网页的 URL</strong></h4>
+          <%= f.text_field :email, :class => "form-control mail-area", :placeholder => "请打入邮箱" %>
+          <%= f.submit "送信", :class => "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div id="top-page" class="textbook-area">
+    <div class="textbook-area-inner fadeIn wow">
+      <br>
+      <div id="lesson-section">
+        <h2 id="lesson-title" class="text-center fix-link-nav">两个教材</h2>
+        <hr class="red-hr">
+        <div class="row text-center">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="btn btn-primary">
+                  <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
+                                :class => "nav-img") %>
+                  Mugcup(基础编)
+            </a>
+            <hr>
+            <p class="text-left text-muted">
+            解释，用作网路软件「Ruby on Rails」作网路的方法。
+            </p>
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/mugcup_demo_page.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://gentle-cove-48435.herokuapp.com/users/sign_in",
+                        :target => ["blank"] %>
+            <h5 class="text-left">
+            <small>
+            <i class="fa fa-arrow-right"></i>　<a href="https://guarded-gorge-84479.herokuapp.com/users/sign_in" target="_blank"><strong>看演示网站</strong></a>
+            </small>
+            </h5>
+            <ul class="alert alert-warning text-left" style="margin:20px auto; line-height:20px; padding:25px 30px;list-style-type:none;">
+              <strong>
+              <li style="font-size:20px"><i class="fa fa-check-circle"></i>　目录</li>
+              <br>
+              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/mugcups/0" target="_blank">0 : はじめに</a></li>
+              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/mugcups/1" target="_blank">1 : 什么是网页？</a></li>
+              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/mugcups/2" target="_blank">2 : Ruby on Rails 的基础</a></li>
+              <br>
+              <li>他 ... <%= link_to "全部有12章", mugcups_path, :target => ["_blank"] %></li>
+              </strong>
+            </ul>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="btn btn-danger">
+                  <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
+                                :class => "nav-img") %>
+                  Coffee（应用编）
+            </a>
+            <hr>
+            <p class="text-left text-muted">
+            用「Ruby on Rails」的知识，作作看网络聊天的网站。
+            </p>
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffee_demo_page.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://guarded-gorge-84479.herokuapp.com/users/sign_in",
+                        :target => ["blank"] %>
+            <h5 class="text-left">
+            <small>
+            <i class="fa fa-arrow-right"></i>　<a href="https://guarded-gorge-84479.herokuapp.com/users/sign_in" target="_blank"><strong>看演示网站</strong></a>
+            </small>
+            </h5>
+            <ul class="alert alert-success text-left" style="margin:20px auto; line-height:20px; padding:25px 30px;list-style-type:none;">
+              <strong>
+              <li style="font-size:20px"><i class="fa fa-check-circle"></i>　目录</li>
+              <br>
+              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/coffee_cups/0" target="_blank">1 : Mugcup（基础编）的复习</a></li>
+              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/coffee_cups/1" target="_blank">2 : メッセージを作る</a></li>
+              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/coffee_cups/2" target="_blank">3 : チャットルームの作成①</a></li>
+              <br>
+              <li>他 ... <%= link_to "全部有8章", coffee_cups_path, :target => ["_blank"] %></li>
+              </strong>
+            </ul>
+            <br>
+          </div>
+        </div>
+        <p class="alert alert-info text-left" style="margin:20px auto; line-height:20px">
+              <i class="fa fa-windows color-blue"></i>　<strong>使用<u>Windows</u>的话，</strong>、
+              <br><br>
+              应为机种的关系，不能学<a href="/<%= I18n.locale %>/coffee_cups/7" target="_blank"><strong><u>「Coffee（应用编）」「7 : 画像のアップロード」</u></strong></a>的内容。
+        </p>
+        <br>
+        <h3><strong><i class="fa fa-arrow-right"></i>　<%= link_to "从这里登录", new_user_registration_path, :target => ["_blank"] %>之后、可以买教材(10800日元・在Facebook上，可以问问题)。</strong></h3>
+        <br><br>
+        <div class="text-center">
+          <a href="#service-title" class="btn btn-warning">详细</a>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div id="service-section">
+        <br>
+        <h2 class="text-center fix-link-nav" id="service-title">教材详细</h2>
+        <hr class="red-hr">
+        <div class="row text-center">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="service-box">
+              <i class="fa fa-clock-o fa-4x color-green" style="margin-bottom:4px"></i>
+              <h3 style="margin-top:16px">80小时可以学完的教材</h3>
+              <p class="text-muted">
+              <strong><u>在80時間的学习中</u></strong>，你获得具体化你的梦想的技术。
+              <br>
+              <small>※　时间是大体的基准。</small>
+              </p>
+              <br>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="service-box">
+              <i class="fa fa-yen fa-4x color-green" style="margin-top:3px"></i>
+              <h3 style="margin-top:17px">10800日元</h3>
+              <p class="text-muted">
+              <strong><u>一个月10800日元 / 延长一个月2160日云</u></strong>
+              <br>
+              <small>
+              ※　我们用，叫<strong><u>Ruby on Rails</u></strong>的软件。
+              </small>
+              </p>
+              <br>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="service-box">
+              <i class="fa fa-mortar-board fa-4x color-green" style="margin-bottom:2px"></i>
+              <h3 style="margin-top:16px">直接指导</h3>
+              <p class="text-muted">不知道的地方，可以在Facebook上问。
+              </p>
+              <br>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="service-box">
+              <i class="fa fa-thumbs-up fa-4x color-green" style="margin-bottom:4px"></i>
+              <h3>可以理解网路</h3>
+              <p class="text-muted">
+              可以学到网路的基础跟作法。
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/<%= I18n.locale %>/users/sign_up">从这里登录</a>之后、可以买教材。</strong></h3>
+        <br><br>
+        <div class="text-center">
+          <p>
+          <a href="#pc-type-section" class="btn btn-success">需要什么呢？</a>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div id="pc-type-section" class="fix-link-nav">
+        <h2 class="text-center">需要什么呢？</h2>
+        <hr class="red-hr">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="service-box text-left">
+              <h3><i class="fa fa-desktop color-green"></i>　<u>Mac 或者 Windows 的 PC</u></h3>
+              <p class="text-muted">
+              <br>
+              <i class="fa fa-apple color-red"></i>　使用 Mac（我们推荐你用 mac ）的话，请准备　<strong><u>AppleID</u></strong>。
+              <br>
+              <small>※　AppleID可以<a href="https://support.apple.com/ja-jp/HT203993" target="_blank"><strong>从这里</strong></a>取得</small>
+              <br><br>
+              <i class="fa fa-windows color-blue"></i>　使用 Windows的话，　　 请准备<strong><u>Windows</u></strong>。
+              <br><br>
+              <i class="fa fa-arrow-right"></i>　操作环境，请参考<a href="/<%= I18n.locale %>/tokusho#software-environment" target="_blank"><strong>这里</strong></a>。
+              <br><br>
+              如果已经有操作环境的话、我们推荐用<strong><u>Ruby 2.1.3・Rails 4.2.6</u></strong>。
+              </p>
+              <br>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="service-box text-left">
+              <h3><i class="fa fa-calendar color-green"></i>　时间</h3>
+              <p class="text-muted">
+              <br>
+              基础编：20〜40小时（基准）
+              <br>
+              应用编：20〜40小时（基准）
+              <br><br>
+              <small>※　最先一个月付10800日元以外、从一个月2160日元开始延长。</small>
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/<%= I18n.locale %>/users/sign_up">从这里登录</a>之后、可以买教材。</strong></h3>
+        <br>
+        <p class="text-center">
+          <a href="#sales-section" class="btn btn-info">我们推荐这样的人学！</a>
+        </p>
+        <br><br>
+      </div>
+      <hr>
+      <div id="sales-section" class="fix-link-nav">
+        <h2 class="text-center">我们推荐这样的人学！</h2>
+        <hr class="red-hr">
+        <div class="row text-center">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="service-box">
+              <i class="fa fa-wrench fa-4x color-green"></i>
+              <h3>学过Rails，可是挫折的你</h3>
+              <p class="text-muted text-left">
+              挫折Rails的你。请用用看吧！这一次，让你一定理解 Rails！
+              </p>
+              <br>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="service-box">
+              <i class="fa fa-code fa-4x color-green"></i>
+              <h3>想作作看网站的你</h3>
+              <p class="text-muted text-left">
+              想作作看网路的不知道在哪里学的话，试试看我们的教材吧！
+              </p>
+              <br>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="service-box">
+              <i class="fa fa-4x fa-thumbs-o-up color-green"></i>
+              <h3>想学学看新东西的你</h3>
+              <p class="text-muted text-center">
+              想学学新东西的你，那么做做看网路吧。
+              </p>
+              <br>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="service-box">
+              <i class="fa fa-tablet fa-4x color-green"></i>
+              <h3>想知道网路的结构的你</h3>
+              <p class="text-muted text-center">
+              理解网路的结构，作作看网路吧！
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/<%= I18n.locale %>/users/sign_up">从这里登录</a>之后、可以买教材。</strong></h3>
+        <br><br>
+        <p class="text-center">
+          <a href="/<%= I18n.locale %>/users/sign_up" class="btn btn-green" target="_blank">开始！</a>
+        </p>
+        <br>
+      </div>
+      <hr>
+      <br>
+      <div id="contact-section">
+        <div class="row text-center">
+          <div class="col-lg-8 col-lg-offset-2">
+            <h2>Let's Get In Touch!</h2>
+            <hr class="red-hr">
+            <h4>有问题的话，跟我们联络吧！</h4>
+          </div>
+          <div class="col-lg-offset-2 col-lg-4">
+            <div class="service-box">
+              <h2><i class="fa fa-facebook-official"></i></h2>
+              <h4 class="contact-detail"><a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank">Coffee-Cup</a></h4>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-box">
+              <h2><i class="fa fa-envelope"></i></h2>
+              <h4 class="contact-detail"><a href="mailto:support@coffee-cup.info">support@coffee-cup.info</a></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div id="recommend-section" class="text-center">
+        <h1 style="line-height:1.6">
+        <img src="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png" style="margin-bottom:10px">
+        <br>
+        <strong>体验体验<br>电脑里的世界吧！</strong></h1>
+        <a href="/<%= I18n.locale %>/users/sign_up" class="btn btn-success" style="margin:20px auto 10px auto"><strong>开始！</strong></a>
+        <br><br>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,16 @@ class ApplicationController < ActionController::Base
   rescue_from Exception, with: :error500
   rescue_from ActiveRecord::RecordNotFound, ActionController::RoutingError, with: :error404
 
+  before_action :set_locale
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
+  end
+
   def error404(e)
     render 'error404', status: 404, formats: [:html]
   end
@@ -21,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    "/dashboard"
+    dashboard_path
   end
 
   def after_sign_out_path_for(resource)

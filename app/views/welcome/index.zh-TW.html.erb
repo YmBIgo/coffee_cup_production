@@ -6,37 +6,37 @@
       <h1>
         <strong>
           <span style="line-height:1.6; font-size:50px">
-            テクノロジーを
+            體驗體驗
             <br>
-            あなたのものにしよう！
+            電腦裡的世界吧！
           </span>
           <br>
           <span style="line-height:1.4; font-size:25px">
-            〜 ウェブサイトを作ってみよう！ 〜
+            〜 學会怎麼作網路吧！ 〜
           </span>
           <br>
         </strong>
       </h1>
       <br>
-      <p><a href="#lesson-title" class="btn btn-danger">詳しく見る</a></p>
+      <p><a href="#lesson-title" class="btn btn-danger">詳細</a></p>
       <hr class="red-hr">
       <div class="col-xs-6">
         <h4 style="line-height:1.8; margin-bottom:8px">
         <strong>
-          生活を支えているウェブページ。
+          在我們的日常生活中，不可缺少的網路。
           <br>
-          その作り方を学べる教材(10800円/月)を提供いたします！
+          我們提供作網站的教材(10800日元/月)！
         </strong>
         </h4>
-        <p><strong>※　<u>WindowsかMacのPC</u>をご用意下さい。</strong></p>
-        <p><%= link_to "始めてみる", new_user_registration_path, :class => "btn btn-warning" %>
+        <p><strong>※　請準備 <u>Windows 或者 Mac 的電腦</u></strong></p>
+        <p><a href="/users/sign_up" class="btn btn-warning">開始！</a></p>
         <br>
       </div>
       <div class="col-xs-6">
         <%= form_for @mail_sender do |f| %>
-          <h4><i class="fa fa-envelope"></i>　<strong>ページのURLを送る</strong></h4>
-          <%= f.text_field :email, :class => "form-control mail-area", :placeholder => "メールアドレスを入力" %>
-          <%= f.submit "送信する", :class => "btn btn-primary" %>
+          <h4><i class="fa fa-envelope"></i>　<strong>送這個網站的 URL</strong></h4>
+          <%= f.text_field :email, :class => "form-control mail-area", :placeholder => "請打入郵箱" %>
+          <%= f.submit "送信", :class => "btn btn-primary" %>
         <% end %>
       </div>
     </div>
@@ -47,18 +47,18 @@
     <div class="textbook-area-inner fadeIn wow">
       <br>
       <div id="lesson-section">
-        <h2 id="lesson-title" class="text-center fix-link-nav">2つのコース</h2>
+        <h2 id="lesson-title" class="text-center fix-link-nav">兩個教材</h2>
         <hr class="red-hr">
         <div class="row text-center">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-            <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="btn btn-primary">
+            <a href="/mugcups" target="_blank" class="btn btn-primary">
                   <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
                                 :class => "nav-img") %>
                   Mugcup(基礎編)
             </a>
             <hr>
             <p class="text-left text-muted">
-            「Ruby on Rails」というソフトウェアを使ったウェブページの作り方を説明します。
+            解釋，用作網路軟件「Ruby on Rails」作網路的方法。
             </p>
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/mugcup_demo_page.png",
                                   :width => "90%",
@@ -67,30 +67,30 @@
                         :target => ["blank"] %>
             <h5 class="text-left">
             <small>
-            <i class="fa fa-arrow-right"></i>　デモページは<a href="https://guarded-gorge-84479.herokuapp.com/users/sign_in" target="_blank"><strong>こちら</strong></a>
+            <i class="fa fa-arrow-right"></i>　<a href="https://guarded-gorge-84479.herokuapp.com/users/sign_in" target="_blank"><strong>看演示網站</strong></a>
             </small>
             </h5>
             <ul class="alert alert-warning text-left" style="margin:20px auto; line-height:20px; padding:25px 30px;list-style-type:none;">
               <strong>
-              <li style="font-size:20px"><i class="fa fa-check-circle"></i>　目次</li>
+              <li style="font-size:20px"><i class="fa fa-check-circle"></i>　目錄</li>
               <br>
-              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/mugcups/0" target="_blank">0 : はじめに</a></li>
-              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/mugcups/1" target="_blank">1 : ウェブページとは？</a></li>
-              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/mugcups/2" target="_blank">2 : Ruby on Rails の基本</a></li>
+              <li><i class="fa fa-bookmark"></i>　<a href="/mugcups/0" target="_blank">0 : はじめに</a></li>
+              <li><i class="fa fa-bookmark"></i>　<a href="/mugcups/1" target="_blank">1 : 什么是網路？</a></li>
+              <li><i class="fa fa-bookmark"></i>　<a href="/mugcups/2" target="_blank">2 : Ruby on Rails 的基礎</a></li>
               <br>
-              <li>他 ... <%= link_to "全12章", mugcups_path, :target => [":blank"] %></li>
+              <li>他 ... <a href="/mugcups/" target="_blank">全部有12章</a></li>
               </strong>
             </ul>
           </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-            <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="btn btn-danger">
+            <a href="/coffee_cups" target="_blank" class="btn btn-danger">
                   <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
                                 :class => "nav-img") %>
-                  Coffee（応用編）
+                  Coffee（應用編）
             </a>
             <hr>
             <p class="text-left text-muted">
-            解説した「Ruby on Rails」の実践として、メッセージアプリケーションを作ります。
+            用「Ruby on Rails」的知識，作作看網絡聊天的網站。
             </p>
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffee_demo_page.png",
                                   :width => "90%",
@@ -99,50 +99,50 @@
                         :target => ["blank"] %>
             <h5 class="text-left">
             <small>
-            <i class="fa fa-arrow-right"></i>　デモページは<a href="https://guarded-gorge-84479.herokuapp.com/users/sign_in" target="_blank"><strong>こちら</strong></a>
+            <i class="fa fa-arrow-right"></i>　<a href="https://guarded-gorge-84479.herokuapp.com/users/sign_in" target="_blank"><strong>看演示網站</strong></a>
             </small>
             </h5>
             <ul class="alert alert-success text-left" style="margin:20px auto; line-height:20px; padding:25px 30px;list-style-type:none;">
               <strong>
-              <li style="font-size:20px"><i class="fa fa-check-circle"></i>　目次</li>
+              <li style="font-size:20px"><i class="fa fa-check-circle"></i>　目錄</li>
               <br>
-              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/coffee_cups/0" target="_blank">1 : Mugcup（基礎編）の復習</a></li>
-              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/coffee_cups/1" target="_blank">2 : メッセージを作る</a></li>
-              <li><i class="fa fa-bookmark"></i>　<a href="/<%= I18n.locale %>/coffee_cups/2" target="_blank">3 : チャットルームの作成①</a></li>
+              <li><i class="fa fa-bookmark"></i>　<a href="/coffee_cups/0" target="_blank">1 : Mugcup（基礎編）的復習</a></li>
+              <li><i class="fa fa-bookmark"></i>　<a href="/coffee_cups/1" target="_blank">2 : メッセージを作る</a></li>
+              <li><i class="fa fa-bookmark"></i>　<a href="/coffee_cups/2" target="_blank">3 : チャットルームの作成①</a></li>
               <br>
-              <li>他 ... <%= link_to "全8章", coffee_cups_path, :target => ["_blank"] %></li>
+              <li>他 ... <a href="/coffee_cups/" target="_blank">全部有8章</a></li>
               </strong>
             </ul>
             <br>
           </div>
         </div>
         <p class="alert alert-info text-left" style="margin:20px auto; line-height:20px">
-              <i class="fa fa-windows color-blue"></i>　<strong><u>Windows</u>をご利用の方は</strong>、
+              <i class="fa fa-windows color-blue"></i>　<strong>使用<u>Windows</u>的話</strong>,
               <br><br>
-              機種の関係で、<a href="/<%= I18n.locale %>/coffee_cups/7" target="_blank"><strong><u>「Coffee（応用編）」の「7 : 画像のアップロード」</u></strong></a>の内容が勉強することはできません。ご了承下さい。
+              因為機種的關係，不能學<a href="/coffee_cups/7" target="_blank"><strong><u>「Coffee（應用編）」「7 : 画像のアップロード」</u></strong></a>的内容。
         </p>
         <br>
-        <h3><strong><i class="fa fa-arrow-right"></i>　<%= link_to "こちら", new_user_registration_path, :target => ["_blank"] %>から登録した後、教材(10800円・質問サポートつき)を購入できます。</strong></h3>
+        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/users/sign_up">從这里登錄</a>之後、可以買教材(10800日元・在Facebook上，可以問不知道的地方)。</strong></h3>
         <br><br>
         <div class="text-center">
-          <a href="#service-title" class="btn btn-warning">サービスの詳細は？</a>
+          <a href="#service-title" class="btn btn-warning">詳細</a>
         </div>
       </div>
       <hr>
       <br>
       <div id="service-section">
         <br>
-        <h2 class="text-center fix-link-nav" id="service-title">サービス詳細</h2>
+        <h2 class="text-center fix-link-nav" id="service-title">教材詳細</h2>
         <hr class="red-hr">
         <div class="row text-center">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="service-box">
               <i class="fa fa-clock-o fa-4x color-green" style="margin-bottom:4px"></i>
-              <h3 style="margin-top:16px">80時間で身につく教材</h3>
+              <h3 style="margin-top:16px">80小時可以学完的教材</h3>
               <p class="text-muted">
-              <strong><u>80時間の勉強</u></strong>でアイデアを形にする基礎体力をつけます！
+              <strong><u>在80時間的學習中</u></strong>，你獲得具体化你的夢想的技術。
               <br>
-              <small>※　時間は目安になります</small>
+              <small>※　時間是大体的基準。</small>
               </p>
               <br>
             </div>
@@ -150,12 +150,12 @@
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="service-box">
               <i class="fa fa-yen fa-4x color-green" style="margin-top:3px"></i>
-              <h3 style="margin-top:17px">10800円(税込)</h3>
+              <h3 style="margin-top:17px">10800日圓</h3>
               <p class="text-muted">
-              <strong><u>1ヶ月10800円 / 1ヶ月延長2160円</u></strong>で、ウェブサイトの作り方を学べます。
+              <strong><u>一個月10800日圓 / 延長一個月2160日圓</u></strong>
               <br>
               <small>
-              ※　<strong><u>Ruby on Rails</u></strong>というソフトウェアを使います
+              ※　我們用，叫<strong><u>Ruby on Rails</u></strong>的軟件。
               </small>
               </p>
               <br>
@@ -165,7 +165,7 @@
             <div class="service-box">
               <i class="fa fa-mortar-board fa-4x color-green" style="margin-bottom:2px"></i>
               <h3 style="margin-top:16px">直接指導</h3>
-              <p class="text-muted">Facebookページで分からない部分にお答えします。
+              <p class="text-muted">不知道的地方，可以在Facebook上问。
               </p>
               <br>
             </div>
@@ -173,42 +173,42 @@
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="service-box">
               <i class="fa fa-thumbs-up fa-4x color-green" style="margin-bottom:4px"></i>
-              <h3>ウェブサイトを理解できます</h3>
+              <h3>可以理解網路</h3>
               <p class="text-muted">
-              ウェブサイトの仕組みと作り方を学べます！
+              可以学到網路的基礎跟作法。
               </p>
               <br>
             </div>
           </div>
         </div>
         <br>
-        <h3><strong><i class="fa fa-arrow-right"></i>　<%= link_to "こちら", new_user_registration_path, :target => ["_blank"] %>から登録した後、教材を購入できます。</strong></h3>
+        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/users/sign_up">從這裡登錄</a>之後、可以買教材。</strong></h3>
         <br><br>
         <div class="text-center">
           <p>
-          <a href="#pc-type-section" class="btn btn-success">なにが必要になるか？</a>
+          <a href="#pc-type-section" class="btn btn-success">需要什麼呢？</a>
         </div>
       </div>
       <hr>
       <br>
       <div id="pc-type-section" class="fix-link-nav">
-        <h2 class="text-center">なにが必要か？</h2>
+        <h2 class="text-center">需要什麼呢？</h2>
         <hr class="red-hr">
         <div class="row">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="service-box text-left">
-              <h3><i class="fa fa-desktop color-green"></i>　<u>Mac か Windows の PC</u></h3>
+              <h3><i class="fa fa-desktop color-green"></i>　<u>Mac 或者 Windows 的 電腦</u></h3>
               <p class="text-muted">
               <br>
-              <i class="fa fa-apple color-red"></i>　Macをご利用の方（推奨）　<strong><u>MacとAppleID</u></strong>をご用意下さい。
+              <i class="fa fa-apple color-red"></i>　使用 Mac（我們推薦用 mac ）的話，請準備　<strong><u>AppleID</u></strong>。
               <br>
-              <small>※　AppleIDの取得は<a href="https://support.apple.com/ja-jp/HT203993" target="_blank"><strong>こちら</strong></a>から</small>
+              <small>※　AppleID可以<a href="https://support.apple.com/ja-jp/HT203993" target="_blank"><strong>从這裡</strong></a>取得</small>
               <br><br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方　　 <strong><u>Windows</u></strong>をご用意下さい。
+              <i class="fa fa-windows color-blue"></i>　使用 Windows的話，　　 請準備<strong><u>Windows</u></strong>。
               <br><br>
-              <i class="fa fa-arrow-right"></i>　動作環境は<a href="/<%= I18n.locale %>/tokusho#software-environment" target="_blank"><strong>こちら</strong></a>を参考にして下さい
+              <i class="fa fa-arrow-right"></i>　操作環境，請参考<a href="/tokusho#software-environment" target="_blank"><strong>這裡</strong></a>。
               <br><br>
-              すでに開発環境がある方には、<strong><u>Ruby 2.1.3・Rails 4.2.6</u></strong> を推奨しています。
+              如果已經有操作環境的話、我们推薦用<strong><u>Ruby 2.1.3・Rails 4.2.6</u></strong>。
               </p>
               <br>
             </div>
@@ -218,37 +218,35 @@
               <h3><i class="fa fa-calendar color-green"></i>　時間</h3>
               <p class="text-muted">
               <br>
-              基礎編：20〜40時間（目安）
+              基礎編：20〜40小時（基準）
               <br>
-              応用編：20〜40時間（目安）
+              應用編：20〜40小時（基準）
               <br><br>
-              を目安にしております。
-              <br><br>
-              <small>※　初回10800円の他、月2160円から期間の延長も承っております。</small>
+              <small>※　最先一個月付10800日圓以外、从一個月2160日圓開始延長。</small>
               </p>
               <br>
             </div>
           </div>
         </div>
         <br>
-        <h3><strong><i class="fa fa-arrow-right"></i>　<%= link_to "こちら", new_user_registration_path, :target => ["_blank"] %>から登録した後、教材を購入できます。</strong></h3>
+        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/users/sign_up">從這裡登錄</a>之後、可以買教材。</strong></h3>
         <br>
         <p class="text-center">
-          <a href="#sales-section" class="btn btn-info">どういう人に使って欲しいか？</a>
+          <a href="#sales-section" class="btn btn-info">我们推薦這樣人學！</a>
         </p>
         <br><br>
       </div>
       <hr>
       <div id="sales-section" class="fix-link-nav">
-        <h2 class="text-center">どういう人に使って欲しいか？</h2>
+        <h2 class="text-center">我们推薦这样的人学！</h2>
         <hr class="red-hr">
         <div class="row text-center">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="service-box">
               <i class="fa fa-wrench fa-4x color-green"></i>
-              <h3>Rails習ったけど挫折した人</h3>
+              <h3>学過Rails，可是挫折的你</h3>
               <p class="text-muted text-left">
-              Rails習ったけど挫折した方。是非使ってみて下さい！今度は確実に理解させます！
+              請試試看我們的教材吧！這一次，讓你一定理解 Rails！
               </p>
               <br>
             </div>
@@ -256,9 +254,9 @@
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="service-box">
               <i class="fa fa-code fa-4x color-green"></i>
-              <h3>サービスを作ってみたい人</h3>
+              <h3>想作作看網路的你</h3>
               <p class="text-muted text-left">
-              世界を変えるアイデアはあるけど、プログクトが作れないあなたへ！その夢を実現させるための技術を教えます。
+              想作作看網路的不知道在哪裡学的話，試試看我們的教材吧！
               </p>
               <br>
             </div>
@@ -266,9 +264,9 @@
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="service-box">
               <i class="fa fa-4x fa-thumbs-o-up color-green"></i>
-              <h3>なにか新しいことを習いたい人</h3>
-              <p class="text-muted text-left">
-              新しいことを習ってみたい方。ウェブサイトの作り方を習ってみましょう！
+              <h3>想學學看新東西的你</h3>
+              <p class="text-muted text-center">
+              想學學新東西的你，那麼作作看網站吧。
               </p>
               <br>
             </div>
@@ -276,19 +274,19 @@
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="service-box">
               <i class="fa fa-tablet fa-4x color-green"></i>
-              <h3>ウェブサイトの仕組みを知りたい人</h3>
-              <p class="text-muted text-left">
-              ウェブページでなにが起きてるかを理解して、実際にウェブページを作ってみましょう！
+              <h3>想知道網站的結構的你</h3>
+              <p class="text-muted text-center">
+              理解網站的結構，作作看網站吧！
               </p>
               <br>
             </div>
           </div>
         </div>
         <br>
-        <h3><strong><i class="fa fa-arrow-right"></i>　<%= link_to "こちら", new_user_registration_path, :target => ["_blank"] %>から登録した後、教材を購入できます。</strong></h3>
+        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/users/sign_up">從這裡登錄</a>之後、可以買教材。</strong></h3>
         <br><br>
         <p class="text-center">
-          <%= link_to "始めてみる！", new_user_registration_path, :class => "btn btn-green", :target => ["_blank"] %>
+          <a href="/users/sign_up" class="btn btn-green" target="_blank">開始！</a>
         </p>
         <br>
       </div>
@@ -299,7 +297,7 @@
           <div class="col-lg-8 col-lg-offset-2">
             <h2>Let's Get In Touch!</h2>
             <hr class="red-hr">
-            <h4>質問などがあればご連絡下さい。</h4>
+            <h4>有問題的话，跟我們連絡吧！</h4>
           </div>
           <div class="col-lg-offset-2 col-lg-4">
             <div class="service-box">
@@ -321,8 +319,8 @@
         <h1 style="line-height:1.6">
         <img src="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png" style="margin-bottom:10px">
         <br>
-        <strong>テクノロジーを<br>あなたのものにしよう！</strong></h1>
-        <a href="/<%= I18n.locale %>/users/sign_up" class="btn btn-success" style="margin:20px auto 10px auto"><strong>始めてみる！</strong></a>
+        <strong>體驗體驗<br>電腦裡的世界吧！</strong></h1>
+        <a href="/users/sign_up" class="btn btn-success" style="margin:20px auto 10px auto"><strong>開始！</strong></a>
         <br><br>
       </div>
       <br>

@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand" style="margin-top:10px;font-size:33px;">
+      <a href="/zh-cn" class="navbar-brand" style="margin-top:10px;font-size:33px;">
       <p class="hover-nav">
       <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
                     :class => "nav-img") %>
@@ -23,31 +23,31 @@
           <% if user_signed_in? %>
             <% if user_studiable? %>
               <li class="hover-nav">
-                <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 設定一覧</a>
+                <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 设定一览</a>
               </li>
               <li class="hover-nav">
-                <a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank" class="nav-word"><i class="fa fa-question"></i> 質問</a></li>
+                <a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank" class="nav-word"><i class="fa fa-question"></i> 问问题</a></li>
               </li>
             <% end %>
             <li class="hover-nav">
-              <a href="/<%= I18n.locale %>/dashboard" class="nav-word"><i class="fa fa-user"></i> トップページ</a>
+              <a href="/<%= I18n.locale %>/dashboard" class="nav-word"><i class="fa fa-user"></i> 主页</a>
             </li>
             <li class="hover-nav">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => "nav-word" %>
+              <%= link_to "登出", destroy_user_session_path, method: :delete, :class => "nav-word" %>
             </li>
           <% else %>
             <li class="hover-nav">
-              <%= link_to "登録する",new_user_registration_path, :class => "nav-word" %>
+              <%= link_to "注册",new_user_registration_path, :class => "nav-word" %>
             </li>
             <li class="hover-nav">
-              <%= link_to "ログイン", new_user_session_path, :class => "nav-word" %>
+              <%= link_to "登录", new_user_session_path, :class => "nav-word" %>
             </li>
           <% end %>
             <li style="margin-top:5px;">
-              <a><input type="submit" value="文字小" onclick="smaller();" class="btn btn-primary"></a>
+              <a><input type="submit" value="字小" onclick="smaller();" class="btn btn-primary"></a>
             </li>
             <li style="margin-top:5px;">
-              <a><input type="submit" value="文字大" onclick="larger();" class="btn btn-danger"></a>
+              <a><input type="submit" value="字大" onclick="larger();" class="btn btn-danger"></a>
             </li>
         </ul>
         </strong>
