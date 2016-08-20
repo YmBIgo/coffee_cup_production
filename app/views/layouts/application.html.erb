@@ -94,6 +94,34 @@
 
   <div id="main-section">
     <%= yield %>
+    <div class="btn-group-vertical" role="group" id="lang-slide-bar">
+      <button type="button" class="btn btn-green dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Language
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <%= link_to_if params[:locale].present?,
+                       '日本語',
+                       url_for(controller: controller.controller_name, action: controller.action_name, locale: 'ja')
+          %>
+        </li>
+        <!--
+        <li>
+          <%= link_to_if params[:locale].present?,
+                         '简体字',
+                         url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-CN')
+          %>
+        </li>
+        -->
+        <li>
+          <%= link_to_if params[:locale].present?,
+                         '繁體字',
+                         url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-TW')
+          %>
+        </li>
+      </ul>
+    </div>
     <br>
   </div>
 
@@ -103,10 +131,9 @@
     <%= render "common/footer" %>
   <% elsif I18n.locale == :"zh-CN" %>
     <%= render "common/footer_zh_cn" %>
-  <% elsif I18n.locale == :"zh-tw" %>
-    <%= render "common/footer_zh_TW" %>
+  <% elsif I18n.locale == :"zh-TW" %>
+    <%= render "common/footer_zh_tw" %>
   <% end %>
-
   <script>
     new WOW().init();
   </script>

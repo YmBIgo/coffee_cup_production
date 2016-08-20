@@ -1,0 +1,65 @@
+        <h4 id="chapter2-2-4">
+        <p id="title2-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : MySQLのインストール</strong></p>
+        <br>
+        ここでは<strong><u>MySQL</u></strong>というデータベースを使いますので、それをインストールしましょう。
+        <hr class="red-hr">
+        ターミナルを開き、「<strong><u>brew install mysql</u></strong>」と入力してみましょう。
+        <br><br>
+        　<strong>ターミナル</strong>
+        <small>※　半角英数字で入力して下さい</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>brew install mysql</span>
+</td>
+</tr>
+</table>
+        <br>
+        実行して以下のような表示が出て来れば大丈夫です。
+        <pre class="pre-terminal">==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/mysql-5.6.22.yosemite.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring mysql-5.6.22.yosemite.bottle.tar.gz
+==> Caveats
+A "/etc/my.cnf" from another install may interfere with a Homebrew-built
+server starting up correctly.
+
+To connect:
+    mysql -uroot
+
+To have launchd start mysql at login:
+    ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+Then to load mysql now:
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+Or, if you don't want/need launchctl, you can just run:
+    mysql.server start
+==> /usr/local/Cellar/mysql/5.6.22/bin/mysql_install_db --verbose --user=tasukujp --basedir=/usr/local/Cellar/mysql/5.6.22 --datadir=/usr/local/var/my
+==> Summary
+🍺  /usr/local/Cellar/mysql/5.6.22: 9666 files, 339M</pre>
+        <hr class="red-hr">
+        今の状態だとMySQLを起動させるにはターミナルでコマンドを入力しなければならないので、下の二つのコマンドでログイン時に自動で起動できるようにします。
+        <br>
+        <small>※　一つずつコピペして、ターミナルに入力しましょう</small>
+        <br><br>
+        　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents</span>
+</td>
+</tr>
+</table>
+        <br>
+        　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</span>
+</td>
+</tr>
+</table>
+        <br>
+        <i class="fa fa-arrow-right"></i>　<strong>以上で、<u>Mysqlのインストール</u>が完了しました。</strong>
+        </h4>

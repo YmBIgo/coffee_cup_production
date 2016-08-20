@@ -1,0 +1,49 @@
+<h4 id="chapter1-2-2">
+          <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : データの保存</strong></p>
+          <br>
+          ここまで、<strong><u>ウェブページのデータの表示</u></strong>を簡単に説明しました。
+          <hr class="red-hr">
+          ですがウェブページはデータを表示させているだけではありません。
+          <br><br>
+          例えば<strong> Facebookの投稿 </strong>のように、利用者は自分の情報を発信できるようになっています。ウェブページ作成者のデータの表示だけではウェブページはできていません。
+          <br>
+          ウェブページは<strong class="little-remarkable color-red">提供者のデータの表示</strong>と<strong class="little-remarkable color-blue">利用者のデータの発信</strong>という相互の情報のやりとりでできています。
+          <br><br>
+          提供者のデータは前のHTMLファイルで表示されています。
+          <br>
+          <strong>では、利用者の発信したデータはどのように処理されるのでしょうか？</strong>
+          <hr>
+          <i class="fa fa-question-circle color-green"></i>
+          <strong class="little-remarkable">利用者の発信した情報はどこに行くのか？</strong>
+          <br><br>
+          Facebookの投稿を例に見てみましょう。
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Post.png",
+                                :width => "90%",
+                                :class => "textbook-title-img hover_img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Post.png",
+                      :target => ["_blank"] %>
+          「投稿する」ボタンがクリックされると、その投稿に関する情報が<strong><u>ウェブページの機械（サーバー）</u></strong>に送信されます。上の投稿の画面で言うと、<span class="color-red">「ユーザーは山田太郎、内容はHello World、場所は東京都新宿」</span>などなど・・・
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_Before.png",
+                                :width => "90%",
+                                :class => "textbook-title-img hover_img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_Before.png",
+                      :target => ["_blank"] %>
+          こうやって送信されたデータはどうなるのでしょうか？
+          <br>
+          送信されたデータは、ウェブページの機械（サーバー）の中にある<strong><u>情報を保存するExcelの表のようなもの（データベース）</u></strong>に保存されます。
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_After.png",
+                                :width => "90%",
+                                :class => "textbook-title-img hover_img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page1/FB_Save_Data_After.png",
+                      :target => ["_blank"] %>
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_database.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_database.png",
+                      :target => ["_blank"] %>
+          このようにして、<strong><u>ユーザーが発信した情報はウェブページの機械（サーバー）の中にあるExcelの表（データベース）に保存</u></strong>されます。
+          <br><br>
+          こうやってデータベースに保存された情報が表示されることでFacebookではタイムラインが、Twitterではツイートが表示されています。
+          <br>
+          <small>※ここで保存されたデータは、更新することも削除することもできます。</small>
+</h4>

@@ -1,0 +1,54 @@
+<% provide :title, "剛開始" %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>0 : 剛開始</strong></h1>
+          </div>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header0.jpeg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>謝謝您的利用</strong></h2>
+          <h4>
+            非常感謝您，利用我們的網站。
+            <br>
+            <br>
+            這網站本來是為了教給我朋友作網站作法，開始作的。
+            <br>
+            如果利用這裡您學會作網站的話，我們很高興。
+            <br><br>
+            電腦我們用<strong><u>Mac 或者 Windows</u></strong>，瀏覽器用<strong><u>Chrome瀏覽器 </u></strong>。
+            <br><br>
+            <i class="fa fa-arrow-right"></i>　<strong>Chrome 瀏覽器的下載<a href="https://support.google.com/chrome/answer/95346?hl=zh-tw" target="_blank">從這裡做</a></strong>
+            <hr class="red-hr">
+            在基礎編，我們作<a href="https://gentle-cove-48435.herokuapp.com/users/sign_in" target="_blank"><strong>這樣子</strong></a>簡單的會員制網站。
+            <br>
+            <small>※　在演示網站上不能，可是我們作可以投稿・用戶註冊的網站。</small>
+            <hr>
+            不過有一點貴，可是還有叫做<a href="https://tech-camp.in/" target="_blank"><strong>Tech::Camp</strong></a> 的教程序設計的地方、如果有興趣的話可以參考。
+          </h4>
+          <br>
+          <div class="next-page">
+            <a href="/zh-TW/mugcups/1" class="btn btn-primary">下章</a>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title">目錄</a>
+          <a href="#title1" class="list-group-item">感謝您的利用</a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

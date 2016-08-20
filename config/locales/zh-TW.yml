@@ -6,6 +6,22 @@ zh-TW:
         restrict_dependent_destroy:
           has_one: 由於 %{record} 需要此記錄，所以無法移除記錄
           has_many: 由於 %{record} 需要此記錄，所以無法移除記錄
+  attributes:
+    email: 郵箱
+    password: 密碼
+    user: 用戶
+    family_name: 姓氏
+    first_name: 名字
+    phone_number: 電話號碼
+    company_name: 公司，學校
+    sex: 性別
+    prefecture: 一级行政区
+    agreement: 利用規約
+    money_amount: お支払い累計金額
+    month_amount: 学習月数
+    birth_year: 生日
+    age: 年齢
+    study_months: 学習した月
   date:
     abbr_day_names:
     - 周日

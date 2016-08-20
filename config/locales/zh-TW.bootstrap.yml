@@ -14,11 +14,11 @@ zh-CN:
       index: "%{model}的一覽"
       save: "儲存"
       new: "新增%{model}"
-      delete: "删除"
+      delete: "刪除"
     notices:
       created: "新增%{model}"
       updated: "更新%{model}"
-      destroyed: "删除%{model}"
+      destroyed: "刪除%{model}"
       logged_in: 登錄了。
       logged_out: 退出了。
       login_failed: 不能登錄。

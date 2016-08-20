@@ -361,6 +361,16 @@
       height:150px;
     }
 
+    // language slidebar
+    #lang-slide-bar{
+      position: fixed;
+      top:100px;
+      left: 10px;
+      p{
+        margin:10px;
+      }
+    }
+
   // table内のform
   .table-form{
     margin-bottom:0px;
@@ -558,11 +568,6 @@ hr{
   color:#351d09;
 }
 
-.btn-green:hover{
-  background-color:#1e543e;
-  color:#eee;
-}
-
 .btn-green{
   background-color:#1e6439;
   color:#eee;
@@ -570,6 +575,19 @@ hr{
 
 .btn-green:link{
   color:#eee;
+}
+
+.btn-green:visited{
+  color:#ccc;
+}
+
+.btn-green:hover{
+  background-color:#1e543e;
+  color:#eee;
+}
+
+.btn-green:focus{
+  color:#ccc;
 }
 
 .text-muted{

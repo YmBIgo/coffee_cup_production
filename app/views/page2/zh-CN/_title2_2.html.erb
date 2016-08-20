@@ -1,0 +1,381 @@
+<h4 id="chapter2-2-2">
+  <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : Ruby on Railsのインストール</strong></p>
+  <br>
+  <strong>
+    では、Ruby on Rails をインストールしてみましょう！
+    <br>
+    少し長くなるので頑張って下さい！
+    <br><br>
+    バージョンは
+    <ul class="number_ul">
+      <li><u>Ruby 2.1.3</u></li>
+      <li><u>Ruby on Rails 4.2.6</u></li>
+    </ul>
+    になります。
+    <br>
+    すでに環境を構築済みの方は、<u>環境を構築し直す必要はありません</u>ので、先に進んで適宜質問下さい。
+  </strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>まずは「<u>Command Line Tools</u>」というソフトをインストールします。</strong>
+  <br><br>
+  <i class="fa fa-exclamation"></i>　<strong><u>AppleID</u></strong>を用意の上、<a href="https://developer.apple.com/downloads/index.action" target="_blank"><strong>こちら</strong></a>をクリックして<strong><u>AppleID</u></strong>でログインをして下さい。
+  <br>
+  <small>※　AppleIDの作成は<a href="https://support.apple.com/ja-jp/HT203993" target="_blank"><strong>こちら</strong></a>から</small>
+  <br>
+  <br>
+  下のような表示は出てきたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Chrome_Apple_Developer.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Chrome_Apple_Developer.png",
+              :target => ["_blank"] %>
+  ここから<strong>「<u>Command Line Tools</u>」</strong>をインストールします。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>インストールする前にMacのバージョンを確認します。</strong>
+  <br>
+  <small>※　Macのバージョンによってインストールするものが変わるので確認しておきましょう！</small>
+  <br><br>
+  下のように左上にある <i class="fa fa-apple"></i> をクリックして、中にある<strong>「<u>About This Mac</u>」</strong>をクリックして下さい。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Settiing_About_This_Mac.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Settiing_About_This_Mac.png",
+              :target => ["_blank"] %>
+  下のように表示されるので、赤線の部分を確認して下さい。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/About_This_Mac_Overview.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/About_This_Mac_Overview.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/About_This_Mac_Overview_detail.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/About_This_Mac_Overview_detail.png",
+              :target => ["_blank"] %>
+  Macのバージョンを確認の上、下の表に対応したものをダウンロードして下さい。
+  <table class="table table-bordered table-hover" style="margin:15px 0">
+    <thead style="font-size:15px">
+      <tr>
+        <td>Macのバージョン</td>
+        <td>Command Line Tools</td>
+      </tr>
+    </thead>
+    <tbody style="font-size:12px">
+      <tr>
+        <td>10.11.x</td>
+        <td>Command Line Tools(OS X 10.11)for Xcode x.x.x</td>
+      </tr>
+      <tr>
+        <td>10.10.x</td>
+        <td>Command Line Tools(OS X 10.10)for Xcode x.x.x</td>
+      </tr>
+      <tr>
+        <td>10.9.x</td>
+        <td>Command Line Tools(OS X 10.9)for Xcode x.x.x</td>
+      </tr>
+      <tr>
+        <td>10.8.x</td>
+        <td>Command Line Tools(OS X Mountain Lion)for Xcode x.x.x</td>
+      </tr>
+      <tr>
+        <td>10.7.x</td>
+        <td>Command Line Tools(OS X Lion)for Xcode x.x.x</td>
+      </tr>
+    </tbody>
+  </table>
+  複数ある場合は<strong><u>最新のもの</u></strong>を選んで下さい！
+  <br><br>
+  ダウンロードができたら<strong>「<u>ダウンロード</u>」フォルダ</strong>を開いて、先ほどダウンロードしたファイルをクリックして、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Finder_Downloads_Command_Line_Tools.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Finder_Downloads_Command_Line_Tools.png",
+              :target => ["_blank"] %>
+  インストールしてできたファイルを開いて終了です。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Finder_Command_Line_Tools.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Finder_Command_Line_Tools.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>次に「<u>Ruby on Rails</u>」のインストールをします。<br>コマンドを順番に入力して下さい！</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　
+  <strong>
+  ここではターミナルを使っていきます。
+  <br>
+  早速開いてみましょう！
+  </strong>
+  <br>
+  <small>※　ターミナルについては<a href="/mugcups/2#title2-1" target="_blank"><strong>こちら</strong></a>を参考</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Terminal_Open.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Terminal_Open.png",
+              :target => ["_blank"] %>
+  開けたら、
+  <br><br>
+  　<strong>ターミナル（半角英数字）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>cd</span>
+</td>
+</tr>
+</table>
+  <br>
+  と入力して下さい。これでターミナルはターミナルが最初に開かれた時に位置に戻ります。
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>では、始めていきましょう！</strong>
+  <br><br>
+  <ul class="number_ul">
+    <strong><u><li>Homebrewのインストール</li></u></strong>
+    <br>
+    まずは下の入力をして下さい。これで<strong>「<u>Homebrew</u>」</strong>というツールをインストールします。コピペでも大丈夫です。
+    <br><br>
+    <small>※　文字を選択して<strong>「<u>Command</u>」と「<u>c</u>」</strong>を押せば文字をコピー、<strong>「<u>Command</u>」と「<u>v</u>」</strong>を押せば文字の貼り付けができます。</small>
+    <br><br>
+    　<strong>ターミナル（半角英数字）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span>
+</td>
+</tr>
+</table>
+    <br>
+    途中でパスワードの入力を要求されるので、そこで自分のMacのパスワードを入力して下さい。
+    <br><br>
+    インストールが完了したら、
+    <br><br>
+    　<strong>ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>brew -v</span>
+</td>
+</tr>
+</table>
+    <br>
+    で<strong>「<u>Homebrew</u>」</strong>のバージョンが出てくれば大丈夫です。
+    <hr class="red-hr">
+    <strong><u><li>rbenvとruby-buildのインストール</li></u></strong>
+    <br>
+    この2つのツールで、<strong>「Ruby on Rails」を動かしている<u>「Ruby」というプログラミング言語のバージョン管理</u></strong>をします。
+    <br>
+    ではインストールしてみます！下の2つの入力をして下さい。
+    <br><br>
+    <small>※　文字を選択して<strong>「<u>Command</u>」と「<u>c</u>」</strong>を押せば文字をコピー、<strong>「<u>Command</u>」と「<u>v</u>」</strong>を押せば文字の貼り付けができます。 </small>
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+    <br><br>
+    <i class="fa fa-exclamation color-red"></i>　<strong>ここはコピペができない場合がありますので、コピペができなかったら直接入力して下さい。</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>brew install ruby-­build</span>
+</td>
+</tr>
+</table>
+    <br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>brew install rbenv</span>
+</td>
+</tr>
+</table>
+    <br>
+    これでインストールができました！
+    <br><br>
+    <i class="fa fa-arrow-right"></i>　しかし今のままでは使えないので、下の入力をして下さい。
+    <br><br>
+    <small>※　文字を選択して<strong>「<u>Command</u>」と「<u>c</u>」</strong>を押せば文字をコピー、<strong>「<u>Command</u>」と「<u>v</u>」</strong>を押せば文字の貼り付けができます。 </small>
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bash_profile</span>
+</td>
+</tr>
+</table>
+    <br>
+    この後で、
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>source ~/.bash_profile</span>
+</td>
+</tr>
+</table>
+    <br>
+    を入力して設定を有効にします。
+    <hr class="red-hr">
+    <strong><u><li>readlineのインストール</li></u></strong>
+    <br>
+    この<strong>「<u>readline</u>」</strong>というツールをインストールして、日本語入力をしても文字化けがしないようにします。
+    <br><br>
+    下の入力をしてインストールしましょう！
+    <br><br>
+    <small>※　文字を選択して<strong>「<u>Command</u>」と「<u>c</u>」</strong>を押せば文字をコピー、<strong>「<u>Command</u>」と「<u>v</u>」</strong>を押せば文字の貼り付けができます。 </small>
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>brew install readline</span>
+</td>
+</tr>
+</table>
+    <br>
+    <i class="fa fa-arrow-right"></i>　次に<strong>「<u>readline</u>」</strong>を使うための設定をします。
+    <br><br>
+    <small>※　文字を選択して<strong>「<u>Command</u>」と「<u>c</u>」</strong>を押せば文字をコピー、<strong>「<u>Command</u>」と「<u>v</u>」</strong>を押せば文字の貼り付けができます。 </small>
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>brew link readline --force</span>
+</td>
+</tr>
+</table>
+    <br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl)"</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <li><strong><u>Ruby のインストール</u></strong></li>
+    <br>
+    先ほどインストールした「rbenv」で、<strong>「<u>Ruby on Rails</u>」を動かすための「<u>Ruby</u>」というプログラミング言語をインストール</strong>します。
+    <br><br>
+    ここでは<strong>バージョンが「<u>2.1.3</u>」の「<u>Ruby</u>」をインストール</strong>しまので、その<strong>「<u>2.1.3</u>」</strong>をインストールします。
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>rbenv install 2.1.3</span>
+</td>
+</tr>
+</table>
+    <br>
+    これでインストールされたので、「Ruby」を起動する準備をするための入力をします。
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>rbenv rehash</span>
+</td>
+</tr>
+</table>
+    <br>
+    ここまででインストールと準備ができたので、使う<strong>「<u>Ruby</u>」のバージョン</strong>を設定します。
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>rbenv global 2.1.3</span>
+</td>
+</tr>
+</table>
+    <br>
+    これで設定ができたので、
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>ruby -v</span>
+</td>
+</tr>
+</table>
+    <br>
+    で<strong>「<u>Ruby</u>」のバージョンを確認</strong>します。
+    <br>
+    <strong>「<u>2.1.3</u>」</strong>が出て来れば、大丈夫です。
+    <hr class="red-hr">
+    <strong><u><li>rails のインストール</li></u></strong>
+    <br>
+    最後に<strong>「<u>Ruby on Rails</u>」のインストール</strong>をします！
+    <br>
+    まずは、お決まりの<strong>「<u>Ruby on Rails</u>」を使うためのツールをインストール</strong>します。
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>gem install bundler</span>
+</td>
+</tr>
+</table>
+    <br>
+    次に<strong>「<u>Ruby on Rails</u>」をインストール</strong>します。
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>gem install rails</span>
+</td>
+</tr>
+</table>
+    <br>
+    次にもう一度
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>rbenv rehash</span>
+</td>
+</tr>
+</table>
+    <br>
+    をして、下の入力をして<strong>「<u>Ruby on Rails</u>」のバージョンを確認</strong>して下さい。
+    <br><br>
+    　<strong>ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>rails -v</span>
+</td>
+</tr>
+</table>
+    <br>
+    <i class="fa fa-play-circle"></i>　<strong>ここまでで「<u>Ruby on Rails</u>」をインストールできました！</strong>
+  </ul>
+</h4>
+<!-- 参考ページ -->
+<!-- 1 : http://skillhub.jp/blogs/128 -->
+<!-- 2 : http://www.oiax.jp/rails/zakkan/rails_4_2_installation_on_macosx.html -->
+<!--  -->

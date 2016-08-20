@@ -1,0 +1,46 @@
+<h4 id="chapter2-1-2">
+        <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : Ruby on Railsのデータ</strong></p>
+        <br>
+        Ruby on Railsでは、<strong><u>データの表示と保存の方法に応じてページに役割</u></strong>が振り分けられていることを説明しました。
+        <br>
+        データの表示については説明しましたが、<u>データの保存はどのようなものになるのでしょうか？</u>
+        <hr class="red-hr">
+        <a href="/mugcups/1"><strong>前の章</strong></a>で、それはウェブページを動かしている機械（サーバー）の中にあるデータベースに保存される利用者が発信した情報だと説明しました。
+        <br>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_Save_Data.png",
+                              :width => "90%",
+                              :class => "textbook-title-img hover_img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_Save_Data.png",
+                    :target => ["_blank"] %>
+        <br>
+        例えばFacebookの投稿であれば、
+        <br><br>
+        <span class="color-red">
+        <strong>利用者の投稿</strong>
+        <ul style="margin-top:10px;">
+            <li><u>投稿した人の名前</u>は「山田太郎」</li>
+            <li><u>投稿した内容</u>は「Hello world」</li>
+            <li><u>場所</u>は「東京都新宿」</li>
+            <li><u>画像</u>は「なし」</li>
+            <li>などなど...</li>
+        </ul>
+        </span>
+        <br>
+        のような情報でサーバーに送信され、それが<strong><u>サーバー内のデータベース（Excelの表）</u></strong>に保存されます。
+        <br><br>
+        <strong>Ruby on Railsで保存されるデータもこれと同じで、利用者が発信した情報をウェブページの機械（サーバー）の中のデータベースに保存し、それがページに表示されます。</strong>
+        <hr class="red-hr">
+        このデータを保存するための<u>データベース（Excelの表）の作成</u>と、実際の<u>データの保存・変更・削除</u>をRuby on Railsで設定していく必要があります。
+        <ul class="number_ul">
+            <strong><li>データベースの枠組みの定義</li></strong>
+                Facebookの例でいうと、名前・内容・場所を保存するためのデータベース（Excelの表）を作る
+                <br><br>
+            <strong><li>データベースへの代入と保存</li></strong>
+                ページで入力され送信されたデータをデータベースに保存・変更・削除をする
+        </ul>
+        をします。
+        <hr class="red-hr">
+        <%= render "page2/title1_2_1" %>
+        <hr>
+        <%= render "page2/title1_2_2" %>
+</h4>
