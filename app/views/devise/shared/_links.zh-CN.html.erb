@@ -1,17 +1,17 @@
 <%- if controller_name != 'sessions' %>
-  アカウントをお持ちの方は、<u><%= link_to "ログイン", new_session_path(resource_name) %></u><br />
+  アカウントをお持ちの方は、<u><%= link_to "登錄", new_session_path(resource_name) %></u><br />
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  登録をしていない方は、<u><%= link_to "今すぐ登録", new_registration_path(resource_name) %></u><br />
+  還沒註冊的話、<u><%= link_to "現在註冊！", new_registration_path(resource_name) %></u><br />
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <u><%= link_to "パスワードをお忘れですか？", new_password_path(resource_name) %></u><br />
+  <u><%= link_to "忘記密碼了嗎？", new_password_path(resource_name) %></u><br />
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <u><%= link_to "確認メールの再送信をしますか？", new_confirmation_path(resource_name) %></u><br />
+  <u><%= link_to "再送驗證郵件嗎？", new_confirmation_path(resource_name) %></u><br />
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>

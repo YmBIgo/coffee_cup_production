@@ -1,47 +1,46 @@
 <h4 id="chapter2-2-2">
-  <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : Ruby on Railsのインストール</strong></p>
+  <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : Ruby on Rails 的安裝</strong></p>
   <br>
   <strong>
-    では、Ruby on Rails をインストールしてみましょう！
+    那麽，咱們安裝 Ruby on Rails 吧！
     <br>
-    少し長くなるので頑張って下さい！
+    這個有一點長，加油！
     <br><br>
-    バージョンは
+    安裝的環境是
     <ul class="number_ul">
       <li><u>Ruby 2.1.3</u></li>
       <li><u>Ruby on Rails 4.2.6</u></li>
     </ul>
-    になります。
     <br>
-    すでに環境を構築済みの方は、<u>環境を構築し直す必要はありません</u>ので、先に進んで適宜質問下さい。
+    如果已經安裝好的話、<u>不用再安裝環境</u>。看下<a href="#title2-3">一個安裝</a>吧！
   </strong>
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>まずは「<u>Command Line Tools</u>」というソフトをインストールします。</strong>
+  <i class="fa fa-play-circle"></i>　<strong>我們先安裝叫做「<u>Command Line Tools</u>」的軟件。</strong>
   <br><br>
-  <i class="fa fa-exclamation"></i>　<strong><u>AppleID</u></strong>を用意の上、<a href="https://developer.apple.com/downloads/index.action" target="_blank"><strong>こちら</strong></a>をクリックして<strong><u>AppleID</u></strong>でログインをして下さい。
+  <i class="fa fa-exclamation"></i>　請準備好<strong><u>AppleID</u></strong>，用<strong><u>AppleID</u></strong><a href="https://developer.apple.com/downloads/index.action" target="_blank"><strong>從這裡</strong></a>登錄。
   <br>
-  <small>※　AppleIDの作成は<a href="https://support.apple.com/ja-jp/HT203993" target="_blank"><strong>こちら</strong></a>から</small>
+  <small>※　註冊AppleID<a href="https://support.apple.com/zh-tw/HT203993" target="_blank"><strong>請從這裡做</strong></a></small>
   <br>
   <br>
-  下のような表示は出てきたでしょうか？
+  有下面一樣的畫面嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Chrome_Apple_Developer.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Chrome_Apple_Developer.png",
               :target => ["_blank"] %>
-  ここから<strong>「<u>Command Line Tools</u>」</strong>をインストールします。
+  從這裡安裝<strong>「<u>Command Line Tools</u>」</strong>。
   <hr class="red-hr">
-  <i class="fa fa-arrow-right"></i>　<strong>インストールする前にMacのバージョンを確認します。</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>安裝之前，先確認Mac的環境。</strong>
   <br>
-  <small>※　Macのバージョンによってインストールするものが変わるので確認しておきましょう！</small>
+  <small>※　隨着Mac的環境，安裝的東西也不同。請注意。</small>
   <br><br>
-  下のように左上にある <i class="fa fa-apple"></i> をクリックして、中にある<strong>「<u>About This Mac</u>」</strong>をクリックして下さい。
+  跟下面一樣子，按 <i class="fa fa-apple"></i> ，之後按裡面的<strong>「<u>About This Mac</u>」</strong>。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Settiing_About_This_Mac.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Settiing_About_This_Mac.png",
               :target => ["_blank"] %>
-  下のように表示されるので、赤線の部分を確認して下さい。
+  會顯示下面的畫面，請確認紅線的地方。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/About_This_Mac_Overview.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -52,11 +51,11 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/About_This_Mac_Overview_detail.png",
               :target => ["_blank"] %>
-  Macのバージョンを確認の上、下の表に対応したものをダウンロードして下さい。
+  確認您 Mac 的環境之後，參考下面表下載「Command Line Tools」。
   <table class="table table-bordered table-hover" style="margin:15px 0">
     <thead style="font-size:15px">
       <tr>
-        <td>Macのバージョン</td>
+        <td>Mac的環境</td>
         <td>Command Line Tools</td>
       </tr>
     </thead>
@@ -83,39 +82,39 @@
       </tr>
     </tbody>
   </table>
-  複数ある場合は<strong><u>最新のもの</u></strong>を選んで下さい！
+  如果有幾個的話，選<strong><u>最新的東西</u></strong>吧！
   <br><br>
-  ダウンロードができたら<strong>「<u>ダウンロード</u>」フォルダ</strong>を開いて、先ほどダウンロードしたファイルをクリックして、
+  下載之後，開<strong>「<u>download</u>」文件夾</strong>，按剛剛下載的文件，
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Finder_Downloads_Command_Line_Tools.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Finder_Downloads_Command_Line_Tools.png",
               :target => ["_blank"] %>
-  インストールしてできたファイルを開いて終了です。
+  之後開安裝的文件就OK了。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Finder_Command_Line_Tools.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Finder_Command_Line_Tools.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>次に「<u>Ruby on Rails</u>」のインストールをします。<br>コマンドを順番に入力して下さい！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>咱們安裝「<u>Ruby on Rails</u>」。<br>在terminal上，打入下面的命令吧。</strong>
   <br><br>
   <i class="fa fa-arrow-right"></i>　
   <strong>
-  ここではターミナルを使っていきます。
+  這裡我們使用terminal。
   <br>
-  早速開いてみましょう！
+  　　 那麼，打開看terminal吧。
   </strong>
   <br>
-  <small>※　ターミナルについては<a href="/mugcups/2#title2-1" target="_blank"><strong>こちら</strong></a>を参考</small>
+  <small>※　開terminal的方法<a href="/mugcups/2#title2-1" target="_blank"><strong>請參考這裡</strong></a></small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Terminal_Open.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Terminal_Open.png",
               :target => ["_blank"] %>
-  開けたら、
+  打開之後打入，
   <br><br>
-  　<strong>ターミナル（半角英数字）</strong>
+  　<strong>terminal（用半角字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -125,18 +124,18 @@
 </tr>
 </table>
   <br>
-  と入力して下さい。これでターミナルはターミナルが最初に開かれた時に位置に戻ります。
+  這樣，terminal回到剛開始開的時候的地方。
   <br><br>
-  <i class="fa fa-play-circle"></i>　<strong>では、始めていきましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>那麽，開始吧！</strong>
   <br><br>
   <ul class="number_ul">
-    <strong><u><li>Homebrewのインストール</li></u></strong>
+    <strong><u><li>Homebrew的安裝</li></u></strong>
     <br>
-    まずは下の入力をして下さい。これで<strong>「<u>Homebrew</u>」</strong>というツールをインストールします。コピペでも大丈夫です。
+    先打入下面的命令。這個是安裝叫做<strong>「<u>Homebrew</u>」</strong>的工具。
+    <br>
+    選這文字之後按<strong>「<u>Command</u>」跟「<u>c</u>」</strong>可以複製文字，按<strong>「<u>Command</u>」跟「<u>v</u>」</strong>可以黏贴複製的文字。
     <br><br>
-    <small>※　文字を選択して<strong>「<u>Command</u>」と「<u>c</u>」</strong>を押せば文字をコピー、<strong>「<u>Command</u>」と「<u>v</u>」</strong>を押せば文字の貼り付けができます。</small>
-    <br><br>
-    　<strong>ターミナル（半角英数字）</strong>
+    　<strong>terminal（用半角字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -146,11 +145,11 @@
 </tr>
 </table>
     <br>
-    途中でパスワードの入力を要求されるので、そこで自分のMacのパスワードを入力して下さい。
+    途中會有要求打入密碼，那個時候打入自己Mac的密碼。
     <br><br>
-    インストールが完了したら、
+    安裝完了之後，打入
     <br><br>
-    　<strong>ターミナル</strong>
+    　<strong>terminal</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -160,19 +159,19 @@
 </tr>
 </table>
     <br>
-    で<strong>「<u>Homebrew</u>」</strong>のバージョンが出てくれば大丈夫です。
+    之後，顯示<strong>「<u>Homebrew</u>」</strong>的環境的話OK。
     <hr class="red-hr">
-    <strong><u><li>rbenvとruby-buildのインストール</li></u></strong>
+    <strong><u><li>rbenv跟ruby-build的安裝</li></u></strong>
     <br>
-    この2つのツールで、<strong>「Ruby on Rails」を動かしている<u>「Ruby」というプログラミング言語のバージョン管理</u></strong>をします。
+    這兩個工具在管理，<strong>動「Ruby on Rails」的<u>叫做「Ruby」的程序語言的版本</u></strong>。
     <br>
-    ではインストールしてみます！下の2つの入力をして下さい。
+    那麽，開始安裝吧！在terminal上，打入下面兩個命令。
     <br><br>
-    <small>※　文字を選択して<strong>「<u>Command</u>」と「<u>c</u>」</strong>を押せば文字をコピー、<strong>「<u>Command</u>」と「<u>v</u>」</strong>を押せば文字の貼り付けができます。 </small>
+    <small>※　選這文字之後按<strong>「<u>Command</u>」跟「<u>c</u>」</strong>可以複製文字，按<strong>「<u>Command</u>」跟「<u>v</u>」</strong>可以黏贴複製的文字。</small>
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半角字母數字打入）</strong>
     <br><br>
-    <i class="fa fa-exclamation color-red"></i>　<strong>ここはコピペができない場合がありますので、コピペができなかったら直接入力して下さい。</strong>
+    <i class="fa fa-exclamation color-red"></i>　<strong>有時候，不能複製與黏貼。那個時候，請直接打入。</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -182,7 +181,7 @@
 </tr>
 </table>
     <br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半角字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -192,13 +191,13 @@
 </tr>
 </table>
     <br>
-    これでインストールができました！
+    這樣，安裝好了！
     <br><br>
-    <i class="fa fa-arrow-right"></i>　しかし今のままでは使えないので、下の入力をして下さい。
+    <i class="fa fa-arrow-right"></i>　可是現在的狀態還不能用，請打入下面的命令。
     <br><br>
-    <small>※　文字を選択して<strong>「<u>Command</u>」と「<u>c</u>」</strong>を押せば文字をコピー、<strong>「<u>Command</u>」と「<u>v</u>」</strong>を押せば文字の貼り付けができます。 </small>
+    <small>※　選這文字之後按<strong>「<u>Command</u>」跟「<u>c</u>」</strong>可以複製文字，按<strong>「<u>Command</u>」跟「<u>v</u>」</strong>可以黏贴複製的文字。</small>
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -208,9 +207,9 @@
 </tr>
 </table>
     <br>
-    この後で、
+    之後，打入
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -220,17 +219,17 @@
 </tr>
 </table>
     <br>
-    を入力して設定を有効にします。
+    這樣，設定好了。
     <hr class="red-hr">
-    <strong><u><li>readlineのインストール</li></u></strong>
+    <strong><u><li>readline的安裝</li></u></strong>
     <br>
-    この<strong>「<u>readline</u>」</strong>というツールをインストールして、日本語入力をしても文字化けがしないようにします。
+    為了避免漢語的亂碼，安裝叫做<strong>「<u>readline</u>」</strong>的工具。
     <br><br>
-    下の入力をしてインストールしましょう！
+    打入下面的命令，安裝「readline」吧！
     <br><br>
-    <small>※　文字を選択して<strong>「<u>Command</u>」と「<u>c</u>」</strong>を押せば文字をコピー、<strong>「<u>Command</u>」と「<u>v</u>」</strong>を押せば文字の貼り付けができます。 </small>
+    <small>※　選這文字之後按<strong>「<u>Command</u>」跟「<u>c</u>」</strong>可以複製文字，按<strong>「<u>Command</u>」跟「<u>v</u>」</strong>可以黏贴複製的文字。</small>
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -240,11 +239,11 @@
 </tr>
 </table>
     <br>
-    <i class="fa fa-arrow-right"></i>　次に<strong>「<u>readline</u>」</strong>を使うための設定をします。
+    <i class="fa fa-arrow-right"></i>　下次<strong>設定為了使用「<u>readline</u>」</strong>的命令。
     <br><br>
-    <small>※　文字を選択して<strong>「<u>Command</u>」と「<u>c</u>」</strong>を押せば文字をコピー、<strong>「<u>Command</u>」と「<u>v</u>」</strong>を押せば文字の貼り付けができます。 </small>
+    <small>※　選這文字之後按<strong>「<u>Command</u>」跟「<u>c</u>」</strong>可以複製文字，按<strong>「<u>Command</u>」跟「<u>v</u>」</strong>可以黏贴複製的文字。</small>
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -254,7 +253,7 @@
 </tr>
 </table>
     <br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -264,13 +263,13 @@
 </tr>
 </table>
     <hr class="red-hr">
-    <li><strong><u>Ruby のインストール</u></strong></li>
+    <li><strong><u>Ruby 的安裝</u></strong></li>
     <br>
-    先ほどインストールした「rbenv」で、<strong>「<u>Ruby on Rails</u>」を動かすための「<u>Ruby</u>」というプログラミング言語をインストール</strong>します。
+    用剛才安裝的「rbenv」，<strong>安裝在動「<u>Ruby on Rails</u>」的叫「<u>Ruby</u>」的程序語言</strong>。
     <br><br>
-    ここでは<strong>バージョンが「<u>2.1.3</u>」の「<u>Ruby</u>」をインストール</strong>しまので、その<strong>「<u>2.1.3</u>」</strong>をインストールします。
+    在這裡安裝<strong>環境是「<u>2.1.3</u>」的「<u>Ruby</u>」</strong>。
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -280,9 +279,9 @@
 </tr>
 </table>
     <br>
-    これでインストールされたので、「Ruby」を起動する準備をするための入力をします。
+    這樣安裝好了！咱們打入準備起動「Ruby」的命令。
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -292,9 +291,9 @@
 </tr>
 </table>
     <br>
-    ここまででインストールと準備ができたので、使う<strong>「<u>Ruby</u>」のバージョン</strong>を設定します。
+    這樣安裝跟準備好了、咱們設定<strong>「<u>Ruby</u>」的環境</strong>。打入下面的命令。
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -304,9 +303,9 @@
 </tr>
 </table>
     <br>
-    これで設定ができたので、
+    這樣設定好了。打入下面的命令。
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -316,17 +315,17 @@
 </tr>
 </table>
     <br>
-    で<strong>「<u>Ruby</u>」のバージョンを確認</strong>します。
+    這樣確認<strong>「<u>Ruby</u>」的版本</strong>。
     <br>
-    <strong>「<u>2.1.3</u>」</strong>が出て来れば、大丈夫です。
+    顯示<strong>「<u>2.1.3</u>」</strong>的話OK。
     <hr class="red-hr">
-    <strong><u><li>rails のインストール</li></u></strong>
+    <strong><u><li>rails 的安裝</li></u></strong>
     <br>
-    最後に<strong>「<u>Ruby on Rails</u>」のインストール</strong>をします！
+    最後，安裝<strong>「<u>Ruby on Rails</u>」</strong>！
     <br>
-    まずは、お決まりの<strong>「<u>Ruby on Rails</u>」を使うためのツールをインストール</strong>します。
+    先、安裝為了使用<strong>「<u>Ruby on Rails</u>」的工具</strong>。
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -336,9 +335,9 @@
 </tr>
 </table>
     <br>
-    次に<strong>「<u>Ruby on Rails</u>」をインストール</strong>します。
+    下次<strong>安裝「<u>Ruby on Rails</u>」</strong>。
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -348,9 +347,9 @@
 </tr>
 </table>
     <br>
-    次にもう一度
+    下次在打入
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -360,9 +359,9 @@
 </tr>
 </table>
     <br>
-    をして、下の入力をして<strong>「<u>Ruby on Rails</u>」のバージョンを確認</strong>して下さい。
+    打入完後，確認<strong>「<u>Ruby on Rails</u>」的版本。</strong>
     <br><br>
-    　<strong>ターミナル（半角英数字で入力）</strong>
+    　<strong>terminal（用半母字母數字打入）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'> 1 
@@ -372,7 +371,7 @@
 </tr>
 </table>
     <br>
-    <i class="fa fa-play-circle"></i>　<strong>ここまでで「<u>Ruby on Rails</u>」をインストールできました！</strong>
+    <i class="fa fa-play-circle"></i>　<strong>這樣安裝好了「<u>Ruby on Rails</u>」！</strong>
   </ul>
 </h4>
 <!-- 参考ページ -->

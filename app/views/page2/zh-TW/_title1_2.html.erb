@@ -1,11 +1,11 @@
 <h4 id="chapter2-1-2">
-        <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : Ruby on Railsのデータ</strong></p>
+        <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : Ruby on Rails的資料</strong></p>
         <br>
-        Ruby on Railsでは、<strong><u>データの表示と保存の方法に応じてページに役割</u></strong>が振り分けられていることを説明しました。
+        我們解釋，Ruby on Rails是<strong><u>按着資料的顯示跟保存的方法自己設定</u></strong>要這麼樣作網站。
         <br>
-        データの表示については説明しましたが、<u>データの保存はどのようなものになるのでしょうか？</u>
+        我們有解釋資料的表示，那麽<u>資料的保存是這麼樣子呢？</u>
         <hr class="red-hr">
-        <a href="/mugcups/1"><strong>前の章</strong></a>で、それはウェブページを動かしている機械（サーバー）の中にあるデータベースに保存される利用者が発信した情報だと説明しました。
+        <a href="/zh-TW/mugcups/1"><strong>在上章</strong></a>，利用者發信的資料會保存在動網站的機器（服務器）裡的資料庫裡。這個保存資料的資料庫就是作‘資料的保存’。
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_Save_Data.png",
                               :width => "90%",
@@ -13,34 +13,34 @@
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_Save_Data.png",
                     :target => ["_blank"] %>
         <br>
-        例えばFacebookの投稿であれば、
+        用Facebook的例子的話，
         <br><br>
         <span class="color-red">
-        <strong>利用者の投稿</strong>
+        <strong>利用者的投稿</strong>
         <ul style="margin-top:10px;">
-            <li><u>投稿した人の名前</u>は「山田太郎」</li>
-            <li><u>投稿した内容</u>は「Hello world」</li>
-            <li><u>場所</u>は「東京都新宿」</li>
-            <li><u>画像</u>は「なし」</li>
-            <li>などなど...</li>
+            <li><u>投稿的人的名字是</u>「山田太郎」</li>
+            <li><u>投稿的內容是</u>「Hello world」</li>
+            <li><u>地方是</u>「東京都新宿」</li>
+            <li><u>圖畫是</u>「沒有」</li>
+            <li>等等...</li>
         </ul>
         </span>
         <br>
-        のような情報でサーバーに送信され、それが<strong><u>サーバー内のデータベース（Excelの表）</u></strong>に保存されます。
+        這樣子的資料保存在<strong><u>動網站的機器（服務器）裡的資料庫（Excel軟件 的表）</u></strong>。
         <br><br>
-        <strong>Ruby on Railsで保存されるデータもこれと同じで、利用者が発信した情報をウェブページの機械（サーバー）の中のデータベースに保存し、それがページに表示されます。</strong>
+        <strong>在Ruby on Rails上保存下來的資料也是一樣、利用者發信的資料會保存在動網站的機器（服務器）裡的資料庫裡，然後這個資料會顯示在網頁上面。</strong>
         <hr class="red-hr">
-        このデータを保存するための<u>データベース（Excelの表）の作成</u>と、実際の<u>データの保存・変更・削除</u>をRuby on Railsで設定していく必要があります。
+        所以在 Ruby on Rails上，先為了要保存資料<u>作資料庫</u>，<br>做好資料庫之後自己設定<u>資料的新增，編輯，刪除</u>。
+        <br><br>
         <ul class="number_ul">
-            <strong><li>データベースの枠組みの定義</li></strong>
-                Facebookの例でいうと、名前・内容・場所を保存するためのデータベース（Excelの表）を作る
+            <strong><li>做資料庫</li></strong>
+                用Facebook的例子說的話，為了保存名字，內容，地方的資料庫（Excel軟件的表）。
                 <br><br>
-            <strong><li>データベースへの代入と保存</li></strong>
-                ページで入力され送信されたデータをデータベースに保存・変更・削除をする
+            <strong><li>資料庫上保存利用者的資料</li></strong>
+                新增，編輯，刪除在網頁上打入的資料。
         </ul>
-        をします。
         <hr class="red-hr">
-        <%= render "page2/title1_2_1" %>
+        <%= render "page2/zh-TW/title1_2_1" %>
         <hr>
-        <%= render "page2/title1_2_2" %>
+        <%= render "page2/zh-TW/title1_2_2" %>
 </h4>

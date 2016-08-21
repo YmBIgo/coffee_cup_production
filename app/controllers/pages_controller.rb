@@ -5,11 +5,15 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, :only => [:show]
 
   def show
-    if current_user.study_enabled == true
-      render template: "pages/#{params[:page]}"
+    unless I18n.locale == :"zh-TW"
+      if current_user.study_enabled == true
+        render template: "pages/#{params[:page]}"
+      else
+        redirect_to dashboard_path
+        flash[:alert] = "閲覧権限がありません"
+      end
     else
-      redirect_to dashboard_path
-      flash[:alert] = "閲覧権限がありません"
+      render template: "pages/#{params[:page]}"
     end
   end
 

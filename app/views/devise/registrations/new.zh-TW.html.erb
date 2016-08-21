@@ -1,4 +1,4 @@
-<% provide :title, "登録する" %>
+<% provide :title, "註冊" %>
 <header class="text-center header-img-desk">
   <div id="top-page" class="log-area">
     <%= render "common/alert" %>
@@ -7,49 +7,49 @@
         <%= devise_error_messages! %>
       </div>
       <div>
-        <h2><%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_nav_gray.png") %> <strong>登録する</strong></h2>
-        <h5><strong><u>教材の購入は登録後に可能になります。</u></strong></h5>
-        <h5><strong>教材を使用するには、<u>MacかWindowsのPC</u>をご用意下さい。</strong></h5>
-        <h5><strong><u>support@coffee-cup.info </u> からのメールの受信を許可して下さい。</strong></h5>
+        <h2><%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_nav_gray.png") %> <strong>註冊</strong></h2>
+        <h5><strong><u>註冊之後，可以買教材。</u></strong></h5>
+        <h5><strong>使用教材之前，請準備<u>Mac 或者 Windows 的電腦</u>。</strong></h5>
+        <h5><strong>請認可，從<u> support@coffee-cup.info </u>受到的郵件。</strong></h5>
       </div>
       <br>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <div class="field">
-          <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "メールアドレス" %>
+          <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "郵箱" %>
         </div>
         <div class="field">
-          <%= f.password_field :password, autocomplete: "off", :class => "form-control coffee-form", :placeholder => "パスワード（8文字以上）" %>
+          <%= f.password_field :password, autocomplete: "off", :class => "form-control coffee-form", :placeholder => "密碼（8字以上）" %>
         </div>
         <div class="field">
-          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "パスワード（確認）" %>
-        </div>
-        <br>
-        <div class="field">
-          <%= f.text_field :family_name, autofocus: "off", :class => "form-control", :placeholder => "名字" %>
-        </div>
-        <div class="field">
-          <%= f.text_field :first_name, autofocus: "off", :class => "form-control", :placeholder => "名前" %>
-        </div>
-        <div class="field">
-          <%= f.text_field :phone_number, autofocus: "off", :class => "form-control", :placeholder => "電話番号（例：0399999999）" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "密碼（確認）" %>
         </div>
         <br>
         <div class="field">
-          <%= f.text_field :birth_year, autofocus: "off", :class => "form-control", :placeholder => "誕生年（例：1996）" %>
+          <%= f.text_field :family_name, autofocus: "off", :class => "form-control", :placeholder => "姓氏" %>
         </div>
         <div class="field">
-          <%= f.text_field :company_name, autofocus: "off", :class => "form-control", :placeholder => "会社名・学校名" %>
+          <%= f.text_field :first_name, autofocus: "off", :class => "form-control", :placeholder => "名字" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :phone_number, autofocus: "off", :class => "form-control", :placeholder => "電話號碼（例子：0399999999）" %>
+        </div>
+        <br>
+        <div class="field">
+          <%= f.text_field :birth_year, autofocus: "off", :class => "form-control", :placeholder => "生日（例：1996）" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :company_name, autofocus: "off", :class => "form-control", :placeholder => "公司，學校名" %>
         </div>
         <div class="field">
           <%= f.text_field :prefecture, :autofocus => "off", :class => "form-control", :placeholder => "都道府県名" %>
         </div>
         <div class="field">
-          <label class="log-label"><%= f.radio_button :sex, "1" %> 男性</label>　
-          <label class="log-label"><%= f.radio_button :sex, "2" %> 女性</label>
+          <label class="log-label"><%= f.radio_button :sex, "1" %> 男生</label>　
+          <label class="log-label"><%= f.radio_button :sex, "2" %> 女生</label>
         </div>
         <div class="field">
           <p style="margin-top:15px;margin-bottom:7px;">
-          <%= f.check_box :agreement %> <a href="/term" target="_blank">利用規約</a> <span style="letter-spacing:1.1px">に同意する</span>
+          <%= f.check_box :agreement %> 同意<a href="/<%= I18n.locale %>/term" target="_blank">利用規約</a> <span style="letter-spacing:1.1px"></span>
           <br>
           </p>
           <p style="margin-top:5px">
@@ -57,7 +57,7 @@
           </p>
           </p>
         <div class="actions text-center">
-          <%= f.submit "登録する", :class => "btn btn-green" %>
+          <%= f.submit "註冊", :class => "btn btn-green" %>
         </div>
       <% end %>
       <hr class="log-hr">

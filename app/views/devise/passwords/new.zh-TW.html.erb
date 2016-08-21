@@ -1,4 +1,4 @@
-<% provide :title, "パスワードを忘れましたか？" %>
+<% provide :title, "忘記密碼了嗎？" %>
 <header class="text-center header-img-desk">
   <div id="top-page" class="log-area">
     <%= render "common/alert" %>
@@ -7,15 +7,15 @@
         <%= devise_error_messages! %>
       </div>
       <div>
-        <h2><%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_nav_gray.png") %> <strong>パスワードを忘れましたか？</strong></h2>
+        <h2><%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_nav_gray.png") %> <strong>忘記密碼了嗎？</strong></h2>
         <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
           <div class="field">
-            <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "メールアドレス" %>
+            <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "郵箱" %>
           </div>
           <br>
           <div class="actions">
-            <%= f.submit "パスワードをメールに再送信する", :class => "btn btn-primary" %>
+            <%= f.submit "再送密碼到您的郵箱", :class => "btn btn-primary" %>
           </div>
         <% end %>
         <hr class="log-hr">

@@ -1,4 +1,4 @@
-<% provide :title, "パスワードを忘れましたか？" %>
+<% provide :title, "忘記密碼了嗎？" %>
 <header class="text-center header-img-pen">
 <%= render "common/alert" %>
   <div id="top-page" class="log-area">
@@ -7,20 +7,20 @@
         <%= devise_error_messages! %>
       </div>
       <div>
-        <h2><%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_nav_gray.png") %> <strong>パスワードを変更する</strong></h2>
+        <h2><%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_nav_gray.png") %> <strong>改變密碼</strong></h2>
 
         <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
           <%= f.hidden_field :reset_password_token %>
 
           <div class="field">
-            <%= f.password_field :password, autofocus: true, autocomplete: "off", :class => "form-control", :placeholder => "新しいパスワード(8文字以上)" %>
+            <%= f.password_field :password, autofocus: true, autocomplete: "off", :class => "form-control", :placeholder => "新密碼(8字以上)" %>
           </div>
           <div class="field">
-            <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "パスワード(確認)" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "密碼(確認)" %>
           </div>
           <br>
           <div class="actions">
-            <%= f.submit "パスワードを変更する", :class => "btn btn-primary" %>
+            <%= f.submit "改變密碼", :class => "btn btn-primary" %>
           </div>
         <% end %>
         <hr class="red-hr">

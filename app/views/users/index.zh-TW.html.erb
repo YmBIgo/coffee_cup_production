@@ -63,12 +63,12 @@
             <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-green">從這裡買教材</a>
             <hr class="red-hr">
             <p>
-            <a target="_blank" class="btn btn-primary disabled">
+            <a href="/zh-TW/mugcups" target="_blank" class="btn btn-primary">
                   <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
                                 :class => "nav-img") %>
                   Mugcup(基礎編)
             </a>　
-            <a target="_blank" class="btn btn-danger disabled">
+            <a href="/zh-TW/coffee_cups" target="_blank" class="btn btn-danger">
                   <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
                                 :class => "nav-img") %>
                   Coffee（應用編）
@@ -88,7 +88,7 @@
       </div>
       <br>
       <div id="title0" class="textbook-title">
-        <h1><strong>用戶資料</strong></h1>
+        <h1><strong>帳號資料</strong></h1>
       </div>
       <br>
       <div class="my-info-card hover_img_reverse">
@@ -96,7 +96,7 @@
           <h2 class="text-center">
             <strong><i class="fa fa-user"></i>　<%= current_user.full_name %></strong>
             <br>
-            <p><a href="/<%= I18n.locale %>/users/<%= current_user.id %>/edit" class="btn btn-success" style="margin-top:15px">編輯用戶資料</a></p>
+            <p><a href="/<%= I18n.locale %>/users/<%= current_user.id %>/edit" class="btn btn-success" style="margin-top:15px">編輯帳號資料</a></p>
           </h2>
           <hr class="red-hr">
           <h4 class="text-left">
