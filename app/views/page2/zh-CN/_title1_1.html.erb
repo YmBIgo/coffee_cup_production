@@ -1,59 +1,59 @@
 <h4 id="chapter2-1-1">
-        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : Ruby on Railsのページ</strong></p>
+        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : Ruby on Rails的網頁</strong></p>
         <br>
-        ウェブページを作るには、Ruby on Railsでもページをどのように表示させるかを自分で設定しなければなりません。
+        為了作網站，Ruby on Rails上必須要自己設定這麼樣顯示網頁。
         <br><br>
-        ですが<u>ウェブページではデータを表示させるだけでなく、発信されたデータを保存する必要がある</u>ので、Ruby on Railsでは<strong class="color-red">データの表示と保存の方法で、作るページの役割が決まっています。</strong>
+        可是<u>網站不只是在顯示網頁，還必須要保存資料</u>。在 Ruby on Rails 上，<strong class="color-red">按着資料顯示跟保存的方法事先有指定好幾個作網頁的方法。</strong>
         <br>
-        Ruby on Railsでウェブページを作る人は、データの表示・保存の方法に合わして自分でページを設定します。
+        Ruby on Rails 是、按着這個資料的顯示跟保存的方法自己設定網頁。
         <br><br>
-        <strong>Twitterを例にページの役割を説明していきます。</strong>
+        <strong>我們用Twitter的例子，解釋資料的顯示跟保存的方法跟設定的網頁。</strong>
         <hr class="red-hr">
-        <i class="fa fa-check-square color-red"></i>　<strong>データの表示</strong>
+        <i class="fa fa-check-square color-red"></i>　<strong>資料的顯示</strong>
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_index_and_show.png",
                               :width => "90%",
                               :class => "textbook-title-img hover_img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_index_and_show.png",
                     :target => ["_blank"] %>
-        データベースに保存されたデータを<strong class="remarkable color-red">表示</strong>させます。
+        <strong class="remarkable color-red">顯示</strong>在資料庫裡保存的資料。
         <br>
-        データベース内の全てのデータを表示するページと、データベースから１つのデータを<strong class="little-remarkable"><u>選択</u></strong>して表示するページからできています。
+        顯示的方法有顯示資料庫裡全部的資料的方法跟，<strong class="little-remarkable"><u>選擇</u></strong>資料庫裡的資料的方法的兩種。
         <br><br>
-        2種類あるのは、<strong class="color-blue">タイムライン</strong>と<strong class="color-red">１つの投稿のページ</strong>の違いと考えてもらえれば分かりやすいかと思います。
+        有兩種的是，可以說是<strong class="color-blue">主頁</strong>跟<strong class="color-red">推特</strong>的差別。
         <br>
-        <small>※　データベースからデータを表示しないページを表示させることもできます。（ランディングページみたいなページ）</small>
+        <small>※　還可以作不從資料庫顯示的網頁</small>
         <hr class="red-hr">
-        <i class="fa fa-check-square color-red"></i>　<strong>データの作成</strong>
+        <i class="fa fa-check-square color-red"></i>　<strong>作資料</strong>
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_new.png",
                               :width => "90%",
                               :class => "textbook-title-img hover_img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_new.png",
                     :target => ["_blank"] %>
-        入力させたデータを<strong class="remarkable color-red">データベースに保存</strong>します。
+        <strong class="remarkable color-red">保存</strong>利用者打入的資料。
         <br>
-        データを入力させるページと、入力したデータを送信して保存させるページの２つのページからできています。
+        這裡有打入內容的網頁跟保存資料的網頁。
         <hr class="red-hr">
-        <i class="fa fa-check-square color-red"></i>　<strong>データの編集</strong>
+        <i class="fa fa-check-square color-red"></i>　<strong>編輯資料</strong>
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_edit.png",
                               :width => "90%",
                               :class => "textbook-title-img hover_img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_edit.png",
                     :target => ["_blank"] %>
-        入力された内容に選択された<strong class="remarkable color-red">データベースの内容を変更</strong>します。
+        按着打入的內容<strong class="remarkable color-red">更新利用者選這的資料</strong>。
         <br>
-        これも、データを入力させるページと、入力されたデータを送信して内容を変更させるページからできています。
+        這裡也有打入內容的網頁跟按着打入的資料更新資料的網頁。
         <hr class="red-hr">
-        <i class="fa fa-check-square color-red"></i>　<strong>データの削除</strong>
+        <i class="fa fa-check-square color-red"></i>　<strong>刪除資料</strong>
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_destroy.png",
                               :width => "90%",
                               :class => "textbook-title-img hover_img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_destroy.png",
                     :target => ["_blank"] %>
-        選択されたデータを<strong class="remarkable color-red">データベースから削除</strong>します。
+        <strong class="remarkable color-red">從資料庫裡刪除</strong>選擇的資料。
         <hr class="red-hr">
-        <i class="fa fa-star color-blue"></i>　Ruby on Railsでは、<strong class="little-remarkable"><u>データの表示・作成・編集・削除</u></strong>の４種類のページをどのように表示させるかを自分で設定していきます。
+        <i class="fa fa-star color-blue"></i>　Ruby on Rails上，自己設定這麼樣顯示<strong class="little-remarkable"><u>資料的顯示，新增，編輯，刪除</u></strong>的四種網頁。
 </h4>

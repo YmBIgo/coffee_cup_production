@@ -1,0 +1,130 @@
+<h4 id="chapter3-2-2-1">
+        <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 工具的設定跟導入</strong></p>
+        Rails on Rails上、<strong><u>使用在網路上公開的作網站的工具（叫做「gem」）</u></strong>作網站。
+        <br><br>
+        這些工具會作，比如說<u><strong>用戶管理或者圖像的保存</strong>等等的機能。</u>。
+
+        <br><br>
+        <i class="fa fa-star color-red"></i>　<strong class="little-remarkable">在這裡做做看這個gem的設定跟導入。</strong>
+        <hr class="red-hr">
+        事先用Sublime Text，打開感才做的「myapp」。
+        <br>
+        <small>
+        ※　打開文件跟文件夾的方法，<strong><a href="/zh-TW/mugcups/how_to_open#title1" target="_blank">請參考這裡</a></strong>。
+        <br>
+        <i class="fa fa-windows"></i>　用Windows打開文件跟文件夾的方法<a href="/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+        </small>
+        <br><br>
+        有出現下面一樣的畫面嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",
+                    :target => ["_blank"] %>
+        畫面出來了後，打開「<strong>Gemfile</strong>」的文件。
+        顯示下面一樣的內容的話，OK！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Open_Gemfile.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Open_Gemfile.png",
+                    :target => ["_blank"] %>
+        用這個<strong>「<u>Gemfile</u>」的文件</strong>，設定工具的設定。
+        <br>
+        應為剛開始已經設定好了需要的工具，所以文件裡已經有內容。
+        <br><br>
+        看裡面，會看到「<strong><u>gem '〜'</u></strong>」或者「<strong><u>gem '〜','〜'</u></strong>」樣子的文字。
+        <br><br>
+        如果想用工具的話，在「<strong>Gemfile</strong>」裡加上
+<pre>
+gem '工具的名字'
+</pre>
+        的設定。（需要的話，加上「<u>, '版本'</u>」）
+        <hr>
+        到這裡解釋了設定工具的「Gemfile」文件。
+        <br><br>
+        這樣設定是完了。但是<strong><u>工具的設定還沒做完。</u></strong>還沒導入完成、所以還不能用工具。
+        <br><br>
+        <i class="fa fa-star color-red"></i>　<strong class="little-remarkable">在這邊，導入工具的設定。</strong>
+        <hr class="red-hr">
+        工具的設定是編輯「Gemfile」的內容。但是<strong>工具的導入是用terminal（或者命令提示符）做。</strong>
+        <br><br>
+        首先，打開terminal（不知道的話，<a href="/zh-TW/mugcups/2#title2-1" target="_blank"><strong>請參考這裡</strong></a>）、移動到「<u>rails_project</u>」。
+        <br><br>
+        <p class="alert alert-success">
+        <span><i class="fa fa-windows color-blue"></i>　<strong>用Windows移動到「rails_projects」的方法，<a href="/zh-TW/mugcups/windows_tips#title1-2" target="_blank">請參考這裡</a></strong></span>
+        </p>
+        <br>
+        　<strong>terminal</strong>
+        <br>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」。</small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+</td>
+</tr>
+</table>
+<br>
+        到這邊、移動到剛才作的「myapp」。
+<br><br>
+        <strong>terminal</strong>
+        <br>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」。</small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+<br>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_cd_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_cd_myapp.png",
+                    :target => ["_blank"] %>
+        <strong>那麽，導入工具吧！請打入下面的文字。</strong>
+        <br>
+        <small>※　用半母字母數字打入。</small>
+<br><br>
+        <strong>terminal</strong>
+        <br>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，使用「命令提示符」</small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+<br>
+<small>
+  <i class="fa fa-arrow-right"></i>　不會動的話，先刪除在同樣文件夾裡的<strong>「<u>Gemfile.lock</u>」</strong>之後再試一次。
+</small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_Bundle_install_after.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_Bundle_install_after.png",
+                    :target => ["_blank"] %>
+        打入之後，有沒有顯示這樣的畫面呢？
+        <br>
+        注意看、可以看到設定文件裡的工具。
+        <br><br>
+        <strong><u>在「Gemfile」上加設定之後、在terminal上打入「bundle install」。</u></strong>
+        <br><br>
+        <strong class="remarkable">這樣工具的導入完成了。</strong>
+        <br>
+        <small>※　在這邊是說工具、正確的是「<strong class="color-red"><i><u>gem</u></i></strong>」。</small>
+        <br><br><br>
+        <p class="alert alert-success">
+        <span><i class="fa fa-windows color-blue"></i>　<strong>使用 Windows的話，<a href="/mugcups/windows_tips#title1-3" target="_blank">請作這裡操作</a>。</strong></span>
+        </p>
+        <br>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>工具的設定是編輯「Gemfile」文件的內容，工具的導入是用terminal打入「<u>bundle install</u>」。</strong>
+</h4>

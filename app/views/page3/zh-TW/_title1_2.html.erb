@@ -1,0 +1,252 @@
+<h4 id="chapter3-1-2">
+          <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 裝飾網頁</strong></p>
+          <br>
+          到這裡解釋了網頁的顯示的方法。
+          <br>
+          <strong class="little-remarkable">可是這個網頁不好看，讓您有一點失望。</strong>
+          <br><br>
+          這個也當然。
+          <br>
+          HTML只在顯示文章圖畫等等的資料。<u>這麼樣顯示網頁要用別的設定文件。</u>
+          <br>
+          這個文件叫做<strong class="little-remarkable color-red"><u>CSS文件</u></strong>。
+          <br><br>
+          <strong>那麽咱們作CSS文件，裝飾看網頁吧！</strong>
+          <hr class="red-hr">
+          事先，「rails_project」的文件夾裡保存「style.css」的名字的文件。
+          <br>
+          <small>※　「style.css」這個名字，只是很多人用這個名字而已。沒有大的意思。
+          <br>
+          ※　如果不知道這麼保存，<a href="/zh-TW/mugcups/how_to_save#title1" target="_blank"><strong>請參考這裡</strong></a>。
+          <br>
+          <i class="fa fa-windows"></i>　用Windows的保存，<a href="/zh-TW/mugcups/how_to_save#title2" target="_blank"><strong>請參考這裡</strong></a>。
+          </small>
+          <br><br>
+          像下面一樣顯示了嗎？
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Style_Css.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Style_Css.png",
+                      :target => ["_blank"] %>
+          在Finder的「rails_project」文件夾上有Style.css跟Sample.html，這個兩個文件嗎？
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_rails_project.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_rails_project.png",
+                      :target => ["_blank"] %>
+          文件保存之後，打入內容。
+          <br>
+          <small>※　打開文件的方法<strong><a href="/mugcups/how_to_open" target="_blank">請參考這裡</a></strong>。</small>
+          <hr class="red-hr">
+          <i class="fa fa-file color-red"></i>　<strong>style.css（用半母字母數字打入）</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>red</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Style_Css.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Style_Css.png",
+                      :target => ["_blank"] %>
+          <i class="fa fa-file color-red"></i>　<strong>sample.html（改5,8行/用半母字母數字打入）</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br><strong class="color-red">5</strong><br>6<br>7<br><strong class="color-red">8</strong><br>9<br>10<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1</span>&gt;你好&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+<br>
+          內容改了之後，一起點擊<strong class="little-remarkable color-red"><u>「Command」跟「s」</u></strong>保存文件。
+          <br><br><br>
+          <p class="alert alert-success">
+          <strong><i class="fa fa-windows color-blue"></i>　使用Windows的話，一起點擊<span class="color-blue little-remarkable"><u>「ctrl」跟「s」</u></span>保存內容</strong>
+          </p>
+          <br>
+          <hr class="red-hr">
+          內容改了之後，參考下面的圖像打開「sample.html」。
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png",
+                      :target => ["_blank"] %>
+          顯示下面圖像一樣嗎？
+          <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html2.png",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img"),
+                      "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html2.png",
+                      :target => ["_blank"] %>
+          文字變成紅色了嗎？<strong>這個還是簡單的設定。我們用CSS文件設定這樣子的裝飾。</strong>
+          <br>
+          那麽，解釋改變的內容。
+          <hr>
+          先解釋改變的<strong class="little-remarkable"><u>html文件</u></strong>。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>sample.html</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br><strong class="color-red">5</strong><br>6<br>7<br>8<br>9<br>10<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;你好&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+<br>
+        <strong>在這個一行決定，在這個網頁上使用「style.css」名字的CSS文件。</strong>
+        <br>
+        裡面應該可以看到「style.css」。在這裡指定要用的CSS文件。<u>使用的時候除了CSS文件以外的地方都可以用一樣。這個要加在<strong><i>&lt;head&gt;</i>跟<i>&lt;/head&gt;</i>圍起來的地方</strong>設定</u>。
+        <hr class="red-hr">
+        比如說要指定名字叫「style2.css」的CSS文件的話，
+        <br><br>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br></td><td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style2.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span></td></tr>
+</table>
+        <br>
+        上面的內容，加在<i>&lt;head&gt;</i>跟<i>&lt;/head&gt;</i>之間。
+        <strong></strong>
+        <br><br>
+        <strong class="remarkable">用CSS文件的時候，請不要忘記加這個一行在<i>&lt;head&gt;</i>跟<i>&lt;/head&gt;</i>之間。。</strong>
+        <hr>
+        那麽，解釋做裝飾的<strong class="little-remarkable"><u>CSS文件</u></strong>。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>red</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+<br>
+        做裝飾的CSS文件是，
+        <pre class="japanese-code">
+想裝飾的地方的名字{
+  裝飾的方法
+}</pre>
+        這麼樣設定。
+        <hr class="red-hr">
+        顏色的設定是
+<pre>
+color:顏色的名字;
+</pre>
+        這樣子設定。
+        <br><br>
+        這個時候，
+        <br><br>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br></td><td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;你好&lt;/<span class='word-red'>h1</span>&gt;<br></span></td></tr>
+</table>
+        <br>
+        的一行在指定<strong><u>&lt;h1&gt;跟&lt;/h1&gt;之間</u></strong>，要改成紅色。
+        <br><br>
+        <i class="fa fa-exclamation color-red"></i>　那麽用別的顏色看看好了！
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>style.css（用半母字母數字打入）</strong>
+        <br>
+        <small>※　內容打完之後，一起點擊<strong><u>「Command」跟「s」</u></strong>保存內容。
+        <br>
+        <i class="fa fa-windows"></i>　使用Windows的話，一起點擊<strong><u>「ctrl」跟「s」</u></strong>保存內容。
+        </small>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br><strong class="color-red">2</strong><br>3<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>color</span>:<span class='word-blue'>blue</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+        <br>
+        完了之後，請重新載入網頁。內容變了嗎？
+        <br>
+        <small>※　用遊覽器打開網頁的方法<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>請參考這裡</strong></a>。</small>
+        <hr class="red-hr">
+        到這邊解釋了顏色的裝飾，<u>但是裝飾的方法不只是這個而已。</u>
+        <br>
+        還有<strong><u>換文字大小的裝飾設定，換背景色的裝飾的方法</u></strong>等等。參考下面的內容，改設定。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>style.css（用半母字母數字打入）</strong>
+        <br>
+        <small>※　一起點擊<strong><u>「Command」跟「s」</u></strong>保存內容。
+        <br>
+        <i class="fa fa-windows"></i>　使用Windows的話、一起點擊<strong><u>「ctrl」跟「s」</u></strong>保存內容。
+        </small>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br><strong class="color-red">3<br>4</strong><br>5<br></td><td class='code-content'><span class='code-line'><span class='word-red'>h1</span>{<br></span><span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>blue</span>;<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>50</span><span class='word-red'>px</span></span>;<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>background-color</span>:<span class='word-blue'>yellow</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+        <br>
+        完了之後，請重新載入網頁。顯示像下面的圖像的內容嗎？
+        <br>
+        <small>※　用遊覽器打開網頁的方法<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>請參考這裡</strong></a>。</small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html3.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html3.png",
+                    :target => ["_blank"] %>
+        文字的大小用
+<pre>
+font-size:文字的大小px;
+</pre>
+        這樣設定。
+        <br><br>
+        <strong><u>px是電腦裡的大小單位</u></strong>。
+        <br><br>
+        背景色的設定是
+<pre>
+background-color:顏色;
+</pre>
+        <hr class="red-hr">
+        <u>裝飾還有很多種，如果有興趣的話自己查查看吧。</u>
+        <hr>
+        <p id="title1-2-css-class" class="fix-link-nav"><i class="fa fa-play-circle color-red"></i>　<strong class="little-remarkable">CSS跟Class</strong></p>
+        <br>
+        到這邊，解釋了裝飾網頁的方法。
+        <br><br>
+        現在的方法也可以裝飾，但是<strong><i>&lt;h1&gt;</i>只能顯示顏色是藍色／文字的大小是50px／背景色是黃色的文字。</strong>
+        <br>
+        這樣也可以裝飾，可是不能有很多種裝飾。
+        <br><br>
+        所以<strong class="little-remarkable">CSS文件可以取装飾的名字、然後跟html文件裡裝飾。</strong>
+        <hr class="red-hr">
+        <strong><u>那麽作作看吧！</u></strong>
+        <br><br>
+        <strong>打開「rails_projects」文件夾裡的「sample.html」跟「style.css」</strong>！
+        <br>
+        <small>※　打開文件夾的方法<a href="/zh-TW/mugcups/how_to_open" target="_blank"><strong>請參考這裡</strong></a>。</small>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>sample.html（用半母字母數字打入）</strong>
+        <br>
+        <small>※　一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+        <br>
+        <i class="fa fa-windows"></i>　使用Windows的話，一起點擊<strong><u>「ctrl」跟「s」</u></strong>。
+        </small>
+<table class="highlight">
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br><strong class="color-red">9</strong><br>10<br>11<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;你好&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1 </span><span class='word-green'>class</span>=<span class='word-yellow'>"title"</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+</table>
+<br>
+        <i class="fa fa-file color-red"></i>　<strong>style.css（用半母字母數字打入）</strong>
+        <br>
+        <small>※　一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+        <br>
+        <i class="fa fa-windows"></i>　使用Windows的話，一起點擊<strong><u>「ctrl」跟「s」</u></strong>。
+        </small>
+<table class="highlight">
+<tr><td class='code-line-no text-center'><strong class="color-red">1<br>2<br>3<br>4</strong><br>5<br></td><td class='code-content'><span class='code-line remarkable-code'><span class='word-green'>.title</span>{<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>color</span>:<span class='word-blue'>white</span>;<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>30</span><span class='word-red'>px</span></span>;<br></span><span class='code-line remarkable-code'>  <span class='word-blue'>background-color</span>:<span class='word-blue'>black</span>;<br></span><span class='code-line'>}<br></span></td></tr>
+</table>
+        <br><br>
+        完了之後，請重新載入網頁。顯示像下面的圖像的內容嗎？
+        <br>
+        <small>※　用遊覽器打開網頁的方法<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Open_With_Chrome.png" target="_blank"><strong>請參考這裡</strong></a></small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html4.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_Sample_html4.png",
+                    :target => ["_blank"] %>
+        上面的畫面是<strong><u>沒有裝飾的<i>&lt;h1&gt;</i></u></strong>、下面的畫面是<strong><u>設定裝飾的<i>&lt;h1&gt;</i></u></strong>。
+        <hr class="red-hr">
+        CSS文件內打入
+<pre>
+.名字{
+  装飾的內容
+}
+</pre>
+        <strong><u>可以用一個名字做幾個裝飾</u></strong>。
+        <br>
+        這次的名字是<strong>「<u>title</u>」</strong>，但是名字可以自己自由的選。
+        <br><br>
+        在html文件裡的顯示是，加
+<pre>
+class="名前"
+</pre>
+        在<u><i>&lt;h1&gt;</i>或者<i>&lt;p&gt;</i>等等裡，</u>可以設計。<u>這裡不用加「.」。</u>
+        <br>
+        這裡的名字跟在CSS文件裡設定的名字是一樣的時候，裝飾會適用。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　改變<strong>沒有装飾的<i>&lt;h1&gt;</i>跟CSS文件，作作看裝飾吧！</strong>
+        <br>
+        <small>
+        ※　不要忘記打入用半母字母數字，一起點擊<strong><u>「Command」と「s」</u></strong>保存內容。
+        <br>
+        <i class="fa fa-windows"></i>　使用Windows的話，i 起點擊<strong><u>「ctrl」跟「s」</u></strong>保存內容。
+        </small>
+</h4>
