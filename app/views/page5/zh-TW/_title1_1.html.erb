@@ -1,0 +1,36 @@
+<h4 id="chapter5-1-1">
+        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : １つのデータを表示する（show）</strong></p>
+        <br>
+        <strong>「<u>１つのデータの表示（show）</u>」</strong>を上の３つの設定にそってやっていきます。
+        <hr class="red-hr">
+        <strong>「<u>１つのデータの表示（show）</u>」</strong>は例えば一つのツイートの内容を示すページになり、<a href="/mugcups/4#title2-4" target="_blank"><strong>前章に出てきたid</strong></a>でページを区別します。
+        <br><br>
+        なので、<strong>「<u>１つのデータの表示（show）</u>」</strong>では<strong>「<u>rails c</u>」</strong>の
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(選択するid)</span>
+</td>
+</tr>
+</table>
+        <br>
+        を使います。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
+                    :target => ["_blank"] %>
+        のようにidに応じたデータが表示されるページを作ります。
+        <br><br>
+        では、設定をしてみましょう！
+</h4>
+        <hr>
+        <%= render "page5/title1_1_1" %>
+        <hr>
+        <%= render "page5/title1_1_2" %>
+        <hr>
+        <%= render "page5/title1_1_3" %>
+        <hr>
+        <%= render "page5/title1_1_4" %>

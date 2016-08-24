@@ -1,0 +1,81 @@
+<h4 id="chapter1-5">
+  <p id="title1-5"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑤ : 導入gem的時候的設定</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>
+  在這裡解釋，Windows命令提示符上不能安裝「gem」的時候的解決的方法。
+  </strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl1.png",
+              :target => ["_blank"] %>
+  首先<a href="https://github.com/rubygems/rubygems/releases/tag/v2.2.3" target="_blank"><strong>打開這個網頁</strong></a>，點擊<strong>「<u>rubygems-update-2.2.3.gem</u>」</strong>之後開始下載。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl2.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl2.png",
+              :target => ["_blank"] %>
+  下載完了之後，點擊<strong>「<u>打開文件夾</u>」</strong>確認保存的文件。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl3.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl3.png",
+              :target => ["_blank"] %>
+  然後打開文件資源管理器、點擊<strong>左邊的「<u>此電腦</u>」</strong>，之後點擊這裡面的<strong>「<u>Windows(C:)</u>」</strong>。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl4.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl4.png",
+              :target => ["_blank"] %>
+  到這邊，<strong>把「<u>下載</u>」文件夾裡剛才下載的文件移動到「<u>Windows(C:)</u>」文件夾裡</strong>。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl5.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/windows_gem_ssl5.png",
+              :target => ["_blank"] %>
+  那麽打開命令提示符之後、加上設定。打入下面的命令。
+  <br><br>
+  <strong>　命令提示符（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>gem install --local C:¥rubygems-update-2.2.3.gem</span>
+</td>
+</tr>
+</table>
+  <br><br>
+  <strong>　命令提示符（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>update_rubygems --no-ri --no-rdoc</span>
+</td>
+</tr>
+</table>
+  <br><br>
+  <strong>　命令提示符（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>gem uninstall rubygems-update -x</span>
+</td>
+</tr>
+</table>
+  <br>
+  到這裡的話，最後打入。
+  <br><br>
+  <strong>　命令提示符（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>gem update --system</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong><i class="fa fa-windows color-blue"></i>　這樣可以安裝「<u>gem</u>」了。</strong>
+</h4>

@@ -1,0 +1,102 @@
+<h4 id="chapter4-2-4">
+        <p id="title2-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : 總結</strong></p>
+        <br>
+        <u>資料保存等等的操作，要用「rails c」的命令做。</u>
+        <br>
+        <small>※　在這裡學的命令下章會用、記得一下。</small>
+        <hr class="red-hr">
+        操作資料的方法有，<strong>「<u>資料的新增・編輯・刪除</u>」</strong>這個三種。
+        <br><br>
+        <ul class="number_ul">
+          <strong><li>資料的新增</li></strong>
+          <br>
+<pre>
+資料庫的名字.create(:框子 => "内容", :框子 => "内容", ...)
+</pre>
+<small>※　資料庫的名字要用第一字是大寫的單數</small>
+<hr class="red-hr">
+<small>例子：新增「name」是「山田太郎」，「content」是「你好」的資料</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "山田太郎", :content =&gt; "你好")</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>資料的選擇</li></strong>
+        <br>
+<pre>
+資料庫的名字.find(要編輯的資料的id號碼)
+</pre>
+<small>※　資料庫的名字要用第一字是大寫的單數</small>
+<hr class="red-hr">
+<small>例子：選擇「id」是「2018」的資料</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(2018)</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>資料的編輯</li></strong>
+        <br>
+<pre>
+資料庫的名字.find(要編輯的資料的id).update(:框子 => "内容", :框子 => "内容", ...)
+</pre>
+<small>※　資料庫的名字要用第一字是大寫的單數</small>
+<hr class="red-hr">
+<small>例子：編輯「id」是「29」的資料，「content」改成「晚安」・「place」改成「嘉義」。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(29).(:content =&gt; "晚安", :place =&gt; "嘉義")</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>資料的編輯</li></strong>
+        <br>
+<pre>
+資料庫的名字.find(要編輯的資料的id號碼).destroy
+</pre>
+<small>※　資料庫的名字要用第一字是大寫的單數</small>
+<hr class="red-hr">
+<small>例：刪除「id」是「1900」的資料</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1900).destroy</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><li>選擇全部的資料</li></strong>
+        <br>
+<pre>
+資料庫的名字.all
+</pre>
+<small>※　資料庫的名字要用第一字是大寫的單數</small>
+<hr class="red-hr">
+<small>例：選擇全部的資料</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.all</span>
+</td>
+</tr>
+</table>
+        </ul>
+        <hr>
+        <i class="fa fa-star color-blue"></i><strong>
+        　網站上，也用這些資料的操作保存資料。
+        <br>
+        <u>在下一章，在網頁上設定這一些資料的保存。</u>
+        </strong>
+</h4>

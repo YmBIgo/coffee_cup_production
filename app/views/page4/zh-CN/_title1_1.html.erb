@@ -1,0 +1,85 @@
+<h4 id="chapter4-1-1">
+          <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 決定資料庫的構造</strong></p>
+          <br>
+          <strong>利用者發信的資料會<u>保存</u>在資料庫（像Excel的表）裡、這個資料會<u>顯示</u>在網頁。</strong>
+          <br><br>
+          在這裡解釋，用Rails作的網站上<strong><u>作資料庫的構造的方法</u></strong>。
+          <hr class="red-hr">
+          保存資料之前，必須要先作資料庫。在這邊作作看簡單的資料庫。
+          <br><br>
+          <strong>下面是Facebook的投稿的資料庫的例子</strong>
+          <br><br>
+          <i class="fa fa-facebook color-blue"></i>　<strong>Facebook的投稿的資料庫的例子</strong>
+          <br><br>
+          <strong>投稿的資料</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>投稿號碼</th>
+                <th>投稿者</th>
+                <th>投稿内容</th>
+                <th>投稿時間</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>１</td>
+                <td>山田太郎</td>
+                <td>你好</td>
+                <td>2016/03/02 16:26</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          參考Facebook的資料表，在下面的框子裡作作看資料庫的構造跟內容。
+          <br>
+          <strong>內容可以是「商品」「推特」「飯」什麼都可以。</strong>
+          <br>
+          <small>※　如果沒有想做的資料庫的話，不用打入也沒關係。</small>
+          <hr class="red-hr">
+          <i class="fa fa-user color-red"></i>　<strong>打入看看！</strong>
+          <br><br>
+          <strong><input type="input" class="form-control table-title" placeholder="資料庫的名字"></strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th><input type="input" class="form-control table-form" placeholder="框"></th>
+                <th><input type="input" class="form-control table-form" placeholder="框"></th>
+                <th><input type="input" class="form-control table-form" placeholder="框"></th>
+                <th><input type="input" class="form-control table-form" placeholder="框"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+                <td><input type="input" class="form-control table-form" placeholder="内容"></td>
+              </tr>
+            </tbody>
+          </table>
+          <u>我們用「資料庫的構造」有一點難的單詞</u>，但是咱們要做的事情都差不多是這個設定。
+          <br>
+          <strong><u>這一次咱們要做的資料庫的設定是，</u></strong>
+          <br><br>
+          <strong><input type="input" class="form-control table-title" placeholder="資料庫的名字"></strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th><input type="input" class="form-control table-form" placeholder="框"></th>
+                <th><input type="input" class="form-control table-form" placeholder="框"></th>
+                <th><input type="input" class="form-control table-form" placeholder="框"></th>
+                <th><input type="input" class="form-control table-form" placeholder="框"></th>
+              </tr>
+            </thead>
+          </table>
+          在網站的資料庫裡設定「資料庫的名字」跟「框子」。
+          <br>
+          <small>※　資料的操作是做「內容的新增，編輯，刪除」。</small>
+          <br><br>
+          <strong>
+          <u>簡單的解釋到這邊，咱們作作看這個資料庫吧！</u>
+          <br>
+          在這裡，咱們作<a href="https://gentle-cove-48435.herokuapp.com/users/sign_in" target="_blank">這個網站</a>的資料庫。
+          </strong>
+</h4>

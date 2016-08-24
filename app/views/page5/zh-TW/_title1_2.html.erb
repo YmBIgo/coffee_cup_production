@@ -1,0 +1,32 @@
+<h4 id="chapter5-1-2">
+        <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">②
+         : 全てのデータを表示する（index）</strong></p>
+         <br>
+         では、<strong><u>全てのデータを表示するタイムラインのようなページ</u></strong>を作ってみましょう。
+         データを全て表示させるので、<a href="/mugcups/4#title2-4" target="_blank"><strong>前章の内容</strong></a>で言えば
+         <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.all</span>
+</td>
+</tr>
+</table>
+         <br>
+         をすると考えてもらえれば大丈夫です。
+         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
+                               :width => "90%",
+                               :class => "hover_img textbook-title-img"),
+                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
+                     :target =>["_blank"] %>
+         のように投稿一覧が出てくるページを作っていきます。
+         <br><br>
+         設定は、<strong><u>「どのページを使うかの設定」「データ操作の設定」「ページの内容の設定」の３つ</u></strong>がありますのでそれぞれについてやってみましょう。
+</h4>
+         <hr>
+         <%= render "page5/title1_2_1" %>
+         <hr class="red-hr">
+         <%= render "page5/title1_2_2" %>
+         <hr>
+         <%= render "page5/title1_2_3" %>

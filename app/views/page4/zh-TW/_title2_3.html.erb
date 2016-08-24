@@ -1,0 +1,137 @@
+<h4 id="chapter4-2-3">
+        <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 刪除資料</strong></p>
+        <br>
+        資料的編輯好了，<strong><u>接着做資料的刪除吧！</u></strong>
+        <br>
+        首先打入<strong>「<i>rails c</i>」</strong>吧。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>先複習上一個內容吧。作作看<u>『你在硅谷投稿的「我生病了」的投稿』</u>吧！<br>（上面放鼠標可以看答案）</strong>
+        <br>
+        <small><i class="fa fa-windows"></i>　漢文會亂碼、所以使用Windows的話，<strong><u>請使用半母字母數字打入自己喜歡的內容。</u></strong></small>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案吧">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line answer-code small-code'>Post.create(:name =&gt; "你個名字", :content =&gt; "我生病了", :place =&gt; "硅谷")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <strong class="little-remarkable"><u>那麽刪除這個「我生病了」的資料吧！</u></strong>
+        <br><br>
+        資料的刪除也跟編輯一樣、用<strong>「<u>find</u>」選擇資料後刪除資料。</strong>
+        <br>
+        那麽，先查查看這個資料的號碼吧。
+        <br>
+        打入下面的命令。
+        <br><br>
+        <strong>　terminal（用半母字母數字打入）</strong>
+        <br>
+        <small>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，請用「命令提示符」。
+        </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.all</span>
+</td>
+</tr>
+</table>
+        <br>
+        有沒有顯示下面圖像一樣的畫面嗎？
+        <br>
+        <strong>裡面有沒有「<u>我生病了</u>」的資料嗎？</strong>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_all.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_all.png",
+                    :target => ["_blank"] %>
+        這個打入在做<strong>「<u>顯示posts資料庫裡全部的資料</u>」</strong>。
+        <br><br>
+        用
+<pre>
+資料庫的名字.all
+</pre>
+        顯示資料庫裡保存的全部的資料。
+        <br>
+        <small>※　資料庫的名字要用第一字是大寫的單數</small>
+        <br><br>
+        不用這個命令，使用<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>Sequel Pro</strong></a>也可以確認資料庫的內容。
+        <br>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，請用<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>。</small>
+        <hr class="red-hr">
+        <strong><u>確認好資料了的話，開始刪除吧！</u></strong>
+        <br>
+        跟資料的編輯一樣資料的刪除也從資料的選擇開始。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　咱們做複習吧。選擇新增的「我生病了」的資料吧。</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案吧">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(3)</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        資料的刪除要打入
+<pre>
+選擇的資料.destroy
+</pre>
+        做。
+        <br>
+        那麽做做看吧。
+        <br><br>
+        <strong>　terminal（用半母字母數字打入）</strong>
+        <br>
+        <small>
+        　※　數字的地方指定，自己想刪除的資料號碼。
+        <br>
+        　<i class="fa fa-windows color-blue"></i>　使用Windows的話，請用「命令提示符」。
+        </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(3).destroy</span>
+</td>
+</tr>
+</table>
+        <br>有顯示下面圖像一樣的畫面嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_3_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_3_destroy.png",
+                    :target => ["_blank"] %>
+        做好了之後，用<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>Sequel Pro</strong></a>確認內容吧。
+        <br>
+        <small><i class="fa fa-windows color-blue"></i>　用Windows的話、請使用<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>。</small>
+        <br><br>
+        新增的資料有沒有刪除了嗎？
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>那麽「刪除id是5的資料」的話要這麼打入呢？</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(5).destroy</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-exclamation color-red"></i>　<u>完成之後，請打入<strong>「<i>exit</i>」</strong>。這樣可以關<strong>「<i>rails c</i>」</strong>。</u>
+        <br><br>
+        <i class="fa fa-star color-blue"></i>　<strong>資料的刪除用「<u>資料庫的名字.find(id的號碼).destroy</u>」做 </strong>
+        <br>
+        <small>※　資料庫的名字要用第一字是大寫的單數。</small>
+</h4>

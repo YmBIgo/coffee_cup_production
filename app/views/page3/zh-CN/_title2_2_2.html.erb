@@ -1,0 +1,88 @@
+<h4 id="chapter3-2-2-2">
+        <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 資料庫的準備</strong></p>
+        到這邊，我們解釋設定Rails上的工具（gem）的方法跟導入的方法。
+        <br>
+        可是設定還有一個。那個是<strong>資料庫的準備</strong>です。
+        <br><br>
+        在這裡作，網站上保存資料的資料庫的設定。
+        <br>
+        <strong class="little-remarkable">這個一下子就可以完成。開始吧！</strong>
+        <hr class="red-hr">
+        事先，<u>用terminal移動到「myapp」</u>吧。
+        <br>
+        <small>※　如果不知道的話、<a href="/zh-TW/mugcups/2#title2-1" target="_blank"><strong>參考這裡</strong></a></small>
+        <br><br>
+        完了之後，打入下面的命令。
+<br><br>
+        <strong>terminal</strong>
+        <br>
+        <small>
+        <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」。
+        </small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:create</span>
+</td>
+</tr>
+</table>
+<br>
+<small>
+  <i class="fa fa-arrow-right"></i>　如果不動的話、在前面加<strong>「<u>bundle exec</u>」</strong>，打入<strong>「<u>bundle exec rake db:create</u>」</strong>。
+</small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rake_db_create.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rake_db_create.png",
+                    :target => ["_blank"] %>
+        <strong class="little-remarkable">這樣資料庫（空的Excel表）的準備好了！</strong>
+        <hr class="red-hr">
+        這樣是有一點傷心、看看真的資料庫作好了沒。
+        <br>
+        用在上章安裝的「<strong class="little-remarkable"><u>Sequel Pro</u></strong>」，<u>看看資料庫！</u>
+        <br><br><br>
+        <p class="alert alert-success">
+        <i class="fa fa-windows color-blue"></i>　
+        <strong>使用Windows的話，會使用SqliteBrowser的資料庫。
+        <br>
+        <i class="fa fa-arrow-right"></i>　<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank">參考這裡</a><strong>打開「<u>db > development.sqlite3</u>」</strong>
+        <br><br>
+        <i class="fa fa-forward"></i>　完了之後<a href="#title2-2-3" target="_blank">點擊這裡</a>
+        </strong>
+        </p>
+        <br>
+        首先用右上邊的放大鏡打入「Sequel Pro」之後打開「Sequel Pro」！
+        <br>
+        打開之後，按着下面的圖畫點擊「<strong>Connect</strong>」。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                    :target => ["_blank"] %>
+        顯示下面一樣的畫面嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro_Main_Page.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro_Main_Page.png",
+                    :target => ["_blank"] %>
+        做好了的話，選擇左上邊的「<strong>Choose Database</strong>」。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                    :target => ["_blank"] %>
+        出來的列表框裡有「<strong>myapp_development</strong>」嗎？
+        <br>
+        <u>這個是在網站上保存資料的資料庫。</u>
+        <br>
+        <small>※　「網頁的名字_development」是資料庫的名字。</small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                    :target => ["_blank"] %>
+        <strong class="remarkable">這樣就OK了！。</strong>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>資料庫是打入「<u>rake db:create</u>」可以作。</strong>
+</h4>

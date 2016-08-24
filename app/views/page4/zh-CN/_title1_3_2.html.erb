@@ -1,0 +1,44 @@
+<h4 id="chapter4-1-3-2">
+        <p id="title1-3-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 修正資料構造的設定</strong></p>
+        用terminal打入<strong>「<u>rake db:migrate</u>」</strong>之後，設定文件的內容會反映到資料庫。
+        <br>
+        可是，用「<strong><u>rake db:migrate</u></strong>」反映錯的設定的話要這麼辦呢？
+        <br><br>
+        比如說，<strong><u>放「text・長的文章」的「content」框子、設定成「string・短的文章」的時候等等</u></strong>
+        <br><br>
+        再作一個設定文件、更改內容嗎？
+        <br>
+        （用「<strong><u>rails g migration 設定文件的名字</u></strong>」作設定文件之後，在設定文件裡設定「<strong>change_column :posts, :content, :text</strong>」）
+        <hr class="red-hr">
+        當然這樣也可以更改框子的設定、但是還有更簡單的方法。
+        <br><br>
+        在Ruby on Rails上，可以取消上一個設定。
+        <br>
+        使用這個機能，<strong class="little-remarkable"><u>取消後可以再改正錯的內容，再反映內容</u></strong>。
+        <br><br>
+        在terminal上打入下面的命令，可以返回設定。
+        <br><br>
+        <strong>　terminal（用半母字母數字打入）</strong>
+        <br>
+        <small>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」。
+        </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:rollback</span>
+</td>
+</tr>
+</table>
+        <br>
+        <small>
+          <i class="fa fa-arrow-right"></i>　不動的話，前面加<strong>「bundle exec」</strong>、打入<strong>「bundle exec rake db:rollback」</strong>
+        </small>
+        <br><br>
+        打入這個，上一個反映的內容會取消。取消之後，再改修設定文件後，在terminal上打入<strong>「<u><i>rake db:migrate</i></u>」</strong>在反映設定文件的內容可以改正錯的設定。
+        <br><br>
+        這個命令<strong><u>只能一個一個的取消</u></strong>。設定錯的時候可以用用看。
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>在terminal上用「<u>rake db:rollback</u>」，可以把上一個資料庫的反映取消。<br><br>取消之後改設定文件，打入「<u>rake db:migrate</u>」可以改正錯的設定。</strong>
+</h4>

@@ -1,0 +1,168 @@
+<h2 class="textbook-section-title" id="title3"><strong>3 : 這個章的總結</strong></h2>
+        <h4 id="chapter3-3">
+          在這個章學了
+          <br>
+          <strong>
+          <ul class="number_ul">
+            <li>顯示網頁的設定文件<a href="#title1-1" target="_blank">html</a>跟裝飾的設定文件<a href="#title1-2" target="_blank">CSS</a></li>
+            <li>使用Rails作剛開始的網站的方法跟打開的方法</li>
+          </ul>
+          </strong>
+          在這裡做簡簡單單的總結。
+          <hr>
+          <strong>⑴ html跟CSS</strong>
+          <br><br>
+          <strong>html是在設定網頁顯示的文件</strong>，讓後這個文件在Ruby on Rails上做網頁的時候會用。
+          <br>
+          設定的方法差不多是下面的樣子。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>sample.html（用半母字母數字打入）</strong>
+          <br>
+          <small>※　使用CSS的話，加上5行</small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>html</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"要使用的CSS文件的名字"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <strong>CSS是設定這麼裝飾html文件</strong>的文件，用Ruby on Rails的時候這個也需要。
+        <br>
+        設定的方法差不多是下面的樣子。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>style.css（用半母字母數字打入）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.title</span>{</span>
+<span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>white</span>;</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>30</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class='word-blue'>background-color</span>:<span class='word-blue'>black</span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+        <hr>
+        <strong>⑵ 用Rails作網站的方法</strong>
+        <br><br>
+        用Ruby on Rails 做網站的湖，要用<strong class="little-remarkable"><u>terminal</u></strong>做（場所は右上の虫眼鏡で探してみて下さい）。
+        <hr class="red-hr">
+        事先作剛開始的網站，
+        <br><br>
+        　<strong>terminal</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails new 網頁的名字 -d mysql</span>
+</td>
+</tr>
+</table>
+        <br>
+        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話，打入</strong>
+        <br><br>
+        　<strong>命令提示符</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails new 網頁的名字</span>
+</td>
+</tr>
+</table>
+        <br>
+        之後，打入
+<br><br>
+        　<strong>terminal</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>cd 網頁名字</span>
+</td>
+</tr>
+</table>
+        <br>
+        移動到做好的網頁，之後<strong><u>Rails上使用的工具・gem的導入</u></strong>。
+<br><br>
+        　<strong>terminal</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+        <br>
+        之後<strong><u>準備資料庫</u></strong>。
+<br><br>
+        　<strong>terminal</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:create</span>
+</td>
+</tr>
+</table>
+        <br>
+        這樣子網站的設定完成了。打開網站的時候要打入
+<br><br>
+<strong>ターミナル</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails s</span>
+</td>
+</tr>
+</table>
+<br>
+        啟動顯示網頁保存資料的服務器。
+        <br>
+        如果服務器在動的話、可以打開<a href="http://0.0.0.0:3000" target="_blank"><strong class="little-remarkable">0.0.0.0:3000</strong></a>看網站。
+        <br><br><br>
+        <p class="alert alert-success">
+        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、打開<a href="http://localhost:3000" target="_blank">localhost:3000</a>。</strong>
+        </p>
+        <br>
+        <hr class="red-hr">
+        <strong><u>要關服務器的話</u>，在terminal上一起點擊「Command」跟「c」</strong>
+        <br>
+        如果吧服務器一直開着的話、會白費電源。
+        <br><br><br>
+        <p class="alert alert-success">
+        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、一起點擊<u>「ctrl」跟「c」</u>。</strong>
+        </p>
+        <br>
+        <hr>
+        <i class="fa fa-star color-blue"></i>　<strong>到這裡，解釋好了用Ruby on Rails作網站的方法。
+        <br>
+        　　下章，咱們學習網站上面保存資料的方法。</strong>
+</h4>

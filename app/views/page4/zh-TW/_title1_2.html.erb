@@ -1,0 +1,371 @@
+<h4 id="chapter4-1-2">
+          <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 作作看資料的構造</strong></p>
+          <br>
+          <strong class="little-remarkable">在這裡作作看，<a href="https://gentle-cove-48435.herokuapp.com/users/sign_in" target="_blank">這個網站</a>的資料庫。</strong>
+          <br><br>
+          這個網站的資料庫裡有<strong>「號碼」「投稿者」「内容」「時間」</strong>等等的框字。資料庫的構造就是，由資料庫裡一個一個的框子構成。
+          <br><br>
+          <i class="fa fa-arrow-right"></i>　<strong>作資料庫的構造可以說是，設定「號碼」「投稿者」「內容」「時間」等等一個一個的框子。</strong>
+          <hr class="red-hr">
+          <strong>Ruby on Rails 上，先用terminal（命令提示符）作資料庫，之後在這個資料庫上設定一個一個的框子。</strong>
+          <br>
+          先從右上邊的放大鏡找terminal之後，打開看看。(如果是Windows的話，用「Cortana」或者「搜索框」找「命令提示符」)
+          <br><br>
+          打開之後移動到<strong>「<u>myapp</u>」</strong>吧！
+          <br><br><br>
+          <p class="alert alert-success">
+          <span><strong><i class="fa fa-windows color-blue"></i>　使用Windows移動的方法<a href="/zh-TW/mugcups/windows_tips#title1-2" target="_blank">請參考這裡</a></strong></span>
+          </p>
+          <br>
+          　<strong>命令提示符（用半母字母數字打入）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        那麽開始作資料庫吧！打入下面的命令。
+        <br><br>
+        　<strong>terminal（用半母字母數字打入）</strong>
+        <br>
+        <small>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」。
+        </small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model post</span>
+</td>
+</tr>
+</table>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_model_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_model_post.png",
+                    :target => ["_blank"] %>
+        有顯示上面圖像一樣的畫面嗎？
+        <br><br>
+        用這個命令<strong>作，叫做「posts」的資料庫的設定文件。</strong><u>g是「generate」的省略。</u>
+        <br>
+        用紅線畫的「<strong>2016..._create_posts.rb</strong>」是作好的設定文件。
+        <br>
+        編輯這個設定文件，作資料庫的構造。
+        <br>
+        <small>※　用Ruby on Rails 作的資料庫全部都用英文，所以名字就用「posts」。其他框子也用英文作。</small>
+        <br><br>
+        作資料庫的時候要打入
+<pre>
+rails g model 資料庫的名字（單數）
+</pre>
+        作資料庫。
+        <br><br>
+        打入「<strong>rails g model 資料庫的名字（單數）</strong>」，作好的文件是「<strong>作的日子_create_資料庫的名字（複數）.rb</strong>」。
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong>那麽，咱們編輯這個設定文件吧。</strong>
+        <br>
+        <br>
+        用「<strong><u>Sublime Text</u></strong>」編輯這個設定文件。從右上邊的放大鏡打開！（Windows的話用「Cortana」或者「搜索框」）
+        <br><br>
+        打開之後，用「Sublime Text」打開「myapp」文件夾！
+        <br>
+        <small>
+        ※　打開文件，文件夾的方法，<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>。
+        <br>
+        <i class="fa fa-windows"></i>　用Windows打開文件，文件夾的方法，<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+        </small>
+        <br><br>
+        有顯示下面圖像一樣的畫面嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",
+                    :target => ["_blank"] %>
+        出來之後按照下面圖像，打開文件。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Migration_Create_Post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Migration_Create_Post.png",
+                    :target => ["_blank"] %>
+        這個叫做「<strong>2016...._create_posts.rb</strong>」的文件是作資料庫的設定文件。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreatePosts <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:posts</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'>                     </span>
+<span class='code-line remarkable-code'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+<span class='code-line'></span>
+</td>
+</tr>
+</table>
+        <br>
+        用這個文件，作「posts」的名字的資料庫（Excel的表）。
+        <br>
+        這個「<u>create_table :posts</u>」的部分表示「<strong>要作posts的資料庫</strong>」的設定。這裡不用自己從頭到尾作，所以簡單的理解就OK！
+        <hr class="red-hr">
+        資料庫的構造在，「<strong>create_table :posts do |t|</strong>」跟「<strong>end</strong>」之間設定。
+        <br>
+        <br>
+        仔細看的話，會看到「<strong>create_table :posts do |t|</strong>」跟下一次出現的「<strong>end</strong>」之間有一個設定。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb（５行目）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>5
+</td>
+<td class='code-content'><span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        這個一行是設定
+        <br>
+        <strong>
+        <ul class="number_ul">
+        <li><u>資料作的時間（<i>created_at</i>）</u></li>
+        <li><u>資料更新的時間（<i>updated_at</i>）</u></li>
+        </ul>
+        的框子。</strong>作這個設定文件的時候，這個設定就自動追加。
+        <br>
+        <u>不用的話，也可以除掉。</u>
+        <br><br>
+        <strong class="little-remarkable"><u>跟這個「timestamps」的設定一樣，咱們作跟下面一樣的投稿的資料庫！</u></strong>
+        <br><br>
+        <strong>posts</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>id</th>
+                <th>name</th>
+                <th>content</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>192</td>
+                <td>山田太郎</td>
+                <td>你好</td>
+                <td style="font-size:11px;">2016-03-02 16:13:52</td>
+                <td style="font-size:11px;">2016-03-02 16:13:52</td>
+              </tr>
+            </tbody>
+          </table>
+          <small>※　框子的設定只能使用英文的是應為、<strong><u>資料庫裡的框子只能用英文</u></strong>。</small>
+        <br><br>
+        各個內容是，
+        <br>
+        <strong>
+        <ul class="number_ul">
+          <li><u><i>id</i></u> 是、投稿號碼</li>
+          <li><u><i>name</i></u> 是、投稿者的名字</li>
+          <li><u><i>content</i></u> 是、投稿内容</li>
+          <li><u><i>created_at</i></u> 是、作投稿的時間</li>
+          <li><u><i>updated_at</i></u> 是、更新投稿的時間</li>
+        </ul>
+        </strong>
+        <br>
+        已經解釋過了<strong>「<i>created_at</i>」</strong>跟<strong>「<i>updated_at</i>」</strong>是用<strong>「<i>t.timestamps null: false</i>」</strong>追加的框子。
+        <br>
+        但是其實說這個<u>「<strong><i>id</i></strong>」也在作資料庫的時候會自動追加</u>，所以要設定的內容只有「<strong><i>name</i></strong>」跟「<strong><i>content</i></strong>」這個兩個。
+        <br><br>
+        <strong><u>咱們作「name」跟「contact」的框子，完成資料庫的構造吧！</u></strong>
+        <hr class="red-hr">
+        <u>設定構造的時候要編輯下面兩個設計。</u>
+        <br><br>
+        <ul class="number_ul">
+          <strong><li>框字裡放的資料的種類</li></strong>
+          比如說，<u>數字・短的文章・長的文章・時間</u>等等（用上面的例子的話，<strong><i>timestamps</i></strong>）
+          <strong><li>框字的名字</li></strong>
+          <u>用英文，不要設定同樣的名字設定</u>（用上面的例子的話，<strong><i>created_at・updated_at</i></strong>）
+        </ul>
+        <br>
+        <i class="fa fa-play-circle color-red"></i>　<strong>那麽作作看框字的設定！</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb（追加5,6行）</strong>
+        <br>
+        <small>
+        ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>保存內容。
+        <br>※　為了看的時候容易看有很多空格，但是不用打這麼多空格也沒關係。
+        <br>
+        <i class="fa fa-windows"></i>　使用Windows的話，一起點擊<strong><u>「ctrl」跟「s」</u></strong>保存內容。
+        </small>
+        <br><br>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreatePosts <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:posts</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>   :name</span></span>
+<span class='code-line remarkable-code'>      t.text       <span class='word-purple'>    :content</span></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        這個是「<strong><i>name</i></strong>」跟「<strong><i>content</i></strong>」的設定。
+        <br><br>
+        <ul class="number_ul">
+        <strong><li>資料種類的設定</li></strong>
+          <ul class="number_ul">
+            <li>數字的話，用<strong>「<u>t.integer</u>」</strong></li>
+            <li>短的文章的話，用<strong>「<u>t.string</u>」</strong></li>
+            <li>長的文章的話，用<strong>「<u>t.text</u>」</strong></li>
+            <li>時間的話，用<strong>「<u>t.timestamps</u>」</strong></li>
+          </ul>
+          設定資料的種類。
+          <br>
+          <small>※　另外還有，真假的「t.boolean」日子的「t.date」等等。</small>
+        <strong><li>名字的設定</li></strong>
+          <strong><u>資料種類的設定的後面，加「:名前」</u></strong>（名字用英文設定）。
+        </ul>
+        <br>
+        這個兩個設定，
+        <br>
+<pre>
+t.資料的種類 :名字
+</pre>
+        像上面這樣子設定。
+        <br><br>
+        到這裡設定了
+        <strong>
+        <ul class="number_ul">
+        <li>放數字的「id」</li>
+        <li>放短的文章的「name」</li>
+        <li>放長的文章的「content」</li>
+        <li>放時間的「created_at/updated_at」</li>
+        </ul>
+        </strong>
+        這個5個「posts」資料庫的框字。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>在資料庫裡設定、<u>放短的文章的「place」的框字</u>的話要怎麼樣設定？（上面放鼠標可以看答案）</strong>
+        <br>
+        <small>※　不用加在設定文件裡</small>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="上面放鼠標可以看答案">
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>答案
+</td>
+<td class='code-content answer-code'><span class='code-line'>  t.string <span class='word-purple'>:place</span></span>
+</td>
+</tr>
+</table>
+<hr class="red-hr">
+        到這裡編輯完了的話，<strong><u>把設定文件裡的內容反映到資料庫裡。</u></strong>
+        <br>
+        打入下面的命令！
+        <br><br>
+        　<strong>terminal（用半母字母數字打入）</strong>
+        <br>
+        <small>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」。
+        </small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　不動的話、前面加<strong>「bundle exec」</strong>，打入<strong>「bundle exec rake db:migrate」</strong>看看。
+  </small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate.png",
+                    :target => ["_blank"] %>
+        顯示這樣子的畫面嗎？
+        <br>
+        <strong><u>這樣，資料庫作好了！</u></strong>
+        <hr class="red-hr">
+        用<strong><u>Sequel Pro</u></strong>咱們確認作好的資料庫吧！這個也用右上邊的放大鏡找。
+        <br><br><br>
+        <p class="alert alert-success">
+          <strong>
+          <i class="fa fa-windows color-blue"></i>　如果是Windows的話、要使用SqliteBrowser。
+          <br>
+          <i class="fa fa-arrow-right"></i>　<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank">請參考這裡</a>打開「<u>db > development.sqlite3</u>」之後，確認「posts」資料庫裡面的內容。
+          <br><br>
+          <i class="fa fa-forward"></i>　確認完了之後，<a href="#title1-3">從這裡</a>前進。
+          </strong>
+        </p>
+        <br>
+        打開後，參考下面的圖像打開！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Sequel_Pro.png",
+                    :target => ["_blank"] %>
+        打開好之後，點擊左邊的「<strong>Choose Database</strong>」。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Choose_Database.png",
+                    :target => ["_blank"] %>
+        點擊顯示的列表框裡的「<strong>myapp_development</strong>」。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sequel_Pro_Select_myapp.png",
+                    :target => ["_blank"] %>
+        左邊有「<strong>posts</strong>」嗎？這個是作好的資料庫。打開看看這個吧！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development.png",
+                    :target => ["_blank"] %>
+        打開之後有沒有看到第一行呢？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development_posts.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development_posts.png",
+                    :target => ["_blank"] %>
+        <strong><u>Ruby on Rails上、這樣子設定資料庫。</u></strong>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>terminal（命令提示符）上打入「<u>rails g model 資料庫的名字</u>」作設定文件。設定文件編輯完了之後，terminal（命令提示符）上打入「<u>rake db:migrate</u>」作資料庫。</strong>
+</h4>

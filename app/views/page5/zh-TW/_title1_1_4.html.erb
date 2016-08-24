@@ -1,0 +1,132 @@
+<h4 id="chapter5-1-1-4">
+        <p id="title1-1-4"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : まとめ</strong></p>
+        Ruby on Railsでページを表示するには、<strong><u>３つの設定</u></strong>が必要になる
+        <strong>
+          <ul class="number_ul">
+            <li>７つのページのうち、どれを使うかの設定</li>
+            <li>データ操作の設定</li>
+            <li>ページ内容の設定</li>
+          </ul>
+          <small>※　７つのページは<strong>「<u> index/ show/ new/ create/ edit/ update/ destroy</u>」</strong>の７つ</small>
+        </strong>
+        <br><br>
+        設定が終わったらターミナルの<strong>「<i>rails s</i>」</strong>でサーバーを立ち上げ、ブラウザで<strong>「<u>0.0.0.0:3000/任意の場所</u>」</strong>を入力することでページを表示することができる。
+        <br><br>
+        <strong>設定した内容は<a href="/codes/5" target="_blank">こちら</a>を参考にしてみて下さい</strong>
+        <hr class="red-hr">
+        <p id="title1-1-4-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>７つのページの設定</strong></p>
+        <br>
+        <strong>「config」フォルダの中にある「<u>routes.rb</u>」ファイル</strong>を変更することで、どのページを使うかを設定する。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（3行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>「:only =>」の後の「[]」に好きなページを追加</u></strong>することで、そのページを使うことを設定する。
+        <hr class="red-hr">
+        <p id="title1-1-4-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>データ操作の設定</strong></p>
+        <br>
+        <strong>「app > controllers」フォルダにある「<u>データベース名_controller.rb</u>」ファイル</strong>で、それぞれのページでどのようなデータ操作をするかを設定する。
+        <br><br>
+        今回は、<strong>「<u>１つのデータを表示する（show）</u>」</strong>に触れた。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(<span class='word-purple'>:params</span>[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong>「<u>１つのデータを表示する（show）</u>」</strong>ページでは、<strong>「<u>find(:params[:id])</u>」</strong>でidごとにデータを選択する。
+        <br>
+        また<strong>「<u>@好きな名前</u>」</strong>で、<strong><u>ページを表示させるhtmlファイルに埋め込むための標識</u></strong>を設定する。
+        <hr class="red-hr">
+        <p id="title1-1-4-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ページ内容の設定</strong></p>
+        <br>
+        <strong>「app > views」フォルダ内にある「データベース名」のファルダに、ページの表示をするhtmlファイルを作ることで設定していく。</strong>
+        <br>
+        <u>具体的には使うページに応じて、</u>
+        <strong>
+        <ul class="number_ul" style="font-height:2.5; margin:20px 0">
+          <li>index.html.erb</li>
+          <li>show.html.erb</li>
+          <li>new.html.erb</li>
+          <li>create.html.erb</li>
+          <li>edit.html.erb</li>
+          <li>update.html.erb</li>
+          <li>destroy.html.erb</li>
+        </ul>
+        </strong>
+        を作成する。
+        <hr class="red-hr">
+        今回は、<strong>「<u>１つのデータを表示する（show）</u>」</strong>ページである<strong>「<u>show.html.erb</u>」</strong>を設定した。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong>データベースから選択したデータは、<u>「&lt;%=」と「%&gt;」の間に設定する。</u></strong>
+        <br>
+        選択したデータは<strong>「<u>@設定した標識.枠組みの名前</u>」</strong>で表示させる。
+        <hr class="red-hr">
+        <p id="title1-1-4-chrome" class="fix-link-nav"><i class="fa fa-chrome color-red"></i>　<strong>ブラウザで表示させる</strong></p>
+        <br>
+        設定が完了したら<strong>ターミナルで「<u>rails s</u>」をした後で</strong>、ブラウザでページを開く。
+        <br>
+        １つのデータを表示する（show）ページは、<strong>「<u>0.0.0.0:3000/データベース名/表示するid</u>」</strong>で開く。
+        <br><br>
+        <small>
+        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong>「<u>localhost:3000/データベース名/表示するid</u>」</strong>で開く。
+        </small>
+        <hr class="red-hr">
+        ここまでで一つのデータを表示させることができたと思います。
+        <br>
+        <strong>次はすべてのデータを表示させる、タイムラインのようなページを作ってみましょう。
+        <br><br>
+        設定した内容は<a href="/codes/5" target="_blank">ここ</a>にまとめてあるので見てみて下さい</strong>
+</h4>

@@ -1,0 +1,174 @@
+<h4 id="chapter4-2-1">
+        <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 新增資料</strong></p>
+        <br>
+        作好了框子，開始保存資料吧！
+        <br><br>
+        <strong class="little-remarkable">首先，資料庫裡追加『<u>在新宿山田太郎的「你好！」的投稿</u>』吧！</strong>
+        <hr class="red-hr">
+        本來這個資料的保存在網站上作、但是我們還沒學怎麼做網站，在這裡使用<strong><u>terminal</u></strong>新增資料。
+        <br><br>
+        事先，用terminal移動到<strong>「myapp」</strong>吧。
+        <br><br><br>
+          <p class="alert alert-success">
+          <span><strong><i class="fa fa-windows color-blue"></i>　用Windows移動的方法<a href="/zh-TW/mugcups/windows_tips#title1-2" target="_blank">請參考這裡</a></strong></span>
+          </p>
+        <br>
+        　<strong>terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        移動好了之後，打入<strong>「<i>rails c</i>」</strong>。
+        <br><br>
+        　<strong>terminal（用半母字母數字打入）</strong>
+        <br>
+        <small>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，請用「命令提示符」。
+        </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails c</span>
+</td>
+</tr>
+</table>
+        <br>
+        顯示下面圖像一樣的畫面嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c.png",
+                    :target => ["_blank"] %>
+        這個<strong>「<i>rails c</i>」</strong>是、<u>Ruby on Rails上，<strong>操作網站的資料庫等等...的機能</strong></u>。在這裡用這個機能新增資料。
+        <br>
+        <br>
+        那麽一次打入看看<strong>「<u><i>exit</i></u>」</strong>。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c_exit.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_c_exit.png",
+                    :target => ["_blank"] %>
+        有沒有回到terminal的打入畫面嗎？
+        <br>
+        <strong>如果想退出「<i>rails c</i>」的話</strong>，<strong>打入「<i>exit</i>」</strong>。
+        <hr class="red-hr">
+        那麽在打入<strong>「<i>rails c</i>」</strong>再打開看吧！
+        <br>
+        咱們用「rails c」，資料保存在資料庫吧。
+        <br>
+        <strong class="little-ramarkable"><u>那麽打入下面的命令。</u></strong>
+        <br><br>
+        <strong>　terminal（漢語以外用半母字母數字打入）</strong>
+        <br>
+        <small>
+        　<i class="fa fa-windows color-blue"></i>　Windows的「命令提示符」會出現亂碼、所以<strong><u>全部都用半母字母數字打入</u></strong>。
+        </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "名字", :content =&gt; "投稿", :place =&gt; "地方")</span>
+</td>
+</tr>
+</table>
+        <br>
+        顯示像下面圖像一樣的畫面嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_create_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_create_post.png",
+                    :target => ["_blank"] %>
+        <strong>這樣，資料保存在資料庫吧！</strong>
+        <br><br>
+        那麽用<strong>「Sequel Pro」</strong>確認資料庫的內容吧。
+        <br>
+        <small>※　打開的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a></small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <strong>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話、要用SqliteBrowser。
+          <br>
+          <i class="fa fa-arrow-right"></i>　<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank">請參考這裡</a>，打開「<u>db > development.sqlite3</u>」確認「posts」資料庫的裡面。
+          </strong>
+        </p>
+        <br>
+        像下面的圖像，追加資料了嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Posts_Data1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Posts_Data1.png",
+                    :target => ["_blank"] %>
+        <hr class="red-hr">
+        資料的新增要打入。
+<pre>
+資料庫的名字.create(:框子 => "内容", :框子 => "内容", ...)
+</pre>
+        （資料庫的名字要用第一字是大寫的單數）
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "山田太郎", :content =&gt; "你好！", :place =&gt; "新宿")</span>
+</td>
+</tr>
+</table>
+        <br>
+        打入的命令中沒有「id」跟「時間」的是<strong><u>，應為這一些會自動追加</u></strong>。
+        <br><br>
+        下面有兩個具體的問題，想想看吧！
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>那麽，<u>『湘南花子在台北投稿的「到台北了」的投稿』</u>要怎麼做呢？
+        <br>（上面放鼠標可以看答案）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案吧">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.create(:name =&gt; "湘南花子", :content =&gt; "到台北了", :place =&gt; "台北")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>如果有下面構造的資料庫的話、<u>『藤沢太郎的「到六本木」的推特』</u>要怎麼做呢？<br>（上面放鼠標可以看答案）</strong>
+        <br><br>
+        <strong>tweets</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>id</th>
+                <th>user</th>
+                <th>content</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+              </tr>
+            </thead>
+          </table>
+          <hr class="red-hr">
+          <input type="input" class="form-control input-code" placeholder="打入答案吧！">
+          <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Tweet.create(:user =&gt; "藤沢太郎", :content =&gt; "到六本木")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-star color-blue"></i>　<strong>資料的新增要打入「<u>資料庫的名字.create(:框子=>"内容", :框子=>"内容", :框子=>"内容")</u>」</strong>
+        <br>
+        <small>※　<u>資料庫的名字要用第一字是大寫的單數。</u></small>
+</h4>

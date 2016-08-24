@@ -1,0 +1,304 @@
+<h4 id="chapter4-1-3-1">
+        <p id="title1-3-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 追加框子</strong></p>
+        <br>
+        作資料庫的時候，剛開始就作好不用修改的資料庫不容易。
+        <br>
+        作資料庫的時候、常常會<strong><u>後來在追加框子</u></strong>。在這裡解釋這個框子的追加。
+        <br><br>
+        剛開始，<strong>用terminal移動到「<u>myapp</u>」</strong>。
+        <br><br><br>
+        <p class="alert alert-success">
+        <span><strong><i class="fa fa-windows color-blue"></i>　使用Windows移動的方法<a href="/zh-TW/mugcups/windows_tips#title1-2" target="_blank">請參考這裡</a></strong></span>
+        </p>
+        <br>
+        　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        移動完了之後，打入下面的命令。
+        <br><br>
+        <strong>　terminal（用半母字母數字打入）</strong>
+        <br>
+        <small>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」。
+        </small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g migration addColumnToPost</span>
+</td>
+</tr>
+</table>
+        <br>
+        顯示像下面的圖像一樣的畫面嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_migration_add_column_to_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rails_g_migration_add_column_to_post.png",
+                    :target => ["_blank"] %>
+        這是，<strong>作編輯構造的設定文件「add_column_to_post」</strong>的命令。
+        <br><br>
+        所以打入
+<pre>
+rails g migration 設定文件名
+</pre>
+        <strong><u>可以作指定的名字的編輯構造的設定文件</u></strong>。
+        <br>
+        設定文件的名字是什麼樣也可以，<u>但是到了一會去看的時候可以知道意思的名字比較好。</u>
+        <hr class="red-hr">
+        那麽看看這個設定文件吧！
+        <br>
+        <strong>首先用「Sublime Text」打開「myapp」！</strong>
+        <br>
+        <small>
+        ※　打開文件，文件夾的方法<a href="/zh-TW/mugcups/how_to_open" target="_blank"><strong>請參考這裡</strong></a>。
+        <br>
+        <i class="fa fa-windows"></i>　用Windows打開文件，文件夾的方法<a href="/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+        </small>
+        <br><br>
+        打開之後，按照下面的圖像打開文件。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Open_migration_add_column_to_post.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sublime_Text_Open_migration_add_column_to_post.png",
+                    :target => ["_blank"] %>
+        <i class="fa fa-file color-red"></i><strong>　2016..._add_column_to_post.rb</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        顯示這樣子的文件嗎？
+        <br>
+        這個文件裡的<strong>「<u><i>def change</i></u>」跟下一個「<u><i>end</i></u>」之間</strong>追加編輯框子的設定。
+        <br><br>
+        框子的編輯有、<strong class="little-remarkable">框子的追加，更改，刪除</strong>。
+        <br>
+        首先這裡做做看<u>框子的追加</u>。
+        <hr class="red-hr">
+        用<strong>「rails g migration 設定文件的名字」</strong>做的文件的框子的編輯、必須要有三個設定。
+        <br>
+        <ul class="number_ul">
+          <strong><li>要編輯哪一個資料庫</li></strong>
+          指定要編輯哪一個資料庫。<strong><u>這一次是「posts」。</u></strong>
+          <strong><li>編輯的框子</li></strong>
+          要追加的話、設定追加的框子。更改，刪除的話，指定已經有的框子。
+          <strong><li>編輯的框子上放的資料的種類</li></strong>
+          這個是跟作框子的時候一樣，有<strong><u>數字，短的文章，長的文章，時間</u></strong>等等。
+        </ul>
+        <br>
+        追加框子的話、
+<pre>
+add_column :資料庫的名字, :框子的名字, :資料的種類
+</pre>
+        這樣子設定。
+        <br><br>
+        用已經作好的<strong><u>「posts」的資料庫上追加「place」</u></strong>的例子看看！
+        <br><br>
+        <strong>posts</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>id</th>
+                <th>name</th>
+                <th>content</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+                <th style="background-color: #f2dede;">place</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="font-size:12px">
+                <td>１</td>
+                <td>山田太郎</td>
+                <td>晚安！</td>
+                <td>2016/03/02 16:26</td>
+                <td>2016/03/02 16:26</td>
+                <td style="background-color: #f2dede;">臺北</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr class="red-hr">
+          <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb（用半母字母數字打入。追加3行）</strong>
+          <br>
+          <small>
+          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>保存內容。
+          <br>
+          ※　空格不用這麼多也沒問題。
+          <br>
+          <i class="fa fa-windows"></i>　使用Windows的話，一起點擊<strong><u>「ctrl」跟「s」</u></strong>保存內容。
+          </small>
+          <br><br>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:place</span>, <span class='word-purple'>:string</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        這個是，<strong>「<u>posts的資料庫追加、place的名字的string・短的文章的框子</u>」</strong>的設定。這樣子的設定可以加幾個也可以。
+        <br><br>
+        資料的種類是有一點難，但是如果資料的種類是長的文章的話<strong><u>把string換成text</u></strong>，數字的話<strong><u>把string換成integer</u></strong>。
+        <br>
+        <small>※　裡面為什麼不知道有「:」，但是這個是資料庫設定文件的方法。請原諒它...</small>
+        <hr class="red-hr">
+        <p><i class="fa fa-question-circle color-green"></i>　 <strong>那麽比如說「<u>posts資料庫裡追加放數字的框子reputation</u>」的話要怎麼樣設定好呢？（上面放鼠標可以看答案）</strong></p>
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb（３行目）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案吧！">
+        <br>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content answer-code'><span class='code-line'>  add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:reputation</span>, <span class='word-purple'>:integer</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        到這邊解釋了資料庫的追加。在這裡簡單的解釋另外兩個<strong><u>資料庫的更改，刪除</u>。</strong>
+        <br><br>
+        更改，刪除也是跟追加一樣，設定<strong><u>資料庫的名字・框子・資料的種類</u></strong>的三個。
+        <br>
+        這個是應為是編輯內容的設定，所以跟追加的時候不同，<strong>框子跟資料的種類必須要指定。</strong>
+        <br><br>
+        如果要刪除的話，在設定文件上追加
+<pre>
+remove_column :資料庫的名字, :框子的名字, :資料的種類
+</pre>
+        要更改的話，在設定文件上追加
+<pre>
+change_column :資料庫的名字, :框子的名字, :資料的種類
+</pre>
+        （更改也只能更改資料的種類）
+        <hr class="red-hr">
+        所以<strong><u>從資料庫「posts」想刪除，放「string（短的文章）」的框子「name」的話</u></strong>，要設定
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>設定文件</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  remove_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        這樣子的內容。
+        <br>
+        <strong><u>從資料庫「posts」想把放「string（短的文章）」的框子「name」，改成放「text（長的文章）」的框子的話</u></strong>，要設定
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>設定文件</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  change_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:text</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        這樣子的內容。
+        <hr class="red-hr">
+        到這裡、解釋了構造設定文件的設定方法。
+        <br>
+        雖然設定是完成了，<u>但是設定的內容還沒反映</u>。
+        <br>
+        <strong class="little-remarkable">在這裡反映設定文件的內容吧！</strong>
+        <br><br>
+        設定的反映要用terminal做。首先移動到「myapp」。
+        <br><br><br>
+          <p class="alert alert-success">
+          <span><strong><i class="fa fa-windows color-blue"></i>　使用Windows移動的方法，<a href="/zh-TW/mugcups/windows_tips#title1-2" target="_blank">請參考這邊</a></strong></span>
+          </p>
+        <br>
+        <strong>　terminal（用半母字母數字打入）</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br>
+        移動到「myapp」的話，打入下面的命令。
+        <br><br>
+        <strong>　terminal（用半母字母數字打入）</strong>
+        <br>
+        <small>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」。
+        </small>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+        <br>
+<small>
+  <i class="fa fa-arrow-right"></i>　不動的話、前面加<strong>「bundle exec」</strong>，打入<strong>「bundle exec rake db:migrate」</strong>。
+</small>
+        <br><br>
+        有顯示下面呢圖像一樣的畫面嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate2.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Terminal_rake_db_migrate2.png",
+                    :target => ["_blank"] %>
+        <u>這樣子框子的編輯完成了！</u>
+        <hr class="red-hr">
+        用<strong>「Sequel Pro」</strong>確認，資料庫有沒有更新！
+        <br>
+        <small>※　打開的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a></small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <strong>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，要用SqliteBrowser。
+          <br>
+          <i class="fa fa-arrow-right"></i>　<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank">參考這裡</a>，打開「<u>db > development.sqlite3</u>」確認「posts」資料庫的內容。
+          </strong>
+        </p>
+        <br>
+        <u>框子裡有沒有追加<strong>「place」</strong>嗎？</u>
+        <br><br>
+        <i class="fa fa-star color-blue"></i>　<strong>在terminal（命令提示符）上打入「<u><i>rails g migration 設定文件的名字</i></u>」作更改框子的設定文件。設定文件編輯完了之後，terminal（命令提示符）上打入「<u><i>rake db:migrate</i></u>」反映設定文件的內容。</strong>
+</h4>

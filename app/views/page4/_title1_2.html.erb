@@ -1,13 +1,35 @@
 <h4 id="chapter4-1-2">
           <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : データの枠組みを作ろう！</strong></p>
           <br>
-          <strong class="little-remarkable">ここでは、<a href="https://gentle-cove-48435.herokuapp.com/" target="_blank">これから作るウェブページ</a>のデータベースを作ってみます。</strong>
+          <strong class="little-remarkable">ここでは、<a href="https://gentle-cove-48435.herokuapp.com/users/sign_in" target="_blank">これから作るウェブページ</a>のデータベースを作ってみます。</strong>
           <br><br>
           具体的には<strong>「番号」「投稿者」「内容」「時間」</strong>を入れるためのデータベースを作成します。
           <br><br>
+          <strong>posts</strong>
+          <table class="table table-striped">
+            <thead>
+              <tr class="active">
+                <th>id</th>
+                <th>name</th>
+                <th>content</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>192</td>
+                <td>山田太郎</td>
+                <td>入学式</td>
+                <td style="font-size:11px;">2016-03-02 16:13:52</td>
+                <td style="font-size:11px;">2016-03-02 16:13:52</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
           <i class="fa fa-arrow-right"></i>　<strong>このデータベースに投稿された内容が保存され、表示されます。</strong>
           <hr class="red-hr">
-          <strong>Railsでのデータベースの定義はターミナルを使って行います。</strong>
+          <strong>Railsでのデータベースの作成・定義はターミナルを使って行います。</strong>
           <br>
           まず右上の虫眼鏡マークで探して開いてみましょう。開けたら前章で作った<strong>「<u>myapp</u>」</strong>に移動しましょう！
           <br><br><br>

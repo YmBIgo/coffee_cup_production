@@ -1,0 +1,39 @@
+<h2 class="textbook-section-title" id="title1"><strong>1 : ページ設定をしてみよう！</strong></h2>
+        <h4 id="chapter5-1">
+        <a href="/mugcups/2#title1-1" target="_blank"><strong>第２章</strong></a>で少しだけ触れましたが、Ruby on Railsではデータの操作の方法に応じたページの設定をします。
+        <br><br>
+        大まかに分ければ<strong>「<u>データの表示・作成・変更・削除</u>」</strong>の４つになるのですが、ちゃんと分けると<strong><u>７つ</u></strong>になります（やっていることは４つだけですが）。
+        <br>
+        <small>※　とりあえずはこれ以外はないと思って下さい。</small>
+        <br><br>
+        <ul class="number_ul">
+          <strong><li>データの全表示　　　　　<u>index</u></li></strong>
+          <small>例：タイムライン<br>→<strong>「<i>Post.all</i>」</strong>を裏で設定</small>
+          <strong><li>一つのデータの表示　　　<u>show</u></li></strong>
+          <small>例：一つのツイート<br>→<strong>「<i>Post.find(idの数字)</i>」</strong>を裏で設定</small>
+          <strong><li>新しいデータの記入　　　<u>new</u></li></strong>
+          <strong><li>データの作成　　　　　　<u>create</u></li></strong>
+          <small>例：ツイートする画面<br>→<strong>「<i>Post.create(いろいろ)</i>」</strong>を裏で設定</small>
+          <strong><li>編集するデータの記入　　<u>edit</u></li></strong>
+          <strong><li>データの変更　　　　　　<u>update</u></li></strong>
+          <small>例：プロフィールを変更する画面<br>→<strong>「<i>Post.find(idの数字).update(いろいろ)</i>」</strong>を裏で設定</small>
+          <strong><li>データの削除　　　　　　<u>destroy</u></li></strong>
+          <small>例：ツイートを削除する画面<br>→<strong>「<i>Post.find(idの数字).destroy</i>」</strong>を裏で設定</small>
+        </ul>
+        <br>
+        こう見ると、<a href="/mugcups/4" target="_blank"><strong>前章</strong></a>で取り扱ったデータ操作の方法と多く対応していることが分かると思います。
+        <br>
+        この７つの設定を<u><strong>データ操作を設定するファイル</strong></u>に設定します。
+        <br><br>
+        <i class="fa fa-star color-red"></i>　この章では、<u>この７つのページを前章で作った<strong>「posts」のデータベース</strong>を使って設定したい</u>と思います。
+        <br><br>
+        これらのページの設定には、<strong><u>３つの設定</u></strong>をする必要があります。
+        <ul class="number_ul">
+          <strong><li>７つのページのうち、どれを使うかの設定</li></strong>
+          <strong><li>データ操作の設定</li></strong>
+          <strong><li>ページの内容の設定（html）</li></strong>
+        </ul>
+        この<strong><u>３つの設定</u></strong>を行えば、ページは表示されます。
+        <hr class="red-hr">
+        <strong class="little-remarkable">ここではまず「１つのデータの表示（show）」をするページを作ってみましょう！</strong>
+        </h4>

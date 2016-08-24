@@ -1,0 +1,202 @@
+<h4 id="chapter4-2-2">
+        <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 編輯資料</strong></p>
+        <br>
+        到這裡解釋新增資料的方法。但是資料的新增以外還有兩個資料保存的方法。那個是<strong class="little-remarkable"><u>資料的編輯跟刪除</u></strong>。
+        <br><br>
+        在這裡做做看資料的編輯吧。<strong><u>用新增的資料，編輯資料的內容吧。</u></strong>
+        <br><br>
+        作資料的編輯跟刪除的話，首先要<strong><u>選擇更改的資料</u></strong>。
+        <br>
+        <strong class="little-remarkable">資料的編輯之前，說明這個資料的選擇。</strong>
+        <hr class="red-hr">
+        資料的選擇有兩種。
+        <br>
+        <strong>
+          <ul class="number_ul">
+            <li>用id選擇資料的方法（<u>find</u>）</li>
+            <li>用框子的內容搜索資料的方法（<u>where</u>）</li>
+          </ul>
+        </strong>
+        這個兩個。
+        <br><br>
+        <i class="fa fa-play-circle color-red"></i>　先做做看<strong><u>第一種方法・用id選擇資料的方法</u></strong>。
+        <br><br>
+        事先打入<strong>「<i>rails c</i>」</strong>之後，打入下面的命令。
+        <br><br>
+        <strong>　terminal（用半母字母數字打入）</strong>
+        <br>
+        <small>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
+        </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1)</span>
+</td>
+</tr>
+</table>
+        <br>
+        顯示像下面的圖像一樣的資料嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1.png",
+                    :target => ["_blank"] %>
+        這一次的打入「<strong>Post.find(1)</strong>」是，「<u>從posts選擇id是1的資料</u>」的命令。
+        <br><br>
+        用id選擇資料的方法是、要打入
+<pre>
+資料庫的名字.find(數字)
+</pre>
+        （資料的名字要用第一字是大寫的單數。）
+        <hr class="red-hr">
+        <i class="fa fa-play-circle color-red"></i>　接着看看<strong><u>第二個方法・用id以外的框子搜索選擇資料的方法</u></strong>。
+        <br><br>
+        用<strong>「<u>rails c</u>」</strong>打入下面的內容。
+        <br><br>
+        <strong>　terminal（漢語以外用半母字母數字打入）</strong>
+        <br>
+        <small>
+        　<i class="fa fa-windows color-blue"></i>　Windows的「命令提示符」的話會出現亂碼、所以<strong><u>全部都用半母字母數字打入</u></strong>。
+        </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.where(:name =&gt; "山田太郎")</span>
+</td>
+</tr>
+</table>
+        <br>
+        顯示像下面的圖限一樣的畫面嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_where_name.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_where_name.png",
+                    :target => ["_blank"] %>
+        這一次的命令「<strong><u>Post.where(:name => "山田太郎")</u></strong>」是，「選擇name的框子是山田太郎的資料」的命令。
+        <br><br>
+        用id以外搜索的話，要打入
+<pre>
+資料庫的名字.where(:框子 => "内容", ...)
+</pre>
+        （資料庫的名字要用第一字是大寫的単数形）
+        <br><br>
+        所以搜索「<u>名字是湘南花子・地方是藤沢</u>」的資料的話，要打入
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.where(:name =&gt; "湘南花子", :place =&gt; "藤沢")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        到這裡選擇資料了，下次做做看內容的編輯吧！
+        <br><br>
+        內容的編輯要打入
+<pre>
+用find選擇的資料.update(:框子 => "内容", ...)
+</pre>
+        <small>※　用where的編輯等下會再說明。</small>
+        <br><br>
+        打入下面的內容吧！
+        <br><br>
+        <strong>　terminal（漢文以外用半母字母數字打入）</strong>
+        <br>
+        <small>
+        　<i class="fa fa-windows color-blue"></i>　Windows的「命令提示符」的話會出現亂碼、所以<strong><u>全部都用半母字母數字打入</u></strong>。
+        </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "晚安")</span>
+</td>
+</tr>
+</table>
+        <br>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1_update.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Rails_c_post_find_1_update.png",
+                    :target => ["_blank"] %>
+        打入完了之後用Sequel Pro打開資料庫，看看資料庫的內容有沒有變化。
+        <br><br>
+        <small>※　用Sequel Pro打開資料庫的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_balnk"><strong>請參考這裡</strong></a>。</small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <strong>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，要用SqliteBrowser。
+          <br>
+          <i class="fa fa-arrow-right"></i>　<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank">參考這裡</a>打開「<u>db > development.sqlite3</u>」，確認「posts」資料庫的內容。
+          </strong>
+        </p>
+        <br>
+        <i class="fa fa-arrow-right"></i>　如果Sequel Pro的內容沒變的話，<u>必須要更新Sequel Pro的內容。</u>內容的更新，請參考下面的圖像。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Update.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_Update.png",
+                    :target => ["_blank"] %>
+        content的部分有沒有更新成「晚安」嗎？
+        <br><br>
+        那麽改改看的資料吧！
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>再更新剛才的資料的「content」。現在的裡面的內容「晚安」，改成「你好」吧。（上面放鼠標可以看答案）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案吧">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "你好")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>用剛才的資料，「name」的框子改成「楊先生」吧！（上面放鼠標可以看答案）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案吧">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:name =&gt; "楊先生")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>用剛才的資料，「place」的框子改成「高雄」，「content」的框子改成「吃飯」吧！（上面放書表可以看答案）</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案吧">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>Post.find(1).update(:place =&gt; "高雄", :content =&gt; "吃飯")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        最後，用<strong><u>Sequel Pro</u></strong>確認內容有沒有改變！
+        <br>
+        <small>※　使用Sequel Pro的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a></small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <strong>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank">參考這裡</a>打開「<u>db > development.sqlite3</u>」之後，確認「posts」資料庫的內容。
+          </strong>
+        </p>
+        <br>
+        <strong><u>不要忘記Sequel Pro資料庫的更新</u></strong>
+        <br><br>
+        <i class="fa fa-star color-blue"></i>　<strong>資料的更新要打入「<u>資料庫的名字.find(id的號碼).update(:框子 => "内容")</u>」</strong>
+        <br>
+        <small>※　資料庫的名字要用第一字是大寫的單數。</small>
+</h4>
