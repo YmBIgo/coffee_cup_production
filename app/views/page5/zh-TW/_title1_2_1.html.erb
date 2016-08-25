@@ -1,11 +1,11 @@
 <h4 id="chapter5-1-2-1">
-         <p id="title1-2-1"><i class="fa fa-check-square color-red"></i>　<strong>　⑴ : ページを設定する</strong></p>
+         <p id="title1-2-1"><i class="fa fa-check-square color-red"></i>　<strong>　⑴ : 設定網頁</strong></p>
          <br>
-         <i class="fa fa-play-circle"></i><strong>　まず「７つのページの設定」からやってみましょう！</strong>
+         <i class="fa fa-play-circle"></i><strong>　剛開始從「七個網頁的設定」開始做吧！</strong>
          <br><br>
-         <strong>「<u>config</u>」</strong>フォルダにある、７つのページのうちどのページを使うかを決める<strong>「<u>routes.rb</u>」</strong>ファイルを見てみましょう。
+         打開看看<strong>「<u>config</u>」</strong>文件裡的，設定七個網頁的<strong>「<u>routes.rb</u>」</strong>文件吧。
                  <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>routes.rb（3行目）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -37,32 +37,32 @@
 </tr>
 </table>
         <br>
-        内容は前に変更しましたよね。
+        內容已經編輯過了吧。
         <br><br>
-        <strong><u>上のように「index」を追加した</u></strong>と思います。
+        <strong><u>跟上面一樣追加「index」</u></strong>了嗎？
         <br>
-        これで<strong>「<u>データの全表示をする（index）</u>」</strong>ページを使うことを設定できました。
+        這樣子設定，要使用<strong>「<u>顯示全部的資料（index）</u>」</strong>的網頁。
         <hr class="red-hr">
-        <i class="fa fa-play-circle"></i><strong>　では「データ操作」の設定をしましょう。</strong>
+        <i class="fa fa-play-circle"></i><strong>　咱們設定「操作資料」的內容吧。</strong>
         <br><br>
-        「posts」データベースのデータ操作は、<strong>「<u>posts_controller.rb</u>」</strong>ファイルに設定します。
+        「posts」資料庫的資料，要設定在<strong>「<u>posts_controller.rb</u>」</strong>文件裡。
         <br><br>
-        まずは、Sublime Textで<strong>「<u>app > controllers</u>」</strong>フォルダにある、<strong>「<u>posts_controller.rb</u>」</strong>ファイルを開きましょう。
+        首先，用Sublime Text打開<strong>「<u>app > controllers</u>」</strong>文件夾裡的<strong>「<u>posts_controller.rb</u>」</strong>文件吧。
         <br><br>
         <small>
-        ※　ファイル・フォルダの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい
-        <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsでの、ファイル・フォルダの開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい。
+          ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
         </small>
         <br><br>
-        開けたら、<strong><u>「def index」と「end」の間</u></strong>を下のように設定しましょう。
+        打開後，在<strong><u>「def index」跟「end」之間</u></strong>設定下面的內容。
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（8行目を追加）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（追加8行）</strong>
         <br>
         <small>
-        ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-        <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -78,21 +78,19 @@
 </tr>
 </table>
         <br>
-        <strong>「<u>Post.all</u>」</strong>の部分は全く同じですね。<strong><u>これでデータを全て選択します。</u></strong>
+        <strong>用「<u>Post.all</u>」，選擇posts資料庫裡的全部的資料。</strong>
         <br>
-        <small>※　信じられないのであれば、「<a href="/mugcups/4#title2" target="_blank"><strong><i>rails c</i></strong></a>」で入力して確認してみてください。</small>
+        <small>※　使用「<a href="/zh-TW/mugcups/4#title2" target="_blank"><strong><i>rails c</i></strong></a>」確認打入的內容吧。</small>
         <br><br>
-        <strong>ページ（html）で表示させる時の標識の「<u>@posts</u>」が複数形になっていますね。</strong>
+        <strong>在這裡的標記「<u>@posts</u>」使用複數。</strong>
         <br>
-        別に名前はなんでもいいんですけど、データを全て表示するなら<u>複数形のほうが分かりやすい</u>のでこんな感じになっています。
+        這是應為要用顯示<u>全部的資料的標記</u>，所以在這裡使用<u>複數的名字</u>。等下看的時候可以理解的話，名字用什麼也沒關係。
         <br><br>
-        データ操作はこんな感じになります。
-        <br>
-        <strong class="little-remarkable">「index」では、「データベース.all」でデータを全て選択して、標識を設定して下さい。</strong>
+        <strong class="little-remarkable">在「index」操作資料的方法是，用「資料庫的名字.all」選擇全部的資料之後，設定標記。</strong>
         <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong><u>tweetsデータベースにある全てのデータを選択</u>するデータ操作を設定して下さい。</strong>
+        <i class="fa fa-question-circle color-green"></i>　設定<strong><u>從tweets資料庫選擇全部的資料</u>的資料的操作吧。</strong>
         <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <input type="input" class="form-control input-code" placeholder="打入答案">
         <br>
 <table class='highlight'>
 <tr>
@@ -103,34 +101,40 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <i class="fa fa-play-circle"></i><strong>　では、ページの設定をしましょう。</strong>
+        <i class="fa fa-play-circle"></i><strong>　那麽設定網頁的內容吧。</strong>
         <br><br>
-        まずは、Sublime Textで開いた<strong>「<u>myapp</u>」</strong>で<strong>「<u>app > views > posts</u>」</strong>を開いてみましょう。
+        剛開始，用Sublime Text打開<strong>「<u>myapp</u>」</strong>文件夾之後，打開<strong>「<u>app > views > posts</u>」</strong>文件夾吧。
+        <br><br>
+        <small>
+          ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+        </small>
+        <br><br>
+        裡面有沒有<strong>「<u>index.html.erb</u>」</strong>文件嗎？如果有的話，開開看吧！
         <br>
-        その中に<strong>「<u>index.html.erb</u>」</strong>ファイルはあるでしょうか？あったら開きましょう！
+        <strong>在這個文件上，設定顯示「選擇全部的資料（index）」的網頁。</strong>
         <br><br>
-        <strong>このファイルに「データの全表示をする（index）」ページを表示する設定を追加していきます。</strong>
-        <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>まずは復習から始めましょう。</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>那麽剛開始，複習學習的內容吧。</strong>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_1.png",
                     :target => ["_blank"] %>
         <strong>
-        上のような表示をするように、「index.html.erb」ファイルを設定して下さい。
+        像上面的圖像的畫面，設定「index.html.erb」文件吧。
         </strong>
         <br>
-        <small>※　線は&lt;hr&gt;で書くことができます。</small>
+        <small>※　線用&lt;hr&gt;設定。</small>
         <br><br>
-        <textarea class="form-control input-code" placeholder="答えを入力して下さい" rows="3"></textarea>
+        <textarea class="form-control input-code" placeholder="打入答案" rows="3"></textarea>
         <br>
         <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
         <br>
         <small>
-        ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-        <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -138,41 +142,42 @@
 <td class='code-line-no text-center'>1
 2
 </td>
-<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 </td>
 </tr>
 </table>
         <hr class="red-hr">
-        できたらターミナルで<strong>「<u>myapp</u>」</strong>に移動してから、<strong>「<i>rails s</i>」</strong>を入力して下さい。
+        做完了之後，用terminal移動到<strong>「<u>myapp</u>」</strong>，之後打入<strong>「<i>rails s</i>」</strong>吧。
         <br><br>
-        サーバーが立ち上がったら、ブラウザで「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみて下さい。
+        在terminal上打入「rails s」起動服務器之後，用遊覽器打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧。
         <br>
         <small>
-        <i class="fa fa-windows color-blue"></i>　Windowをお使いの方は<strong>「<a href="http://localhost:3000/posts">localhost:3000/posts</a>」</strong>を開いて下さい。
+        <i class="fa fa-windows color-blue"></i>　使用Window的話，打開看<strong>「<a href="http://localhost:3000/posts" target="_blank">localhost:3000/posts</a>」</strong>吧。
         </small>
         <br><br>
-        ページは表示されたでしょうか？
+        顯示下面圖像一樣子的網頁嗎？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_1.png",
                     :target => ["_blank"] %>
         <hr class="red-hr">
-        ここでは、下のような<strong><u>簡単なSNSのようなページ表示</u></strong>をしてみましょう！
+        在這裡，作作看下面圖限一樣子的<strong><u>像SNS的網頁</u></strong>吧！
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
                     :target => ["_blank"] %>
         <hr class="red-hr">
-        では、下のように<strong>「<u>index.html.erb</u>」</strong>ファイルを変更しましょう。
+        那麽，編輯<strong>「<u>index.html.erb</u>」</strong>文件吧。打入下面的內容。
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>index.html.erb（3〜7行目を入力）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>index.html.erb（編輯第3〜7行）</strong>
         <br>
-        <small>※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-        <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <small>
+          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -186,7 +191,7 @@
 7
 8
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line remarkable-code'>&lt;% @posts.each <span class="word-red">do </span>|p| %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -198,31 +203,31 @@
 </tr>
 </table>
         <br>
-        <strong>一回、「<u>rails s</u>」で動かしたサーバーを<u>「Command」と「c」を一緒に押して</u>止めてから、もう一度<u>「rails s」</u>を入力して下さい。</strong>
+        <strong><u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
         <br>
-        <u>これで内容の変更が適用されます。</u>
+        <u>這樣編輯好的內容會適用在網頁上。</u>
         <br><br><br>
         <p class="alert alert-success">
-          <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+          <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
           <br>
-          　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+          　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入<u>「rails s」</u>吧。</strong>
         </p>
         <br>
-        <i class="fa fa-arrow-right"></i>　今後設定ファイルを変更してちゃんと保存したのにページが変更されなかった時は、<strong><u>「Command」と「c」</u>でサーバーを止めてからまた<u>「rails s」</u>でサーバーを起動させてください。</strong>
+        <i class="fa fa-arrow-right"></i>　如果設定的內容沒有顯示在網頁上的時候，<strong><u>一起點擊「Command」跟「c」</u>停止用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
         <br><br>
-        できたらブラウザで「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみて下さい。
+        設定好了之後，用遊覽器打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」。
         <br>
         <small>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+        <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」。
         </small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
                     :target => ["_blank"] %>
-        <strong><u>SNSのトップページのようなページ</u></strong>が表示されたでしょうか？
+        有沒有顯示上面一樣子的<strong><u>像SNS主頁的網頁</u></strong>嗎？
         <hr class="red-hr">
-        さきほどの変更でなにをやったかを説明します。
+        那麽，解釋剛才的設定在做什麼。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
 <table class='highlight'>
@@ -236,7 +241,7 @@
 7
 8
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line remarkable-code'>&lt;% @posts.each <span class="word-red">do </span>|p| %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -248,7 +253,7 @@
 </tr>
 </table>
         <br>
-        なんとなくですけど、
+        可不可以推測，在這裡
         <br><br>
 <table class='highlight'>
 <tr>
@@ -265,9 +270,9 @@
 </tr>
 </table>
         <br>
-        <strong><u>ここの部分を複数回表示させていることは分かるでしょうか？</u></strong>
+        <strong><u>反覆顯示這裡的內容嗎？</u></strong>
         <br>
-        中にある
+        在裡面的
         <br><br>
 <table class='highlight'>
 <tr>
@@ -278,9 +283,9 @@
 </tr>
 </table>
         <br>
-        <u>で名前を、<strong>id</strong>で投稿番号を、<strong>content</strong>で内容を表示しています。</u>
+        顯示<u>名字，<strong>id</strong>顯示號碼，<strong>content</strong>顯示投稿的內容。</u>
         <hr class="red-hr">
-        では、<strong>3行目と7行目</strong>はなにをしているのでしょうか？
+        那麽<strong>第3行到第7行</strong>是在做什麼呢？
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
 <table class='highlight'>
@@ -294,7 +299,7 @@
 7
 8
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line remarkable-code'>&lt;% @posts.each <span class="word-red">do </span>|p| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -306,9 +311,9 @@
 </tr>
 </table>
         <br>
-        この3行目では、
+        在這個第三行，
         <br>
-        <strong>「<u>Post.all</u>」を使ってデータを全選択をした「<u>@posts</u>」（下の「<i>posts_controller.rb</i>」）を一つ一つのデータ（<u>p</u>）に分けて、「<u>&lt;% end %&gt;</u>」までの部分を繰り返して表示しています。</strong>
+        <strong>吧「<u>Post.all</u>」選擇的資料「<u>@posts</u>」（下面的「<i>posts_controller.rb</i>」）分成一個一個的資料（<u>p</u>）之後，反覆顯示分成一個一個的內容。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
 <table class='highlight'>
@@ -324,45 +329,45 @@
 </tr>
 </table>
         <br>
-        この<strong>「<u>&lt;% @posts.each.do |p| %&gt;</u>」</strong>と<strong>「<u>&lt;% end %&gt;</u>」</strong>を使って、複数あるデータを繰り返し表示させます。
+        從<strong>「<u>&lt;% @posts.each.do |p| %&gt;</u>」</strong>到<strong>「<u>&lt;% end %&gt;</u>」</strong>的地方會反覆顯示。
         <br><br>
-        そして、<strong>それぞれの繰り返しで「p」にデータを入り、それが表示されます。</strong>
+        然後<strong>在各個反覆中的「p」裡代入各個資料。然後用這個資料「p」顯示資料。</strong>
         <br>
-        <small>※　この「p」も名前はなんでもいいのですが、<strong><u>「post」の頭文字をとって「p」にしています。</u></strong>名前は自由につけて大丈夫です。</small>
+        <small>※　這個「p」的名字是用什麼都可以，<strong><u>在這裡用「post」的第一字「p」。</u></strong>名字用什麼都可以。</small>
         <hr class="red-hr">
-        設定の方法の説明をしましょう。
+        說明設定的方法吧。
         <br>
-        <strong>「<u>Post.all</u>」のように複数のデータを扱う時は、それを一つ一つのデータに分けて表示する必要があります。</strong>
+        <strong>像「<u>Post.all</u>」一樣裡面包括複數資料的時候、必須吧這個資料分成一個一個的資料。</strong>
         <br><br>
-        <i class="fa fa-play-circle"></i>　<strong><u>このような複数のデータ</u></strong>は、
+        <i class="fa fa-play-circle"></i>　<strong><u>這樣子的複數的資料</u></strong>要用，
 <pre>
-&lt;% @設定した標識.each do |好きな名前| %&gt;
+&lt;% @設定的標記.each do |喜歡的名字| %&gt;
 </pre>
-        で<strong><u>一つ一つのデータに分けます。</u></strong>
+        <strong><u>分成一個一個的資料。</u></strong>
         <br>
-        <small>※　「&lt;%」で「&lt;%=」でないので注意。</small>
+        <small>※　是「&lt;%」不是「&lt;%=」，要注意。</small>
         <br><br>
-        <i class="fa fa-play-circle"></i>　<strong><u>分けたデータ</u></strong>は、
+        <i class="fa fa-play-circle"></i>　到
 <pre>
 &lt;% end %&gt;
 </pre>
-        までの部分で<strong><u>繰り返し表示</u></strong>します。
+        的地方<strong><u>分成的資料會反覆顯示</u></strong>。
         <br>
-        <small>※　ここも「&lt;%」で「&lt;%=」でないので注意。</small>
+        <small>※　這裡也是「&lt;%」不是「&lt;%=」，要注意。</small>
         <br><br>
-        <i class="fa fa-play-circle"></i>　<strong><u>中のデータの表示</u></strong>は、<strong>「<a href="/mugcups/5#title1-1" target="_blank">１つのデータを表示（show）</a>」</strong>と同じような感じで
+        <i class="fa fa-play-circle"></i>　<strong><u>裡面的資料</u></strong>是，跟<strong>「<a href="/zh-TW/mugcups/5#title1-1" target="_blank">顯示一個資料（show）</a>」</strong>一樣用
 <pre>
-&lt;%= 設定した名前.枠組みの名前 %&gt;
+&lt;%= 設定的名字.框子的名字 %&gt;
 </pre>
-        で表示します。
+        顯示內容。
         <br><br>
-        <small>※　ちなみに前章で少し触れたデータの検索をする「where」も、この方法で表示させます。検索だと複数個結果がでることもあるからです。</small>
+        <small>※　在上章解釋的「where」也可以用這個方法顯示。用搜索的時候也會出現複數的資料。</small>
         <hr class="red-hr">
-        <i class="fa fa-question-circle color-green"></i>　<strong>データの全表示をするページに「<u>データを作成した時間</u>」を追加する設定はどのようになるでしょうか？</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>那麽在「顯示全部的資料(index)」的網頁裡追加「<u>作資料的時間</u>」的內容要這麼設定呢？</strong>
         <br>
-        <small>※　データの作成時間が入っている枠組みは<strong>「created_at」</strong>になります。</small>
+        <small>※　裡面放作資料的框子是<strong>「created_at」</strong>。</small>
         <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <input type="input" class="form-control input-code" placeholder="打入答案">
         <br>
 <table class='highlight'>
 <tr>
@@ -373,7 +378,7 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <i class="fa fa-question-circle color-green"></i>　<strong>下のようにデータ操作をした「<u>@messages</u>」の<u>送り主「name」</u>と<u>送り先「send_to」</u>と<u>内容「content」</u>を表示させるページを設定してみましょう。</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>做下面一樣子的資料操作的時候，設定看顯示「<u>@messages</u>」的，<u>寄件者「name」</u>跟<u>收件者「send_to」</u>跟<u>内容「content」</u>的網頁。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
 <table class='highlight'>
@@ -389,9 +394,9 @@
 </tr>
 </table>
         <br>
-        <textarea class="form-control input-code" rows="9" placeholder="答えを入力して下さい"></textarea>
+        <textarea class="form-control input-code" rows="9" placeholder="打入答案"></textarea>
         <br>
-        <i class="fa fa-file color-red"></i>　<strong>index.html.erb（解答例）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>index.html.erb（答案的例子）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -403,25 +408,25 @@
 7
 8
 </td>
-<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;メッセージ一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;message一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.name %&gt;さんからのメッセージ&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.send_to %&gt;さん宛&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>寄件者：&gt;&lt;%= m.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>收件者：&gt;&lt;%= m.send_to %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>內容：&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 </td>
 </tr>
 </table>
         <hr class="red-hr">
-        <i class="fa fa-play-circle color-red"></i>　もう開いた後ですが、ブラウザでの開き方について説明します。
+        <i class="fa fa-play-circle color-red"></i>　雖然已經打開過了，但是解釋用遊覽器打開網頁的方法。
         <br><br>
-        <strong>「<u>0.0.0.0:3000/データベース名</u>」</strong>をブラウザで開けば、<strong>「<u>データの全表示（index）</u>」</strong>をするページを開くことができます。
+        在遊覽器打開<strong>「<u>0.0.0.0:3000/資料庫的名字</u>」</strong>的話，可以打開<strong>「<u>顯示全部的資料的（index）</u>」</strong>的網頁。
         <br>
-        今回は「posts」データベースの内容をすべて表示させるためのページだったので、
+        這一次是顯示「posts」資料庫裡全部的內容的網頁，所以打入
         <br><br>
-        <i class="fa fa-chrome color-red"></i><strong>　ブラウザ</strong>
+        <i class="fa fa-chrome color-red"></i><strong>　遊覽器</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -431,13 +436,13 @@
 </tr>
 </table>
         <br>
-        で開きました。
+        打開網頁。
         <br><br>
-        <i class="fa fa-question-circle color-green"></i><strong>　「tweets」のデータを全て表示するページをブラウザで開くにはどのページを開けばいいでしょうか？</strong>
+        <i class="fa fa-question-circle color-green"></i><strong>　打開顯示全部的「tweets」資料的網頁要這麼打開？</strong>
         <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <input type="input" class="form-control input-code" placeholder="打入答案">
         <br>
-        <i class="fa fa-chrome color-red"></i><strong>　ブラウザ</strong>
+        <i class="fa fa-chrome color-red"></i><strong>　遊覽器</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1

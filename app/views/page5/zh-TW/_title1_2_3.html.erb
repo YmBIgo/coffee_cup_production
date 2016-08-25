@@ -1,14 +1,14 @@
 <h4 id="chapter5-1-2-3">
-        <p id="title1-2-3"><i class="fa fa-check-square color-red"></i><strong>　⑶ : まとめ</strong></p>
-        <strong>「データの全表示をする（index）」</strong>ページの３つの設定をまとめる。
+        <p id="title1-2-3"><i class="fa fa-check-square color-red"></i><strong>　⑶ : 總結</strong></p>
+        先解釋<strong>「顯示全部的資料（index）」</strong>上設定的三個設定。
         <br><br>
-        <strong>設定した内容は<a href="/codes/5" target="_blank">こちら</a>を参考にしてみて下さい</strong>
+        <strong>設定的內容<a href="/zh-TW/codes/5" target="_blank">請參考這裡</a></strong>
         <hr class="red-hr">
-        <p id="title1-2-3-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>７つのページの設定</strong></p>
+        <p id="title1-2-3-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七個網頁的設定</strong></p>
         <br>
-        <strong>「config」フォルダの中にある「routes.rb」ファイルに「<u>index</u>」を設定する</strong>
+        <strong>「config」文件夾裡的「routes.rb」文件裡設定「<u>index</u>」</strong>
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>routes.rb（3行目）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -40,9 +40,9 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <p id="title1-2-3-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>データ操作の設定</strong></p>
+        <p id="title1-2-3-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>資料操作的設定</strong></p>
         <br>
-        <strong>「app > controllers」フォルダにある「データベース名_controller」ファイルの「<u>index</u>」を設定する</strong>
+        <strong>設定「app > controllers」文件夾裡的「資料庫的名字_controller.rb」文件的「<u>index</u>」</strong>
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
 <table class='highlight'>
@@ -58,11 +58,11 @@
 </tr>
 </table>
         <br>
-        <strong><u>データを全て選択するデータ操作「.all」と、htmlで表示させる標識</u>を設定する</strong>
+        <strong>設定<u>選擇全部的資料的「.all」跟html上顯示的標記</u></strong>
         <hr class="red-hr">
-        <p id="title1-2-3-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ページ設定</strong></p>
+        <p id="title1-2-3-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>網頁的設定</strong></p>
         <br>
-        <strong>「app > views」フォルダ内にある「データベース名」のファルダの中にある、「<u>index.html.erb</u>」に内容を設定していく。</strong>
+        <strong>設定「app > views > 資料庫的名字」文件夾裡的「<u>index.html.erb</u>」。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
 <table class='highlight'>
@@ -76,11 +76,11 @@
 7
 8
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;メッセージ一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;message一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @message.each <span class="word-red">do</span> |m| %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.name %&gt;さんからのメッセージ&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.send_to %&gt;さん宛&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;寄信者 ： &lt;%= m.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;收信者 ： &lt;%= m.send_to %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
@@ -88,62 +88,62 @@
 </tr>
 </table>
         <br>
-        ページでは、<strong><u>「controller」ファイルで設定したデータ</u>を表示します。</strong>
+        在網頁上，<strong>顯示<u>「controller」文件上設定的資料</u>。</strong>
         <br><br>
-        <strong>「<u>&lt;% @設定した標識.each do |名前| %&gt;</u>」</strong>で複数のデータを各データに区切り、
+        用<strong>「<u>&lt;% @設定的標記.each do |名字| %&gt;</u>」</strong>，把複數的資料分成一個一個的資料，
         <br>
-        <strong>「<u>&lt;% end %&gt;</u>」</strong>との間にその各データの表示の方法を設定します。
+        到<strong>「<u>&lt;% end %&gt;</u>」</strong>之間，設定各個資料的顯示方法。
         <br><br>
-        <strong>「<u>&lt;%= 名前.枠組みの名前 &gt;</u>」</strong>で各データを表示します。
+        用<strong>「<u>&lt;%= 資料庫的名字.框子的名字 &gt;</u>」</strong>顯示各個資料。
         <hr class="red-hr">
-        <p id="title1-2-3-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ブラウザでの表示</strong></p>
+        <p id="title1-2-3-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>遊覽器上的顯示</strong></p>
         <br>
-        設定が完了したら<strong>ターミナルで「rails s」をした後で</strong>、ブラウザでページを開く。
+        設定完了之後<strong>用terminal打入「rails s」</strong>、可以在遊覽器打開網頁。
         <br>
-        全てのデータを表示する（index）ページは、<strong>「<u>0.0.0.0:3000/データベース名</u>」</strong>で開く。
+        顯示全部的資料（index）的網頁，從<strong>「<u>0.0.0.0:3000/資料庫的名字</u>」</strong>打開。
         <br>
-        <small><i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong>「<u>localhost:3000/データベース名</u>」</strong>で開く。</small>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，從<strong>「<u>localhost:3000/資料庫的名字</u>」</strong>打開。</small>
         <hr class="red-hr">
-        <i class="fa fa-play-circle"></i>　<strong>ページの移動（リンク）</strong>
+        <i class="fa fa-play-circle"></i>　<strong>網頁的移動（連結）</strong>
         <br><br>
-        ページの移動は、
+        網頁的移動，
 <pre>
-&lt;a href="飛びたいページ"&gt;文字&lt;/a&gt;
+&lt;a href="想移動的網頁"&gt;文字&lt;/a&gt;
 </pre>
-        で行う。
+        做。
         <br><br>
-        「index」ページへの移動は、
-        <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
-</td>
-</tr>
-</table>
-        <br>
-        で、「show」ページでの移動は例えば、
+        想移動到「index」網頁的話，
         <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;按這裡&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
         <br>
-        で設定する。
+        想移動到「show」網頁的話，
         <br><br>
-        <strong>設定した内容は<a href="/codes/5" target="_blank">ここ</a>にまとめてあるので見てみて下さい</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;按這裡&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        這樣子設定。
+        <br><br>
+        <strong>設定的內容<a href="/zh-TW/codes/5" target="_blank">請參考這裡</a>。</strong>
         <hr class="red-hr">
         <strong>
-        <i class="fa fa-star color-blue"></i>　ここまででデータの全表示をするページを作りました。
+        <i class="fa fa-star color-blue"></i>　到這裡我們作了顯示全部的資料的網頁。
         <br>
-        長くなったので、この章の続きの「ページでのデータの作成・変更・削除」は次のページでやりましょう！
+        還剩的「在網頁上，新增・編輯・刪除資料」的方法，在下章解釋！
         <br><br>
-        ここまでで設定した内容は<a href="/codes/5" target="_blank">こちら</a>を参考にして下さい。
+        到這裡設定的內容<a href="/zh-TW/codes/5" target="_blank">參考這裡</a>。
         <hr>
         </strong>
 </h4>

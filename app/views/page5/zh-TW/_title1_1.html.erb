@@ -1,36 +1,36 @@
 <h4 id="chapter5-1-1">
-        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : １つのデータを表示する（show）</strong></p>
+        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 顯示一個資料（show）</strong></p>
         <br>
-        <strong>「<u>１つのデータの表示（show）</u>」</strong>を上の３つの設定にそってやっていきます。
+        隨着上面三個設定，在這裡作作看<strong>「<u>顯示一個資料（show）</u>」</strong>吧。
         <hr class="red-hr">
-        <strong>「<u>１つのデータの表示（show）</u>」</strong>は例えば一つのツイートの内容を示すページになり、<a href="/mugcups/4#title2-4" target="_blank"><strong>前章に出てきたid</strong></a>でページを区別します。
+        <strong>「<u>顯示一個資料（show）</u>」</strong>的網頁，例如說是顯示一個推特的網頁的話，用<a href="/zh-TW/mugcups/4#title2-4" target="_blank"><strong>id</strong></a>區別網頁。
         <br><br>
-        なので、<strong>「<u>１つのデータの表示（show）</u>」</strong>では<strong>「<u>rails c</u>」</strong>の
+        所以說，<strong>「<u>顯示一個資料（show）</u>」</strong>的網頁要用<strong>「<u>rails c</u>」</strong>的
         <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line small-code'>Post.find(選択するid)</span>
+<td class='code-content'><span class='code-line small-code'>Post.find(選擇的id)</span>
 </td>
 </tr>
 </table>
         <br>
-        を使います。
+        操作資料。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
                     :target => ["_blank"] %>
-        のようにidに応じたデータが表示されるページを作ります。
+        像上面的圖像一樣，用id作各個資料的網頁。
         <br><br>
-        では、設定をしてみましょう！
+        那麽開始作吧！
 </h4>
         <hr>
-        <%= render "page5/title1_1_1" %>
+        <%= render "page5/zh-TW/title1_1_1" %>
         <hr>
-        <%= render "page5/title1_1_2" %>
+        <%= render "page5/zh-TW/title1_1_2" %>
         <hr>
-        <%= render "page5/title1_1_3" %>
+        <%= render "page5/zh-TW/title1_1_3" %>
         <hr>
-        <%= render "page5/title1_1_4" %>
+        <%= render "page5/zh-TW/title1_1_4" %>

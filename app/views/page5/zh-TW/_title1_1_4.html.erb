@@ -1,24 +1,23 @@
 <h4 id="chapter5-1-1-4">
-        <p id="title1-1-4"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : まとめ</strong></p>
-        Ruby on Railsでページを表示するには、<strong><u>３つの設定</u></strong>が必要になる
+        <p id="title1-1-4"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : 總結</strong></p>用Ruby on Rails顯示網頁的時候，要設定<strong><u>三個設定</u></strong>。
         <strong>
           <ul class="number_ul">
-            <li>７つのページのうち、どれを使うかの設定</li>
-            <li>データ操作の設定</li>
-            <li>ページ内容の設定</li>
+            <li>七種網頁中，使用哪一個資料的設定</li>
+            <li>操作資料的設定</li>
+            <li>網頁內容的設定</li>
           </ul>
-          <small>※　７つのページは<strong>「<u> index/ show/ new/ create/ edit/ update/ destroy</u>」</strong>の７つ</small>
+          <small>※　七個網頁的設定是設定<strong>「<u> index/ show/ new/ create/ edit/ update/ destroy</u>」</strong>這個七個</small>
         </strong>
         <br><br>
-        設定が終わったらターミナルの<strong>「<i>rails s</i>」</strong>でサーバーを立ち上げ、ブラウザで<strong>「<u>0.0.0.0:3000/任意の場所</u>」</strong>を入力することでページを表示することができる。
+        設定完了之後，在terminal打入<strong>「<i>rails s</i>」</strong>起動服務器，之後用遊覽器打入<strong>「<u>0.0.0.0:3000/...</u>」</strong>可以顯示網頁。
         <br><br>
-        <strong>設定した内容は<a href="/codes/5" target="_blank">こちら</a>を参考にしてみて下さい</strong>
+        <strong>設定的內容，<a href="/zh-TW/codes/5" target="_blank">可以從這裡看</a></strong>
         <hr class="red-hr">
-        <p id="title1-1-4-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>７つのページの設定</strong></p>
+        <p id="title1-1-4-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七個網頁的設定</strong></p>
         <br>
-        <strong>「config」フォルダの中にある「<u>routes.rb</u>」ファイル</strong>を変更することで、どのページを使うかを設定する。
+        <strong>編輯「config」文件夾裡的「<u>routes.rb</u>」文件</strong>，設定要用哪一個網頁。
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>routes.rb（3行目）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -50,13 +49,13 @@
 </tr>
 </table>
         <br>
-        <strong><u>「:only =>」の後の「[]」に好きなページを追加</u></strong>することで、そのページを使うことを設定する。
+        <strong><u>在「:only =>」後面的「[]」裡設定喜歡的網頁</u></strong>。
         <hr class="red-hr">
-        <p id="title1-1-4-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>データ操作の設定</strong></p>
+        <p id="title1-1-4-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>資料操作的設定</strong></p>
         <br>
-        <strong>「app > controllers」フォルダにある「<u>データベース名_controller.rb</u>」ファイル</strong>で、それぞれのページでどのようなデータ操作をするかを設定する。
+        <strong>在「app > controllers」文件夾裡的「<u>資料庫的名字_controller.rb</u>」文件</strong>，設定各個網頁上這麼樣操作資料。
         <br><br>
-        今回は、<strong>「<u>１つのデータを表示する（show）</u>」</strong>に触れた。
+        這一次，說明了<strong>「<u>顯示一個資料（show）</u>」</strong>的網頁。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
 <table class='highlight'>
@@ -72,15 +71,15 @@
 </tr>
 </table>
         <br>
-        <strong>「<u>１つのデータを表示する（show）</u>」</strong>ページでは、<strong>「<u>find(:params[:id])</u>」</strong>でidごとにデータを選択する。
+        <strong>「<u>顯示一個資料（show）</u>」</strong>的網頁上，用<strong>「<u>find(:params[:id])</u>」</strong>各個id上選擇資料。
         <br>
-        また<strong>「<u>@好きな名前</u>」</strong>で、<strong><u>ページを表示させるhtmlファイルに埋め込むための標識</u></strong>を設定する。
+        用<strong>「<u>@喜歡的名前</u>」</strong>，設定<strong><u>顯示在網頁上的html文件的標記</u></strong>。
         <hr class="red-hr">
-        <p id="title1-1-4-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>ページ内容の設定</strong></p>
+        <p id="title1-1-4-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>網頁內容的設定</strong></p>
         <br>
-        <strong>「app > views」フォルダ内にある「データベース名」のファルダに、ページの表示をするhtmlファイルを作ることで設定していく。</strong>
+        <strong>在「app > views」文件夾裡的「資料庫的名字」的文件夾，作顯示網頁的html文件。</strong>
         <br>
-        <u>具体的には使うページに応じて、</u>
+        <u>隨着要用的網頁，作</u>
         <strong>
         <ul class="number_ul" style="font-height:2.5; margin:20px 0">
           <li>index.html.erb</li>
@@ -92,9 +91,8 @@
           <li>destroy.html.erb</li>
         </ul>
         </strong>
-        を作成する。
         <hr class="red-hr">
-        今回は、<strong>「<u>１つのデータを表示する（show）</u>」</strong>ページである<strong>「<u>show.html.erb</u>」</strong>を設定した。
+        這一次<strong>「<u>顯示一個資料（show）</u>」</strong>的網頁中設定<strong>「<u>show.html.erb</u>」</strong>。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
 <table class='highlight'>
@@ -110,23 +108,23 @@
 </tr>
 </table>
         <br>
-        <strong>データベースから選択したデータは、<u>「&lt;%=」と「%&gt;」の間に設定する。</u></strong>
+        <strong>從資料庫選擇的資料要設定在<u>「&lt;%=」跟「%&gt;」之間。</u></strong>
         <br>
-        選択したデータは<strong>「<u>@設定した標識.枠組みの名前</u>」</strong>で表示させる。
+        選擇的資料，在html上打入<strong>「<u>@設定的標記.框子的名字</u>」</strong>顯示。
         <hr class="red-hr">
-        <p id="title1-1-4-chrome" class="fix-link-nav"><i class="fa fa-chrome color-red"></i>　<strong>ブラウザで表示させる</strong></p>
+        <p id="title1-1-4-chrome" class="fix-link-nav"><i class="fa fa-chrome color-red"></i>　<strong>在遊覽器顯示網頁</strong></p>
         <br>
-        設定が完了したら<strong>ターミナルで「<u>rails s</u>」をした後で</strong>、ブラウザでページを開く。
+        設定完了之後，<strong>在terminal上打入「<u>rails s</u>」之後</strong>，遊覽器中打開網頁。
         <br>
-        １つのデータを表示する（show）ページは、<strong>「<u>0.0.0.0:3000/データベース名/表示するid</u>」</strong>で開く。
+        「顯示一個資料（show）」的網頁，從<strong>「<u>0.0.0.0:3000/資料庫的名字/要顯示的id</u>」</strong>打開。
         <br><br>
         <small>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong>「<u>localhost:3000/データベース名/表示するid</u>」</strong>で開く。
+        <i class="fa fa-windows color-blue"></i>　使用Windows的話，從<strong>「<u>localhost:3000/資料庫的名字/要顯示的id號碼</u>」</strong>打開。
         </small>
         <hr class="red-hr">
-        ここまでで一つのデータを表示させることができたと思います。
+        到這裡顯示了一個一個的資料。
         <br>
-        <strong>次はすべてのデータを表示させる、タイムラインのようなページを作ってみましょう。
+        <strong>接着作顯示全部的資料的，像推特的主頁一樣子的網頁吧。
         <br><br>
-        設定した内容は<a href="/codes/5" target="_blank">ここ</a>にまとめてあるので見てみて下さい</strong>
+        設定的內容<a href="/zh-TW/codes/5" target="_blank">可以從這裡看</a></strong>
 </h4>

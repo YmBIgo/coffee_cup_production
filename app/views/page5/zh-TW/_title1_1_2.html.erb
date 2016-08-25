@@ -1,18 +1,18 @@
 <h4 id="chapter5-1-1-2">
-        <p id="title1-1-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : データ操作の設定</strong></p>
-        ７つ全てのページを使うことを設定しましたので、次は<strong><u>データをどのように操作するかを設定</u></strong>しましょう。
+        <p id="title1-1-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 資料操作的設定</strong></p>
+        到這裡設定了用七個網頁的設定文件、接着<strong><u>設定這麼樣操作資料吧</u></strong>。
         <br>
-        ここでは<strong>「<u>１つのデータの表示（show）</u>」</strong>をやってみましょう！
+        在這邊做做看<strong>「<u>顯示一個資料（show）</u>」</strong>！
         <hr class="red-hr">
-        まずはターミナルを使って、<u>データ操作とページの設定ファイルを作ります。</u>
+        事先用terminal，<u>做資料操作跟顯示網頁的設定文件。</u>
         <br>
-        ターミナルで「myapp」にまで移動しましょう！
+        用terminal移動到「myapp」吧！
         <br><br><br>
         <p class="alert alert-success">
-        <span><strong><i class="fa fa-windows color-blue"></i>　Windowsでの移動の方法は<a href="/mugcups/windows_tips#title1-2" target="_blank">こちら</a>を参考</strong></span>
+        <span><strong><i class="fa fa-windows color-blue"></i>　使用Windows移動的方法<a href="/zh-TW/mugcups/windows_tips#title1-2" target="_blank">請參考這裡</a></strong></span>
         </p>
         <br>
-        <strong>ターミナル</strong>
+        <strong>terminal</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -26,14 +26,14 @@
 </tr>
 </table>
         <br>
-        移動ができたら下の入力をして下さい。
+        移動之後，打入下面的命令。
         <br>
-        <strong class="little-remarkable"><u>この入力でデータベース「posts」のデータ操作とページの設定ファイルを作ります。</u></strong>
+        <strong class="little-remarkable"><u>用這個命令作「posts」資料庫的顯示網頁的文件跟操作資料的文件。</u></strong>
         <br><br>
-        <strong>ターミナル</strong>
+        <strong>terminal</strong>
         <br>
         <small>
-          <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」吧。
         </small>
 <table class='highlight'>
 <tr>
@@ -44,41 +44,41 @@
 </tr>
 </table>
         <br>
-        下のような表示がでてきたでしょうか？この入力で設定ファイルが作成されました。
+        有出現像下面一樣的顯示嗎？這樣子設定文件作好了。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Terminal_rails_g_controller_posts.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Terminal_rails_g_controller_posts.png",
                     :target => ["_blank"] %>
-        では、それを確認しましょう！まずは、Sublime Textで<strong>「<u>myapp</u>」</strong>を開いてみましょう！
+        那麽，看看文件吧！首先，用Sublime Text打開<strong>「<u>myapp</u>」</strong>吧！
         <br>
         <small>
-        ※　Sublime Textを使ったフォルダの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい
+        ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>。
         <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsでのファイル・フォルダの開き方は<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい。
+        <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
         </small>
         <hr class="red-hr">
-        ウィンドウが出てきたら<strong>「<u>app</u>」</strong>を開いてみましょう。
+        畫面出現的話，打開看看<strong>「<u>app</u>」</strong>吧。
         <br>
-        下のように、その中に<strong>「<u>controllers</u>」</strong>と<strong>「<u>views</u>」</strong>というフォルダが入っていると思います。
+        打開後可以看到，裡面有<strong>「<u>controllers</u>」</strong>跟<strong>「<u>views</u>」</strong>這個兩個文件夾。
         <br>
-        では、それぞれを開いてみましょう。
+        那麽開開看這兩個文件夾吧。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_controller_folder_and_view_folder.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_controller_folder_and_view_folder.png",
                     :target => ["_blank"] %>
-        <strong>「<u>controllers</u>」</strong>には<strong>「<u>posts_controller.rb</u>」</strong>というファイルが、<strong>「<u>views</u>」</strong>には<strong>「<u>posts</u>」</strong>というフォルダがあると思います。
+        <strong>「<u>controllers</u>」</strong>裡面有<strong>「<u>posts_controller.rb</u>」</strong>的文件，<strong>「<u>views</u>」</strong>裡面有<strong>「<u>posts</u>」</strong>的文件夾。
         <br><br>
-        これらがさっきの<strong>「<u>rails g controller posts</u>」</strong>で作られたファイル・フォルダになり、それぞれでデータ操作の設定とページの設定をします。
+        這些是剛才打入<strong>「<u>rails g controller posts</u>」</strong>作的文件跟文件夾。在各個文件跟文件夾上設定操作資料的方法跟顯示網頁的方法。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_post_controller_and_post_view.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_post_controller_and_post_view.png",
                     :target => ["_blank"] %>
-        長々と説明しても仕方ないので、まずはデータ操作の設定から始めましょう。
+        那麽先從操作資料的設定開始解釋。
         <hr class="red-hr">
-        まずは、さっき見てみた<strong>「<i>posts_controller.rb</i>」</strong>のファイルを開いてみましょう。
+        首先打開剛才看的<strong>「<i>posts_controller.rb</i>」</strong>的文件。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
         <br>
@@ -93,16 +93,16 @@
 </tr>
 </table>
         <br>
-        このような内容になっているでしょうか？
+        顯示這樣子的內容嗎？
         <br>
-        まずは下のように内容を変更してみて下さい。
+        那麽打入下面的內容吧。
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（半角英数字で入力）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（用半母字母數字打入）</strong>
         <br>
         <small>
-        ※　変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
         <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -160,13 +160,13 @@
 </tr>
 </table>
         <br>
-        <strong>「<i>rails g controller データベース名</i>」</strong>で設定ファイルを作ったら、まずは作った<strong>「<u>データベース名_controller.rb</u>」</strong>に上のような設定を加えて下さい。
+        打入<strong>「<i>rails g controller 資料庫的名字</i>」</strong>作了設定文件之後，先在<strong>「<u>資料庫的名字_controller.rb</u>」</strong>設定，上面一樣操作資料的方法。
         <br>
-        この<strong>「<i>def ページ名</i>」</strong>と<strong>「<i>end</i>」</strong>の間に、<u><strong>「routes.rb」</strong>で設定したページごとで行うデータ操作の方法</u>を指定します。
+        這個<strong>「<i>def 網頁的名字</i>」</strong>跟<strong>「<i>end</i>」</strong>之間，<u>指定<strong>「routes.rb」</strong>上設定好的各個網頁的操作資料的方法</u>。
         <br>
-        <small>（例えば「Post.all」だったり「Post.create(いろいろ)」だったり「Post.find(番号)」）</small>
+        <small>（例如說「Post.all」或者是「Post.create」或者是「Post.find(id號碼)」）</small>
         <br><br>
-        <i class="fa fa-arrow-circle-right color-red"></i>　なのでもし<strong>「<u>routes.rb</u>」</strong>で<strong>「<u>destroy</u>」</strong>を設定しなかったのであれば、
+        <i class="fa fa-arrow-circle-right color-red"></i>　所以如果是<strong>「<u>routes.rb</u>」</strong>上沒有設定<strong>「<u>destroy</u>」</strong>的話，
         <br><br>
 <table class='highlight'>
 <tr>
@@ -179,13 +179,13 @@
 </tr>
 </table>
         <br>
-        の2行はいりません。
+        不用這個兩行。
         <br>
-        ここらへんは好きなように設定して下さい。
+        這些部分就想設定什麼就設定什麼。
         <hr class="red-hr">
-        では、この中にデータの操作の方法を設定していきましょう。
+        那麽，解釋設定操作資料的方法吧。
         <br>
-        今回は<strong>「<u>１つのデータの表示（show）</u>」</strong>なので、
+        這一次是<strong>「<u>顯示一個資料（show）</u>」</strong>的網頁，所以
         <br><br>
 <table class='highlight'>
 <tr>
@@ -198,15 +198,16 @@
 </tr>
 </table>
         <br>
-        にデータ操作の設定をしていきます。
+        在上面的內容中，設定內容。
         <br>
-        では設定してみましょう。
+        那麽開始設定吧。
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（3〜5行目）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（第3〜5行）</strong>
         <br>
-        <small>※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <small>
+        ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
         <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -222,23 +223,23 @@
 </tr>
 </table>
         <br>
-        <strong>これがページに「<u>１つのデータの表示（show）</u>」をするデータ操作の設定です。</strong>
+        <strong>這個是網頁上設定「<u>顯示一個資料（show）</u>」的操作資料的方法。</strong>
         <br><br>
-        よく見たら、「<u>Post.find(選択するid)</u>」が使われていますね。
+        有看見「<u>Post.find(選擇的id號碼)</u>」吧。對。在這裡選擇資料。
         <br>
-        後ろの<strong>「<u>params[:id]</u>」</strong>という部分は<strong>「<u>ページからidを取ってくる</u>」</strong>ことを示しているんですが、ここらへんは覚えるなりコピペして下さい。
+        後面的<strong>「<u>params[:id]</u>」</strong>的部分在表現<strong>「<u>從網頁拿來id</u>」</strong>的意思。這樣子選擇網頁的資料（比如說推特的話，一個一個的推特）。
         <hr class="red-hr">
-        <strong class="little-remarkable">では、「@post」はなんなのでしょうか？これはいるのでしょうか？</strong>
+        <strong class="little-remarkable">那麽「@post」是什麼呢？</strong>
         <br><br>
-        この「@post」は、<strong><u>ページを表示させるhtmlファイルにデータを表示させる時の標識</u></strong>になります。
+        「@post」是，<strong><u>顯示網頁的html文件上，顯示資料的時候使用的標記</u></strong>。
         <br>
-        <strong>この標識をhtmlファイルの中に入れていくことで、ページにデータを表示させます。</strong>
+        <strong>在html文件裡放這個標記的話，可以在網頁上顯示資料。</strong>
         <br>
-        <small>※　この標識の名前は<strong><u>「@」から始めるものならなんでも大丈夫</u></strong>なのですが、自分が分かりやすい名前にしましょう。</small>
+        <small>※　這個標記的名字是<strong><u>，從「@」開始的單詞的話什麼都可以</u></strong>。命名自己可以理解的名字吧。</small>
         <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>「tweets」のデータベースの「<u>１つのデータの表示（show）</u>」の設定を書いてみましょう！</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>設定「tweets」資料庫的「<u>顯示一個資料（show）</u>」的操作資料的內容吧！</strong>
         <br><br>
-        <textarea class="form-control input-code" placeholder="答えを入力して下さい" rows="3"></textarea>
+        <textarea class="form-control input-code" placeholder="打入答案吧" rows="3"></textarea>
         <br>
         <i class="fa fa-file color-red"></i>　<strong>tweets_controller.rb</strong>
 <table class='highlight'>

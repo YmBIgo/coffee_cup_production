@@ -1,39 +1,39 @@
-<h2 class="textbook-section-title" id="title1"><strong>1 : ページ設定をしてみよう！</strong></h2>
+<h2 class="textbook-section-title" id="title1"><strong>1 : 設定網頁</strong></h2>
         <h4 id="chapter5-1">
-        <a href="/mugcups/2#title1-1" target="_blank"><strong>第２章</strong></a>で少しだけ触れましたが、Ruby on Railsではデータの操作の方法に応じたページの設定をします。
+        在<a href="/zh-TW/mugcups/2#title1-1" target="_blank"><strong>第二章</strong></a>解釋過，Ruby on Rails 是隨着保存資料的方法設定各個網頁。
         <br><br>
-        大まかに分ければ<strong>「<u>データの表示・作成・変更・削除</u>」</strong>の４つになるのですが、ちゃんと分けると<strong><u>７つ</u></strong>になります（やっていることは４つだけですが）。
+        設定的網頁可以分類成<strong>「<u>資料的顯示・新增・編輯・刪除</u>」</strong>這個四種網頁，但正確分類的話有<strong><u>七個</u></strong>（操作的資料的操作是只有4種）。
         <br>
-        <small>※　とりあえずはこれ以外はないと思って下さい。</small>
+        <small>※　現在就記住這個七種就OK</small>
         <br><br>
         <ul class="number_ul">
-          <strong><li>データの全表示　　　　　<u>index</u></li></strong>
-          <small>例：タイムライン<br>→<strong>「<i>Post.all</i>」</strong>を裏で設定</small>
-          <strong><li>一つのデータの表示　　　<u>show</u></li></strong>
-          <small>例：一つのツイート<br>→<strong>「<i>Post.find(idの数字)</i>」</strong>を裏で設定</small>
-          <strong><li>新しいデータの記入　　　<u>new</u></li></strong>
-          <strong><li>データの作成　　　　　　<u>create</u></li></strong>
-          <small>例：ツイートする画面<br>→<strong>「<i>Post.create(いろいろ)</i>」</strong>を裏で設定</small>
-          <strong><li>編集するデータの記入　　<u>edit</u></li></strong>
-          <strong><li>データの変更　　　　　　<u>update</u></li></strong>
-          <small>例：プロフィールを変更する画面<br>→<strong>「<i>Post.find(idの数字).update(いろいろ)</i>」</strong>を裏で設定</small>
-          <strong><li>データの削除　　　　　　<u>destroy</u></li></strong>
-          <small>例：ツイートを削除する画面<br>→<strong>「<i>Post.find(idの数字).destroy</i>」</strong>を裏で設定</small>
+          <strong><li>顯示全部的資料　　　<u>index</u></li></strong>
+          <small>例：推特的主頁<br>→顯示的資料用<strong>「<i>Post.all</i>」</strong>設定</small>
+          <strong><li>顯示一個資料　　　　<u>show</u></li></strong>
+          <small>例：一個推特<br>→顯示的資料用<strong>「<i>Post.find(id號碼)</i>」</strong>設定</small>
+          <strong><li>打入新的資料　　　　<u>new</u></li></strong>
+          <strong><li>新增資料　　　　　　<u>create</u></li></strong>
+          <small>例：作推特的畫面<br>→資料用<strong>「<i>Post.create</i>」</strong>設定</small>
+          <strong><li>打入編輯的資料　　　<u>edit</u></li></strong>
+          <strong><li>編輯資料　　　　　　<u>update</u></li></strong>
+          <small>例：編輯帳號的畫面<br>→資料用<strong>「<i>Post.find(id號碼).update</i>」</strong>設定</small>
+          <strong><li>刪除資料　　　　　　<u>destroy</u></li></strong>
+          <small>例：刪除推特的畫面<br>→資料用<strong>「<i>Post.find(id號碼).destroy</i>」</strong>設定</small>
         </ul>
         <br>
-        こう見ると、<a href="/mugcups/4" target="_blank"><strong>前章</strong></a>で取り扱ったデータ操作の方法と多く対応していることが分かると思います。
+        這樣看來，可以看出用設定<a href="/zh-TW/mugcups/4" target="_blank"><strong>在上章</strong></a>學習的操作資料的方法顯示內容。
         <br>
-        この７つの設定を<u><strong>データ操作を設定するファイル</strong></u>に設定します。
+        這些七個設定要在<u><strong>設定資料操作的文件</strong></u>上設定。
         <br><br>
-        <i class="fa fa-star color-red"></i>　この章では、<u>この７つのページを前章で作った<strong>「posts」のデータベース</strong>を使って設定したい</u>と思います。
+        <i class="fa fa-star color-red"></i>　在這個章，<u><strong>用「posts」資料庫</strong>作作看這個七個網頁吧</u>。
         <br><br>
-        これらのページの設定には、<strong><u>３つの設定</u></strong>をする必要があります。
+        各個設定中必須要有<strong><u>三個設定</u></strong>。
         <ul class="number_ul">
-          <strong><li>７つのページのうち、どれを使うかの設定</li></strong>
-          <strong><li>データ操作の設定</li></strong>
-          <strong><li>ページの内容の設定（html）</li></strong>
+          <strong><li>七個網頁中，使用哪一個網頁的設定</li></strong>
+          <strong><li>資料操作的設定</li></strong>
+          <strong><li>網頁內容的設定（html）</li></strong>
         </ul>
-        この<strong><u>３つの設定</u></strong>を行えば、ページは表示されます。
+        做了<strong><u>這個三個設定</u></strong>後，網頁會顯示。
         <hr class="red-hr">
-        <strong class="little-remarkable">ここではまず「１つのデータの表示（show）」をするページを作ってみましょう！</strong>
+        <strong class="little-remarkable">剛開始，作作看「顯示一個資料（show）」的網頁吧！</strong>
         </h4>

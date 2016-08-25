@@ -1,68 +1,74 @@
 <h4 id="chapter5-1-1-3">
-        <p id="title1-1-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : ページを設定する</strong></p>
-        ここまでで<u>「７つのページの設定」と「データ操作の設定」</u>が終わりました。
+        <p id="title1-1-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 網頁的設定</strong></p>
+        到這裡設定了<u>「七個網頁的設定」跟「操作資料的設定」的方法</u>。
         <br><br>
-        <strong>いよいよ、保存したデータをページに表示してみましょう！</strong>
-        ページの作成は、前に少し触れた<strong class="little-remarkable"><u>「views」フォルダにhtmlファイルを作る</u></strong>ことでやっていきます。
+        <strong>那麽，在網頁上顯示保存的資料吧！</strong>
+        網頁的設定、要從<strong class="little-remarkable"><u>「views」文件夾裡作html文件</u></strong>上做。
         <hr class="red-hr">
-        まずは下の手順に従って、Sublime Textで開いた<strong>「<u>myapp > app</u>」</strong>から<strong>「<u>views</u>」</strong>フォルダを開いてみましょう！
+        那麽參考下面的圖像，從Sublime Text打開的<strong>「<u>myapp > app</u>」</strong>打開<strong>「<u>views</u>」</strong>文件夾吧！
         <br>
         <small>
-        ※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい
-        <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsでのファイル・フォルダの開き方は、<a href="/mugcups/how_to_open#title2" target="_blank"><strong>こちら</strong></a>を参考にして下さい。
+          ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
         </small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Select_views.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Select_views.png",
                     :target => ["_blank"] %>
-        この「views」フォルダに入っている<strong><u>「posts」ファルダ</u>に、ページを表示させるための設定ファイル・htmlファイルを作っていきます。</strong>
+        這個「views」文件夾裡面的<strong><u>「posts」文件夾</u>裡，作作看為了顯示網頁的設定文件・html文件。</strong>
         <br><br>
-        まずはこの<strong>「<u>posts</u>」ファルダにページを設定するファイル、「<u>show.html.erb</u>」を保存してみましょう！</strong>
+        事先<strong>「<u>posts</u>」文件夾裡保存，顯示網頁的設定文件「<u>show.html.erb</u>」吧！</strong>
         <br>
-        <small>※　ファイルの保存の方法は<a href="/mugcups/how_to_save" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+        <small>
+        ※　保存文件的方法，<a href="/zh-TW/mugcups/how_to_save" target="_blank"><strong>請參考這裡</strong></a>
+        </small>
         <br>
-        <small>※　<strong><u>「show.html」でなくて「show.html.erb」</u></strong>などという変な名前なのは、Ruby on Railsでデータを扱うためのファイルだからです。</small>
+        <small>※　<strong>Ruby on Rails上文件的名字不用「show.html」用「show.html<u>.erb</u>」。請記住。</strong></small>
         <br><br>
-        できたら、下の手順で<strong>「<u>show.html.erb</u>」</strong>を開いてみましょう。
+        完了之後，參考下面的圖像打開看看<strong>「<u>show.html.erb</u>」</strong>吧。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_posts_show_html_erb.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_posts_show_html_erb.png",
                     :target => ["_blank"] %>
-        この設定ファイルにページの設定を記入していきます。
+        在這個設定文件上，設定顯示網頁的設定。
         <hr class="red-hr">
-        ついでに同じ手順で、
+        那麽，跟剛才的手順一樣，<strong>「<u>posts</u>」文件夾裡</strong>保存
         <br><br>
         <ul class="number_ul">
         <strong>
-          <li>「index.html.erb」（データの全表示をするページ）</li>
-          <li>「new.html.erb」（新しいデータの記入をするページ）</li>
-          <li>「create.html.erb」（データの作成）</li>
-          <li>「edit.html.erb」（編集するデータの記入をするページ）</li>
-          <li>「update.html.erb」（データを変更するページ）</li>
-          <li>「destroy.html.erb」（データの削除をするページ）</li>
+          <li>「index.html.erb」（顯示全部的資料的網頁）</li>
+          <li>「new.html.erb」（打入新的資料的網頁）</li>
+          <li>「create.html.erb」（新增資料的網頁）</li>
+          <li>「edit.html.erb」（打入編輯的資料的網頁）</li>
+          <li>「update.html.erb」（編輯資料的網頁）</li>
+          <li>「destroy.html.erb」（刪除資料的網頁）</li>
         </strong>
         </ul>
         <br>
-        を新しく<strong>「<u>posts</u>」フォルダ</strong>の中に作ってみましょう！
+        這個六個文件吧。
+        <small>
+          ※　保存文件的方法，<a href="/zh-TW/mugcups/how_to_save" target="_blank"><strong>請參考這裡</strong></a>
+        </small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_views_posts_all.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_views_posts_all.png",
                     :target => ["_blank"] %>
-        これらのファイルを使って、他のページの設定をしていきます。
+        使用這些文件，設定網頁的內容。
         <hr class="red-hr">
-        <i class="fa fa-play-circle"></i>　<strong>では、ページの設定をしてみましょう！</strong>
+        <i class="fa fa-play-circle"></i>　<strong>那麽做做看網頁的設定吧！</strong>
         <br><br>
-        まずはhtmlの復習を兼ねて、<strong><u>文字を表示させましょう。</u></strong>
+        首先<strong><u>顯示看文字吧。</u></strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
         <br>
-        <small>※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <small>
+        ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
         <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -74,21 +80,21 @@
 </tr>
 </table>
         <br>
-        <u>これで内容が保存できたら、ブラウザで表示させてみましょう！</u>
+        <u>這樣子保存好資料的話，用遊覽器看看內容吧！</u>
         <br><br>
-        Ruby on Railsで作ったウェブページでは、<strong><u>まずサーバーを立ちあげてからページを表示させます。</u></strong>
+        用 Ruby on Rails 作的網站，<strong><u>要先起動服務器之後再顯示網頁。</u></strong>
         <br>
-        <small>※　詳しい内容は<a href="/mugcups/3#title2-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+        <small>※　詳細的內容<a href="/zh-TW/mugcups/3#title2-3" target="_blank"><strong>參考這裡</strong></a></small>
         <br><br>
-        <strong class="little-remarkable">サーバーを立ちあげて、ページを見てみましょう！</strong>
+        <strong class="little-remarkable">那麽起動服務器，看看網頁吧！</strong>
         <hr class="red-hr">
-        まずは、<strong><u>ターミナルで「myapp」に移動して下さい。</u></strong>
+        首先，<strong><u>用terminal移動到「myapp」吧。</u></strong>
         <br><br><br>
         <p class="alert alert-success">
-            <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、<a href="/mugcups/windows_tips#title1-2" target="_blank">こちら</a>を参考にして下さい。</strong>
+            <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話，<a href="/zh-TW/mugcups/windows_tips#title1-2" target="_blank">請參考這裡</a></strong>
         </p>
         <br>
-        <strong>ターミナル</strong>
+        <strong>terminal</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -102,12 +108,12 @@
 </tr>
 </table>
         <br><br>
-        「myapp」まで移動できたら、<strong>「<i>rails s</i>」</strong>を入力してサーバーを立ちあげましょう！
+        移動到「myapp」之後，打入<strong>「<i>rails s</i>」</strong>起動服務器。
         <br><br>
-        <strong>ターミナル</strong>
+        <strong>terminal</strong>
         <br>
         <small>
-          <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
         </small>
 <table class='highlight'>
 <tr>
@@ -118,51 +124,51 @@
 </tr>
 </table>
         <br>
-        下のように表示されたでしょうか？
+        顯示下面圖像一眼的畫面嗎？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rails_s.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rails_s.png",
                     :target => ["_blank"] %>
-        これでサーバーを立ち上げることができました。
+        這樣，起動服務器了。
         <br>
-        サーバーが立ち上がったんで、これでページもみられるようになりました。
+        應為服務器起動了，現在可以從遊覽器看網站了。
         <br><br>
-        では、「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」をブラウザで開いてみましょう！
+        那麽用遊覽器，打開看「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」吧！
         <br><br><br>
         <p class="alert alert-success">
-        <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、<a href="http://localhost:3000" target="_blank">localhost:3000</a>を開いて下さい。</strong>
+        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話，打開<a href="http://localhost:3000/posts/1" target="_blank">localhost:3000/posts/1</a>吧。</strong>
         </p>
         <br>
-        下のようなページは出てきたでしょうか？
+        有顯示像下面圖像一樣的畫面嗎？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_1.png",
                     :target => ["_blank"] %>
-        「１つのデータを表示する（show）」のページは、<strong>「<u>0.0.0.0:3000/データベース名/idの番号</u>」</strong>で「idの番号」のデータを選択することができます。
+        「顯示一個資料（show）」的網頁是，在遊覽器從<strong>「<u>0.0.0.0:3000/資料庫的名字/id號碼</u>」</strong>打開。在「id號碼」的地方，可以選擇資料。
         <br>
-        このページは<strong>「<u>postsデータベースの中から、idが1</u>」</strong>のデータを選択しています。
+        這個網頁在選擇<strong>「<u>posts資料庫裡，id是1</u>」</strong>的資料。
         <hr class="red-hr">
-        では次に試しに、「<a href="http://0.0.0.0:3000/posts/2016" target="_blank"><strong>0.0.0.0:3000/posts/2016</strong></a>」をブラウザで開いてみて下さい。
+        那麽接着用遊覽器打開看「<a href="http://0.0.0.0:3000/posts/2016" target="_blank"><strong>0.0.0.0:3000/posts/2016</strong></a>」吧。
         <br>
-        <small><i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong>「<a href="http://localhost:3000/posts/2016" target="_blank">localhost:3000/posts/2016</a>」</strong>をブラウザで開いてみて下さい。</small>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，用遊覽器打開看<strong>「<a href="http://localhost:3000/posts/2016" target="_blank">localhost:3000/posts/2016</a>」</strong>吧。</small>
         <br><br>
-        下のようなエラーの表示っぽいものはでてきたでしょうか？
+        有沒有出現，下面一樣的Error的畫面嗎？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_2016.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_2016.png",
                     :target => ["_blank"] %>
-        これは、<strong>「<u>idが2016のpostsのデータ</u>」がないから</strong>です。
+        這個是應為，沒有<strong>「<u>id是2016的posts資料</u>」</strong>。
         <br>
-        もし他に保存したデータがあったら、そのページを開いてみましょう！
+        如果還有別的保存過的資料的話、打開看看那個網頁吧！
         <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>「<u>tweetsのデータベースからidが9028のデータを選択</u>」する「１つのデータの表示（show）」をするページをブラウザで開くには、どのように入力すればいいのでしょうか？</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>從遊覽器打開「<u>從tweets資料庫裡，選擇id是9028的資料</u>」的「顯示一個資料（show）」的網頁要這麼打入好呢？</strong>
         <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <input type="input" class="form-control input-code" placeholder="打入答案">
         <br>
-        <i class="fa fa-chrome color-red"></i><strong>　ブラウザ</strong>
+        <i class="fa fa-chrome color-red"></i><strong>　遊覽器</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -173,17 +179,18 @@
 </table>
         <br>
         <hr class="red-hr">
-        ここまでで各データのページを作ってみました。
+        到這裡，作了在顯示各個資料的網頁。
         <br><br>
-        <strong><u>でもこれだけではなにも変わらなくて面白くないので、保存したデータを表示させてみましょう！</u></strong>
+        <strong><u>接着，顯示看保存的資料吧！</u></strong>
         <br>
-        <u>下のように<strong>「show.html.erb」</strong>を変更してみましょう！</u>
+        <u>像下面，編輯<strong>「show.html.erb」</strong>的內容吧！</u>
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（2、3行目を変更）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（編輯第2、3行）</strong>
         <br>
-        <small>※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-        <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <small>
+          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -199,29 +206,29 @@
 </tr>
 </table>
         <br>
-        内容が変更できたら、ターミナルで<strong>「<u>myapp</u>」</strong>に移動してから<strong>「<i>rails s</i>」</strong>でサーバを立ち上げて、「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう！
+        內容編輯之後，在terminal上移動到<strong>「<u>myapp</u>」</strong>之後，用<strong>「<i>rails s</i>」</strong>打開服務器打開「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」吧。
         <br><br>
         <small>
-        <i class="fa fa-windows color-blue"></i>　Windowsでの「myapp」までの移動は<strong><a href="/mugcups/windows_tips#title1-2" target="_blank">こちら</a></strong>を参考にして下さい。
+        <i class="fa fa-windows color-blue"></i>　使用Windows移動到「myapp」的方法，<strong><a href="/zh-TW/mugcups/windows_tips#title1-2" target="_blank">請參考這裡</a></strong>。
         <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsでのページは、<strong>「<a href="http://localhost:3000/posts/1" target="_blank">localhost:3000/posts/1</a>」</strong>から開けます。
+        <i class="fa fa-windows color-blue"></i>　Windows的網站，可以從<strong>「<a href="http://localhost:3000/posts/1" target="_blank">localhost:3000/posts/1</a>」</strong>打開。
         </small>
         <br><br>
-        下のように保存されたデータが表示されたでしょうか？
+        有沒有跟下面圖像一樣，顯示保存的資料嗎？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
                     :target => ["_blank"] %>
-        <u>他に保存したデータがあれば、それも同じように開いて内容を確認してみましょう！</u>
+        <u>還有別的保存的資料的話，那個資料也用跟這一樣的方法打開看確認內容吧！</u>
         <br>
         <small>
-        ※　Sequel Proの使い方は<a href="/mugcups/how_to_open#title3" target="_blank"><strong>こちら</strong></a>を参考にして下さい。
+        ※　使用Sequel Pro的方法<a href="/zh-TW/mugcups/how_to_open#title3" target="_blank"><strong>請參考這裡</strong></a>。
         <br>
-        ※　SqliteBrowserの使い方は<a href="/mugcups/how_to_open#title4" target="_blank"><strong>こちら</strong></a>を参考にして下さい。
+        ※　使用SqliteBrowser的方法<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank"><strong>請參考這裡</strong></a>。
         </small>
         <hr class="red-hr">
-        <strong>では、htmlファイルの設定を説明しましょう。</strong>
+        <strong>那麽，說明設定 html文件的方法吧。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
 <table class='highlight'>
@@ -237,11 +244,11 @@
 </tr>
 </table>
         <br>
-        内容はなんとなく想像できるのではないかと思います。
+        內容應該可以推測吧。
         <br><br>
-        <strong><a href="/mugcups/5#title1-1-2" target="_blank">先程データ操作の部分</a>で設定した「<u>@post</u>」</strong>がありますね。この<strong>「<u>@post</u>」</strong>がページで選択されたデータになります。
+        有沒有看到<strong><a href="/zh-TW/mugcups/5#title1-1-2" target="_blank">剛才的解釋操作資料的地方</a>設定的「<u>@post</u>」</strong>嗎？這個<strong>「<u>@post</u>」</strong>是在選擇網頁的資料。
         <br><br>
-        <u>なので、もしデータ操作の部分・<strong>「posts_controller.rb」</strong>で<strong>「@post」</strong>を設定しなければ、このようなデータは表示されません。</u>
+        <u>所以，如果在操作資料的部分・<strong>「posts_controller.rb」</strong>沒有設定<strong>「@post」</strong>的話，不會顯示這樣子的資料。</u>
         <br><br>
 <table class='highlight'>
 <tr>
@@ -252,9 +259,9 @@
 </tr>
 </table>
         <br>
-        の部分で、<strong><u>データ操作で選択された「@post」から「name」を取り出しています。</u></strong>
+        在這個部分，<strong><u>從「@post」拿出「name」。</u></strong>
         <br>
-        同じように、
+        同樣的
         <br><br>
 <table class='highlight'>
 <tr>
@@ -265,37 +272,37 @@
 </tr>
 </table>
         <br>
-        <strong><u>で「content」を取り出しています。</u></strong>
+        <strong><u>在拿出「content」。</u></strong>
         <hr class="red-hr">
-        少しだけ説明を加えます。
+        簡單的追加說明。
         <br><br>
-        <strong>Ruby on Railsで作るhtmlファイルでは、<u>データベースからデータを取ってくる</u>必要があります。</strong>
+        <strong>用 Ruby on Rails作的html文件，<u>要必須從資料庫選擇資料</u>。</strong>
         <br><br>
-        そのような部分は、
+        這樣子的部分用，
 <pre>
 &lt;%= 内容 %&gt;
 </pre>
-もしくは、
+或者是
 <pre>
 &lt;% 内容 %&gt;
 </pre>
-        のように設定します。
+        設定內容。
         <br><br>
-        <strong>この<u>「&lt;%=」もしくは「&lt;%」</u>と、<u>「%&gt;」</u>の間でデータベースからの情報をとってきます。
+        <strong>在這個<u>「&lt;%=」或者「&lt;%」</u>跟<u>「%&gt;」</u>之間，取得資料庫的資料。
         <br>
-        <u>「&lt;%=」と「%&gt;」</u>の間の内容はページに表示されますが、<u>「&lt;%」と「%&gt;」</u>の間の内容は表示されません。</strong>
+        <u>「&lt;%=」跟「%&gt;」</u>之間的內容會顯示在網頁上，但是<u>「&lt;%」跟「%&gt;」</u>之間的內容不會顯示。</strong>
         <br><br>
-        内容とは言っても、ここに入る内容は<strong><u>データベースの操作の設定や簡単な計算</u></strong>しか入れることができません。これはその都度説明していきましょう。
+        內容也只能打入<strong><u>資料庫裡的資料或者簡單的算數 等等...</u></strong>。這些在等一下解釋吧。
         <hr class="red-hr">
-        今回のような<strong>「１つのデータを表示する（show）」データベースの操作</strong>は、
+        像這一次一樣的<strong>「顯示一個資料（show）」的資料的操作</strong>是，
 <pre>
-@設定した標識.枠組みの名前
+@設定的標記.框字的名字
 </pre>
-        で設定します。
+        設定。
         <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>では、「<u>@tweetからplaceを選択</u>」する表示は、どのように設定すればいいのでしょうか？</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>那麽，「<u>從@tweet選擇place</u>」的顯示要怎麼設定好呢？</strong>
         <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <input type="input" class="form-control input-code" placeholder="打入答案">
         <br>
 <table class='highlight'>
 <tr>
@@ -306,9 +313,9 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <i class="fa fa-question-circle color-green"></i>　<strong>今のページでは、選択したデータ「@post」から「name」と「content」しか表示させていませんが、<u>「place」を表示させる設定を追加しましょう。</u></strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>現在的網頁上，從選擇的資料「@post」只能拿出「name」跟「content」而已。在這裡<u>追加顯示「place」的設定吧。</u></strong>
         <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <input type="input" class="form-control input-code" placeholder="打入答案">
         <br>
 <table class='highlight'>
 <tr>

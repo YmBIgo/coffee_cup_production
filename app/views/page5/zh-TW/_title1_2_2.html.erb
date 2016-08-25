@@ -1,83 +1,31 @@
 <h4 id="chapter5-1-2-2">
-        <p id="title1-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : ページの移動をする</strong></p>
+        <p id="title1-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 移動網頁</strong></p>
         <br>
-        <strong>ここまででページの全表示は終わりましました。</strong>
+        <strong>到這裡「顯示全部的資料（index）」的網頁的設定完成了。</strong>
         <br><br>
         <strong>
-        ですが、いちいちブラウザで入力してページを移動するのは面倒だと思いませんか？<u>ページはワンクリックで移動したいですよね？</u>
+        但是在遊覽器上一次一次打入移動網頁的方法，會不會覺得有一點麻煩呢？<u>普通的網頁是點擊一次就可以移動網頁。</u>
         </strong>
         <br><br>
-        最後に、<strong>全てのデータのページから一つのデータのページへ・一つのデータのページから全部のデータのページへの<u>移動</u></strong>をやってみたいと思います。
+        最後想做做看，<strong>從全部的資料網頁（index）到一個資料的網頁（show）/ 從一個資料的網頁（show）到全部的資料的網頁<u>的移動</u></strong>。
         <br>
         <br>
-        ページの移動は全て、ページの設定をしている「html.erb」ファイルでやっていきます。まずは<u><strong>「show.html.erb」</strong>に、データを全表示するページに移動できるような設定<strong>（リンク）</strong></u>を加えましょう。
+        網頁的移動、要在「html.erb」文件上做。首先在<u><strong>「show.html.erb」</strong>上，追加點擊後移動到「顯示全部的資料的網頁（index）」的設定<strong>（連結）</strong></u>。
         <br><br>
-        ページを移動させるのは
+        移動網頁是
 <pre>
-&lt;a href="飛びたいページ"&gt;文字&lt;/a&gt;
+&lt;a href="移動到的網頁"&gt;文字&lt;/a&gt;
 </pre>
-        <strong>と設定して、<u>クリックすると指定したページに移動する文字（リンク）を表示</u>します。</strong>
+        這樣子設定。<strong>設定後，網頁上會出現<u>點擊後會移動到指定的網頁的文字</u>。</strong>
         <br><br>
-        <u>では試してみましょう。<strong>「show.html.erb」</strong>を下のように変更してみましょう。</u>
+        <u>那麽試試看吧。按照下面的內容，編輯<strong>「show.html.erb」</strong>。</u>
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（4行目）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第4行）</strong>
         <br>
-            <small>※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-            <br>
-            <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-            </small>
-        <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-2
-3
-4
-</td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"https://amazon.com"</span>&gt;amazon&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-</td>
-</tr>
-</table>
-        <br>
-        変更ができたらブラウザで「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう。
-        <br>
-        <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<u><strong>「Command」と「c」を一緒に押して止めて</strong></u>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。 </small>
-        <br><br><br>
-        <p class="alert alert-success">
-          <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、<br>　　<u>「ctrl」と「c」</u>でサーバーを止め「<u>rails s</u>」を入力し、「<a href="http://localhost:3000/posts/1">localhost:3000/posts/1</a>」を開いて下さい。</strong>
-        </p>
-        <br>
-        下のように表示されたでしょうか？
-        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_3.png",
-                              :width => "90%",
-                              :class => "hover_img textbook-title-img"),
-                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_3.png",
-                    :target => ["_blank"] %>
-        「amazon」の部分をクリックしたら、amazonのページに移動できたでしょうか？
-        <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>Facebookのページ（<a href="http://facebook.com" target="_blank">http://facebook.com</a>）へ移動する「クリック」の文字（リンク）を設定してみてください。</strong>
-        <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
-        <br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://facebook.com"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
-</td>
-</tr>
-</table>
-        <hr class="red-hr">
-        同じような具合で、<strong><u>「１つのデータを表示する（show）」ページから「全てのデータを表示する（index）」ページに移動</u>できるようにしましょう。</strong>
-        <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（4行目を変更）</strong>
-        <br>
-        <small>※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-        <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <small>
+          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -90,49 +38,106 @@
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://www.books.com.tw/"</span>&gt;博客來&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
         <br>
-        変更ができたら、ブラウザで「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」を開いてみましょう。
+        顯示之後，用遊覽器打開「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」吧。
         <br>
-        <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<u><strong>「Command」と「c」を一緒に押して止めて</strong></u>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。 </small>
+        <small>
+        ※　為了適用內容，<strong><u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+        </small>
         <br><br><br>
         <p class="alert alert-success">
-          <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、<br>　　<u>「ctrl」と「c」</u>でサーバーを止め「<u>rails s</u>」を入力し、「<a href="http://localhost:3000/posts/1">localhost:3000/posts/1</a>」を開いて下さい。</strong>
+          <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話，<br>　　<u>一起點擊「ctrl」跟「c」</u>停止用「<u>rails s</u>」打開服務器之後，再打入<u>「rails s」</u>。之後打開「<a href="http://localhost:3000/posts/1">localhost:3000/posts/1</a>」。</strong>
         </p>
         <br>
-        変更をした「トップに戻る」を押したら、
-        <br>
-        <strong>「データの全表示（index）」</strong>をするページ「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」に移動はできたでしょうか？
+        顯示像下面的圖像一樣的圖像嗎？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_3.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_3.png",
+                    :target => ["_blank"] %>
+        點擊「博客來」的部分之後，移動到博客來的網頁嗎？
         <br><br>
-        <i class="fa fa-arrow-right color-red"></i>　<strong>「/posts」の「/」が、
-        <br>
-        そのページ自身の<u>url「0.0.0.0:3000」（Windowsの場合は「localhost:3000」）を示している</u>のでページを移動できるようになっています。</strong>
+        <i class="fa fa-question-circle color-green"></i>　設定看移動到<strong>Facebook（<a href="http://facebook.com" target="_blank">http://facebook.com</a>）的文字吧文字吧。</strong>
         <br><br>
-        <i class="fa fa-question-circle color-green"></i><strong>　photosデータベースの「index」ページに移動する「クリック」の文字（リンク）を設定をしてみて下さい。</strong>
-        <br><br>
-        <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+        <input type="input" class="form-control input-code" placeholder="打入答案">
         <br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/photos"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://facebook.com"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
         <hr class="red-hr">
-        <strong>では、「index」のページから「show」のページに移動できるようにしましょう。</strong>
-        <br>
-        <u><strong>「index.html.erb」</strong>ファイルを下のように変更して下さい。</u>
+        跟上面一樣子，設定<strong><u>從「顯示一個資料（show）」的網頁到「顯示全部的資料（index）」移動</u>的連結吧。</strong>
         <br><br>
-        <i class="fa fa-file color-red"></i><strong>　index.html.erb（4行目）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（編輯第4行）</strong>
         <br>
-        <small>※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        <small>
+          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
         <br>
-        <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+        編輯之後，在遊覽器上打開「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」。
+        <br>
+        <small>
+          ※　為了適用內容，<strong><u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+        </small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話，<br>　　<u>一起點擊「ctrl」跟「c」</u>停止用「<u>rails s</u>」打開服務器之後，再打入<u>「rails s」</u>。之後打開「<a href="http://localhost:3000/posts/1" target="_blank">localhost:3000/posts/1</a>」。</strong>
+        </p>
+        <br>
+        點擊「主頁」之後，
+        <br>
+        移動到<strong>「顯示全部的資料（index）」</strong>的網頁「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」嗎？
+        <br><br>
+        <i class="fa fa-arrow-right color-red"></i>　<strong>應為「/posts」的「/」表示<u>url「0.0.0.0:3000」（Windows的話，「localhost:3000」）</u>，所以點擊之後移動網頁。</strong>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　設定看，移動到photos資料庫的「index」網頁的「按這裡」的連結。</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/photos"</span>&gt;按這裡&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <strong>那麽，「index」網頁上設定移動到「show」網頁的內容吧。</strong>
+        <br>
+        <u>按照下面的內容，編輯<strong>「index.html.erb」</strong>的內容。</u>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　index.html.erb（編輯第4行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -146,7 +151,7 @@
 7
 8
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -158,12 +163,14 @@
 </tr>
 </table>
         <br>
-        変更ができたら、ブラウザで「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみましょう。
+        顯示之後，在遊覽器上打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧。
         <br>
-        <small>※　内容を適用させるために、一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<u><strong>「Command」と「c」を一緒に押して止めて</strong></u>から、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。 </small>
+        <small>
+          ※　為了適用內容，<strong><u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+        </small>
         <br><br><br>
         <p class="alert alert-success">
-          <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、<br>　　<u>「ctrl」と「c」</u>でサーバーを止め「<u>rails s</u>」を入力し、「<a href="http://localhost:3000/posts">localhost:3000/posts</a>」を開いて下さい。</strong>
+          <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話，<br>　　<u>一起點擊「ctrl」跟「c」</u>停止用「<u>rails s</u>」打開服務器之後，再打入<u>「rails s」</u>。之後打開「<a href="http://localhost:3000/posts" target="_blank">localhost:3000/posts</a>」。</strong>
         </p>
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_3.png",
@@ -171,27 +178,27 @@
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_3.png",
                     :target => ["_blank"] %>
-        このように表示されたでしょうか？
+        顯示像上面一樣的畫面嗎？
         <br>
-        「id」の部分をクリックしてみて、<strong>ページ移動できるかを確認してみましょう！</strong>
+        點擊「id」的部分之後、<strong>看看可不可以移動網頁！</strong>
         <br><br>
-        <i class="fa fa-play-circle"></i>　<strong>内容を説明しましょう！</strong>
+        <i class="fa fa-play-circle"></i>　<strong>那麽解釋內容吧！</strong>
         <br><br>
-        <strong>「<u>0.0.0.0:3000/posts/idの番号」省略して「/posts/idの番号</u>」</strong>をブラウザで入力することで、「一つのデータを表示（show）」するページに移動します。
+        <strong>在連接上設定，省略「<u>0.0.0.0:3000/posts/id號碼」的「/posts/id號碼</u>」</strong>，這樣可以移動到「顯示一個資料（show）」的網頁。
         <br><br>
-        ここでは「<u>/posts/idの番号</u>」を指定するために、<strong>「<u>idの番号</u>」の部分にデータベースからidを入れる「<u>&lt;%= p.id %&gt;</u>」の設定をしています。</strong>
+        在這裡為了指定「<u>/posts/id號碼</u>」，<strong>在「<u>id號碼</u>」的部分設定顯示選擇的id「<u>&lt;%= p.id %&gt;</u>」。</strong>
         <br>
-        これでデータの「id」に応じたページの移動をしています。
+        這樣，用「id」設定各個網頁的移動。
         <hr class="red-hr">
-        <i class="fa fa-question-circle color-green"></i><strong>　<u>booksデータベースの「idが10」の「show」ページに移動する「クリック」のリンク</u>を設定してみて下さい。</strong>
+        <i class="fa fa-question-circle color-green"></i><strong>　<u>設定看，移動到books資料庫「id是10」的「show」網頁的「按這裡」的連結</u>。</strong>
         <br><br>
-        <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+        <input type="input" class="input-code form-control" placeholder="打入答案">
         <br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/10"</span>&gt;クリック&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/10"</span>&gt;按這裡&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
