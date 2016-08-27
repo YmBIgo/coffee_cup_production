@@ -1,0 +1,66 @@
+<h4 id="chapter6-1-5">
+        <p id="title1-5"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑤ : 編集するデータの記入(edit)</strong></p>
+        <br>
+        到這裡設定了
+        <strong>
+        <ul class="number_ul">
+            <li>「<a href="/zh-TW/mugcups/5#title1-1" target="_blank">顯示一個資料（show）</a>」</li>
+            <li>「<a href="/zh-TW/mugcups/5#title1-2" target="_blank">顯示全部的資料（index）</a>」</li>
+            <li>「<a href="/zh-TW/mugcups/6#title1-3" target="_blank">打入新的資料（new）</a>」</li>
+            <li>「<a href="/zh-TW/mugcups/6#title1-4" target="_blank">新增資料（create）</a>」</li>
+        </ul>
+        </strong>
+        <br>
+        這個四個網頁。
+        <br><br>
+        <strong>現在，還沒設定好的網頁只有「<u>資料的編輯</u>」跟「<u>資料的刪除</u>」這個兩個而已了。</strong>
+        <br>
+        首先做做看<strong>「<u>資料的編輯</u>」</strong>吧！
+        <hr class="red-hr">
+        「資料的編輯」是，在網頁上設定，<a href="/zh-TW/mugcups/4#title2-2" target="_blank"><strong>用「rails c」打入的資料的編輯。</strong></a>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "你好")</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        資料的編輯跟資料的新增一樣有
+        <br>
+        <strong>「<u>打入編輯的資料（edit）</u>」</strong>跟<strong>「<u>編輯資料（update）</u>」</strong>，這個兩種。
+        <br>
+        <strong>
+        <ul class="number_ul">
+            <li>先用「<u>edit</u>」顯示打入資料的網頁</li>
+            <li>再來用「<u>update</u>」保存打入的資料</li>
+        </ul>
+        </strong>
+        的順序。
+        <br><br>
+        首先在<strong>「<u>打入編輯的資料（edit）</u>」</strong>的網頁上打入資料，點擊<strong>「<u>更新</u>」</strong>按鈕之後，
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edit_1.png",
+                    :target => ["_blank"] %>
+        移動到<strong>「<u>編輯資料（update）</u>」</strong>的網頁。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
+                    :target => ["_blank"] %>
+        用遊覽器打開<strong>「<u>0.0.0.0:3000/posts/idの番号</u>」</strong>，可以看到資料有更新。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edited.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_edited.png",
+                    :target => ["_blank"] %>
+        首先，作作看這個<strong>「<u>打入編輯的資料（edit）</u>」</strong>的網頁吧！
+</h4>
+        <hr>
+        <%= render "page6/zh-TW/title1_5_1" %>
+        <hr>
+        <%= render "page6/zh-TW/title1_5_2" %>

@@ -1,0 +1,49 @@
+<h4 id="chapter6-1-6">
+          <p id="title1-6"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑥ : 編輯資料（update）</strong></p>
+          <br>
+          到這裡設定了<strong>「<u>打入編輯的資料（edit）</u>」</strong>的網頁了。
+          <br><br>
+          <strong>這個跟「<u>新增資料（create）</u>」的網頁一樣，還需要設定編輯資料的資料操作。</strong>
+          <br>
+          那麽，在這裡做做看資料的編輯吧！
+          <hr class="red-hr">
+          這一次設定的資料操作的方法是，在<a href="/zh-TW/mugcups/4#title2-2" target="_blank"><strong>第4章</strong></a>做的
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "晚安")</span>
+</td>
+</tr>
+</table>
+        <br>
+        這個內容。設定操作資料的地方（<i>posts_controller.rb</i>）裡，設定這個內容。
+        <strong>
+        從「<u>打入編輯的資料（edit）</u>」的網頁拿來資料之後，用上面的操作資料的方法編輯資料的內容。
+        </strong>
+        <br>
+        <small>※　這個網頁是從「打入編輯的資料（edit）」的網頁移動的，所以不用在遊覽器上打入URL。</small>
+        <br><br>
+        在這裡設定
+        <strong>
+        <ul class="number_ul">
+          <li>用「<u>打入編輯的資料（edit）</u>」的網頁上打入的資料，編輯資料</li>
+          <li>顯示編輯完成的網頁</li>
+        </ul>
+        </strong>
+        <hr class="red-hr">
+        那麽，做做
+        <strong>
+          <ul class="number_ul">
+            <li>「七個網頁的設定」</li>
+            <li>「資料操作的設定」</li>
+            <li>「網頁內容的設定」</li>
+          </ul>
+        </strong>
+        這個三個設定吧！
+        </h4>
+        <hr>
+        <%= render "page6/zh-TW/title1_6_1" %>
+        <hr>
+        <%= render "page6/zh-TW/title1_6_2" %>

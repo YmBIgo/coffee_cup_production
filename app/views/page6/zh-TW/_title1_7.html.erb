@@ -1,0 +1,54 @@
+<h4 id="chapter6-1-7">
+          <p id="title1-7"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑦ : 刪除資料（destroy）</strong></p>
+          <br>
+          這個是，這個章最後一個網頁的說明。
+          <br>
+          <strong><u>最後解釋「資料的刪除（destroy）」吧。</u></strong>
+          <hr class="red-hr">
+          在這裡設定的內容可以說是，在「<a href="/zh-TW/mugcups/4#title2-3" target="_blank"><strong>rails c</strong></a>」做的
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(3).destroy</span>
+</td>
+</tr>
+</table>
+        <br>
+        的操作資料的內容。
+        <hr class="red-hr">
+        首先，像下面的圖像一樣「顯示一個資料（show）」的網頁上<strong>追加移動到「刪除投稿」的網頁的連結，</strong>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
+                    :target => ["_blank"] %>
+        點擊連後，會移動到「刪除了」的網頁。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
+                    :target => ["_blank"] %>
+        在「顯示全部的資料（index）」的網頁上可以看到，像下面的圖像一樣資料有刪除了。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_all_after_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_all_after_destroy.png",
+                    :target => ["_blank"] %>
+        所以在這裡設定
+        <strong>
+        <ul class="number_ul">
+          <li>追加移動到刪除資料的網頁的設定</li>
+          <li>操作資料的設定</li>
+          <li>顯示網頁的設定</li>
+        </ul>
+        </strong>
+        這個三個內容。
+        <br><br>
+        那麽，開始做「刪除資料」的設定吧！
+        </h4>
+        <hr>
+        <%= render "page6/zh-TW/title1_7_1" %>
+        <hr>
+        <%= render "page6/zh-TW/title1_7_2" %>

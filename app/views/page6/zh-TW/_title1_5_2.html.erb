@@ -1,0 +1,127 @@
+<h4 id="chapter6-1-5-2">
+        <p id="title1-5-2"><i class="fa fa-tags color-red"></i>　<strong>⑵ : 總結</strong></p>
+        <br>
+        <strong>「<u>打入編輯的資料（edit）</u>」</strong>的網頁要做三個設定。
+        <br><br>
+        <strong>設定的內容<a href="/zh-TW/codes/6" target="_blank">請參考這裡</a></strong>
+        <hr class="red-hr">
+        <p id="title1-5-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七個網頁的設定</strong></p>
+        <br>
+        <strong>「config」文件夾裡的「routes.rb」文件裡，追加「<u>edit</u>」</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <p id="title1-5-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>操作資料的設定</strong></p>
+        <br>
+        <strong>設定「app > controllers」文件夾裡的「資料庫的名字_controller」文件的「<u>edit</u>」。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<span class="color-red"><strong>2</strong></span>
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong>設定<u>選擇編輯的資料的「.find(params[:id])」跟，用html顯示標記「@post」</u>。</strong>
+        <hr class="red-hr">
+        <p id="title1-5-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>網頁的設定</strong></p>
+        <br>
+        <strong>在「app > views > 資料庫的名字」的文件夾裡的「<u>edit.html.erb</u>」裡，設定內容。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;編輯投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"更新"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span>&gt;返回投稿資料&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        在網頁上，<strong><u>顯示更新的資料的輸入框跟發信按鈕</u>。</strong>
+        <br><br>
+        <i class="fa fa-arrow-right"></i>　<strong>form_for</strong>
+        <br><br>
+        <strong>「<u>&lt;%= form_for @設定的標記 do |喜歡的名字| %&gt;</u>」</strong>指定要編輯的資料、
+        <br>
+        在<strong>「<u>&lt;% end %&gt;</u>」</strong>之間<u>作資料的輸入框跟「更新（update）」的發信按鈕。</u>
+        <br><br>
+        <i class="fa fa-arrow-right"></i>　<strong>輸入框・發信按鈕</strong>
+        <br><br>
+        打入<strong>「<u>&lt;%= 名字.輸入框 :框子的名字 %&gt;</u>」</strong>作資料的輸入框，
+        <br>
+        打入<strong>「<u>&lt;%= 名字.submit "顯示的文字" %&gt;</u>」</strong>作「更新（update）」的按鈕。
+        <br>
+        <small>※　短的文章的話<strong>「<u>名字.text_field</u>」</strong>，長的文章的話<strong>「<u>名字.text_area</u>」</strong>，數字的話<strong>「<u>名字.number_field</u>」</strong>設定內容。</small>
+        <hr class="red-hr">
+        <p id="title1-5-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>遊覽器上的顯示</strong></p>
+        <br>
+        設定完了之後，<strong>在terminal上打入「rails s」之後</strong>、用遊覽器打開網頁。
+        <br>
+        「打入編輯的資料」的網頁，從<strong>「<u>0.0.0.0:3000/資料庫的名字/id號碼/edit</u>」</strong>打開。
+        <br><br>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，打入<strong>「<u>localhost:3000/資料庫的名字/id號碼/edit</u>」</strong>打開。</small>
+        <hr class="red-hr">
+        到這裡，作了<strong>「<u>打入編輯的資料（edit）</u>」</strong>的網頁了。
+        <br><br>
+        <strong>接着，作作看「<u>編輯資料（update）</u>」的網頁吧。
+        <br><br>
+        設定的內容<a href="/zh-TW/codes/6" target="_blank">請參考這裡</a>。</strong>
+</h4>

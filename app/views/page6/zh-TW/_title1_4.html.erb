@@ -1,0 +1,46 @@
+<h4 id="chapter6-1-4">
+        <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : 新增資料（create）</strong></p>
+        <br>
+        到這裡「打入新的資料（new）」的網頁的設定好了。
+        <br><br>
+        <strong>現在資料的打入之後，可以從「<a href="/zh-TW/mugcups/6#title1-3" target="_blank">打入新的資料（new）</a>」的網頁移動到「<a href="/zh-TW/mugcups/6#title1-4" target="_blank">新增資料（create）</a>」的網頁了。
+        <br>
+        但是資料還不能保存在資料庫裡</strong>
+        <br><br>
+        在這裡做做看資料的保存吧！
+        <hr class="red-hr">
+        這一次的內容，可以說是在網頁上設定<a href="/zh-TW/mugcups/4#title2-1" target="_blank"><strong>第四章</strong></a>做的
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "名字", :content =&gt; "内容", :place =&gt; "地方")</span>
+</td>
+</tr>
+</table>
+        <br>
+        的操作資料的地方（<i>posts_controller.rb</i>）。
+        <br><br>
+        <strong>
+        從「打入新的資料（new）」的網頁拿資料之後，用上面操作資料的方法保存資料。
+        </strong>
+        <br>
+        <small>※　這個時候，網頁是從<strong>「<u>打入新的資料（new）</u>」</strong>的網頁移動到「新增資料（create）」的網頁，所以不用在遊覽器上打入url。</small>
+        <br><br>
+        在這裡做，
+        <br>
+        <strong>
+        <ul class="number_ul">
+          <li>用「打入新的資料（new）」的網頁的資料，保存資料（<u>posts_controller.rb</u>）</li>
+          <li>保存之後顯示資料保存好的網頁（<u>create.html.erb</u>）</li>
+        </ul>
+        </strong>
+        這個兩個設定。
+        <br><br>
+        那麽，做做看「七個網頁的設定」「操作資料的設定」跟「顯示的網頁的設定」三個設定吧！
+        <hr>
+        <%= render "page6/zh-TW/title1_4_1" %>
+        <hr>
+        <%= render "page6/zh-TW/title1_4_2" %>
+</h4>
