@@ -1,0 +1,43 @@
+<h2 class="textbook-section-title" id="title1"><strong>1 : リンクを完成させよう！</strong></h2>
+<h4 id="chapter7-1">
+  <strong>では、ページをもっとクリックで移動できるようにしましょう！</strong>
+  <hr class="red-hr">
+  ページ移動（リンク）は、例えば<strong>「<a href="/mugcups/5#title1-2" target="_blank">データの全表示（index）</a>」</strong>に移動するリンクであれば
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  このように表示させましたね。
+  <br>
+  詳細は<a href="/mugcups/5#title1-2-2" target="_blank"><strong>ここ</strong></a>を参考に見てみて下さい！
+  <hr class="red-hr">
+  この章でも目標としては、
+  <br>
+  「<a href="/mugcups/5#title1-1" target="_blank"><strong>１つのデータの表示（show）</strong></a>」をするページに、下のような「<a href="/mugcups/6#title1-5" target="_blank"><strong>編集するデータの記入（edit）</strong></a>」をするページへのリンクを
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_1_add_edit.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_1_add_edit.png",
+              :target => ["_blank"] %>
+  「<a href="/mugcups/5#title1-2" target="_blank"><strong>全てのデータの表示（index）</strong></a>」をするページに、下のような「<a href="/mugcups/6#title1-3" target="_blank"><strong>作成するデータの記入（new）</strong></a>」をするページへのリンクを
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+              :target => ["_blank"] %>
+  を加えてみます。
+  <br>
+  習った内容の復習も兼ねて、やってみましょう！
+</h4>
+<hr>
+<%= render "page7/title1_1" %>
+<hr>
+<%= render "page7/title1_2" %>
+<hr>
+<%= render "page7/title1_3" %>

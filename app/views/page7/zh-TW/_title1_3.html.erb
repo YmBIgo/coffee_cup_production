@@ -1,0 +1,123 @@
+<h4 id="chapter7-1-3">
+  <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : まとめ</strong></p>
+  <br>
+  今回はページのリンクについて少し触れたので、今までに設定したリンクについてまとめる。
+  <br><br>
+  <strong>設定した内容は<a href="/codes/7" target="_blank">こちら</a>を参考にしてみて下さい</strong>
+  <hr class="red-hr">
+  <strong>「<a href="/mugcups/6#title1-4" target="_blank">データの作成（create）</a>」</strong>と<strong>「<a href="/mugcups/6#title1-6" target="_blank">データの変更（update）</a>」</strong>をするページへの移動は、<strong><u>ブラウザでの入力ではなくページからの移動になるので、</u>
+  <br><br>
+  <ul class="number_ul">
+  <li><a href="/mugcups/5#title1-1" target="_blank">「１つのデータの表示（show）」</a></li>
+  <li><a href="/pages5#title1-2" target="_blank">「データの全表示（index）」</a></li>
+  <li><a href="/mugcups/6#title1-3" target="_blank">「新しいデータの記入（new）」</a></li>
+  <li><a href="/mugcups/6#title1-5" target="_blank">「編集するデータの記入（edit）」</a></li>
+  <li><a href="/mugcups/6#title1-7" target="_blank">「データの削除（destroy）」</a></li>
+  </ul>
+  <br>
+  の５つのページへのリンクについて説明する。
+  </strong>
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li>「<a href="/mugcups/5#title1-1" target="_blank"><strong>１つのデータの表示（show）</strong></a>」をするページへのリンク</li></strong>
+    <br>
+    例えば、
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/1"</span>&gt;投稿１&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    のように
+<pre>
+&lt;a href="/データベース名/idの番号"&gt;表示する文字&lt;/a&gt;
+</pre>
+    で表示する（<a href="/mugcups/5#title1-2-3-chrome" target="_blank"><strong>こちら</strong></a>も参考に）。
+    <hr class="red-hr">
+    <strong><li>「<a href="/mugcups/5#title1-2" target="_blank">データの全表示（index）</a>」をするページへのリンク</li></strong>
+    <br>
+    例えば、
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;投稿一覧を見る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    のように
+<pre>
+&lt;a href="/データベース名" &gt;表示する文字&lt;/a&gt;
+</pre>
+    で表示する（<a href="/mugcups/5#title1-2-3-chrome" target="_blank"><strong>こちら</strong></a>も参考に）
+    <hr class="red-hr">
+    <strong><li>「<a href="/mugcups/6#title1-3" target="_blank">新しいデータの記入（new）</a>」</li></strong>
+    <br>
+    例えば、
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    のように
+<pre>
+&lt;a href="/データベース名/new"&gt;表示する文字&lt;/a&gt;
+</pre>
+    で表示する
+    <hr class="red-hr">
+    <strong><li>「<a href="/mugcups/6#title1-5" target="_blank">編集するデータの記入（edit）</a>」</li></strong>
+    <br>
+    例えば、
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/1/edit"</span>&gt;投稿を編集する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    のように
+<pre>
+&lt;a href="/データベース名/idの番号/edit"&gt;表示する文字&lt;/a&gt;
+</pre>
+    で表示する
+    <hr class="red-hr">
+    <strong><li>「<a href="/mugcups/6#title1-7" target="_blank">データの削除（destroy）</a>」</li></strong>
+    <br>
+    例えば、
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/1"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;投稿１を削除する&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  のように
+<pre>
+&lt;a href="/データベース名/idの番号" data-method="delete"&gt;表示する文字&lt;/a&gt;
+</pre>
+  で表示する（詳しくは<a href="/mugcups/6#title1-7-2-chrome" target="_blank"><strong>こちら</strong></a>）
+  </ul>
+  <hr class="red-hr">
+  ここまでで全てのページの移動の設定の方法を説明しました。
+  <br>
+  <strong>次はページを綺麗にしてみましょう！</strong>
+  <br><br>
+  <strong>設定した内容は<a href="/codes/7" target="_blank">ここ</a>にまとめてあるので見てみて下さい</strong>
+</h4>

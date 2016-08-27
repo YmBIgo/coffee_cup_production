@@ -1,0 +1,387 @@
+<h4 id="chapter7-2-2-3">
+  <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : form-control</strong></p>
+  <br>
+  ボタンの設定はできましたか？
+  <br>
+  「<a href="/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」の内容を少し変えるだけでできたので、意外と簡単にできたのではないかと思います。
+  <br>
+  <strong><u>次はこの「btn」と似ている感じで、入力欄の装飾もしてみたいと思います。</u></strong>
+  <br><br>
+  設定した入力欄を、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_btn.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_btn.png",
+              :target => ["_blank"] %>
+  こんな感じの綺麗な入力欄にしましょう！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_myform.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_myform.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  Bootstrapで入力欄を作るには、<strong>「<a href="/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」</strong>に<strong>「<u>form-control</u>」</strong>を指定します。
+  <br>
+  まずは「<a href="/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」の入力欄（<strong><u>new.html.erb</u></strong>）を変えてみましょう！
+  <br><br>
+  Sublime Textで<strong>「<u>myapp</u>」</strong>を開いて、<strong>「<u>app > views > posts > new.html.erb</u>」</strong>を開いて下さい。
+  <br>
+  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  開けたら内容を下のように変更して下さい。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+<strong class="color-red">6</strong>
+7
+<strong class="color-red">8</strong>
+<strong class="color-red">9</strong>
+10
+<strong class="color-red">11</strong>
+12
+13
+14
+15
+16
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を作る&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登録する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  </p>
+  <br>
+  サーバーを再起動させたら、「<a href="http://0.0.0.0:3000/posts/new"><strong>0.0.0.0:3000/posts/new</strong></a>」を開いてみましょう。
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
+  下のような画面は表示されたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_all.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_all.png",
+              :target => ["_blank"] %>
+  なんかすごい長い入力欄ではありますが、綺麗な入力欄になったのではないかと思います。
+  <br>
+  このように綺麗な入力欄をBootstrapで設定するには、「class」に<strong>「<u>form-control</u>」</strong>を設定します。
+  <br><br>
+  入力欄が「&lt;%= 」「%&gt;」で囲まれているので「class」は、
+<pre>
+,:class => "クラス名"
+</pre>
+  で設定します
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong><u>数字「age」を記入する綺麗な入力欄</u>をBootstrapで作るためにはどのような設定をすればいいでしょうか？</strong>
+  <br>
+  <small>※　数字を入れる入力欄は<a href="/mugcups/6#title1-3-2-view" target="_blank"><strong>こちら</strong></a>を参考</small>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>  &lt;%= f.number_field <span class="word-purple">:age</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <i class="fa fa-question-circle color-green"></i>　<strong><u>「<a href="/mugcups/6#title1-5" target="_blank">edit</a>」するページの入力欄</u>をBootstrapの設定を使って綺麗にしてみましょう！</strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="14"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（5、6、8行目を追加）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center small-code'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+12
+13
+</td>
+<td class='code-content small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line answer-code'>  &lt;%= f.text_area <span class="word-purple">:content</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span></span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line answer-code'>  &lt;%= f.text_field <span class="word-purple">:place</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span></span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"変更する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  今の入力欄のままでは長すぎるので、それを短くしましょう！
+  <br>
+  短くするには、CSSで長さの設定をします。
+  <br><br>
+  長さは、
+<pre>
+width:数字px;
+</pre>
+  をCSSファイルに設定します。
+  <br>
+  <small>
+  ※　pxという単位は、実際に内容を変更して目分量で変えてみてください。
+  <br>
+  　　参考で言うと、右にあるスライドバーの高さが400pxになります。
+  </small>
+  <br><br>
+  <strong><u>では、「<a href="/mugcups/6#title1-3" target="_blank">new</a>」ページの設定ファイル「new.html.erb」でやってみましょう！</u></strong>
+  <br><br>
+  まずはCSSの装飾を設定するための「<a href="/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」を設定します。ここでは<strong>「<u>my-form</u>」</strong>という名前のクラスを追加しましょう。
+  <br><br>
+  <strong>「<u>new.html.erb</u>」</strong>を下のように変更してみましょう。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+<strong class="color-red">11</strong>
+12
+13
+14
+15
+16
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を作る&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登録する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+
+  <br>
+  まだ中身を設定していないので、この<strong>「<u>my-form</u>」</strong>に
+<pre>
+width:500px;
+</pre>
+  を設定してみましょう！
+  <hr class="red-hr">
+  まずは、自分で設定するCSSファイルを作ります。
+  <br>
+  <strong>「app > assets > stylesheets」</strong>に<strong>「<u>style.scss</u>」</strong>のファイルを保存して下さい。
+  <br>
+  <small>※　保存の方法は<a href="/mugcups/how_to_save" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br>
+  <small>※　名前はなんでもいいですが、一応分かりやすい「style.scss」にしました。</small>
+  <br><br>
+  この<strong>「<u>style.scss</u>」</strong>にCSSの設定を加えていきます。
+  <br>
+  <strong>でも、名前がなぜか「style.scss」と「style.css」ではないのですね。</strong>
+  <br>
+  Ruby on Railsではこのように後ろに<strong>「<u>scss</u>」</strong>を使うことで、CSSファイルを使う時の設定の
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>link</span><span class='word-green'> rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class="word-green">href</span>=<span class="word-yellow">"style.css"</span> <span class="word-green">type</span>=<span class="word-yellow">"text/css"</span> /&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  を自分で追加する必要がなく、勝手に追加してくれます。
+  <hr class="red-hr">
+  <i class="fa fa-question-circle color-green"></i>　<strong>この「style.scss」に</strong>
+<pre>
+width:500px;
+</pre>
+  <strong>の設定の「<u>my-form</u>」を設定してみましょう！設定の仕方は<a href="/mugcups/3#title1-2" target="_blank">CSSファイルの設定の方法</a>と同じです。</strong>
+  <br>
+  <small>※　CSSの書き方は<strong><a href="/mugcups/3#title1-2" target="_blank">こちら</a></strong>をみて下さい</small>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="4"></textarea>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content answer-code'><span class='code-line'><span class='word-green'>.my-form</span>{</span>
+<span class='code-line'>  <span class='word-blue'>width</span>:<span class='word-blue'><span class='word-purple'>500</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  ここまでで入力欄の長さの設定は終了しました。
+  <br>
+  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  </p>
+  <br>
+  サーバーの再起動ができたら、「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」を開いてみましょう。
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
+  下のように長さは短くなった入力欄になったでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_myform.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_myform.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-question-circle color-green"></i>　<strong>同じようにして「<a href="/mugcups/6#title1-5" target="_blank">edit</a>」をするページの入力欄に「my-form」の設定を加えましょう！</strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="17"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（5、8行目を追加）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center small-code'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+12
+13
+</td>
+<td class='code-content small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line answer-code'>  &lt;%= f.text_area <span class="word-purple">:content</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span></span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line answer-code'>  &lt;%= f.text_field <span class="word-purple">:place</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span></span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"変更する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  できたら、「<a href="http://0.0.0.0:3000/posts/1/edit" target="_blank"><strong>0.0.0.0:3000/posts/1/edit</strong></a>」を開いてみましょう！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts/1/edit" target="_blank"><strong>localhost:3000/posts/1/edit</strong></a>」を開いてみて下さい。
+  </small>
+  <br><br>
+  下のような表示はでてきたでしょうか？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_edit_bootstrap_myform.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_edit_bootstrap_myform.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-star color-blue"></i>　<strong>Bootstrapで綺麗な入力欄を作るには、「class」に「form-control」を設定する。</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+</h4>
