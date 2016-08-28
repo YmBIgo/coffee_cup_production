@@ -1,28 +1,32 @@
 <h4 id="chapter7-1-2">
-  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : newページへのリンクを設定する</strong></p>
+  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 設定移動到new網頁的連結</strong></p>
   <br>
-  <strong>「edit」ページへの移動もできたので、<strong>「<a href="/mugcups/6#title1-3" target="_blank">新しいデータの記入（new）</a>」</strong>をするページへの移動をするリンクの設定をしてみましょう！</strong>
+  <strong>移動到「edit」網頁的連結的設定也好了，接着設定移動到<strong>「<a href="/zh-TW/mugcups/6#title1-3" target="_blank">打入新的資料（new）</a>」</strong>的網頁的連結的設定吧！</strong>
   <br><br>
-  <strong>「<a href="/mugcups/5#title1-2" target="_blank">データの全表示（index）</a>」</strong>をするページに下のようなリンクを加えましょう！
+  <strong>「<a href="/zh-TW/mugcups/5#title1-2" target="_blank">選擇全部的資料（index）</a>」</strong>的網頁上，追加下面圖像一樣的設定吧！
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  <strong>「<a href="/mugcups/5#title1-2" target="_blank">データの全表示（index）</a>」</strong>をするページを設定するので、<strong>「<u>index.html.erb</u>」</strong>に設定を加えます。ではやってみましょう！
+  <strong>「<a href="/zh-TW/mugcups/5#title1-2" target="_blank">選擇全部的資料（index）</a>」</strong>的網頁，要在<strong>「<u>index.html.erb</u>」</strong>追加設定。那麽開始做吧！
   <br><br>
-  <strong>「<u>myapp</u>」</strong>をSublime Textで開いてみて、<strong>「<a href="/mugcups/5#title1-2-3-view" target="_blank">index.html.erb</a>」</strong>を開いてみましょう！
+  先用Sublime Text打開<strong>「<u>myapp</u>」</strong>之後，打開<strong>「<a href="/zh-TW/mugcups/5#title1-2-3-view" target="_blank">index.html.erb</a>」</strong>吧！
   <br>
-  <small>※　開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>
+    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+  </small>
   <br><br>
   <i class="fa fa-question-circle color-green"></i>
 <strong>
-「新しいデータの記入（new）」をするページへのリンクはどのようにして設定すればいいでしょうか？
+移動到「打入新的資料（new）」的網頁的連結要怎麼設定好呢？
 </strong>
 <br>
 <small>
-※　「新しいデータの記入（new）」をするページには、「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」をブラウザで入力することで移動できます（詳細は<a href="/mugcups/6#title1-3-2-chrome" target="_blank"><strong>こちら</strong></a>）。</small>
+※　「打入新的資料（new）」的網頁，可以用遊覽器打入「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」移動（詳細的內容<a href="/zh-TW/mugcups/6#title1-3-2-chrome" target="_blank"><strong>請參考這裡</strong></a>）。</small>
 <br><br>
 <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
 <br>
@@ -30,19 +34,19 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新增投稿&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <hr class="red-hr">
-  では、これを<strong>「<u>index.html.erb</u>」</strong>に設定しましょう！
+  那麽，在<strong>「<u>index.html.erb</u>」</strong>設定內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（9行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（追加第9行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -57,7 +61,7 @@
 8
 <span class="color-red"><strong>9</strong></span>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -65,63 +69,65 @@
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新增資料&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
   <br>
-  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  サーバーが立ち上がったら、「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみて下さい。
+  服務器打開之後，打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧。
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
               :target => ["_blank"] %>
-  リンクは追加されたでしょうか？
+  有沒有顯示連結嗎？
   <br>
-  リンクが追加されたら、リンクを開いてみましょう！
+  有顯示連結的話，打開看這個連結吧！
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
               :target => ["_blank"] %>
-  ページの移動はできたでしょうか？
+  移動到網頁了嗎？
   <br><br>
-  このように<strong>「<u>新しいデータの記入（new）</u>」</strong>をするページへのリンクは、
+  像這樣，移動到<strong>「<u>打入新的資料（new）</u>」</strong>的連結要，
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新增投稿&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  で設定します。
+  這樣子設定。
   <br>
-  <strong><u>データベースの名前が変わったらそれに応じた設定に変えましょう！</u></strong>
+  <strong><u>如果資料庫的名字不同的話，順着資料庫的名字設定內容吧！</u></strong>
   <hr class="red-hr">
-  <i class="fa fa-question-circle color-green"></i>　<strong>「tweets」データベースの「新しいデータの記入（new）」をするページへ移動するリンクは、どのように設定すればいいでしょうか？</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>移動到「tweets」資料庫的「打入新的資料（new）」的網頁的連結要怎麼樣設定好呢？</strong>
   <br><br>
-  <input type="input" class="form-control input-code" placeholder="答えを入力して下さい">
+  <input type="input" class="form-control input-code" placeholder="打入答案">
   <br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/tweets/new"</span>&gt;ツイートする&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/tweets/new"</span>&gt;新增推特&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>

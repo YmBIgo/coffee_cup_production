@@ -1,14 +1,14 @@
 <h4 id="chapter7-2-2-5">
-  <p id="title2-2-5"><i class="fa fa-check-square color-red"></i>　<strong>⑸ : まとめ</strong></p>
+  <p id="title2-2-5"><i class="fa fa-check-square color-red"></i>　<strong>⑸ : 總結</strong></p>
   <br>
-  Bootstrapを使った４つの装飾、<a href="#title2-2-1" target="_blank"><strong>container</strong></a>・<a href="#title2-2-2" target="_blank"><strong>btn</strong></a>・<a href="#title2-2-3" target="_blank"><strong>form-control</strong></a>・<a href="#title2-2-4" target="_blank"><strong>navigation-bar</strong></a>についてまとめる
+  在這裡解釋，用Bootstrap設定的四個裝飾<a href="/zh-TW/mugcups/7#title2-2-1" target="_blank"><strong>container</strong></a>・<a href="/zh-TW/mugcups/7#title2-2-2" target="_blank"><strong>btn</strong></a>・<a href="/zh-TW/mugcups/7#title2-2-3" target="_blank"><strong>form-control</strong></a>・<a href="/zh-TW/mugcups/7#title2-2-4" target="_blank"><strong>navigation-bar</strong></a>。
   <hr class="red-hr">
   <ul class="number_ul">
     <p id="title2-2-5-container" class="fix-link-nav"><strong><li>container</li></strong></p>
     <br>
-    Bootstrapを導入したら、まず<strong>「<u>application.html.erb</u>」</strong>に下のように<strong>「<u>&lt;div class="container"&gt;</u>」</strong>の設定を加える。
+    導入Bootstrap之後，首先在<strong>「<u>application.html.erb</u>」</strong>追加<strong>「<u>&lt;div class="container"&gt;</u>」</strong>的設定。
     <br>
-    この設定で、詰めて表示されているページに余白を入れる。
+    用這個設定，在緊緊的網頁上作空格。
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
 <table class='highlight'>
@@ -46,39 +46,39 @@
 </tr>
 </table>
     <br>
-    詳しくは<a href="#title2-2-1" target="_blank"><strong>こちら</strong></a>から
+    詳細的內容<a href="/zh-TW/mugcups/7#title2-2-1" target="_blank"><strong>請參考這裡</strong></a>。
     <hr class="red-hr">
     <p id="title2-2-5-btn" class="fix-link-nav"><strong><li>btn</li></strong></p>
     <br>
-    classに「btn」と好きなボタンを追加する。
+    在class上追加「btn」跟自己喜歡的按鈕的設定。
     <br><br>
-    <a class="btn btn-primary">ボタン</a>
+    <a class="btn btn-primary">按鈕</a>
     <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ボタン&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;按鈕&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  <input type="button" class="btn btn-primary" value="登録する">
+  <input type="button" class="btn btn-danger" value="登錄">
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"変更する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<td class='code-content'><span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登錄"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-danger"</span> %&gt;</span>
 </td>
 </tr>
 </table>
     <br>
-    詳しくは<a href="#title2-2-2" target="_blank"><strong>こちら</strong></a>から
+    詳細的內容<a href="/zh-TW/mugcups/7#title2-2-2" target="_blank"><strong>請參考這裡</strong></a>。
     <hr class="red-hr">
     <p id="title2-2-5-form" class="fix-link-nav"><strong><li>form-control</li></strong></p>
     <br>
-    入力欄のclassに「form-control」を追加する。
+    輸入框的class裡追加「form-control」。
     <br><br>
     <input type="input" class="form-control">
     <br>
@@ -91,15 +91,15 @@
 </tr>
 </table>
     <br>
-    詳しくは<a href="#title2-2-3" target="_blank"><strong>こちら</strong></a>から
+    詳細的內容<a href="/zh-TW/mugcups/7#title2-2-3" target="_blank"><strong>請參考這裡</strong></a>。
     <hr class="red-hr">
     <p id="title2-2-5-nav" class="fix-link-nav"><strong><li>navigation-bar</li></strong></p>
     <br>
-    Bootstrapで上に表示させるバーを作るには、下の設定を追加します。
+    用Bootstrap作遊覽器的時候，要追加下面的設定。
     <br>
-    自分でコードを打つ必要はないので、コピペでもいいのでとりあえず貼り付けてみましょう！
+    應為內容很長，用複製與黏貼打入也可以！
     <br><br>
-    <i class="fa fa-file color-red"></i>　<strong>application.html.erb（10〜26行目）</strong>
+    <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第10行〜第26行）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>9
@@ -151,9 +151,9 @@
 </tr>
 </table>
     <br>
-    この中でも変更する必要があるのは、
+    在這裡需要編輯的地方是
     <ul class="number_ul">
-    <strong><li>左側につけるボタン</li></strong>
+    <strong><li>左邊的按鈕</li></strong>
     <br>
     <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
 <table class="highlight">
@@ -165,7 +165,7 @@
 </tr>
 </table>
     <br>
-    <strong><li>右側につけるボタン</li></strong>
+    <strong><li>右邊的按鈕</li></strong>
     <br>
     <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
 <table class='highlight'>
@@ -179,19 +179,19 @@
 </tr>
 </table>
     <br>
-    の間に
+    之間
     <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
 </td>
 </tr>
 </table>
     <br>
-    を設定する。
+    設定內容。
     <br><br>
-    詳しくは<a href="#title2-2-4" target="_blank"><strong>こちら</strong></a>から
+    詳細的內容<a href="/zh-TW/mugcups/7#title2-2-4" target="_blank"><strong>請參考這裡</strong></a>。
   </ul>
 </h4>

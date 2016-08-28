@@ -1,31 +1,35 @@
 <h4 id="chapter7-2-2-2">
   <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : btn</strong></p>
   <br>
-  余白の設定もできたので、<strong>まずは<u>ボタン</u>から綺麗にしてみましょう！</strong>
+  做好了空格的設定，<strong>接着從<u>按鈕</u>開始裝飾吧！</strong>
   <hr class="red-hr">
-  まずは<strong>「<a href="/mugcups/5#title1-2" target="_blank">データの全表示（index）</a>」</strong>をするページに作った<strong>「<a href="/mugcups/6#title1-3" target="_blank">新しいデータの記入（new）</a>」</strong>へのリンク（ページ移動するための文字列）を、
+  首先在<strong>「<a href="/zh-TW/mugcups/5#title1-2" target="_blank">顯示全部的資料（index）</a>」</strong>的網頁上作的移動到<strong>「<a href="/zh-TW/mugcups/6#title1-3" target="_blank">打入新的資料（new）</a>」</strong>的連結（移動網頁的文字）改成
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_btn.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_btn.png",
               :target => ["_blank"] %>
-  のような <a class="btn btn-primary">青いボタン</a> にしましょう！
+  這樣子的 <a class="btn btn-primary">藍色的按鈕</a> 吧！
   <hr class="red-hr">
-  Bootstrapでボタンを作るには、「<a href="/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」に<strong><u>「btn」と「btn-primary」</u></strong>を指定します。
+  用Bootstrap作藍色的按鈕的時候，在「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」指定<strong><u>「btn」跟「btn-primary」</u></strong>。
   <br><br>
-  Sublime Textで<strong>「<u>myapp</u>」</strong>を開いて、<strong>「<u>app > views > posts > index.html.erb</u>」</strong>を開いて下さい。
+  用Sublime Text打開<strong>「<u>myapp</u>」</strong>之後，打開<strong>「<u>app > views > posts > index.html.erb</u>」</strong>吧。
   <br>
-  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>
+    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+  </small>
   <br>
   <br>
-  開けたら内容を下のように変更して下さい。
+  打開後，編輯文件的內容吧。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -39,101 +43,103 @@
 7
 <strong class="color-red">8</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;：&lt;%= p.name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  ボタンの変更ついでに、４行目も変更しましたので忘れないで下さい。
+  更改按鈕以外順便編輯第4行的內容，請不要忘記。
   <br>
-  <u><strong>「<a href="/mugcups/5#title1-1" target="_blank">１つのデータの表示（show）</a>」</strong>をするページへの移動の文字列を「id:名前」にしました。</u>
-  <br>
-  <small>※　一回「rails s」で動かしたサーバーを「Command」と「c」を一緒に押して止めてから、もう一度「rails s」を入力して下さい。</small>
-  <br><br><br>
-  <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
-  <br>
-  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
-  </p>
-  <br>
-  サーバーを再起動させたら、「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみましょう。
+  <u>在這裡，移動到<strong>「<a href="/zh-TW/mugcups/5#title1-1" target="_blank">顯示一個資料（show）</a>」</strong>的按鈕的文字用「id號碼:名字」。</u>
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  起動服務器之後，打開看「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧。
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開看「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
   <br><br>
-  下のような変更された画面がでてきたでしょうか？
+  有顯示下面一樣的畫面嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_btn.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_btn.png",
               :target => ["_blank"] %>
-  このようにBootstrapで青いボタンのリンクを作るには、
+  這樣子用Bootstrap作藍色的按鈕的時候，
 <pre>
-&lt;a class="btn btn-primary"&gt;表示する文字列&lt;/a&gt;
+&lt;a class="btn btn-primary"&gt;顯示的文字&lt;/a&gt;
 </pre>
-  のように<strong>「<u>class="btn btn-primary"</u>」</strong>を加えることで設定します。
+  像這樣子，追加<strong>「<u>class="btn btn-primary"</u>」</strong>的內容設定。
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span></span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span></span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <hr class="red-hr">
-  ボタンの色は青だけではなくて、いろいろな色を使うことができます。
+  按鈕的顏色不只是藍色而已，還可以用更多顏色。
   <br><br>
-  <a class="btn btn-danger">赤色のボタン</a> だったら、<strong>「<u>btn btn-danger</u>」</strong>
-  <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;赤色のボタン&lt;/<span class='word-red'>a</span>&gt;</span>
-</td>
-</tr>
-</table>
-  <br>
-  <a class="btn btn-success">緑色のボタン</a> だったら、<strong>「<u>btn btn-success</u>」</strong>
+  如果是<a class="btn btn-danger">紅色的按鈕</a> 的話，使用<strong>「<u>btn btn-danger</u>」</strong>
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;緑色のボタン&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;紅色的按鈕&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  <a class="btn btn-info">水色のボタン</a> だったら、<strong>「<u>btn btn-info</u>」</strong>
+  如果是<a class="btn btn-success">綠色的按鈕</a> 的話，使用<strong>「<u>btn btn-success</u>」</strong>
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;水色のボタン&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;綠色的按鈕&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  など・・・
-  <br>
-  詳しくは、<a href="http://getbootstrap.com/css#buttons-options" target="_blank"><strong>ここのページ</strong></a>を参考にしてみて下さい。
+  如果是<a class="btn btn-info">淺藍色的按鈕</a> 的話，使用<strong>「<u>btn btn-info</u>」</strong>
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong><u>緑色のボタンの「http://amazon.com」へのリンク（<a href="/mugcups/5#title1-2-2" target="_blank"><strong>&lt;a&gt;</strong></a>）</u> <a href="http://amazon.com" class="btn btn-success" target="_blank">amazon</a>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;淺藍色的按鈕&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
   <br>
-  を作る設定を答えてください。</strong>
+  等等・・・
+  <br>
+  詳細的內容<a href="http://getbootstrap.com/css#buttons-options" target="_blank"><strong>請參考這裡</strong></a>。
   <br><br>
-  <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+  <i class="fa fa-question-circle color-green"></i>　<strong><u>作綠色的按鈕的移動到博客來的主頁「http://www.books.com.tw/」的連結（<a href="/zh-TW/mugcups/5#title1-2-2" target="_blank"><strong>&lt;a&gt;</strong></a>）</u> <a href="http://www.books.com.tw/" class="btn btn-success" target="_blank">博客來</a>
+  <br>
+  要怎麼設定呢？</strong>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="打入答案">
   <br>
 <table class='highlight'>
 <tr>
@@ -144,9 +150,9 @@
 </tr>
 </table>
   <hr class="red-hr">
-  このボタンの設定はなにに対してもできるので、<strong><u>「&lt;a&gt;」だけでなく「&lt;h1&gt;」や「&lt;p&gt;」などの普通の文字列に対しても使うことができます。</u></strong>
+  這個按鈕的設定可以對什麼都可以適用，不只是<strong><u>「&lt;a&gt;」而已還可以在「&lt;h1&gt;」或者「&lt;p&gt;」等等，普通的文字上也可以適用。</u></strong>
   <br><br>
-  ボタンの設定の最後に、「<a href="/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」ページや「<a href="/mugcups/6#title1-5" target="_blank"><strong>edit</strong></a>」ページで設定した<strong><u>送信ボタン</u></strong>にこの設定をして、
+  最後，在「<a href="/zh-TW/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」網頁，「<a href="/zh-TW/mugcups/6#title1-5" target="_blank"><strong>edit</strong></a>」網頁的<strong><u>發送按鈕</u></strong>上，設定這個內容，
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_btn.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -157,20 +163,20 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_edit_bootstrap_btn.png",
               :target => ["_blank"] %>
-  それぞれ下のような表示にしてみましょう！
+  設定像上面的圖像一樣的顯示吧！
   <br>
-  まずは「new」ページからやっていきます。
+  首先從「new」網頁開始做。
   <hr class="red-hr">
-  まずは<strong>「<u>app > views > posts > new.html.erb</u>」</strong>を開いてみて下さい。
+  首先打開看<strong>「<u>app > views > posts > new.html.erb</u>」</strong>吧。
   <br>
-  開けたら、この<strong>「<u>new.html.erb</u>」</strong>を下のように変更してみて下さい。
+  打開之後，編輯<strong>「<u>new.html.erb</u>」</strong>的內容吧。
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（11、13、14行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（追加第11、13、14行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -190,87 +196,91 @@
 <strong class="color-red">13</strong>
 <strong class="color-red">14</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を作る&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;作投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"登録する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"登錄"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line remarkable-code'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  変更はできたでしょうか？
+  有沒有更改了嗎？
   <br>
-  ボタンの設定だけではなく、線の設定（<strong><u>&lt;hr&gt;</u></strong>）もあるので気をつけましょう！
+  不只是按鈕的設定，還有線的設定（<strong><u>&lt;hr&gt;</u></strong>）。請不要忘記設定！
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_btn.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_btn.png",
               :target => ["_blank"] %>
-  このようにボタンが表示されたでしょうか？
+  像上面的圖像一樣，顯示按鈕了嗎？
   <br><br>
-  16行目は先ほどやった内容なので分かるとは思うのですが、<strong><u>14行目が少し分かりづらいですね。</u></strong>
+  第16行是剛才有設定過的內容應該可以理解，<strong><u>但是第14行有一點難理解。</u></strong>
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>new.html.erb(14行目)</strong>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb(第14行)</strong>
   <br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>14
 </td>
-<td class='code-content'><span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登録する"</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span></span>
+<td class='code-content'><span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登錄"</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span></span>
 </td>
 </tr>
 </table>
   <br>
-  後ろに<strong>「<i>:class => "btn btn-primary"</i>」</strong>と書いてあるので、「<a href="/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」を指定してることは想像できると思います。
+  後面有寫着<strong>「<i>:class => "btn btn-primary"</i>」</strong>，可以想像在指定「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」。
   <br><br>
-  送信ボタンで「class」を指定する場合はこの
+  用發送按鈕指定「class」的時候，追加
 <pre>
-,:class => "クラス名"
+,:class => "class的名字"
 </pre>
-  を追加しましょう！
+  的內容！
   <br>
-  ここに「btn」と好きなボタンの種類を設定すれば、ボタンの設定ができます。
+  在這裡設定「btn」跟自己喜歡的顏色，可以設定按鈕。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>赤色の送信ボタン <input type="button" class="btn btn-danger" value="登録する"> を設定してみましょう</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>設定看紅色的按鈕 <input type="button" class="btn btn-danger" value="登錄"> 吧</strong>
   <br><br>
-  <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+  <input type="input" class="input-code form-control" placeholder="打入答案">
   <br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content answer-code'><span class='code-line small-code'>  &lt;%= f.submit <span class="word-yellow">"登録する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-danger"</span> %&gt;</span>
+<td class='code-content answer-code'><span class='code-line small-code'>  &lt;%= f.submit <span class="word-yellow">"登錄"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-danger"</span> %&gt;</span>
 </td>
 </tr>
 </table>
   <hr class="red-hr">
-  <i class="fa fa-question-circle color-green"></i>　<strong>「<a href="/mugcups/6#title1-5" target="_blank">edit</a>」ページの表示をする「edit.html.erb」を変更し、</strong>
+  <i class="fa fa-question-circle color-green"></i>　編輯在設定<strong>「<a href="/zh-TW/mugcups/6#title1-5" target="_blank">edit</a>」的「edit.html.erb」文件，</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_edit_bootstrap_btn.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_edit_bootstrap_btn.png",
               :target => ["_blank"] %>
   <strong>
-  のようにボタンが表示されるようにしましょう！
+  跟上面的圖像一樣，顯示按鈕吧！
   </strong>
   <br>
-  <small>※　マウスを行の上に置けば、答えが表示されます。</small>
+  <small>※　在答案的上面放鼠標上，可以看到答案。</small>
   <br><br>
-  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="10"></textarea>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="10"></textarea>
   <br>
-  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（9、11、12行目を変更）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（編輯第9、11、12行）</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center small-code'>1
@@ -286,43 +296,43 @@
 <strong class="color-red">11</strong>
 <strong class="color-red">12</strong>
 </td>
-<td class='code-content small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;編輯投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line answer-code'>  &lt;%= f.submit <span class="word-yellow">"変更する"</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span></span> %&gt;</span>
+<span class='code-line answer-code'>  &lt;%= f.submit <span class="word-yellow">"編輯投稿"</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span></span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line remarkable-code'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line answer-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span></span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line answer-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span></span>&gt;返回投稿資料&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <hr class="red-hr">
-  <i class="fa fa-question-circle color-green"></i>　<strong>この章で設定が終わった「<a href="/mugcups/5#title1-1" target="_blank">show</a>」ページの３つのリンクを</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>在這個章設定好的「<a href="/zh-TW/mugcups/5#title1-1" target="_blank">show</a>」的網頁上的三個連結</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_1_add_edit.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_1_add_edit.png",
               :target => ["_blank"] %>
-  <strong>下のようなボタンにしてみましょう！</strong>
+  <strong>改成下面一樣的按鈕吧！</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_show_bootstrap_btn.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_show_bootstrap_btn.png",
               :target => ["_blank"] %>
-  <small>※　マウスを行の上に置けば、答えがでます</small>
+  <small>※　在答案的上面放鼠標上，可以看到答案。</small>
   <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="9"></textarea>
   <br>
   <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -341,23 +351,23 @@
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line answer-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span></span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line answer-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span></span>&gt;投稿を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line answer-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span></span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line answer-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span></span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line answer-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span></span>&gt;編輯投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line answer-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="remarkable-code"><span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span></span>&gt;刪除投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
   <hr class="red-hr">
-  余裕があったらまだ変更していない「<a href="/mugcups/6#title1-4" target="_blank"><strong>create</strong></a>」「<a href="/mugcups/6#title1-6" target="_blank"><strong>update</strong></a>」「<a href="/mugcups/6#title1-7" target="_blank"><strong>destroy</strong></a>」のページも変更しましょう！
+  完了之後，自己編輯看看「<a href="/zh-TW/mugcups/6#title1-4" target="_blank"><strong>create</strong></a>」「<a href="/zh-TW/mugcups/6#title1-6" target="_blank"><strong>update</strong></a>」「<a href="/zh-TW/mugcups/6#title1-7" target="_blank"><strong>destroy</strong></a>」的網頁吧！
   <br><br>
-  <i class="fa fa-star color-blue"></i>　<strong>Bootstrapでボタンを設定するには、「class」に「btn」と好きなボタンの種類を設定をします。</strong>
+  <i class="fa fa-star color-blue"></i>　<strong>用Bootstrap設定按鈕的時候、在「class」裡設定「btn」跟喜歡的按鈕的種類。</strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"変更する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<td class='code-content'><span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"編輯資料"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 </td>
 </tr>
 </table>

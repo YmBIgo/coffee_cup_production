@@ -1,21 +1,25 @@
 <h4 id="chapter7-2-2-1">
   <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : container</strong></p>
   <br>
-  ここで全体的にきつきつになっているページを、
+  在這裡把現在緊緊的網頁，
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_bootstrap_container.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_bootstrap_container.png",
               :target => ["_blank"] %>
-  のように直してみます！
+  改成像上面圖像一樣！
   <br>
-  このページの表示も、<strong><u>Bootstrap</u></strong>でできるのでやってみます！
+  這個網頁的設定，也可以用<strong><u>Bootstrap</u></strong>做！
   <hr class="red-hr">
-  まずは、Sublime Textで<strong>「<u>myapp</u>」</strong>を開いて下さい。
+  首先，用Sublime Text打開看<strong>「<u>myapp</u>」</strong>吧。
   <br>
-  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>
+    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+  </small>
   <br><br>
-  開けたら、<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>を開いてみて下さい。
+  之後，打開<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>吧。
   <br><br>
   <p class="fix-link-nav" id="application-html"><i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong></p>
 <table class='highlight'>
@@ -49,11 +53,11 @@
 </tr>
 </table>
   <br>
-  こんな感じのファイルは出てきたでしょうか？
+  有沒有顯示上面一樣子的文件嗎
   <br>
-  このファイルには、<a href="/mugcups/3#title1-1" target="_blank"><strong><u>最初に習った「&lt;html&gt;」や「&lt;head&gt;」</u></strong></a>などが入っていますね。
+  在這個文件裡有，<a href="/zh-TW/mugcups/3#title1-1" target="_blank"><strong><u>剛開始學的「&lt;html&gt;」或者「&lt;head&gt;」</u></strong></a>等等呢。
   <hr class="red-hr">
-  <i class="fa fa-play-circle color-red"></i>　<strong>簡単に内容について説明します。</strong>
+  <i class="fa fa-play-circle color-red"></i>　<strong>先簡單的說明這裡的內容。</strong>
   <br><br>
 <table class='highlight'>
 <tr>
@@ -64,11 +68,11 @@
 </tr>
 </table>
   <br>
-  に今まで作ってきた<strong>「<u>show.html.erb</u>」</strong>や<strong>「<u>index.html.erb</u>」</strong>などのページを表示させる設定ファイルが、埋め込まれて表示されていました。
+  在這裡，顯示<strong>「<u>show.html.erb</u>」</strong>或者<strong>「<u>index.html.erb</u>」</strong>等等顯示網頁的設定文件。
   <br><br>
-  このファイルに内容が埋め込まれていたので、<strong><u>それぞれのファイルで「&lt;html&gt;」や「&lt;head&gt;」を書く必要がなかったんです。</u></strong>
+  應為「show.html.erb」等等的文件都埋在「&lt;%= yield %&gt;」裡面，<strong><u>所以在各個顯示網頁的文件裡不用設定「&lt;html&gt;」或者「&lt;head&gt;」的內容。</u></strong>
   <br><br>
-  <i class="fa fa-play-circle color-red"></i>　各種の<u>CSSファイル</u>などのページの装飾をする設定ファイルは、
+  <i class="fa fa-play-circle color-red"></i>　各個<u>CSS文件</u>等等裝飾網頁的設定文件都設定在
   <br><br>
 <table class='highlight'>
 <tr>
@@ -83,18 +87,18 @@
 </tr>
 </table>
   <br>
-  で設定されています。
+  這個地方。
   <br>
-  <small>※　「stylesheet_link_tag」でCSSファイルの設定、「javascript_include_tag」はjavascriptという動くページの作るための設定ファイル、「csrf_meta_tags」はセキュリティー対策をしていますが、覚える必要はありません。</small>
+  <small>※　「stylesheet_link_tag」在設定CSS文件，「javascript_include_tag」在設定叫做javascript的作動的網頁顯示的文件，「csrf_meta_tags」在設定電腦安全。</small>
   <hr class="red-hr">
-  ではこの<strong>「<u>application.html.erb</u>」</strong>を設定して、ゆとりのあるページに変えましょう！
+  那麽在<strong>「<u>application.html.erb</u>」</strong>上加幾個設定，改成寬闊的網頁吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（10〜12行目）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第10行〜第12行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
   </small>
   <br><br>
 <table class='highlight'>
@@ -132,34 +136,36 @@
 </tr>
 </table>
   <br>
-  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
   <br>
-  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  できたら、「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみましょう！
+  做好了的話，打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話、打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
   <br><br>
-  下のように表示されたでしょうか？
+  顯示像下面圖像一樣的畫面嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_bootstrap_container.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_bootstrap_container.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  <p id="title2-2-1-css-div" class="fix-link-nav"><i class="fa fa-play-circle color-red"></i>　<strong>内容の説明をします。</strong></p>
+  <p id="title2-2-1-css-div" class="fix-link-nav"><i class="fa fa-play-circle color-red"></i>　<strong>在這裡解釋內容吧。</strong></p>
   <br>
-  今回はhtmlの新しいタグの<strong>「<u>&lt;div&gt;</u>」</strong>というものが出てきましたね。
+  這一次出現新的html<strong>「<u>&lt;div&gt;</u>」</strong>。
   <br>
-  この<strong>「<u>&lt;div&gt;</u>」</strong>についての説明をしましょう！
-  <br>
-  例えば下のようなhtmlファイルで、
+  剛開始解釋這個<strong>「<u>&lt;div&gt;</u>」</strong>吧！
+  <br><br>
+  例如說，像下面的html文件裡的，
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>sample.html</strong>
 <table class='highlight'>
@@ -175,7 +181,7 @@
 </tr>
 </table>
   <br>
-  <strong>「&lt;h1&gt;」「&lt;p&gt;」「&lt;small&gt;」</strong>の各文字列に、
+  <strong>「&lt;h1&gt;」「&lt;p&gt;」「&lt;small&gt;」</strong>這個各個文字上設定
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
 <table class='highlight'>
@@ -193,9 +199,7 @@
 </tr>
 </table>
   <br>
-  を適用させたいとします。
-  <br>
-  そうするには、、、
+  的內容的話，
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>sample.html</strong>
 <table class='highlight'>
@@ -211,13 +215,13 @@
 </tr>
 </table>
   <br>
-  のように各文字列の設定に<strong>「<a href="/mugcups/3#title1-2-css-class" target="_blank">class</a>」</strong>を加えることもできます。
+  可以像上面一樣，追加<strong>「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank">class</a>」</strong>。
   <br>
-  ただこのように書くのは<strong><u>「class="mystyle"」が３回も入っていて</u></strong>、重複が多いですよね。
+  但是這樣寫<strong><u>裡面寫三次「class="mystyle"」</u></strong>，重複有一點多。
   <hr class="red-hr">
-  このように重複したCSSをまとめて書くのが「<strong><u>&lt;div&gt;</u></strong>」です。
+  像這樣的時候，一起設定CSS的文字是「<strong><u>&lt;div&gt;</u></strong>」。
   <br>
-  「<strong><u>&lt;div&gt;</u></strong>」を使えば、上の設定を下のように書くことができます。
+  用「<strong><u>&lt;div&gt;</u></strong>」，可以把上面的設定寫的像下面一樣。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>sample.html</strong>
 <table class='highlight'>
@@ -237,9 +241,9 @@
 </tr>
 </table>
   <br>
-  <strong><u>この「&lt;div&gt;」と「&lt;/div&gt;」で囲われた部分に、「&lt;div&gt;」で設定した「<a href="/mugcups/3#title1-2-css-class" target="_blank">class</a>」が適用されます。</u></strong>
+  <strong><u>在「&lt;div&gt;」跟「&lt;/div&gt;」圍起來的地方裡，會使用用「&lt;div&gt;」設定的「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank">class</a>」的內容。</u></strong>
   <hr class="red-hr">
-  なので今回のファイルで設定した、
+  所以在這一次的文件裡的設定是
   <br><br>
 <table class='highlight'>
 <tr>
@@ -254,11 +258,11 @@
 </tr>
 </table>
   <br>
-  で<strong>「yield」で埋め込まれた「show.html.erb」などのファイルに、「class="container"」の設定を適用させています。</strong>
+  <strong>對「yield」（「show.html.erb」等等的文件在埋在裡面）上，適用「class="container"」的設定。</strong>
   <br><br>
-  <u>この<strong>「class="container"」</strong>の設定は<strong>Bootstrapの設定</strong>で、ページに余白をいれています。</u>
+  <u>這個<strong>「class="container"」</strong>的設定是<strong>Bootstrap的設定</strong>，在網頁上追加空格。</u>
   <br><br>
-  <i class="fa fa-star color-blue"></i>　<strong>Bootstrapを導入したら「<u>application.html.erb</u>」に下の設定を加える。</strong>
+  <i class="fa fa-star color-blue"></i>　<strong>導入Bootstrap之後，在「<u>application.html.erb</u>」上追加下面的設定。</strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
 <table class='highlight'>

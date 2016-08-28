@@ -1,42 +1,50 @@
 <h4 id="chapter7-2-1">
-  <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : Bootstrapを導入しよう！</strong></p>
+  <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 導入Bootstrap！</strong></p>
   <br>
-  まずページの装飾のサポートをしてくれる<strong>「<a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>」</strong>を導入してみましょう！
+  首先，導入<strong>「<a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>」</strong>吧！
   <br>
-  Ruby on Railsで作ったウェブページに<strong>「Bootstrap」</strong>を導入するには、前に使った<strong>「<a href="/mugcups/3#title2-2-1" target="_blank">gem</a>」</strong>を使います。
+  在Ruby on Rails導入<strong>「Bootstrap」</strong>的時候，要用上次<strong>在第三章說明的<a href="/zh-TW/mugcups/3#title2-2-1" target="_blank">「gem」</a></strong>。
   <br><br><br>
   <p class="alert alert-success">
     <strong>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<a href="/mugcups/windows_tips#title1-4" target="_blank">こちら</a>からBootstrapの導入をして下さい。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，<a href="/zh-TW/mugcups/windows_tips#title1-4" target="_blank">從這裡</a>導入Bootstrap。
     <br><br>
-    <i class="fa fa-forward"></i>　終わったら、<a href="#title2-2">こちら</a>から次に進んで下さい。
+    <i class="fa fa-forward"></i>　完了之後，<a href="#title2-2">從這裡</a>看下一個內容。
     </strong>
   </p>
   <br>
   <hr class="red-hr">
-  復習をすると・・・
+  先複習這個「gem」的內容吧。
   <br><br>
   <strong>
-  「gem」とは、<u>Ruby on Railsでページを作る時に使うツール</u>のことで、これを使えば例えば「ユーザー管理」や「画像の保存」などの面倒なツールを勝手に作ってくれる便利なものです。
+  「gem」是，<u>在Ruby on Rails上面做網頁的時候使用的工具</u>。用這個可以作「用戶管理」或者「保存圖像」等等的非常方便的機能。
   <br><br>
-  「<u>Gemfile</u>」に使うツールを設定して、ターミナルで「<u>bundle install</u>」を入力することでそのツールが使えるようになります。
+  在「<u>Gemfile</u>」上設定使用的工具之後，在terminal上打入「<u>bundle install</u>」之後可以使用了。
   </strong>
   <br><br>
-  このgemを使って<strong>「<u>Bootstrap</u>」</strong>を導入してみましょう！
+  用這個gem，導入<strong>「<u>Bootstrap</u>」</strong>吧！
   <hr class="red-hr">
-  まずはSublime Textで<strong>「<u>myapp</u>」</strong>を開き、中にある<strong>「<u>Gemfile</u>」</strong>を開いてみましょう！
+  首先在Sublime Text上打開<strong>「<u>myapp</u>」</strong>之後，打開裡面的<strong>「<u>Gemfile</u>」</strong>吧！
   <br>
-  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>
+    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+  </small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Open_Gemfile.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Open_Gemfile.png",
               :target => ["_blank"] %>
-  この<strong>「<u>Gemfile</u>」</strong>に、設定を加えます。
+  在這個<strong>「<u>Gemfile</u>」</strong>文件上，追加設定。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>Gemfile</strong>
   <br>
-  <small>※　半角英数字で入力。変更が完了したら「Command」と「s」を一緒に押して内容を保存して下さい。</small>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>26
@@ -50,13 +58,11 @@
 </tr>
 </table>
   <br>
-  <strong><u>この３行をどこかに加えましょう。</u></strong>
-  <br>
-  「Bootstrap」と書いているのは１つしかありませんが、コピペでもいいので、面倒くさがらず追加しましょう！
+  <strong><u>在自己喜歡的地方，追加這個三行吧。</u></strong>
   <hr class="red-hr">
-  終わったらターミナルで<strong>「<u>myapp</u>」</strong>に移動して、
+  完了之後，在terminal上移動到<strong>「<u>myapp</u>」</strong>之後，
   <br><br>
-  <strong>ターミナル</strong>
+  <strong>terminal</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -70,13 +76,9 @@
 </tr>
 </table>
   <br>
-  終わったら<strong>「<u>bundle install</u>」</strong>を入力して、gemをインストールしましょう！
+  打入<strong>「<u>bundle install</u>」</strong>，安裝gem吧！
   <br><br>
-  <strong>ターミナル</strong>
-  <br>
-  <small>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
-  </small>
+  <strong>terminal</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -87,22 +89,18 @@
 </table>
   <br>
   <small>
-    <i class="fa fa-arrow-right"></i>　動かない場合は、<strong>「<u>Gemfile.lock</u>」</strong>を削除してから、試してみて下さい。
+    <i class="fa fa-arrow-right"></i>　不會動的時候，先刪除<strong>「<u>Gemfile.lock</u>」</strong>之後再試試看吧。
   </small>
   <br><br>
-  下のような表示は出てきたでしょうか？
+  有沒有顯示下面圖像一樣子的顯示嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Terminal_bundle_install_bootstrap.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Terminal_bundle_install_bootstrap.png",
               :target => ["_blank"] %>
-  これができたらターミナルで、
+  做完了之後，在terminal上打入
   <br><br>
-  <strong>ターミナル</strong>
-  <br>
-  <small>
-    　<i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
-  </small>
+  <strong>terminal</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -112,25 +110,25 @@
 </tr>
 </table>
   <br>
-  を入力して下さい。
+  上面的內容吧。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/rails_g_bootstrap_install.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/rails_g_bootstrap_install.png",
               :target => ["_blank"] %>
-  このような表示が出てきたでしょうか？
+  有沒有顯示跟上面圖像一樣子的顯示嗎？
   <br>
-  <strong><u>これで「Bootstrap」の導入は完了しました！</u></strong>
+  <strong><u>到這裡「Bootstrap」的導入完成了！</u></strong>
   <br><br>
-  <small>※　ここで作ったCSSファイルはここからは見ることはできせんが、<strong><a href="http://getbootstrap.com" target="_blank">Bootstrapのページ</a></strong>からCSSファイルのダウンロードもできるので興味があったらみてみましょう。<strong><u>死ぬほど長いですが・・・</u></strong></small>
+  <small>※　在這邊作的CSS文件不能從這裡看內容，但是可以從<strong><a href="http://getbootstrap.com" target="_blank">Bootstrap的網頁</a></strong>下載文件，可以參考。<strong><u>雖然裡面的內容是超長・・・</u></strong></small>
   <hr class="red-hr">
-  導入ができたらターミナルで<strong>「<u>rails s</u>」</strong>を入力して、サーバーを立ち上げて「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」をブラウザで開いてみましょう！
+  導入之後在terminal上打入<strong>「<u>rails s</u>」</strong>之後，起動服務器之後在遊覽器打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
   <br><br>
-  下のようにページの表示が少し変わりましたか？
+  像下面一樣，顯示的內容有變嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_bootstrap_1.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_bootstrap_1.png",
               :target => ["_blank"] %>
-  <strong><u>この「Bootstrap」でページを綺麗にしていきましょう！</u></strong>
+  <strong><u>使用這個「Bootstrap」，吧網頁裝飾的更漂亮吧！</u></strong>
 </h4>

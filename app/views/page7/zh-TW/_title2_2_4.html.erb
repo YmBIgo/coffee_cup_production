@@ -1,28 +1,32 @@
 <h4 id="chapter7-2-2-4">
   <p id="title2-2-4"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : navigation-bar</strong></p>
   <br>
-  ここまで入力欄もボタンもできたところで、大分綺麗なページになったのではないかと思います。
+  到這裡作好了輸入框跟按鈕了，網頁也變了漂亮一點吧。
   <br>
-  <strong><u>ページの装飾の最後で、ページの上についているバー（navigation-bar）をBootstrapの設定した「<a href="/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」で使ってみたいと思います。</u></strong>
+  <strong><u>最後解釋，用Bootstrap的「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」顯示網頁上面的巡覽列（navigation-bar）吧。</u></strong>
   <br><br>
-  感じとしては、下のようなものにしていきたいと思います。
+  在這裡顯示下面圖像一樣的畫面。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
               :target => ["_blank"] %>
   <br>
-  ではやってみましょう！
+  那麽開始作吧！
   <hr class="red-hr">
-  まずは<strong>「<u>myapp</u>」</strong>をSublime Textで開き、<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>を開きましょう。
+  首先用Sublime Text打開<strong>「<u>myapp</u>」</strong>之後，打開<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>吧。
   <br>
-  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>
+    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+  </small>
   <br><br>
-  この<strong>「<u>application.html.erb</u>」</strong>に設定を加えます。
+  在這個<strong>「<u>application.html.erb</u>」</strong>上面設定內容。
   <br><br>
-  では9行目の
+  那麽在第9行的
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（9行目）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第9行）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>9
@@ -32,7 +36,7 @@
 </tr>
 </table>
   <br>
-  の後に、
+  後面追加
   <br><br>
 <table class='highlight'>
 <tr>
@@ -75,42 +79,42 @@
 </tr>
 </table>
   <br>
-  を
+  的內容吧！應為內容很長，使用複製與黏貼吧。
   <strong>
   <ul class="number_ul">
-    <li>コピー　　<u>「Command」と「c」</u></li>
-    <small><i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は<strong>「ctrl」と「c」</strong></small>
+    <li>複製　一起點擊<u>「Command」跟「c」</u></li>
+    <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，<strong>「ctrl」跟「c」</strong></small>
     <br><br>
-    <li>ペースト　<u>「Command」と「v」</u></li>
-    <small><i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は<strong>「ctrl」と「v」</strong></small>
+    <li>黏貼　一起點擊<u>「Command」跟「v」</u></li>
+    <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，<strong>「ctrl」跟「v」</strong></small>
   </ul>
   </strong>
   <br>
-  して追加して下さい。（自分で打つのは大変なので・・・）
-  <br><br>
-  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
   <br>
-  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  <strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>を開いてみましょう！
+  追加內容之後，打開<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
   <br><br>
-  下のような表示は出たでしょうか？
+  有沒有顯示下面一樣的畫面嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_1.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_1.png",
               :target => ["_blank"] %>
-  少し内容が被ってしまっていましたが、上にバーがついたと思います。
+  上面的遊覽列蓋住網頁的內容顯示的不是那麽好，但是上面應該顯示了巡覽列。
   <hr class="red-hr">
-  内容に関しては私もあまり理解でききっていないので説明はしません<strong>（<u>逆に言えば理解していなくてもコピペすれば使えます</u>）</strong>が、
+  在這裡
   <br><br>
 <table class="highlight">
 <tr>
@@ -121,13 +125,13 @@
 </tr>
 </table>
   <br>
-  で<strong><u>タイトルの左側にでている「myapp」を出し、「&lt;a&gt;」のリンクで「/posts」へのページ移動</u></strong>をしています。
+  <strong><u>用「&lt;a&gt;」的連結顯示左邊的「myapp」。點擊這個連結之後會移動到「/posts」的網頁</u></strong>。
   <br>
-  適宜内容を変えて使ってみましょう！
+  別的設定方法，等一下再解釋吧！
   <hr class="red-hr">
-  では、次に被ってしまった内容を直しましょう。
+  先修這個遊覽列蓋上來的網頁吧。
   <br>
-  被ってしまった内容を直すには<strong><a href="#application-html" target="_blank">「show」や「index」などページを埋め込んで表示</a></strong>させている、
+  修這個遊覽列蓋上來的地方的話，更改<strong><a href="/zh-TW/mugcups/7#application-html" target="_blank">顯示「show」或者「index」等等的網頁的</a></strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（10〜12行目）</strong>
 <table class='highlight'>
@@ -143,20 +147,20 @@
 </tr>
 </table>
   <br>
-  をCSSで少しだけ下にずらします。
+  這個「yield」的位置。
   <br><br>
-  まずはこの「<a href="#title2-2-1-css-div" target="_blank"><strong>div</strong></a>」に、<strong>「<u>main-page</u>」</strong>の「<a href="/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」を設定しましょう。
+  首先在這個「<a href="/zh-TW/mugcups/7#title2-2-1-css-div" target="_blank"><strong>div</strong></a>」上，設定<strong>「<u>main-page</u>」</strong>的「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」吧。在這個「class」裡設定網頁的位置的設定。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong><u>&lt;div class="container"&gt;</u>に「main-page」のclassを追加してみましょう！</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>在<u>&lt;div class="container"&gt;</u>上追加「main-page」的class吧！</strong>
   <br><br>
-  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="3"></textarea>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="3"></textarea>
   <br>
-  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（10〜12行目）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第10〜12行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -172,34 +176,38 @@
 </tr>
 </table>
   <hr class="red-hr">
-  <strong>では、CSSファイル「style.scss」に「main-page」の設定を加えましょう。</strong>
+  <strong>那麽在CSS文件「style.scss」上，追加「main-page」的裝飾設定吧。</strong>
   <br><br>
-  <p id="title2-2-4-margin" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>内容をずらすには、指定した部分の上に空白をつくります。</strong></p>
+  <p id="title2-2-4-margin" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>更改這個被蓋的地方要，在指定的地方上面作空格。</strong></p>
   <br>
-  これは、
+  這個是，用
 <pre>
 margin-top:50px;
 </pre>
-  のようにして設定します。
+  的內容設定。
   <br><br>
-  空白の大きさを変えたければ数字の部分を設定します。
+  想改空格的地方的話，編輯數字的地方。
   <br>
-  空白を右に作りたければ<strong>「<u>margin-right:</u>」</strong>、左なら<strong>「<u>margin-left:</u>」</strong>、下なら<strong>「<u>margin-bottom:</u>」</strong>を設定します。
+  想在右邊作空格的話使用<strong>「<u>margin-right:</u>」</strong>、左邊的話使用<strong>「<u>margin-left:</u>」</strong>，下面的話使用<strong>「<u>margin-bottom:</u>」</strong>設定。
   <br>
-  <small>※　<a href="/mugcups/css#title1-3" target="_blank"><strong>こちら</strong></a>も参考</small>
+  <small>※　<a href="/zh-TW/mugcups/css#title1-3" target="_blank"><strong>請參考這裡</strong></a></small>
   <br><br>
-  まずはSublime Textで<strong>「<u>myapp</u>」</strong>を開き、<strong>「<u>app > assets > stylesheets > style.scss</u>」</strong>を開いてみましょう。
-  <br>
-  <small>※　Sublime Textの開き方は<a href="/mugcups/how_to_open#title1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
-  <br><br>
-  開けたら下の設定を加えましょう！
-  <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>style.scss（4〜6行目）</strong>
+  首先用Sublime Text打開<strong>「<u>myapp</u>」</strong>之後，打開<strong>「<u>app > assets > stylesheets > style.scss</u>」</strong>吧。
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+  </small>
+  <br><br>
+  打開之後追加下面的設定吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss（第4〜6行）</strong>
   <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -215,40 +223,42 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  <u>これで「main-page」のclassの部分の上に<strong>50pxの空白</strong>ができました。</u>
+  <u>這樣在「main-page」的class裡設定了<strong>在上面作50px的空格</strong>的內容。</u>
   <br><br>
-  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
   <br>
-  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみましょう！
+  設定好了之後，打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
   <br><br>
-  下のように表示されたでしょうか？
+  有沒有顯示下面圖像一樣的畫面嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_2.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_2.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  最後に下のように
+  最後設定看，跟下面一樣
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
               :target => ["_blank"] %>
-  右側にも<strong>「<u>新しく投稿する</u>」</strong>ボタンを追加して、「<a href="/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」ページに移動できるようにしましょう！
+  在右邊<strong>「<u>作投稿</u>」</strong>的連結吧。從這個連結可以移動到「<a href="/zh-TW/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」的網頁。
   <br><br>
-  右側のボタンの設定は、
+  右邊的文字的設定在，
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（22,23行目）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第22,23行）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>19
@@ -272,16 +282,16 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  に設定を加えます。
+  這個第22，23行之間，設定。
   <br>
-  ではやってみます。上の22行目の下に内容を追加して下さい。
+  那麽開始做吧。在上面的第22行後面追加下面的內容。
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（23行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第23行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -291,44 +301,46 @@ margin-top:50px;
 24
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
-<span class='code-line remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
 <span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  <u>ここで設定した「&lt;li&gt;」と「&lt;/li&gt;」の間で囲われた部分が表示されます。</u>
+  <u>在這裡設定的「&lt;li&gt;」跟「&lt;/li&gt;」圍起來的地方會在網頁上顯示。</u>
   <br>
-  今回は<strong>「<u>&lt;a href="/posts/new"&gt;新しく投稿する&lt;/a&gt;</u>」の部分</strong>になりますね。
+  這一次的話，是<strong>「<u>&lt;a href="/posts/new"&gt;作投稿&lt;/a&gt;</u>」的地方</strong>呢。
   <br><br>
-  では実際に見てみましょう！
-  <br>
-  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
-  <br><br><br>
-  <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
-  <br>
-  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
-  </p>
-  <br>
-  「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」を開いてみましょう！
+  那麽，看看內容吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」を開いてみて下さい。
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
   <br><br>
-  下のように表示されたでしょうか？
+  有沒有顯示下面圖像一樣的網頁嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
               :target => ["_blank"] %>
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>では、「/posts」に移動する<a href="/mugcups/5#title1-2-2" target="_blank">リンク</a>「トップに戻る」（&lt;a&gt;）を上のバーの右側に追加するための設定はどのようになるでしょうか？（23行目の上にマウスを置くと答えがでます）</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>那麽在上面的遊覽列上追加，移動到「/posts」的網頁的<a href="/zh-TW/mugcups/5#title1-2-2" target="_blank">連結</a>「返回主頁」（&lt;a&gt;）的內容要怎麼設定好呢？（第23行上放鼠標可以看答案）</strong>
   <br><br>
-  <input type="input" class="input-code form-control" placeholder="答えを入力して下さい">
+  <input type="input" class="input-code form-control" placeholder="打入答案">
   <br>
-  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（22〜24行目）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第22行〜第24行）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>22
@@ -336,17 +348,17 @@ margin-top:50px;
 24
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
-<span class='code-line answer-code remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line answer-code remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回住頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
 <span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
 </td>
 </tr>
 </table>
   <hr class="red-hr">
-  他のページにも移動してみて、上に同じようなバーが出てくるかを確認して下さい。
+  移動到別的網頁（「edit」「index」等等），看看顯示的畫面有沒有一樣。
   <br><br>
-  <i class="fa fa-star color-blue"></i>　<strong>Bootstrapで上に表示させるバーを作るには、</strong>
+  <i class="fa fa-star color-blue"></i>　<strong>用Bootstrap作上面的遊覽列的時候，要設定</strong>
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（10〜26行目）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第10行〜第26行）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>9
@@ -398,13 +410,13 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  を追加します。
+  的內容。
   <br>
-  自分でコードを打つ必要はないので、コピペでもいいのでとりあえず貼り付けてみましょう！
+  用複製與黏貼打入內容也可以。
   <br><br>
-  この中でも変更する必要があるのは、
+  在這個裡面，有可疑編輯的地方
   <ul class="number_ul">
-  <strong><li>左側につけるボタン</li></strong>
+  <strong><li>左邊的文字</li></strong>
   <br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
 <table class="highlight">
@@ -416,7 +428,7 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  <strong><li>右側につけるボタン</li></strong>
+  <strong><li>右邊的文字</li></strong>
   <br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
 <table class='highlight'>
@@ -430,18 +442,18 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  の間に
+  之間設定
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  を設定する。
+  想顯示的文字。
   <hr class="red-hr">
-  <strong><u>ここまでお疲れさまです。少しまとめをします。</u></strong>
+  <strong><u>辛苦你了。接着做總結。</u></strong>
 </h4>

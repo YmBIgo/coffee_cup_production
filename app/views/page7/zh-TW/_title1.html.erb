@@ -1,43 +1,43 @@
-<h2 class="textbook-section-title" id="title1"><strong>1 : リンクを完成させよう！</strong></h2>
+<h2 class="textbook-section-title" id="title1"><strong>1 : 完成作連結吧！</strong></h2>
 <h4 id="chapter7-1">
-  <strong>では、ページをもっとクリックで移動できるようにしましょう！</strong>
+  <strong>那麽，先設定網頁的移動，連結吧！</strong>
   <hr class="red-hr">
-  ページ移動（リンク）は、例えば<strong>「<a href="/mugcups/5#title1-2" target="_blank">データの全表示（index）</a>」</strong>に移動するリンクであれば
+  網頁的移動（連結），例如說移動到<strong>「<a href="/zh-TW/mugcups/5#title1-2" target="_blank">顯示全部的資料（index）</a>」</strong>的網頁的話，
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回住頁&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  このように表示させましたね。
+  用這樣子顯示內容。
   <br>
-  詳細は<a href="/mugcups/5#title1-2-2" target="_blank"><strong>ここ</strong></a>を参考に見てみて下さい！
+  詳細<a href="/zh-TW/mugcups/5#title1-2-2" target="_blank"><strong>請參考這裡</strong></a>！
   <hr class="red-hr">
-  この章でも目標としては、
+  這個章的目的是，
   <br>
-  「<a href="/mugcups/5#title1-1" target="_blank"><strong>１つのデータの表示（show）</strong></a>」をするページに、下のような「<a href="/mugcups/6#title1-5" target="_blank"><strong>編集するデータの記入（edit）</strong></a>」をするページへのリンクを
+  「<a href="/zh-TW/mugcups/5#title1-1" target="_blank"><strong>顯示一個資料（show）</strong></a>」的網頁上，顯示跟下面的圖像一樣子的「<a href="/zh-TW/mugcups/6#title1-5" target="_blank"><strong>打入編輯的資料（edit）</strong></a>」的網頁的連結，
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_1_add_edit.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_1_add_edit.png",
               :target => ["_blank"] %>
-  「<a href="/mugcups/5#title1-2" target="_blank"><strong>全てのデータの表示（index）</strong></a>」をするページに、下のような「<a href="/mugcups/6#title1-3" target="_blank"><strong>作成するデータの記入（new）</strong></a>」をするページへのリンクを
+  「<a href="/zh-TW/mugcups/5#title1-2" target="_blank"><strong>顯示全部的資料（index）</strong></a>」的網頁上，顯示跟下面的圖像一樣子的「<a href="/zh-TW/mugcups/6#title1-3" target="_blank"><strong>打入新的資料（new）</strong></a>」的網頁的連結，
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
               :target => ["_blank"] %>
-  を加えてみます。
+  的設定內容。
   <br>
-  習った内容の復習も兼ねて、やってみましょう！
+  那麽，做做看吧！
 </h4>
 <hr>
-<%= render "page7/title1_1" %>
+<%= render "page7/zh-TW/title1_1" %>
 <hr>
-<%= render "page7/title1_2" %>
+<%= render "page7/zh-TW/title1_2" %>
 <hr>
-<%= render "page7/title1_3" %>
+<%= render "page7/zh-TW/title1_3" %>

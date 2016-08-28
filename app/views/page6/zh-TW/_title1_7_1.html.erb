@@ -146,7 +146,7 @@
         <hr class="red-hr">
         <i class="fa fa-play-circle"></i>　<strong>那麽，設定網頁的內容吧！</strong>
         <br><br>
-        首先設定點擊「刪除資料」之後，移動到「刪除資料（destroy）」的網頁的連結。
+        首先設定點擊「刪除投稿」之後，移動到「刪除資料（destroy）」的網頁的連結。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
@@ -267,7 +267,7 @@
 <tr>
 <td class='code-line-no text-center'><span class="color-red"><strong>6</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/<span class="remarkable-code">&lt;%= @post.id %&gt;</span>"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/<span class="remarkable-code">&lt;%= @post.id %&gt;</span>"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;刪除投稿&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -276,7 +276,7 @@
         <br><br>
         <strong>這樣，移動到「刪除資料（destroy）」的網頁的設定好了！</strong>
         <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong><u>移動到刪除「songs」資料庫的「id是100」的資料的「削除」的連結</u>要怎麼設定好呢？</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong><u>移動到刪除「songs」資料庫的「id是100」的資料的「刪除」的連結</u>要怎麼設定好呢？</strong>
         <br><br>
         <input type="input" class="input-code form-control" placeholder="打入答案">
         <br>
@@ -362,7 +362,7 @@
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
                     :target => ["_blank"] %>
-        有設定好的話，點擊<strong>「<u>刪除資料</u>」</strong>的按鈕吧！有沒有顯示下面一樣子的網頁嗎？
+        有設定好的話，點擊<strong>「<u>刪除投稿</u>」</strong>的按鈕吧！有沒有顯示下面一樣子的網頁嗎？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
