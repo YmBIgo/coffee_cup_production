@@ -1,13 +1,13 @@
 <h4 id="chapter8-1-2">
-  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : ページを作ってみよう！</strong></p>
+  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 作網頁</strong></p>
   <br>
-  最初に設定した<strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>に画像を表示させてみましょう。
+  在這裡，設定好的<strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>上顯示看圖像吧。
   <br>
-  <u>まずは画像ファイルをRuby on Railsの設定ファイルに追加します。</u>
+  <u>首先把圖像文件保存在 Ruby on Rails 的設定文件夾裡吧。</u>
   <br><br>
-  <a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header12.jpg" target="_blank"><strong>こちら</strong></a>に画像ファイルがあるので、これをダウンロードして、
+  <a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header12.jpg" target="_blank"><strong>這裡</strong></a>有圖像文件，下載這個文件之後，
   <br>
-  <strong>「app > assets > images」</strong>に画像ファイルを保存して下さい。
+  在<strong>「app > assets > images」</strong>裡，保存圖像的文件吧。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets1.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -18,24 +18,24 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets2.png",
               :target => ["_blank"] %>
-  Sublime Textで<strong>「<u>myapp</u>」</strong>を開いてみて、<strong>「app > assets > images > header12.jpg」</strong>を開いてみて下さい。
+  用Sublime Text打開<strong>「<u>myapp</u>」</strong>之後，打開看<strong>「app > assets > images > header12.jpg」</strong>吧。
   <br>
-  下のような画像は表示されたでしょうか？
+  有沒有顯示下面圖像一樣的畫面嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Sublime_Text_header12.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Sublime_Text_header12.png",
               :target => ["_blank"] %>
-  この保存された画像を表示させてみます。
+  在網頁上顯示看這個圖像文件吧。
   <hr class="red-hr">
-  まずは<strong>「<u>index.html.erb</u>」</strong>を下のように変更してみて下さい。
+  首先編輯<strong>「<u>index.html.erb</u>」</strong>吧。
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（1、3行目）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（第1、3行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -47,24 +47,24 @@
 5
 </td>
 <td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>h1</span>ようこそ&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span>歡迎光臨&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line remarkable-code'>&lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;投稿一覧を見る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;看投稿一覽&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  開いても内容は変更されていないと思いますが、
+  現在打開網頁，應該還看不到圖像吧。
   <br>
-  この<strong>「<u>header-image</u>」</strong>に画像を表示させる設定を<strong>「<u>style.scss</u>」</strong>に加えます。
+  在這個<strong>「<u>header-image</u>」</strong>上面追加，顯示圖像的<strong>「<u>style.scss</u>」</strong>的設定。
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>style.scss（7〜15行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss（追加第7〜15行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -90,30 +90,32 @@
 </tr>
 </table>
   <br>
-  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
   <br>
-  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  できたら、「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」を開いてみましょう！
+  做完了之後，打開「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」を開いてみて下さい。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」吧。
   </small>
   <br><br>
-  下のように表示されたでしょうか？
+  有沒有顯示下面圖像一樣的畫面嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_image.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_image.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  内容について説明しましょう。
+  解釋解釋裡面的內容吧。
   <br>
-  まず、
+  首先，
   <br><br>
 <table class="highlight">
 <tr>
@@ -124,9 +126,9 @@
 </tr>
 </table>
   <br>
-  ここで、先に保存した<strong>「<u>header12.jpg</u>」</strong>を<strong>「<u>header-image</u>」</strong>の背景に使用することを設定しています。
+  在這裡，設定<strong>「<u>header-image</u>」</strong>的背景要使用<strong>「<u>header12.jpg</u>」</strong>的圖像。
   <br><br>
-  もし<strong>「<u>header.jpg</u>」</strong>を使うなら、
+  如果要用<strong>「<u>header.jpg</u>」</strong>的話，設定
   <br><br>
 <table class="highlight">
 <tr>
@@ -137,7 +139,7 @@
 </tr>
 </table>
   <br>
-  という設定になります。
+  這樣子的內容。
   <hr class="red-hr">
 <table class="highlight">
 <tr>
@@ -148,15 +150,15 @@
 </tr>
 </table>
   <br>
-  で高さの設定をしています。
+  在這裡設定，圖像的上下高度。
   <br>
-  横の長さはコンピューターが画像の大きさに合わせて勝手に決めてくれますが、自分で決めたいなら
+  長度是電腦在設定，但是如果想自己設定的話，
 <pre>
-width:好きな長さpx（もしくは%）
+width:自己喜歡的長度px（或者%）
 </pre>
-  できめることもできます。
+  這樣設定也OK。
   <hr class="red-hr">
-  最後の４行は、
+  最後的4行。
 <table class="highlight">
 <tr>
 <td class="code-line-no text-center">10
@@ -172,26 +174,26 @@ width:好きな長さpx（もしくは%）
 </tr>
 </table>
   <br>
-  画面の大きさが変更された時に、それに応じた画像の大きさの変更をする設定になります。
+  這裡是，遊覽器的大小有變化的時候、隨着遊覽器的大小自動改變圖像的大小的設定。
   <br><br>
-  いろいろな設定はありますが、コピペで使ってみて慣れましょう。
+  這樣子設定有很多種。到習慣用這些設定為止，自己試試看看吧。
   <hr class="red-hr">
-  <strong><u>今の状態だと文字が左上の表示されて見づらいですね。最後にこの文字を中央に配置してみましょう。</u></strong>
+  <strong><u>現在的狀態，文字顯示在左邊有一點不好看。最後吧這個文字顯示在中央吧。</u></strong>
   <br><br>
-  まず文字を
+  首先像上面的圖像一樣，置中對齊文字吧。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
               :target => ["_blank"] %>
-  みたいに中央揃えに配置してみましょう。<u>これも<strong>Bootstrap</strong>の設定でできます。</u>
+  <u>這個也可以用<strong>Bootstrap</strong>設定。</u>
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（2行目を変更）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（編輯第2行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -203,97 +205,98 @@ width:好きな長さpx（もしくは%）
 5
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
-<span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;ようこそ&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;歡迎光臨&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;投稿一覧を見る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;看投稿一覽&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
   <small>
-  ※　<strong>「&lt;strong&gt;と&lt;/strong&gt;」</strong>の間の部分は、強調されて表示されます。
-  <br>
-  ※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。
+    ※　<strong>「&lt;strong&gt;」跟「&lt;/strong&gt;」圍起來的地方</strong>會強調文字。
+    <br>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
   </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
   <br>
-  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  できたら、「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」を開いてみましょう！
+  做完了之後，打開「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」を開いてみて下さい。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」吧。
   </small>
   <br><br>
-  文字は中央揃えになったでしょうか？
+  文字有沒有置中對齊了嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
               :target => ["_blank"] %>
-  このようにBootstrapで文字を中央揃えにするには
+  這樣子用Bootstrap置中對齊文字的時候，在class裡設定
 <pre>
 text-center
 </pre>
-  をclassに設定します。
+  的內容。
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;ようこそ&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;歡迎光臨&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  <strong>また右揃えにしたければ「text-right」、左揃えにしたければ「text-left」を使います。</strong>
+  <strong>如果想靠右對齊的話使用「text-right」，想靠左對齊的話使用「text-left」。</strong>
   <hr class="red-hr">
-  中央揃えにはできたと思いますが、まだ文字が上に張り付いていますね。
+  這樣設定置中對齊文字了。但是文字的位置還是有一點奇怪。
   <br>
-  次はこれを直しましょう。
+  接着修這個內容吧。
   <br><br>
-  まずはこの<strong>「&lt;h1&gt;」</strong>に、<strong><u>class「header-content」を設定しましょう。</u></strong>
+  首先在<strong>「&lt;h1&gt;」</strong>的<strong><u>class裡設定「header-content」吧。</u></strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>2
 </td>
-<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center header-content"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;ようこそ&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center header-content"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;歡迎光臨&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  この<strong>「<u>header-content</u>」</strong>の装飾の内容を<strong>「<u>style.scss</u>」</strong>に設定していきます。
+  在這個<strong>「<u>style.scss</u>」</strong>裡，設定<strong>「<u>header-content</u>」</strong>的裝飾的內容。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>まずは練習として、<u>class「header-content」の文字の大きさを75pxにする設定</u>をしてみましょう。
+  <i class="fa fa-question-circle color-green"></i>　<strong>首先設定看，<u>在「header-content」的class裡設定75px的大小的文字
+  </u>吧。
   <br><br>
-  文字の大きさは、
+  文字的大小，用
   </strong>
 <pre>
-font-size:文字の大きさpx;
+font-size:文字的大小px;
 </pre>
-  <strong>で設定します。</strong>
+  <strong>設定。</strong>
   <br><br>
-  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="3"></textarea>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="3"></textarea>
   <br>
   <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -309,34 +312,34 @@ font-size:文字の大きさpx;
 </tr>
 </table>
   <hr class="red-hr">
-  ではこの<strong>「<u>header-content</u>」</strong>に、文字を下に下げる設定を追加します。
+  那麽接着在這個<strong>「<u>header-content</u>」</strong>裡，追加把文字的位置移到下面的設定吧。
   <br><br>
-  文字を下に下げるなら<a href="/mugcups/7#title2-2-4-margin" target="_blank"><strong>空白を作る</strong></a>
+  移動文字的位置的話，可以使用<a href="/zh-TW/mugcups/7#title2-2-4-margin" target="_blank"><strong>作空白</strong></a>的
 <pre>
 margin-top:150px
 </pre>
-  でできるでしょうか？
+  這樣子設定嗎？
   <br><br>
-  実際に加えてみると、
+  試試看吧。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_margin.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_margin.png",
               :target => ["_blank"] %>
-  このように逆に上に空白ができてしまいました。
+  結果是這樣，上面顯示空白了。
   <br>
-  <u>この<strong>「margin」は要素の外に空白を作る</strong>設定</u>なので、今回のようにすでにある要素（&lt;div&gt;）の中では使っても<strong><u>外側に空白</u>ができてしまします。</strong>
+  這是應為，<u>這個<strong>「margin」是在內容的外面作空格的</strong>設定</u>，所以像這一次一樣在內容的（&lt;div&gt;）裡面作空格的時候不能使用。
   <br><br>
-  <strong>今回のような要素（&lt;div&gt;）の中で空白を作るには、「<a href="/mugcups/css#title1-3" target="_blank">padding</a>」という設定を使います。</strong>
+  <strong>像這一次一樣，在內容的（&lt;div&gt;）裡面作空格的時候，使用「<a href="/zh-TW/mugcups/css#title1-3" target="_blank">padding</a>」的設定。</strong>
   <br>
-  ではこの<strong>「<u>padding</u>」</strong>を使って設定をしてみましょう。
+  那麽使用這個<strong>「<u>padding</u>」</strong>設定內容吧。
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>style.scss（18行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss（追加第18行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -354,25 +357,27 @@ margin-top:150px
 </tr>
 </table>
   <br>
-  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
   <br>
-  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  できたら、「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」を開いてみましょう！
+  編輯完了之後，打開「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」を開いてみて下さい。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」吧。
   </small>
   <br><br>
-  下のように表示されたでしょうか？
+  有沒有顯示下面一樣子的顯示嗎？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
               :target => ["_blank"] %>
-  ここらへんは分かりづらい部分も多いと思うので、適宜使っていきながら試してみましょう。
+  在這裡學的設定有一點難懂。到習慣用這些設定為止，自己複習看看吧！
 </h4>
