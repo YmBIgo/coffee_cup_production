@@ -1,0 +1,87 @@
+<h4 id="chapter10-3-2-2">
+  <p id="title3-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : index網頁</strong></p>
+  <br>
+  <strong>「<u>index</u>」網頁的資料操作</strong>是，從「users」資料庫選擇全部的資料的資料操作。
+  <br>
+  <small>※　詳細的內容，請參考<strong><u>「posts」資料庫的「<a href="/zh-TW/mugcups/5#title1-2" target="_blank">index</a>」網頁的設定</u></strong>吧</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第8行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>7
+<strong class="color-red">8</strong>
+9
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line remarkable-code'>    @users <span class="word-red">=</span> <span class='word-blue'>User</span>.all</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在網頁上，顯示在這裡設定的，選擇「users」資料庫的全部的資料<strong>「<u>@users</u>」。</strong>
+  <hr class="red-hr">
+  接着在<strong>「<u>app > views > users > index.html.erb</u>」</strong>上追加顯示的設定。編輯<strong>「<u>index.html.erb</u>」</strong>的內容吧。
+  <br>
+  <small>※　詳細的內容請參考<strong><u>「posts」資料庫的「<a href="/zh-TW/mugcups/5#title1-2" target="_blank">index</a>」網頁</u></strong>吧</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;會員一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @users.each <span class="word-red">do</span> |u| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= u.id %&gt;"</span>&gt;&lt;%= u.family_name %&gt;&lt;%= u.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  做完了之後，打開「<a href="http://0.0.0.0:3000/users" target="_blank"><strong>0.0.0.0:3000/users</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/users" target="_blank"><strong>localhost:3000/users</strong></a>」吧。
+  </small>
+  <br><br>
+  有沒有顯示下面圖像一樣的畫面嗎？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users.png",
+              :target => ["_blank"] %>
+  在這裡也沒有保存<strong>「<u>family_name</u>」跟「<u>first_name</u>」</strong>的資料，所以沒有顯示會員的名字吧。
+</h4>

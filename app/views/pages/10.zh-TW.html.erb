@@ -1,0 +1,51 @@
+<% provide :title, "用戶管理②" %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>10 : 用戶管理②</strong></h1>
+          </div>
+          <h4><u><a href="/zh-TW/mugcups/9" class="text-left ">上章：用戶管理①</a></u></h4>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header10.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+            <strong class="remarkable">這個章是，上章「用戶管理①」繼續的內容。</strong>
+            <br>
+            <strong>還沒看完上章的內容的話、<a href="/zh-TW/mugcups/9" target="_blank">請參考這裡</a>吧。</strong>
+            <hr>
+            <%= render "page10/zh-TW/title3" %>
+          <div class="next-page">
+              <a href="/zh-TW/mugcups/11" class="btn btn-primary">下章</a>
+            </div>
+            <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>用戶管理②</h4></a>
+          <a href="#title3" class="list-group-item">3 : 作「users」網頁</a>
+          <a href="#title3-1" class="list-group-item">　<small>① : 七個網頁的設定</small></a>
+          <a href="#title3-2" class="list-group-item">　<small>② : 顯示網頁・操作資料的設定</small></a>
+          <a href="#title3-2-1" class="list-group-item">　　<small>⑴ : show的網頁</small></a>
+          <a href="#title3-2-2" class="list-group-item">　　<small>⑵ : index的網頁</small></a>
+          <a href="#title3-2-3" class="list-group-item">　　<small>⑶ : edit的網頁</small></a>
+          <a href="#title3-2-4" class="list-group-item">　　<small>⑷ : update的網頁</small></a>
+          <a href="#title3-2-5" class="list-group-item">　　<small>⑸ : 登入機能</small></a>
+          <a href="#title3-3" class="list-group-item">　<small>③ : 遊覽列上追加移動到「users」網頁的連結</small></a>
+          <a href="#title3-3-1" class="list-group-item">　　<small>⑴ : 移動到「users」網頁的連結</small></a>
+          <a href="#title3-3-2" class="list-group-item">　　<small>⑵ : user_signed_in?</small></a>
+          <a href="#title3-3-3" class="list-group-item">　　<small>⑶ : 總結</small></a>
+          <a href="#title3-4" class="list-group-item">　<small>④ : 總結</small></a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

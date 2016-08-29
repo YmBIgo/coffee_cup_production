@@ -1,0 +1,215 @@
+<h4 id="chapter10-3-3-2">
+  <p id="title3-3-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : user_signed_in?</strong></p>
+  <br>
+  <strong>首先點擊看<u>「登出」的連結</u>吧。可不可以登出呢？</strong>
+  <br><br>
+  點擊之後，因該會出現下面一樣的畫面。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_after_logout.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_after_logout.png",
+              :target => ["_blank"] %>
+  <strong>這個是<u>應為已經會員登出了沒有登入的會員的資料，所以「current_user」不能取得登入的會員的資料</u>，顯示的錯誤的畫面。</strong>
+  <br><br>
+  在這裡更改這個設定吧。
+  <hr class="red-hr">
+  因為有這樣的錯誤，登入的時候跟沒有登入的時候必須要顯示別的連結。
+  <ul class="number_ul">
+    <br>
+    <strong><li>登入的時候</li></strong>
+    <br>
+    顯示<strong><u>「會員一覽」「會員資料」「作投稿」「登出」</u></strong>的連結
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+              :target => ["_blank"] %>
+    <br>
+    <strong><li>登出的時候</li></strong>
+    <br>
+    顯示<strong><u>「註冊」「登入」</u></strong>的連結
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+              :target => ["_blank"] %>
+  </ul>
+  <hr class="red-hr">
+  使用在<a href="/zh-TW/mugcups/9#title2-2-2" target="_blank"><strong>登入的通知解釋</strong></a>的判別條件的
+<pre>
+&lt;% if 條件 %&gt;
+  内容
+&lt;% end %&gt;
+</pre>
+  的設定跟，
+  <br><br>
+  「devise」上，判別利用者有沒有登入的，
+<pre>
+user_signed_in?
+</pre>
+  這個設定判別。
+  <br><br>
+   <strong>那麽，使用這個「user_signed_in?」跟「&lt;% if %&gt;」，<u>
+   <br>
+   設定，登入的時候顯示「會員一覽」「會員資料」「作投稿」「登出」的連結的設定吧</u>。</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第25、30行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>21
+22
+23
+24
+<strong class="color-red">25</strong>
+26
+27
+28
+29
+<strong class="color-red">30</strong>
+31
+32
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;註冊&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;登入&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span>&gt;會員一覽&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span>&gt;會員資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"登出"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br><br>
+  <strong>再打開同樣的網頁吧。</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_logout.png",
+                        :width => "90%",
+                        :class =>" hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_logout.png",
+              :target => ["_blank"] %>
+  這一次應該沒問題打開網頁了吧。
+  <br><br>
+  應為現在利用者沒有登入，所以「會員資料」沒有像上一次顯示。這樣現在沒有出現錯誤了。
+  <hr class="red-hr">
+  那麽再登入看吧。
+  <br>
+  有沒有像下面一樣登入了嗎？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_login.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_login.png",
+              :target => ["_blank"] %>
+  <strong>這樣看，雖然已經登入了，但是還顯示<u>「註冊」「登入」的連結</u>。</strong>這個有一點奇怪。
+  <br>
+  這個也用<strong>「<u>&lt;% if %&gt;</u>」</strong>的設定除掉吧。
+  <br><br>
+  如果是要判別跟條件一樣的話，使用
+<pre>
+&lt;% if 條件 %&gt;
+  内容
+&lt;% end %&gt;
+</pre>
+  這個設定判別條件、
+  <br>
+  相反的如果要判別跟條件不同的話，使用
+<pre>
+&lt;% if 条件 %&gt;
+  内容（跟條件一樣的時候）
+&lt;% else %&gt;
+  内容（跟條件不同的時候）
+&lt;% end %&gt;
+</pre>
+  判別條件。
+  <br><br>
+  <strong><u>那麽，設定不讓登入的會員顯示「註冊」「登入」的連結的內容吧。</u></strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第28〜30行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>21
+22
+23
+24
+25
+26
+27
+<strong class="color-red">28
+29
+30</strong>
+31
+32
+33
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span>&gt;會員一覽&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span>&gt;會員資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"登出"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;註冊&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;登入&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br><br>
+  <strong><u>編輯完了之後，登入會員再打開自己喜歡的網頁吧。</u></strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+              :target => ["_blank"] %>
+  網頁上沒有顯示<strong>「<u>註冊</u>」「<u>登入</u>」</strong>的連結吧。
+  <br>
+  如果沒有顯示的話，再登出吧。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+              :target => ["_blank"] %>
+  沒有登入的時候顯示的連結的話OK。
+  <hr class="red-hr">
+  <strong><u>最後總結解釋的內容。</u></strong>
+</h4>

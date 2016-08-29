@@ -1,0 +1,118 @@
+<h4 id="chapter10-3-2-4">
+  <p id="title3-2-4" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : update網頁</strong></p>
+  <br>
+  <strong>「<u>update</u>」網頁的資料操作</strong>是，用在「edit」網頁打入的資料更新資料。
+  <br>
+  參考下面，設定內容吧。
+  <br>
+  <small>※　詳細的內容，請參考<strong><u>「posts」資料庫的「<a href="/zh-TW/mugcups/6#title1-6" target="_blank">update</a>」</u></strong>網頁吧。</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>15
+<strong class="color-red">16
+17</strong>
+18
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line remarkable-code'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  選擇更新的資料之後，<strong>用「edit」網頁打入的資料更新資料。</strong>
+  <br><br>
+  為了不讓別的框子的資料（id或者email等等）更新，<strong>設定只讓「users」資料庫的
+    <ul class="number_ul">
+      <li>「<u>family_name</u>」</li>
+      <li>「<u>first_name</u>」</li>
+      <li>「<u>self_introduction</u>」</li>
+    </ul>
+  這個三個框子更新。
+  </strong>
+  <hr class="red-hr">
+  接着在<strong>「<u>app > views > users > update.html.erb</u>」</strong>上設定內容吧。編輯<strong>「<u>update.html.erb</u>」</strong>的內容吧。
+  <br>
+  <small>※　詳細的內容，請參考<strong><u>「posts」資料庫的「<a href="/zh-TW/mugcups/6#title1-6" target="_blank">update</a>」</u></strong>網頁吧。</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>update.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;會員資料編輯好了。&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回會員資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯會員資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  編輯好之後，打開「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank"><strong>0.0.0.0:3000/users/1/edit</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/users/1/edit" target="_blank"><strong>localhost:3000/users/1/edit</strong></a>」吧。
+  </small>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　打開之後，點擊<strong>「更新」</strong>的按鈕吧。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_edit.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_edit.png",
+              :target => ["_blank"] %>
+  有沒有移動到編輯完成的網頁了嗎？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_update.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_update.png",
+              :target => ["_blank"] %>
+  出現網頁之後，打開<strong>「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」</strong>吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/users/1" target="_blank"><strong>localhost:3000/users/1</strong></a>」吧。
+  </small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_1_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_1_after.png",
+              :target => ["_blank"] %>
+  在「show」網頁上，有沒有顯示編輯的資料了嗎？
+</h4>

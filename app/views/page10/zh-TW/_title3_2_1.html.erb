@@ -1,0 +1,129 @@
+<h4 id="chapter10-3-2-1">
+  <p id="title3-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : show網頁</strong></p>
+  <br>
+  <strong>「<u>show</u>」網頁的資料操作</strong>是用id顯示網頁的內容，像下面設定。
+  <br>
+  <small>※　詳細的說明，請參考<strong><u>「posts」資料庫的「<a href="/zh-TW/mugcups/5#title1-1-2" target="_blank">show</a>」網頁</u></strong>。</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第4行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+<strong class="color-red">4</strong>
+5
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line remarkable-code'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  用這個<strong>「<u>@user</u>」</strong>在網頁上顯示會員的資料。
+  <hr class="red-hr">
+  接着，在<strong>「<u>app > views > users > show.html.erb</u>」</strong>文件上追加顯示的內容。編輯<strong>「<u>show.html.erb</u>」</strong>的內容吧。
+  <br>
+  <small>※　詳細的內容，請參考<strong><u>「posts」資料庫的「<a href="/zh-TW/mugcups/5#title1-1" target="_blank">show</a>」網頁</u></strong>吧</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自我介紹：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回會員一覽&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯會員資料&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  編輯好了之後，打開「<a href="http://0.0.0.0:3000/users/1" target="_blank"><strong>0.0.0.0:3000/users/1</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/users/1" target="_blank"><strong>localhost:3000/users/1</strong></a>」吧。
+  </small>
+  <br><br>
+  有沒有顯示下面圖像一樣的網頁嗎？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1.png",
+              :target => ["_blank"] %>
+  <strong>還沒保存「users」資料庫的
+  <ul class="number_ul">
+    <li>「family_name」</li>
+    <li>「first_name」</li>
+    <li>「self_introduction」</li>
+  </ul>
+  這些框子的資料，所以內容還不會顯示。</strong>
+  <br><br>
+  過一會兒作好<strong>「<u>edit</u>」「<u>update</u>」網頁</strong>之後，在網頁上保存資料顯示資料吧！
+  <hr class="red-hr">
+  連結有
+  <br>
+  <ul class="number_ul">
+    <strong><li>移動到「users」資料庫的「index」網頁的連結</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回會員一覽&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+      <a href="/users" class="btn btn-primary" style="margin:15px 0" target="_blank">返回會員一覽</a>
+    <strong><li>「users」資料庫的「edit」網頁的連結</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯會員資料&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+      <p><a href="/users/1/edit" class="btn btn-success" style="margin:15px 0" target="_blank">編輯會員資料</a>
+  </ul>
+  這個兩個。
+  <br>
+  但是點擊這些連結之後移動到的網頁的內容還沒設定好，所以移動後也顯示空白的網頁。
+  <br>
+  咱們接着設定剩下的網頁吧。
+</h4>

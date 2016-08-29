@@ -1,0 +1,27 @@
+<h4 id="chapter10-3-3">
+  <p id="title3-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : navigation-bar上追加「users」網頁的連結</strong></p>
+  <br>
+  <strong>到這裡，做好了「<u>users</u>」資料庫的網頁。</strong>
+  <br>
+  最後在<a href="/zh-TW/mugcups/css#title2-3" target="_blank"><strong>遊覽列・navigation-bar</strong></a>上，追加<strong>移動到「<u>users</u>」網頁</strong>的<a href="/zh-TW/mugcups/5#title1-2-2" target="_blank"><strong>連結</strong></a>吧。
+  <hr class="red-hr">
+  沒有登入的時候，在遊覽列上顯示<strong><u>「登入」「註冊」的連結</u></strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+              :target => ["_blank"] %>
+  登入的時候，在遊覽列上顯示<strong><u>「會員一覽」「會員資料」「作投稿」「登出」的連結</u></strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+              :target => ["_blank"] %>
+  顯示的樣子的設定吧。
+  <hr class="red-hr">
+  <%= render "page10/zh-TW/title3_3_1.html.erb" %>
+  <hr class="red-hr">
+  <%= render "page10/zh-TW/title3_3_2.html.erb" %>
+  <hr class="red-hr">
+  <%= render "page10/zh-TW/title3_3_3.html.erb" %>
+</h4>
