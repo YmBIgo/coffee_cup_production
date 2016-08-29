@@ -1,0 +1,118 @@
+<h4 id="chapter9-2-3">
+  <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 總結</strong></p>
+  <br>
+  到這裡設定了登入機能的內容了（雖然很多是「devise」作的・・・）。
+  <br><br>
+  <strong>
+  在這裡設定了
+  <ul class="number_ul">
+    <li>註冊登入網頁的設定</li>
+    <li>網頁上檢查利用者有沒有登入的設定</li>
+    <li>通知的設定</li>
+  </ul>
+  這個三個內容。
+  <br><br>
+  設定的內容<a href="/zh-TW/codes/9" target="_blank">請參考這裡</a>吧。
+  </strong>
+  <ul class="number_ul">
+    <hr class="red-hr">
+    <strong><li>註冊登入網頁的設定</li></strong>
+    <br>
+    <strong>註冊網頁（「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」）</strong>在
+    <br><br>
+    <strong>「<u>app > views > devise > registrations</u>」</strong>文件夾裡的<strong>「<u>new.html.erb</u>」</strong>文件裡追加設定的內容。
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_bootstrap.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_bootstrap.png",
+                :target => ["_blank"] %>
+    <hr class="red-hr">
+    <strong>登入網頁（「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」）</strong>在
+    <br><br>
+    <strong>「<u>app > views > devise > sessions</u>」</strong>文件夾裡的<strong>「<u>new.html.erb</u>」</strong>文件裡追加設定的內容。
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_bootstrap.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_bootstrap.png",
+                :target => ["_blank"] %>
+    <hr class="red-hr">
+    <strong><li>網頁上檢查利用者有沒有登入的設定</li></strong>
+    <br>
+    要限制顯示網頁的內容的話，<strong>想檢查利用者的網頁的資料庫的「controller」文件裡追加下面的設定。</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>before_action <span class='word-purple'>:authenticate_user!</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    這樣子在全部的網頁上檢查利用者了。
+    <br>
+    如果要指定檢查的網頁的話，設定像下面的內容。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>before_action <span class='word-purple'>:authenticate_user!</span>, <span class="remarkable-code"><span class='word-purple'>:only</span> => [<span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span></span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li>通知的內容</li></strong>
+    <br>
+    在「devise」裡，可以設定<strong><u>顯示註冊登入網頁上的通知</u></strong>的內容。
+    <br>
+    設定通知要追加下面的內容。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> notice %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;&lt;%= notice %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">if</span> alert %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-danger"</span>&gt;&lt;%= alert %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    內容使用
+<pre>
+&lt;% if 條件 %&gt;
+  内容
+&lt;% end %&gt;
+</pre>
+    判別通知，在各個通知上顯示設定的內容。
+    <br><br>
+    <strong>設定的內容<a href="/zh-TW/codes/9" target="_blank">請參考這裡</a></strong>。
+  </ul>
+  <hr>
+  <strong>
+  到這裡辛苦你了。作的網站也更像會員制的網站吧。
+  <hr class="red-hr">
+  <i class="fa fa-star color-blue"></i>　看「users」資料庫裡面，應該看到
+  <ul class="number_ul">
+    <li>「family_name」</li>
+    <li>「first_name」</li>
+    <li>「self_introduction」</li>
+  </ul>
+  的框子裡沒有保存的資料，應為註冊的時候沒有打入。
+  <br><br>
+  接着在這個資料庫裡保存資料，作「users」資料庫的網頁吧。
+  </strong>
+</h4>

@@ -1,0 +1,131 @@
+<h4 id="chapter9-2-1-2">
+  <p id="title2-1-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : navigation-bar</strong></p>
+  <br>
+  <strong><a href="/mugcups/css#title2-3" target="_blank">在navigation-bar</a></strong>上<strong>「<a href="/users/sign_up" target="_blank">註冊</a>」</strong>跟<strong>「<a href="/users/sign_in" target="_blank">登入</a>」</strong>的連結吧！
+  <br>
+  這一次在navigation-bar，遊覽列的右邊加兩個連結吧。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>設定看移動到，註冊的網頁「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」的<a href="/zh-TW/mugcups/5#title1-2-2" target="_blank">連結</a>。</strong>
+  <br>
+  <small>※　移動到「0.0.0.0:3000」的連結可以省略，打入「/」這樣也可以設定。</small>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="打入答案">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;註冊&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  同樣的移動到<strong>「<a href="/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</strong>的「<a href="/users/sign_in" target="_blank">登入</a>」的連結，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;登入&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  這樣子設定（上面放鼠標，可以看到答案）。
+  <br><br>
+  在<strong>「<u>application.html.erb</u>」</strong>裡面的<strong>「<a href="/zh-TW/mugcups/7#title2-2-4" target="_blank">navigation-bar</a>」</strong>追加這個連結吧。
+  <hr class="red-hr">
+  首先用Sublime Text打開<strong>「<u>app > views > layouts</u>」</strong>文件夾之後打開<strong>「application.html.erb」</strong>，追加下面的內容吧。
+  <br>
+  <small>
+    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+  </small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第23、24行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+<strong class="color-red">23
+24</strong>
+25
+26
+27
+28
+29
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse" data-target="#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;註冊&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;登入&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;作新的投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>※　使用navigation-bar的方法，<a href="/zh-TW/mugcups/css#title2-3" target="_blank"><strong>請參考這裡</strong></a>。</small>
+  <br>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  做完了之後，打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
+  </small>
+  <br><br>
+  有沒有顯示下面一樣子的網頁了嗎？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_nav_add_log_in.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_nav_add_log_in.png",
+              :target => ["_blank"] %>
+  <br>
+  <strong>
+  装飾也不是那麽難吧？
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　接着作登入機能，<u>不要讓沒有登入的利用者利用「posts」的網頁吧。</u>
+  </strong>
+</h4>

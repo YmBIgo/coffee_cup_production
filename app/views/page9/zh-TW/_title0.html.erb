@@ -1,0 +1,47 @@
+<h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
+<h4 id="chapter9-0">
+<i class="fa fa-bookmark color-red"></i>　<strong>作作看<u>做用戶管理的會員制的網站</u>吧。</strong>
+<hr>
+在很多網頁上，利用者登入網站之後使用那個網頁。
+<br>
+我們在這裡，想作作看<strong><u>這樣子的做用戶管理的會員制的網站</u></strong>的設定。
+<br><br>
+在Ruby on Rails上，為了作「用戶管理」的機能我們使用<strong>「<u>devise</u>」的<a href="/mugcups/3#title2-2-1" target="_blank">gem</a></strong>。
+<br><br>
+先簡單的解釋用<strong>「<u>devise</u>」</strong>作的會員制的網頁吧。
+<hr class="red-hr">
+<ul class="number_ul">
+  <strong><li>登入機能</li></strong>
+  <br>
+  要看post資料庫的網頁（<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>等等）的時候<strong><u>需要登入會員</u></strong>，如果沒有登入的利用者的話<u>會移動到「登入」網頁</u>。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+              :target => ["_blank"] %>
+  登入之後，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+              :target => ["_blank"] %>
+  顯示網頁裡面的內容。
+  <hr class="red-hr">
+  <strong><li>登入利用者的資料</li></strong>
+  <br>
+  登入的會員的資料，會在<strong>「users」資料庫</strong>（<u>「devise」會做資料庫</u>）裡保存。
+  <br>
+  用這個「users」資料庫，可以作會員資料的網頁。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_1_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_1_after.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <strong><li>用user資料庫顯示別的資料</li></strong>
+  <br>
+  如果會員的資料設定好了的話，可以用這個users資料庫區別，別的資料庫的資料是誰作的 等等的設定。
+</ul>
+<hr class="red-hr">
+<strong>在這個章做這個三個設定，但是作這個設定之前<u>先導入這個「devise」的工具</u>。</strong>
+</h4>

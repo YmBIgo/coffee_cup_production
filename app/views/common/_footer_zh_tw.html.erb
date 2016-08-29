@@ -29,6 +29,19 @@
     </div>
   </div>
   <div>
+    <h3>Language</h3>
+    <hr>
+    <div class="row">
+      <div class="col-sm-2">
+        <%= link_to "日本語",
+                    url_for(controller: controller.controller_name, action: controller.action_name, locale: 'ja') %>
+      </div>
+      <div class="col-sm-2">
+        <%= link_to "繁體字",
+                    url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-TW') %>
+      </div>
+    </div>
+    <br>
     <h3>CONTACT US</h3>
     <hr>
     <p>

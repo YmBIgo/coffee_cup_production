@@ -1,0 +1,333 @@
+<h4 id="chapter9-1-2">
+  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 作users資料庫</strong></p>
+  <br>
+  <strong>接着作保存會員資料的資料庫吧。</strong>
+  <hr class="red-hr">
+  說要作資料庫，<u>不是從頭到尾作users資料庫</u>，所以不要擔心。電子郵件・密碼・登入的時間等等的框子，「devise」會作。
+  <br>
+  <strong>在這裡<u>作「devise」不會做的「姓氏」「名字」「自我介紹」的框子</u>。</strong>
+  <hr class="red-hr">
+  首先在terminal上打入
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise user</span>
+</td>
+</tr>
+</table>
+  <br>
+  的命令吧。有沒有顯示下面圖像一樣的畫面嘛？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_user.png",
+              :target => ["_blank"] %>
+  用這個打入作了，<strong><u>設定「devise」的會員資料庫的「users」資料庫的設定文件</u></strong>。
+  <br><br>
+  如果資料庫的名字，想用「customers」的話，打入
+<pre>
+rails g devise customer
+</pre>
+  的命令。
+  <hr class="red-hr">
+  畫面上有沒有顯示<strong>「<u>日子_devise_create_users.rb</u>」</strong>的文件嗎？
+  <br>
+  <strong>「<u>devise</u>」</strong>作的<u>設定「users」資料庫的設定文件</u>是這一個。
+  <br><br>
+  在這個設定文件裡追加「姓氏」「名字」「自我介紹」的框子，之前看裡面的內容吧！
+  <br>
+  用Sublime Text打開看<strong>「<u>db > migrate > 日子_devise_create_users.rb</u>」</strong>文件吧！
+  <br>
+  <small>
+    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+  </small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日子_devise_create_users.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>DeviseCreateUsers <span class='word-green'>< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table(<span class='word-purple'>:users</span>)<span class='word-red'> do</span> |t|</span>
+<span class='code-line'>      <span class='word-gray'>## Database authenticatable</span></span>
+<span class='code-line'>      t.string <span class='word-purple'>:email</span>,              <span class='word-purple'>null:</span> <span class="word-purple">false</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>""</span></span>
+<span class='code-line'>      t.string <span class='word-purple'>:encrypted_password</span>, <span class='word-purple'>null:</span> <span class="word-purple">false</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>""</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Recoverable</span></span>
+<span class='code-line'>      t.string   <span class='word-purple'>:reset_password_token</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:reset_password_sent_at</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Rememberable</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:remember_created_at</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Trackable</span></span>
+<span class='code-line'>      t.integer  <span class='word-purple'>:sign_in_count</span>, <span class='word-purple'>default:</span> <span class="word-purple">0</span>, <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:current_sign_in_at</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:last_sign_in_at</span></span>
+<span class='code-line'>      t.string   <span class='word-purple'>:current_sign_in_ip</span></span>
+<span class='code-line'>      t.string   <span class='word-purple'>:last_sign_in_ip</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Confirmable</span></span>
+<span class='code-line'>      <span class='word-gray'># t.string   :confirmation_token</span></span>
+<span class='code-line'>      <span class='word-gray'># t.datetime :confirmed_at</span></span>
+<span class='code-line'>      <span class='word-gray'># t.datetime :confirmation_sent_at</span></span>
+<span class='code-line'>      <span class='word-gray'># t.string   :unconfirmed_email # Only if using reconfirmable</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Lockable</span></span>
+<span class='code-line'>      <span class='word-gray'># t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts</span></span>
+<span class='code-line'>      <span class='word-gray'># t.string   :unlock_token # Only if unlock strategy is :email or :both</span></span>
+<span class='code-line'>      <span class='word-gray'># t.datetime :locked_at</span></span>
+<span class='code-line'></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>    add_index <span class='word-purple'>:users</span>, <span class='word-purple'>:email</span>,                <span class='word-purple'>unique:</span> <span class="word-purple">true</span></span>
+<span class='code-line'>    add_index <span class='word-purple'>:users</span>, <span class='word-purple'>:reset_password_token</span>, <span class='word-purple'>unique:</span> <span class="word-purple">true</span></span>
+<span class='code-line'>    <span class='word-gray'># add_index :users, :confirmation_token,   unique: true</span></span>
+<span class='code-line'>    <span class='word-gray'># add_index :users, :unlock_token,         unique: true</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  有沒有顯示這樣子的文件嗎？
+  <br>
+  那麽，追加<strong><u>「姓氏」「名字」「自我介紹」</u>的框子的設定</strong>吧。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>3個框子
+  <br>
+  <u>
+  <ul class="number_ul">
+    <li>放短的文章的「family_name（姓名）」</li>
+    <li>放短的文章的「first_name（名字）」</li>
+    <li>放長的文章的「self_introduction（自我介紹）」</li>
+  </ul>
+  </u>
+  要怎麼設定呢？</strong>
+  <br>
+  <small>※　不知道的話，<a href="/zh-TW/mugcups/4#title1-4" target="_blank"><strong>請參考這裡</strong></a>。</small>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="3"></textarea>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content answer-code'><span class='code-line'>t.string <span class='word-purple'>:first_name</span></span>
+<span class='code-line'>t.string <span class='word-purple'>:family_name</span></span>
+<span class='code-line'>t.text   <span class='word-purple'>:self_introduction</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在<strong>「<u>t.timestamps null: false</u>」</strong>的前面追加，這三行的設定吧。
+  <br><br>
+  有沒有打入跟下面一樣內容了嗎？
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日時_devise_create_users.rb（追加第33〜35行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+<strong class="color-red">33
+34
+35</strong>
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>DeviseCreateUsers <span class='word-green'>< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table(<span class='word-purple'>:users</span>)<span class='word-red'> do</span> |t|</span>
+<span class='code-line'>      <span class='word-gray'>## Database authenticatable</span></span>
+<span class='code-line'>      t.string <span class='word-purple'>:email</span>,              <span class='word-purple'>null:</span> <span class="word-purple">false</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>""</span></span>
+<span class='code-line'>      t.string <span class='word-purple'>:encrypted_password</span>, <span class='word-purple'>null:</span> <span class="word-purple">false</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>""</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Recoverable</span></span>
+<span class='code-line'>      t.string   <span class='word-purple'>:reset_password_token</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:reset_password_sent_at</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Rememberable</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:remember_created_at</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Trackable</span></span>
+<span class='code-line'>      t.integer  <span class='word-purple'>:sign_in_count</span>, <span class='word-purple'>default:</span> <span class="word-purple">0</span>, <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:current_sign_in_at</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:last_sign_in_at</span></span>
+<span class='code-line'>      t.string   <span class='word-purple'>:current_sign_in_ip</span></span>
+<span class='code-line'>      t.string   <span class='word-purple'>:last_sign_in_ip</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Confirmable</span></span>
+<span class='code-line'>      <span class='word-gray'># t.string   :confirmation_token</span></span>
+<span class='code-line'>      <span class='word-gray'># t.datetime :confirmed_at</span></span>
+<span class='code-line'>      <span class='word-gray'># t.datetime :confirmation_sent_at</span></span>
+<span class='code-line'>      <span class='word-gray'># t.string   :unconfirmed_email # Only if using reconfirmable</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Lockable</span></span>
+<span class='code-line'>      <span class='word-gray'># t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts</span></span>
+<span class='code-line'>      <span class='word-gray'># t.string   :unlock_token # Only if unlock strategy is :email or :both</span></span>
+<span class='code-line'>      <span class='word-gray'># t.datetime :locked_at</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.string <span class='word-purple'>:first_name</span></span>
+<span class='code-line remarkable-code'>      t.string <span class='word-purple'>:family_name</span></span>
+<span class='code-line remarkable-code'>      t.text   <span class='word-purple'>:self_introduction</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>    add_index <span class='word-purple'>:users</span>, <span class='word-purple'>:email</span>,                <span class='word-purple'>unique:</span> <span class="word-purple">true</span></span>
+<span class='code-line'>    add_index <span class='word-purple'>:users</span>, <span class='word-purple'>:reset_password_token</span>, <span class='word-purple'>unique:</span> <span class="word-purple">true</span></span>
+<span class='code-line'>    <span class='word-gray'># add_index :users, :confirmation_token,   unique: true</span></span>
+<span class='code-line'>    <span class='word-gray'># add_index :users, :unlock_token,         unique: true</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  編輯好了之後，在terminal上
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，請用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　不動的話，在命令的前面加<strong>「bundle exec」</strong>，打入<strong>「bundle exec rake db:migrate」</strong>吧。
+  </small>
+  <br><br>
+  打入這個內容吧。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rake_db_migrate_model_users.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rake_db_migrate_model_users.png",
+              :target => ["_blank"] %>
+  顯示這樣子的畫面之後，用Sequel Pro看看資料庫吧！
+  <br>
+  <small>※　打開的方法，請參考<a href="/zh-TW/mugcups/how_to_open#title3" target="_blank"><strong>Sequel</strong></a> 或者 <a href="/zh-TW/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>吧</small>
+  <hr class="red-hr">
+  <strong>選擇「myapp_development」之後，看看有沒有「users」資料庫。</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Sequel_Pro_users.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Sequel_Pro_users.png",
+              :target => ["_blank"] %>
+  有「users」資料庫的話，看看內容裡面有沒有<strong><u>「family_name」「first_name」「self_introduction」的框子</u></strong>。
+  <br>
+  <small>※　如果沒有的話，<a href="/zh-TW/mugcups/4#title1-3-1" target="_blank"><strong>參考這裡</strong></a>追加框子吧。</small>
+  <br>
+  <br>
+  <strong>
+  這樣子做好會員（user）的資料庫的設定了。
+  <br>
+  <u>接着設定「devise」的網頁的導入吧。</u>
+  </strong>
+</h4>

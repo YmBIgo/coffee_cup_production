@@ -1,0 +1,41 @@
+<h4 id="chapter9-1-3">
+  <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 導入devise的網頁</strong></p>
+  <br>
+  <strong>接着導入在「devise」使用的網頁吧。</strong>
+  <hr class="red-hr">
+  devise 的網頁的導入也是從terminal上的打入設定。
+  <br>
+  那麽，在terminal上打入下面的命令吧。
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:views</span>
+</td>
+</tr>
+</table>
+  <br>
+  有沒有顯示下面一樣的畫面嗎？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_views.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_views.png",
+              :target => ["_blank"] %>
+  確認裡面有沒有作好的文件文件夾。
+  <br>
+  有<strong>「<u>app > views > devise</u>」</strong>文件夾嗎？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Sublime_Text_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Sublime_Text_devise.png",
+              :target => ["_blank"] %>
+  裡面有很多文件，但是使用的是<strong><u>「registrations」的「new.html.erb」（登入的網頁）</u>跟<u>「sessions」的「new.html.erb」（註冊的網頁）</u></strong>這個兩個文件。
+  <hr class="red-hr">
+  導入到這裡。最後想總結。
+</h4>

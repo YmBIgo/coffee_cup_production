@@ -1,0 +1,156 @@
+<h4 id="chapter9-2-2-1">
+  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 對登入的會員顯示「posts」的網頁</strong></p>
+  <br>
+  那麽在這裡，設定不要讓登入的會員以外的利用者顯示「posts」的網頁吧。
+  <br>
+  方法很簡單。<strong><u>在不想被看的「controller」文件上，打入下面的設定就OK。</u></strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>before_action <span class='word-purple'>:authenticate_user!</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  用這個設定檢查利用者有沒有登入。
+  <br><br>
+  那麽，開始做吧。
+  <br>
+  <strong><u>編輯「posts_controller.rb」的內容吧。</u></strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controler.rb（追加第3行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>PostsController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  before_action <span class='word-purple'>:authenticate_user!</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class="code-line">  <span class="word-gray">#以下省略</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  做完了之後，打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
+  </small>
+  <br><br>
+  <strong><i class="fa fa-arrow-right"></i>　現在還沒登入，應該會顯示登入網頁吧？</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_sign_in_before_alert.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_sign_in_before_alert.png",
+              :target => ["_blank"] %>
+  用<strong>「<a href="http://0.0.0.0:3000/posts/1" target="_blank">0.0.0.0:3000/posts/1</a>」</strong>等等別的網頁試試看吧。
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」等等吧。
+  </small>
+  <br><br>
+  <hr class="red-hr">
+  現在的狀況，沒有登入的利用者不能打開「posts」網頁。但是<strong><u>也可以設定讓全部的利用者打開「show」「index」這個兩個網頁</u></strong>。
+  <br><br>
+  <strong><u>設定，可以誰都可以看「show」跟「index」這個兩個網頁的內容吧！</u>
+  <br>
+  編輯剛才的「posts_controller」文件的設定。</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（編輯第3行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>PostsController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>  <span class="word-gray">#以下省略</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  追加了後面的<strong>「<i>only => [...]</i>」</strong>的設定了。
+  <br>
+  這個設定的方法，跟<strong>「<a href="/mugcups/6#title2-route" target="_blank">routes.rb</a>」</strong>一樣，應該可以推測內容吧。
+  <br><br>
+  這一次在
+  <strong>
+  <ul class="number_ul">
+    <li>「<a href="/zh-TW/mugcups/6#title1-3" target="_blank">new</a>」</li>
+    <li>「<a href="/zh-TW/mugcups/6#title1-4" target="_blank">create</a>」</li>
+    <li>「<a href="/zh-TW/mugcups/6#title1-5" target="_blank">edit</a>」</li>
+    <li>「<a href="/zh-TW/mugcups/6#title1-6" target="_blank">update</a>」</li>
+    <li>「<a href="/zh-TW/mugcups/6#title1-7" target="_blank">destroy</a>」</li>
+  </ul>
+  </strong>
+  這個五個網頁上，檢查利用者有沒有登入？
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>在「controller」文件裡追加<u>設定「new」跟「create」的網頁裡檢查利用者有沒有登入</u>的內容的時候要怎麼設定呢？</strong>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="打入答案">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>]</span>
+</td>
+</tr>
+</table>
+</h4>

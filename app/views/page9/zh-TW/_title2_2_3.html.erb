@@ -1,0 +1,39 @@
+<h4 id="chapter9-2-2-3">
+  <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 登入</strong></p>
+  <br>
+  到這裡做完了限制看「posts」網頁的設定跟通知的設定、咱們註冊登入吧！
+  <br>
+  打開<strong>註冊的網頁「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</strong>之後，註冊會員吧。
+  <br><br>
+  <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，打開<strong>「<a href="http://localhost:3000/users/sign_up" target="_blank">localhost:3000/users/sign_up</a>」</strong>之後註冊會員吧！</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_bootstrap.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_bootstrap.png",
+              :target => ["_blank"] %>
+  登入之後會出現下面圖像一樣的畫面吧。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_root_after_sign_up.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_root_after_sign_up.png",
+              :target => ["_blank"] %>
+  這樣子，會員註冊好了。
+  <br>
+  註冊完了之後，打開<strong>「<a href="/zh-TW/mugcups/6#title1-3" target="_blank">new</a>」網頁「<a href="http://0.0.0.0:3000/posts/new" target="_blank">0.0.0.0:3000/posts/new</a>」</strong>吧。沒有顯示登入網頁，顯示作作投稿的網頁的話OK。
+  <br><br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開<strong>「<a href="http://localhost:3000/posts/new" target="_blank">localhost:3000/posts/new</a>」</strong>吧。
+  </small>
+  <hr class="red-hr">
+  會員登錄也完了，用<strong>Sequel Pro看看保存好的會員資料吧。</strong>
+  <br>
+  <small>※　打開Sequel Pro的方法<a href="/zh-TW/mugcups/how_to_open#title3" target="_blank"><strong>請參考這裡</strong></a>，打開SqliteBrowser的方法<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+  <br>
+  <br>
+  像下面的圖像一樣，有沒有追加了保存的資料了嗎？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Sequel_Pro_users_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Sequel_Pro_users_1.png",
+              :target => ["_blank"] %>
+</h4>
