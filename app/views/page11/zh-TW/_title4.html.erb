@@ -1,26 +1,29 @@
-<h2 class="textbook-section-title" id="title4"><strong>4 : ログインしている会員で投稿する</strong></h2>
+<h2 class="textbook-section-title" id="title4"><strong>4 : 作會員的投稿</strong></h2>
 <h4 id="chapter10-4">
-  ここまでで<strong>
+  「用戶管理」的內容，到這裡我們做了<strong>
   <ul class="number_ul">
-    <li><a href="/mugcups/9#title1" target="_blank">「devise」の導入</a></li>
-    <li><a href="/mugcups/9#title2" target="_blank">ログイン機能の設定</a></li>
-    <li><a href="/mugcups/10#title3" target="_blank">「users」ページの設定</a></li>
+    <li><a href="/zh-TW/mugcups/9#title1" target="_blank">導入「devise」</a></li>
+    <li><a href="/zh-TW/mugcups/9#title2" target="_blank">設定登入機能</a></li>
+    <li><a href="/zh-TW/mugcups/10#title3" target="_blank">設定「users」網頁</a></li>
   </ul>
-  </strong>ができました。
+  </strong>這個三個內容。
   <br><br>
-  <strong><u>次は、設定した会員の情報で投稿ができるようにしましょう！</u></strong>
+  <strong><u>接着用設定的會員的資料，在投稿上顯示會員的資料吧！</u></strong>
   <br><br>
-  例えば、ここまでの投稿のデータは「posts」データベースから「name」の枠組みを取り出して表示させていましたが、
+  例如說...
   <br>
-  会員制のページで投稿するたびに、<strong>自分で名前を打つのは面倒くさいですよね。</strong>
   <br>
-  <strong><u>そこでここでは自分の名前を打たないで、投稿できるようにします。</u></strong>
+  到這裡的內容，我們用「posts」資料庫裡的「name」的框子，顯示作投稿的人的資料。
+  <br>
+  可是在會員制的網站的話，<strong>一次一次打入自己的名字有一點麻煩。</strong>
+  <br>
+  所以在這裡想做做看，<strong><u>不用自己打自己的名字就可以作投稿的設定。</u></strong>
   <br><br>
-  この設定のためにここでは<strong><u>投稿をする時に投稿の「posts」データベースの中に会員のidを入れる枠組みを作り、そこに投稿した会員データを入れる設定をします。</u>
+  為了設定這個，作投稿的時候<strong><u>在投稿的資料庫裡保存作投稿的會員的資料（作這個投稿的會員的id是1 等等）。讓後用這個資料顯示會員的資料。</u></strong>
   <hr class="red-hr">
-  流れとしては、
+  在這邊作的網頁是，
   <br>
-  <strong>ログインした会員であれば、下のような投稿を記入するページを出し、そこで<u>新しい投稿・変更</u>ができるようにします（名前を入れる入力欄はありません）。</strong>
+  <strong>如果是有登入的會員的話，顯示的網頁上作<u>新增・編輯資料</u>的網頁（沒有打入名字的框子）。</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -31,7 +34,7 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_edit_after_devise.png",
               :target => ["_blank"] %>
-  投稿完了ページ・投稿ページでは、<strong><u>投稿とその投稿をした会員の情報が表示</u></strong>されるようにします。
+  在投稿資料編輯完成・顯示投稿的網頁上、<strong><u>顯示投稿或者作投稿的會員的資料</u></strong>。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_create_after_devise.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -57,23 +60,24 @@
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_destroy_after_devise.png",
               :target => ["_blank"] %>
-  このような表示をするためには、<strong><u>「posts」データベースに誰が投稿をしたかの情報を入れる枠組み（例えば投稿した会員のidは1など）を追加</u></strong>し、設定しています。
+  為了要顯示這樣的內容，<strong><u>在「posts」資料庫上追加作投稿的會員的框子</u></strong>。用這個會員資料的框子，顯示會員資料。
   <br><br>
-  その後でこの投稿した会員のデータを使って、<br><strong><u>自分の投稿以外は内容の変更削除を行えない</u></strong>ようにします（そうでなければ、危ないですよね）。
+  之後用這個投稿資料裡的會員的資料，<br>
+  <strong><u>不讓會員編輯或者刪除自己以外的會員作的資料</u></strong>（如果自己的投稿被別人編輯的話有一點危險呢）。
   <hr class="red-hr">
-  なのでこの章では下の3つの設定をします。
+  所以在這個章，設定下面三個設定。
   <strong>
   <ul class="number_ul">
-    <li>「posts」データベースの変更</li>
-    <li>データ操作ページ表示の設定</li>
-    <li>投稿の変更・削除をしていいかのチェック</li>
+    <li>「posts」資料庫裡追加，會員的框子</li>
+    <li>操作資料・顯示網頁的設定</li>
+    <li>檢查會員可不可以編輯・刪除資料的設定</li>
   </ul>
   </strong>
-  では、やっていきましょう！
+  那麽，開始做吧！
   <hr>
-  <%= render "page11/title4_1" %>
+  <%= render "page11/zh-TW/title4_1" %>
   <hr>
-  <%= render "page11/title4_2" %>
+  <%= render "page11/zh-TW/title4_2" %>
   <hr>
-  <%= render "page11/title4_3" %>
+  <%= render "page11/zh-TW/title4_3" %>
 </h4>

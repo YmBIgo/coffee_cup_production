@@ -1,0 +1,418 @@
+<h4 id="chapter10-4-2-2">
+  <p id="title4-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 顯示網頁</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>那麽，設定網頁的顯示吧。</strong>
+  <hr class="red-hr">
+  顯示「posts」資料庫的「name」的地方，<strong><u>改成用「users」資料庫的「family_name」跟「first_name」顯示</u></strong>吧。
+  <br><br>
+  這個顯示的編輯有
+  <strong>
+    <ul class="number_ul">
+      <li>編輯輸入框</li>
+      <li>顯示「<u>@user</u>」的資料「<u>family_name</u>」「<u>first_name</u>」</li>
+    </ul>
+  的兩個。
+  <br>
+  首先做輸入框的編輯吧。</strong>
+  <ul class="number_ul">
+    <hr class="red-hr">
+    <strong><li>輸入框的編輯</li></strong>
+      <br>
+      在這裡設定使用「user_id」做<strong>「<u>posts_controller.rb</u>」裡的<u>資料操作</u></strong>。
+      <br>
+      首先刪除<strong><u>網頁顯示</u>裡設定的「name」的輸入款，再來用「user_id」作輸入框吧</strong>。
+      <br><br>
+      在設定「name」的輸入框在<strong><u>new.html.erb</u></strong>網頁裡。
+      <br><br>
+      <i class="fa fa-play-circle"></i>　<strong>那麽編輯「<u>new.html.erb</u>」的內容吧！</strong>
+      <br><br>
+      <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
+      <br>
+      <small>
+        ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+        <br>
+        <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+      </small>
+      <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>4
+5
+6
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.text_field <span class="word-purple">:name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+</td>
+</tr>
+</table>
+      <br>
+      <strong>刪除第4～6行吧。</strong>
+      <br><br>
+      <small>
+        ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+      </small>
+      <br><br><br>
+      <p class="alert alert-success">
+      <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+      <br>
+      　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+      </p>
+      <br>
+      這樣，輸入框也刪除了，
+      <br>
+      <strong>接着編輯在顯示「<u>@post</u>」的「<u>name</u>」的網頁，改成使用「<u>@user</u>」的「<u>family_name</u>」「<u>first_name</u>」顯示吧</strong>。
+      <hr class="red-hr">
+    <strong><li>@user的顯示</li></strong>
+    <br>
+    那麽，顯示看會員資料吧。
+    <br><br>
+    <i class="fa fa-question-circle color-green"></i>　<strong><u>在網頁上顯示「@user」的「family_name」</u>要怎麼設定好呢？</strong>
+    <br><br>
+    <input type="input" class="input-code form-control" placeholder="打入答案">
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;%= @user.family_name %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    使用<strong>「<u>@user</u>」的這個設定</strong>，在
+    <strong>
+    <ul class="number_ul">
+      <li><u>show.html.erb</u></li>
+      <li><u>create.html.erb</u></li>
+      <li><u>update.html.erb</u></li>
+      <li><u>destroy.html.erb</u></li>
+    </ul>
+    </strong>
+    <br>
+    的網頁裡<strong>顯示會員的資料「<u>family_name</u>」「<u>first_name</u>」</strong>吧。
+    <hr class="red-hr">
+  首先在<strong>「<a href="/zh-TW/mugcups/5#title1-1" target="_blank">show</a>」</strong>的網頁裡，顯示<strong>「<u>@user</u>」</strong>的<strong>「<u>family_name</u>」跟「<u>first_name</u>」</strong>吧！
+  <br>
+  打開<strong>「<u>app > views > posts > show.html.erb</u>」</strong>之後，參考下面的內容編輯吧。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（編輯第2〜4行目）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2
+3
+4</strong>
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>h4</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>small</span>&gt;&lt;%= @post.created_at %&gt;：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;刪除投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  這樣設定好了，<strong>在投稿的網頁上<u>顯示會員資料</u>的內容</strong>了。
+  <br><br>
+  還有為了網頁顯示的更漂亮編輯了第3,4行的html。不要忘記編輯內容吧。
+  <hr class="red-hr">
+  <strong>
+    同樣的
+    <ul class="number_ul" style="margin-bottom:10px;">
+      <li>「<u>create.html.erb</u>」</li>
+      <li>「<u>update.html.erb</u>」</li>
+      <li>「<u>destroy.html.erb</u>」</li>
+    </ul>
+    也參考下面，編輯內容吧！
+  </strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>create.html.erb（編輯第2〜5行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2
+3
+4
+5</strong>
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿作好了&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class="code-line remarkable-code">&lt;<span class="word-red">hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <i class="fa fa-file color-red"></i>　<strong>update.html.erb（編輯第3〜5行）</strong>
+    <br>
+    <small>
+      ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      <br>
+      <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    </small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5</strong>
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿編輯好了&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <i class="fa fa-file color-red"></i>　<strong>destroy.html.erb（編輯第3〜5行）</strong>
+    <br>
+    <small>
+      ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      <br>
+      <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    </small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5</strong>
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;刪除投稿了&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    <i class="fa fa-exclamation color-red"></i>　<strong>這樣設定好了「<u>create</u>」「<u>update</u>」「<u>destroy</u>」的顯示網頁的設定了！</strong>
+    <hr class="red-hr">
+    這樣「index.html.erb」以外的「posts」網頁的設定好了。在這裡設定看<strong><u>「index.html.erb」</u></strong>的內容吧。
+    <br><br>
+    在「index.html.erb」裡<strong><u>用「@posts」的資料顯示一個一個的「user」資料</u></strong>。但是到這裡沒有說明使用「@posts」顯示「user」資料的方法。
+    <br>
+    <small>※　詳細<a href="/zh-TW/codes/5#title1-2" target="_blank"><strong>請參考這裡</strong></a></small>
+    <br><br>
+    其實指定會員資料的
+<pre>
+User.find(id號碼)
+</pre>
+    可以在html文件上
+<pre>
+&lt;%= %&gt;
+</pre>
+    也使用。在這裡是用這個，設定內容。
+    <br><br>
+    <i class="fa fa-play-circle"></i>　<strong>例如說要設定「id」是「90」的會員的「<u>family_name</u>」的話，</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= <span class="word-blue">User</span>.find(<span class="word-purple">90</span>).family_name %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    可以這樣設定，顯示「id」是「90」的會員的「family_name」。
+    <br><br>
+    <strong><u>那麽在「id號碼」的部分放「user_id」，設定看會員資料的顯示吧。</u></strong>
+    <hr class="red-hr">
+    打開<strong>「<u>app > views > posts > index.html.erb</u>」</strong>之後，參考下面編輯內容。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>index.html.erb（編輯第4、5行）</strong>
+    <br>
+    <small>
+      ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      <br>
+      <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    </small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4
+5</strong>
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= p.user_id %&gt;"</span>&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;的投稿&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>h3</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;新增投稿&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  編輯的地方是
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">4</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow remarkable-code'>"/users/&lt;%= p.user_id %&gt;"</span>&gt;...</span>
+</td>
+</tr>
+</table>
+  <br>
+  跟
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">4</strong>
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    這個兩個地方。
+    <hr class="red-hr">
+    這一次的<strong>「<a href="/zh-TW/mugcups/5#title1-2" target="_blank">index</a>」</strong>網頁上，把選擇全部的資料的
+<pre>
+Post.all
+</pre>
+    用
+<pre>
+&lt;% @post.each do |p| %&gt;
+</pre>
+    <strong>分成一個一個的資料「p」</strong>（詳細<a href="/zh-TW/mugcups/5#title1-2-1" target="_blank"><strong>請參考這裡</strong></a>）。
+    <br><br>
+    從這個<strong>「p」</strong>取得的「user_id」，<strong><u>做會員的選擇跟「family_name」「first_name」的顯示</u></strong>。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">4</strong>
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <br>
+    <small>
+      ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+    </small>
+    <br><br><br>
+    <p class="alert alert-success">
+    <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+    <br>
+    　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+    </p>
+    <br>
+    做好之後打開「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧！
+    <br>
+    <small>
+      <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」吧。
+    </small>
+    <br><br>
+    有沒有顯示下面一樣的網頁嗎？
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise_before.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise_before.png",
+                :target => ["_blank"] %>
+    出來之後，打入內容
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise.png",
+                :target => ["_blank"] %>
+    點擊<strong>「<u>登錄</u>」</strong>吧！
+    <br>
+    有沒有顯示下面一樣的網頁嗎？
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_create_after_devise.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_create_after_devise.png",
+                :target => ["_blank"] %>
+    這樣子投稿的內容保存好了。
+    <br>
+    <strong>使用<a href="/zh-TW/mugcups/how_to_open#title3" target="_blank">Sequel Pro</a>或者，打開「<a href="/zh-TW/mugcups/5#title1-1" target="_blank">show</a>」網頁</strong>看看資料有沒有保存了沒！
+    <br>
+    <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，打開<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>看看內容吧！</small>
+    <hr class="red-hr">
+    <strong>
+    打開看「<a href="/zh-TW/mugcups/5#title1-2" target="_blank">index</a>」網頁「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」或是「<a href="/zh-TW/mugcups/6#title1-5" target="_blank">edit</a>」網頁「<a href="http://0.0.0.0:3000/posts/1/edit" target="_blank">0.0.0.0:3000/posts/1/edit</a>」看看內容吧。
+    </strong>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_after_devise_create_post.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_after_devise_create_post.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_edit_after_devise.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_edit_after_devise.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_update_after_devise.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_update_after_devise.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_destroy_after_devise.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_destroy_after_devise.png",
+                :target => ["_blank"] %>
+  </ul>
+  <br><br>
+  <strong>
+  最後做內容的總結。
+  </strong>
+</h4>

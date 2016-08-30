@@ -1,0 +1,201 @@
+<h4 id="chapter10-4-3-1">
+  <p id="title4-3-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 網頁上判別條件</strong></p>
+  <br>
+  要判別會員要怎麼設定內容好呢？
+  <br><br>
+  這個是，用<strong><u>「@post」的「<a href="/zh-TW/mugcups/11#title4-1" target="_blank">user_id</a>」</u></strong>跟<strong><u>「<a href="/zh-TW/mugcups/10#title3-3-3" target="_blank">current_user</a>」的「id」是不是一樣</u>的條件</strong>判別。
+  <br><br>
+  判別一不一樣的條件，使用
+<pre>
+要判別的東西 == 要判別的東西
+</pre>
+  設定。<strong><u>設定裡有兩個等號，請注意。</u></strong>
+  <br><br>
+  所以例如說，<strong>用「<u>if</u>」判別「<u>@user</u>」的「<u>id</u>」是不是「1」的條件</strong>的時候要，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>if </span>@user.id <span class="word-red">==</span> 1</span>
+<span class='code-line'>  <span class="word-gray">#内容</span></span>
+<span class='code-line'><span class="word-red">else</span></span>
+<span class='code-line'>  <span class="word-gray">#内容</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  這樣子設定。
+  <br>
+  不成立的時候，執行或者顯示<strong>「<u>else</u>」</strong>裡面的內容。
+  <hr class="red-hr">
+  用這個條件的方法，設定<strong><u>判別「posts」資料庫裡的「user_id」跟「current_user」的「id」一不一樣的條件</u></strong>。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>那麽，用「if」設定看<u>「@posts」的「user_id」跟「current_user」的「id」一不一樣的條件吧</u>。</strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="5"></textarea>
+  <br>
+  <table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1</strong>
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line answer-code remarkable-code'><span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>  <span class="word-gray">#内容</span></span>
+<span class='code-line'><span class="word-red">else</span></span>
+<span class='code-line'>  <span class="word-gray">#内容</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>用這個條件判別，是不是「正確的會員」。</strong>
+  <hr class="red-hr">
+  那麽首先，<strong><u>在「posts」資料庫的「show」網頁裡設定，如果打開的是投稿是打開的會員作的投稿的時候而已顯示</u></strong>
+  <br><br>
+  <p><a class="btn btn-success">編輯投稿</a></p>
+  <p><a class="btn btn-danger">刪除投稿</a></p>
+  <br>
+  的內容吧！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+              :target => ["_blank"] %>
+  在設定<strong>「<u>show</u>」</strong>網頁的<strong>「<u>app > views > posts > show.html.erb</u>」</strong>文件裡，設定下面的內容。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第7～10行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+<strong class="color-red">7</strong>
+8
+9
+<strong class="color-red">10</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>small</span>&gt;&lt;%= @post.created_at %&gt;：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">if</span> @post.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;刪除投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong><u>註冊新的會員之後，用這個新的會員看已經作好的投稿吧。</u></strong>
+  <br><br>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  沒有顯示按鈕的話OK。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+              :target => ["_blank"] %>
+  <br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>「users」資料庫的「show」網頁「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」的
+  <p style="margin:10px 0"><a class="btn btn-success">編輯會員資料</a></p>
+  裡也追加是不是正確的會員的條件吧。
+  <br>
+  <small>※　在「users_controller.rb」的「show」設定的<strong><u>「@user」的「id」跟「current_user」的「id」是不是一樣的條件</u></strong>判別。</small>
+  </strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="5"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（在第8，10行上面，放鼠標可以看答案）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+<strong class="color-red">8</strong>
+9
+<strong class="color-red">10</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自我介紹：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回會員一覽&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code answer-code'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯會員資料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code answer-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>到這裡使用「是不是正確的會員」的條件，設定顯示按鈕的內容了！</strong>
+  <hr class="red-hr">
+  但是在現在的網站上，如果是會員的話誰都可以移動到<strong>「posts」資料庫的「edit」網頁「<a href="http://0.0.0.0:3000/posts/1/edit" target="_blank">0.0.0.0:3000/posts/1/edit</a>」或者「users」資料庫的「edit」網頁「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank">0.0.0.0:3000/users/1/edit</a>」等等的網頁。</strong>
+  <br><br>
+  在這裡設定，如果不是正確的會員的話，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_invalid_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_invalid_user.png",
+              :target => ["_blank"] %>
+  像上面的圖像一樣，移動到<strong>「<u>posts</u>」資料庫的「<u>index</u>」網頁「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>吧。
+  <br>
+  <p class="alert alert-success">顯示通知吧！</p>
+  <br>
+  這個也在<strong>「<u>controller</u>」</strong>文件裡設定
+<pre>
+if @post.user_id == current_user.id
+  #内容
+else
+  #内容
+end
+</pre>
+  的內容。
+</h4>

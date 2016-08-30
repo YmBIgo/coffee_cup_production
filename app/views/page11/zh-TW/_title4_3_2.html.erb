@@ -1,0 +1,353 @@
+<h4 id="chapter10-4-3-2">
+  <p id="title4-3-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 資料操作的條件判別</strong></p>
+  <br>
+  需要判別正確的會員的網頁是，<u>編輯・刪除保存的投稿的</u>
+  <strong>
+  <ul class="number_ul">
+    <li>edit</li>
+    <li>update</li>
+    <li>destroy</li>
+  </ul>
+  </strong>
+  這個三個網頁。
+  <br><br>
+  首先用，
+<pre>
+if @post.user_id == current_user.id
+  #内容
+else
+  #内容
+end
+</pre>
+  的條件，如果不是正確的會員的話不讓他做<strong>「posts」資料庫的「<u>update</u>」的操作資料</strong>的設定。
+  <br>
+  編輯<strong>「<u>app > controllers > posts_controller.rb</u>」</strong>文件的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（編輯第31〜34行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>28
+29
+30
+<strong class="color-red">31
+32
+33
+34</strong>
+35
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line remarkable-code'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line remarkable-code'>      @post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line remarkable-code'>    <span class="word-red">else</span></span>
+<span class='code-line remarkable-code'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在這裡也做同樣的條件判別。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">31</strong>
+</td>
+<td class='code-content'><span class='code-line remarkable-code'><span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+</td>
+</tr>
+</table>
+  <br>
+  上面的條件成立的時候而已
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">32</strong>
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>@post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+</td>
+</tr>
+</table>
+  <br>
+  更新資料。
+  <br>
+  <small>※　已經設定好@user了，所以條件就用下面的內容就OK</small>
+<pre>
+if @user.id == current_user.id
+</pre>
+<pre>
+if @user == current_user
+</pre>
+  <br>
+  <i class="fa fa-question-circle color-green"></i>　
+  <strong>「destroy」的資料刪除也用這個條件判別，<u>只讓正確的會員而已刪除資料吧</u>！
+  <br>（在第40〜43行上面放鼠標，就可以看到答案）
+  </strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="5"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（第37〜44行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>37
+38
+39
+<strong class="color-red">40
+41
+42
+43</strong>
+44
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class="answer-code"><span class='code-line remarkable-code'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line remarkable-code'>      @post.destroy</span>
+<span class='code-line remarkable-code'>    <span class="word-red">else</span></span>
+<span class='code-line remarkable-code'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  到這裡設定了「正確的會員」而已可以操作資料的設定了。
+  <br>
+  這樣資料不會讓別的會員操作很安心，但是現在的網站<strong><u>不是「正確的會員」的會員也可以移動到「posts」資料庫的「edit」「update」「destroy」網頁。</u></strong>
+  <br><br>
+  <strong>接着在「else」裡面放內容，<u>條件不成立的時候，移動到「posts」資料庫的「index」網頁吧。</u></strong>
+  <hr class="red-hr">
+  使用html的網頁移動要
+<pre>
+&lt;a href="移動到的url"&gt;顯示的文字&lt;/a&gt;
+</pre>
+  這樣設定。
+  <br><br>
+  <strong>但是這個網頁的移動，不只是在html文件裡使用。在「<u>controller</u>」裡面移動網頁的時候使用別的設定。</strong>
+  <br><br>
+  <strong>「<u>controller</u>」</strong>文件上的網頁移動用
+<pre>
+redirect_to "移動到的網頁"
+</pre>
+  這樣的設定。
+  <br><br>
+  使用這個設定會員不是「正確的會員」的時候，移動到<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>的網頁吧。
+  <hr class="red-hr">
+  <strong>首先設定「update」吧。</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（追加第34、35行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>28
+29
+30
+31
+32
+33
+<strong class="color-red">34
+35</strong>
+36
+37
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>      @post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line remarkable-code'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
+<span class='code-line remarkable-code'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  移動以外還有設定了，顯示<strong>「<a href="/zh-TW/mugcups/9#title2-2-2" target="_blank">通知</a>」</strong>的
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">35</strong>
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  的設定。下面的
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">34</strong>
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>redirect_to <span class='word-yellow'>"/posts"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在設定移動到「/posts」<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>的內容。
+  <hr class="red-hr">
+  <strong>使用跟這個一樣的方法，設定「destroy」吧。</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（追加第45、46行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>39
+40
+41
+42
+43
+44
+<strong class="color-red">45
+46</strong>
+47
+48
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>      @post.destroy</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line remarkable-code'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
+<span class='code-line remarkable-code'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  這樣設定好了。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong><u>在「posts_controller.rb」的「edit」裡追加，不是「正確的會員」的會員的話，移動到「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」顯示「無效的會員」的通知的設定</u>吧。</strong>
+  <br>
+  <small>※　如果是正確的會員的話，不用設定內容</small>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="5"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（第26〜30行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>23
+24
+25
+<strong class="color-red">26
+27
+28
+29
+30</strong>
+31
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class="answer-code"><span class='code-line remarkable-code'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line remarkable-code'>    <span class="word-red">else</span></span>
+<span class='code-line remarkable-code'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
+<span class='code-line remarkable-code'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line remarkable-code'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>到這裡設定了，不是正確的會員的話，<u>不能移動到「posts」資料庫的「edit」「update」「destroy」網頁</u>的內容了。</strong>
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>最後在「users_controller.rb」的「edit」「update」裡設定同樣的設定吧！
+  <br>
+  （在上面放鼠標，可以看答案）
+  </strong>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="15"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（第13〜17行目/第22〜27行目）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>13
+14
+<strong class="color-red">15
+16
+17
+18
+19</strong>
+20
+21
+22
+23
+<strong class="color-red">24
+25
+26
+27
+28
+29</strong>
+30
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class="answer-code"><span class='code-line remarkable-code'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line remarkable-code'>    <span class="word-red">else</span></span>
+<span class='code-line remarkable-code'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
+<span class='code-line remarkable-code'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line remarkable-code'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class="answer-code"><span class='code-line remarkable-code'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line remarkable-code'>      @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>))</span>
+<span class='code-line remarkable-code'>    <span class="word-red">else</span></span>
+<span class='code-line remarkable-code'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
+<span class='code-line remarkable-code'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line remarkable-code'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>這樣在「users」網頁上，設定了「正確的會員」的檢查了。
+  <br>
+  這一次的內容<a href="/zh-TW/codes/11" target="_blank">請參考這裡</a>吧
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　最後做總結。</strong>
+</h4>

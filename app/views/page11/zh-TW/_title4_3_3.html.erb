@@ -1,0 +1,115 @@
+<h4 id="chapter10-4-3-3">
+  <p id="title4-3-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 總結</strong></p>
+  <br>
+  到這裡
+  <br>
+  <strong>不能讓全部的會員打開的<u>「users」「posts」</u>的
+  <ul class="number_ul">
+    <li>「<u>edit</u>」</li>
+    <li>「<u>update</u>」</li>
+    <li>「<u>destroy</u>」</li>
+  </ul>
+  網頁上追加了「正確的會員」的檢查。</strong>
+  <br>
+  <br>
+  為了這個，使用
+  <strong>
+  <ul class="number_ul">
+    <li>條件判別（if/else）</li>
+    <li>網頁移動（redirect_to）</li>
+  </ul>
+  </strong>
+  設定內容。
+  <br>
+  在這裡解釋，各個設定。
+  <br><br>
+  <strong>設定的內容，<a href="/zh-TW/codes/11" target="_blank">請參考這裡</a></strong>
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li>條件判別（if/else）</li></strong>
+    <br>
+    隨着條件有沒有成立，編輯網頁顯示・操作資料的設定吧。
+    <br>
+    請參考<a href="/zh-TW/mugcups/9#title2-2-2" target="_blank"><strong>if</strong></a>跟<a href="/zh-TW/mugcups/10#title3-3-3" target="_blank"><strong>else</strong></a>。
+    <br><br>
+    這一次設定了判別條件一不一樣的內容。
+    <br>
+    判別一不一樣用
+<pre>
+要判別的東西 == 要判別的東西
+</pre>
+    設定。
+    <hr class="red-hr">
+    設定，請參考下面的內容吧。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+<strong class="color-red">7</strong>
+8
+9
+<strong class="color-red">10</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>small</span>&gt;&lt;%= @post.created_at %&gt;：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">if</span> @post.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;刪除投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>移動網頁（redirect_to）</li></strong>
+    <br>
+    「controller」文件上的網頁移動要
+<pre>
+redirect_to "移動到的網頁"
+</pre>
+    設定。
+    <hr class="red-hr">
+    使用這個的設定的方法，請參考下面（裡面還設定了顯示通知<strong>「<a href="/zh-TW/mugcups/9#title2-2-2" target="_blank">flash</a>」</strong>）。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>28
+29
+30
+31
+32
+33
+<strong class="color-red">34
+35</strong>
+36
+37
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>    <span class='word-red'>if </span>@post.user_id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>      @post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line remarkable-code'>      redirect_to <span class='word-yellow'>"/posts"</span></span>
+<span class='code-line remarkable-code'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+  </ul>
+  <strong>
+    到這裡用戶管理也完了。
+  </strong>
+</h4>

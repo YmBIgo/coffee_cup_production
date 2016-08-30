@@ -1,7 +1,7 @@
 <h4 id="chapter10-3-3-3">
   <p id="title3-3-3" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 總結</strong></p>
   <br>
-  在這裡使用利用者有沒有登入的條件，判別<a href="/zh-TW/mugcups/css#title2-3" target="_blank"><strong>navigation-bar</strong></a>的顯示的設定。
+  在這裡使用利用者有沒有登入的條件，區別<a href="/zh-TW/mugcups/css#title2-3" target="_blank"><strong>navigation-bar</strong></a>的顯示的設定。
   <br>
   為了做這個設定，使用下面的三個設定。
   <br>
@@ -9,7 +9,7 @@
   <ul class="number_ul">
     <li><u>current_user</u>（取得登入的會員的資料）</li>
     <li><u>user_signed_in?</u>（判別利用者有沒有登入）</li>
-    <li><u>&lt;% else %&gt;</u>（跟條件不同的時候顯示）</li>
+    <li><u>&lt;% else %&gt;</u>（跟條件不成立的時候顯示）</li>
   </ul>
   </strong>
   在這裡說明各個設定。
@@ -57,7 +57,7 @@ if user_signed_in?
 <pre>
 &lt;% if 条件 %&gt;
 </pre>
-    判別條件的時候，顯示跟條件不同的設定用「&lt;% else %&gt;」。
+    判別條件的時候，顯示條件不成立的設定用「&lt;% else %&gt;」。
     <br><br>
 <table class='highlight'>
 <tr>

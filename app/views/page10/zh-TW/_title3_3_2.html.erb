@@ -110,7 +110,7 @@ user_signed_in?
               :target => ["_blank"] %>
   這一次應該沒問題打開網頁了吧。
   <br><br>
-  應為現在利用者沒有登入，所以「會員資料」沒有像上一次顯示。這樣現在沒有出現錯誤了。
+  應為現在利用者沒有登入，所以「會員資料」沒有像上一次一樣的顯示。這樣現在沒有出現錯誤了。
   <hr class="red-hr">
   那麽再登入看吧。
   <br>
@@ -120,19 +120,19 @@ user_signed_in?
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_root_after_login.png",
               :target => ["_blank"] %>
-  <strong>這樣看，雖然已經登入了，但是還顯示<u>「註冊」「登入」的連結</u>。</strong>這個有一點奇怪。
+  <strong>這樣看，雖然已經登入了，但是還顯示<u>「註冊」「登入」的連結</u>。</strong>已經登入好了，這個有一點奇怪。
   <br>
   這個也用<strong>「<u>&lt;% if %&gt;</u>」</strong>的設定除掉吧。
   <br><br>
-  如果是要判別跟條件一樣的話，使用
+  如果是要判別條件成立的話，使用
 <pre>
 &lt;% if 條件 %&gt;
   内容
 &lt;% end %&gt;
 </pre>
-  這個設定判別條件、
+  這個設定在判別條件。
   <br>
-  相反的如果要判別跟條件不同的話，使用
+  相反的如果要判別條件不成立的話，使用
 <pre>
 &lt;% if 条件 %&gt;
   内容（跟條件一樣的時候）
