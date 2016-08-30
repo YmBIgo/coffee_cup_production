@@ -1,35 +1,35 @@
-<% provide :title, "7：設定一覧" %>
+<% provide :title, "7：設定一覽" %>
 <div class="container">
     <div class="row">
       <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
         <div class="textbook-area">
           <div class="textbook-area-inner fadeIn wow">
             <div id="title" class="textbook-title">
-              <h1><strong>ページを便利にしよう！：設定一覧</strong></h1>
+              <h1><strong>把網頁設定的更方便吧！：設定一覽</strong></h1>
             </div>
             <h4>
             <u>
-            <a href="/mugcups/7" class="text-left" target="_blank">ページを便利にしよう！</a>
+            <a href="/zh-TW/mugcups/7" class="text-left" target="_blank">把網頁設定的更方便吧！</a>
             </u>
             </h4>
             <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header7.jpg",
                           :width => "90%",
                           :class => "textbook-title-img hover_img" %>
             <hr>
-            <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+            <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
             <h4>
-              <i class="fa fa-bookmark color-red"></i>　<strong>「ページを便利にしよう！」の設定一覧の確認をする</strong>
+              <i class="fa fa-bookmark color-red"></i>　<strong>看看「把網頁設定的更方便吧！」裡設定的內容</strong>
             </h4>
             <br>
-            <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+            <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覽</strong></h2>
             <h4 id="code-7">
-            <strong>「<a href="/mugcups/7" target="_blank">ページを便利にしよう！</a>」では、リンクの設定とBootstrapの導入を行った。</strong>
+            <strong>「<a href="/zh-TW/mugcups/7" target="_blank">把網頁設定的更方便吧！</a>」裡，做了連結的設定跟Bootstrap的導入。</strong>
             <br><br>
-            ここで変更をした内容をまとめる。
+            在這裡看看這裡設定的內容。
             <hr class="red-hr">
-            Bootstrapのgemをインストールするために、<strong>「<u>Gemfile</u>」</strong>に内容を加えた。
+            為了安裝Bootstrap的gem，在<strong>「<u>Gemfile</u>」</strong>上追加內容。
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>Gemfile（26〜28行目）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>Gemfile（第26〜28行目）</strong>
             <br><br>
 <table class='highlight'>
 <tr>
@@ -44,12 +44,12 @@
 </tr>
 </table>
             <br>
-            「Gemfile」への設定が終わったら、
+            「Gemfile」裡的設定完了之後，打入
             <br><br>
-            　<strong>ターミナル</strong>
+            　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用でしたら、「コマンドプロンプト」をご利用下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
             </small>
             <br><br>
 <table class='highlight'>
@@ -61,11 +61,11 @@
 </tr>
 </table>
             <br>
-            で設定を適用させる。
+            適用設定。
             <hr class="red-hr">
-            Bootstrapの画面に余白を入れる設定と上のバーを加える設定を<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>に加えた。
+            <strong>「<u>app > views > layouts > application.html.erb</u>」</strong>文件裡追加，用Bootstrap在畫面上作空格的設定跟追加遊覽列的設定。
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>application.html.erb（11〜31行目）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第11〜31行）</strong>
             <br><br>
     <table class='highlight'>
     <tr>
@@ -126,7 +126,7 @@
 <span class='code-line remarkable-code'>    &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line remarkable-code'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
 <span class='code-line remarkable-code'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
-<span class='code-line remarkable-code'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
 <span class='code-line remarkable-code'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
 <span class='code-line remarkable-code'>      &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;/<span class='word-red'>div</span>&gt;</span>
@@ -140,9 +140,9 @@
 </tr>
 </table>
             <hr class="red-hr">
-            Bootstrapの設定を使って、ボタンと入力欄を綺麗にした。
+            適用Bootstrap的設定，吧按鈕跟輸入框裝飾的更漂亮。
             <br>
-            <strong>設定ファイルは「<u>app > views > posts</u>」にある表示の設定ファイル。</strong>
+            <strong>設定的文件是「<u>app > views > posts</u>」裡面的顯示網頁的文件。</strong>
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
 <table class='highlight'>
@@ -161,9 +161,9 @@
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;投稿を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;投稿を削除する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;刪除投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -180,14 +180,14 @@
 7
 <strong class="color-red">8</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;：&lt;%= p.name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -212,22 +212,22 @@
 15
 <strong class="color-red">16</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を作る&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;作投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"登録する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"登錄"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -242,12 +242,12 @@
 5
 6
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿が完了しました&lt;/<span class='word-red'>h1</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @post.name %&gt;様&lt;/<span class='word-red'>p</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿作好了&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @post.name %&gt;様&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts" class="btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts" class="btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -269,19 +269,19 @@
 12
 <strong class="color-red">13</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;編輯投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"変更する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"編輯"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;投稿に戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回投稿&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -296,12 +296,12 @@
 5
 <strong class="color-red">6</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を変更しました&lt;/<span class='word-red'>h1</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @post.name %&gt;様&lt;/<span class='word-red'>p</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿編輯好了&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @post.name %&gt;様&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -317,18 +317,18 @@
 6
 <strong class="color-red">7</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿を削除しました&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;刪除投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
             <hr class="red-hr">
-            CSSファイルを使って、細かい表示の調節も行った。
+            用CSS文件，設定網頁的裝飾。
             <br>
             <strong>「<u>app > assets > stylesheets > style.scss</u>」</strong>
             <br><br>
@@ -351,11 +351,9 @@
 </td>
 </tr>
 </table>
-            <br>
-            になる。
             <hr>
             <div class="next-page">
-                <a href="/mugcups/7" class="btn btn-primary">戻る</a>
+                <a href="/zh-TW/mugcups/7" class="btn btn-primary">返回第7章</a>
             </div>
             </h4>
           </div>
@@ -366,9 +364,9 @@
         <div id="slide-bar" class="clear-fix">
         <strong>
           <div class="list-group nomargin">
-            <a href="#title" class="list-group-item list-title"><h4>7：設定一覧</h4></a>
-            <a href="#title0" class="list-group-item">0 : この章の目的</a>
-            <a href="#title1" class="list-group-item">1 : 設定一覧</a>
+            <a href="#title" class="list-group-item list-title"><h4>7：設定一覽</h4></a>
+            <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
+            <a href="#title1" class="list-group-item">1 : 設定一覽</a>
           </div>
         </strong>
         </div>

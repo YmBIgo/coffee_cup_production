@@ -1,33 +1,31 @@
-<% provide :title, "9：設定一覧" %>
+<% provide :title, "9：設定一覽" %>
 <div class="container">
   <div class="row">
     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
       <div class="textbook-area">
         <div class="textbook-area-inner fadeIn wow">
           <div id="title" class="textbook-title">
-            <h1><strong>ユーザー管理をする①：設定一覧</strong></h1>
+            <h1><strong>用戶管理①：設定一覽</strong></h1>
           </div>
           <h4>
           <u>
-          <a href="/mugcups/9" class="text-left" target="_blank">ユーザー管理をする①</a>
+          <a href="/zh-TW/mugcups/9" class="text-left" target="_blank">用戶管理①</a>
           </u>
           </h4>
           <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header9.jpg",
                         :width => "90%",
                         :class => "textbook-title-img hover_img" %>
           <hr>
-          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
           <h4>
-            <i class="fa fa-bookmark color-red"></i>　<strong>「ユーザー管理をする①」の設定一覧の確認をする</strong>
+            <i class="fa fa-bookmark color-red"></i>　<strong>看看「用戶管理①」裡設定的內容</strong>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覽</strong></h2>
           <h4 id="code-9">
-            <strong>「<a href="/mugcups/9" target="_blank">ユーザー管理をする①</a>」では、ユーザー管理のgem「devise」の導入とログイン機能の設定を行った。</strong>
-            <br><br>
-            ここで変更した内容をまとめる。
+            <strong>「<a href="/zh-TW/mugcups/9" target="_blank">用戶管理①</a>」裡設定了，做了用戶管理的gem「devise」的導入跟登入機能的設定。</strong>
             <hr class="red-hr">
-            ユーザー管理のgem「devise」をインストールするために、<strong>「<u>Gemfile</u>」</strong>に設定を加えた。
+            為了安裝用戶管理的gem「devise」，在<strong>「<u>Gemfile</u>」</strong>文件裡追加設定。
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>Gemfile</strong>
             <br><br>
@@ -48,12 +46,12 @@
 </tr>
 </table>
            <br>
-          「Gemfile」への設定が終わったら、
+          「Gemfile」裡追加設定之後，打入
           <br><br>
-          　<strong>ターミナル</strong>
+          　<strong>terminal</strong>
           <br>
           <small>
-            <i class="fa fa-windows color-blue"></i>　Windowsをご利用でしたら、「コマンドプロンプト」をご利用下さい。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
           </small>
           <br><br>
 <table class='highlight'>
@@ -65,25 +63,25 @@
 </tr>
 </table>
           <br>
-          で設定を適用させる。
+          適用設定的內容。
           <br><br>
-          設定を適用させたら、「devise」の3つの設定をする。
+          設定使用之後，作「devise」的設定。
           <strong>
             <ul class="number_ul">
-              <li>deviseの<u>導入</u></li>
-              <li>deviseの<u>「users」データベースの作成</u></li>
-              <li>deviseの<u>ページの設定</u></li>
+              <li><u>導入devise</u></li>
+              <li><u>作devise的「users」資料庫</u></li>
+              <li><u>設定devise的網頁</u></li>
             </ul>
           </strong>
           <hr class="red-hr">
-          <i class="fa fa-play-circle"></i>　<strong><u>deviseの導入</u></strong>は、
+          <i class="fa fa-play-circle"></i>　<strong><u>導入devise</u></strong>是
           <br><br>
-          ターミナルで、
+          在terminal上，打入
           <br><br>
-          　<strong>ターミナル</strong>
+          　<strong>terminal</strong>
           <br>
           <small>
-            <i class="fa fa-windows color-blue"></i>　Windowsをご利用でしたら、「コマンドプロンプト」をご利用下さい。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
           </small>
           <br><br>
 <table class='highlight'>
@@ -95,21 +93,21 @@
 </tr>
 </table>
             <br>
-            を入力して行う。
+            這個內容。
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_install.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
                         "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_install.png",
                         :target => ["_blank"] %>
             <hr class="red-hr">
-            <i class="fa fa-play-circle"></i>　<strong><u>deviseの「users」データベースの作成</u></strong>は、
+            <i class="fa fa-play-circle"></i>　<strong><u>作devise的「users」資料庫</u></strong>是
             <br><br>
-            ターミナルで、
+            在terminal上，打入
             <br><br>
-            　<strong>ターミナル</strong>
+            　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用でしたら、「コマンドプロンプト」をご利用下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
             </small>
             <br><br>
 <table class='highlight'>
@@ -121,15 +119,15 @@
 </tr>
 </table>
             <br>
-            を入力して「users」データベースの設定ファイル<strong>「<u>db > migrate > 日時_devise_create_users.rb</u>」</strong>を作成する。
+            作「users」資料庫的設定文件<strong>「<u>db > migrate > 日子_devise_create_users.rb</u>」</strong>。
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_user.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
                         "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_user.png",
                         :target => ["_blank"] %>
-            作成された「users」データベースの内容は下のように変更した。
+            編輯作好的「users」資料庫的設定文件。
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>日時_devise_create_users.rb（33〜35行目を追加）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>日子_devise_create_users.rb（追加第33〜35行）</strong>
             <br><br>
 <table class='highlight'>
 <tr>
@@ -228,9 +226,14 @@
 </tr>
 </table>
             <br>
-            終わったら
+            設定完了之後，打入
             <br><br>
-            　<strong>ターミナル</strong>
+            　<strong>terminal</strong>
+            <br>
+            <small>
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
+            </small>
+            <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -240,16 +243,16 @@
 </tr>
 </table>
             <br>
-            でデータベースの設定を適用させる。
+            適用資料庫的設定。
             <hr class="red-hr">
-            <i class="fa fa-play-circle"></i>　<strong>deviseのページの設定</strong>は、
+            <i class="fa fa-play-circle"></i>　<strong>設定devise的網頁</strong>是
             <br><br>
-            ターミナルで、
+            在terminal上，打入
             <br><br>
-            　<strong>ターミナル</strong>
+            　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用でしたら、「コマンドプロンプト」をご利用下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
             </small>
             <br><br>
 <table class='highlight'>
@@ -261,15 +264,15 @@
 </tr>
 </table>
             <br>
-            を入力して、<strong>「<u>app > views > devise</u>」フォルダ</strong>にある表示設定ファイルに内容を設定する。
+            之後，在<strong>作好的「<u>app > views > devise</u>」文件夾</strong>裡設定顯示的設定文件。
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_views.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
                         "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_views.png",
                         :target => ["_blank"] %>
-            <strong>登録ページ（<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>）は、</strong>
+            <strong>註冊網頁（<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>）是</strong>
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>new.html.erb（registrationsフォルダ）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>new.html.erb（registrations文件夾）</strong>
             <br><br>
 <table class='highlight'>
 <tr>
@@ -336,9 +339,9 @@
 </tr>
 </table>
             <hr class="red-hr">
-            <strong>ログインページ（<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>）は、</strong>
+            <strong>登入網頁（<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>）是</strong>
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>new.html.erb（sessionsフォルダ）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>new.html.erb（sessions文件夾）</strong>
             <br><br>
 <table class='highlight'>
 <tr>
@@ -399,7 +402,7 @@
 </tr>
 </table>
             <hr class="red-hr">
-            <i class="fa fa-play-circle"></i>　<strong>navigation-barとログインの通知も設定しました。</strong>
+            <i class="fa fa-play-circle"></i>　<strong>還設定了navigation-bar跟登入等等的時候的通知。</strong>
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
             <br><br>
@@ -470,9 +473,9 @@
 <span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
 <span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
-<span class='code-line remarkable-code'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;登録する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
-<span class='code-line remarkable-code'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;ログインする&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
-<span class='code-line'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新しく投稿する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;註冊&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;登入&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>        &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
 <span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
 <span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
@@ -494,7 +497,7 @@
 </tr>
 </table>
             <hr class="red-hr">
-            <i class="fa fa-play-circle"></i>　<strong>最後に「<u>posts_controller.rb</u>」でログインの制限の設定をしました。</strong>
+            <i class="fa fa-play-circle"></i>　<strong>最後，在「<u>posts_controller.rb</u>」裡設定限制閱覽的設定。</strong>
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
             <br><br>
@@ -524,11 +527,9 @@
 </td>
 </tr>
 </table>
-            <br>
-            になる
             <hr>
             <div class="next-page">
-                <a href="/mugcups/9" class="btn btn-primary">戻る</a>
+                <a href="/zh-TW/mugcups/9" class="btn btn-primary">返回第9章</a>
             </div>
           </h4>
         </div>
@@ -539,9 +540,9 @@
       <div id="slide-bar" class="clear-fix">
       <strong>
         <div class="list-group nomargin">
-          <a href="#title" class="list-group-item list-title"><h4>9：設定一覧</h4></a>
-          <a href="#title0" class="list-group-item">0 : この章の目的</a>
-          <a href="#title1" class="list-group-item">1 : 設定一覧</a>
+          <a href="#title" class="list-group-item list-title"><h4>9：設定一覽</h4></a>
+          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 設定一覽</a>
         </div>
       </strong>
       </div>

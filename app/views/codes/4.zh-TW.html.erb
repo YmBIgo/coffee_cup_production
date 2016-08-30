@@ -1,32 +1,32 @@
-<% provide :title, "4：設定一覧" %>
+<% provide :title, "4：設定一覽" %>
 <div class="container">
   <div class="row">
     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
       <div class="textbook-area">
         <div class="textbook-area-inner fadeIn wow">
           <div id="title" class="textbook-title">
-            <h1><strong>データベースにデータを保存する：設定一覧</strong></h1>
+            <h1><strong>資料庫裡保存資料：設定一覽</strong></h1>
           </div>
-          <h4><u><a href="/mugcups/4" class="text-left ">データベースにデータを保存する</a></u></h4>
+          <h4><u><a href="/zh-TW/mugcups/4" class="text-left ">資料庫裡保存資料</a></u></h4>
           <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header4.jpg",
                         :width => "90%",
                         :class => "textbook-title-img hover_img" %>
           <hr>
-          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
           <h4>
-            <i class="fa fa-bookmark color-red"></i>　<strong>「データベースにデータを保存する」の設定一覧の確認をする</strong>
+            <i class="fa fa-bookmark color-red"></i>　<strong>看看「資料庫裡保存資料」裡設定的內容</strong>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覽</strong></h2>
           <h4 id="code4-1">
-          <strong><a href="/mugcups/4" target="_blank">「データベースにデータを保存する」</a>では「posts」データベースの設定と作成を行った。</strong>
+          在<strong><a href="/zh-TW/mugcups/4" target="_blank">「資料庫裡保存資料」</a>，作了「posts」資料庫。</strong>
           <hr class="red-hr">
-          「posts」データベースの設定は、
+          設定「posts」資料庫要打入
           <br><br>
-          　<strong>ターミナル</strong>
+          　<strong>terminal</strong>
           <br>
           <small>
-            <i class="fa fa-windows color-blue"></i>　Windowsをご利用でしたら、「コマンドプロンプト」をご利用下さい。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
           </small>
           <br><br>
 <table class='highlight'>
@@ -38,9 +38,9 @@
 </tr>
 </table>
           <br>
-          で作成する<strong><u>「posts」データベースの設定ファイル「2016..._create_posts.rb」</u></strong>で行う。
+          作<strong><u>「posts」資料庫的設定文件「2016..._create_posts.rb」</u></strong>。
           <br><br>
-          内容は下のようになる。
+          裡面就差不多跟下面一樣的內容吧。
           <br><br>
           <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb</strong>
           <br><br>
@@ -71,12 +71,12 @@
 </tr>
 </table>
         <hr class="red-hr">
-        加えて、上のファイルで加えなかった設定を後から加えるために、
+        如果要追加內容的話，打入
         <br><br>
-        　<strong>ターミナル</strong>
+        　<strong>terminal</strong>
         <br>
         <small>
-          <i class="fa fa-windows color-blue"></i>　Windowsをご利用でしたら、「コマンドプロンプト」をご利用下さい。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
         </small>
         <br><br>
 <table class='highlight'>
@@ -88,9 +88,9 @@
 </tr>
 </table>
         <br>
-        で、<strong><u>追加の設定ファイル「2016..._add_column_to_post.rb」</u></strong>を作成する。
+        <strong><u>作追加的設定文件「2016..._add_column_to_post.rb」</u></strong>。
         <br><br>
-        内容は下のようになる。
+        裡面就差不多跟下面一樣的內容吧。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>2016..._add_column_to_post.rb</strong>
         <br><br>
@@ -111,12 +111,12 @@
 </tr>
 </table>
         <br>
-        設定ファイルが作成できたら、設定を適用させるために、
+        設定文件作好了之後為了適用設定，打入
         <br><br>
-        　<strong>ターミナル</strong>
+        　<strong>terminal</strong>
         <br>
         <small>
-          <i class="fa fa-windows color-blue"></i>　Windowsをご利用でしたら、「コマンドプロンプト」をご利用下さい。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
         </small>
         <br><br>
 <table class='highlight'>
@@ -128,11 +128,11 @@
 </tr>
 </table>
         <br>
-        を入力する。
+        的內容。
         <br>
-        <small>※　この入力が上手くいかない場合は前に「bundle exec」をつけて、「bundle exec rake db:migrate」を入力する。</small>
+        <small>※　如果不動的話在前面加「bundle exec」，打入「bundle exec rake db:migrate」。</small>
         <hr class="red-hr">
-        ここまでで、
+        到這裡設定了，
         <br><br>
         <i class="fa fa-th color-red"></i>　<strong>posts</strong>
         <table class="table table-striped">
@@ -148,20 +148,20 @@
           </thead>
           <tbody>
             <tr style="font-size:12px">
-              <td>番号</td>
-              <td>名前</td>
+              <td>號碼</td>
+              <td>名字</td>
               <td>内容</td>
-              <td>作成時間</td>
-              <td>更新時間</td>
-              <td>場所</td>
+              <td>作的時間</td>
+              <td>更新的時間</td>
+              <td>地方</td>
             </tr>
           </tbody>
         </table>
-        のデーターベース（Excelの表）を設定した。
+        的資料庫（Excelの表）。
         </h4>
         <hr>
         <div class="next-page">
-              <a href="/mugcups/4" class="btn btn-primary">戻る</a>
+              <a href="/zh-TW/mugcups/4" class="btn btn-primary">返回第4章</a>
         </div>
         </div>
       </div>
@@ -171,9 +171,9 @@
       <div id="slide-bar" class="clear-fix">
       <strong>
         <div class="list-group nomargin">
-          <a href="#title" class="list-group-item list-title"><h4>第4章：設定一覧</h4></a>
-          <a href="#title0" class="list-group-item">0 : この章の目的</a>
-          <a href="#title1" class="list-group-item">1 : 設定一覧</a>
+          <a href="#title" class="list-group-item list-title"><h4>第4章：設定一覽</h4></a>
+          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 設定一覽</a>
         </div>
       </strong>
       </div>
