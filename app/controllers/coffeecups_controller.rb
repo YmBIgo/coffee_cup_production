@@ -1,7 +1,8 @@
 class CoffeecupsController < ApplicationController
 
   # http_basic_authenticate_with :name => ENV['EDIT_USER'], :password => ENV['EDIT_PASS']
-  before_action :authenticate_user!, :only => [:show]
+
+  before_action :authenticate_user!, :only => [:show], :if => :lang_ok?
 
   def show
     unless I18n.locale == :"zh-TW"
@@ -11,10 +12,22 @@ class CoffeecupsController < ApplicationController
         redirect_to dashboard_path
         flash[:alert] = "閲覧権限がありません"
       end
+    else
+      render template: "coffeecups/#{params[:page]}"
     end
   end
 
   def index
+  end
+
+  private
+  # If locale is zh-TW return true
+  def lang_ok?
+    if I18n.locale == :"zh-TW"
+      return false
+    else
+      return true
+    end
   end
 
 end

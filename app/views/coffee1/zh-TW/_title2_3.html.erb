@@ -1,0 +1,141 @@
+<h4 id="coffee-chapter1-2-3">
+  <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 網頁的設定</strong></p>
+  <br>
+  <strong>做做看網頁的設定吧。</strong>
+  <hr class="red-hr">
+  網頁的顯示在<strong><u>「app > views > welcome」文件夾</u></strong>設定。
+  <br>
+  首先在<strong>「welcome」文件夾裡保存「<u>index.html.erb</u>」</strong>（保存的方法<a href="/zh-TW/mugcups/how_to_save" target="_blank"><strong>請參考這裡</strong></a>）之後，參考下面的內容編輯文件吧！
+  <br>
+  <small>※　內容<a href="/zh-TW/mugcups/8#title1-2" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（在「<u>app > views > welcome</u>」文件夾裡保存文件）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center header-content"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;歡迎光臨&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  使用html設定的內容到這裡。
+  <hr class="red-hr">
+  接着把主頁「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_1.png",
+              :target => ["_blank"] %>
+  顯示的跟上面圖像一樣吧。
+  <br><br>
+  為了顯示這樣的內容，做做看
+  <strong>
+  <ul class="number_ul">
+    <li>保存要顯示的圖像</li>
+    <li>設定CSS文件</li>
+  </ul>
+  </strong>
+  吧。
+  <br>
+  <small>※　不知道的話，<a href="/zh-TW/mugcups/8#title1-2" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+  <hr class="red-hr">
+  首先，在<strong>「<u>message-app</u>」的「<u>app > assets > images</u>」文件夾</strong>裡保存想在主頁上顯示的圖像吧。
+  <br>
+  如果沒有想顯示的圖像的話，保存<a href="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header12.jpg" target="_blank"><strong>這裡的圖像</strong></a>吧。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets1.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets2.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_image_save_assets2.png",
+              :target => ["_blank"] %>
+  完了之後，在<strong>「<u>app > assets > stylesheets</u>」</strong>裡保存<strong>「<u>style.scss</u>」</strong>（保存的方法<a href="/zh-TW/mugcups/how_to_save#title1" target="_blank"><strong>請參考這裡</strong></a>）之後，參考下面編輯內容吧。
+  <br>
+  <small>※　內容<a href="/zh-TW/mugcups/8#title1-2" target="_blank">請參考這裡</a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange">/assets/保存的圖像的名字</span>);</span>
+<span class='code-line'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>400</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class="word-blue">-webkit-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-moz-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-o-background-size</span>: cover;</span>
+<span class='code-line'>}</span>
+<span class='code-line'><span class='word-green'>.header-content</span>{</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>75</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class='word-blue'>padding-top</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  做好這裡之後，在<strong>「<u>message-app</u>」</strong>上打入
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails s</span>
+</td>
+</tr>
+</table>
+  <br>
+  起動<a href="/zh-TW/mugcups/3#title2-3" target="_blank"><strong>服務器</strong></a>後，打開「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」吧。
+  </small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_1.png",
+              :target => ["_blank"] %>
+  有沒有顯示上面圖像一樣的畫面了嗎？這樣主頁作好了！
+  <br><br>
+  <strong>設定的內容<a href="/zh-TW/codes/c_1#title1-2" target="_blank">請參考這裡</a>吧。</strong>
+  <br><br>
+  <strong>接着使用「<a href="/zh-TW/mugcups/7#title2-1" target="_blank">Bootstrap</a>」，設定遊覽列吧！</strong>
+</h4>

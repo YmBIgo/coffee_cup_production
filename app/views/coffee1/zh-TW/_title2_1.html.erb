@@ -1,0 +1,56 @@
+<h4 id="coffee-chapter1-2-1">
+  <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 七個網頁的設定</strong></p>
+  <br>
+  <strong>設定七個網頁（詳細<a href="/zh-TW/mugcups/5" target="_blank">請參考這裡</a>）裡使用哪一個網頁的內容吧。</strong>
+  <hr class="red-hr">
+  在這裡設定，<strong><u>在主頁「<a href="http://0.0.0.0:3000">0.0.0.0:3000</a>」裡顯示「welcome」的「<a href="/zh-TW/mugcups/5#title1-2" target="_blank">index</a>」網頁</u></strong>吧！
+  <br><br>
+  七個網頁的內容在<strong>「<u>config > routes.rb</u>」</strong>上面設定。。
+  <br>
+  參考下面的內容，編輯文件吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>routes.rb（追加3、4行吧）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4</strong>
+5
+6
+7
+8
+...
+60
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line remarkable-code'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在第3行裡指定了<strong><u>使用「welcome」的「index」網頁</u></strong>的設定，
+  <br>
+  在第4行裡指定了<strong><u>在主頁「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」裡顯示「welcome」的「index」網頁</u></strong>的設定。
+  <br>
+  <small>※　詳細<a href="/zh-TW/mugcups/8#title1-1" target="_blank"><strong>請參考這裡</strong></a>吧。</small>
+  <br><br>
+  這樣設定好，七個網頁的設定了。
+  <br><br>
+  接著做<strong><u>操作資料的設定</u></strong>吧。
+</h4>

@@ -2,7 +2,7 @@ class CodesController < ApplicationController
 
   # http_basic_authenticate_with :name => ENV['EDIT_USER'], :password => ENV['EDIT_PASS']
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :if => :lang_ok?
 
   def show
     unless I18n.locale == :"zh-TW"
@@ -24,6 +24,16 @@ class CodesController < ApplicationController
         redirect_to dashboard_path
         flash[:alert] = "閲覧権限がありません"
       end
+    end
+  end
+
+  private
+  # If locale is zh-TW return true
+  def lang_ok?
+    if I18n.locale == :"zh-TW"
+      return false
+    else
+      return true
     end
   end
 
