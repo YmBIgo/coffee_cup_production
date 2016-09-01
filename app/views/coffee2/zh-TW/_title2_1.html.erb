@@ -1,0 +1,96 @@
+<h4 id="coffee-chapter2-2-1">
+  <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : routes.rb</strong></p>
+  <br>
+  剛開始從<strong>「<u>config > routes.rb</u>」</strong>開始設定。
+  <hr class="red-hr">
+  這一次的網頁是，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+              :target => ["_blank"] %>
+  像上面的圖像一樣，<strong><u>「users」資料庫的「show」網頁上做「messages」資料庫的資料操作跟網頁顯示</u></strong>。
+  <br><br>
+  在「users」網頁上設定
+  <br><br>
+  <ul class="number_ul">
+    <strong><li>顯示訊息的資料在「<a href="/zh-TW/mugcups/5#title1-2">顯示全部的資料（index）</a>」</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @messages = <span class='word-blue'>Message</span>.all</span>
+</td>
+</tr>
+</table>
+    <br>
+    <small>※　詳細<a href="/zh-TW/mugcups/5#title1-2" target="_blank"><strong>請參考這裡</strong></a></small>
+    <br><br>
+    <strong><li>打入新的訊息在「<a href="/zh-TW/mugcups/6#title1-3" target="_blank">打入新的訊息（new）</a>」</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @message = <span class='word-blue'>Message</span>.<span class='word-red'>new</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    <small>※　詳細<a href="/zh-TW/mugcups/6#title1-3" target="_blank"><strong>請參考這裡</strong></a>。</small>
+  </ul>
+  <br>
+  這個兩個資料操作的設定。
+  <br><br>
+  加上，在這裡不會做顯示一個資料・編輯資料・刪除資料，
+  <br>
+  所以<strong><u>在「messages」資料庫使用的網頁只有「create」而已（show跟new的資料操作在users的操作資料文件裡設定）。</u></strong>
+  <br><br>
+  那麽編輯「routes.rb」吧！
+  <br>
+  <small>※　不知道的話，<a href="/zh-TW/mugcups/5#title1-1-1" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>routes.rb（追加第7行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+<strong class="color-red">7</strong>
+8
+9
+10
+...
+63
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  devise_for <span class='word-purple'>:users</span></span>
+<span class='code-line'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line'>  resources <span class='word-purple'>:users</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:messages</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  這樣設定好「routes.rb」了。
+  <br><br>
+  <strong><u>接下設定資料操作吧！</u></strong>
+</h4>

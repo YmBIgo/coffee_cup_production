@@ -1,7 +1,7 @@
 <h4 id="coffee-chapter2-2-3-4">
-  <p id="title2-3-4" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : まとめ</strong></p>
+  <p id="title2-3-4" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : 總結</strong></p>
   <br>
-  今回新しく、
+  這一次設定了
   <strong>
   <ul class="number_ul">
     <li>has_many / belongs_to</li>
@@ -9,17 +9,17 @@
   </ul>
   </strong>
   <br>
-  を設定しました。
+  的內容。
   <hr class="red-hr">
   <i class="fa fa-play-circle"></i>　<strong>has_many / belongs_to</strong>
   <br><br>
-  あるデータベースが他のデータベースのデータを複数持っている場合、
+  如果一個資料庫的資料可以拿別的資料庫裡複數的資料的話，
   <br>
-  データの選択を簡単にするための設定として、<strong>「<u>has_many</u>」と「<u>belongs_to</u>」</strong>がある。
+  為了簡單的選擇資料，使用<strong>「<u>has_many</u>」跟「<u>belongs_to</u>」</strong>的設定。
   <br><br>
-  これを設定するには、
+  適用這一些設定，
   <br><br>
-  <i class="fa fa-arrow-right color-red"></i>　<strong>子のデータベースの枠組みに</strong>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>在下級的資料庫追加框子</strong>
   <br><br>
   <strong>messages</strong>
     <table class="table table-striped" style="width:50%">
@@ -36,7 +36,7 @@
     <tbody class="text-center">
       <tr>
       <td>192</td>
-      <td style="font-size:15px">おはよう</td>
+      <td style="font-size:15px">你好</td>
       <td style="background-color: #f2dede;">91</td>
       <td>20</td>
       <td style="font-size:11px;">2016-03-02 16:13:52</td>
@@ -44,38 +44,38 @@
       </tr>
     </tbody>
   </table>
-  のように<strong>「親のデータベース名（単数形）_id」の枠組みを追加</strong>し、
+  像這樣子<strong>追加「上級的資料庫的名字（單數）_id」的框子</strong>，
   <br><br>
-  <i class="fa fa-arrow-right color-red"></i>　<strong>「<u>app > models > データベース名（単数形）.rb</u>」</strong>を
+  <i class="fa fa-arrow-right color-red"></i>　<strong>「<u>app > models > 資料庫的名字（單數）.rb</u>」</strong>
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>親のデータベース名（単数形）.rb</strong>
-  <br><br>
-<table class='highlight'>
-<tr>
-<td class='code-line-no text-center'>1
-</td>
-<td class='code-content'><span class='code-line'>has_many <span class='word-purple'>:子のデータベース名（複数形）</span></span>
-</td>
-</tr>
-</table>
-  <br>
-  <i class="fa fa-file color-red"></i>　<strong>子のデータベース名（単数形）.rb</strong>
+  <i class="fa fa-file color-red"></i>　<strong>上級的資料庫的名字（單數）.rb</strong>
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>belongs_to <span class='word-purple'>:親のデータベース名（単数形）</span></span>
+<td class='code-content'><span class='code-line'>has_many <span class='word-purple'>:下級的資料庫的名字（複數）</span></span>
 </td>
 </tr>
 </table>
   <br>
-  の設定を追加します。
+  <i class="fa fa-file color-red"></i>　<strong>下級的資料庫的名字（單數）.rb</strong>
   <br><br>
-  <i class="fa fa-arrow-right"></i>　<strong><u>データの選択で、</u></strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>belongs_to <span class='word-purple'>:上級的資料庫的名字（單數）</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  追加這一些內容。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong><u>資料的選擇是，</u></strong>
   <ul class="number_ul">
   <br>
-  <li><strong>メッセージデータを作った会員データを選択</strong></li>
+  <li><strong>選擇作訊息的會員資料</strong></li>
   <br>
 <table class='highlight'>
 <tr>
@@ -86,7 +86,7 @@
 </tr>
 </table>
   <br>
-  <li><strong>会員が作成したメッセージデータを選択</strong></li>
+  <li><strong>選擇會員作的訊息資料</strong></li>
   <br>
 <table class='highlight'>
 <tr>
@@ -98,11 +98,11 @@
 </table>
   <br>
   </ul>
-  のようにしてデータの選択をします。
+  這樣選擇資料。
   <hr class="red-hr">
   <i class="fa fa-play-circle"></i>　<strong>hidden_field</strong>
   <br><br>
-  入力させる必要のない情報を入れるには、
+  不用打入的資料要
   <br><br>
 <table class='highlight'>
 <tr>
@@ -113,7 +113,7 @@
 </tr>
 </table>
   <br>
-  を設定します。
+  這樣設定。
   <br><br>
-  <strong>今回は<u>「:receiver」に「@user」の「id」を入れる</u>ように設定しました。</strong>
+  <strong>這一次設定<u>「:receiver」裡放「@user」的「id」</u>的內容。</strong>
 </h4>

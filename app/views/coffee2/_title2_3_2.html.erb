@@ -319,9 +319,9 @@
     <br>
     <strong><li>枠組みの設定</li></strong>
     <br>
-    <strong>主人の枠組みはそのままで、
+    <strong>親の枠組みはそのままで、
     <br>
-    配下のそれに<u>「主人のデータベース名（単数形）_id」の枠組みを追加</u>します</strong>
+    子のそれに<u>「親のデータベース名（単数形）_id」の枠組みを追加</u>します</strong>
     <br><br>
   <strong>messages</strong>
     <table class="table table-striped" style="width:50%">
@@ -346,7 +346,7 @@
       </tr>
     </tbody>
   </table>
-    <strong><li>主人の方のデータベース（今回は「<u>users</u>」）</li></strong>
+    <strong><li>親の方のデータベース（今回は「<u>users</u>」）</li></strong>
     <br>
     <strong>「<u>app > models > データベース名（単数形）.rb</u>」</strong>に下の内容を追加する。
     <br><br>
@@ -354,12 +354,12 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>has_many <span class='word-purple'>:配下のデータベース名（複数形）</span></span>
+<td class='code-content'><span class='code-line'>has_many <span class='word-purple'>:子のデータベース名（複数形）</span></span>
 </td>
 </tr>
 </table>
     <br>
-    <strong><li>配下の方のデータベース（今回は「<u>messages</u>」）</li></strong>
+    <strong><li>子の方のデータベース（今回は「<u>messages</u>」）</li></strong>
     <br>
     <strong>「<u>app > models > データベース名（単数形）.rb</u>」</strong>に下の内容を追加する。
     <br><br>
@@ -367,7 +367,7 @@
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>belongs_to <span class='word-purple'>:主人のデータベース名（単数形）</span></span>
+<td class='code-content'><span class='code-line'>belongs_to <span class='word-purple'>:親のデータベース名（単数形）</span></span>
 </td>
 </tr>
 </table>

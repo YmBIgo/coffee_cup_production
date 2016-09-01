@@ -1,0 +1,65 @@
+<h4 id="coffee-chapter2-2-3-1">
+  <p id="title2-3-1" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 設定遊覽列</strong></p>
+  <br>
+  設定之前，首先在<strong><a href="/zh-TW/mugcups/css#title2-3" target="_blank">遊覽列・navigation-bar</a></strong>上追加移動到「users」資料庫的網頁的連結。
+  <br>
+  <small>※　詳細<a href="/zh-TW/mugcups/7#title2-2-4" target="_blank"><strong>請參考這裡</strong></a></small>
+  <hr class="red-hr">
+  遊覽列在<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>設定內容。
+  <br><br>
+  在這個<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>裡追加設定吧！
+  <br>
+  <small>※　詳細<a href="/zh-TW/mugcups/10#title3-3-1" target="_blank"><strong>請參考這裡</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第25、26行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>23
+24
+<strong class="color-red">25
+26</strong>
+27
+28
+29
+30
+31
+31
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span>&gt;會員一覽&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span>&gt;&lt;%= current_user.family_name %&gt;&lt;%= current_user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"登出"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;註冊&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;登錄&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>ul</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在這個2行，設定了
+  <strong>
+    <ul class="number_ul">
+      <li>移動到會員一覽的連結</li>
+      <li>移動到在登入的會員的網頁的連結</li>
+    </ul>
+  </strong>
+  的內容。
+  <br><br>
+  在這個<strong>「<u>移動到在登入的會員的網頁的連結</u>」</strong>裡顯示<strong><u>在登入的會員的名字</u></strong>。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+              :target => ["_blank"] %>
+  <strong>接着設定「messages」資料庫的網頁顯示吧！</strong>
+</h4>

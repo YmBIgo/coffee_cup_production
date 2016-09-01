@@ -1,0 +1,51 @@
+<h4 id="coffee-chapter2-2-2-3">
+  <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 總結</strong></p>
+  <br>
+  在這裡設定的是，
+  <br>
+  <strong>
+    <ul class="number_ul">
+      <li>redirect_to :back</li>
+      <li>Message.where(條件)</li>
+    </ul>
+  </strong>
+  這個兩個設定。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>redirect_to :back</strong>
+  <br><br>
+  為了回上頁，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  使用這個設定。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>Message.where(條件)</strong>
+  <br><br>
+  為了從「messages」資料庫選擇資料，使用
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>    @messages <span class='word-red'>=</span> <span class='word-blue'>Message</span>.where(<span class='word-purple'>:receiver</span> => @user.id)</span>
+</td>
+</tr>
+</table>
+  <br>
+  的設定。
+  <br><br>
+  這一次的設定是<strong><u>選擇跟「receiver」一樣的「@user」的「id」的「messages」資料</u></strong>。
+  <hr class="red-hr">
+  <strong>
+  這樣做好了資料操作的設定了。
+  <br><br>
+  接著做網頁顯示的內容吧！
+  </strong>
+</h4>

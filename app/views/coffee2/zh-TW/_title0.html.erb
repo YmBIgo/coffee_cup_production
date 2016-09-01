@@ -1,0 +1,90 @@
+<h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
+<h4 id="coffee-chapter2-0">
+  <i class="fa fa-bookmark color-red"></i>　
+  <strong>
+  在<a href="/zh-TW/coffee_cups/1" target="_blank">上章</a>作的「message-app」裡追加訊息機能。
+  </strong>
+  <hr class="red-hr">
+  使用到這裡學習的內容，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+              :target => ["_blank"] %>
+  在各個「show」網頁上，作跟上面圖像一樣<strong><u>會員的留言板</u></strong>吧。
+  <hr class="red-hr">
+  例如說，<strong><u>用「湘南花子」的會員資料，移動到顯示「山田太郎」的會員資料的網頁的話</u></strong>，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+              :target => ["_blank"] %>
+  會員的資料的下邊，會顯示留言版。
+  <br><br>
+  在這個網頁上打入訊息
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+              :target => ["_blank"] %>
+  打入訊息
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+              :target => ["_blank"] %>
+  會出現訊息。
+  <br><br>
+  接着用「山田太郎」的會員資料登入，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner.png",
+              :target => ["_blank"] %>
+  可以看到訊息的資料。
+  <br><br>
+  在這裡打入訊息
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_input.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_input.png",
+              :target => ["_blank"] %>
+  會出現訊息的內容。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+              :target => ["_blank"] %>
+  <strong><u>在這裡使用「messages」資料庫的「create」的資料操作</u></strong>，作訊息。
+  <hr class="red-hr">
+  這裡的留言版也<strong><u>顯示資料庫裡保存的資料</u></strong>。資料庫裡面，差不多是下面圖像的內容。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Sequel_Pro_messages_database_content.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Sequel_Pro_messages_database_content.png",
+              :target => ["_blank"] %>
+  <strong>
+  資料庫的
+  <ul class="number_ul">
+    <li>「user_id」裡放，作訊息的會員的「id」</li>
+    <li>「receiver」裡放，受到訊息的會員的「id」</li>
+    <li>「content」裡放，訊息的內容</li>
+  </ul>
+  使用這些資料，顯示資料。
+  </strong>
+  <hr class="red-hr">
+  在這個章設定的內容是，
+  <strong>
+    <ul class="number_ul">
+      <li>設定「messages」資料庫（<a href="/zh-TW/mugcups/4" target="_blank">請參考這裡</a>）</li>
+      <li>「七個網頁中使用那一些網頁」的設定（<a href="/zh-TW/mugcups/5#title1-1-1" target="_blank">請參考這裡</a>）</li>
+      <li>資料操作的設定（<a href="/zh-TW/mugcups/5#title1-1-2" target="_blank">請參考這裡</a>）</li>
+      <li>顯示資料的設定（<a href="/zh-TW/mugcups/5#title1-1-3" target="_blank">請參考這裡</a>）</li>
+    </ul>
+  </strong>
+  這個4個設定。
+  <br><br>
+  全部都在「posts」資料庫的網頁裡設定過的內容吧。
+  <br>
+  <strong>那麽，開始做吧！</strong>
+</h4>
