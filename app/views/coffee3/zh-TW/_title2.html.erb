@@ -1,0 +1,184 @@
+<h2 class="textbook-section-title" id="title2"><strong>2 : チャットルームを作る</strong></h2>
+<h4 id="coffee-chapter3-2">
+  <strong>チャットルームの作成ができるようにしましょう！</strong>
+  <hr class="red-hr">
+  チャットルームを作成は、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  の <a class="btn btn-warning">チャットを始める</a> をクリックすると、
+  <strong>
+    <ul class="number_ul">
+      <br>
+      <li>新しい「<u>rooms</u>」データベースの作成</li>
+      <br>
+      <strong>rooms</strong>
+      <table class="table table-striped" style="width:50%">
+        <thead style="font-size:0.8em">
+          <tr class="active">
+            <th style="background-color: #f2dede;">id</th>
+            <th style="background-color: #f2dede;">name</th>
+            <th style="background-color: #f2dede;">explain</th>
+            <th>created_at</th>
+            <th>updated_at</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="background-color: #f2dede;font-size:12px;">新規チャット</td>
+            <td style="background-color: #f2dede;font-size:12px;">説明を入力</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          </tr>
+        </tbody>
+      </table>
+      <i class="fa fa-arrow-right color-red"></i>　<strong>チャットルーム「1」を作成</strong>
+      <br><br>
+      <li>どの会員がどのチャットルームにいるかの情報「entries」データベースの作成</li>
+      <br>
+      <strong>entries</strong>
+      <table class="table table-striped" style="width:50%">
+        <thead style="font-size:0.8em">
+          <tr class="active">
+            <th style="background-color: #f2dede;">id</th>
+            <th style="background-color: #f2dede;">room_id</th>
+            <th style="background-color: #f2dede;">user_id</th>
+            <th>created_at</th>
+            <th>updated_at</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table table-striped" style="width:50%">
+        <thead style="font-size:0.8em">
+          <tr class="active">
+            <th style="background-color: #f2dede;">id</th>
+            <th style="background-color: #f2dede;">room_id</th>
+            <th style="background-color: #f2dede;">user_id</th>
+            <th>created_at</th>
+            <th>updated_at</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="background-color: #f2dede;">2</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          </tr>
+        </tbody>
+      </table>
+      <i class="fa fa-arrow-right color-red"></i>　<strong>会員「1」と「2」が、チャットルーム「1」に所属している情報を作成</strong>
+    </ul>
+    <br>
+  </strong>
+  の2つを行い、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  の表示をします。
+  <br><br>
+  このページは<strong>「<a href="http://0.0.0.0:3000/rooms/1" target="_blank">0.0.0.0:3000/rooms/1</a>」</strong>で、
+  <br>
+  <strong>「rooms」データベースの「id」が「1」のデータを表示させる「show」のページ</strong>になります。。
+  <br><br>
+  右側で、<strong>「<u>messages</u>」データベースのデータの表示</strong>
+  <br>
+  左側で、<strong>「<u>rooms</u>」データベースの表示と「<u>entries</u>」データベースにある会員の情報の表示</strong>
+  <br><br>
+  をしています。
+  <hr class="red-hr">
+  このような流れで、<br><strong>「users」データベースの「show」ページ</strong>で、
+  <strong>
+  <ul class="number_ul">
+    <li>「rooms」データの作成（create）</li>
+    <li>「entries」データの作成（create）</li>
+  </ul>
+  </strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  を、<strong>「rooms」データベースの「show」ページ</strong>で、
+  <strong>
+  <ul class="number_ul">
+    <li>「rooms」データの表示（show）</li>
+    <li>「entries」データの表示</li>
+  </ul>
+  </strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  をします。
+  <hr class="red-hr">
+  この「rooms」データベースの
+  <strong>
+  <ul class="number_ul">
+    <li>indexページ</li>
+    <br>
+    「rooms」データの全表示
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                :target => ["_blank"] %>
+    <li>edit</li>
+    <br>
+    「rooms」データの変更を記入
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
+                :target => ["_blank"] %>
+    <li>update</li>
+    <br>
+    「rooms」データの変更
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
+                :target => ["_blank"] %>
+  </ul>
+  </strong>
+  の表示をします。
+  <hr class="red-hr">
+  データベースごとでまとめると、
+  <br><br>
+  <strong>
+  <i class="fa fa-arrow-right"></i>　「rooms」データベース
+  <ul class="number_ul">
+    <li>create（<u>usersページの「show」</u>で行う）</li>
+    <li>show</li>
+    <li>index</li>
+    <li>edit</li>
+    <li>update</li>
+  </ul>
+  <i class="fa fa-arrow-right"></i>　「entries」データベース
+  <ul class="number_ul">
+    <li>create（<u>usersページの「show」</u>で行う）</li>
+    <li>show（<u>roomsページの「show」</u>で行う）</li>
+  </ul>
+  </strong>
+  をします。
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>まずは「<u>rooms</u>」データベースから設定していきましょう！</strong>
+</h4>
+<hr>
+<%= render "coffee3/title2_1" %>

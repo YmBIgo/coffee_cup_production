@@ -1,19 +1,42 @@
 <h4 id="coffee-chapter3-1-1">
   <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : messagesデータベース</strong></p>
   <br>
-  <i class="fa fa-play-circle"></i>　<strong>データベースの変更の前に、まずはすでに保存されているデータを削除しましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>データベースの変更の前に、まずはすでに保存されているデータを全て削除しましょう！</strong>
   <br><br>
-  まずは、Sequel Proで<strong>「messages-app_development」</strong>を開いて、その中の<strong>「messages」データベース</strong>のデータを下の手順で削除してみましょう。
+  ターミナルで下の入力をして下さい。
+  <br><br>
+  <strong>　ターミナル</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:reset</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　動かない場合は、<strong>「bundle exec」</strong>を前につけ、<strong>「bundle exec rake ...」</strong>で入力して下さい。
+  </small>
+  <br><br>
+  この入力で、データベースにあるデータをリセットします。
+  <br><br>
+  ではSequel Pro / SqliteBrowserで<strong>「messages-app_development」</strong>を開いて、<strong>「messages」データベース</strong>が削除されたかを確認しましょう。
   <br>
   <small>※　Sequel Proの開き方は<a href="/mugcups/how_to_open#title3" target="_blank"><strong>こちら</strong></a>を、SqliteBrowserの開き方は<a href="/mugcups/how_to_open#title4" target="_blank"><strong>こちら</strong></a>を参考</small>
-  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Sequel_Pro_destroy.png",
-                        :width => "90%",
-                        :class => "hover_img textbook-title-img"),
-              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Sequel_Pro_destroy.png",
-              :target => ["_blank"] %>
-  これで<a href="/coffee_cups/2" target="_blank"><strong>前章</strong></a>で作った<strong>「<u>messages</u>」データ</strong>は全て削除して下さい。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>データのリセットが終わったら、登録のページ「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」で会員のデータを新しく作成しましょう。</strong>
+  <br>
+  <small><i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は<strong>「<a href="http://localhost:3000/users/sign_up" target="_blank">localhost:3000/users/sign_up</a>」</strong>を開いて下さい。</small>
   <hr class="red-hr">
   <strong><i class="fa fa-play-circle"></i>　ここまでできたら、「<u>messages</u>」データベースを下のように変更しましょう！</strong>
+  <br>
+  <small>※　データベースの変更方法は<a href="/mugcups/4#title1-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
   <br><br>
   <strong>messages</strong>
   <table class="table table-striped" style="width:50%">
@@ -38,8 +61,7 @@
       </tr>
     </tbody>
   </table>
-  <br><br>
-  <small>※　データベースの変更方法は<a href="/mugcups/4#title1-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br>
   データベースの変更は、<strong><u>ターミナルで作成する設定ファイル</u></strong>を使って行います。
   <br>
   まずはターミナルで<strong>「<u>message-app</u>」</strong>に移動して下さい。
@@ -203,4 +225,6 @@
   の部分で<strong>「<u>receiver</u>」</strong>を削除し、<strong>「<u>room_id</u>」</strong>を追加しました。
   <br><br>
   これでデータベースの変更だけでなく、<strong>「<u>messages</u>」データベースのデータ操作の設定</strong>もできるようになりました。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>設定した内容は<a href="/codes/c_3#title1-1" target="_blank">こちら</a>にまとめてあります。</strong>
 </h4>

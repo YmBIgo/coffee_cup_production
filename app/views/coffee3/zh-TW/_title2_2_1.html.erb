@@ -1,0 +1,620 @@
+<h4 id="coffee-chapter3-2-2-1">
+  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 「entries」データの作成（create）</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>まず「<u>entries</u>」データの作成をやってみましょう！</strong>
+  <hr class="red-hr">
+  「entries」データの作成には、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Entry</span>.create(<span class='word-purple'>:user_id</span> => 数字, <span class='word-purple'>:room_id</span> => 数字)</span>
+</td>
+</tr>
+</table>
+  <br>
+  を、<strong>データ操作のファイル（<u>controllerファイル</u>）</strong>に追加することで設定します。
+  <br><br>
+  今回の「entries」データは、
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  の <a class="btn btn-warning">チャットを始める</a> をクリックして、<strong>「<u>rooms</u>」データ</strong>を作成する時に一緒に作成します。
+  <br><br>
+  なので、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Entry</span>.create(<span class='word-purple'>:user_id</span> => 数字, <span class='word-purple'>:room_id</span> => 数字)</span>
+</td>
+</tr>
+</table>
+  <br>
+  は<strong>「rooms_controller.rb」</strong>の中に設定を追加します。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>まずは、<u>現在ログインしている会員がチャットルームに参加</u>していることを示すデータを作成しましょう！</strong>
+  <br><br>
+  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>の内容を下のように変更しましょう！
+  <br>
+  <small>※　内容は<a href="/mugcups/4#title2-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（7行目を追加）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+<strong class="color-red">7</strong>
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+<span class='code-line remarkable-code'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
+<span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャットを作成しました！"</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここで、
+  <strong>
+    <ul class="number_ul">
+      <li>「room_id」に「@room」の「id」</li>
+      <li>「user_id」に「current_user」の「id」</li>
+    </ul>
+  </strong>
+  が入ったデータが作成されます。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>もし、ログインいる会員の「id」が「1」・作成したチャットルームの「id」が「1」のデータなら、</strong>
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <strong>のデータがここで作成されます。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>次に、<u>チャットする相手がチャットルームに参加</u>していることを示すデータを作成しましょう！</strong>
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;"><strong class="color-red">2</strong></td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  ここでは
+  <br>
+  <ul class="number_ul">
+  <strong><li>「<u>rooms</u>」データを作成するボタン <a class="btn btn-warning">チャットを始める</a> を作っている</li></strong>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「<u>app > views > users</u>」フォルダ）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+<strong class="color-red">11
+12
+13</strong>
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">else</span> %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>    &lt;%= f.submit <span class="word-yellow">"チャットを始める"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  に、<strong><u>新しい「entries」データ作成する設定</u></strong>を追加し、
+  <br><br>
+  <strong><li> <a class="btn btn-warning">チャットを始める</a> をクリックすると「rooms_controller.rb」で</li></strong>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+<span class='code-line'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
+<span class='code-line remarkable-code'>    @entry2 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:entry</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:room_id</span> => @room.id))</span>
+<span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャットを作成しました！"</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  でデータの作成をします。
+  </ul>
+  <br>
+  このような流れでここでは、
+  <strong>
+  <ul class="number_ul">
+    <li><p> <a class="btn btn-warning">チャットを始める</a> をクリックする<span class="color-red">前</span>の設定</p></li>
+    <li><p> <a class="btn btn-warning">チャットを始める</a> をクリックした<span class="color-red">後</span>の設定</p></li>
+  </ul>
+  </strong>
+  の2つをやってみます。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>設定をやっていきましょう！</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>まずは <a class="btn btn-warning">チャットを始める</a> をクリックする<span class="color-red">前</span>の設定からやってみます</strong>
+  <br><br>
+  これをやるには、
+  <strong>
+  <ul class="number_ul">
+    <li>「users_controller.rb」に新しい「entries」データ「@entry」を設定（<u>データ操作</u>）</li>
+    <li>「users」データベースの「show」ページに「@entry」の入力欄の設定（<u>ページ表示</u>）</li>
+  </ul>
+  </strong>
+  の2つをやります。
+  <br><br>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>1つ目の「users_controller.rb」に「@entry」から設定しましょう！（<u>データ操作</u>）</strong>
+  <br><br>
+  <strong>「<u>app > controllers > users_controller.rb</u>」</strong>を開いて下のように内容を変更しましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（10行目を追加）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+8
+9
+<strong class="color-red">10</strong>
+11
+12
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      @room <span class="word-red">=</span> <span class="word-blue">Room</span>.<span class='word-red'>new</span></span>
+<span class='code-line remarkable-code'>      @entry <span class="word-red">=</span> <span class="word-blue">Entry</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  ここで設定した新しい「entry」データ「@entry」を、<strong>「<u>app > views > users > show.html.erb</u>」</strong>に設定します（<u>ページ表示</u>）。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（12〜14行目を追加）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+11
+<strong class="color-red">12
+13
+14</strong>
+15
+16
+17
+</td>
+<td class='code-content'><span class='code-line'>  &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>    &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>      &lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>        &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>      &lt;%= f.submit <span class="word-yellow">"チャットを始める"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  新しい設定が出てきたので、内容を説明しましょう！
+  <hr class="red-hr">
+  今回は
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>12
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  という新しい設定が出てきましたね。
+  <br><br>
+  これは、
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>11
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  という<strong>「<u>rooms</u>」データベースの作成</strong>をする設定の中で、<strong>「<u>@entry</u>」データベースの作成</strong>の設定を入れるための設定になります。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  との間にデータの設定を追加します。
+  <br><br>
+  ここでは<strong>「<a href="/coffee_cups/2#title2-3-4" target="_blank">hidden_field</a>」</strong>を使って、
+  <br>
+  <strong>「@entry」の「user_id」にページの会員「@user」の「id」を入れる</strong>設定をしています。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <strong>「<u>users_controller.rb</u>」で設定した「<u>@entry</u>」</strong>の内容
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>  &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  を、<strong>「<u>rooms_controller.rb</u>」</strong>でデータの作成をします。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@entry2 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:entry</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:room_id</span> => @room.id))</span>
+</td>
+</tr>
+</table>
+  <br>
+  この<strong>「<u>params</u>」</strong>の部分に、
+  <br>
+  <strong>
+  <ul class="number_ul">
+    <li>「rooms」データ</li>
+    <li>「entry」データの「user_id」を決めるデータ</li>
+  </ul>
+  </strong>
+  が入り、<strong><a href="/mugcups/6#title1-4-2-data" target="_blank">「<u>require</u>」と「<u>permit</u>」</a></strong>をしてデータの作成をします。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>下のようなデータ操作をしている「new」ページに、「<u>@corporation」の「name」を入力欄を表示</u>するための設定はどのようになるでしょうか？</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+6
+7
+8
+9
+<strong class="color-red">10</strong>
+11
+12
+13
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>new</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class="word-blue">User</span>.<span class='word-red'>new</span></span>
+<span class='code-line remarkable-code'>    @corporation <span class="word-red">=</span> <span class="word-blue">Corporation</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:name</span>))</span>
+<span class='code-line remarkable-code'>    @corporation <span class="word-red">=</span> <span class='word-blue'>Corporation</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:corporation</span>).permit(<span class='word-purple'>:name</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="4"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（<u>app > views > users フォルダ</u>）</strong>
+  <br>
+  <small>※　マウスを上に置くと答えが出ます</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6
+7</strong>
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;新しいデータを作成&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
+<span class="remarkable-code answer-code"><span class='code-line'>  &lt;%= fields_for @corporation <span class="word-red">do</span> |c| %&gt;</span>
+<span class='code-line'>    &lt;%= c.text_field <span class='word-purple'>:name</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"作成"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>ここまででデータを作成する<span class="color-red">前</span>の設定ができました！</strong>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>次に <a class="btn btn-warning">チャットを始める</a> をクリックした<span class="color-red">後</span>の設定をします。</strong>
+  <br><br>
+  ここでは、前に設定したデータを<strong>「rooms_controller.rb」</strong>で作成します。
+  <br>
+  今の状態では、
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+<span class='code-line'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
+<span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャットを作成しました！"</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  で<strong>「<u>@room</u>」と「<u>@entry1</u>」</strong>の作成をしているんで、ここに<strong>「<u>@entry2</u>」</strong>の作成の設定を追加します。
+  <br><br>
+  では<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を下のように変更してみましょう！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（8行目を追加）</strong>
+  <br>
+  <small>
+  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  <br>
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+<span class='code-line'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
+<span class='code-line remarkable-code'>    @entry2 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:entry</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:room_id</span> => @room.id))</span>
+<span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャットを作成しました！"</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  paramsの中には、
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（12〜14行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>  &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  で設定した<strong>「user_id」に「@user」の「id」が入った「@entry」のデータ</strong>が入っているので、
+  <br>
+  それを<strong>「params」</strong>から取り出しています。
+  <br>
+  <small>※　paramsの説明は<a href="/mugcups/6#title1-4-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>params.<span class="word-red">require</span>(<span class='word-purple'>:entry</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:room_id</span> => @room.id)</span>
+</td>
+</tr>
+</table>
+  <br>
+  ここでは
+  <strong>
+  <ul class="number_ul">
+    <li>「entry」データの「user_id」と「room_id」の変更の許可</li>
+    <small>※　詳細は<a href="/mugcups/6#title1-4-2-data" target="_blank"><strong>こちら</strong></a>を参考</small>
+    <li>「room_id」に「@room」の「id」代入</li>
+    <small>※　詳細は<a href="/mugcups/11#title4-2-1" target="_blank"><strong>こちら</strong></a>を参考</small>
+  </ul>
+  </strong>
+  をしています。
+  <hr class="red-hr">
+  これで、
+  <strong>
+  <ul class="number_ul">
+    <li>「user_id」に「@user」の「id」</li>
+    <li>「room_id」に「@room」の「id」</li>
+  </ul>
+  </strong>
+  が入るデータが作成の設定ができました！
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <i class="fa fa-play-circle"></i>　<strong>では、実際にデータが作られるかを試してみましょう！</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  ログインしている会員以外のページの <a class="btn btn-warning">チャットを始める</a> をクリックしてみましょう！
+  <br>
+  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+              :target => ["_blank"] %>
+  のページに移動できると思います。
+  <br>
+  すでに先ほど「rooms」ページは作成しましたので、<strong>「<a href="http://0.0.0.0:3000/rooms/2">0.0.0.0:3000/rooms/2</a>」</strong>に移動できたのではないかと思います。
+  <br><br>
+  できたら、<strong>Sequel Proで「<u>entries</u>」データが作成されているかを確認</strong>しましょう！
+  <br>
+  <small>※　Sequel Proの開き方は<a href="/mugcups/how_to_open#title3" target="_blank"><strong>こちら</strong></a>を、SqliteBrowserの開き方は<a href="/mugcups/how_to_open#title4" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Sequel_Pro_entries.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Sequel_Pro_entries.png",
+              :target => ["_blank"] %>
+  ここでは
+  <strong>
+    <ul class="number_ul">
+      <li>会員「1」がチャットルーム「2」に参加しているデータ</li>
+      <li>会員「2」がチャットルーム「2」に参加しているデータ</li>
+    </ul>
+  </strong>
+  の2つのデータの作成をしました！
+  <hr class="red-hr">
+  <strong>
+  <i class="fa fa-play-circle"></i>　次にここで作成したデータを使って
+  <ul class="number_ul">
+    <li>「rooms」データでの参加している会員の表示</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                :target => ["_blank"] %>
+    <li>ログインしている会員の参加しているチャットルーム一覧の表示</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                :target => ["_blank"] %>
+  </ul>
+  の2つの「データ表示」をやってみます。
+  </strong>
+</h4>

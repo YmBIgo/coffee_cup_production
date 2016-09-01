@@ -1,0 +1,87 @@
+<h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+<h4 id="coffee-chapter3-0">
+  <strong>
+  <i class="fa fa-bookmark color-red"></i>　在<a href="/zh-TW/coffee_cups/2" target="_blank">上章</a>，在個各個會員的網頁的「show」網頁上顯示留言版跟訊息。
+  <br><br>
+  在這裡設定不用留言版反而用聊天室，顯示訊息吧。
+  </strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_present_messages.png",                    :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_present_messages.png",
+              :target => ["_blank"] %>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>在這裡解釋要作的網頁吧。</strong>
+  <br><br>
+  移動到<strong>自己的會員網頁「show」網頁「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」</strong>，會顯示下面一樣的 <a class="btn btn-info">看聊天室一覽</a> 的顯示，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_rooms_link.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_rooms_link.png",
+              :target => ["_blank"] %>
+  移動到別人的網頁（例如說<strong>「<a href="http://0.0.0.0:3000/users/2" target="_blank">0.0.0.0:3000/users/2</a>」</strong>），會顯示
+  <br>
+  <a class="btn btn-warning" style="margin:5px 0">開始聊天</a>
+   <br>
+   這樣子的按鈕。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  點擊這個 <a class="btn btn-warning">開始聊天</a> ，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  會顯示，像上面圖像一樣子的<u>聊天室的網頁</u>。
+  <br><br>
+  在這個網頁上，打入訊息
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_input_word.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_input_word.png",
+              :target => ["_blank"] %>
+  點擊<a class="btn btn-primary">投稿</a> 之後，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_show_message_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_show_message_1.png",
+              :target => ["_blank"] %>
+  像這樣子會顯示
+  <br>
+  <div class="text-right" style="margin-top:20px">
+    <p class="alert alert-success">你好！<br><br><small><strong><a>山田太郎</a></strong></small></p>
+  </div>
+  這樣子的畫面。
+  <hr class="red-hr">
+  別的會員投稿的訊息會
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_from_users_1_after_users_2_post.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_from_users_1_after_users_2_post.png",
+              :target => ["_blank"] %>
+  像上面的圖像一樣，
+  <br>
+  <div class="text-left" style="margin-top:20px">
+    <p class="alert alert-info">功課完了嗎？<br><br><small><strong><a>湘南花子</a></strong></small></p>
+  </div>
+  會顯示藍色的內容。
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>到這裡簡單的說明了網頁上的顯示，從這裡解釋作這個網站。</strong>
+  <br><br>
+  在這裡做
+  <strong>
+    <ul class="number_ul">
+      <li>作資料庫（詳細<a href="/zh-TW/mugcups/4" target="_blank"><strong>請參考這裡</strong></a>）</li>
+      <li>七個網頁的設定（詳細<a href="/zh-TW/mugcups/5#title1-1-1" target="_blank"><strong>請參考這裡</strong></a>）</li>
+      <li>操作資料的設定（詳細<a href="/zh-TW/mugcups/5#title1-1-2" target="_blank"><strong>請參考這裡</strong></a>）</li>
+      <li>顯示網頁的設定（詳細<a href="/zh-TW/mugcups/5#title1-1-3" target="_blank"><strong>請參考這裡</strong></a>）</li>
+    </ul>
+  </strong>
+  這個4個設定。
+  <br><br>
+  首先從<strong>「<u>作資料庫</u>」</strong>開始做吧！
+</h4>
+</a>

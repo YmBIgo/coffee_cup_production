@@ -1,0 +1,255 @@
+<h2 class="textbook-section-title" id="title1"><strong>1 : 作資料庫</strong></h2>
+<h4 id="coffee-chapter3-1">
+  <strong>為了作聊天室，首先作資料庫吧。</strong>
+  <hr class="red-hr">
+  聊天室的資料庫的裡面是怎麼樣子呢？
+  <br><br>
+  要作聊天室需要下面4個資料庫。
+  <strong>
+  <ul class="number_ul">
+    <br>
+    <li>users資料庫</li>
+    <br>
+    為了設定「<u>誰作訊息</u>」的資料跟「<u>會員在哪一個聊天室</u>」的資料，需要用這個資料庫。
+    <br><br>
+    <li>messages資料庫</li>
+    <br>
+    追加「<u>作訊息的會員（user_id）</u>」跟「<u>有作好的訊息的聊天室（room_id）</u>」這個兩個框子。
+    <br><br>
+    <strong>messages</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+          <th>id</th>
+          <th>content</th>
+          <th style="background-color: #f2dede;">user_id</th>
+          <th style="background-color: #f2dede;">room_id</th>
+          <th>created_at</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td>1</td>
+          <td style="font-size:12px">你好！</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="font-size:11px;">2016-04-12 20:33:43</td>
+          <td style="font-size:11px;">2016-04-12 20:33:43</td>
+        </tr>
+      </tbody>
+    </table>
+    <i class="fa fa-arrow-right color-red"></i>　這個資料表示，聊天室（room_id）是「1」會員（user_id）是「1」內容是「你好！」的訊息「1」。
+    <br><br>
+    <li>rooms資料庫</li>
+    <br>
+    設定「<u>聊天室的資料（聊天的名字跟說明）</u>」。
+    <br><br>
+    <strong>rooms</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+          <th style="background-color: #f2dede;">id</th>
+          <th style="background-color: #f2dede;">name</th>
+          <th style="background-color: #f2dede;">explain</th>
+          <th>created_at</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;font-size:12px;">新的聊天</td>
+          <td style="background-color: #f2dede;font-size:12px;">打入說明</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        </tr>
+      </tbody>
+    </table>
+    <i class="fa fa-arrow-right color-red"></i>　表示，名字（name）是「新的聊天」，說明（explain）是「打入說明」的聊天室（id）「1」
+    <br><br>
+    <li>enties資料庫</li>
+    <br>
+    設定「<u>那一個會員在參加哪一個聊天室的資料</u>」的內容。
+    <br><br>
+    <strong>entries</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+          <th style="background-color: #f2dede;">id</th>
+          <th style="background-color: #f2dede;">room_id</th>
+          <th style="background-color: #f2dede;">user_id</th>
+          <th>created_at</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">2</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        </tr>
+      </tbody>
+    </table>
+    <i class="fa fa-arrow-right color-red"></i>　表示，會員（user_id）「2」在參加聊天室（room_id）「1」的資料。
+  </ul>
+  </strong>
+  <hr class="red-hr">
+  用圖像解釋吧。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  點擊上面圖像的網頁的 <a class="btn btn-warning">開始聊天</a> 之後，
+  <br><br>
+  <strong>rooms</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">name</th>
+        <th style="background-color: #f2dede;">explain</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;font-size:12px;">新的聊天</td>
+        <td style="background-color: #f2dede;font-size:12px;">打入說明</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>聊天室「1」</strong>
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>會員「1」跟「2」在參加聊天室「1」的資料</strong>
+  <br><br>
+  會新增。之後移動到聊天室的網頁。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  在這個網頁上，打入訊息
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_input_word.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_input_word.png",
+              :target => ["_blank"] %>
+  點擊<a class="btn btn-primary">投稿</a> 之後，
+  <br><br>
+  <strong>messages</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>1</td>
+        <td style="font-size:12px">你好！</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+      </tr>
+    </tbody>
+  </table>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>在聊天室（room_id）「1」裡，會員（user_id）「1」投稿的「你好！」的資料</strong>
+  <br><br>
+  會新增。在網頁上顯示這個新增的訊息。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_show_message_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_show_message_1.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  在這裡編輯・新增
+  <strong>
+  <ul class="number_ul">
+    <li>messages資料庫</li>
+    <li>rooms資料庫</li>
+    <li>entries資料庫</li>
+  </ul>
+  這個3個資料庫。那麽開始做吧！
+  </strong>
+</h4>
+  <hr>
+  <%= render "coffee3/zh-TW/title1_1" %>
+  <hr>
+  <%= render "coffee3/zh-TW/title1_2" %>
+  <hr>
+  <%= render "coffee3/zh-TW/title1_3" %>
+  <hr>
+<h4>
+  <strong>
+  這樣編輯好了資料庫了！用這個資料庫，作作看網頁吧。
+  <hr class="red-hr">
+  首先
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  點擊其他的會員的網頁上的， <a class="btn btn-warning">開始聊天</a> 之後，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  會作好這樣子的聊天室的設定吧！
+  </strong>
+</h4>
