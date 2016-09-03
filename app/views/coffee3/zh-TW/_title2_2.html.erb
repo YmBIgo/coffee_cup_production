@@ -1,18 +1,18 @@
 <h4 id="coffee-chapter3-2-2">
-  <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 「entries」データの作成・表示</strong></p>
+  <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 新增・顯示「entries」資料</strong></p>
   <br>
-  <i class="fa fa-play-circle"></i>　<strong>では、「entries」データベースの作成・表示の設定をしてみましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>那麽，設定「entries」資料的新增・顯示吧！</strong>
   <hr class="red-hr">
-  ここでは、
+  在這裡設定
   <strong>
   <ul class="number_ul">
-    <li>「users」の「show」ページでの<u>「entries」データの作成（create）</u></li>
+    <li>「users」的「show」網頁上，<u>新增「entries」資料（create）</u></li>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
                 :target => ["_blank"] %>
-    の <a class="btn btn-warning">チャットを始める</a> をクリックすると、
+    點擊 <a class="btn btn-warning">開始聊天</a> 會新增「entries」資料
     <br><br>
     <strong>entries</strong>
     <table class="table table-striped" style="width:50%">
@@ -55,18 +55,18 @@
         </tr>
       </tbody>
     </table>
-    <i class="fa fa-arrow-right"></i>　どの会員がどのチャットルームに参加しているかのデータを作成される。
+    <i class="fa fa-arrow-right"></i>　哪一個會員在參加哪一個聊天室的資料。
     <br><br>
-    <li>「rooms」の「show」ページでの<u>「entries」データの表示</u></li>
+    <li>「rooms」的「show」網頁上，<u>顯示「entries」資料</u></li>
     <br>
-    <i class="fa fa-arrow-right"></i>　チャットルームに参加している会員の表示
+    <i class="fa fa-arrow-right"></i>　顯示參加聊天室的會員
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                 :target => ["_blank"] %>
     <hr class="red-hr">
-    <i class="fa fa-arrow-right"></i>　ログインしている会員の参加しているチャットルームの表示
+    <i class="fa fa-arrow-right"></i>　顯示登入的會員在參加的聊天室
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),
@@ -78,11 +78,11 @@
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                 :target => ["_blank"] %>
     <br><br>
-    <li>チャットルームを閲覧できるユーザーの制限</li>
+    <li>限制可以看聊天室的會員</li>
     <br>
-    チャットルームに参加している会員でなければ、チャットルームを見れないようにします。
+    如果沒有參加聊天室的會員的話，不讓他看聊天室裡面的內容。
     <br><br>
-    <i class="fa fa-arrow-right"></i>　ログインしている会員がチャットルームに参加しているかどうかは、
+    <i class="fa fa-arrow-right"></i>　判別登入的會員有沒有參加聊天室的時候，要使用
     <br><br>
     <strong>entries</strong>
     <table class="table table-striped" style="width:50%">
@@ -105,33 +105,33 @@
         </tr>
       </tbody>
     </table>
-    「entries」データを使って判定します。
+    「entries」資料。
   </ul>
   </strong>
   <br>
-  の3つをしてみます。
+  設定這個三個內容。
   <br><br>
-  まずは<strong>「<u>entries</u>」データの作成（<u>create</u>）</strong>からやってみましょう！
+  首先從<strong>新增「<u>entries</u>」資料（<u>create</u>）</strong>開始做吧！
   <hr class="red-hr">
-  <%= render "coffee3/title2_2_1" %>
+  <%= render "coffee3/zh-TW/title2_2_1" %>
   <hr class="red-hr">
-  <%= render "coffee3/title2_2_2" %>
+  <%= render "coffee3/zh-TW/title2_2_2" %>
   <hr class="red-hr">
-  <%= render "coffee3/title2_2_3" %>
+  <%= render "coffee3/zh-TW/title2_2_3" %>
 </h4>
 <h4>
   <hr class="red-hr">
   <i class="fa fa-play-circle"></i>　<strong>
-  ここまでで、チャットルームに参加している会員の情報「<u>entries</u>」データについて触れました。
+  到這裡，解釋了參加聊天室的會員資料「<u>entries</u>」的內容。
   <br><br>
-  具体的には、
+  設定的內容是
   <ul class="number_ul">
-    <li>「entries」データの作成</li>
-    <li>「entries」データの表示</li>
-    <li>「entries」データを使った、チャットルーム閲覧の制限</li>
+    <li>新增「entries」資料</li>
+    <li>新增「entries」資料</li>
+    <li>用「entries」資料，限制聊天室的閱覽</li>
   </ul>
-  の3つをやりました。
+  這些三個。
   </strong>
   <br><br>
-  <i class="fa fa-arrow-right"></i>　<strong>一回、この章で設定した内容をまとめましょう！</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>最後，總括裡面的內容吧！</strong>
 </h4>

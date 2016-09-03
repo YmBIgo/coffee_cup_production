@@ -1,9 +1,9 @@
 <h4 id="coffee-chapter3-2-2-3">
-  <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : チャットルーム閲覧の制限</strong></p>
+  <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 顯示聊天室的閱覽</strong></p>
   <br>
-  <i class="fa fa-play-circle"></i>　<strong>次に、<u>参加者だけ</u>に「rooms」データベースのページ・<u>チャットルームの閲覧</u>をできるようにしてみましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>接着設定會員的檢查，讓<u>參加者</u>而已<u>閱覽「rooms」資料庫的網頁・聊天室</u>的內容吧！</strong>
   <hr class="red-hr">
-  チャットルームの参加者のデータは<strong>「<u>entries</u>」データ</strong>で示しました。
+  參加聊天室的會員的資料用<strong>「<u>entries</u>」資料</strong>顯示。
   <br><br>
   <strong>entries</strong>
   <table class="table table-striped" style="width:50%">
@@ -26,30 +26,30 @@
       </tr>
     </tbody>
   </table>
-  この<strong>「<u>entries</u>」データ</strong>を使って、チャットルームに<strong>ログインしている会員（<u>current_user</u>）</strong>が参加しているかを判定します。
+  使用這個<strong>「<u>entries</u>」資料</strong>，判別聊天室裡有沒有參加<strong>登入的會員（<u>current_user</u>）</strong>。
   <br><br>
-  これには、<strong>「<u>entries</u>」データベース</strong>の
+  為了這個，搜索<strong>「<u>entries</u>」資料庫</strong>裡有沒有
   <strong>
   <ul class="number_ul">
-    <li>「room_id」に、チャットルームの「id」</li>
-    <li>「user_id」に、「current_user」の「id」</li>
+    <li>「room_id」是，聊天室的「id」</li>
+    <li>「user_id」是，「current_user」的「id」</li>
   </ul>
   </strong>
-  が入っているデータがあるかどうかで判定します。
+  的資料。
   <br><br>
-  これを設定するには、
+  為了設定這個，使用
   <strong>
   <ul class="number_ul">
-    <li>「if/else」（詳細は<a href="/mugcups/11#title4-3-2" target="_blank">こちら</a>を参考）</li>
-    <li>「where」を使ったデータの検索（詳細は<a href="/mugcups/4#title2-2" target="_blank">こちら</a>を参考）</li>
-    <li>「present?」でデータがあるかを確認</li>
+    <li>「if/else」（詳細<a href="/zh-TW/mugcups/11#title4-3-2" target="_blank">請參考這裡</a>）</li>
+    <li>使用「where」搜索資料（詳細<a href="/zh-TW/mugcups/4#title2-2" target="_blank">請參考這裡</a>）</li>
+    <li>使用「present?」確認資料有沒有</li>
   </ul>
   </strong>
-  の3つを使います。
+  這個三個設定。
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>この判定を「<u>rooms_controller.rb</u>」に追加してみたいと思います！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>在「<u>rooms_controller.rb</u>」裡追加這個判別吧！</strong>
   <br><br>
-  ここで制限をかける<strong>「<u>rooms</u>」データベースのページ</strong>は、
+  在這裡，限制閱覽的<strong>「<u>rooms</u>」資料庫的網頁</strong>是，
   <strong>
   <ul class="number_ul">
     <li>show</li>
@@ -72,18 +72,18 @@
                   :target => ["_blank"] %>
   </ul>
   </strong>
-  の3つになります。
+  這個三個網頁。
   <br><br>
-  <i class="fa fa-arrow-right"></i>　<strong>まずは「show」ページでの設定からやってみます！</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>首先從「show」網頁開始做吧！</strong>
   <br><br>
-  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を開いて、内容を下のように変更しましょう！
+  打開<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>之後，編輯內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（20、24〜26行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第20、24〜26行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -108,16 +108,16 @@
 <span class='code-line'>      @entries <span class="word-red">=</span> @room.entries</span>
 <span class="remarkable-code"><span class='code-line'>    <span class="word-red">else</span></span>
 <span class='code-line'>      redirect_to <span class='word-purple'>:back</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
 <span class='code-line'>    <span class='word-red'>end</span></span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>では、内容を説明しましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>那麽，解釋內容吧！</strong>
   <br><br>
-  今回の設定で難しいのは、
+  在這一次的設定，難的地方應該是
   <br><br>
 <table class='highlight'>
 <tr>
@@ -128,36 +128,36 @@
 </tr>
 </table>
   <br>
-  の1行だと思います。
+  這個一行。
   <br><br>
-  ここでは前に触れた、
+  在這裡使用，
   <strong>
   <ul class="number_ul">
     <li>「if/else」</li>
-    <li>「where」を使ったデータの検索</li>
-    <li>「present?」でデータがあるかを確認</li>
+    <li>「where」搜索資料</li>
+    <li>「present?」確認資料有沒有</li>
   </ul>
   </strong>
-  を使っています。
+  這些設定。
   <br>
-  1つ目については分かると思うので、2つ目から説明していきます。
+  第一個應該知道，所以從第二個開始解釋。
   <br><br>
-  <i class="fa fa-arrow-right"></i>　<strong>2. 「where」を使ったデータの検索</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>2. 使用「where」搜索資料</strong>
   <br><br>
-  ここでは<strong>「<u>entries</u>」データ</strong>から
+  在這裡從<strong>「<u>entries</u>」資料</strong>選擇，成立
   <strong>
   <ul class="number_ul">
-    <li>「room_id」が、<u>「@room」の「id」</u></li>
-    <li>「user_id」が、<u>「current_user」の「id」</u></li>
+    <li>「room_id」是<u>「@room」的「id」</u></li>
+    <li>「user_id」是<u>「current_user」的「id」</u></li>
   </ul>
   </strong>
-  の2つを満たすデータを検索して、選択しています。
+  這個兩個條件的資料。
   <br>
-  <small>※　詳細は<a href="/mugcups/4#title2-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>※　詳細<a href="/zh-TW/mugcups/4#title2-2" target="_blank"><strong>請參考這裡</strong></a></small>
   <br><br>
-  <i class="fa fa-arrow-right"></i>　<strong>3 . 「present?」でデータがあるかを確認</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>3 . 使用「present?」確認資料有沒有</strong>
   <br><br>
-  ここでは
+  在這裡，判別
   <br><br>
 <table class='highlight'>
 <tr>
@@ -168,12 +168,12 @@
 </tr>
 </table>
   <br>
-  で選択した<strong>「<u>entries</u>」データ</strong>があるかないかを判定しています。
+  有沒有，用上面設定選擇的<strong>「<u>entries</u>」資料</strong>。
   <br>
-  ここでの判定結果に従って、
+  按着這個這個判別的結果，適用
   <br><br>
   <ul class="number_ul">
-    <strong><li>あった場合は「if」の内容を設定</li></strong>
+    <strong><li>如果有的話，設定「if」裡面的內容</li></strong>
     <br>
 <table class='highlight'>
 <tr>
@@ -188,7 +188,7 @@
 </tr>
 </table>
     <br>
-    <strong><li>なかった場合は「else」の設定</li></strong>
+    <strong><li>如果沒有的話，設定「else」裡面的內容</li></strong>
     <br>
 <table class='highlight'>
 <tr>
@@ -196,17 +196,17 @@
 26
 </td>
 <td class='code-content'><span class='code-line'>redirect_to <span class='word-purple'>:back</span></span>
-<span class='code-line'>flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
 </td>
 </tr>
 </table>
     <br>
     </ul>
-  を適用させます。
+  這些內容。
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>今回の設定内容をまとめます。</strong>
+  <i class="fa fa-play-circle"></i>　<strong>總括在這裡說明的的設定。</strong>
   <br><br>
-  <strong>チャットルーム「<u>@room</u>」にログインしている会員「<u>current_user</u>」が参加しているかを判定</strong>するには、
+  <strong>判別聊天室「<u>@room</u>」裡有沒有參加登入的會員「<u>current_user</u>」</strong>的話，設定
   <br><br>
 <table class='highlight'>
 <tr>
@@ -217,20 +217,20 @@
 </tr>
 </table>
   <br>
-  と設定して判定をします。
+  判別條件。
   <br><br>
-  <strong>これと同じ方法を使って「edit」「update」ページにも設定を追加します。</strong>
+  <strong>使用跟這個一樣的方法，在「edit」「update」網頁上追加設定。</strong>
   <hr class="red-hr">
-  <i class="fa fa-arrow-right"></i>　<strong>次に「edit」ページの設定をやります。</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>接着追加「edit」網頁的設定。</strong>
   <br><br>
-  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を開いて、内容を下のように変更しましょう！
+  打開<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>之後，編輯裡面的內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（36〜40行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第36〜40行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -248,7 +248,7 @@
 <span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => @room.id).present?</span>
 <span class='code-line'>    <span class="word-red">else</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
 <span class='code-line'>      redirect_to <span class='word-purple'>:back</span></span>
 <span class='code-line'>    <span class='word-red'>end</span></span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
@@ -256,18 +256,18 @@
 </tr>
 </table>
   <br>
-  これでチャットルームに参加していないユーザーは、「edit」ページに移動できないようになりました。
+  這樣，沒有參加聊天室的會員不能移動到「edit」網頁了。
   <hr class="red-hr">
-  <i class="fa fa-arrow-right"></i>　<strong>最後に「update」ページをやります。</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>最後做「update」網頁。</strong>
   <br><br>
-  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を開いて、内容を下のように変更しましょう！
+  打開<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>，編輯裡面的內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（39、43〜46行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第39、43〜46行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -288,10 +288,10 @@
 <span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line remarkable-code'>    <span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => @room.id).present?</span>
 <span class='code-line'>      @room.update(params.require(<span class='word-purple'>:room</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:explain</span>))</span>
-<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャット情報が変更されました"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"更新聊天室了"</span></span>
 <span class='code-line'>      redirect_to <span class='word-purple'>:back</span></span>
 <span class="remarkable-code"><span class='code-line'>    <span class="word-red">else</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
 <span class='code-line'>      redirect_to <span class='word-purple'>:back</span></span>
 <span class='code-line'>    <span class='word-red'>end</span></span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
@@ -299,21 +299,21 @@
 </tr>
 </table>
   <br>
-  これで「rooms」データベースの
+  這樣對閱覽「rooms」資料庫的
   <strong>
   <ul class="number_ul">
-    <li>「show」ページ</li>
-    <li>「edit」ページ</li>
-    <li>「update」ページ</li>
+    <li>「show」網頁</li>
+    <li>「edit」網頁</li>
+    <li>「update」網頁</li>
   </ul>
   </strong>
-  に閲覧する会員の制限をかけることができました！
+  會員，設定了檢查了！
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>ついでに「messages」データの作成でも、同じ<u>「チャットルームに参加しているか」の判定</u>をしてみます。</strong>
+  <i class="fa fa-play-circle"></i>　<strong>跟這個一樣在新增「messages」資料的設定裡做，同樣的<u>「有沒有參加聊天室」的判別</u>吧。</strong>
   <br><br>
-  メッセージデータの作成は<strong>「<u>app > controllers > messages_controller.rb</u>」</strong>で行いました。
+  新增訊息在，<strong>「<u>app > controllers > messages_controller.rb</u>」</strong>裡面設定。
   <br>
-  内容は下のような感じだったと思います。
+  內容參考下面。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
 <table class='highlight'>
@@ -343,7 +343,7 @@
 </tr>
 </table>
   <br>
-  ここにさきほど設定した、
+  在這裡追加，剛才設定的
   <br><br>
 <table class='highlight'>
 <tr>
@@ -354,19 +354,19 @@
 </tr>
 </table>
   <br>
-  を設定します。
+  這個條件判別。如果不是正確的會員或者聊天室的話，顯示通知吧。
   <hr class="red-hr">
-  ですが今回は<strong>「<u>@room</u>」</strong>がないので、
+  但是這一次沒有<strong>「<u>@room</u>」</strong>，
   <br>
-  「messages」データの入力欄を表示した<strong>「<u>rooms</u>」データベースの「<u>show</u>」ページ</strong>
+  所以使用，在顯示「messages」資料的輸入框的<strong>「<u>rooms</u>」資料庫的「<u>show</u>」網頁</strong>的
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
               :target => ["_blank"] %>
-  のページの表示を設定した<strong>「<u>app > views > rooms > show.html.erb</u>」</strong>の
+  <strong>「<u>app > views > rooms > show.html.erb</u>」</strong>文件的
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（36〜43行目）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第36〜43行）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>36
@@ -379,18 +379,18 @@
 43
 </td>
 <td class='code-content'><span class='code-line'>&lt;%= form_for @message <span class="word-red">do</span> |f| %&gt;</span>
-<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control myform"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"メッセージを入力して下さい"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control myform"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"打入訊息"</span> %&gt;</span>
 <span class='code-line'>  &lt;%= f.hidden_field <span class="word-purple">:room_id</span>, <span class='word-purple'>:value</span> =&gt; @room.id %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"投稿する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"投稿"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  の
+  的
   <br><br>
 <table class='highlight'>
 <tr>
@@ -401,19 +401,17 @@
 </tr>
 </table>
   <br>
-  に入っている<strong>「room_id」のデータ</strong>を、<strong>データ操作の「<u>controller</u>」ファイル</strong>で設定します。
+  裡面的<strong>「room_id」的資料</strong>吧。點擊「投稿」的時候，這個「room_id」會發信到<strong>資料操作的「<u>controller</u>」文件</strong>。
   <hr class="red-hr">
-  「controller」ファイルで送られてきたデータは、
+  從「controller」文件送過來的資料，都在
 <pre>
 params
 </pre>
-  に集約されました。
+  裡面。
   <br>
-  <small>※　内容は<a href="/mugcups/6#title1-4-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>※　詳細<a href="/zh-TW/mugcups/6#title1-4-1" target="_blank"><strong>請參考這裡</strong></a></small>
   <br><br>
-  この<strong>「<u>params</u>」</strong>を使って、チャットルームの情報を取得します。
-  <br>
-  <strong>「<u>params</u>」</strong>は
+  使用這個<strong>「<u>params</u>」</strong>，取得聊天室的資料。到這裡的<strong>「<u>params</u>」</strong>是
   <br><br>
 <table class='highlight'>
 <tr>
@@ -424,18 +422,18 @@ params
 </tr>
 </table>
   <br>
-  のような形で使いました。
+  這樣子使用。
   <br><br>
-  今回はこの<strong>「<u>params</u>」</strong>からデータを取り出します。
+  這一次用別的方法，從這個<strong>「<u>params</u>」</strong>取得資料。
   <hr class="red-hr">
-  では<strong>「<u>app > controllers > messages_controller.rb</u>」</strong>の内容を下のように変更しましょう！
+  那麽編輯<strong>「<u>app > controllers > messages_controller.rb</u>」</strong>的內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb（6、8〜10行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb（追加第6、8〜10行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -453,7 +451,7 @@ params
 <span class='code-line remarkable-code'>    <span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => params[<span class='word-purple'>:message</span>][<span class='word-purple'>:room_id</span>]).present?</span>
 <span class='code-line'>      @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
 <span class="remarkable-code"><span class='code-line'>    <span class="word-red">else</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
 <span class='code-line'>    <span class='word-red'>end</span></span></span>
 <span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
@@ -461,7 +459,7 @@ params
 </tr>
 </table>
   <br>
-  6行目で判定をしていますね。判定の条件は、
+  可以看到，在第6行做條件判別吧。設定的條件是
   <br><br>
 <table class='highlight'>
 <tr>
@@ -472,11 +470,11 @@ params
 </tr>
 </table>
   <br>
-  で<strong>「user_id」と「room_id」</strong>の条件に合った検索をしています。
+  這樣子的內容，搜索<strong>成立「user_id」跟「room_id」的條件的資料</strong>。
   <br><br>
-  <strong>「user_id」</strong>は<strong>「current_user」の「id」</strong>なのですが、
+  不用解釋<strong>「user_id」</strong>裡放的是<strong>「current_user」的「id」</strong>，
   <br>
-  <strong>「room_id」</strong>は、
+  <strong>「room_id」</strong>是，
   <br><br>
 <table class='highlight'>
 <tr>
@@ -487,7 +485,7 @@ params
 </tr>
 </table>
   <br>
-  のようになっています。この中にある
+  這樣設定。裡面的
   <br><br>
 <table class='highlight'>
 <tr>
@@ -498,11 +496,11 @@ params
 </tr>
 </table>
   <br>
-  で、送信されてきたデータ<strong>「<u>params</u>」</strong>の中の<strong>「<u>message</u>」データの「<u>room_id</u>」の枠組み</strong>を選択しています。
+  在選擇，送過來的資料<strong>「<u>params</u>」</strong>裡面的<strong>「<u>message</u>」資料的「<u>room_id</u>」框子</strong>。
   <hr class="red-hr">
-  ここまでの条件判定で、
+  到這裡的條件判別，
   <ul class="number_ul">
-    <strong><li>条件に合うときは</li></strong>
+    <strong><li>條件成立的時候，</li></strong>
     <br>
 <table class='highlight'>
 <tr>
@@ -513,34 +511,35 @@ params
 </tr>
 </table>
   <br>
-  でデータの作成
+  這樣新增資料
   <br><br>
-  <strong><li>条件に合わないときは</li></strong>
+  <strong><li>條件不成立的時候，</li></strong>
   <br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>9
 </td>
-<td class='code-content'><span class='code-line'>flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無効なユーザー"</span></span>
+<td class='code-content'><span class='code-line'>flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無效的會員"</span></span>
 </td>
 </tr>
 </table>
   <br>
-  で
-  <p class="alert alert-danger" style="margin-top:10px;">無効なユーザー</p>
+  這樣顯示
+  <p class="alert alert-danger" style="margin-top:10px;">無效的會員</p>
   </ul>
-  を表示させ
   <br>
-  最後の
+  最後使用
   <br><br>
 <table class='highlight'>
 <tr>
-<td class='code-line-no text-center'>1
+<td class='code-line-no text-center'>11
 </td>
 <td class='code-content'><span class='code-line'>redirect_to <span class='word-purple'>:back</span></span>
 </td>
 </tr>
 </table>
   <br>
-  で一つ前のページに移動させています。
+  移動到上頁了。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>設定的內容，<a href="/zh-TW/codes/c_5" target="_blank">請參考這裡</a>。</strong>
 </h4>

@@ -77,7 +77,7 @@
       <li>「user_id」に「current_user」の「id」</li>
     </ul>
   </strong>
-  が入ったデータが作成されます。
+  が入った「entries」データが作成されます。
   <br><br>
   <i class="fa fa-arrow-right"></i>　<strong>もし、ログインいる会員の「id」が「1」・作成したチャットルームの「id」が「1」のデータなら、</strong>
   <br><br>
@@ -138,15 +138,21 @@
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>10
-<strong class="color-red">11
-12
-13</strong>
-14
+11
+<strong class="color-red">12
+13
+14</strong>
+15
+16
+17
 </td>
 <td class='code-content'><span class='code-line'>&lt;% <span class="word-red">else</span> %&gt;</span>
-<span class="remarkable-code"><span class='code-line'>  &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>      &lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>        &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span></span>
 <span class='code-line'>    &lt;%= f.submit <span class="word-yellow">"チャットを始める"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
-<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 </td>
 </tr>
@@ -297,7 +303,7 @@
 </tr>
 </table>
   <br>
-  という<strong>「<u>rooms</u>」データベースの作成</strong>をする設定の中で、<strong>「<u>@entry</u>」データベースの作成</strong>の設定を入れるための設定になります。
+  という<strong>「<u>rooms</u>」データの作成</strong>をする設定の中で、<strong>「<u>@entry</u>」データの作成</strong>の設定を入れるための設定になります。
   <br><br>
 <table class='highlight'>
 <tr>
@@ -566,8 +572,14 @@
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
               :target => ["_blank"] %>
   ログインしている会員以外のページの <a class="btn btn-warning">チャットを始める</a> をクリックしてみましょう！
-  <br>
+  <br><br>
   <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
+  <br>
+  　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」</u>を一緒に押して停止させ、もう一度「<u>rails s</u>」を再入力して下さい。</strong>
+  </p>
+  <br>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -597,7 +609,7 @@
   <strong>
   <i class="fa fa-play-circle"></i>　次にここで作成したデータを使って
   <ul class="number_ul">
-    <li>「rooms」データでの参加している会員の表示</li>
+    <li>「rooms」ページでの参加している会員の表示</li>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),

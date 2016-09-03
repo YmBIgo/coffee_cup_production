@@ -1,54 +1,54 @@
 <h4 id="coffee-chapter3-2-2-1">
-  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 「entries」データの作成（create）</strong></p>
+  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 新增「entries」資料（create）</strong></p>
   <br>
-  <i class="fa fa-play-circle"></i>　<strong>まず「<u>entries</u>」データの作成をやってみましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>首先新增「<u>entries</u>」資料吧！</strong>
   <hr class="red-hr">
-  「entries」データの作成には、
+  新增「entries」資料要在<strong>資料操作文件（<u>controller文件</u>）</strong>裡
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'><span class='word-blue'>Entry</span>.create(<span class='word-purple'>:user_id</span> => 数字, <span class='word-purple'>:room_id</span> => 数字)</span>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Entry</span>.create(<span class='word-purple'>:user_id</span> => 數字, <span class='word-purple'>:room_id</span> => 數字)</span>
 </td>
 </tr>
 </table>
   <br>
-  を、<strong>データ操作のファイル（<u>controllerファイル</u>）</strong>に追加することで設定します。
+  追加上面的內容。
   <br><br>
-  今回の「entries」データは、
+  這一次的「entries」資料的設定是
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
               :target => ["_blank"] %>
-  の <a class="btn btn-warning">チャットを始める</a> をクリックして、<strong>「<u>rooms</u>」データ</strong>を作成する時に一緒に作成します。
+  點擊 <a class="btn btn-warning">開始聊天</a> 作<strong>「<u>rooms</u>」資料</strong>的時候會一起新增「entries」資料。
   <br><br>
-  なので、
+  所以
   <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'><span class='word-blue'>Entry</span>.create(<span class='word-purple'>:user_id</span> => 数字, <span class='word-purple'>:room_id</span> => 数字)</span>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Entry</span>.create(<span class='word-purple'>:user_id</span> => 數字, <span class='word-purple'>:room_id</span> => 數字)</span>
 </td>
 </tr>
 </table>
   <br>
-  は<strong>「rooms_controller.rb」</strong>の中に設定を追加します。
+  在<strong>「rooms_controller.rb」</strong>裡面追加像上面的設定。
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>まずは、<u>現在ログインしている会員がチャットルームに参加</u>していることを示すデータを作成しましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>首先作<u>現在登入的會員在參加聊天室</u>的資料吧！</strong>
   <br><br>
-  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>の内容を下のように変更しましょう！
+  編輯<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>的內容吧！
   <br>
-  <small>※　内容は<a href="/mugcups/4#title2-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>※　詳細<a href="/zh-TW/mugcups/4#title2-1" target="_blank"><strong>請參考這裡</strong></a></small>
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（7行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第7行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -64,22 +64,22 @@
 <span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
 <span class='code-line remarkable-code'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
 <span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
-<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャットを作成しました！"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"作好聊天室了！"</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
   <br>
-  ここで、
+  這樣作好了
   <strong>
     <ul class="number_ul">
-      <li>「room_id」に「@room」の「id」</li>
-      <li>「user_id」に「current_user」の「id」</li>
+      <li>「room_id」裡放「@room」的「id」</li>
+      <li>「user_id」裡放「current_user」的「id」</li>
     </ul>
   </strong>
-  が入ったデータが作成されます。
+  的「entries」資料。
   <br><br>
-  <i class="fa fa-arrow-right"></i>　<strong>もし、ログインいる会員の「id」が「1」・作成したチャットルームの「id」が「1」のデータなら、</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>如果要新增登入的會員的「id」是「1」・新增的聊天室的「id」是「1」的資料的話，</strong>
   <br><br>
   <strong>entries</strong>
   <table class="table table-striped" style="width:50%">
@@ -103,9 +103,9 @@
     </tbody>
   </table>
   <br>
-  <strong>のデータがここで作成されます。</strong>
+  <strong>這樣的資料。</strong>
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>次に、<u>チャットする相手がチャットルームに参加</u>していることを示すデータを作成しましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>接着作<u>聊天的對方的會員在參加聊天室</u>的資料吧！</strong>
   <br><br>
   <strong>entries</strong>
   <table class="table table-striped" style="width:50%">
@@ -129,32 +129,38 @@
     </tbody>
   </table>
   <br>
-  ここでは
+  在這裡，
   <br>
   <ul class="number_ul">
-  <strong><li>「<u>rooms</u>」データを作成するボタン <a class="btn btn-warning">チャットを始める</a> を作っている</li></strong>
+  <strong><li>點擊，作「<u>rooms</u>」資料的 <a class="btn btn-warning">開始聊天</a> 之前</li></strong>
   <br>
-  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「<u>app > views > users</u>」フォルダ）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「<u>app > views > users</u>」文件夾）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>10
-<strong class="color-red">11
-12
-13</strong>
-14
+11
+<strong class="color-red">12
+13
+14</strong>
+15
+16
+17
 </td>
 <td class='code-content'><span class='code-line'>&lt;% <span class="word-red">else</span> %&gt;</span>
-<span class="remarkable-code"><span class='code-line'>  &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
-<span class='code-line'>    &lt;%= f.submit <span class="word-yellow">"チャットを始める"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
-<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>  &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>      &lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>        &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>    &lt;%= f.submit <span class="word-yellow">"開始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  に、<strong><u>新しい「entries」データ作成する設定</u></strong>を追加し、
+  <strong><u>設定新的「entries」資料。</u></strong>
   <br><br>
-  <strong><li> <a class="btn btn-warning">チャットを始める</a> をクリックすると「rooms_controller.rb」で</li></strong>
+  <strong><li>點擊 <a class="btn btn-warning">開始聊天</a> 之後</li></strong>
   <br>
   <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb</strong>
 <table class='highlight'>
@@ -172,47 +178,47 @@
 <span class='code-line'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
 <span class='code-line remarkable-code'>    @entry2 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:entry</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:room_id</span> => @room.id))</span>
 <span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
-<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャットを作成しました！"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"作好聊天室了！"</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
   <br>
-  でデータの作成をします。
+  <strong><u>在「rooms_controller.rb」裡作新的資料。</u></strong>
   </ul>
   <br>
-  このような流れでここでは、
+  所以在這裡設定
   <strong>
   <ul class="number_ul">
-    <li><p> <a class="btn btn-warning">チャットを始める</a> をクリックする<span class="color-red">前</span>の設定</p></li>
-    <li><p> <a class="btn btn-warning">チャットを始める</a> をクリックした<span class="color-red">後</span>の設定</p></li>
+    <li><p>點擊 <a class="btn btn-warning">開始聊天</a> <span class="color-red">之前</span>的設定</p></li>
+    <li><p>點擊 <a class="btn btn-warning">開始聊天</a> <span class="color-red">之後</span>的設定</p></li>
   </ul>
   </strong>
-  の2つをやってみます。
+  這個兩個內容吧。
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>設定をやっていきましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>那麽開始設定內容吧！</strong>
   <br><br>
-  <i class="fa fa-arrow-right"></i>　<strong>まずは <a class="btn btn-warning">チャットを始める</a> をクリックする<span class="color-red">前</span>の設定からやってみます</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>首先從，點擊 <a class="btn btn-warning">開始聊天</a> <span class="color-red">之前</span>的設定做起吧。</strong>
   <br><br>
-  これをやるには、
+  設定這個要做
   <strong>
   <ul class="number_ul">
-    <li>「users_controller.rb」に新しい「entries」データ「@entry」を設定（<u>データ操作</u>）</li>
-    <li>「users」データベースの「show」ページに「@entry」の入力欄の設定（<u>ページ表示</u>）</li>
+    <li>「users_controller.rb」裡設定新的「entries」資料「@entry」（<u>資料操作</u>）</li>
+    <li>「users」資料庫的「show」網頁裡設定「@entry」的輸入框（<u>顯示網頁</u>）</li>
   </ul>
   </strong>
-  の2つをやります。
+  這個兩個設定。
   <br><br>
-  <i class="fa fa-arrow-right color-red"></i>　<strong>1つ目の「users_controller.rb」に「@entry」から設定しましょう！（<u>データ操作</u>）</strong>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>從第一個設定，在「users_controller.rb」裡設定「@entry」開始做吧！（<u>操作資料</u>）</strong>
   <br><br>
-  <strong>「<u>app > controllers > users_controller.rb</u>」</strong>を開いて下のように内容を変更しましょう！
+  打開<strong>「<u>app > controllers > users_controller.rb</u>」</strong>之後，編輯內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（10行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第10行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -238,14 +244,14 @@
 </tr>
 </table>
   <br>
-  ここで設定した新しい「entry」データ「@entry」を、<strong>「<u>app > views > users > show.html.erb</u>」</strong>に設定します（<u>ページ表示</u>）。
+  <strong>「<u>app > views > users > show.html.erb</u>」</strong>裡面設定，在這裡作的新的「entry」資料「@entry」（<u>網頁顯示</u>）。
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（12〜14行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第12〜14行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -264,16 +270,16 @@
 <span class="remarkable-code"><span class='code-line'>      &lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
 <span class='code-line'>        &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
 <span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span></span>
-<span class='code-line'>      &lt;%= f.submit <span class="word-yellow">"チャットを始める"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>      &lt;%= f.submit <span class="word-yellow">"開始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  新しい設定が出てきたので、内容を説明しましょう！
+  出現了新的設定，說明內容吧！
   <hr class="red-hr">
-  今回は
+  這一次出現了
   <br><br>
 <table class='highlight'>
 <tr>
@@ -284,9 +290,9 @@
 </tr>
 </table>
   <br>
-  という新しい設定が出てきましたね。
+  這個新的設定。
   <br><br>
-  これは、
+  這個是
   <br><br>
 <table class='highlight'>
 <tr>
@@ -297,7 +303,9 @@
 </tr>
 </table>
   <br>
-  という<strong>「<u>rooms</u>」データベースの作成</strong>をする設定の中で、<strong>「<u>@entry</u>」データベースの作成</strong>の設定を入れるための設定になります。
+  <strong>在作「<u>rooms</u>」資料</strong>的設定裡，追加<strong>作「<u>@entry</u>」資料</strong>的設定。
+  <br><br>
+  在
   <br><br>
 <table class='highlight'>
 <tr>
@@ -308,11 +316,11 @@
 </tr>
 </table>
   <br>
-  との間にデータの設定を追加します。
+  之間追加資料的設定。
   <br><br>
-  ここでは<strong>「<a href="/coffee_cups/2#title2-3-4" target="_blank">hidden_field</a>」</strong>を使って、
+  在這裡使用<strong>「<a href="/zh-TW/coffee_cups/2#title2-3-4" target="_blank">hidden_field</a>」</strong>，
   <br>
-  <strong>「@entry」の「user_id」にページの会員「@user」の「id」を入れる</strong>設定をしています。
+  設定<strong>「@entry」的「user_id」裡放會員的資料「@user」的「id」</strong>的內容。
   <br><br>
 <table class='highlight'>
 <tr>
@@ -323,7 +331,7 @@
 </tr>
 </table>
   <hr class="red-hr">
-  <strong>「<u>users_controller.rb</u>」で設定した「<u>@entry</u>」</strong>の内容
+  使用<strong>「<u>users_controller.rb</u>」裡設定的「<u>@entry</u>」</strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
 <table class='highlight'>
@@ -339,7 +347,7 @@
 </tr>
 </table>
   <br>
-  を、<strong>「<u>rooms_controller.rb</u>」</strong>でデータの作成をします。
+  在<strong>「<u>rooms_controller.rb</u>」</strong>裡面，新增資料。
   <br><br>
 <table class='highlight'>
 <tr>
@@ -350,17 +358,17 @@
 </tr>
 </table>
   <br>
-  この<strong>「<u>params</u>」</strong>の部分に、
+  這個<strong>「<u>params</u>」</strong>後面，放
   <br>
   <strong>
   <ul class="number_ul">
-    <li>「rooms」データ</li>
-    <li>「entry」データの「user_id」を決めるデータ</li>
+    <li>「rooms」資料</li>
+    <li>在「entry」資料裡指定的「user_id」的資料</li>
   </ul>
   </strong>
-  が入り、<strong><a href="/mugcups/6#title1-4-2-data" target="_blank">「<u>require</u>」と「<u>permit</u>」</a></strong>をしてデータの作成をします。
+  使用<strong><a href="/zh-TW/mugcups/6#title1-4-2-data" target="_blank">「<u>require</u>」跟「<u>permit</u>」</a></strong>，新增資料。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>下のようなデータ操作をしている「new」ページに、「<u>@corporation」の「name」を入力欄を表示</u>するための設定はどのようになるでしょうか？</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>做像下面一樣的「new」網頁裡，顯示「<u>@corporation」的「name」的輸入框</u>要怎麼設定好呢？</strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
 <table class='highlight'>
@@ -396,11 +404,11 @@
 </tr>
 </table>
   <hr class="red-hr">
-  <textarea class="input-code form-control" placeholder="答えを入力して下さい" rows="4"></textarea>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="4"></textarea>
   <br>
-  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（<u>app > views > users フォルダ</u>）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（<u>app > views > users 文件夾</u>）</strong>
   <br>
-  <small>※　マウスを上に置くと答えが出ます</small>
+  <small>※　上面放鼠標，可以看到答案</small>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -413,26 +421,26 @@
 8
 9
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;新しいデータを作成&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;作新的資料&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
 <span class="remarkable-code answer-code"><span class='code-line'>  &lt;%= fields_for @corporation <span class="word-red">do</span> |c| %&gt;</span>
 <span class='code-line'>    &lt;%= c.text_field <span class='word-purple'>:name</span> %&gt;</span>
 <span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
-<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"作成"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"新增"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  <strong>ここまででデータを作成する<span class="color-red">前</span>の設定ができました！</strong>
+  <strong>到這裡設定好，新增資料<span class="color-red">之前</span>的設定了！</strong>
   <hr class="red-hr">
-  <i class="fa fa-arrow-right"></i>　<strong>次に <a class="btn btn-warning">チャットを始める</a> をクリックした<span class="color-red">後</span>の設定をします。</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>接着設定，點擊 <a class="btn btn-warning">開始聊天</a> <span class="color-red">之後</span>的內容吧。</strong>
   <br><br>
-  ここでは、前に設定したデータを<strong>「rooms_controller.rb」</strong>で作成します。
+  在這裡，設定<strong>「rooms_controller.rb」</strong>的內容。
   <br>
-  今の状態では、
+  現在是
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb</strong>
 <table class='highlight'>
@@ -454,16 +462,16 @@
 </tr>
 </table>
   <br>
-  で<strong>「<u>@room</u>」と「<u>@entry1</u>」</strong>の作成をしているんで、ここに<strong>「<u>@entry2</u>」</strong>の作成の設定を追加します。
+  裡<strong>「<u>@room</u>」跟「<u>@entry1</u>」</strong>新增資料，在這裡追加作<strong>「<u>@entry2</u>」</strong>的設定（對方的會員的資料）吧。
   <br><br>
-  では<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を下のように変更してみましょう！
+  那麽編輯<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>的內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（8行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第8行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -481,15 +489,15 @@
 <span class='code-line'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
 <span class='code-line remarkable-code'>    @entry2 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:entry</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:room_id</span> => @room.id))</span>
 <span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
-<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャットを作成しました！"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"作好聊天室了！"</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
   <br>
-  paramsの中には、
+  params裡面有
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（12〜14行目）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第12〜14行）</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>12
@@ -503,11 +511,11 @@
 </tr>
 </table>
   <br>
-  で設定した<strong>「user_id」に「@user」の「id」が入った「@entry」のデータ</strong>が入っているので、
+  <strong>「user_id」裡放「@user」的「id」的「@entry」的資料</strong>。
   <br>
-  それを<strong>「params」</strong>から取り出しています。
+  把這個從<strong>「params」</strong>取得。
   <br>
-  <small>※　paramsの説明は<a href="/mugcups/6#title1-4-1" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>※　params的說明<a href="/zh-TW/mugcups/6#title1-4-1" target="_blank"><strong>請參考這裡</strong></a>吧</small>
   <br><br>
 <table class='highlight'>
 <tr>
@@ -518,25 +526,25 @@
 </tr>
 </table>
   <br>
-  ここでは
+  在這裡
   <strong>
   <ul class="number_ul">
-    <li>「entry」データの「user_id」と「room_id」の変更の許可</li>
-    <small>※　詳細は<a href="/mugcups/6#title1-4-2-data" target="_blank"><strong>こちら</strong></a>を参考</small>
-    <li>「room_id」に「@room」の「id」代入</li>
-    <small>※　詳細は<a href="/mugcups/11#title4-2-1" target="_blank"><strong>こちら</strong></a>を参考</small>
+    <li>應許編輯「entry」資料的「user_id」跟「room_id」的框子</li>
+    <small>※　詳細<a href="/zh-TW/mugcups/6#title1-4-2-data" target="_blank"><strong>請參考這裡</strong></a></small>
+    <li>「room_id」裡放「@room」的「id」</li>
+    <small>※　詳細<a href="/zh-TW/mugcups/11#title4-2-1" target="_blank"><strong>請參考這裡</strong></a></small>
   </ul>
   </strong>
-  をしています。
+  這個兩個設定。
   <hr class="red-hr">
-  これで、
+  這樣
   <strong>
   <ul class="number_ul">
-    <li>「user_id」に「@user」の「id」</li>
-    <li>「room_id」に「@room」の「id」</li>
+    <li>「user_id」裡放「@user」的「id」</li>
+    <li>「room_id」裡放「@room」的「id」</li>
   </ul>
   </strong>
-  が入るデータが作成の設定ができました！
+  的新增資料的設定好了！
   <br><br>
   <strong>entries</strong>
   <table class="table table-striped" style="width:50%">
@@ -559,51 +567,60 @@
       </tr>
     </tbody>
   </table>
-  <i class="fa fa-play-circle"></i>　<strong>では、実際にデータが作られるかを試してみましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>那麽，試試看資料會不會新增！</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
               :target => ["_blank"] %>
-  ログインしている会員以外のページの <a class="btn btn-warning">チャットを始める</a> をクリックしてみましょう！
+  從不是自己的會員的網頁以外，點擊 <a class="btn btn-warning">開始聊天</a> 吧！
+  <br><br>
+  <small>
+    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
   <br>
-  <small>※　一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。</small>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
               :target => ["_blank"] %>
-  のページに移動できると思います。
+  應該移動到這樣的網頁吧。
   <br>
-  すでに先ほど「rooms」ページは作成しましたので、<strong>「<a href="http://0.0.0.0:3000/rooms/2">0.0.0.0:3000/rooms/2</a>」</strong>に移動できたのではないかと思います。
+  已經作好「rooms」網頁了，應該移動到<strong>「<a href="http://0.0.0.0:3000/rooms/2">0.0.0.0:3000/rooms/2</a>」</strong>網頁。
   <br><br>
-  できたら、<strong>Sequel Proで「<u>entries</u>」データが作成されているかを確認</strong>しましょう！
+  作好了之後，<strong>用Sequel Pro / SqliteBrowser 看看「<u>entries</u>」資料有沒有作好了沒</strong>！
   <br>
-  <small>※　Sequel Proの開き方は<a href="/mugcups/how_to_open#title3" target="_blank"><strong>こちら</strong></a>を、SqliteBrowserの開き方は<a href="/mugcups/how_to_open#title4" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>※　打開Sequel Pro的方法<a href="/zh-TW/mugcups/how_to_open#title3" target="_blank"><strong>請參考這裡</strong></a>，打開SqliteBrowser的方法<a href="/zh-TW/mugcups/how_to_open#title4" target="_blank"><strong>請參考這裡</strong></a>吧</small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Sequel_Pro_entries.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Sequel_Pro_entries.png",
               :target => ["_blank"] %>
-  ここでは
+  在這裡作了
   <strong>
     <ul class="number_ul">
-      <li>会員「1」がチャットルーム「2」に参加しているデータ</li>
-      <li>会員「2」がチャットルーム「2」に参加しているデータ</li>
+      <li>表示會員「1」在參加聊天室「2」的資料</li>
+      <li>表示會員「2」在參加聊天室「2」的資料</li>
     </ul>
   </strong>
-  の2つのデータの作成をしました！
+  這個兩個資料！
   <hr class="red-hr">
   <strong>
-  <i class="fa fa-play-circle"></i>　次にここで作成したデータを使って
+  <i class="fa fa-play-circle"></i>　接著使用新增的資料，
   <ul class="number_ul">
-    <li>「rooms」データでの参加している会員の表示</li>
+    <li>在「rooms」網頁上，顯示參加的會員</li>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                 :target => ["_blank"] %>
-    <li>ログインしている会員の参加しているチャットルーム一覧の表示</li>
+    <li>顯示登入的會員在參加的聊天室一覽</li>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),
@@ -615,6 +632,8 @@
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                 :target => ["_blank"] %>
   </ul>
-  の2つの「データ表示」をやってみます。
+  做這個兩個「顯示資料」吧。
   </strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>設定的內容，<a href="/zh-TW/codes/c_5" target="_blank">請參考這裡</a>。</strong>
 </h4>
