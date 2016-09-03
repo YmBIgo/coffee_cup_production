@@ -1,39 +1,39 @@
 <h4 id="coffee-chapter3-2-1-1">
   <p id="title2-1-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : routes.rb</strong></p>
   <br>
-  <i class="fa fa-play-circle"></i>　<strong>「7つのページの設定」やってみましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>那麽設定「七個網頁的設定」吧！</strong>
   <hr class="red-hr">
-  「7つのページの設定」は<strong>「<u>config > routes.rb</u>」</strong>に設定します。
+  「七個網頁的設定」是在<strong>「<u>config > routes.rb</u>」</strong>裡設定內容。
   <br><br>
-  <strong>今回は「rooms」データベースの
+  <strong>這一次的「rooms」資料庫，要用
     <ul class="number_ul">
-      <li><a href="/mugcups/6#title1-4" target="_blank">データの作成（create）</a></li>
+      <li><a href="/zh-TW/mugcups/6#title1-4" target="_blank">新增資料（create）</a></li>
       <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
                             :width => "90%",
                             :class => "hover_img textbook-title-img"),
                   "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
                   :target => ["_blank"] %>
-      <small>※　ページ表示は「users」データベースの「show」ページで行います</small>
+      <small>※　網頁顯示要在「users」資料庫的「show」網頁做</small>
       <br><br>
-      <li><a href="/mugcups/5#title1-1" target="_blank">データの表示（show）</a></li>
+      <li><a href="/zh-TW/mugcups/5#title1-1" target="_blank">顯示資料（show）</a></li>
       <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                             :width => "90%",
                             :class => "hover_img textbook-title-img"),
                   "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                   :target => ["_blank"] %>
-      <li><a href="/mugcups/5#title1-2" target="_blank">データの全表示（index）</a></li>
+      <li><a href="/zh-TW/mugcups/5#title1-2" target="_blank">顯示全部的資料（index）</a></li>
       <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                             :width => "90%",
                             :class => "hover_img textbook-title-img"),
                   "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                   :target => ["_blank"] %>
-      <li><a href="/mugcups/6#title1-5" target="_blank">編集するデータの記入（edit）</a></li>
+      <li><a href="/zh-TW/mugcups/6#title1-5" target="_blank">打入編輯的資料（edit）</a></li>
       <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
                             :width => "90%",
                             :class => "hover_img textbook-title-img"),
                   "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
                   :target => ["_blank"] %>
-      <li><a href="/mugcups/6#title1-6" target="_blank">データの変更（update）</a></li>
+      <li><a href="/zh-TW/mugcups/6#title1-6" target="_blank">編輯資料（update）</a></li>
       <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
                             :width => "90%",
                             :class => "hover_img textbook-title-img"),
@@ -41,17 +41,17 @@
                   :target => ["_blank"] %>
     </ul>
     <br>
-    の5つを使ったページを作ってみます
+    這個5個網頁的設定，作網站。
   </strong>
   <hr class="red-hr">
-  では<strong>「<u>config > routes.rb</u>」</strong>の内容を下のように変更してみましょう！
+  那麽編輯<strong>「<u>config > routes.rb</u>」</strong>的內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>routes.rb（8行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>routes.rb（追加第8行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -97,7 +97,7 @@
 </tr>
 </table>
   <br>
-  <strong>これで「rooms」データベースの
+  <strong>這樣設定好了「rooms」資料庫的
     <ul class="number_ul">
       <li>create</li>
       <li>show</li>
@@ -105,10 +105,12 @@
       <li>edit</li>
       <li>update</li>
     </ul>
-  の5つのページを使うことを設定できました。
+  的5個網頁的設定了。
   <br><br>
-  <i class="fa fa-play-circle"></i>　次は、「<u>データ操作の設定</u>」と「<u>ページ表示の設定</u>」をやってみましょう！
+  <i class="fa fa-play-circle"></i>　接下設定「<u>操作資料的設定</u>」跟「<u>顯示網頁的設定</u>」吧！
   <br><br>
-  ここではページ毎に設定をするので、まずは「create」から始めてみたいと思います。
+  在這裡設定各個網頁。剛開始從「create」開始設定吧。
   </strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>設定的內容，<a href="/zh-TW/codes/c_4#title1-1" target="_blank">請參考這裡</a>。</strong>
 </h4>

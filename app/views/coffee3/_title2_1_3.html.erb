@@ -337,7 +337,7 @@
   </div>
   の設定を行います。
   <br>
-  <small>※　内容の説明は<a href="/coffee_cups/3#title2-1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>※　内容の説明は<a href="/coffee_cups/4#title2-1-2" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
   <br><br>
   <i class="fa fa-arrow-right"></i>　<strong>まずは左側の「<u>@room</u>」の表示をやってみます。</strong>
   <br><br>
@@ -623,13 +623,13 @@
   <br>
   では「@messages」があるかないかを判定しています。
   <br>
-  もしあったら、
+  もしなければ、
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
               :target => ["_blank"] %>
-  を表示し、なければ、
+  を表示し、もしあれば、
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_image_no_entries.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -695,11 +695,11 @@
   <br><br>
   <strong>
   <ul class="number_ul">
-    <li>一致していれば・ログインしている会員のメッセージなら、</li>
+    <li>一致していれば（ログインしている会員のメッセージなら）、</li>
       <br>
       <p class="alert alert-success text-right">メッセージ<br><small><strong><a>名前</a></strong></small></p>
       <br>
-    <li>一致していなければ・別の会員のメッセージなら、</li>
+    <li>一致していなければ（別の会員のメッセージなら）、</li>
       <br>
       <p class="alert alert-info text-left">メッセージ<br><small><strong><a>名前</a></strong></small></p>
   </ul>
@@ -994,7 +994,7 @@
   <br><br>
   ページが送信してきたデータをもとにデータを作る<strong>「<u>messages_controller.rb</u>」</strong>は、
   <br>
-  <small>※　変更内容は<a href="#title1-1" target="_blank"><strong>こちら</strong></a>を参考</small>
+  <small>※　変更内容は<a href="/coffee_cups/3#title1-1" target="_blank"><strong>こちら</strong></a>を参考</small>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
 <table class='highlight'>
@@ -1049,7 +1049,7 @@
       </tr>
     </tbody>
   </table>
-  のような<strong>「<u>messages</u>」</strong>データベースが作成されます。
+  のような<strong>「<u>messages</u>」</strong>データが作成されます。
   <hr class="red-hr">
   一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。
   <br><br><br>
@@ -1059,10 +1059,10 @@
     　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
   </p>
   <br>
-  ブラウザで「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」を開いてみて下さい。
+  ブラウザで「<a href="http://0.0.0.0:3000/rooms/1" target="_blank"><strong>0.0.0.0:3000/rooms/1</strong></a>」を開いてみて下さい。
   <br>
   <small>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」を開いてみて下さい。
+  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/rooms/1" target="_blank"><strong>localhost:3000/rooms/1</strong></a>」を開いてみて下さい。
   </small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
                         :width => "90%",
@@ -1078,4 +1078,5 @@
   上手くいったでしょうか？
   <br><br>
   <i class="fa fa-play-circle"></i>　<strong>次は「index」ページの設定をやってみましょう！</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>設定した内容は<a href="/codes/c_4#title1-1" target="_blank">こちら</a>にまとめてあります。</strong>
 </h4>

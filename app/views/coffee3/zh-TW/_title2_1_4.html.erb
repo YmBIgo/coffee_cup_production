@@ -1,32 +1,32 @@
 <h4 id="coffee-chapter3-2-1-3">
   <p id="title2-1-4" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : index</strong></p>
   <br>
-  <i class="fa fa-play-circle"></i>　<strong>「<u>rooms</u>」データベースの「<u>index</u>」ページを作ってみます！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>在這裡作作看「<u>rooms</u>」資料庫的「<u>index</u>」網頁！</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  ページを作るには、
+  作網頁的時候，要設定
   <strong>
   <ul class="number_ul">
-    <li>データ操作（rooms_controller.rb）</li>
-    <li>ページ表示</li>
+    <li>資料操作（rooms_controller.rb）</li>
+    <li>網頁顯示</li>
   </ul>
   </strong>
-  の2つをやりましたね。
+  這個兩個內容。
   <br><br>
-  <i class="fa fa-play-circle"></i>　<strong>まずはデータ操作からやってみましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>首先從資料操作開始做吧！</strong>
   <br><br>
-  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を開いて、内容を下のように変更してみましょう！
+  打開<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>之後，編輯內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（18行目を追加）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第19行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -42,9 +42,9 @@
 </tr>
 </table>
   <br>
-  ここで設定した<strong>「<u>@rooms</u>」</strong>のデータを表示させます。
+  使用在這裡設定的<strong>「<u>@rooms</u>」</strong>，顯示資料。
   <hr class="red-hr">
-  ここでは
+  在這裡，使用
   <br><br>
 <table class='highlight'>
 <tr>
@@ -55,9 +55,9 @@
 </tr>
 </table>
   <br>
-  で、とりあえず<strong>「<u>rooms</u>」</strong>データを全て選択しましたが、
+  這個設定，選擇<strong>全部的「<u>rooms</u>」</strong>資料，
   <br>
-  後で<strong>「<u>entries</u>」</strong>データベースを使って、<strong>「<u>current_user</u>」</strong>が所属している<strong>「<u>rooms</u>」データ</strong>を選択します。
+  等一會兒這裡的「@rooms」會使用<strong>「<u>entries</u>」</strong>資料庫，選擇<strong>「<u>current_user</u>」</strong>在參加的<strong>「<u>rooms</u>」資料</strong>。
   <br><br>
   <strong>entries</strong>
   <table class="table table-striped" style="width:50%">
@@ -89,18 +89,18 @@
 </tr>
 </table>
   <br>
-  この<strong>「<u>@entries</u>」</strong>から<strong>「<u>current_user</u>」</strong>が所属している<strong>「<u>rooms</u>」データ</strong>を選択していきます。
+  用<strong>「<u>@entries</u>」</strong>，選擇<strong>「<u>current_user</u>」</strong>在參加的<strong>「<u>rooms</u>」資料</strong>。
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>次にページ表示をしてみます。</strong>
+  <i class="fa fa-play-circle"></i>　<strong>接着顯示網頁吧。</strong>
   <br><br>
-  <strong>「<u>app > views > rooms > index.html.erb</u>」</strong>を開いて、内容を下のように変更してみましょう！
+  打開<strong>「<u>app > views > rooms > index.html.erb</u>」</strong>之後，編輯內容吧！
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -114,39 +114,43 @@
 7
 8
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;チャット一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;聊天室一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @rooms.each <span class="word-red">do</span> |r| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= r.id %&gt;"</span>&gt;&lt;%= r.name %&gt;&lt;/<span class='word-red'>a</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span> <span class="word-green">class</span>=<span class='word-yellow'>"btn btn-primary"</span>&gt;&lt;%= current_user.family_name %&gt; &lt;%= current_user.first_name %&gt;さんの情報に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span> <span class="word-green">class</span>=<span class='word-yellow'>"btn btn-primary"</span>&gt;返回&lt;%= current_user.family_name %&gt; &lt;%= current_user.first_name %&gt;的資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  これで<strong>「<u>@rooms</u>」</strong>の繰り返しの表示を設定できました。
+  這樣設定好了，反覆顯示<strong>「<u>@rooms</u>」</strong>的內容了。
   <hr class="red-hr">
-  一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。
+  <strong><u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+  <br>
+  <u>這樣編輯好的內容會適用在網頁上。</u>
   <br><br><br>
   <p class="alert alert-success">
-    <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
-    <br>
-    　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入<u>「rails s」</u>吧。</strong>
   </p>
   <br>
-  ブラウザで「<a href="http://0.0.0.0:3000/rooms" target="_blank"><strong>0.0.0.0:3000/rooms</strong></a>」を開いてみて下さい。
+  在遊覽器打開「<a href="http://0.0.0.0:3000/rooms" target="_blank"><strong>0.0.0.0:3000/rooms</strong></a>」吧。
   <br>
   <small>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/rooms" target="_blank"><strong>localhost:3000/rooms</strong></a>」を開いてみて下さい。
+  <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/rooms" target="_blank"><strong>localhost:3000/rooms</strong></a>」吧。
   </small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
               :target => ["_blank"] %>
-  このような表示はでてきたでしょうか？
+  有沒有顯示上面一樣的畫面嗎？
   <br><br>
-  <i class="fa fa-play-circle"></i>　<strong>次は「edit」ページの設定をしてみましょう！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>接着設定「edit」網頁吧！</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>設定的內容，<a href="/zh-TW/codes/c_4#title1-2" target="_blank">請參考這裡</a>。</strong>
 </h4>

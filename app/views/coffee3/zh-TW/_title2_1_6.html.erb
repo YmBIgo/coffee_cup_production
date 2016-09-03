@@ -1,9 +1,9 @@
 <h4 id="coffee-chapter3-2-1-6">
   <p id="title2-1-6" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑹ : update</strong></p>
   <br>
-  <i class="fa fa-play-circle"></i>　<strong>「<u>rooms</u>」データベースの「<u>update</u>」ページを作ってみます！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>在這裡，作作看「<u>rooms</u>」資料庫的「<u>update</u>」的網頁吧！</strong>
   <hr class="red-hr">
-  <strong>「<u>update</u>」</strong>ページで内容を変更したら、<strong>「<a href="/#title2-1-5" target="_blank">edit</a>」ページ</strong>にページ移動させます。
+  設定，編輯好<strong>「<u>update</u>」</strong>網頁的內容之後，移動到<strong>「<a href="/zh-TW/coffee_cups/4#title2-1-5" target="_blank">edit</a>」網頁的內容</strong>。
   <br><br>
 <table class='highlight'>
 <tr>
@@ -14,18 +14,18 @@
 </tr>
 </table>
   <br>
-  <small>※　内容は<a href="/coffee_cups/2#title2-2-3" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
+  <small>※　詳細<a href="/zh-TW/coffee_cups/2#title2-2-3" target="_blank"><strong>請參考這裡</strong></a></small>
   <br><br>
-  <strong>「<u>update</u>」</strong>ページでは、データ操作のみを行います。
+  所以<strong>「<u>update</u>」</strong>網頁上，只設定資料操作，不用作網頁顯示
   <br><br>
-  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>を下のように変更してみましょう！
+  編輯<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>的內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（26〜29行目を変更）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（編輯第26〜29行）</strong>
   <br>
   <small>
-  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
-  <br>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -40,40 +40,44 @@
 <td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
 <span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line'>    @room.update(params.<span class="word-red">require</span>(<span class='word-purple'>:room</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:explain</span>))</span>
-<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャット情報が変更されました"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"聊天室編輯好了"</span></span>
 <span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
   <br>
-  これで変更は完了しました。
+  這樣編輯好文件了。
   <hr class="red-hr">
-  では、ページを表示させてみましょう！
+  那麽，顯示看網頁吧！
   <br><br>
-  一回<strong>「<u>rails s</u>」</strong>で動かしたサーバーを<strong><u>「Command」と「c」</u></strong>を一緒に押して止めてから、もう一度<strong>「<u>rails s</u>」</strong>を入力して下さい。
+  <strong><u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+  <br>
+  <u>這樣編輯好的內容會適用在網頁上。</u>
   <br><br><br>
   <p class="alert alert-success">
-    <i class="fa fa-windows color-blue"></i>　<strong>Windowsをご利用の方は、
-    <br>
-    　「<u>rails s</u>」で動かしたサーバーを<u>「ctrl」と「c」を一緒に押して</u>止めてから、もう一度「<u>rails s</u>」を入力して下さい。</strong>
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <br>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入<u>「rails s」</u>吧。</strong>
   </p>
   <br>
-  ブラウザで「<a href="http://0.0.0.0:3000/rooms/1/edit" target="_blank"><strong>0.0.0.0:3000/rooms/1/edit</strong></a>」を開いてみて下さい。
+  之後用遊覽器打開「<a href="http://0.0.0.0:3000/rooms/1/edit" target="_blank"><strong>0.0.0.0:3000/rooms/1/edit</strong></a>」吧。
   <br>
   <small>
-  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「<a href="http://localhost:3000/rooms/1/edit" target="_blank"><strong>localhost:3000/rooms/1/edit</strong></a>」を開いてみて下さい。
+  <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/rooms/1/edit" target="_blank"><strong>localhost:3000/rooms/1/edit</strong></a>」吧。
   </small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
               :target => ["_blank"] %>
-  ページを表示できたら、内容を変更して <a class="btn btn-success">変更する</a> をクリックしましょう！
+  網頁顯示之後編輯聊天室的資料，點擊 <a class="btn btn-success">更新</a> 吧！
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
               :target => ["_blank"] %>
-  のように表示されたでしょうか？
+  有沒有顯示這樣的畫面嗎？
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>設定的內容，<a href="/zh-TW/codes/c_4#title1-2" target="_blank">請參考這裡</a>。</strong>
 </h4>
