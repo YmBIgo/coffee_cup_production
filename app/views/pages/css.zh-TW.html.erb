@@ -1,45 +1,44 @@
-<% provide :title, "CSS設定一覧" %>
 <div class="container">
   <div class="row">
     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
       <div class="textbook-area">
         <div class="textbook-area-inner fadeIn wow">
           <div id="title" class="textbook-title">
-            <h1><strong>CSS設定一覧</strong></h1>
+            <h1><strong>CSS設定一覽</strong></h1>
           </div>
           <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header9.jpg",
                                 :width => "90%",
                                 :class => "hover_img textbook-title-img") %>
           <hr>
-          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
           <h4>
-            <i class="fa fa-star color-red"></i>　CSSの設定の方法について説明する
+            <i class="fa fa-star color-red"></i>　解釋適用CSS的方法。
             <hr>
-            CSSの設定とは言っても、ここでは<u>普通のCSS</u>と<u>Bootstrapで設定する「<a href="/mugcups/3#title1-2-css-class" target="_blank">class</a>」</u>の２種類について説明する。
+            在這裡解釋，<u>普通的CSS</u>跟<u>適用Bootstrap設定的「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank">class</a>」</u>兩種設定。
             <br>
-            <small>※　CSSの書き方については<a href="/mugcups/3#title1-2" target="_blank"><strong>こちら</strong></a>を参照</small>
+            <small>※　CSS的寫法<a href="/zh-TW/mugcups/3#title1-2" target="_blank"><strong>請參考這裡</strong></a></small>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title1"><strong>1 : CSSの設定</strong></h2>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : CSS的設定</strong></h2>
           <h4>
-            まずは普通のCSSの
+            首先解釋，普通的CSS的
             <strong>
             <ul class="number_ul">
-              <li>文字の大きさ・色・背景色</li>
-              <li>長さ・高さ</li>
-              <li>空白</li>
+              <li>文字的大小・顏色・背景色</li>
+              <li>左右長度・上下高度</li>
+              <li>空格</li>
             </ul>
             </strong>
-            の３つの書き方について説明します。
+            這個3個設定的方法。
             <hr>
             <ul class="number_ul" id="title1-1">
-              <strong><li><p style="color:white;background-color:black;font-size:30px;">文字の大きさ・色・背景色</p></li></strong>
+              <strong><li><p style="color:white;background-color:black;font-size:30px;">文字的大小・顏色・背景色</p></li></strong>
               <br>
-              文字の大きさの設定は、
+              文字的大小要
   <pre>
-  font-size:表示させる大きさpx（もしくは%）;
+  font-size:顯示的大小px（或者%）;
   </pre>
-              で設定します。
+              這樣設定。
               <br><br>
 <table class='highlight'>
   <tr>
@@ -53,14 +52,12 @@
 </td>
   </tr>
   </table>
-              <br>
-              大きさに関しては使っていきながら慣れていきましょう。
               <hr class="red-hr">
-              色の設定は、
+              顏色的設定要
 <pre>
-color:好きな色;
+color:喜歡的顏色;
 </pre>
-              で設定します。
+              這樣設定。
               <br><br>
   <table class='highlight'>
   <tr>
@@ -77,15 +74,15 @@ color:好きな色;
   </tr>
   </table>
               <br>
-              色は英語で入力するか、
+              顏色使用英文打入，或者
               <br>
-              <strong><a href="http://www.netyasun.com/home/color.html" target="_blank">カラーコード一覧表</a></strong>にある「#??????」で設定できます。
+              使用<strong><a href="https://www.toodoo.com/db/color.html" target="_blank">色碼表</a></strong>的「#??????」也可以設定。
               <hr class="red-hr">
-              背景色の設定は、
+              背景色的設定要
   <pre>
-background-color:好きな色;
+background-color:喜歡的顏色;
 </pre>
-              で設定します。
+              設定。
               <br><br>
   <table class='highlight'>
   <tr>
@@ -104,19 +101,19 @@ background-color:好きな色;
   </tr>
   </table>
               <br>
-              色は
+              顏色
 <pre>
-color:好きな色;
+color:喜歡的顏色;
 </pre>
-              と同じように「#??????」で設定できます（色は<strong><a href="http://www.netyasun.com/home/color.html" target="_blank">こちら</a></strong>を参考）。
+              跟這個一樣，可以用「#??????」設定（顏色<strong><a href="https://www.toodoo.com/db/color.html" target="_blank">請參考這裡</a></strong>）。
               <hr class="red-hr">
-              <strong><li><p id="title1-2">長さ・高さ</p></li></strong>
+              <strong><li><p id="title1-2">左右長度・上下高度</p></li></strong>
               <br>
-              要素の長さは、
+              長度要
   <pre>
-width:好きな大きさpx（もしくは%）;
+width:設定的長度px（或者%）;
 </pre>
-              で設定します。
+              設定。
               <br><br>
   <table class='highlight'>
   <tr>
@@ -131,14 +128,14 @@ width:好きな大きさpx（もしくは%）;
   </tr>
   </table>
               <br>
-              <a href="/mugcups/6#title2-3" target="_blank"><strong>Bootstrapのフォーム</strong></a>の長さを設定するときに使いました。
+              設定<a href="/zh-TW/mugcups/6#title2-3" target="_blank"><strong>Bootstrap的輸入框</strong></a>的長度的時候，有用過。
               <input type="input" style="width:500px;" class="form-control my-form" placeholder="width:500px;">
               <hr class="red-hr">
-              同じようにして高さは、
+              同樣的高度是
   <pre>
-height:好きな大きさpx（もしくは%）;
+height:設定的高度px（或者%）;
 </pre>
-              で設定します。
+              設定。
               <br><br>
   <table class='highlight'>
   <tr>
@@ -157,29 +154,25 @@ height:好きな大きさpx（もしくは%）;
               <br>
               <textarea class="my-form form-control" placeholder="width:500px;height:200px" style="width:500px;height:200px;"></textarea>
               <hr class="red-hr">
-              <strong><li><p id="title1-3"></p>空白</li></strong>
+              <strong><li><p id="title1-3"></p>空格</li></strong>
               <br>
-              空白の設定は、
+              空格的設定有
               <strong>
                 <ul class="number_ul">
-                  <li>要素の外側の空白（margin）</li>
-                  <li>要素の内側の空白（padding）</li>
+                  <li>外面的空白（margin）</li>
+                  <li>裡面的空白（padding）</li>
                 </ul>
               </strong>
               <br>
-              の２種類があります。
-              <br><br>
-              違いについては、
-              <br>
-              <a href="http://scene-live.com/page.php?page=49" target="_blank"><strong>【CSS】margin paddingの違いと使い方を紹介</strong></a>などを参考にしてみて下さい。
+              的兩種。
               <hr class="red-hr">
-              要素の外側の空白（margin）は、
+              外面的空格（margin）要
   <pre>
-margin-空白の場所:好きな大きさpx（もしくは%）;
+margin-空白的地方:設定的大小px（或者%）;
 </pre>
-              で設定します。
+              設定。
               <br>
-              空白の場所は、<u>上が「top」下が「bottom」右が「right」左が「left」</u>で設定します。
+              空格的地方的設定是，<u>上面的話用「top」，下面的話用「bottom」，右邊的話用「right」，左邊的話用「left」</u>設定。
               <br><br>
   <table class='highlight'>
   <tr>
@@ -198,21 +191,21 @@ margin-空白の場所:好きな大きさpx（もしくは%）;
   </tr>
   </table>
             <hr class="red-hr">
-            要素の中の空白にはpaddingを使います。
+            裡面的空格使用 padding。
   <pre>
-padding-空白の場所:好きな数字px;
+padding-空白的地方:設定的大小px;
 </pre>
-            で設定します。
+            這樣設定。
             <br>
-            空白の場所についてはmarginと同じです。
+            空白的地方跟 margin 一樣。
             <hr class="red-hr">
-            例えば、下のように画像の中にある文字（詳しくは<a href="/mugcups/8#title1-2" target="_blank"><strong>こちら</strong></a>）を
+            例如說，像下面一樣圖像裡的文字（詳細<a href="/zh-TW/mugcups/8#title1-2" target="_blank"><strong>請參考這裡</strong></a>）
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
                         "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
                         :target => ["_blank"] %>
-            もう少し下に下げたい時は、paddingを使って要素の中に空白を作ります。
+            移動到下面一點兒的話，使用 padding 在裡面作空格。
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
@@ -231,59 +224,59 @@ padding-空白の場所:好きな数字px;
   </tr>
   </table>
             <br>
-            <strong>marginとpaddingは分からなくなったら、一回試してみてやってみましょう！</strong>
+            <strong>不知道要用 margin 或者 padding 的話，試試看一次吧！</strong>
             </ul>
             <hr>
-            <strong class="little-remarkable"><u>CSSの設定は他にもたくさんあるので、興味があったらググって調べてみましょう！</u></strong>
+            <strong class="little-remarkable"><u>還有別的CSS的設定，有興趣的話自己查查看吧！</u></strong>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title2"><strong>2 : Bootstrapの設定</strong></h2>
+          <h2 class="textbook-section-title" id="title2"><strong>2 : Bootstrap的設定</strong></h2>
           <h4>
-          CSSの作業を軽減してくれるツールBootstrap（導入など詳細は<a href="/mugcups/7#title2" target="_blank"><strong>こちら</strong></a>）の設定について説明します。
+          解釋 Bootstrap（導入等等的詳細<a href="/zh-TW/mugcups/7#title2" target="_blank"><strong>請參考這裡</strong></a>）的設定。
           <br>
-          今回は、
+          這一次說明
           <strong>
           <ul class="number_ul">
-            <li>btn（ボタン）</li>
-            <li>form-control（入力欄）</li>
-            <li>nav（上につくバー）</li>
+            <li>btn（按鈕）</li>
+            <li>form-control（輸入框）</li>
+            <li>nav（遊覽列）</li>
           </ul>
           </strong>
-          について説明します。
+          的內容。
           <hr>
           <ul class="number_ul">
-            <strong id="title2-1"><li>btn（ボタン）</li></strong>
+            <strong id="title2-1"><li>btn（按鈕）</li></strong>
             <br>
-            Bootstrapのボタンは、
+            Bootstrap的按鈕用
   <pre>
-class="btn 好きなボタン"
+class="btn 喜歡的按鈕"
 </pre>
-            で設定します。
+            設定。
             <hr class="red-hr">
-            <a class="btn btn-primary">青いボタン</a>
+            <a class="btn btn-primary">藍色的按鈕</a>
             <br><br>
   <table class='highlight'>
   <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;青いボタン&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;藍色的按鈕&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
   </tr>
   </table>
             <br>
-            ボタンには、
+            按鈕有
             <br>
-            <a class="btn btn-danger">btn-danger</a>　<a class="btn btn-success">btn-success</a>　<a class="btn btn-info">btn-info</a>　などの種類があります。（他のボタンは<a href="http://getbootstrap.com/css#buttons-options" target="_blank"><strong>こちらを参照</strong></a>）
+            <a class="btn btn-danger">btn-danger</a>　<a class="btn btn-success">btn-success</a>　<a class="btn btn-info">btn-info</a>　等等的種類。（別的按鈕，<a href="http://getbootstrap.com/css#buttons-options" target="_blank"><strong>請參考這裡</strong></a>）
             <br><br>
-            詳細は<a href="/mugcups/7#title2-2-2" target="_blank"><strong>こちら</strong></a>
+            詳細<a href="/zh-TW/mugcups/7#title2-2-2" target="_blank"><strong>請參考這裡</strong></a>
             <hr class="red-hr">
-            <strong id="title2-2"><li>form-control（入力欄）</li></strong>
+            <strong id="title2-2"><li>form-control（輸入款）</li></strong>
             <br>
-            Bootstrapの入力欄は、
+            Bootstrap的輸入框用
   <pre>
 class="form-control"
 </pre>
-            で設定します。
+            設定。
             <hr class="red-hr">
             <input type="input" class="form-control">
             <br>
@@ -296,11 +289,11 @@ class="form-control"
   </tr>
   </table>
             <br>
-            詳細は<a href="/mugcups/7#title2-2-3" target="_blank"><strong>こちら</strong></a>
+            詳細<a href="/zh-TW/mugcups/7#title2-2-3" target="_blank"><strong>請參考這裡</strong></a>
             <hr class="red-hr">
-            <strong id="title2-3"><li>nav（上につくバー）</li></strong>
+            <strong id="title2-3"><li>nav（遊覽列）</li></strong>
             <br>
-            Bootstrapのナビゲーションバー（上につくバー）は、
+            Bootstrap的遊覽列要
             <br><br>
   <table class='highlight'>
   <tr>
@@ -343,9 +336,9 @@ class="form-control"
   </tr>
   </table>
           <br>
-          で設定します（使う時はコピペして下さい）。
+          這樣設定。
           <br><br>
-          左側の文字は、
+          左邊的文字在
   <table class='highlight'>
   <tr>
 <td class='code-line-no text-center'>10
@@ -354,9 +347,9 @@ class="form-control"
 </td>
   </tr>
   </table>
-          で、
+          設定
           <br><br>
-          右側の文字は、
+          右邊的文字在
   <table class='highlight'>
   <tr>
 <td class='code-line-no text-center'>13
@@ -368,7 +361,7 @@ class="form-control"
   </tr>
   </table>
           <br>
-          の間に例えば下のような設定を
+          的之間追加，像
   <table class='highlight'>
   <tr>
 <td class='code-line-no text-center'>13
@@ -382,16 +375,16 @@ class="form-control"
   </tr>
   </table>
           <br>
-          加えることで設定します。
+          這樣的內容，設定。
           <br><br>
-          詳細は<a href="/mugcups/7#title2-2-4" target="_blank"><strong>こちら</strong></a>。
+          詳細<a href="/zh-TW/mugcups/7#title2-2-4" target="_blank"><strong>請參考這裡</strong></a>。
           </ul>
           <hr class="red-hr">
-          <strong>Bootstrapには他にも使い方があるので興味があったら調べてみましょう！</strong>
+          <strong>有興趣的話，自己查查看吧！</strong>
           <hr>
           </h4>
           <div class="next-page">
-            <a href="javascript:history.back()" class="btn btn-primary">戻る</a>
+            <a href="javascript:history.back()" class="btn btn-primary">上頁</a>
           </div>
         </div>
       </div>
@@ -401,13 +394,13 @@ class="form-control"
       <strong>
       <div id="slide-bar" class="clear-fix">
         <div class="list-group nomargin">
-          <a href="#title" class="list-group-item list-title"><h4>css設定一覧</h4></a>
-          <a href="#title0" class="list-group-item">0 : この章の目的</a>
-          <a href="#title1" class="list-group-item">1 : CSSの設定</a>
-          <a href="#title1-1" class="list-group-item"><small>　① : 文字の大きさ・色・背景色</small></a>
-          <a href="#title1-2" class="list-group-item"><small>　② : 長さ・高さ</small></a>
-          <a href="#title1-3" class="list-group-item"><small>　③ : 空白</small></a>
-          <a href="#title2" class="list-group-item">2 : Bootstrapの設定</a>
+          <a href="#title" class="list-group-item list-title"><h4>css設定一覽</h4></a>
+          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
+          <a href="#title1" class="list-group-item">1 : CSS的設定</a>
+          <a href="#title1-1" class="list-group-item"><small>　① : 文字的大小・顏色・背景色</small></a>
+          <a href="#title1-2" class="list-group-item"><small>　② : 左右長度・上下高度</small></a>
+          <a href="#title1-3" class="list-group-item"><small>　③ : 空格</small></a>
+          <a href="#title2" class="list-group-item">2 : Bootstrap 的設定</a>
           <a href="#title2-1" class="list-group-item"><small>　① : btn</small></a>
           <a href="#title2-2" class="list-group-item"><small>　② : form-control</small></a>
           <a href="#title2-3" class="list-group-item"><small>　③ : nav</small></a>

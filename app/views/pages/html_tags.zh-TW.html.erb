@@ -1,0 +1,226 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>html設定一覽</strong></h1>
+          </div>
+          <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header10.jpg",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img") %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
+            <h4>
+              <i class="fa fa-star color-red"></i>　解釋html文件裡的顯示的設定。
+              <hr>
+              html文件上的設定有兩種。
+              <strong>
+              <ul class="number_ul">
+                <li>顯示文字的設定</li>
+                <li>其他的設定</li>
+              </ul>
+              </strong>
+              在這裡解釋這個兩個設定
+            </h4>
+            <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 顯示文字的設定</strong></h2>
+            <h4>
+            在這裡解釋
+            <ul class="number_ul">
+            <strong><li>「<a href="#html-h1"><u>&lt;h1&gt;</u></a>」顯示大的文字</li></strong>
+            <strong><li>「<a href="#html-p"><u>&lt;p&gt;</u></a>」顯示普通的文字</li></strong>
+            <strong><li>「<a href="#html-small"><u>&lt;small&gt;</u></a>」顯示小的文字</li></strong>
+            </ul>
+            這個3個設定。
+            <hr>
+            <ul class="number_ul">
+              <h1 id="html-h1" class="fix-link-nav"><strong><li>&lt;h1&gt;:顯示大的文字</li></strong></h1>
+              <br>
+              大的文字的顯示要
+<pre>
+&lt;h1&gt;顯示的文字&lt;/h1&gt;
+</pre>
+              這樣設定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;顯示大的文字&lt;/<span class='word-red'>h1</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+              <br><br>
+              如果是小一點的文字的話使用「&lt;h2&gt;」，<br>更小的文字的話「&lt;h3&gt;」・・・
+              <br>
+              這樣最小有「&lt;h6&gt;」。
+              <hr class="red-hr">
+              <p id="html-p" class="fix-link-nav"><strong><li>&lt;p&gt;:顯示普通的文字</li></strong></p>
+              <br>
+              顯示普通的文字要
+  <pre>
+&lt;p&gt;顯示的文字&lt;/p&gt;
+</pre>
+              這樣設定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;顯示普通的文字&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <small id="html-small" class="fix-link-nav"><strong><li>&lt;small&gt;:顯示小的文字</li></strong></small>
+              <br>
+              顯示小的文字要
+  <pre>
+&lt;small&gt;顯示的文字&lt;/small&gt;
+</pre>
+              這樣設定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>small</span>&gt;顯示小的文字&lt;/<span class='word-red'>small</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+            <hr class="red-hr">
+            </ul>
+            <strong class="little-remarkable">顯示的文字就自己試試看吧！</strong>
+            </h4>
+            <br>
+          <h2 class="textbook-section-title" id="title2"><strong>2 : 其他的設定</strong></h2>
+            <h4>
+            解釋
+            <strong>
+            <ul class="number_ul">
+              <li>「<a href="#html-hr"><u>&lt;hr&gt;</u></a>」顯示線</li>
+              <li>「<a href="#html-br"><u>&lt;br&gt;</u></a>」改行</li>
+              <li>「<a href="#html-a"><u>&lt;a&gt;</u></a>」網頁的移動/連結</li>
+              <li>「<a href="#html-div"><u>&lt;div&gt;</u></a>」為了適用CSS的設定</li>
+            </ul>
+            </strong>這個4個設定。
+            <hr>
+            <ul class="number_ul">
+              <p id="html-hr" class="fix-link-nav"><strong><li>&lt;hr&gt;:顯示線</li></strong></p>
+              <br>
+              線的顯示要
+  <pre>
+&lt;hr&gt;
+</pre>
+              這樣設定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <p id="html-br" class="fix-link-nav"><strong><li>&lt;br&gt;:改行</li></strong></p>
+              <br>
+              改行的設定要
+  <pre>
+&lt;br&gt;
+</pre>
+              這樣設定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <p id="html-a" class="fix-link-nav"><strong><li>&lt;a&gt;:連結/網頁的移動</li></strong></p>
+              <br>
+              連結的設定要
+  <pre>
+&lt;a href="移動到的url"&gt;顯示的文字&lt;/a&gt;
+</pre>
+              這樣設定。
+              <br><br>
+              詳細<a href="/zh-TW/mugcups/5#title1-2-2" target="_blank"><strong>請參考這裡</strong></a>
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://amazon.com"</span>&gt;Amazon&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <p id="html-div" class="fix-link-nav"><strong><li>&lt;div&gt;:CSS的設定</li></strong></p>
+              <br>
+              想適在複數的地方適用CSS的話
+  <pre>
+&lt;div&gt;
+  内容
+&lt;/div&gt;
+</pre>
+              使用這個設定。
+              <br><br>
+              <strong>這個「&lt;div&gt;」裡面設定「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank">class</a>」，可以在「div」裡全部的地方裝飾「class」的設定。</strong>
+              <br><br>
+              詳細<a href="/zh-TW/mugcups/7#title2-2-1-css-div" target="_blank"><strong>請參考這裡</strong></a>
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div </span><span class='word-green'>class</span>=<span class='word-yellow'>"mystyle"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;SFC&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;ORF&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>small</span>&gt;SBC&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+            <hr class="red-hr">
+            </ul>
+            <strong>其他還有html 的設定，自己查查看吧！</strong>
+            <hr>
+            </h4>
+          <div class="next-page">
+            <a href="javascript:history.back()" class="btn btn-primary">戻る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <strong>
+      <div id="slide-bar" class="clear-fix">
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>html設定一覽</h4></a>
+          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 顯示文字</a>
+          <a href="#html-h1" class="list-group-item"><small>　① : &lt;h1&gt;顯示大的文字</small></a>
+          <a href="#html-p" class="list-group-item"><small>　② : &lt;p&gt;顯示普通的文字</small></a>
+          <a href="#html-small" class="list-group-item"><small>　③ : &lt;small&gt;顯示小的文字</small></a>
+          <a href="#title2" class="list-group-item">2 : 其他的設定</a>
+          <a href="#html-hr" class="list-group-item"><small>　① : &lt;hr&gt;顯示線</small></a>
+          <a href="#html-br" class="list-group-item"><small>　② : &lt;br&gt;改行</small></a>
+          <a href="#html-a" class="list-group-item"><small>　③ : &lt;a&gt;移動網頁/連結</small></a>
+          <a href="#html-div" class="list-group-item"><small>　④ : &lt;div&gt;設定CSS</small></a>
+        </div>
+      </div>
+      </strong>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>
