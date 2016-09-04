@@ -1,45 +1,44 @@
-<% provide :title, "画像のアップロード：設定一覧" %>
 <div class="container">
   <div class="row">
     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
       <div class="textbook-area">
         <div class="textbook-area-inner fadeIn wow">
           <div id="title" class="textbook-title">
-            <h1><strong>画像のアップロード：設定一覧</strong></h1>
+            <h1><strong>上載圖像：設定一覽</strong></h1>
           </div>
-          <h4><u><a href="/coffee_cups/7" class="text-left ">画像のアップロード</a></u></h4>
+          <h4><u><a href="/zh-TW/coffee_cups/7" class="text-left ">上載圖像</a></u></h4>
           <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffeecup_header7.jpg",
                         :width => "90%",
                         :class => "textbook-title-img hover_img" %>
           <hr>
-          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
           <h4>
-            <i class="fa fa-bookmark color-red"></i>　<strong>「画像のアップロード」の設定一覧の確認をする</strong>
+            <i class="fa fa-bookmark color-red"></i>　<strong>看看「上載圖像」的設定一覽</strong>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覽</strong></h2>
           <h4 id="code-coffee-1">
-            <strong>「<a href="/coffee_cups/7" target="_blank">画像のアップロード</a>」では「<u>Paperclip</u>」というgemを使い、画像をアップロードできるようにしました。</strong>
+            <strong>「<a href="/zh-TW/coffee_cups/7" target="_blank">上載圖像</a>」裡使用「<u>Paperclip</u>」的gem，上載圖像。</strong>
             <br><br>
-            具体的には、
+            在這個章做了，
             <strong>
             <ul class="number_ul">
-              <li>「Paperclip」の導入</li>
-              <li>データベースへの枠組みの追加</li>
-              <li>画像のデータ操作</li>
-              <li>ページでの画像表示</li>
+              <li>導入「Paperclip」</li>
+              <li>追加資料庫的框子</li>
+              <li>圖像的資料操作</li>
+              <li>網頁上顯示圖像</li>
             </ul>
             </strong>
-            の3つをやってみます。
+            這個3個設定。
             <hr class="red-hr">
-            <p id="title1-1"><i class="fa fa-play-circle"></i>　<strong>まずは「<u>Paperclip</u>」の導入から</strong></p>
+            <p id="title1-1"><i class="fa fa-play-circle"></i>　<strong>首先從「<u>Paperclip</u>」的導入開始</strong></p>
             <br>
-            ターミナルで
+            在terminal打入
             <br><br>
-            　<strong>ターミナル</strong>
+            　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
             </small>
 <table class='highlight'>
 <tr>
@@ -50,18 +49,18 @@
 </tr>
 </table>
             <br>
-            をして<strong>「<u>Paperclip</u>」を使うのに必要になるツール「<u>imagemagick</u>」</strong>をインストールします。
+            之後安裝<strong>使用「<u>Paperclip</u>」的時候會需要的「<u>imagemagick</u>」</strong>。
             <br>
-            <small>※　これでインストールできたので、今後インストールする必要はありません。</small>
+            <small>※　這樣安裝好了，以後不用安裝。</small>
             <br><br>
-            これができたら<strong>「<u>Gemfile</u>」</strong>に下の内容を加え、
+            到這裡之後，在<strong>「<u>Gemfile</u>」</strong>裡追加內容
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>Gemfile</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -73,12 +72,12 @@
 </tr>
 </table>
             <br>
-            gemの導入をターミナルでします。
+            用terminal，做gem的導入。
             <br><br>
             　<strong>ターミナル</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
             </small>
 <table class='highlight'>
 <tr>
@@ -89,14 +88,14 @@
 </tr>
 </table>
             <hr class="red-hr">
-            <p id="title1-2"><i class="fa fa-play-circle"></i>　<strong>次は枠組みの追加</strong></p>
+            <p id="title1-2"><i class="fa fa-play-circle"></i>　<strong>接着做框子的設定</strong></p>
             <br><br>
-            まずはターミナルで下の入力をして、枠組みを変更するための設定ファイルを作成します。
+            首先在terminal打入下面的打入，作編輯資料庫的設定文件。
             <br><br>
-            　<strong>ターミナル</strong>
+            　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
             </small>
 <table class='highlight'>
 <tr>
@@ -107,9 +106,9 @@
 </tr>
 </table>
             <br>
-            これで<strong>「<u>db > migrate</u>」フォルダに「<u>日時_add_attachment_image_to_users.rb</u>」</strong>が作成されました。
+            這樣<strong>「<u>db > migrate</u>」文件夾裡作好「<u>日子_add_attachment_image_to_users.rb</u>」文件</strong>了。
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>日時_add_attachment_image_to_users.rb</strong>
+            <i class="fa fa-file color-red"></i>　<strong>日子_add_attachment_image_to_users.rb</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -139,12 +138,12 @@
 </tr>
 </table>
             <br>
-            この設定内容を適用させます。
+            適用這個文件的內容。
             <br><br>
-            　<strong>ターミナル</strong>
+            　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
             </small>
 <table class='highlight'>
 <tr>
@@ -155,31 +154,31 @@
 </tr>
 </table>
             <br>
-            これで
+            到這裡
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sequel_Pro_images.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
                         "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sequel_Pro_images.png",
                         :target => ["_blank"]  %>
-              のようにデータベースに枠組みが追加されました。
+              追加了像上面圖像一樣的框子吧。
               <hr class="red-hr">
-              <p id="title1-3"><i class="fa fa-play-circle"></i>　<strong>データ操作をやってみましょう！</strong></p>
+              <p id="title1-3"><i class="fa fa-play-circle"></i>　<strong>那麽做做看資料操作吧！</strong></p>
               <br><br>
-              データ操作は
+              資料操作在
               <strong>
               <ul class="number_ul">
                 <li>「app > controllers > users_controller.rb」</li>
                 <li>「app > models > user.rb」</li>
               </ul>
               </strong>
-              の2つのファイルに設定します。
+              這個兩個文件裡設定。
               <br><br>
-              <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（31行目を変更）</strong>
+              <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（編輯第31行）</strong>
               <br>
               <small>
-                ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+                ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
                 <br>
-                <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+                <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
               </small>
               <br><br>
 <table class='highlight'>
@@ -202,22 +201,22 @@
 <span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
 <span class='code-line remarkable-code'>      @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>, <span class='word-purple'>:age</span>, <span class='word-purple'>:image</span>))</span>
 <span class='code-line'>      redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"編集が完了しました"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"編輯好了"</span></span>
 <span class='code-line'>    <span class="word-red">else</span></span>
 <span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無効なユーザー"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
 <span class='code-line'>    <span class='word-red'>end</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
 </tr>
 </table>
             <br>
-            <i class="fa fa-file color-red"></i>　<strong>user.rb（10〜12行目を追加）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>user.rb（追加第10〜12行）</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -255,9 +254,9 @@
 </tr>
 </table>
             <hr class="red-hr">
-            <p id="title1-4"><i class="fa fa-play-circle"></i>　<strong>最後にページ表示をしましょう</strong></p>
+            <p id="title1-4"><i class="fa fa-play-circle"></i>　<strong>最後做網頁的顯示吧</strong></p>
             <br><br>
-            ページ表示は
+            網頁顯示要在
             <strong>
             <ul class="number_ul">
               <li>「app > views > users > edit.html.erb」</li>
@@ -280,14 +279,14 @@
                           :target => ["_blank"] %>
             </ul>
             </strong>
-            の3つのページで画像の入力欄・表示の設定を加えます。
+            這個3個網頁裡，追加畫面的輸入框・顯示的內容。
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「users」フォルダ）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「users」文件夾）</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -308,27 +307,27 @@
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">if</span> @user.image.present? %&gt;</span>
 <span class='code-line'>      &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
 <span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
-<span class='code-line'>      &lt;<span class='word-red'>h4</span>&gt;画像はありません&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h4</span>&gt;沒有圖像&lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span></span>
-<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自我介紹：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line word-gray'>    &lt;!-- 省略 --&gt;</span>
 </td>
 </tr>
 </table>
             <br>
-            <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（「users」フォルダ）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（「users」文件夾）</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -348,15 +347,15 @@
 13
 ...
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;編輯會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
-<span class="remarkable-code"><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;プロフィール画像&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;頭像&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;% <span class="word-red">if</span> @user.image.present? %&gt;</span>
 <span class='code-line'>    &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>  &lt;% <span class="word-red">else</span> %&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;画像はまだ登録されていません&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;圖像還沒登錄&lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>  &lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span></span>
@@ -366,12 +365,12 @@
 </tr>
 </table>
           <br>
-          <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「rooms」フォルダ）</strong>
+          <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「rooms」文件夾）</strong>
           <br>
           <small>
-            ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+            ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
             <br>
-            <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
           </small>
           <br><br>
 <table class='highlight'>
@@ -408,7 +407,7 @@
 <span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;</span>
 <span class='code-line'>          &lt;%= m.content %&gt;</span>
 <span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line remarkable-code'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;さん　&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;　&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
 <span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'>        &lt;% <span class="word-red">else</span> %&gt;</span>
@@ -416,7 +415,7 @@
 <span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-info"</span>&gt;</span>
 <span class='code-line'>          &lt;%= m.content %&gt;</span>
 <span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line remarkable-code'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;　&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;　&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
 <span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'>        &lt;% <span class="word-red">end</span> %&gt;</span>
@@ -427,11 +426,11 @@
 </tr>
 </table>
             <br>
-            <i class="fa fa-play-circle"></i>　<strong>ここまでで「<u>Paperclip</u>」の設定ができました。</strong>
+            <i class="fa fa-play-circle"></i>　<strong>到這裡設定好了「<u>Paperclip</u>」的內容了。</strong>
             </h4>
             <hr>
             <div class="next-page">
-                <a href="/coffee_cups/7" class="btn btn-primary">戻る</a>
+                <a href="/zh-TW/coffee_cups/7" class="btn btn-primary">返回第7章</a>
             </div>
         </div>
       </div>
@@ -441,13 +440,13 @@
       <div id="slide-bar" class="clear-fix">
       <strong>
         <div class="list-group nomargin">
-          <a href="#title" class="list-group-item list-title"><h4>画像をアップロードする：設定一覧</h4></a>
-          <a href="#title0" class="list-group-item">0 : この章の目的</a>
-          <a href="#title1" class="list-group-item">1 : 設定一覧</a>
-          <a href="#title1-1" class="list-group-item">　<small>① : 「Paperclip」の導入</small></a>
-          <a href="#title1-2" class="list-group-item">　<small>② : 枠組みの追加</small></a>
-          <a href="#title1-3" class="list-group-item">　<small>③ : データ操作</small></a>
-          <a href="#title1-4" class="list-group-item">　<small>④ : ページ表示</small></a>
+          <a href="#title" class="list-group-item list-title"><h4>上載圖像：設定一覽</h4></a>
+          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 設定一覽</a>
+          <a href="#title1-1" class="list-group-item">　<small>① : 導入「Paperclip」</small></a>
+          <a href="#title1-2" class="list-group-item">　<small>② : 追加框子</small></a>
+          <a href="#title1-3" class="list-group-item">　<small>③ : 資料操作</small></a>
+          <a href="#title1-4" class="list-group-item">　<small>④ : 網頁顯示</small></a>
         </div>
       </strong>
       </div>

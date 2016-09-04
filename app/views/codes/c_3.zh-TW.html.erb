@@ -5,37 +5,37 @@
       <div class="textbook-area">
         <div class="textbook-area-inner fadeIn wow">
           <div id="title" class="textbook-title">
-            <h1><strong>チャットルームを作成する①：設定一覧</strong></h1>
+            <h1><strong>作聊天室①：設定一覽</strong></h1>
           </div>
-          <h4><u><a href="/coffee_cups/3" class="text-left ">チャットルームを作成する①</a></u></h4>
+          <h4><u><a href="/zh-TW/coffee_cups/3" class="text-left ">作聊天室①</a></u></h4>
           <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffeecup_header3.jpg",
                         :width => "90%",
                         :class => "textbook-title-img hover_img" %>
           <hr>
-          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
           <h4>
-            <i class="fa fa-bookmark color-red"></i>　<strong>「チャットルームを作成する①」の設定一覧の確認をする</strong>
+            <i class="fa fa-bookmark color-red"></i>　<strong>看看「作聊天室①」的設定</strong>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覽</strong></h2>
           <h4 id="code-coffee-1">
             <br>
             <strong>
-            「<a href="/coffee_cups/3" target="_blank">チャットルーム作る①</a>」では、
+            在「<a href="/zh-TW/coffee_cups/3" target="_blank">作聊天室①</a>」裡設定了
             <ul class="number_ul">
-              <li>「messages」データベースの変更</li>
-              <li>「rooms」データベースの作成</li>
-              <li>「entries」データベースの作成</li>
+              <li>編輯「messages」資料庫</li>
+              <li>作「rooms」資料庫</li>
+              <li>作「entries」資料庫</li>
             </ul>
-            の3つをしました。
+            這個3個內容。
             </strong>
             <br><br>
-            ここでその設定をまとめます。
+            在這裡看看這裡設定的內容吧。
             <hr class="red-hr">
             <ul class="number_ul">
-              <p id="title1-1"><strong><li>「messages」データベースの変更</li></strong></p>
+              <p id="title1-1"><strong><li>編輯「messages」資料庫</li></strong></p>
               <br>
-              <strong>「<u>messages</u>」データベース</strong>から、<br><strong>「room_id」を追加・「receiver」を削除</strong>し、中身を下のように変更します。
+              <strong>「<u>messages</u>」資料庫</strong>裡<br><strong>追加「room_id」・刪除「receiver」</strong>，更改資料庫的內容。
               <br><br>
                 <strong>messages</strong>
                 <table class="table table-striped" style="width:50%">
@@ -52,7 +52,7 @@
                   <tbody class="text-center">
                     <tr>
                       <td>1</td>
-                      <td style="font-size:12px">おはよう！</td>
+                      <td style="font-size:12px">你好！</td>
                       <td style="background-color: #f2dede;">1</td>
                       <td style="background-color: #f2dede;">1</td>
                       <td style="font-size:11px;">2016-04-12 20:33:43</td>
@@ -60,12 +60,12 @@
                     </tr>
                   </tbody>
                 </table>
-                まずは、データベースを変更する設定ファイルをターミナルで作成します。
+                首先在terminal上，作編輯資料庫的設定文件。
                 <br><br>
-                　<strong>ターミナル</strong>
+                　<strong>terminal</strong>
                 <br>
                 <small>
-                  <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+                  <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
                 </small>
 <table class='highlight'>
 <tr>
@@ -76,14 +76,14 @@
 </tr>
 </table>
               <br>
-              これで作成された<strong>「<u>db > migrate > 日時_change_column_messages.rb</u>」</strong>の内容を下のように変更します。
+              編輯，用這個命令作好的<strong>「<u>db > migrate > 日子_change_column_messages.rb</u>」</strong>文件。
               <br><br>
-              <i class="fa fa-file color-red"></i>　<strong>日時_change_column_messages.rb（3、4行目を追加）</strong>
+              <i class="fa fa-file color-red"></i>　<strong>日子_change_column_messages.rb（追加第3、4行）</strong>
               <br>
               <small>
-                ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+                ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
                 <br>
-                <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+                <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
               </small>
               <br><br>
 <table class='highlight'>
@@ -105,21 +105,21 @@
 </tr>
 </table>
               <br>
-              これで<strong>「<u>messages</u>」データベース</strong>の
+              這樣做好了<strong>「<u>messages</u>」資料庫</strong>的
               <strong>
                 <ul class="number_ul" style="margin-bottom:10px">
-                  <li>「room_id」の枠組みの追加</li>
-                  <li>「receiver」の枠組みの削除</li>
+                  <li>追加「room_id」的框子</li>
+                  <li>刪除「receiver」的框子</li>
                 </ul>
               </strong>
-              の2つを設定しました。
+              這個兩個設定了。
               <hr class="red-hr">
-              設定内容を適用させるために、
+              為了適用設定內容，在terminal上打入
               <br><br>
-              　<strong>ターミナル</strong>
+              　<strong>terminal</strong>
               <br>
               <small>
-                <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+                <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
               </small>
 <table class='highlight'>
 <tr>
@@ -130,11 +130,11 @@
 </tr>
 </table>
               <br>
-              をして完了です。
+              這樣資料庫作好了。
               <br><br>
-              <p id="title1-2"><strong><li>「rooms」データベースの作成</li></strong></p>
+              <p id="title1-2"><strong><li>作「rooms」資料庫</li></strong></p>
               <br>
-              今度はチャットルームのデータを入れるための<strong>「<u>rooms</u>」データベース</strong>を作成します。
+              接着作<strong>「<u>rooms</u>」資料庫</strong>。
               <br><br>
               <strong>rooms</strong>
               <table class="table table-striped" style="width:50%">
@@ -150,19 +150,19 @@
                 <tbody class="text-center">
                   <tr>
                     <td style="background-color: #f2dede;">1</td>
-                    <td style="background-color: #f2dede;font-size:12px;">新規チャット</td>
-                    <td style="background-color: #f2dede;font-size:12px;">説明を入力</td>
+                    <td style="background-color: #f2dede;font-size:12px;">新的聊天</td>
+                    <td style="background-color: #f2dede;font-size:12px;">打入說明</td>
                     <td style="font-size:11px;">2016-04-12 20:30:21</td>
                     <td style="font-size:11px;">2016-04-12 20:30:21</td>
                   </tr>
                 </tbody>
               </table>
-              「rooms」データを作成するための設定ファイルを作成するために、ターミナルで下の入力をします。
+              為了作「rooms」資料的文件，在terminal上打入下面的命令。
               <br><br>
-              　<strong>ターミナル</strong>
+              　<strong>terminal</strong>
               <br>
               <small>
-                <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+                <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
               </small>
 <table class='highlight'>
 <tr>
@@ -173,14 +173,14 @@
 </tr>
 </table>
               <br>
-              この入力で作成される<strong>「<u>db > migrate > 日時_create_rooms.rb</u>」</strong>の内容を下のように変更します。
+              編輯，在這個打入作好的<strong>「<u>db > migrate > 日子_create_rooms.rb</u>」</strong>文件的內容。
               <br><br>
-              <i class="fa fa-file color-red"></i>　<strong>日時_create_rooms.rb（5、6行目を追加）</strong>
+              <i class="fa fa-file color-red"></i>　<strong>日子_create_rooms.rb（追加第5、6行）</strong>
               <br>
               <small>
-                ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+                ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
                 <br>
-                <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+                <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
               </small>
               <br><br>
 <table class='highlight'>
@@ -201,8 +201,8 @@
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
 <span class='code-line'>    create_table <span class='word-purple'>:rooms</span><span class='word-red'> do</span> |t|</span>
 <span class='code-line'></span>
-<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>:name</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"新規チャット"</span></span>
-<span class='code-line'>      t.text       <span class='word-purple'>:explain</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"説明を入力"</span></span>
+<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>:name</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"新的聊天"</span></span>
+<span class='code-line'>      t.text       <span class='word-purple'>:explain</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"打入說明"</span></span>
 <span class='code-line'></span>
 <span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
 <span class='code-line'>    <span class='word-red'>end</span></span>
@@ -212,21 +212,21 @@
 </tr>
 </table>
               <br>
-              これで<strong>「<u>rooms</u>」データベース</strong>に
+              這樣在<strong>「<u>rooms</u>」資料庫</strong>裡設定了
               <strong>
               <ul class="number_ul" style="margin-bottom:10px">
-                <li>初期値に「新規チャット」が入る「<u>name</u>」の枠組み</li>
-                <li>初期値に「説明を入力」が入る「<u>explain</u>」の枠組み</li>
+                <li>剛開始放「新的聊天」的「<u>name</u>」的框子</li>
+                <li>剛開始放「打入說明」的「<u>explain</u>」的框子</li>
               </ul>
               </strong>
-              の2つを追加で設定しました。
+              這個兩個設定。
               <hr class="red-hr">
-              設定を適用させるために、
+              為了適用設定的內容，在terminal上打入
               <br><br>
-              　<strong>ターミナル</strong>
+              　<strong>terminal</strong>
               <br>
               <small>
-                <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+                <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
               </small>
 <table class='highlight'>
 <tr>
@@ -237,11 +237,11 @@
 </tr>
 </table>
               <br>
-              をして完了です。
+              適用設定。
               <br><br>
-              <p id="title1-3"><strong><li>「entries」データベースの作成</li></strong></p>
+              <p id="title1-3"><strong><li>作「entries」資料庫</li></strong></p>
               <br>
-              最後にチャットルームに参加している会員のデータを入れる<strong>「<u>entries</u>」データベース</strong>を作成します。
+              最後作，表示會員在參加的聊天室的<strong>「<u>entries</u>」資料庫</strong>。
               <br><br>
               <strong>entries</strong>
               <table class="table table-striped" style="width:50%">
@@ -264,14 +264,14 @@
                   </tr>
                 </tbody>
               </table>
-              <i class="fa fa-arrow-right"></i>　このデータは、<strong>会員「1」がチャットルーム「1」に参加していることを示すデータ</strong>になります。
+              <i class="fa fa-arrow-right"></i>　這個資料是，<strong>會員「1」在參加聊天室「1」的資料</strong>。
               <br><br>
-              まずは「entries」データを作成するための設定ファイルを下の入力で作成します。
+              首先打入下面的命令作「entries」資料的設定文件吧。
               <br><br>
-              　<strong>ターミナル</strong>
+              　<strong>terminal</strong>
               <br>
               <small>
-                <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+                <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
               </small>
 <table class='highlight'>
 <tr>
@@ -282,14 +282,14 @@
 </tr>
 </table>
             <br>
-            この入力で作成された<strong>「<u>db > migrate > 日時_create_entries.rb</u>」</strong>を下のような内容に変更します。
+            編輯<strong>「<u>db > migrate > 日子_create_entries.rb</u>」</strong>的內容。
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>日時_create_entries.rb（5、6行目を追加）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>日子_create_entries.rb（追加第5、6行）</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -321,21 +321,21 @@
 </tr>
 </table>
             <br>
-            これで<strong>「<u>entries</u>」データベース</strong>に
+            這樣在<strong>「<u>entries</u>」資料庫</strong>裡設定
             <strong>
             <ul class="number_ul" style="margin-bottom:10px">
-              <li>「user_id」の枠組み</li>
-              <li>「room_id」の枠組み</li>
+              <li>「user_id」的框子</li>
+              <li>「room_id」的框子</li>
             </ul>
             </strong>
-            の2つを追加で設定できました。
+            這個兩個框子了。
             <hr class="red-hr">
-            設定を適用させるために、
+            為了適用設定打入
             <br><br>
-            　<strong>ターミナル</strong>
+            　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」吧。
             </small>
 <table class='highlight'>
 <tr>
@@ -346,11 +346,11 @@
 </tr>
 </table>
             <br>
-            を入力して完了です。
+            這個命令就OK。
             </ul>
             <hr>
             <div class="next-page">
-                <a href="/coffee_cups/3" class="btn btn-primary">戻る</a>
+                <a href="/zh-TW/coffee_cups/3" class="btn btn-primary">返回第3章</a>
             </div>
           </h4>
         </div>
@@ -361,12 +361,12 @@
       <div id="slide-bar" class="clear-fix">
       <strong>
         <div class="list-group nomargin">
-          <a href="#title" class="list-group-item list-title"><h4>チャットルームを作成する：設定一覧</h4></a>
-          <a href="#title0" class="list-group-item">0 : この章の目的</a>
-          <a href="#title1" class="list-group-item">1 : 設定一覧</a>
-          <a href="#title1-1" class="list-group-item">　<small>① : messagesデータベース</small></a>
-          <a href="#title1-2" class="list-group-item">　<small>② : roomsデータベース</small></a>
-          <a href="#title1-3" class="list-group-item">　<small>③ : entriesデータベース</small></a>
+          <a href="#title" class="list-group-item list-title"><h4>作聊天室①：設定一覽</h4></a>
+          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 設定一覽</a>
+          <a href="#title1-1" class="list-group-item">　<small>① : messages資料庫</small></a>
+          <a href="#title1-2" class="list-group-item">　<small>② : rooms資料庫</small></a>
+          <a href="#title1-3" class="list-group-item">　<small>③ : entries資料庫</small></a>
         </div>
       </strong>
       </div>

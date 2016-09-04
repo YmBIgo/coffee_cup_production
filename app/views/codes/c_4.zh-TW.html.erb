@@ -7,51 +7,51 @@
           <div id="title" class="textbook-title">
             <h1><strong>チャットルームを作成する②：設定一覧</strong></h1>
           </div>
-          <h4><u><a href="/coffee_cups/4" class="text-left ">チャットルームを作成する②</a></u></h4>
+          <h4><u><a href="/zh-TW/coffee_cups/4" class="text-left ">作聊天室②</a></u></h4>
           <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffeecup_header4.jpg",
                         :width => "90%",
                         :class => "textbook-title-img hover_img" %>
           <hr>
-          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
           <h4>
-            <i class="fa fa-bookmark color-red"></i>　<strong>「チャットルームを作成する②」の設定一覧の確認をする</strong>
+            <i class="fa fa-bookmark color-red"></i>　<strong>看看「作聊天室②」的設定一覽</strong>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覧</strong></h2>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覽</strong></h2>
           <h4 id="code-coffee-1">
             <strong>
-              「<a href="/coffee_cups/4" target="_blank">チャットルームを作成する②</a>」では、<u>「rooms」データベースのページを作成</u>しました。
+              「<a href="/zh-TW/coffee_cups/4" target="_blank">作聊天室②</a>」裡，設定<u>作「rooms」資料庫的網頁</u>了。
             </strong>
             <br><br>
-            具体的な設定内容は、
+            設定的內容是
             <strong>
               <ul class="number_ul">
-                <li>routes.rb（7つのページの設定）</li>
-                <li>createページ</li>
+                <li>routes.rb（7個網頁的設定）</li>
+                <li>create網頁</li>
                 <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
                                       :width => "90%",
                                       :class => "hover_img textbook-title-img"),
                             "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
                             :target => ["_blank"] %>
-                <li>showページ</li>
+                <li>show網頁</li>
                 <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                                       :width => "90%",
                                       :class => "hover_img textbook-title-img"),
                             "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                             :target => ["_blank"] %>
-                <li>indexページ</li>
+                <li>index網頁</li>
                 <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                                       :width => "90%",
                                       :class => "hover_img textbook-title-img"),
                             "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                             :target => ["_blank"] %>
-                <li>editページ</li>
+                <li>edit網頁</li>
                 <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
                                       :width => "90%",
                                       :class => "hover_img textbook-title-img"),
                             "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
                             :target => ["_blank"] %>
-                <li>updateページ</li>
+                <li>update網頁</li>
                 <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
                                       :width => "90%",
                                       :class => "hover_img textbook-title-img"),
@@ -59,14 +59,14 @@
                             :target => ["_blank"] %>
               </ul>
             </strong>
-            の6つになります。
+            這個6個設定。
             <br><br>
-            ここでその内容をまとめます。
+            在這裡解釋這個6個設定。
             <hr class="red-hr">
             <ul class="number_ul">
-              <p id="title1-1"><strong><li>routes.rb（7つのページの設定）</li></strong></p>
+              <p id="title1-1"><strong><li>routes.rb（7個網頁的設定）</li></strong></p>
               <br>
-              「rooms」データベースでは上に書いた
+              「rooms」資料庫裡使用
               <strong>
                 <ul class="number_ul" style="margin-bottom:10px">
                   <li>create</li>
@@ -76,16 +76,16 @@
                   <li>update</li>
                 </ul>
               </strong>
-              の5つのページを使います。
+              這個5個網頁。
               <br><br>
-              なので<strong>「<u>7つのページの設定</u>」</strong>を行う<strong>「<u>config > migrate > routes.rb</u>」</strong>を下のような内容に変更します。
+              所以編輯，在設定<strong>「<u>7個網頁</u>」</strong>的<strong>「<u>config > migrate > routes.rb</u>」</strong>文件。
               <br><br>
-              <i class="fa fa-file color-red"></i>　<strong>routes.rb（8行目を追加）</strong>
+              <i class="fa fa-file color-red"></i>　<strong>routes.rb（追加第8行）</strong>
               <br>
               <small>
-                ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+                ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
                 <br>
-                <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+                <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
               </small>
               <br><br>
 <table class='highlight'>
@@ -131,18 +131,18 @@
 </tr>
 </table>
             <br>
-            ここまでで設定ができました。
+            這樣設定好內容了。
             <hr class="red-hr">
-            <p id="title1-2"><strong><li>「rooms」ページ</li></strong></p>
+            <p id="title1-2"><strong><li>「rooms」網頁</li></strong></p>
             <br>
-            次は<strong>「<u>rooms</u>」ページ</strong>を作ってみます。
+            接着作<strong>「<u>rooms</u>」網頁</strong>。
             <br><br>
-            まずはページを作るための、<strong><u>データ操作とページ表示</u>の設定ファイルを作成</strong>します。
+            首先為了作網頁，<strong>作<u>資料操作跟網頁顯示</u>的設定文件</strong>。打入下面的命令吧。
             <br><br>
-            　<strong>ターミナル</strong>
+            　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、「コマンドプロンプト」をご利用下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
             </small>
 <table class='highlight'>
 <tr>
@@ -153,34 +153,34 @@
 </tr>
 </table>
             <br>
-            これで作成される
+            在這個命令作好的
             <strong>
             <ul class="number_ul" style="margin-bottom:10px">
-              <li>データ操作のファイル「<u>app > controllers > rooms_controller.rb</u>」</li>
-              <li>ページ表示のフォルダ「<u>app > views > rooms</u>」</li>
+              <li>操作資料的文件「<u>app > controllers > rooms_controller.rb</u>」</li>
+              <li>顯示網頁的文件夾「<u>app > views > rooms</u>」</li>
             </ul>
             </strong>
-            に内容を設定します。
+            這個兩個文件裡設定內容。
             <br><br>
-            <i class="fa fa-exclamation color-red"></i>　<strong>ただ「rooms」データの作成だけは、<u>「users」データベースの「show」ページを使用</u></strong>するので、上の2つのファイルに加えて
+            <i class="fa fa-exclamation color-red"></i>　<strong>但是「rooms」資料的新增要使用<u>「users」資料庫的「show」網頁</u></strong>，所以除了上面兩個文件以外，編輯
             <strong>
               <ul class="number_ul" style="margin-bottom:10px">
                 <li>「<u>app > controllers > users_controller.rb</u>」</li>
                 <li>「<u>app > views > users > show.html.erb</u>」</li>
               </ul>
             </strong>
-            の内容を変更します。
+            這個兩個設定文件。
             <hr class="red-hr">
-            <i class="fa fa-play-circle"></i>　<strong>設定内容は下のようになります。</strong>
+            <i class="fa fa-play-circle"></i>　<strong>設定的內容，參考下面。</strong>
             <br><br>
-            <i class="fa fa-arrow-right"></i>　<strong>まずはデータ操作のファイルの設定から</strong>
+            <i class="fa fa-arrow-right"></i>　<strong>從資料操作的文件開始。</strong>
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -225,7 +225,7 @@
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
 <span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
 <span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
-<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャットを作成しました！"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"作好聊天室了！"</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 <span class='code-line'></span>
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
@@ -245,7 +245,7 @@
 <span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
 <span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
 <span class='code-line'>    @room.update(params.<span class="word-red">require</span>(<span class='word-purple'>:room</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:explain</span>))</span>
-<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"チャット情報が変更されました"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"編輯聊天室好了！"</span></span>
 <span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 <span class='code-line'></span>
@@ -254,12 +254,12 @@
 </tr>
 </table>
             <br>
-            <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（7〜10行目を追加）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第7〜10行）</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -293,16 +293,16 @@
 </tr>
 </table>
             <br>
-            <i class="fa fa-arrow-right"></i>　<strong>次にページ設定を見てみます。</strong>
+            <i class="fa fa-arrow-right"></i>　<strong>接着看網頁顯示的設定吧。</strong>
             <br><br>
-            <i class="fa fa-exclamation"></i>　<strong>まずは、usersページから</strong>
+            <i class="fa fa-exclamation"></i>　<strong>事先從「users」網頁開始。</strong>
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「<u>app > views > users</u>」フォルダ）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「<u>app > views > users</u>」文件夾）</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -328,34 +328,34 @@
 </td>
 <td class='code-content'><span class='code-line remarkable-code'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;ユーザー情報&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名前：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;さん（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自己紹介：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;歲）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自我介紹：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
-<span class='code-line'>      &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;ユーザー情報を編集する&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯會員資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
 <span class='code-line'>      &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
-<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"チャットを始める"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"開始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
 <span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span></span>
 <span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class="remarkable-code"><span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span></span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;ユーザー一覧に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回會員資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
             <br>
-            <i class="fa fa-exclamation"></i>　<strong>次に、roomsページ</strong>
+            <i class="fa fa-exclamation"></i>　<strong>接着做「rooms」網頁。</strong>
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「<u>app > views > rooms</u>」フォルダ）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「<u>app > views > rooms</u>」文件夾）</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -412,7 +412,7 @@
 <span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;%= @room.name %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;<span class='word-red'>small</span>&gt;&lt;%= @room.explain %&gt;&lt;/<span class='word-red'>small</span>&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;情報を編集する&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯資料&lt;/<span class='word-red'>a</span>&gt;</span>
 <span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">if</span> @messages.present? %&gt;</span>
@@ -422,7 +422,7 @@
 <span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;</span>
 <span class='code-line'>          &lt;%= m.content %&gt;</span>
 <span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
 <span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'>        &lt;% <span class="word-red">else</span> %&gt;</span>
@@ -430,23 +430,23 @@
 <span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-info"</span>&gt;</span>
 <span class='code-line'>          &lt;%= m.content %&gt;</span>
 <span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;さん&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
 <span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'>        &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
 <span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line'>      &lt;<span class='word-red'>h3</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;メッセージはまだありません&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h3</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;沒有訊息&lt;/<span class='word-red'>h3</span>&gt;</span>
 <span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>    &lt;%= form_for @message <span class="word-red">do</span> |f| %&gt;</span>
-<span class='code-line'>      &lt;%= f.text_field <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control myform"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"メッセージを入力して下さい"</span> %&gt;</span>
+<span class='code-line'>      &lt;%= f.text_field <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control myform"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"打入訊息"</span> %&gt;</span>
 <span class='code-line'>      &lt;%= f.hidden_field <span class="word-purple">:room_id</span>, <span class='word-purple'>:value</span> =&gt; @room.id %&gt;</span>
 <span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;</span>
-<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"投稿する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"投稿"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
@@ -455,11 +455,11 @@
 </tr>
 </table>
             <br>
-            <i class="fa fa-file color-red"></i>　<strong>index.html.erb（「<u>app > views > rooms</u>」フォルダ）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>index.html.erb（「<u>app > views > rooms</u>」文件夾）</strong>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -473,24 +473,24 @@
 7
 8
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;チャット一覧&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;聊天室一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @rooms.each <span class="word-red">do</span> |r| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= r.id %&gt;"</span>&gt;&lt;%= r.name %&gt;&lt;/<span class='word-red'>a</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span> <span class="word-green">class</span>=<span class='word-yellow'>"btn btn-primary"</span></span>&gt;&lt;%= current_user.family_name %&gt; &lt;%= current_user.first_name %&gt;さんの情報に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span> <span class="word-green">class</span>=<span class='word-yellow'>"btn btn-primary"</span></span>&gt;返回&lt;%= current_user.family_name %&gt; &lt;%= current_user.first_name %&gt;的資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
             <br>
-            <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（「<u>app > views > rooms</u>」フォルダ）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（「<u>app > views > rooms</u>」文件夾）</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -510,27 +510,27 @@
 13
 14
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h2</span>&gt;チャット情報を編集する&lt;/<span class='word-red'>h2</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h2</span>&gt;編輯聊天室的資料&lt;/<span class='word-red'>h2</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line'>  &lt;%= f.label <span class='word-purple'>:name</span> %&gt;</span>
-<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:name</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"名前を入力して下さい"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:name</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"打入名字"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.label <span class='word-purple'>:explain</span> %&gt;</span>
-<span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:explain</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class="word-purple">:size</span> =&gt; <span class="word-yellow">"30x10"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"説明を入力して下さい"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:explain</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class="word-purple">:size</span> =&gt; <span class="word-yellow">"30x10"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"打入說明"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"変更する"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-success"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"更新"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-success"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;チャット情報に戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;トップに戻る&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回聊天室資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
             <br>
-            <i class="fa fa-arrow-right"></i>　<strong>最後に「messages」データベース「rooms」データベース間の設定を簡単にするための設定</strong>
+            <i class="fa fa-arrow-right"></i>　<strong>最後設定「messages」資料庫跟「rooms」資料庫之間的關聯吧</strong>
             <br><br>
-            ここでは<strong>「<u>messages</u>」データベース</strong>が
+            在這裡，<strong>「<u>messages</u>」資料庫</strong>是，
             <br><br>
             <strong>messages</strong>
             <table class="table table-striped" style="width:50%">
@@ -547,7 +547,7 @@
               <tbody class="text-center">
                 <tr>
                   <td>1</td>
-                  <td style="font-size:12px">おはよう！</td>
+                  <td style="font-size:12px">你好！</td>
                   <td>1</td>
                   <td style="background-color: #f2dede;">1</td>
                   <td style="font-size:11px;">2016-04-12 20:33:43</td>
@@ -555,9 +555,9 @@
                 </tr>
               </tbody>
             </table>
-            のようになっていて、
+            這樣設定內容。
             <br>
-            <strong>「<u>rooms</u>」データが複数の「<u>messages</u>」データを持つことができる</strong>ので、
+            <strong>「<u>rooms</u>」資料可以拿複數的「<u>messages</u>」資料</strong>，所以
             <br><br>
 <table class='highlight'>
 <tr>
@@ -577,16 +577,16 @@
 </tr>
 </table>
             <br>
-            のような設定をできるようにします。
+            可以做這樣的內容的設定。
             <br>
-            <small>※　詳細は<a href="/coffee_cups/2#title2-3-4" target="_blank"><strong>こちら</strong></a>を参考</small>
+            <small>※　詳細<a href="/zh-TW/coffee_cups/2#title2-3-4" target="_blank"><strong>請參考這裡</strong></a>。</small>
             <br><br>
-            <i class="fa fa-file color-red"></i>　<strong>message.rb（「<u>app > models</u>」フォルダ）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>message.rb（「<u>app > models</u>」文件夾）</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -608,12 +608,12 @@
 </tr>
 </table>
             <br>
-            <i class="fa fa-file color-red"></i>　<strong>room.rb（「<u>app > models</u>」フォルダ）</strong>
+            <i class="fa fa-file color-red"></i>　<strong>room.rb（「<u>app > models</u>」文件夾）</strong>
             <br>
             <small>
-              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　Windowsをご利用の方は、<strong><u>「ctrl」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -633,11 +633,11 @@
 </tr>
 </table>
             <br>
-            ここまでで<strong>「<u>rooms</u>」データベースのページの設定</strong>が終わりました。
+            到這裡做好了<strong>「<u>rooms</u>」資料庫的網頁的設定</strong>了。
             </ul>
             <hr>
             <div class="next-page">
-                <a href="/coffee_cups/4" class="btn btn-primary">戻る</a>
+                <a href="/zh-TW/coffee_cups/4" class="btn btn-primary">返回第4章</a>
             </div>
           </h4>
         </div>
@@ -648,11 +648,11 @@
       <div id="slide-bar" class="clear-fix">
       <strong>
         <div class="list-group nomargin">
-          <a href="#title" class="list-group-item list-title"><h4>チャットルームを作成する：設定一覧</h4></a>
-          <a href="#title0" class="list-group-item">0 : この章の目的</a>
-          <a href="#title1" class="list-group-item">1 : 設定一覧</a>
+          <a href="#title" class="list-group-item list-title"><h4>作聊天室②：設定一覽</h4></a>
+          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 設定一覽</a>
           <a href="#title1-1" class="list-group-item">　<small>① : routes.rb</small></a>
-          <a href="#title1-2" class="list-group-item">　<small>② : 「rooms」ページ</small></a>
+          <a href="#title1-2" class="list-group-item">　<small>② : 「rooms」網頁</small></a>
         </div>
       </strong>
       </div>
