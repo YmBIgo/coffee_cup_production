@@ -1,0 +1,198 @@
+<h4 id="coffee-chapter4-2-2-2">
+  <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 資料操作</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>接着做資料操作吧。</strong>
+  <br><br>
+  資料操作有
+  <strong>
+    <ul class="number_ul">
+      <li>可以編輯「image」的設定（users_controller.rb）</li>
+      <li>「image」的大小，文件的種類的設定（user.rb）</li>
+    </ul>
+  </strong>
+  這個兩個設定。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>首先從「users_controller.rb」的編輯開始做吧。</strong>
+  <br><br>
+  圖像的上載使用，在<strong>「<u>users</u>」資料庫的「<u>edit</u>」網頁</strong>裡選擇的圖像
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_image.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_image.png",
+              :target => ["_blank"] %>
+  在<strong>「<u>update</u>」網頁</strong>上載。
+  <br>
+  在這裡設定，<strong>「<u>update</u>」網頁裡允許編輯「image」資料</strong>的內容。
+  <br><br>
+  打開<strong>「<u>app > controllers > users_controller.rb</u>」</strong>，編輯裡面的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（編輯第31行）</strong>
+  <br>
+  <small>※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>28
+29
+30
+<strong class="color-red">31</strong>
+32
+33
+34
+35
+36
+37
+38
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line remarkable-code'>      @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>, <span class='word-purple'>:age</span>, <span class='word-purple'>:image</span>))</span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"編輯好了"</span></span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在第31行的後面
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>permit( ... , <span class='word-purple'>:age</span>, <span class='word-purple remarkable-code'>:image</span>)</span>
+</td>
+</tr>
+</table>
+  <br>
+  這樣設定，允許<strong>「<u>image</u>」</strong>的編輯。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>接着在「user.rb」追加設定。</strong>
+  <br><br>
+  為了使用「Paperclip」，在<strong>「<u>user.rb</u>」</strong>上設定
+  <strong>
+  <ul class="number_ul">
+    <li>圖像的大小的設定</li>
+    <li>圖像的文件的種類的設定</li>
+  </ul>
+  </strong>
+  這個兩個內容。
+  <br><br>
+  <i class="fa fa-arrow-right color-red"></i>　那麽，從第一個<strong>「圖像的大小的設定」</strong>開始做吧。
+  <br><br>
+  在<strong>「<u>Paperclip</u>」</strong>裡使用<strong>「<a href="/zh-TW/mugcups/css/#title1-1" target="_blank">px</a>」</strong>，設定要上載的圖像的大小。
+  <br><br>
+  在這裡設定
+  <strong>
+  <ul class="number_ul">
+    <li>上下300/左右300</li>
+    <li>上下50/左右50</li>
+  </ul>
+  </strong>
+  這個兩個大小。
+  <br><br>
+  那麽編輯<strong>「<u>app > models > user.rb</u>」</strong>的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>user.rb（追加第10行）</strong>
+  <br>
+  <small>※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong class="color-red">10</strong>
+11
+12
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>User <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'>  <span class='word-gray'># Include default devise modules. Others available are:</span></span>
+<span class='code-line'>  <span class='word-gray'># :confirmable, :lockable, :timeoutable and :omniauthable</span></span>
+<span class='code-line'>  devise <span class='word-purple'>:database_authenticatable</span>, <span class='word-purple'>:registerable</span>,</span>
+<span class='code-line'>         <span class='word-purple'>:recoverable</span>, <span class='word-purple'>:rememberable</span>, <span class='word-purple'>:trackable</span>, <span class='word-purple'>:validatable</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  has_many <span class='word-purple'>:messages</span></span>
+<span class='code-line'>  has_many <span class='word-purple'>:entries</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  has_attached_file <span class='word-purple'>:image</span>, <span class='word-purple'>styles:</span> { <span class='word-purple'>medium:</span> <span class='word-yellow'>"300x300>", <span class='word-purple'>thumb:</span> "50x50>"</span> }</span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  這樣設定好了，保存<strong>「<u>300x300</u>」「<u>50x50</u>」</strong>的大小的圖像的內容了。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right color-red"></i>　接着做第2個<strong>「圖像的文件的種類的設定」</strong>吧。
+  <br><br>
+  在這裡設定，保存的文件的種類。
+  <br><br>
+  例如說，想要保存圖像的時候，不能保存播放音樂的<strong>「<u>mp4</u>」文件</strong>吧。
+  <br><br>
+  在這裡設定，只讓
+  <strong>
+  <ul class="number_ul">
+    <li>jpg</li>
+    <li>jpeg</li>
+    <li>png</li>
+    <li>gif</li>
+  </ul>
+  </strong>
+  這個四個文件保存。
+  <br><br>
+  那麽打開<strong>「<u>app > models > user.rb</u>」</strong>，編輯裡面的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>user.rb（追加第12行）</strong>
+  <br>
+  <small>※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+<strong class="color-red">12</strong>
+13
+14
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>User <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'>  <span class='word-gray'># Include default devise modules. Others available are:</span></span>
+<span class='code-line'>  <span class='word-gray'># :confirmable, :lockable, :timeoutable and :omniauthable</span></span>
+<span class='code-line'>  devise <span class='word-purple'>:database_authenticatable</span>, <span class='word-purple'>:registerable</span>,</span>
+<span class='code-line'>         <span class='word-purple'>:recoverable</span>, <span class='word-purple'>:rememberable</span>, <span class='word-purple'>:trackable</span>, <span class='word-purple'>:validatable</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  has_many <span class='word-purple'>:messages</span></span>
+<span class='code-line'>  has_many <span class='word-purple'>:entries</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  has_attached_file <span class='word-purple'>:image</span>, <span class='word-purple'>styles:</span> { <span class='word-purple'>medium:</span> <span class='word-yellow'>"300x300>", <span class='word-purple'>thumb:</span> "50x50>"</span> }</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  validates_attachment <span class='word-purple'>:image</span>, <span class='word-purple'>content_type:</span> { <span class='word-purple'>content_type:</span> [<span class='word-yellow'>"image/jpg", "image/jpeg", "image/png", "image/gif"</span>] }</span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  這樣設定了，不讓<strong>「<u>jpg</u>」「<u>jpeg</u>」「<u>png</u>」「<u>gif</u>」</strong>以外的文件保存的設定。
+  <br><br>
+  <i class="fa fa-play-circle"></i>　
+  <strong>這樣設定了資料操作的內容了。
+  </strong>
+</h4>

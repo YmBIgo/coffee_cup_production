@@ -6,12 +6,12 @@
   <%= csrf_meta_tags %>
   <% if I18n.locale == :ja %>
     <%= display_meta_tags({
-        :title => 'Railsを学ぼう！| Coffee-Cup',
+        :title => 'Coffee-Cup | Railsを学ぼう！',
         :description => 'あなたにウェブサイトの作り方を教えるサイト「Coffee-Cup」',
         :keywords => 'ウェブサイト作り方, Ruby on rails, プログラミング初心者',
         :open_graph => {
           :title => "Coffee-Cup | ウェブサイトの作り方を学習できるサイト",
-          :url   => 'http://www.coffee-cup.jp/',
+          :url   => 'http://www.coffee-cup.com/',
         },
         :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
         :reverse => true
@@ -23,19 +23,19 @@
         :keywords => 'programing, Ruby on rails, website',
         :open_graph => {
           :title => "Coffee-Cup | Let's study programing！",
-          :url   => 'http://www.coffee-cup.jp/',
+          :url   => 'http://www.coffee-cup.com/',
         },
         :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
         :reverse => true
     }) %>
   <% elsif I18n.locale == :"zh-TW" %>
     <%= display_meta_tags({
-        :title => 'Coffee-Cup| 學習用 Rails 作網站',
-        :description => '想學學看電腦的你。在 \'Coffee-Cup\' 學學看這麼樣？',
+        :title => 'Coffee-Cup | 學習用 Rails 作網站',
+        :description => '想學學看電腦的你。在 \'Coffee-Cup\' 學習作網站的方法吧！',
         :keywords => 'Ruby on rails 程序设计 中文 學習 免費 網路 Web 開發',
         :open_graph => {
           :title => "Coffee-Cup | Let's study programing",
-          :url   => 'http://www.coffee-cup.jp/',
+          :url   => 'http://www.coffee-cup.com/zh-TW',
         },
         :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
         :reverse => true
@@ -47,7 +47,7 @@
         :keywords => 'programing, Ruby on rails, website',
         :open_graph => {
           :title => "Coffee-Cup | Let's study programing",
-          :url   => 'http://www.coffee-cup.jp/',
+          :url   => 'http://www.coffee-cup.com/',
         },
         :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
         :reverse => true

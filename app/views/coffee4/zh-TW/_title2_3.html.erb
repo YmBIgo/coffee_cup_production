@@ -1,0 +1,123 @@
+<h4 id="coffee-chapter4-2-3">
+  <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 總結</strong></p>
+  <br>
+  總結，使用<strong>「<u>Paperclip</u>」</strong>的方法。
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li>追加資料庫</li></strong>
+    <br>
+    為了追加資料庫的框子，作設定文件。
+    <br><br>
+    　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>rails g paperclip user image</span>
+</td>
+</tr>
+</table>
+    <br>
+    這一次的打入是，<strong>「<u>users</u>」資料庫裡追加「<u>image</u>」的框子</strong>的命令。
+    <br><br>
+    在這個打入作了<strong>「日子_add_attachment_image_to_users.rb」</strong>的文件。
+    <br><br>
+    做好之後，使用文件的內容。
+    <br><br>
+    　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li>資料操作</li></strong>
+    <br>
+    要做資料操作的時候要在，
+    <strong>
+    <ul class="number_ul" style="margin-bottom:10px;">
+      <li>users_controller.rb</li>
+      <li>user.rb</li>
+    </ul>
+    </strong>
+    這個兩個文件裡追加設定。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>@user.update(params.require(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>, <span class='word-purple'>:age</span>, <span class='word-purple remarkable-code'>:image</span>))</span>
+</td>
+</tr>
+</table>
+    <br>
+    <i class="fa fa-file color-red"></i>　<strong>user.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+2
+</td>
+<td class='code-content'><span class='code-line'>has_attached_file <span class='word-purple'>:image</span>, <span class='word-purple'>styles:</span> { <span class='word-purple'>medium:</span> <span class='word-yellow'>"300x300>", <span class='word-purple'>thumb:</span> "50x50>"</span> }</span>
+<span class='code-line'>validates_attachment <span class='word-purple'>:image</span>, <span class='word-purple'>content_type:</span> { <span class='word-purple'>content_type:</span> [<span class='word-yellow'>"image/jpg", "image/jpeg", "image/png", "image/gif"</span>] }</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li>網頁顯示</li></strong>
+    <br>
+    網頁顯示的設定要做
+    <strong>
+    <ul class="number_ul" style="margin-bottom:10px">
+      <li>顯示輸入框</li>
+      <li>顯示圖像</li>
+    </ul>
+    </strong>
+    這個兩個設定。
+    <br><br>
+    <i class="fa fa-arrow-right"></i>　<strong>顯示輸入款</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    <i class="fa fa-arrow-right"></i>　<strong>顯示圖像</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+  </ul>
+  <i class="fa fa-play-circle"></i>　
+  <strong>
+  使用「<u>Paperclip</u>」的圖像的顯示，到這裡。
+  <br><br>
+  接着使用條件判別，沒有圖像的會員的話，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_2_no_image.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_2_no_image.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_image.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_image.png",
+              :target => ["_blank"] %>
+  像上面圖像一樣顯示
+  <br>
+  「<u>沒有頭像</u>」「<u>頭像還沒登錄</u>」的文字吧！
+  </strong>
+</h4>

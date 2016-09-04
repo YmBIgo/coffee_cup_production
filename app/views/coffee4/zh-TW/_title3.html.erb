@@ -1,0 +1,134 @@
+<h2 class="textbook-section-title" id="title3"><strong>3 : 圖像的判別</strong></h2>
+<h4 id="coffee-chapter7-3">
+  <strong>使用條件判別，設定圖像的顯示吧！</strong>
+  <hr class="red-hr">
+  要判別會員資料裡有沒有圖像的條件，要使用<strong>「<u>present?</u>」跟「if/else」</strong>。
+  <br>
+  <small>※　詳細<a href="/zh-TW/coffee_cups/6#title3-3" target="_blank"><strong>請參考這裡</strong></a>。</small>
+  <br><br>
+  所以在這裡，大概設定下面的內容。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> @user.image.present? %&gt;</span>
+<span class='code-line'>  &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h4</span>&gt;沒有圖像&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  那麽在
+  <strong>
+  <ul class="number_ul">
+    <li>「<u>users</u>」資料庫的「<u>show</u>」網頁</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_2_no_image.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_2_no_image.png",
+                :target => ["_blank"] %>
+    <li>「<u>users</u>」資料庫的「<u>edit</u>」網頁</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_image.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_image.png",
+                :target => ["_blank"] %>
+  </ul>
+  </strong>
+  這個兩個網頁上設定內容。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>首先在「<u>users</u>」資料庫的「<u>show</u>」網頁追加設定。</strong>
+  <br><br>
+  編輯<strong>「<u>app > views > users > show.html.erb</u>」</strong>的內容。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第5、8〜10行）</strong>
+  <br>
+  <small>※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+6
+7
+<strong class="color-red">8
+9
+10
+11</strong>
+12
+...
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;% <span class="word-red">if</span> @user.image.present? %&gt;</span>
+<span class='code-line'>      &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h4</span>&gt;沒有頭像&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;歲）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自我介紹：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line word-gray'>    &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  這樣設定<strong>判別「<u>@user</u>」的「<u>image</u>」有沒有的條件判別</strong>了。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>接著在「<u>users</u>」資料庫的「<u>edit</u>」網頁上追加設定。</strong>
+  <br><br>
+  編輯<strong>「<u>app > views > users > edit.html.erb</u>」</strong>的內容。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（追加第5、8〜10行）</strong>
+  <br>
+  <small>※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+6
+7
+<strong class="color-red">8
+9
+10</strong>
+11
+12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;編輯會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;頭像&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">if</span> @user.image.present? %&gt;</span>
+<span class='code-line'>    &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;頭像還沒登錄&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>  &lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;姓字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line word-gray'>  &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  到這裡條件判別的設定好了。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>使用「<u>Paperclip</u>」的設定到這裡。</strong>
+</h4>
