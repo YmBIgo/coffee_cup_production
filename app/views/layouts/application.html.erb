@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield :title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <% if I18n.locale == :ja %>
     <%= display_meta_tags({
-        :title => 'Coffee-Cup',
+        :title => 'Railsを学ぼう！| Coffee-Cup',
         :description => 'あなたにウェブサイトの作り方を教えるサイト「Coffee-Cup」',
         :keywords => 'ウェブサイト作り方, Ruby on rails, プログラミング初心者',
         :open_graph => {
@@ -21,7 +20,7 @@
     <%= display_meta_tags({
         :title => 'Coffee-Cup',
         :description => 'Website for people who wanna study programing \'Coffee-Cup\'',
-        :keywords => '作网路, Ruby on rails, 程序设计',
+        :keywords => 'programing, Ruby on rails, website',
         :open_graph => {
           :title => "Coffee-Cup | Let's study programing！",
           :url   => 'http://www.coffee-cup.jp/',
@@ -31,9 +30,9 @@
     }) %>
   <% elsif I18n.locale == :"zh-TW" %>
     <%= display_meta_tags({
-        :title => 'Coffee-Cup',
+        :title => 'Coffee-Cup| 學習用 Rails 作網站',
         :description => '想學學看電腦的你。在 \'Coffee-Cup\' 學學看這麼樣？',
-        :keywords => 'programing, Ruby on rails, website',
+        :keywords => 'Ruby on rails 程序设计 中文 學習 免費 網路 Web 開發',
         :open_graph => {
           :title => "Coffee-Cup | Let's study programing",
           :url   => 'http://www.coffee-cup.jp/',
