@@ -28,7 +28,7 @@
                                 :class => "hover_img textbook-title-img"),
                       "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Style_Css.png",
                       :target => ["_blank"] %>
-          在Finder的「rails_project」文件夾上有Style.css跟Sample.html，這個兩個文件嗎？
+          在Finder的「rails_project」文件夾上有style.css跟sample.html，這個兩個文件嗎？
           <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Finder_rails_project.png",
                                 :width => "90%",
                                 :class => "hover_img textbook-title-img"),
@@ -82,9 +82,9 @@
 <tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br><strong class="color-red">5</strong><br>6<br>7<br>8<br>9<br>10<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;你好&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
 </table>
 <br>
-        <strong>在這個一行決定，在這個網頁上使用「style.css」名字的CSS文件。</strong>
+        <strong>在這個一行設定，在這個網頁上使用「style.css」的名字的CSS文件。</strong>
         <br>
-        裡面應該可以看到「style.css」。在這裡指定要用的CSS文件。<u>使用的時候除了CSS文件以外的地方都可以用一樣。這個要加在<strong><i>&lt;head&gt;</i>跟<i>&lt;/head&gt;</i>圍起來的地方</strong>設定</u>。
+        裡面應該可以看到「style.css」。在這裡指定要用的CSS文件。<u>使用的時候除了CSS文件以外的地方都可以用一樣的寫法。這個設定要加在<strong><i>&lt;head&gt;</i>跟<i>&lt;/head&gt;</i>圍起來的地方</strong>設定</u>。
         <hr class="red-hr">
         比如說要指定名字叫「style2.css」的CSS文件的話，
         <br><br>
@@ -92,12 +92,12 @@
 <tr><td class='code-line-no text-center'>1<br></td><td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style2.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span></td></tr>
 </table>
         <br>
-        上面的內容，加在<i>&lt;head&gt;</i>跟<i>&lt;/head&gt;</i>之間。
+        在<i>&lt;head&gt;</i>跟<i>&lt;/head&gt;</i>之間，加上面的內容。
         <strong></strong>
         <br><br>
-        <strong class="remarkable">用CSS文件的時候，請不要忘記加這個一行在<i>&lt;head&gt;</i>跟<i>&lt;/head&gt;</i>之間。。</strong>
+        <strong class="remarkable">用CSS文件的時候，請不要忘記在<i>&lt;head&gt;</i>跟<i>&lt;/head&gt;</i>之間追加這個一行。</strong>
         <hr>
-        那麽，解釋做裝飾的<strong class="little-remarkable"><u>CSS文件</u></strong>。
+        那麽，解釋做裝飾的<strong class="little-remarkable"><u>CSS文件</u>吧</strong>。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
 <table class="highlight">
@@ -186,7 +186,7 @@ background-color:顏色;
         <br>
         這樣也可以裝飾，可是不能有很多種裝飾。
         <br><br>
-        所以<strong class="little-remarkable">CSS文件可以取装飾的名字、然後跟html文件裡裝飾。</strong>
+        所以<strong class="little-remarkable">CSS文件可以取装飾的名字、然後用這個名字在html文件裡裝飾。</strong>
         <hr class="red-hr">
         <strong><u>那麽作作看吧！</u></strong>
         <br><br>
@@ -201,7 +201,7 @@ background-color:顏色;
         <i class="fa fa-windows"></i>　使用Windows的話，一起點擊<strong><u>「ctrl」跟「s」</u></strong>。
         </small>
 <table class="highlight">
-<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br><strong class="color-red">9</strong><br>10<br>11<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;你好&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1 </span><span class='word-green'>class</span>=<span class='word-yellow'>"title"</span>&gt;テスト&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
+<tr><td class='code-line-no text-center'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br><strong class="color-red">9</strong><br>10<br>11<br></td><td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>html</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>meta </span><span class='word-green'>charset</span>=<span class='word-yellow'>"utf-8"</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>link </span><span class='word-green'>rel</span>=<span class='word-yellow'>"stylesheet"</span> <span class='word-green'>href</span>=<span class='word-yellow'>"style.css"</span> <span class='word-green'>type</span>=<span class='word-yellow'>"text/css"</span> /&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;<br></span><span class='code-line'>&lt;<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;你好&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line remarkable-code'>  &lt;<span class='word-red'>h1 </span><span class='word-green'>class</span>=<span class='word-yellow'>"title"</span>&gt;晚安&lt;/<span class='word-red'>h1</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;<br></span><span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;<br></span></td></tr>
 </table>
 <br>
         <i class="fa fa-file color-red"></i>　<strong>style.css（用半母字母數字打入）</strong>
@@ -232,13 +232,13 @@ background-color:顏色;
 </pre>
         <strong><u>可以用一個名字做幾個裝飾</u></strong>。
         <br>
-        這次的名字是<strong>「<u>title</u>」</strong>，但是名字可以自己自由的選。
+        這次的名字是<strong>「<u>title</u>」</strong>，但是名字可以自己自由選擇。
         <br><br>
-        在html文件裡的顯示是，加
+        在html文件裡的顯示是，在<u><i>&lt;h1&gt;</i>或者<i>&lt;p&gt;</i>等等裡面</u>加
 <pre>
 class="名前"
 </pre>
-        在<u><i>&lt;h1&gt;</i>或者<i>&lt;p&gt;</i>等等裡，</u>可以設計。<u>這裡不用加「.」。</u>
+        設定。<u>這裡不要用「.」。</u>
         <br>
         這裡的名字跟在CSS文件裡設定的名字是一樣的時候，裝飾會適用。
         <br><br>

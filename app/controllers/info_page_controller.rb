@@ -12,4 +12,7 @@ class InfoPageController < ApplicationController
   def tokusho
   end
 
+  def warning
+  end
+
 end

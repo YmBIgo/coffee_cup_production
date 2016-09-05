@@ -17,20 +17,17 @@
           <br>
         </strong>
       </h1>
-      <br>
-      <p><a href="#lesson-title" class="btn btn-danger">詳細</a></p>
       <hr class="red-hr">
       <div class="col-xs-6">
         <h4 style="line-height:1.8; margin-bottom:8px">
         <strong>
           在我們的日常生活中，不可缺少的網路。
           <br>
-          我們提供作網站的教材(10800日元/月)！
+          我們提供作網站的教材(可以免費使用)！
         </strong>
         </h4>
         <p><strong>※　請準備 <u>Windows 或者 Mac 的電腦</u></strong></p>
-        <p><a href="/<%= I18n.locale %>/users/sign_up" class="btn btn-warning">開始！</a></p>
-        <br>
+        <p><a href="#lesson-title" class="btn btn-danger">詳細</a></p>
       </div>
       <div class="col-xs-6">
         <%= form_for @mail_sender do |f| %>
@@ -81,12 +78,15 @@
               <li>他 ... <a href="/<%= I18n.locale %>/mugcups/" target="_blank">全部有12章</a></li>
               </strong>
             </ul>
+            <br>
+            <h2><strong><i class="fa fa-arrow-right"></i>　<a href="/zh-TW/mugcups" target="_blank">開始學習吧(免費使用)！</a></strong></h2>
+            <h4><small>※　利用之前，<a href="/zh-TW/warning" target="_blank"><strong>請確認這裡</strong></a></small></h4>
           </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="btn btn-danger">
                   <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
                                 :class => "nav-img") %>
-                  Coffee（應用編）
+                  Coffee(應用編)
             </a>
             <hr>
             <p class="text-left text-muted">
@@ -114,16 +114,17 @@
               </strong>
             </ul>
             <br>
+            <h2><strong><i class="fa fa-arrow-right"></i>　<a href="/zh-TW/coffee_cups" target="_blank">開始學習吧(免費使用)！</a></strong></h2>
+            <h4><small>※　利用之前，<a href="/zh-TW/warning" target="_blank"><strong>請確認這裡</strong></a></small></h4>
           </div>
         </div>
+        <br>
         <p class="alert alert-info text-left" style="margin:20px auto; line-height:20px">
               <i class="fa fa-windows color-blue"></i>　<strong>使用<u>Windows</u>的話</strong>,
               <br><br>
               因為機種的關係，不能學<a href="/<%= I18n.locale %>/coffee_cups/7" target="_blank"><strong><u>「Coffee（應用編）」「7 : 上載圖像」</u></strong></a>的内容。
         </p>
         <br>
-        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/<%= I18n.locale %>/users/sign_up">從这里註冊</a>之後、可以買教材(10800日元・在Facebook上，可以問不知道的地方)。</strong></h3>
-        <br><br>
         <div class="text-center">
           <a href="#service-title" class="btn btn-warning">詳細</a>
         </div>
@@ -135,7 +136,7 @@
         <h2 class="text-center fix-link-nav" id="service-title">教材詳細</h2>
         <hr class="red-hr">
         <div class="row text-center">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
             <div class="service-box">
               <i class="fa fa-clock-o fa-4x color-green" style="margin-bottom:4px"></i>
               <h3 style="margin-top:16px">80小時可以学完的教材</h3>
@@ -147,30 +148,21 @@
               <br>
             </div>
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
             <div class="service-box">
               <i class="fa fa-yen fa-4x color-green" style="margin-top:3px"></i>
-              <h3 style="margin-top:17px">10800日圓</h3>
+              <h3 style="margin-top:17px">免費使用</h3>
               <p class="text-muted">
-              <strong><u>一個月10800日圓 / 延長一個月2160日圓</u></strong>
+              <strong><u>免費可以看裡面的內容</u></strong>
               <br>
               <small>
-              ※　我們用，叫<strong><u>Ruby on Rails</u></strong>的軟件。
+              ※　我們用，叫做 <strong><u>Ruby on Rails</u></strong>的軟件。
               </small>
               </p>
               <br>
             </div>
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-            <div class="service-box">
-              <i class="fa fa-mortar-board fa-4x color-green" style="margin-bottom:2px"></i>
-              <h3 style="margin-top:16px">直接指導</h3>
-              <p class="text-muted">不知道的地方，可以在Facebook上问。
-              </p>
-              <br>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
             <div class="service-box">
               <i class="fa fa-thumbs-up fa-4x color-green" style="margin-bottom:4px"></i>
               <h3>可以理解網路</h3>
@@ -182,8 +174,6 @@
           </div>
         </div>
         <br>
-        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/<%= I18n.locale %>/users/sign_up">從這裡註冊</a>之後、可以買教材。</strong></h3>
-        <br><br>
         <div class="text-center">
           <p>
           <a href="#pc-type-section" class="btn btn-success">需要什麼呢？</a>
@@ -221,15 +211,11 @@
               基礎編：20〜40小時（基準）
               <br>
               應用編：20〜40小時（基準）
-              <br><br>
-              <small>※　最先一個月付10800日圓以外、从一個月2160日圓開始延長。</small>
               </p>
               <br>
             </div>
           </div>
         </div>
-        <br>
-        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/<%= I18n.locale %>/users/sign_up">從這裡註冊</a>之後、可以買教材。</strong></h3>
         <br>
         <p class="text-center">
           <a href="#sales-section" class="btn btn-info">我们推薦這樣人學！</a>
@@ -283,12 +269,6 @@
           </div>
         </div>
         <br>
-        <h3><strong><i class="fa fa-arrow-right"></i>　<a href="/<%= I18n.locale %>/users/sign_up">從這裡註冊</a>之後、可以買教材。</strong></h3>
-        <br><br>
-        <p class="text-center">
-          <a href="/<%= I18n.locale %>/users/sign_up" class="btn btn-green" target="_blank">開始！</a>
-        </p>
-        <br>
       </div>
       <hr>
       <br>
@@ -320,7 +300,7 @@
         <img src="https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png" style="margin-bottom:10px">
         <br>
         <strong>體驗體驗<br>電腦裡的世界吧！</strong></h1>
-        <a href="/<%= I18n.locale %>/users/sign_up" class="btn btn-success" style="margin:20px auto 10px auto"><strong>開始！</strong></a>
+        <a href="/<%= I18n.locale %>/mugcups" class="btn btn-success" style="margin:20px auto 10px auto"><strong>開始！</strong></a>
         <br><br>
       </div>
       <br>

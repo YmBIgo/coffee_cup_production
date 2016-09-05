@@ -1,11 +1,11 @@
 <h4 id="chapter2-1-2">
         <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : Ruby on Rails的資料</strong></p>
         <br>
-        我們解釋，Ruby on Rails是<strong><u>隨着資料的顯示跟保存的方法自己設定</u></strong>要這麼樣作網站。
+        我們解釋了，Ruby on Rails是<strong><u>隨着資料的顯示跟保存的方法</u></strong>自己設定要這麼樣作網站的軟件。
         <br>
-        我們有解釋資料的表示，那麽<u>資料的保存是這麼樣子呢？</u>
+        我們解釋好了資料的顯示，那麽<u>資料的保存是這麼樣做呢？</u>
         <hr class="red-hr">
-        <a href="/zh-TW/mugcups/1"><strong>在上章</strong></a>，利用者發信的資料會保存在動網站的機器（服務器）裡的資料庫裡。這個保存資料的資料庫就是作‘資料的保存’。
+        <a href="/zh-TW/mugcups/1"><strong>在上章</strong></a>說明了，利用者發信的資料會保存在動網站的機器（服務器）裡的資料庫裡。這個保存資料的資料庫在作「資料的保存」。
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_Save_Data.png",
                               :width => "90%",
@@ -21,20 +21,22 @@
             <li><u>投稿的人的名字是</u>「山田太郎」</li>
             <li><u>投稿的內容是</u>「Hello world」</li>
             <li><u>地方是</u>「東京都新宿」</li>
-            <li><u>圖畫是</u>「沒有」</li>
+            <li><u>圖像是</u>「沒有」</li>
             <li>等等...</li>
         </ul>
         </span>
         <br>
-        這樣子的資料保存在<strong><u>動網站的機器（服務器）裡的資料庫（Excel軟件 的表）</u></strong>。
+        這樣子的資料會保存在<strong><u>動網站的機器（服務器）裡的資料庫（Excel軟件 的表）</u></strong>。
         <br><br>
-        <strong>在Ruby on Rails上保存下來的資料也是一樣、利用者發信的資料會保存在動網站的機器（服務器）裡的資料庫裡，然後這個資料會顯示在網頁上面。</strong>
+        <strong>在Ruby on Rails上保存下來的資料也是一樣，利用者發信的資料會保存在動網站的機器（服務器）裡的資料庫裡，然後這個資料會顯示在網頁上面。</strong>
         <hr class="red-hr">
-        所以在 Ruby on Rails上，先為了要保存資料<u>作資料庫</u>，<br>做好資料庫之後自己設定<u>資料的新增，編輯，刪除</u>。
+        所以在 Ruby on Rails上，先為了要保存資料<u>作資料庫</u>。
+        <br>
+        之後自己設定<u>資料的新增，編輯，刪除</u>。
         <br><br>
         <ul class="number_ul">
             <strong><li>做資料庫</li></strong>
-                用Facebook的例子說的話，為了保存名字，內容，地方的資料庫（Excel軟件的表）。
+                用Facebook的例子說的話，作可以保存名字，內容，地方 等等的資料庫（Excel軟件的表）。
                 <br><br>
             <strong><li>資料庫上保存利用者的資料</li></strong>
                 新增，編輯，刪除在網頁上打入的資料。

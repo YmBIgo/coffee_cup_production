@@ -3,17 +3,15 @@
         <br>
         網站上按着打入的資料，新的資料會保存在資料庫裡。
         <br>
-        用Facebook投稿的例子說的話，利用者投稿時資料庫會有新的投稿的資料。
+        用Facebook投稿的例子說的話，利用者投稿後，資料庫會有新投稿的資料。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_database.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/FB_database.png",
                     :target => ["_blank"] %>
-        雖然Ruby on Rails上網頁是順着資料保存的方法先指定好幾個作網頁的方法，<u>但是資料的保存要另外設定。</u>
+        雖然Ruby on Rails的網頁是順着資料保存的方法，先指定好幾個作網頁的方法，<u>但是資料的保存要跟資料的顯示另外設定。</u>
         <br><br>
-        <strong class="little-remarkable color-red">資料的保存要跟資料的顯示另外設定。</strong>
-        <br><br>
-        具體的說，各個網頁上設定
+        所以除了網頁的顯示以外，各個網頁上要設定
         <strong>
         <ul style="margin:15px 0">
             <li>「<u>顯示</u>什麼資料」</li>
@@ -22,7 +20,7 @@
             <li>「<u>刪除</u>什麼資料」</li>
         </ul>
         </strong>
-        等等<u>要這麼操作資料（資料的顯示，新增，編輯，刪除）</u>。
+        等等<u>要這麼樣操作資料（資料的顯示，新增，編輯，刪除）</u>的設定。
         <hr class="red-hr">
         <i class="fa fa-star color-blue"></i>　<strong>Ruby on Rails上的資料的保存是、先作資料庫之後，自己設定要這麼操作資料。</strong>
 </h4>

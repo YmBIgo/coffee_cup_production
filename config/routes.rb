@@ -52,6 +52,8 @@ Rails.application.routes.draw do
 
     get "tokusho"       => "info_page#tokusho"
 
+    get "warning"       => "info_page#warning"
+
   # 404
 
     match '*path' => 'application#error404', via: :all
