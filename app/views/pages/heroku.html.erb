@@ -1,0 +1,565 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>ウェブサイトを公開する(Mac)</strong></h1>
+          </div>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header9.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : この章の目的</strong></h2>
+          <h4>
+            <i class="fa fa-star color-red"></i>　<strong>この章で、Macで作成したRuby on Railsのウェブページを公開する方法を説明します。</strong>
+            <hr>
+            ウェブページの公開は、
+            <strong>
+            <ul class="number_ul">
+              <li><u>git</u></li>
+              <li><u><a href="https://www.heroku.com" target="_blank">heroku</a></u></li>
+            </ul>
+            </strong>
+            という2つのツールを使って行います。
+            <hr class="red-hr">
+            まず git というツールを使って Ruby on Rails の設定ファイルの変更履歴を保存し、heroku というサービスを使って最新のページを公開します。
+            <br><br>
+            ではやってみましょう！
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : gitの導入</strong></h2>
+          <h4>
+            <strong>まずはウェブサイトの公開をするために使う、<u>git というツールをインストールしましょう！</u></strong>
+            <br><br>
+            ターミナルを開いて下の入力をして下さい。
+            <br><br>
+            <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>brew install git</span>
+</td>
+</tr>
+</table>
+            <br>
+            これで git のインストールが完了しました。
+            <br><br>
+            これが終わったら、導入を完了させるために下の入力をして下さい。
+            <br><br>
+            <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+</td>
+<td class='code-content'><span class='code-line'>git config -global user.name "自分の名前"</span>
+<span class='code-line'>git config -global user.email "自分のメールアドレス"</span>
+</td>
+</tr>
+</table>
+          <br>
+          これでgitの設定が完了しました。
+          <br>
+          下の入力で、gitのバージョンが出てくるか確認しましょう。
+          <br><br>
+          <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git --version</span>
+</td>
+</tr>
+</table>
+          <br>
+          <strong>このgitを使って、herokuでのページ公開を設定していきます。</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title2"><strong>2 : heroku</strong></h2>
+          <h4>
+            <strong>ではこのherokuを使って、ページを公開しましょう！</strong>
+            <hr>
+            <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : heroku を登録する</strong></p>
+            <br>
+            最初にherokuを登録してみます。
+            <a href="https://signup.heroku.com" target="_blank"><strong>heroku の登録ページ</strong></a>で必要情報を入力して、<strong>「<u>create free acount</u>」</strong>をクリックして下さい。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_signup.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_signup.png",
+                        :target => ["_blank"] %>
+            登録が完了すると認証メールが届きますので、内容を確認の上認証をして下さい。
+            <br>
+            認証のページでパスワードの登録が必要になるので、好きなパスワードを設定して下さい。
+            <br><br>
+            これで登録が完了しました。<a href="https://id.heroku.com/login" target="_blank"><strong>herokuのログイン画面</strong></a>から、ログインできるか確認しましょう。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_login.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_login.png",
+                        :target => ["_blank"] %>
+            <strong>ログインはできたでしょうか？</strong>
+            <br><br>
+            続いて、ターミナル上で heroku を動かすためのツール<strong>「<u>Heroku Toolbelt</u>」</strong>をインストールしましょう。
+            <hr>
+            <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : Heroku Toolbelt のインストール</strong></p>
+            <br>
+            <strong>続いてターミナル上でherokuを動かすためのツールをインストールしましょう。</strong>
+            <br><br>
+            <a href="https://devcenter.heroku.com/articles/getting-started-with-ruby#set-up" target="_blank"><strong>こちらのページ</strong></a>から<strong>「Mac OS X」</strong>を選択して、ダウンロードを始めましょう。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_web.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_web.png",
+                        :target => ["_blank"] %>
+            ダウンロードができたら、ダウンロードできたファイルを開きましょう。
+            <br>
+            最初はこのような画面が出てきます。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_1.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_1.png",
+                        :target => ["_blank"] %>
+            「continue」をクリックすると、
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_2.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_2.png",
+                        :target => ["_blank"] %>
+            このような画面が出てくるので、インストールを続けて下さい。
+            <br>
+            最後に<strong>「<u>インストールが完了しました</u>」</strong>の表示が出てきたら、大丈夫です。
+            <hr class="red-hr">
+            <i class="fa fa-arrow-right"></i>　<strong>Heroku Toolbelt をインストールすることができたので、ターミナル上でherokuを動かすことができるようになりました。</strong>
+            <br><br>
+            まずはターミナル上で、heroku にログインしてみましょう。
+            <br>
+            公開したいページのフォルダに移動して下さい。
+            <br><br>
+            <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd 作ったページ(myapp, message-app など)</span>
+</td>
+</tr>
+</table>
+            <br>
+            移動ができたら、下の入力をして下さい。
+            <br><br>
+            <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku login</span>
+</td>
+</tr>
+</table>
+            <br>
+            メールアドレスとパスワードの入力が求められますので、自分のアカウントの情報を入力して下さい。
+            <br>
+            <small>※　パスワードは入力しても表示されませんが、正しく入力されているのでそのまま入力して下さい</small>
+            <br><br>
+            ログインに成功すると<strong>「<u>Authentication successful.</u>」</strong>が表示されます。
+            <br><br>
+            <i class="fa fa-arrow-right"></i>　<strong>ここまででherokuの設定ができたので、作ったページを公開してみましょう！</strong>
+            <hr>
+            <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : Heroku でページを公開する</strong></p>
+            <br>
+            <strong>heroku の設定ができたので、ページを公開しましょう！</strong>
+            <br><br>
+            heroku でページを公開するには、
+            <strong>
+            <ul class="number_ul">
+              <li>Rails のページの設定</li>
+              <li>git の設定</li>
+              <li>heroku の設定</li>
+            </ul>
+            </strong>
+            の3つを設定する必要があります。
+            <br>
+            では、一つずつやってみましょう。
+            <hr>
+              <p id="title2-3-1" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : Rails のページの設定</strong></p>
+              <br>
+              heroku でページを公開するには、<strong><u>Gemfile</u></strong>に設定内容を加える必要があります。Gemfileに下の設定を追加しましょう。
+              <br><br>
+              <i class="fa fa-file color-red"></i>　<strong>Gemfile（一番下の行に追加）</strong>
+              <br>
+              <small>
+              ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+              </small>
+              <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>54
+55
+56
+57
+</td>
+<td class='code-content'><span class='code-line'>group <span class='word-purple'>:production</span><span class='word-red'> do</span></span>
+<span class='code-line'>  <span class='word-red'>gem </span><span class='word-yellow'>'rails_12factor'</span></span>
+<span class='code-line'>  <span class='word-red'>gem </span><span class='word-yellow'>'pg'</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+              <br>
+              ここの<strong>「group :production do」</strong>で、公開するページの運用環境で使用する<strong>「<a href="/ja/mugcups/3#title2-2-1">gem</a>」</strong>を設定します。
+              <br><br>
+              ここで設定した運用環境（公開するページ）で使う gem は、
+              <strong>
+              <ul class="number_ul">
+                <li>rails_12factor（heroku 上で<u>CSSファイルや画像ファイル</u>を使うために設定）</li>
+                <li>pg（heroku 上で使う<u>データベースPostgreSQL</u>を設定）</li>
+              </ul>
+              </strong>
+              この2つになります。
+              <br>
+              ここで設定した「PostgreSQL」を使うために下の入力をして下さい。
+              <br><br>
+              <strong>　ターミナル（半角英数字で入力）</strong>
+              <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>brew install postgresql</span>
+</td>
+</tr>
+</table>
+              <br>
+              <small>※　この入力でpostgreSQLがインストールできたので、今後はこの入力をする必要はありません。</small>
+              <hr class="red-hr">
+              では最後に、設定を反映させるためにターミナルで下の入力をして下さい。
+              <br><br>
+              <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+              <br>
+              <small>
+                <i class="fa fa-arrow-right"></i>　動かない場合は、<strong>「Gemfile.lock」</strong>を削除してから、試してみて下さい。
+              </small>
+              <br><br>
+              これで「Gemfile」上での設定が完了しました。
+              <hr>
+              <p id="title2-3-2" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : git の設定</strong></p>
+              <br>
+              続いてgitの設定を行います。
+              <br>
+              <strong>git はファイルの変更履歴を保存するツールになります</strong>。このgitを使って、herokuでページを公開します。
+              <br><br>
+              まずは、公開するページのフォルダ（「myapp」「message-app」など）でgitを使う設定をします。
+              <br>
+              公開するRails のウェブサイトのフォルダで下の入力をして下さい。
+              <br><br>
+              <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git init</span>
+</td>
+</tr>
+</table>
+              <br>
+              これでgitで公開するRails のウェブサイトでgitを使う設定ができました。
+              <br>
+              ここにファイルの変更履歴を保存します。下の入力をして下さい。
+              <br><br>
+              <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git add .</span>
+</td>
+</tr>
+</table>
+              <br>
+              <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git commit -am "first commit"</span>
+</td>
+</tr>
+</table>
+              <br>
+              これで現在までに作成されたファイルが、<strong>「<u>first commit</u>」という履歴で保存されました。</strong>
+              <br>
+              では下の入力をしてみて下さい。
+              <br><br>
+              <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git log</span>
+</td>
+</tr>
+</table>
+              <br>
+              <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/git_log.png",
+                                    :width => "90%",
+                                    :class => "hover_img textbook-title-img"),
+                         "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/git_log.png",
+                        :target => ["_blank"] %>
+              一つだけだとは思いますが、このような表示が出てきたでしょうか？この入力で、変更履歴を表示します。
+              <br>
+              中身を確認できたら<strong>「q」</strong>を押して下さい。これでまたコマンドを入力する画面に戻れます。
+              <br><br>
+              <i class="fa fa-arrow-right"></i>　<strong>ファイルの変更に区切りがついたら、「git add .」「git commit -am "履歴の名前"」で変更履歴を残しておくといいと思います。</strong>
+              <hr class="red-hr">
+              <strong>最後にherokuでホームページを公開しましょう！</strong>
+              <hr>
+              <p id="title2-3-3" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : heroku の設定</strong></p>
+              <br>
+              最後にherokuの設定をして、ウェブページを公開しましょう！
+              <br><br>
+              <small><i class="fa fa-exclamation color-red"></i>　herokuで公開するウェブページは、<strong>gitでの最新の変更履歴が適用されます</strong>。<br><strong>「<u>git commit -am "履歴の名前"</u>」</strong>が終わってから、heroku での設定を行いましょう。</small>
+              <br><br>
+              まずは、herokuで何も設定されていないページを作成します。
+              <br>
+              作成したいRailsのウェブサイトのフォルダ（「myapp」「message-app」など）で、下の入力をして下さい。
+              <br><br>
+              <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku create</span>
+</td>
+</tr>
+</table>
+              <br>
+              これで、herokuで初期のウェブページが作成されました。
+              <br>
+              終わったら、gitに保存された最新の変更履歴を適用させます。下の入力をして下さい。
+              <br><br>
+              <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git push heroku master</span>
+</td>
+</tr>
+</table>
+              <br>
+              これでページに変更履歴を適用できました。
+              <br>
+              続いて、Railsのページで作ったデータベースの設定を適用させます。下の入力をして下さい。
+              <br><br>
+              <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku run rake db:migrate</span>
+</td>
+</tr>
+</table>
+              <br>
+              これでRailsで作ったページを設定できました。
+              <br>
+              最後に下の入力をすれば、作ったページを見ることができます。
+              <br><br>
+              <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku open</span>
+</td>
+</tr>
+</table>
+              <br>
+              作ったページは公開されたでしょうか？
+              <hr>
+              <p id="title2-3-4" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : まとめ</strong></p>
+              <br>
+              最後にウェブページを公開する方法をまとめます。
+              <hr class="red-hr">
+              <ul class="number_ul">
+                <strong><li>Gemfile</li></strong>
+                  まずは「Gemfile」にgemの設定を加えます。
+                  <br><br>
+                  <i class="fa fa-file color-red"></i>　<strong>Gemfile（一番下の行に追加）</strong>
+                  <br>
+                  <small>
+                  ※　<strong><u>半角英数字で入力</u></strong>。変更が完了したら<strong><u>「Command」と「s」</u></strong>を一緒に押して内容を保存して下さい。
+                  </small>
+                  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>54
+55
+56
+57
+</td>
+<td class='code-content'><span class='code-line'>group <span class='word-purple'>:production</span><span class='word-red'> do</span></span>
+<span class='code-line'>  <span class='word-red'>gem </span><span class='word-yellow'>'rails_12factor'</span></span>
+<span class='code-line'>  <span class='word-red'>gem </span><span class='word-yellow'>'pg'</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+                  <br>
+                  設定ができたら、gemの内容を適用させます。
+                  <br><br>
+                  <strong>　ターミナル</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  これでRailsで作ったファルダでの設定は完了しました。
+                  <hr class="red-hr">
+                <strong><li>git</li></strong>
+                  続いて、gitに変更履歴を作成します。
+                  <br>
+                  公開したいページのファルダで、gitを作成します。
+                  <br><br>
+                  <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git init</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  <small>※　ファルダ内で一度設定してある場合は、この入力をしないで大丈夫です</small>
+                  <br><br>
+                  続いて次の入力で変更履歴を保存します。
+                  <br><br>
+                  <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git add .</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git commit -am "履歴の名前"</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  ここまででgitの設定は終了です。
+                  <hr class="red-hr">
+                <strong><li>heroku</li></strong>
+                  ここまでできたら、herokuの設定を行います。
+                  <br>
+                  ここまでで入力をしてきたファルダで下の入力をして、herokuのホームページを作成します。
+                  <br><br>
+                  <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku create</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  <small>※　ファルダ内で一度設定してある場合は、この入力をしないで大丈夫です</small>
+                  <br><br>
+                  続いてgitの最新の変更履歴を適用させ、
+                  <br><br>
+                  <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git push heroku master</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  データベースの設定を適用させます。
+                  <br><br>
+                  <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku run rake db:migrate</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  最後に下の入力で公開したページを確認しましょう！
+                  <br><br>
+                  <strong>　ターミナル（半角英数字で入力）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku open</span>
+</td>
+</tr>
+</table>
+              </ul>
+              <br>
+              <strong><i class="fa fa-arrow-right"></i>　ウェブページの公開はここまでです。</strong>
+          </h4>
+          <hr>
+          <div class="next-page">
+            <a href="javascript:history.back()" class="btn btn-primary">戻る</a>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>ウェブサイトを公開する(Mac)</h4></a>
+          <a href="#title0" class="list-group-item">0 : この章の目的</a>
+          <a href="#title1" class="list-group-item">1 : gitの導入</a>
+          <a href="#title2" class="list-group-item">2 : heroku</a>
+          <a href="#title2-1" class="list-group-item">　<small>① : herokuの登録</small></a>
+          <a href="#title2-2" class="list-group-item">　<small>② : Heroku Toolbelt のインストール</small></a>
+          <a href="#title2-3" class="list-group-item">　<small>③ : Herokuでページを公開</small></a>
+          <a href="#title2-3-1" class="list-group-item">　<small>⑴ : Rails のページの設定</small></a>
+          <a href="#title2-3-2" class="list-group-item">　<small>⑵ : gitの設定</small></a>
+          <a href="#title2-3-3" class="list-group-item">　<small>⑶ : herokuの設定</small></a>
+          <a href="#title2-3-4" class="list-group-item">　<small>⑷ : まとめ</small></a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

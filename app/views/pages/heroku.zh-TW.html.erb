@@ -1,0 +1,565 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>公開網站(Mac)</strong></h1>
+          </div>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header9.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
+          <h4>
+            <i class="fa fa-star color-red"></i>　<strong>在這個章，解釋使用Mac 公開 Ruby on Rails 作的網站的方法。</strong>
+            <hr>
+            網站的公開要使用
+            <strong>
+            <ul class="number_ul">
+              <li><u>git</u></li>
+              <li><u><a href="https://www.heroku.com" target="_blank">heroku</a></u></li>
+            </ul>
+            </strong>
+            這個兩個工具。
+            <hr class="red-hr">
+            首先使用 git 的工具保存 Ruby on Rails 的設定文件的編輯履歷，之後使用 heroku 公開網站。
+            <br><br>
+            那麽開始做吧！
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 導入 git</strong></h2>
+          <h4>
+            <strong>剛開始安裝 <u>git</u> 的工具吧！</strong>
+            <br><br>
+            在terminal打入下面的命令吧。
+            <br><br>
+            <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>brew install git</span>
+</td>
+</tr>
+</table>
+            <br>
+            這樣 git 的安裝完成了。
+            <br><br>
+            安裝完了之後，打入下面的命令設定 git 吧。
+            <br><br>
+            <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+</td>
+<td class='code-content'><span class='code-line'>git config -global user.name "自己的名字"</span>
+<span class='code-line'>git config -global user.email "自己的信箱"</span>
+</td>
+</tr>
+</table>
+          <br>
+          到這裡設定好git了。
+          <br>
+          打入下面的命令，看看有沒有出現git的版本。
+          <br><br>
+          <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git --version</span>
+</td>
+</tr>
+</table>
+          <br>
+          <strong>使用這個git，在heroku上公開網站。</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title2"><strong>2 : heroku</strong></h2>
+          <h4>
+            <strong>那麽使用這個heroku，公開網站吧！</strong>
+            <hr>
+            <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 登錄 heroku</strong></p>
+            <br>
+            首先登錄heroku吧。
+            在<a href="https://signup.heroku.com" target="_blank"><strong>heroku 的登錄網頁</strong></a>打入需要的資料，點擊<strong>「<u>create free acount</u>」</strong>吧。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_signup.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_signup.png",
+                        :target => ["_blank"] %>
+            登錄完了之後會送來驗證的電子郵件，看看內容之後做驗證吧。
+            <br>
+            在驗證的網頁需要打入密碼，設定自己喜歡的密碼吧。
+            <br><br>
+            到這裡設定好密碼了。從<a href="https://id.heroku.com/login" target="_blank"><strong>heroku 登錄網頁</strong></a>，試試可以登錄。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_login.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_login.png",
+                        :target => ["_blank"] %>
+            <strong>登錄好了嗎？</strong>
+            <br><br>
+            接着安裝，在terminal上動 heroku 的工具<strong>「<u>Heroku Toolbelt</u>」</strong>吧。
+            <hr>
+            <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 安裝 Heroku Toolbelt</strong></p>
+            <br>
+            <strong>接着安裝，在terminal上動heroku的工具吧。</strong>
+            <br><br>
+            從<a href="https://devcenter.heroku.com/articles/getting-started-with-ruby#set-up" target="_blank"><strong>這個網頁</strong></a>選擇<strong>「Mac OS X」</strong>，開始下載吧。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_web.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_web.png",
+                        :target => ["_blank"] %>
+            下載之後，打開下載好的文件吧。
+            <br>
+            剛開始會出現下面一樣的畫面。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_1.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_1.png",
+                        :target => ["_blank"] %>
+            點擊「continue」之後，
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_2.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/heroku_toolbelt_2.png",
+                        :target => ["_blank"] %>
+            會出現上面圖像一樣的畫面，繼續下載吧。
+            <br>
+            最後出現<strong>「<u>安裝完成了</u>」</strong>的顯示的話OK。
+            <hr class="red-hr">
+            <i class="fa fa-arrow-right"></i>　<strong>安裝好 Heroku Toolbelt 了，現在可以在terminal上動heroku了。</strong>
+            <br><br>
+            首先在terminal上，登錄 heroku 吧。
+            <br>
+            移動到想公開的網站的文件夾吧。
+            <br><br>
+            <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd 作的網頁(myapp, message-app 等等)</span>
+</td>
+</tr>
+</table>
+            <br>
+            移動之後，打入下面的打入吧。
+            <br><br>
+            <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku login</span>
+</td>
+</tr>
+</table>
+            <br>
+            打入之後會要求打入信箱跟密碼，打入自己的帳號資料吧。
+            <br>
+            <small>※　密碼不會再畫面上顯示</small>
+            <br><br>
+            登錄成功了話，會顯示<strong>「<u>Authentication successful.</u>」</strong>的文字。
+            <br><br>
+            <i class="fa fa-arrow-right"></i>　<strong>到這裡設定好heroku的設定了，接着公開網站吧！</strong>
+            <hr>
+            <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 用 Heroku 公開網站</strong></p>
+            <br>
+            <strong>heroku 的設定好了，接着公開網頁吧！</strong>
+            <br><br>
+            在 heroku 公開網站要設定，
+            <strong>
+            <ul class="number_ul">
+              <li>Rails 的網頁的設定</li>
+              <li>git 的設定</li>
+              <li>heroku 的設定</li>
+            </ul>
+            </strong>
+            這個3個內容。
+            <br>
+            那麽，一個一個做做看吧。
+            <hr>
+              <p id="title2-3-1" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : Rails 的網頁的設定</strong></p>
+              <br>
+              使用 heroku 公開網站的時候，需要編輯<strong><u>Gemfile</u></strong>文件的內容。Gemfile 上追加下面的內容吧。
+              <br><br>
+              <i class="fa fa-file color-red"></i>　<strong>Gemfile（在最下面行追加下面的內容）</strong>
+              <br>
+              <small>
+              ※　<strong><u>用半母字母數字打入</u></strong>。編輯好了之後，一起點擊<strong><u>「Command」跟「s」</u></strong>保存內容。
+              </small>
+              <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>54
+55
+56
+57
+</td>
+<td class='code-content'><span class='code-line'>group <span class='word-purple'>:production</span><span class='word-red'> do</span></span>
+<span class='code-line'>  <span class='word-red'>gem </span><span class='word-yellow'>'rails_12factor'</span></span>
+<span class='code-line'>  <span class='word-red'>gem </span><span class='word-yellow'>'pg'</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+              <br>
+              在裡面的<strong>「group :production do」</strong>在設定，在公開的網站（運用環境）使用的<strong>「<a href="/zh-TW/mugcups/3#title2-2-1">gem</a>」</strong>。
+              <br><br>
+              文件上設定的在公開的網站（運用環境）使用的 gem 是
+              <strong>
+              <ul class="number_ul">
+                <li>rails_12factor（在 heroku 上使用<u>CSS文件或者圖像文件</u>的設定）</li>
+                <li>pg（在 heroku 上使用<u>資料庫PostgreSQL</u>的設定）</li>
+              </ul>
+              </strong>
+              這個兩個設定。
+              <br>
+              為了使用這個「PostgreSQL」，打入下面的命令吧。
+              <br><br>
+              <strong>　terminal（用半母字母數字打入）</strong>
+              <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>brew install postgresql</span>
+</td>
+</tr>
+</table>
+              <br>
+              <small>※　已經使用這個命令安裝好 postgreSQL 了，接下不用打入這個命令了。</small>
+              <hr class="red-hr">
+              那麽最後為了反映設定，在terminal上打入下面的命令吧。
+              <br><br>
+              <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+              <br>
+              <small>
+                <i class="fa fa-arrow-right"></i>　不動的話，刪除<strong>「Gemfile.lock」</strong>之後再試試看吧。
+              </small>
+              <br><br>
+              到這裡做好「Gemfile」的設定了。
+              <hr>
+              <p id="title2-3-2" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : git 的設定</strong></p>
+              <br>
+              接着做git的設定吧。
+              <br>
+              <strong>git 是保存文件的編輯履歷的工具</strong>。使用這個git，在heroku上公開網站。
+              <br><br>
+              首先，在公開的網站的文件夾（「myapp」「message-app」等等）上設定使用 git 吧。
+              <br>
+              要公開的 Rails 的網站的文件夾上打入下面的命令吧。
+              <br><br>
+              <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git init</span>
+</td>
+</tr>
+</table>
+              <br>
+              這樣做好，在 Rails 的網站上使用 git 的設定了。
+              <br>
+              在這裡保存文件的編輯履歷。打入下面的命令吧。
+              <br><br>
+              <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git add .</span>
+</td>
+</tr>
+</table>
+              <br>
+              <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git commit -am "first commit"</span>
+</td>
+</tr>
+</table>
+              <br>
+              到這裡，保存<strong>「<u>first commit</u>」的名字的編輯文件的履歷了。</strong>
+              <br>
+              接着打入下面的命令吧。
+              <br><br>
+              <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git log</span>
+</td>
+</tr>
+</table>
+              <br>
+              <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/git_log.png",
+                                    :width => "90%",
+                                    :class => "hover_img textbook-title-img"),
+                         "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/heroku/git_log.png",
+                        :target => ["_blank"] %>
+              有沒有顯示這樣的履歷嗎？用這個命令，顯示編輯履歷。
+              <br>
+              確認裡面之後，點擊<strong>「q」</strong>吧。這樣可以回到打入命令的畫面。
+              <br><br>
+              <i class="fa fa-arrow-right"></i>　<strong>編輯文件之後，打入「git add .」「git commit -am "履歷的名字"」可以保存文件的編輯履歷。</strong>
+              <hr class="red-hr">
+              <strong>最後在 heroku 公開網站吧！</strong>
+              <hr>
+              <p id="title2-3-3" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : heroku 的設定</strong></p>
+              <br>
+              最後做 heroku 的設定，公開網站吧！
+              <br><br>
+              <small><i class="fa fa-exclamation color-red"></i>　用 heroku 公開的網站會適用<strong>git上的最新的編輯履歷</strong>。<br><strong>「<u>git commit -am "履歷的名字"</u>」</strong>的打入完了之後，再做 heroku 上的設定吧。</small>
+              <br><br>
+              首先，用 heroku 作沒有設定內容的網站。
+              <br>
+              想公開的 Rails 的網站的文件夾上（「myapp」「message-app」等等），打入下面的命令吧。
+              <br><br>
+              <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku create</span>
+</td>
+</tr>
+</table>
+              <br>
+              這樣，作好了剛開始沒有內容的網站了。
+              <br>
+              完了之後，吧 git 保存好的最新的編輯履歷適用在網站上吧。打入下面的命令吧。
+              <br><br>
+              <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git push heroku master</span>
+</td>
+</tr>
+</table>
+              <br>
+              這樣，在網站上適用git 的最新的編輯履歷了。
+              <br>
+              接着適用，在 Rails 的網站作好的資料庫。打入下面的命令吧。
+              <br><br>
+              <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku run rake db:migrate</span>
+</td>
+</tr>
+</table>
+              <br>
+              這樣設定好，用 Rails 作的網站了。
+              <br>
+              最後打入下面的命令，可以看作好的網站。
+              <br><br>
+              <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku open</span>
+</td>
+</tr>
+</table>
+              <br>
+              作好的網站，有沒有公開了嗎？
+              <hr>
+              <p id="title2-3-4" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : 總結</strong></p>
+              <br>
+              最後總結公開網站的方法。
+              <hr class="red-hr">
+              <ul class="number_ul">
+                <strong><li>Gemfile</li></strong>
+                  首先在「Gemfile」追加gem的設定。
+                  <br><br>
+                  <i class="fa fa-file color-red"></i>　<strong>Gemfile（在最下面的行追加內容）</strong>
+                  <br>
+                  <small>
+                  ※　<strong><u>用半母字母數字打入</u></strong>。編輯好了之後，一起點擊<strong><u>「Command」跟「s」</u></strong>保存內容。
+                  </small>
+                  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>54
+55
+56
+57
+</td>
+<td class='code-content'><span class='code-line'>group <span class='word-purple'>:production</span><span class='word-red'> do</span></span>
+<span class='code-line'>  <span class='word-red'>gem </span><span class='word-yellow'>'rails_12factor'</span></span>
+<span class='code-line'>  <span class='word-red'>gem </span><span class='word-yellow'>'pg'</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+                  <br>
+                  設定好了之後，適用 gem 的內容。
+                  <br><br>
+                  <strong>　terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  這樣，設定好了網站的文件夾上的內容了。
+                  <hr class="red-hr">
+                <strong><li>git</li></strong>
+                  接着，作git的編輯履歷。
+                  <br>
+                  在想公開的網站的文件夾上，作git。
+                  <br><br>
+                  <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git init</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  <small>※　如果在文件夾上設定過的話，不用打入這個命令</small>
+                  <br><br>
+                  接下，打入下面的命令保存編輯履歷。
+                  <br><br>
+                  <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git add .</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git commit -am "履歷的名字"</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  到這裡，做好git的設定了。
+                  <hr class="red-hr">
+                <strong><li>heroku</li></strong>
+                  接着做heroku的設定。
+                  <br>
+                  打入下面的命令，作 heroku 的網站。
+                  <br><br>
+                  <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku create</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  <small>※　在文件夾上有打入過的話，不用打入這個命令</small>
+                  <br><br>
+                  接着，適用git的最新的編輯履歷，
+                  <br><br>
+                  <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>git push heroku master</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  適用資料庫的設定。
+                  <br><br>
+                  <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku run rake db:migrate</span>
+</td>
+</tr>
+</table>
+                  <br>
+                  最後打入下面的命令，看看網站的畫面吧！
+                  <br><br>
+                  <strong>　terminal（用半母字母數字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>heroku open</span>
+</td>
+</tr>
+</table>
+              </ul>
+              <br>
+              <strong><i class="fa fa-arrow-right"></i>　網站的公開到這裡。</strong>
+          </h4>
+          <hr>
+          <div class="next-page">
+            <a href="javascript:history.back()" class="btn btn-primary">返回</a>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>公開網站(Mac)</h4></a>
+          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 導入git</a>
+          <a href="#title2" class="list-group-item">2 : heroku</a>
+          <a href="#title2-1" class="list-group-item">　<small>① : 登錄heroku</small></a>
+          <a href="#title2-2" class="list-group-item">　<small>② : 安裝 Heroku Toolbelt</small></a>
+          <a href="#title2-3" class="list-group-item">　<small>③ : 用 Heroku 公開網站</small></a>
+          <a href="#title2-3-1" class="list-group-item">　<small>⑴ : Rails 的網頁的設定</small></a>
+          <a href="#title2-3-2" class="list-group-item">　<small>⑵ : git 的設定</small></a>
+          <a href="#title2-3-3" class="list-group-item">　<small>⑶ : heroku 的設定</small></a>
+          <a href="#title2-3-4" class="list-group-item">　<small>⑷ : 總結</small></a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>
