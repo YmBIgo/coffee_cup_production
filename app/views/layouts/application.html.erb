@@ -100,8 +100,10 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <%= link_to '日本語',
-                      url_for(controller: controller.controller_name, action: controller.action_name, locale: 'ja')
+          <%= link_to "English",
+                      url_for(controller: controller.controller_name,
+                              action: controller.action_name,
+                              locale: 'en' )
           %>
         </li>
         <!--
@@ -115,6 +117,11 @@
         <li>
           <%= link_to '繁體字',
                       url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-TW')
+          %>
+        </li>
+        <li>
+          <%= link_to '日本語',
+                      url_for(controller: controller.controller_name, action: controller.action_name, locale: 'ja')
           %>
         </li>
       </ul>
