@@ -98,14 +98,11 @@
                               locale: 'en' )
           %>
         </li>
-        <!--
         <li>
-          <%= link_to_if params[:locale].present?,
-                         '简体字',
-                         url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-CN')
+          <%= link_to '简体字',
+                      url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-CN')
           %>
         </li>
-        -->
         <li>
           <%= link_to '繁體字',
                       url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-TW')
