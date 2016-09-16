@@ -1,11 +1,10 @@
-<% provide :title, "編輯#{current_user.full_name}的資料" %>
 <header class="text-center header-img-pen">
   <div class="header-content fadeIn wow">
   <%= render "common/alert" %>
     <div class="header-content-word">
       <div class="header-content-word-form text-left">
         <%= form_for @user do |f| %>
-          <h2 class="color-green text-center" style="margin-top:8px"><strong><i class="fa fa-edit"></i> 編輯帳號資料</strong></h2>
+          <h2 class="color-green text-center" style="margin-top:8px"><strong><i class="fa fa-edit"></i> 编辑帐号资料</strong></h2>
           <hr class="red-hr">
           <div class="field">
             <%= f.label :family_name %>
@@ -40,12 +39,12 @@
           </div>
           <br>
           <div class="text-center">
-            <%= f.submit "編輯", :class => "btn btn-green" %>
+            <%= f.submit "编辑", :class => "btn btn-green" %>
           </div>
         <% end %>
         <br>
         <div class="text-center">
-          <a href="/<%= I18n.locale %>/dashboard" class="btn btn-warning">返回帳號資料</a>
+          <a href="/<%= I18n.locale %>/dashboard" class="btn btn-warning">返回帐号资料</a>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
       <% unless user_studiable? %>
         <h3 class="alert alert-warning">
           <strong>
-          教材<a href="/<%= I18n.locale %>/pay_warning" target="_blank">從這裡</a>可以買。
+          教材<a href="/<%= I18n.locale %>/pay_warning" target="_blank">從這裡</a>可以購買。
           </strong>
         </h3>
       <% end %>
@@ -59,8 +59,8 @@
             </div>
           </div>
           <% else %>
-            <h4>還沒買教材</h4>
-            <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-green">從這裡買教材</a>
+            <h4>還沒購買教材</h4>
+            <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-green">從這裡購買教材</a>
             <hr class="red-hr">
             <p>
             <a href="/zh-TW/mugcups" target="_blank" class="btn btn-primary">
@@ -110,7 +110,7 @@
             <br>
             <strong>公司，學校</strong>　　 : <%= current_user.company_name %>
             <br>
-            <strong>都道府県名</strong>　　 : <%= current_user.prefecture %>
+            <strong>縣市鄉鎮</strong>　　 : <%= current_user.prefecture %>
           </h4>
           <p><%= link_to "編輯登錄資料", edit_user_registration_path, :class => "btn btn-warning" %></p>
         </div>

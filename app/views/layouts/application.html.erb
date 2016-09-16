@@ -42,8 +42,8 @@
     }) %>
   <% elsif I18n.locale == :"zh-CN" %>
     <%= display_meta_tags({
-        :title => 'Coffee-Cup',
-        :description => '想学学看电脑的你。在 \'Coffee-Cup\' 学学看这么样？',
+        :title => 'Coffee-Cup | 学习用 Rails 作网站',
+        :description => '想学学看电脑的你。在 \'Coffee-Cup\' 学习作网站的方法吧！',
         :keywords => 'programing, Ruby on rails, website',
         :open_graph => {
           :title => "Coffee-Cup | Let's study programing",
@@ -110,14 +110,12 @@
         </li>
         -->
 
-        <!--
         <li>
           <%= link_to_if params[:locale].present?,
                          '简体字',
                          url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-CN')
           %>
         </li>
-        -->
         <li>
           <%= link_to '繁體字',
                       url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-TW')
