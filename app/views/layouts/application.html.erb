@@ -19,11 +19,11 @@
   <% elsif I18n.locale == :en %>
     <%= display_meta_tags({
         :title => 'Coffee-Cup',
-        :description => 'Website for people who wanna study programing \'Coffee-Cup\'',
-        :keywords => 'programing, Ruby on rails, website',
+        :description => 'Website for people who wanna study web developing \'Coffee-Cup\'',
+        :keywords => 'programing, Ruby on rails, web developing',
         :open_graph => {
-          :title => "Coffee-Cup | Let's study programing！",
-          :url   => 'http://www.coffee-cup.com/',
+          :title => "Coffee-Cup | Let's study web developing！",
+          :url   => 'http://www.coffee-cup.com/en',
         },
         :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
         :reverse => true
@@ -42,8 +42,8 @@
     }) %>
   <% elsif I18n.locale == :"zh-CN" %>
     <%= display_meta_tags({
-        :title => 'Coffee-Cup | 学习用 Rails 作网站',
-        :description => '想学学看电脑的你。在 \'Coffee-Cup\' 学习作网站的方法吧！',
+        :title => 'Coffee-Cup',
+        :description => '想学学看电脑的你。在 \'Coffee-Cup\' 学学看这么样？',
         :keywords => 'programing, Ruby on rails, website',
         :open_graph => {
           :title => "Coffee-Cup | Let's study programing",
@@ -81,15 +81,7 @@
 </head>
 <body>
 
-  <% if I18n.locale == :ja %>
-    <%= render 'common/navbar' %>
-  <% elsif I18n.locale == :en %>
-    <%= render "common/navbar" %>
-  <% elsif I18n.locale == :"zh-CN" %>
-    <%= render "common/navbar_zh_cn" %>
-  <% elsif I18n.locale == :"zh-TW" %>
-    <%= render "common/navbar_zh_tw" %>
-  <% end %>
+  <%= render 'common/navbar' %>
 
   <div id="main-section">
     <%= yield %>
@@ -99,8 +91,6 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-
-        <!--
         <li>
           <%= link_to "English",
                       url_for(controller: controller.controller_name,
@@ -108,14 +98,14 @@
                               locale: 'en' )
           %>
         </li>
-        -->
-
+        <!--
         <li>
           <%= link_to_if params[:locale].present?,
                          '简体字',
                          url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-CN')
           %>
         </li>
+        -->
         <li>
           <%= link_to '繁體字',
                       url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-TW')
@@ -131,15 +121,8 @@
     <br>
   </div>
 
-  <% if I18n.locale == :ja %>
-    <%= render "common/footer" %>
-  <% elsif I18n.locale == :en %>
-    <%= render "common/footer" %>
-  <% elsif I18n.locale == :"zh-CN" %>
-    <%= render "common/footer_zh_cn" %>
-  <% elsif I18n.locale == :"zh-TW" %>
-    <%= render "common/footer_zh_tw" %>
-  <% end %>
+  <%= render "common/footer" %>
+
   <script>
     new WOW().init();
   </script>
