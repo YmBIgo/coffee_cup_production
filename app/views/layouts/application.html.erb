@@ -52,6 +52,18 @@
         :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
         :reverse => true
     }) %>
+  <% else %>
+    <%= display_meta_tags({
+        :title => 'Coffee-Cup | ウェブサイトの作り方を学びたいなら',
+        :description => 'あなたにウェブサイトの作り方を教えるサイト「Coffee-Cup」',
+        :keywords => 'ウェブサイト作り方, Ruby on rails, プログラミング初心者',
+        :open_graph => {
+          :title => "Coffee-Cup | ウェブサイトの作り方を学習できるサイト",
+          :url   => 'http://www.coffee-cup.com/',
+        },
+        :viewport => "width=device-width, initial-scale=0.7, minimum-scale=0.7, user-scalable=yes" ,
+        :reverse => true
+    }) %>
   <% end %>
   <meta property="og:site_name" content="Coffee-Cup">
   <meta property="og:type" content="article">
@@ -91,6 +103,7 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
+<!--
         <li>
           <%= link_to "English",
                       url_for(controller: controller.controller_name,
@@ -98,14 +111,12 @@
                               locale: 'en' )
           %>
         </li>
-        <!--
         <li>
-          <%= link_to_if params[:locale].present?,
-                         '简体字',
-                         url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-CN')
+          <%= link_to '简体字',
+                      url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-CN')
           %>
         </li>
-        -->
+-->
         <li>
           <%= link_to '繁體字',
                       url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-TW')
@@ -138,9 +149,7 @@
       ga('send', 'pageview');
     </script>
   <% end %>
-</body>
-</html>
-cript>
+  <script>
     new WOW().init();
   </script>
 

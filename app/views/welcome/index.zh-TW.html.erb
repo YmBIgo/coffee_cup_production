@@ -17,17 +17,19 @@
           <br>
         </strong>
       </h1>
+      <br>
+      <p><a href="#lesson-title" class="btn btn-danger">詳細</a></p>
       <hr class="red-hr">
       <div class="col-xs-6">
         <h4 style="line-height:1.8; margin-bottom:8px">
         <strong>
-          在我們的日常生活中，不可缺少的網路。
+          網路是在我們的日常生活中不可缺少的基礎設施。
           <br>
-          我們提供作網站的教材(可以免費使用)！
+          我們提供作網站，學編程的教材(可以免費使用)！
         </strong>
         </h4>
         <p><strong>※　請準備 <u>Windows 或者 Mac 的電腦</u></strong></p>
-        <p><a href="#lesson-title" class="btn btn-danger">詳細</a></p>
+        <p><%= link_to "開始！", mugcups_path, :class => "btn btn-warning", :target => ["_blank"] %></p>
       </div>
       <div class="col-xs-6">
         <%= form_for @mail_sender do |f| %>
@@ -153,7 +155,7 @@
               <i class="fa fa-yen fa-4x color-green" style="margin-top:3px"></i>
               <h3 style="margin-top:17px">免費使用</h3>
               <p class="text-muted">
-              <strong><u>免費可以看裡面的內容</u></strong>
+              <strong><u>免費可以学习裡面的內容</u></strong>
               <br>
               <small>
               ※　我們用，叫做 <strong><u>Ruby on Rails</u></strong>的軟件。

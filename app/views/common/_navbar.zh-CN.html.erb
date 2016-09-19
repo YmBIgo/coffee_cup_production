@@ -37,10 +37,13 @@
             </li>
           <% else %>
             <li class="hover-nav">
-              <%= link_to "注册",new_user_registration_path, :class => "nav-word" %>
+              <a href="/zh-CN/codes" class="nav-word" target="_blank">设定一览</a>
             </li>
             <li class="hover-nav">
-              <%= link_to "登入", new_user_session_path, :class => "nav-word" %>
+              <a href="/zh-CN/mugcups" class="nav-word" target="_blank">Mugcup(基础编)</a>
+            </li>
+            <li class="hover-nav">
+              <a href="/zh-CN/coffee_cups" class="nav-word" target="_blank">Coffee(应用编)</a>
             </li>
           <% end %>
             <li style="margin-top:5px;">

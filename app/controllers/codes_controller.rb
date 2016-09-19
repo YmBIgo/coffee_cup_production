@@ -5,7 +5,7 @@ class CodesController < ApplicationController
   before_action :authenticate_user!, :if => :lang_ok?
 
   def show
-    unless I18n.locale == :"zh-TW"
+    if lang_ok?
       if current_user.study_enabled == true
         render template: "codes/#{params[:page]}"
       else
@@ -18,7 +18,7 @@ class CodesController < ApplicationController
   end
 
   def index
-    unless I18n.locale == :"zh-TW"
+    if lang_ok?
       if current_user.study_enabled == true
       else
         redirect_to dashboard_path
@@ -28,9 +28,9 @@ class CodesController < ApplicationController
   end
 
   private
-  # If locale is zh-TW return true
+  # If locale is zh-TW || zh-CN return true
   def lang_ok?
-    if I18n.locale == :"zh-TW"
+    if I18n.locale == :"zh-TW" || :"zh-CN"
       return false
     else
       return true

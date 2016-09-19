@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, :only => [:show], :if => :lang_ok?
 
   def show
-    unless I18n.locale == :"zh-TW"
+    if lang_ok?
       if current_user.study_enabled == true
         render template: "pages/#{params[:page]}"
       else
@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   private
   # If locale is zh-TW return true
   def lang_ok?
-    if I18n.locale == :"zh-TW"
+    if I18n.locale == :"zh-TW" || :"zh-CN"
       return false
     else
       return true
