@@ -1,59 +1,57 @@
 <h4 id="chapter2-1-1">
-        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : Ruby on Rails的網頁</strong></p>
+        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : Ruby on Rails的网页</strong></p>
         <br>
-        為了作網站，Ruby on Rails上必須要自己設定這麼樣顯示網頁。
+        为了作网站，Ruby on Rails上必须要自己设定这么样显示网页。
         <br><br>
-        可是<u>網站不只是在顯示網頁，還必須要保存資料</u>。在 Ruby on Rails 上，<strong class="color-red">按着資料顯示跟保存的方法事先有指定好幾個作網頁的方法。</strong>
+        可是<u>网站不只是在显示网页，还必须要保存资料</u>。在 Ruby on Rails 上，<strong class="color-red">随着资料显示跟保存的方法，有几个作网页的方法。</strong>
         <br>
-        Ruby on Rails 是、按着這個資料的顯示跟保存的方法自己設定網頁。
+        用 Ruby on Rails 作网站的时候要用这个资料的显示跟保存的方法，自己设定网页。
         <br><br>
-        <strong>我們用Twitter的例子，解釋資料的顯示跟保存的方法跟設定的網頁。</strong>
+        <strong>我們用Twitter的例子，解释 Ruby on Rails 上的资料的显示跟保存的方法跟设定的网页吧。</strong>
         <hr class="red-hr">
-        <i class="fa fa-check-square color-red"></i>　<strong>資料的顯示</strong>
+        <i class="fa fa-check-square color-red"></i>　<strong>资料的显示</strong>
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_index_and_show.png",
                               :width => "90%",
                               :class => "textbook-title-img hover_img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_index_and_show.png",
                     :target => ["_blank"] %>
-        <strong class="remarkable color-red">顯示</strong>在資料庫裡保存的資料。
+        在这个网页，<strong class="remarkable color-red">显示</strong>在资料库里保存的资料。
         <br>
-        顯示的方法有顯示資料庫裡全部的資料的方法跟，<strong class="little-remarkable"><u>選擇</u></strong>資料庫裡的資料的方法的兩種。
+        显示的方法有两个。一个是显示资料库里全部的资料的方法，另一个是<strong class="little-remarkable"><u>选择</u></strong>资料库里的资料的方法。
         <br><br>
-        有兩種的是，可以說是<strong class="color-blue">主頁</strong>跟<strong class="color-red">推特</strong>的差別。
-        <br>
-        <small>※　還可以作不從資料庫顯示的網頁</small>
+        有两种的是，可以说是<strong class="color-blue">推特的主页</strong>跟<strong class="color-red">推特</strong>的差别。
         <hr class="red-hr">
-        <i class="fa fa-check-square color-red"></i>　<strong>作資料</strong>
+        <i class="fa fa-check-square color-red"></i>　<strong>作资料</strong>
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_new.png",
                               :width => "90%",
                               :class => "textbook-title-img hover_img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_new.png",
                     :target => ["_blank"] %>
-        <strong class="remarkable color-red">保存</strong>利用者打入的資料。
+        在这个网页，<strong class="remarkable color-red">保存</strong>利用者打入的资料。
         <br>
-        這裡有打入內容的網頁跟保存資料的網頁。
+        这里有打入內容的网页跟保存资料的网页。
         <hr class="red-hr">
-        <i class="fa fa-check-square color-red"></i>　<strong>編輯資料</strong>
+        <i class="fa fa-check-square color-red"></i>　<strong>编辑资料</strong>
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_edit.png",
                               :width => "90%",
                               :class => "textbook-title-img hover_img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_edit.png",
                     :target => ["_blank"] %>
-        按着打入的內容<strong class="remarkable color-red">更新利用者選這的資料</strong>。
+        在这个网页，随着打入的內容，<strong class="remarkable color-red">更新利用者选择的资料</strong>。
         <br>
-        這裡也有打入內容的網頁跟按着打入的資料更新資料的網頁。
+        这里也有打入內容的网页跟随着打入的资料更新资料的网页。
         <hr class="red-hr">
-        <i class="fa fa-check-square color-red"></i>　<strong>刪除資料</strong>
+        <i class="fa fa-check-square color-red"></i>　<strong>删除资料</strong>
         <br>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_destroy.png",
                               :width => "90%",
                               :class => "textbook-title-img hover_img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page2/Tweet_destroy.png",
                     :target => ["_blank"] %>
-        <strong class="remarkable color-red">從資料庫裡刪除</strong>選擇的資料。
+        在这个网页，<strong class="remarkable color-red">從资料库里删除</strong>选择的资料。
         <hr class="red-hr">
-        <i class="fa fa-star color-blue"></i>　Ruby on Rails上，自己設定這麼樣顯示<strong class="little-remarkable"><u>資料的顯示，新增，編輯，刪除</u></strong>的四種網頁。
+        <i class="fa fa-star color-blue"></i>　Ruby on Rails上，自己设定这么样作<strong class="little-remarkable"><u>资料的显示，新增，编辑，删除</u></strong>的四种网页。
 </h4>
