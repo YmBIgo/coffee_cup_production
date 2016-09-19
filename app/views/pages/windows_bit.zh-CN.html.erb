@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>確認Windows的bit</strong></h1>
+          </div>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header3.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <br>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
+          <h4>
+            <i class="fa fa-windows color-blue"></i>　<strong>解釋確認Windows的bit的方法。</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 確認bit</strong></h2>
+          <h4>
+            <br>
+            首先打開「控制面板」。
+            <br>
+            <ul class="number_ul">
+              <li>如果是<strong><u>Windows10</u></strong>的話，用<strong>「<u>Cortana</u>」</strong>上</li>
+              <li>如果是<strong><u>Windows8以下</u></strong>的話，用<strong>「<u>搜索框</u>」上</strong></li>
+            </ul>
+            打入<strong>「<u>控制面板</u>」</strong>之後，打開這裡。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm1.png",
+                                  :class => "hover_img textbook-title-img",
+                                  :width => "90%"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm1.png",
+                        :target => ["_blank"] %>
+            顯示下面一樣的畫面的話，點擊<strong>「<u>系統和安全</u>」</strong>。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm2.png",
+                                  :class => "hover_img textbook-title-img",
+                                  :width => "90%"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm2.png",
+                        :target => ["_blank"] %>
+            會顯示下面的畫面之後，點擊<strong>「<u>系統</u>」</strong>。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm3.png",
+                                  :class => "hover_img textbook-title-img",
+                                  :width => "90%"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm3.png",
+                        :target => ["_blank"] %>
+            會顯示的畫面上，確認您使用的電腦的bit。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm4.png",
+                                  :class => "hover_img textbook-title-img",
+                                  :width => "90%"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/windows_rails/bit_confirm4.png",
+                        :target => ["_blank"] %>
+          </h4>
+          <div class="next-page">
+            <a href="javascript:history.back()" class="btn btn-primary">下章</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title">確認Windows的bit</a>
+          <a href="#title0" class="list-group-item">0 : 這個章的Rails</a>
+          <a href="#title1" class="list-group-item">1 : 確認bit</a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>
