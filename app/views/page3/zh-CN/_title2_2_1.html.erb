@@ -1,62 +1,62 @@
 <h4 id="chapter3-2-2-1">
-        <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 工具的設定跟導入</strong></p>
-        Rails on Rails上、<strong><u>使用在網路上公開的作網站的工具（叫做「gem」）</u></strong>作網站。
+        <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 工具的设定跟导入</strong></p>
+        Rails on Rails上、<strong><u>使用在网路上公开的作网站的工具（叫做「gem」）</u></strong>作网站。
         <br><br>
-        這些工具會作，比如說<u><strong>用戶管理或者圖像的保存</strong>等等的機能。</u>。
+        使用这些工具，可以作比如说<u><strong>用户管理或者图像的保存</strong>等等的机能。</u>。
 
         <br><br>
-        <i class="fa fa-star color-red"></i>　<strong class="little-remarkable">在這裡做做看這個gem的設定跟導入。</strong>
+        <i class="fa fa-star color-red"></i>　<strong class="little-remarkable">在这里做做看这个gem的设定跟导入。</strong>
         <hr class="red-hr">
-        事先用Sublime Text，打開感才做的「myapp」。
+        事先用Sublime Text，打开刚才做的「myapp」吧。
         <br>
         <small>
-        ※　打開文件跟文件夾的方法，<strong><a href="/zh-TW/mugcups/how_to_open#title1" target="_blank">請參考這裡</a></strong>。
+        ※　打开文件跟文件夾的方法，<strong><a href="/zh-CN/mugcups/how_to_open#title1" target="_blank">请参考这里</a></strong>。
         <br>
-        <i class="fa fa-windows"></i>　用Windows打開文件跟文件夾的方法<a href="/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+        <i class="fa fa-windows"></i>　用Windows打开文件跟文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
         </small>
         <br><br>
-        有出現下面一樣的畫面嗎？
+        有出现下面一样的画面了吗？
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Window_Sublime_Text_myapp.png",
                     :target => ["_blank"] %>
-        畫面出來了後，打開「<strong>Gemfile</strong>」的文件。
-        顯示下面一樣的內容的話，OK！
+        画面出来之后，打开「<strong>Gemfile</strong>」的文件。
+        显示下面一样的內容的话，OK！
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Open_Gemfile.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Sublime_Text_Open_Gemfile.png",
                     :target => ["_blank"] %>
-        用這個<strong>「<u>Gemfile</u>」的文件</strong>，設定工具的設定。
+        用这个<strong>「<u>Gemfile</u>」的文件</strong>，设定工具。
         <br>
-        應為剛開始已經設定好了需要的工具，所以文件裡已經有內容。
+        应为刚开始已经设定好需要的工具，所以文件里已经有內容。
         <br><br>
-        看裡面，會看到「<strong><u>gem '〜'</u></strong>」或者「<strong><u>gem '〜','〜'</u></strong>」樣子的文字。
+        看里面，会看到「<strong><u>gem '〜'</u></strong>」或者「<strong><u>gem '〜','〜'</u></strong>」样子的文字。
         <br><br>
-        如果想用工具的話，在「<strong>Gemfile</strong>」裡加上
+        如果想用工具的话，在「<strong>Gemfile</strong>」里加上
 <pre>
 gem '工具的名字'
 </pre>
-        的設定。（需要的話，加上「<u>, '版本'</u>」）
+        的设定。（需要的话，加上「<u>, '版本'</u>」）
         <hr>
-        到這裡解釋了設定工具的「Gemfile」文件。
+        到这里解释了设定工具的「Gemfile」文件。
         <br><br>
-        這樣設定是完了。但是<strong><u>工具的設定還沒做完。</u></strong>還沒導入完成、所以還不能用工具。
+        这样设定完成了。但是<strong><u>工具的设定还没做完。</u></strong>还没做好导入、所以还不能用工具。
         <br><br>
-        <i class="fa fa-star color-red"></i>　<strong class="little-remarkable">在這邊，導入工具的設定。</strong>
+        <i class="fa fa-star color-red"></i>　<strong class="little-remarkable">在这边，导入工具的设定。</strong>
         <hr class="red-hr">
-        工具的設定是編輯「Gemfile」的內容。但是<strong>工具的導入是用terminal（或者命令提示符）做。</strong>
+        工具的设定是编辑「Gemfile」的內容。但是<strong>工具的导入是用terminal（或者命令提示符）做。</strong>
         <br><br>
-        首先，打開terminal（不知道的話，<a href="/zh-TW/mugcups/2#title2-1" target="_blank"><strong>請參考這裡</strong></a>）、移動到「<u>rails_project</u>」。
+        首先，打开terminal（不知道的話，<a href="/zh-CN/mugcups/2#title2-1" target="_blank"><strong>请参考这里</strong></a>）、移动到「<u>rails_project</u>」。
         <br><br>
         <p class="alert alert-success">
-        <span><i class="fa fa-windows color-blue"></i>　<strong>用Windows移動到「rails_projects」的方法，<a href="/zh-TW/mugcups/windows_tips#title1-2" target="_blank">請參考這裡</a></strong></span>
+        <span><i class="fa fa-windows color-blue"></i>　<strong>用Windows移动到「rails_projects」的方法，<a href="/zh-CN/mugcups/windows_tips#title1-2" target="_blank">请参考这里</a></strong></span>
         </p>
         <br>
         　<strong>terminal</strong>
         <br>
-        <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」。</small>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，请使用「命令提示符」。</small>
 <table class="highlight">
 <tr>
 <td class='code-line-no text-center'>1
@@ -68,11 +68,11 @@ gem '工具的名字'
 </tr>
 </table>
 <br>
-        到這邊、移動到剛才作的「myapp」。
+        到这边、移動到刚才作好的「myapp」。
 <br><br>
         <strong>terminal</strong>
         <br>
-        <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」。</small>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，请使用「命令提示符」。</small>
 <table class="highlight">
 <tr>
 <td class='code-line-no text-center'>1
@@ -87,13 +87,13 @@ gem '工具的名字'
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_cd_myapp.png",
                     :target => ["_blank"] %>
-        <strong>那麽，導入工具吧！請打入下面的文字。</strong>
+        <strong>那么，导入工具吧！请打入下面的文字。</strong>
         <br>
-        <small>※　用半母字母數字打入。</small>
+        <small>※　用半母字母数字打入。</small>
 <br><br>
         <strong>terminal</strong>
         <br>
-        <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，使用「命令提示符」</small>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，使用「命令提示符」</small>
 <table class="highlight">
 <tr>
 <td class='code-line-no text-center'>1
@@ -104,27 +104,27 @@ gem '工具的名字'
 </table>
 <br>
 <small>
-  <i class="fa fa-arrow-right"></i>　不會動的話，先刪除在同樣文件夾裡的<strong>「<u>Gemfile.lock</u>」</strong>之後再試一次。
+  <i class="fa fa-arrow-right"></i>　不会动的话，先删除在同样文件夾里的<strong>「<u>Gemfile.lock</u>」</strong>之后再试一次。
 </small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_Bundle_install_after.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_Bundle_install_after.png",
                     :target => ["_blank"] %>
-        打入之後，有沒有顯示這樣的畫面呢？
+        打入之后，有沒有显示这样的画面呢？
         <br>
-        注意看、可以看到設定文件裡的工具。
+        注意看、可以看到设定文件里的工具。
         <br><br>
-        <strong><u>在「Gemfile」上加設定之後、在terminal上打入「bundle install」。</u></strong>
+        <strong><u>在「Gemfile」上加设定之后、在terminal上打入「bundle install」。</u></strong>
         <br><br>
-        <strong class="remarkable">這樣工具的導入完成了。</strong>
+        <strong class="remarkable">这样工具的导入完成了。</strong>
         <br>
-        <small>※　在這邊是說工具、正確的是「<strong class="color-red"><i><u>gem</u></i></strong>」。</small>
+        <small>※　在这边是说工具、正确是「<strong class="color-red"><i><u>gem</u></i></strong>」。</small>
         <br><br><br>
         <p class="alert alert-success">
-        <span><i class="fa fa-windows color-blue"></i>　<strong>使用 Windows的話，<a href="/mugcups/windows_tips#title1-3" target="_blank">請作這裡操作</a>。</strong></span>
+        <span><i class="fa fa-windows color-blue"></i>　<strong>使用 Windows的话，<a href="/zh-CN/mugcups/windows_tips#title1-3" target="_blank">请作这样操作</a>。</strong></span>
         </p>
         <br>
         <hr class="red-hr">
-        <i class="fa fa-star color-blue"></i>　<strong>工具的設定是編輯「Gemfile」文件的內容，工具的導入是用terminal打入「<u>bundle install</u>」。</strong>
+        <i class="fa fa-star color-blue"></i>　<strong>工具的设定是编辑「Gemfile」文件的內容，工具的导入是用terminal打入「<u>bundle install</u>」。</strong>
 </h4>

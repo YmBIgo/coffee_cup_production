@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>3 : 作作看简单的网站</strong></h1>
+          </div>
+          <h4><u><a href="/zh-CN/mugcups/2" class="text-left ">上章：Ruby on Rails 的基础</a></u></h4>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header3.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <%= render "page3/zh-CN/title0" %>
+          <br>
+          <%= render "page3/zh-CN/title1" %>
+          <br>
+          <%= render "page3/zh-CN/title2" %>
+          <br>
+          <%= render "page3/zh-CN/title3" %>
+          <br>
+          <div class="next-page">
+              <a href="/zh-CN/mugcups/4" class="btn btn-primary">下章</a>
+          </div>
+            <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+        <strong>
+          <div class="list-group nomargin">
+            <a href="#title" class="list-group-item list-title"><h5>作作看简单的网站</h5></a>
+            <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+            <a href="#title1" class="list-group-item">1 : HTML的基础</a>
+            <a href="#title1-1" class="list-group-item"><small>　① : 用HTML做网页</small></a>
+            <a href="#title1-2" class="list-group-item"><small>　② : 装饰网页</small></a>
+            <a href="#title1-3" class="list-group-item"><small>　③ : 总结</small></a>
+            <a href="#title2" class="list-group-item">2 : 用 Ruby on Rails作作看网站</a>
+            <a href="#title2-1" class="list-group-item"><small>　① : rails new</small></a>
+            <a href="#title2-2" class="list-group-item"><small>　② : 网站的各种设定</small></a>
+            <a href="#title2-2-1" class="list-group-item"><small>　　⑴ : 工具的设定跟导入</small></a>
+            <a href="#title2-2-2" class="list-group-item"><small>　　⑵ : 准备资料库</small></a>
+            <a href="#title2-2-3" class="list-group-item"><small>　　⑶ : 总结</small></a>
+            <a href="#title2-3" class="list-group-item"><small>　③ : 打开网站</small></a>
+            <a href="#title3" class="list-group-item">3 : 这个章的总结</a>
+          </div>
+        </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>
