@@ -30,10 +30,10 @@ class CodesController < ApplicationController
   private
   # If locale is zh-TW || zh-CN return true
   def lang_ok?
-    if I18n.locale == :"zh-TW" || :"zh-CN"
-      return false
-    else
+    if I18n.locale == :ja
       return true
+    else
+      return false
     end
   end
 
