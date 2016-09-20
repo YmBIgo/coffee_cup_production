@@ -21,4 +21,18 @@ class Message < ApplicationMailer
 
   end
 
+  def pay_info(email, name)
+
+    @email = email
+    @name = name
+
+    mail(
+      to: @email,
+      subject: "Coffee-Cup | 購入情報"
+    ) do |format|
+      format.text
+    end
+
+  end
+
 end

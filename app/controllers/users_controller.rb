@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def pay_warning
+    @mail_sender = MailSender.new
   end
 
   private
