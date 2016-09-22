@@ -1,84 +1,84 @@
 <h4 id="chapter4-1-4">
-        <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : 總結</strong></p>
+        <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : 总结</strong></p>
         <br>
-        利用者發信的資料、會在資料庫裡保存。
+        利用者发信的资料，会在资料库里保存。
         <br>
-        作網站的時候、<strong>要決定<u>在表裡放什麼資料</u></strong>。
+        作网站的时候，<strong>要決定<u>在表里放什么资料</u></strong>。
         <br><br>
         <strong>
-        這個資料庫構造的設定、從terminal跟設定文件的編輯做。
+        这个资料库构造的设定，要在terminal跟设定文件的编辑做。
         </strong>
         <hr class="red-hr">
-        <i class="fa fa-terminal"></i>　<strong class="little-remarkable">ターミナル</strong>
+        <i class="fa fa-terminal"></i>　<strong class="little-remarkable">terminal</strong>
         <ul class="number_ul" style="margin-top:10px">
-          <strong><li>「<u>rails g model 文件的名字（單數）</u>」</li></strong>
-          作「日子_create_文件的名字（複數）.rb」的資料庫設定文件。
+          <strong><li>「<u>rails g model 文件的名字（单数）</u>」</li></strong>
+          作「日子_create_文件的名字（复数）.rb」的资料库设定文件。
           <br><br>
           <strong><li>「<u>rails g migration 文件的名字</u>」</li></strong>
-          作更改資料庫的設定文件。
+          作更改资料库的设定文件。
           <br><br>
           <strong><li>「<u>rake db:migrate</u>」</li></strong>
-          把設定文件的內容反映到資料庫。
+          把设定文件的內容反映到资料库。
           <br><br>
           <strong><li>「<u>rake db:rollback</u>」</li></strong>
-          取消上一個反映。
+          取消上一个反映。
         </ul>
         <hr class="red-hr">
-        <i class="fa fa-file"></i>　<strong class="little-remarkable">設定文件</strong>
+        <i class="fa fa-file"></i>　<strong class="little-remarkable">设定文件</strong>
         <ul class="number_ul" style="margin-top:10px">
-        <strong><li>作文件的時候的設定</li></strong>
+        <strong><li>作文件的时候的设定</li></strong>
         <br>
-        作「資料的種類」的「框子」
+        作「资料的种类」的「框子」
 <pre>
-t.資料的種類 :框子的名字
+t.资料的种类 :框子的名字
 </pre>
 <table class='highlight'>
 <tr>
-<td class='code-line-no text-center'>例
+<td class='code-line-no text-center'>例子
 </td>
 <td class='code-content'><span class='code-line'>  t.integer <span class='word-purple'>:age</span></span>
 </td>
 </tr>
 </table>
         <br>
-        <strong><li>更改資料庫的時候的設定</li></strong>
+        <strong><li>更改资料库的时候的设定</li></strong>
         <br>
 <pre>
-add_column :資料庫的名字, :框子的名字, :資料的種類
+add_column :资料库的名字, :框子的名字, :资料的种类
 </pre>
 <table class='highlight'>
 <tr>
-<td class='code-line-no text-center'>例
+<td class='code-line-no text-center'>例子
 </td>
 <td class='code-content'><span class='code-line'>  add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
 </td>
 </tr>
 </table>
         <br>
-        更改跟刪除是
+        更改跟删除是
 <pre>
-remove_column :資料庫的名字, :框子的名字, :資料的種類
+remove_column :资料库的名字, :框子的名字, :资料的种类
 </pre>
 <pre>
-change_column :資料庫的名字, :框子的名字, :資料的種類
+change_column :资料库的名字, :框子的名字, :资料的种类
 </pre>
-        這樣子設定。
-        <strong><p id="title1-4-data-type" class="fix-link-nav"><li>資料的種類</li></p></strong>
-        放在框子裡的資料的種類也要自己設定。
+        这样子设定。
+        <strong><p id="title1-4-data-type" class="fix-link-nav"><li>资料的种类</li></p></strong>
+        放在框子里的资料的种类也要自己设定。
         <br>
-        具體說的話，
+        具体说的话，
         <br>
         <ul class="number_ul">
           <strong><li>「短的文章」的「string」</li></strong>
           <strong><li>「長的文章」的「text」</li></strong>
-          <strong><li>「數字」的「integer」</li></strong>
-          <strong><li>「時間」的「date」</li></strong>
+          <strong><li>「数字」的「integer」</li></strong>
+          <strong><li>「时间」的「date」</li></strong>
         </ul>
         <br>
         等等
         </ul>
         <hr>
-        <i class="fa fa-question-circle color-green"></i>　<strong>有時間的話、作作看自己想作作看的網站的資料庫！</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>有时间的话，作作看自己想作的网站的资料库吧！</strong>
         <br>
         <br>
         </h4>
