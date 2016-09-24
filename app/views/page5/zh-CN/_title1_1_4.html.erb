@@ -1,21 +1,21 @@
 <h4 id="chapter5-1-1-4">
-        <p id="title1-1-4"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : 總結</strong></p>用Ruby on Rails顯示網頁的時候，要設定<strong><u>三個設定</u></strong>。
+        <p id="title1-1-4"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : 总结</strong></p>用Ruby on Rails显示网页的时候，要设定<strong><u>三个设定</u></strong>。
         <strong>
           <ul class="number_ul">
-            <li>七種網頁中，使用哪一個資料的設定</li>
-            <li>操作資料的設定</li>
-            <li>網頁內容的設定</li>
+            <li>七种网页中，使用哪一个资料的设定</li>
+            <li>操作资料的设定</li>
+            <li>网页內容的设定</li>
           </ul>
-          <small>※　七個網頁的設定是設定<strong>「<u> index/ show/ new/ create/ edit/ update/ destroy</u>」</strong>這個七個</small>
+          <small>※　七个网页的设定是设定<strong>「<u> index/ show/ new/ create/ edit/ update/ destroy</u>」</strong>这些七个网页</small>
         </strong>
         <br><br>
-        設定完了之後，在terminal打入<strong>「<i>rails s</i>」</strong>起動服務器，之後用瀏覽器打入<strong>「<u>0.0.0.0:3000/...</u>」</strong>可以顯示網頁。
+        设定完了之后，在terminal打入<strong>「<i>rails s</i>」</strong>启动服务器，之后用浏览器打入<strong>「<u>0.0.0.0:3000/...</u>」</strong>可以显示网页。
         <br><br>
-        <strong>設定的內容，<a href="/zh-TW/codes/5" target="_blank">可以從這裡看</a></strong>
+        <strong>设定的內容，<a href="/zh-CN/codes/5" target="_blank">可以从这里看</a></strong>
         <hr class="red-hr">
-        <p id="title1-1-4-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七個網頁的設定</strong></p>
+        <p id="title1-1-4-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七个网页的设定</strong></p>
         <br>
-        <strong>編輯「config」文件夾裡的「<u>routes.rb</u>」文件</strong>，設定要用哪一個網頁。
+        <strong>编辑「config」文件夾里的「<u>routes.rb</u>」文件</strong>，设定要用哪一个网页。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
 <table class='highlight'>
@@ -49,13 +49,13 @@
 </tr>
 </table>
         <br>
-        <strong><u>在「:only =>」後面的「[]」裡設定喜歡的網頁</u></strong>。
+        <strong><u>在「:only =>」后面的「[]」里设定喜欢的网页</u></strong>。
         <hr class="red-hr">
-        <p id="title1-1-4-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>資料操作的設定</strong></p>
+        <p id="title1-1-4-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>资料操作的设定</strong></p>
         <br>
-        <strong>在「app > controllers」文件夾裡的「<u>資料庫的名字_controller.rb</u>」文件</strong>，設定各個網頁上怎麼樣操作資料。
+        <strong>在「app > controllers」文件夾里的「<u>资料库的名字_controller.rb</u>」文件</strong>，设定各个网页上怎么样操作资料。
         <br><br>
-        這一次，說明了<strong>「<u>顯示一個資料（show）</u>」</strong>的網頁。
+        这一次，说明了<strong>「<u>显示一个资料（show）</u>」</strong>的网页。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
 <table class='highlight'>
@@ -71,15 +71,15 @@
 </tr>
 </table>
         <br>
-        <strong>「<u>顯示一個資料（show）</u>」</strong>的網頁上，用<strong>「<u>find(:params[:id])</u>」</strong>各個id上選擇資料。
+        <strong>「<u>显示一个资料（show）</u>」</strong>的网页上，用<strong>「<u>find(:params[:id])</u>」</strong>各个id上选择资料。
         <br>
-        用<strong>「<u>@喜歡的名前</u>」</strong>，設定<strong><u>顯示在網頁上的html文件的標記</u></strong>。
+        用<strong>「<u>@喜欢的名前</u>」</strong>，设定<strong><u>显示在网页上的html文件的标记</u></strong>。
         <hr class="red-hr">
-        <p id="title1-1-4-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>網頁內容的設定</strong></p>
+        <p id="title1-1-4-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>网页內容的设定</strong></p>
         <br>
-        <strong>在「app > views」文件夾裡的「資料庫的名字」的文件夾，作顯示網頁的html文件。</strong>
+        <strong>在「app > views」文件夾里的「资料库的名字」的文件夾，作显示网页的html文件。</strong>
         <br>
-        <u>隨着要用的網頁，作</u>
+        <u>随着要用的网页，作</u>
         <strong>
         <ul class="number_ul" style="font-height:2.5; margin:20px 0">
           <li>index.html.erb</li>
@@ -92,7 +92,7 @@
         </ul>
         </strong>
         <hr class="red-hr">
-        這一次<strong>「<u>顯示一個資料（show）</u>」</strong>的網頁中設定<strong>「<u>show.html.erb</u>」</strong>。
+        这一次<strong>「<u>显示一个资料（show）</u>」</strong>的网页中设定<strong>「<u>show.html.erb</u>」</strong>。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
 <table class='highlight'>
@@ -108,23 +108,23 @@
 </tr>
 </table>
         <br>
-        <strong>從資料庫選擇的資料要設定在<u>「&lt;%=」跟「%&gt;」之間。</u></strong>
+        <strong>从资料库选择的资料要设定在<u>「&lt;%=」跟「%&gt;」之间。</u></strong>
         <br>
-        選擇的資料，在html上打入<strong>「<u>@設定的標記.框子的名字</u>」</strong>顯示。
+        选择的资料，在html上打入<strong>「<u>@设定的标记.框子的名字</u>」</strong>显示。
         <hr class="red-hr">
-        <p id="title1-1-4-chrome" class="fix-link-nav"><i class="fa fa-chrome color-red"></i>　<strong>在瀏覽器顯示網頁</strong></p>
+        <p id="title1-1-4-chrome" class="fix-link-nav"><i class="fa fa-chrome color-red"></i>　<strong>在浏览器显示网页</strong></p>
         <br>
-        設定完了之後，<strong>在terminal上打入「<u>rails s</u>」之後</strong>，用瀏覽器打開網頁。
+        设定完了之后，<strong>在terminal上打入「<u>rails s</u>」之后</strong>，用浏览器打开网页。
         <br>
-        「顯示一個資料（show）」的網頁，從<strong>「<u>0.0.0.0:3000/資料庫的名字/要顯示的id</u>」</strong>打開。
+        「显示一个资料（show）」的网页，从<strong>「<u>0.0.0.0:3000/资料库的名字/要显示的id</u>」</strong>打开。
         <br><br>
         <small>
-        <i class="fa fa-windows color-blue"></i>　使用Windows的話，從<strong>「<u>localhost:3000/資料庫的名字/要顯示的id號碼</u>」</strong>打開。
+        <i class="fa fa-windows color-blue"></i>　使用Windows的话，从<strong>「<u>localhost:3000/资料库的名字/要显示的id号码</u>」</strong>打开。
         </small>
         <hr class="red-hr">
-        到這裡顯示了一個一個的資料。
+        到这里显示了一个一个的资料。
         <br>
-        <strong>接着作顯示全部的資料的，像推特的主頁一樣子的網頁吧。
+        <strong>接着作显示全部的资料的，像推特的主页一样子的网页吧。
         <br><br>
-        設定的內容<a href="/zh-TW/codes/5" target="_blank">可以從這裡看</a></strong>
+        设定的內容<a href="/zh-CN/codes/5" target="_blank">可以从这里看</a></strong>
 </h4>

@@ -1,23 +1,23 @@
 <h4 id="chapter5-1-1-1">
-        <p id="title1-1-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : <u>七個網頁的設定</u></strong></p>
+        <p id="title1-1-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : <u>七個网页的设定</u></strong></p>
         <br>
-        <i class="fa fa-play-circle"></i><strong>　那麽剛開始設定「七個網頁的設定」吧！</strong>
+        <i class="fa fa-play-circle"></i><strong>　那么刚开始设定「七个网页的设定」吧！</strong>
         <br><br>
-        要編輯設定文件，<strong>所以用 Sublime Text 打開看看在<a href="/zh-TW/mugcups/3" target="_blank">第三章</a>作的網站「myapp」吧！</strong>
+        要编辑设定文件，<strong>所以用 Sublime Text 打开看看在<a href="/zh-CN/mugcups/3" target="_blank">第三章</a>作的网站「myapp」吧！</strong>
         <br>
         <small>
-        ※　用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>。
+        ※　用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>。
         <br>
-        <i class="fa fa-windows color-blue"></i>　用Windows的 Sublime Text 打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+        <i class="fa fa-windows color-blue"></i>　用Windows的 Sublime Text 打开文件文件夹的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
         </small>
         <br><br>
-        打開之後，參考下面的圖像打開<strong>「<u>routes.rb</u>」</strong>吧。
+        打开之后，参考下面的图像打开<strong>「<u>routes.rb</u>」</strong>吧。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Open_route_rb.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Open_route_rb.png",
                     :target => ["_blank"] %>
-        這個<strong>「<u>routes.rb</u>」</strong>的文件在設定，七個網頁中使用哪一個網頁的設定文件。
+        这个<strong>「<u>routes.rb</u>」</strong>的文件在设定，七个网页中使用哪一个网页的设定文件。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>routes.rb</strong>
 <table class='highlight'>
@@ -53,20 +53,20 @@
 </tr>
 </table>
 <br>
-在這個設定文件上設定<u>用資料庫作哪些七個網頁。</u>
+在这个设定文件上设定<u>用资料库作那些七个网页。</u>
 <br><br>
-看起來是很長，但是<strong><u>從「#」開始的行不會適用</u></strong>，所以文件上沒有內容在設定。
+看起來是很长，但是<strong><u>从「#」开始的行不会适用</u></strong>，所以文件上沒有內容在设定。
 <br>
-<strong><u>文件的內容從「<i>do</i>」到「<i>end</i>」的行裡面設定。</u></strong>
+<strong><u>文件的內容从「<i>do</i>」到「<i>end</i>」的行里面设定。</u></strong>
 <hr class="red-hr">
-那麽追加下一個行，設定内容吧！
+那么追加下一行，設定内容吧！
 <br><br>
 <i class="fa fa-file color-red"></i>　<strong>routes.rb（追加第2行）</strong>
 <br>
 <small>
-※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
 <br>
-<i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+<i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
 </small>
 <br><br>
 <table class='highlight'>
@@ -104,21 +104,21 @@
 </tr>
 </table>
         <br>
-        上面的內容在設定，用「posts」資料庫作
+        上面的內容在设定，用「posts」资料库作
         <br><br>
         <strong>
-        顯示全部的資料（<i><u>index</u></i>）・顯示一個資料（<i><u>show</u></i>）
+        显示全部的资料（<i><u>index</u></i>）・显示一个资料（<i><u>show</u></i>）
         <br>
-        打入新的資料（<i><u>new</u></i>）・新增資料（<i><u>create</u></i>）
+        打入新的资料（<i><u>new</u></i>）・新增资料（<i><u>create</u></i>）
         <br>
-        打入編輯的資料（<i><u>edit</u></i>）・編輯資料（<i><u>update</u></i>）
+        打入编辑的资料（<i><u>edit</u></i>）・编辑资料（<i><u>update</u></i>）
         <br>
-        刪除資料（<i><u>destroy</u></i>）
+        删除资料（<i><u>destroy</u></i>）
         </strong>
         <br><br>
-        這個七種網頁。
+        这个七个网页。
         <hr class="red-hr">
-        如果不想刪除資料的話，
+        如果不想删除资料的话，
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>routes.rb（第二行）</strong>
 <table class='highlight'>
@@ -130,23 +130,23 @@
 </tr>
 </table>
         <br>
-        <strong>像上面這樣子「<i>:only =></i>」後面指定「<i>destroy</i>」以外六個網頁。</strong>
+        <strong>像上面这样子「<i>:only =></i>」后面指定「<i>destroy</i>」以外六个网页。</strong>
         <br>
-        <small>※　「:」是在Ruby on Rails 作網頁時的規則。請記住。</small>
+        <small>※　「:」是在Ruby on Rails 作网页的时候的规则。请记住。</small>
         <br><br>
-        所以網頁的設定是在<strong>「<i>routes.rb</i>」</strong>上追加
+        所以网页的设定是在<strong>「<i>routes.rb</i>」</strong>上追加
 <pre>
-resources :資料庫的名字, :only => [:想加的網頁...]
+resources :资料库的名字, :only => [:想加的网页...]
 </pre>
-        這些內容。
+        这些內容。
         <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>如果用「<u>messages</u>」的資料庫作
+        <i class="fa fa-question-circle color-green"></i>　<strong>如果用「<u>messages</u>」的资料库作
         <ul class="number_ul">
-            <li><u>顯示全部的資料（index）</u></li>
-            <li><u>新增資料（create）</u></li>
-            <li><u>刪除資料（destroy）</u></li>
+            <li><u>显示全部的资料（index）</u></li>
+            <li><u>新增资料（create）</u></li>
+            <li><u>删除资料（destroy）</u></li>
         </ul>
-        這個三種資料操作的話，「routes.rb」上要設定什麼樣的資料呢？</strong>
+        这个3种资料操作的话，「routes.rb」上要设定什么样的资料呢？</strong>
         <br><br>
         <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
         <br>

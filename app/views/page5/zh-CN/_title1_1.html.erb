@@ -1,0 +1,36 @@
+<h4 id="chapter5-1-1">
+        <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 显示一个资料（show）</strong></p>
+        <br>
+        按照上面3个设定，在这里作作看<strong>「<u>显示一个资料（show）</u>」的网页</strong>吧。
+        <hr class="red-hr">
+        <strong>「<u>显示一个资料（show）</u>」</strong>的网页，例如说是显示一個推特的网页的话，用<a href="/zh-CN/mugcups/4#title2-4" target="_blank"><strong>id</strong></a>区别网页。
+        <br><br>
+        所以说，<strong>「<u>显示一个资料（show）</u>」</strong>的网页要用<strong>「<u>rails c</u>」</strong>的
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(选择的id)</span>
+</td>
+</tr>
+</table>
+        <br>
+        操作资料。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
+                    :target => ["_blank"] %>
+        像上面的图像一样，用id作各个资料的网页。
+        <br><br>
+        那么开始作吧！
+</h4>
+        <hr>
+        <%= render "page5/zh-CN/title1_1_1" %>
+        <hr>
+        <%= render "page5/zh-CN/title1_1_2" %>
+        <hr>
+        <%= render "page5/zh-CN/title1_1_3" %>
+        <hr>
+        <%= render "page5/zh-CN/title1_1_4" %>

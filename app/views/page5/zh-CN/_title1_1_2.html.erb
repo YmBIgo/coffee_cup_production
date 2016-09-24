@@ -1,15 +1,15 @@
 <h4 id="chapter5-1-1-2">
-        <p id="title1-1-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 資料操作的設定</strong></p>
-        到這裡設定了用七個網頁的設定文件、接着<strong><u>設定怎麼樣操作資料吧</u></strong>。
+        <p id="title1-1-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 资料操作的设定</strong></p>
+        到这里设定了用七个网页的设定文件，接着<strong><u>设定怎么樣操作资料吧</u></strong>。
         <br>
-        在這邊做做看<strong>「<u>顯示一個資料（show）</u>」</strong>！
+        在这边做做看<strong>「<u>显示一个资料（show）</u>」</strong>！
         <hr class="red-hr">
-        事先用terminal，<u>做資料操作跟顯示網頁的設定文件。</u>
+        事先用terminal，<u>做资料操作跟显示网页的设定文件。</u>
         <br>
-        用terminal移動到「myapp」吧！
+        用terminal移动到「myapp」吧！
         <br><br><br>
         <p class="alert alert-success">
-        <span><strong><i class="fa fa-windows color-blue"></i>　使用Windows移動的方法<a href="/zh-TW/mugcups/windows_tips#title1-2" target="_blank">請參考這裡</a></strong></span>
+        <span><strong><i class="fa fa-windows color-blue"></i>　使用Windows移动的方法<a href="/zh-CN/mugcups/windows_tips#title1-2" target="_blank">请参考这里</a></strong></span>
         </p>
         <br>
         <strong>terminal</strong>
@@ -26,14 +26,14 @@
 </tr>
 </table>
         <br>
-        移動之後，打入下面的命令。
+        移动之后，打入下面的命令。
         <br>
-        <strong class="little-remarkable"><u>用這個命令作「posts」資料庫的顯示網頁的文件跟操作資料的文件。</u></strong>
+        <strong class="little-remarkable"><u>用这个命令作「posts」资料库的显示网页的文件跟操作资料的文件。</u></strong>
         <br><br>
         <strong>terminal</strong>
         <br>
         <small>
-          <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」吧。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
         </small>
 <table class='highlight'>
 <tr>
@@ -44,41 +44,41 @@
 </tr>
 </table>
         <br>
-        有出現像下面一樣的顯示嗎？這樣子設定文件作好了。
+        有出现像下面一样的显示吗？这样子设定文件作好了。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Terminal_rails_g_controller_posts.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Terminal_rails_g_controller_posts.png",
                     :target => ["_blank"] %>
-        那麽，看看文件吧！首先，用Sublime Text打開<strong>「<u>myapp</u>」</strong>吧！
+        那么，看看文件吧！首先用Sublime Text打开<strong>「<u>myapp</u>」</strong>吧！
         <br>
         <small>
-        ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>。
+        ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>。
         <br>
-        <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+        <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
         </small>
         <hr class="red-hr">
-        畫面出現的話，打開看看<strong>「<u>app</u>」</strong>吧。
+        画面出现的话，打开看看<strong>「<u>app</u>」</strong>吧。
         <br>
-        打開後可以看到，裡面有<strong>「<u>controllers</u>」</strong>跟<strong>「<u>views</u>」</strong>這個兩個文件夾。
+        打开后可以看到，里面有<strong>「<u>controllers</u>」</strong>跟<strong>「<u>views</u>」</strong>这个两个文件夾。
         <br>
-        那麽開開看這兩個文件夾吧。
+        那么打开看这个两个文件夾吧。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_controller_folder_and_view_folder.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_controller_folder_and_view_folder.png",
                     :target => ["_blank"] %>
-        <strong>「<u>controllers</u>」</strong>裡面有<strong>「<u>posts_controller.rb</u>」</strong>的文件，<strong>「<u>views</u>」</strong>裡面有<strong>「<u>posts</u>」</strong>的文件夾。
+        <strong>「<u>controllers</u>」</strong>里面有<strong>「<u>posts_controller.rb</u>」</strong>的文件，<strong>「<u>views</u>」</strong>里面有<strong>「<u>posts</u>」</strong>的文件夾。
         <br><br>
-        這些是剛才打入<strong>「<u>rails g controller posts</u>」</strong>作的文件跟文件夾。在各個文件跟文件夾上設定操作資料的方法跟顯示網頁的方法。
+        这些是刚才打入<strong>「<u>rails g controller posts</u>」</strong>作的文件跟文件夾。在各个文件跟文件夾上设定操作资料的方法跟显示网页的方法。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_post_controller_and_post_view.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_post_controller_and_post_view.png",
                     :target => ["_blank"] %>
-        那麽先從操作資料的設定開始解釋。
+        那么先從操作资料的设定开始解释。
         <hr class="red-hr">
-        首先打開剛才看的<strong>「<i>posts_controller.rb</i>」</strong>的文件。
+        首先打开刚才看的<strong>「<i>posts_controller.rb</i>」</strong>的文件。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
         <br>
@@ -93,16 +93,16 @@
 </tr>
 </table>
         <br>
-        顯示這樣子的內容嗎？
+        显示这样子的內容嗎？
         <br>
-        那麽打入下面的內容吧。
+        那么打入下面的內容吧。
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（用半母字母數字打入）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（用半母字母数字打入）</strong>
         <br>
         <small>
-        ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+        ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
         <br>
-        <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -160,13 +160,13 @@
 </tr>
 </table>
         <br>
-        打入<strong>「<i>rails g controller 資料庫的名字</i>」</strong>作了設定文件之後，先在<strong>「<u>資料庫的名字_controller.rb</u>」</strong>設定，上面一樣操作資料的方法。
+        打入<strong>「<i>rails g controller 资料库的名字</i>」</strong>作了设定文件之后，先在<strong>「<u>资料库的名字_controller.rb</u>」</strong>设定，上面一样操作资料的方法。
         <br>
-        這個<strong>「<i>def 網頁的名字</i>」</strong>跟<strong>「<i>end</i>」</strong>之間，<u>指定<strong>「routes.rb」</strong>上設定好的各個網頁的操作資料的方法</u>。
+        这个<strong>「<i>def 网页的名字</i>」</strong>跟<strong>「<i>end</i>」</strong>之间，<u>指定<strong>「routes.rb」</strong>上设定好的各个网页的操作资料的方法</u>。
         <br>
-        <small>（例如說「Post.all」或者是「Post.create」或者是「Post.find(id號碼)」）</small>
+        <small>（例如说「Post.all」或者是「Post.create」或者是「Post.find(id号码)」）</small>
         <br><br>
-        <i class="fa fa-arrow-circle-right color-red"></i>　所以如果是<strong>「<u>routes.rb</u>」</strong>上沒有設定<strong>「<u>destroy</u>」</strong>的話，
+        <i class="fa fa-arrow-circle-right color-red"></i>　所以如果是<strong>「<u>routes.rb</u>」</strong>上沒有设定<strong>「<u>destroy</u>」</strong>的话，
         <br><br>
 <table class='highlight'>
 <tr>
@@ -179,13 +179,13 @@
 </tr>
 </table>
         <br>
-        不用這個兩行。
+        不用这个两行。
         <br>
-        這些部分就想設定什麼就設定什麼。
+        这些部分就想设定什么就设定自己喜欢的。
         <hr class="red-hr">
-        那麽，解釋設定操作資料的方法吧。
+        那么，解释设定操作资料的方法吧。
         <br>
-        這一次是<strong>「<u>顯示一個資料（show）</u>」</strong>的網頁，所以
+        这一次是<strong>「<u>显示一個资料（show）</u>」</strong>的网页，所以
         <br><br>
 <table class='highlight'>
 <tr>
@@ -198,16 +198,16 @@
 </tr>
 </table>
         <br>
-        在上面的內容中，設定內容。
+        在上面的內容中，设定內容。
         <br>
-        那麽開始設定吧。
+        那么开始设定吧。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（第3〜5行）</strong>
         <br>
         <small>
-        ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+        ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
         <br>
-        <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -223,21 +223,21 @@
 </tr>
 </table>
         <br>
-        <strong>這個是網頁上設定「<u>顯示一個資料（show）</u>」的操作資料的方法。</strong>
+        <strong>这个是网页上设定「<u>显示一个资料（show）</u>」的操作资料的方法。</strong>
         <br><br>
-        有看見「<u>Post.find(選擇的id號碼)</u>」吧。對。在這裡選擇資料。
+        有看見「<u>Post.find(选择的id号码)</u>」吧。对。在这里选择資料。
         <br>
-        後面的<strong>「<u>params[:id]</u>」</strong>的部分在表現<strong>「<u>從網頁拿來id</u>」</strong>的意思。這樣子選擇網頁的資料（比如說推特的話，一個一個的推特）。
+        后面的<strong>「<u>params[:id]</u>」</strong>的部分在表现<strong>「<u>从网页拿来id</u>」</strong>的意思。这样子选择网页的资料（比如说推特的话，一个一个的推特）。
         <hr class="red-hr">
-        <strong class="little-remarkable">那麽「@post」是什麼呢？</strong>
+        <strong class="little-remarkable">那么「@post」是什么呢？</strong>
         <br><br>
-        「@post」是，<strong><u>顯示網頁的html文件上，顯示資料的時候使用的標記</u></strong>。
+        「@post」是，<strong><u>显示网页的html文件上，显示资料的时候使用的标记</u></strong>。
         <br>
-        <strong>在html文件裡放這個標記的話，可以在網頁上顯示資料。</strong>
+        <strong>在html文件里放这个标记的话，可以在网页上显示资料。</strong>
         <br>
-        <small>※　這個標記的名字是<strong><u>，從「@」開始的單詞的話什麼都可以</u></strong>。命名自己可以理解的名字吧。</small>
+        <small>※　这个标记的名字是<strong><u>，从「@」开始的单词的话什么都可以</u></strong>。命名自己可以理解的名字吧。</small>
         <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>設定「tweets」資料庫的「<u>顯示一個資料（show）</u>」的操作資料的內容吧！</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>設定「tweets」资料库的「<u>显示一个资料（show）</u>」的操作资料的內容吧！</strong>
         <br><br>
         <textarea class="form-control input-code" placeholder="打入答案吧" rows="3"></textarea>
         <br>
