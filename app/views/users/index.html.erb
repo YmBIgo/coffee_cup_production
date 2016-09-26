@@ -36,22 +36,23 @@
                         :class => "textbook-title-img hover_img zoom_img") %>
           <% if user_studiable? %>
             <h4>
-            <strong><u><%= current_user.limit_time %></u></strong>まで
+            <strong><u><%= current_user.limit_time %></u></strong>まで。残り<strong><u><%= current_user.time_left %></u></strong>です。
             <br>
-            残り<strong><u><%= current_user.time_left %></u></strong>です
+            <strong><u><%= current_user.fix_starttime %>から<%= current_user.fix_endtime %>まで</u></strong>の時間に勉強できます。
             </h4>
-            <div class="row">
-              <div class="col-lg-6">
-                <a href="/<%= I18n.locale %>/pay_info#title2-2-2" class="btn btn-warning">閲覧期間を延長する</a>
-              </div>
-              <div class="col-lg-6">
-                <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-success">購入時の注意点について</a>
-              </div>
-            </div>
             <hr class="red-hr">
             <div class="row">
               <div class="col-lg-6">
-                <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="btn btn-primary">
+                <a href="/<%= I18n.locale %>/pay_info#title2-2-2" class="btn btn-warning btn-lg">閲覧期間の延長</a>
+              </div>
+              <div class="col-lg-6">
+                <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-success btn-lg">購入時の注意点</a>
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-lg-6">
+                <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="btn btn-primary btn-lg">
                       <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
                                     :class => "nav-img") %>
                       Mugcup(基礎編)
@@ -59,7 +60,7 @@
                 <br><br>
               </div>
               <div class="col-lg-6">
-                <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="btn btn-danger">
+                <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="btn btn-danger btn-lg">
                     <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
                                   :class => "nav-img") %>
                     Coffee（応用編）

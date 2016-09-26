@@ -50,4 +50,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def fix_starttime
+    l = self.start_time
+    fixed_time = l.strftime("%H時%M分")
+  end
+
+  def fix_endtime
+    l = self.end_time
+    fixed_time = l.strftime("%H時%M分")
+  end
+
 end
