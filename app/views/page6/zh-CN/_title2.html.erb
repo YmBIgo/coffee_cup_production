@@ -1,41 +1,41 @@
-<h2 class="textbook-section-title" id="title2"><strong>2 : 這個章的總結</strong></h2>
+<h2 class="textbook-section-title" id="title2"><strong>2 : 这个章的总结</strong></h2>
         <h4 id="chapter6-2">
-          用Ruby on Rails作的網頁，按着資料操作的方法有<strong><u>七種。</u></strong>
+          用Ruby on Rails作的网页，按着资料操作的方法有<strong><u>七种。</u></strong>
           <br><br>
         <ul class="number_ul">
-          <strong><li>顯示全部的資料　　　<u>index</u></li></strong>
-          <small>例：推特的主頁<br>→顯示的資料用<strong>「<i>Post.all</i>」</strong>設定</small>
-          <strong><li>顯示一個資料　　　　<u>show</u></li></strong>
-          <small>例：一個推特<br>→顯示的資料用<strong>「<i>Post.find(id號碼)</i>」</strong>設定</small>
-          <strong><li>打入新的資料　　　　<u>new</u></li></strong>
-          <strong><li>新增資料　　　　　　<u>create</u></li></strong>
-          <small>例：作推特的畫面<br>→資料用<strong>「<i>Post.create</i>」</strong>設定</small>
-          <strong><li>打入編輯的資料　　　<u>edit</u></li></strong>
-          <strong><li>編輯資料　　　　　　<u>update</u></li></strong>
-          <small>例：編輯帳號的畫面<br>→資料用<strong>「<i>Post.find(id號碼).update</i>」</strong>設定</small>
-          <strong><li>刪除資料　　　　　　<u>destroy</u></li></strong>
-          <small>例：刪除推特的畫面<br>→資料用<strong>「<i>Post.find(id號碼).destroy</i>」</strong>設定</small>
+          <strong><li>显示全部的资料　　　<u>index</u></li></strong>
+          <small>例：推特的主页<br>→显示的资料用<strong>「<i>Post.all</i>」</strong>设定</small>
+          <strong><li>显示一个资料　　　　<u>show</u></li></strong>
+          <small>例：一个推特<br>→显示的资料用<strong>「<i>Post.find(id号码)</i>」</strong>设定</small>
+          <strong><li>打入新的资料　　　　<u>new</u></li></strong>
+          <strong><li>新增资料　　　　　　<u>create</u></li></strong>
+          <small>例：作推特的画面<br>→资料用<strong>「<i>Post.create</i>」</strong>设定</small>
+          <strong><li>打入编辑的资料　　　<u>edit</u></li></strong>
+          <strong><li>编辑资料　　　　　　<u>update</u></li></strong>
+          <small>例：编辑好吗的画面<br>→资料用<strong>「<i>Post.find(id号码).update</i>」</strong>设定</small>
+          <strong><li>删除资料　　　　　　<u>destroy</u></li></strong>
+          <small>例：删除推特的画面<br>→资料用<strong>「<i>Post.find(id号码).destroy</i>」</strong>设定</small>
         </ul>
         <hr class="red-hr">
-        顯示各個網頁要設定三個內容。
+        显示各个网页要设定三个內容。
         <ul class="number_ul">
-          <strong><li>七個網頁中使用那些網頁的設定</li></strong>
-          <small>在「config > routes.rb」裡設定</small>
-          <strong><li>操作資料的設定</li></strong>
-          <small>「app > controllers」裡的「資料庫的名字_controller.rb」文件上設定</small>
-          <strong><li>網頁的設定</li></strong>
-          <small>「 app > views > 資料庫的名字」裡作html文件設定內容。</small>
+          <strong><li>七个网页中使用哪些网页的设定</li></strong>
+          <small>在「config > routes.rb」里设定</small>
+          <strong><li>操作资料的设定</li></strong>
+          <small>「app > controllers」里的「资料库的名字_controller.rb」文件上设定</small>
+          <strong><li>网页的设定</li></strong>
+          <small>「 app > views > 资料库的名字」里作html文件设定內容。</small>
         </ul>
         <br>
-        說明各個設定。
+        说明各个设定。
         <br><br>
-        <strong>設定的內容<a href="/zh-CN/codes/6" target="_blank">請參考這裡</a></strong>
+        <strong>设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a></strong>
         <hr class="red-hr">
-        <p id="title2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i><strong>　七個網頁的設定（routes.rb）</strong></p>
+        <p id="title2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i><strong>　七个网页的设定（routes.rb）</strong></p>
         <br>
-        <strong>「config > routes.rb」文件裡設定內容</strong>
+        <strong>「config > routes.rb」文件里设定內容</strong>
         <br><br>
-        隨着使用的資料庫，設定內容。
+        随着使用的资料库，设定內容。
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>routes.rb（例子：第3行）</strong>
 <table class='highlight'>
@@ -69,18 +69,18 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <p id="title2-data-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>操作資料的設定/網頁的設定</strong></p>
+        <p id="title2-data-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>操作资料的设定/网页的设定</strong></p>
         <br>
-        設定操作資料，顯示網頁的內容，必須作設定的文件跟文件夾。
+        设定操作资料，显示网页的內容，必须作设定的文件跟文件夾。
         <br>
-        做這個，要在terminal上打入
+        做这个，要在terminal上打入
         <br><br>
         <strong>　terminal</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line small-code'>rails g controller 資料庫的名字</span>
+<td class='code-content'><span class='code-line small-code'>rails g controller 资料库的名字</span>
 </td>
 </tr>
 </table>
@@ -91,21 +91,21 @@
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Terminal_rails_g_controller_posts.png",
                     :target => ["_blank"] %>
-        如果出現這樣子的內容的話OK。
+        如果出现这样子的內容的話OK。
         <br><br>
-        在這個命令，作出來的
+        在这个命令，作出來的
         <ul class="number_ul">
-        <strong><li>「app > controllers > 資料庫的名字_controller.rb」是操作資料的文件</li></strong>
+        <strong><li>「app > controllers > 资料库的名字_controller.rb」是操作资料的文件</li></strong>
         <br>
-        <strong><li>「app > views」是顯示網頁的文件</li></strong>
+        <strong><li>「app > views」是显示网页的文件</li></strong>
         </ul>
-        在各個文件文件夾裡，設定內容。
+        在各个文件文件夾里，设定內容。
         <br>
-        在這裡說明追加設定之前要設定的內容。
+        在这里说明追加设定之前要设定的內容。
         <hr class="red-hr">
         <ul class="number_ul">
-          <strong class="little-remarkable"><li>資料操作</li></strong>
-            <strong>「app > controllers > 資料庫的名字_controller.rb」</strong>裡，追加下面一樣的內容。
+          <strong class="little-remarkable"><li>资料操作</li></strong>
+            <strong>「app > controllers > 资料库的名字_controller.rb」</strong>里，追加下面一样的內容。
             <br><br>
         <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
 <table class='highlight'>
@@ -164,29 +164,29 @@
 </table>
           <br>
           <strong class="little-remarkable"><li>网页</li></strong>
-          <strong>「app > views > 資料庫的名字」</strong>裡，保存下面的文件。
+          <strong>「app > views > 资料库的名字」</strong>里，保存下面的文件。
           <br>
           <small>
-            ※　保存文件的方法，<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>請參考這裡</strong></a>
+            ※　保存文件的方法，<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>请参考这里</strong></a>
           </small>
           <br>
           <br>
           <ul class="number_ul">
           <strong>
-            <li>「show.html.erb」（顯示一個資料的網頁）</li>
-            <li>「index.html.erb」（顯示全部的資料的網頁）</li>
-            <li>「new.html.erb」（打入新的資料的網頁）</li>
-            <li>「create.html.erb」（新增資料的網頁）</li>
-            <li>「edit.html.erb」（打入編輯的資料的網頁）</li>
-            <li>「update.html.erb」（編輯資料的網頁）</li>
-            <li>「destroy.html.erb」（刪除資料的網頁）</li>
+            <li>「show.html.erb」（显示一个资料的网页）</li>
+            <li>「index.html.erb」（显示全部的资料的网页）</li>
+            <li>「new.html.erb」（打入新的资料的网页）</li>
+            <li>「create.html.erb」（新增资料的网页）</li>
+            <li>「edit.html.erb」（打入编辑的资料的网页）</li>
+            <li>「update.html.erb」（编辑资料的网页）</li>
+            <li>「destroy.html.erb」（删除资料的网页）</li>
           </strong>
           </ul>
         </ul>
         <hr class="red-hr">
-        <strong>在這個「資料庫的名字_controller.rb」裡追加各個操作資料的方法，各個html文件上追加內容。</strong>
+        <strong>在这个「资料库的名字_controller.rb」里追加各个操作资料的方法，各个html文件上追加內容。</strong>
         <br>
-        各個說明請參考下面！
+        各个说明请参考下面！
         <br><br>
         <div class="list-group">
           <a href="/zh-CN/mugcups/5#title1-1" class="list-group-item" target="_blank"><strong>show</strong></a>
@@ -200,8 +200,8 @@
         </li>
         <hr>
         <i class="fa fa-star color-blue"></i>　
-        <strong>用Ruby on Rails作網頁的說明到這裡了。這樣子應該可以作簡單的網頁吧？<br><br>可是現在的內容又不好看又不方便。在下章，咱們吧這個網站設定的又漂亮又方便吧！
+        <strong>用Ruby on Rails作网页的说明到这里了。这样子应该可以作简单的网页吧？<br><br>可是现在的內容又不好看又不方便。在下章，咱們吧这个网站设定的又漂亮又方便吧！
         <br><br>
-        在這個章設定的內容<a href="/zh-CN/codes/6" target="_blank">請參考這裡</a>。
+        在这个章设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a>。
         </strong>
         </h4>

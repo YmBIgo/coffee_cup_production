@@ -1,12 +1,12 @@
 <h4 id="chapter6-1-6-2">
-        <p id="title1-6-2"><i class="fa fa-tags color-red"></i>　<strong>⑵ : 總結</strong></p>
-        在這裡做了<strong>「編輯資料（update）」</strong>的網頁的設定。
+        <p id="title1-6-2"><i class="fa fa-tags color-red"></i>　<strong>⑵ : 总结</strong></p>
+        在这里做了<strong>「编辑资料（update）」</strong>的网页的设定。
         <br><br>
-        <strong>設定的內容，<a href="/zh-CN/codes/6" target="_blank">請參考這裡</a></strong>
+        <strong>设定的內容，<a href="/zh-CN/codes/6" target="_blank">请参考这里</a></strong>
         <hr class="red-hr">
-        <p id="title1-6-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七個網頁的設定</strong></p>
+        <p id="title1-6-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七个网页的设定</strong></p>
         <br>
-        <strong>在「config > routes.rb」文件上，設定「<u>update</u>」</strong>
+        <strong>在「config > routes.rb」文件上，设定「<u>update</u>」</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
 <table class='highlight'>
@@ -40,9 +40,9 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <p id="title1-6-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>操作資料的設定</strong></p>
+        <p id="title1-6-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>操作资料的设定</strong></p>
         <br>
-        <strong>在「app > controllers > 資料庫的名字_controller」文件裡的「<u>update</u>」設定內容。</strong>
+        <strong>在「app > controllers > 资料库的名字_controller」文件里的「<u>update</u>」设定內容。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
 <table class='highlight'>
@@ -60,11 +60,11 @@
 </tr>
 </table>
         <br>
-        <strong><u>選擇要編輯的資料之後，在設定編輯的資料的「update」裡指定資料庫（require）跟框子（permit）</u>。</strong>
+        <strong><u>选择要编辑的资料之后，在设定编辑的资料的「update」里指定资料库（require）跟框子（permit）</u>。</strong>
         <hr class="red-hr">
-        <p id="title1-6-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>網頁的設定</strong></p>
+        <p id="title1-6-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>网页的设定</strong></p>
         <br>
-        <strong>「app > views > 資料庫的名字」文件夾裡的「<u>update.html.erb</u>」上設定內容。</strong>
+        <strong>「app > views > 资料库的名字」文件夾里的「<u>update.html.erb</u>」上设定內容。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>update.html.erb</strong>
 <table class='highlight'>
@@ -80,7 +80,7 @@
 9
 10
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿編輯好了。&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿编辑好了。&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;%= @post.name %&gt;</span>
@@ -89,22 +89,22 @@
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;%= @post.place %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
         <br>
-        <strong><u>沒設定網頁的內容也可以編輯資料，可是利用的人會有一點不方便，所以不要忘記設定網頁的內容吧！</u></strong>
+        <strong><u>沒设定网页的內容也可以编辑资料，可是利用的人会有一点不方便，所以不要忘记设定网页的內容吧！</u></strong>
         <hr class="red-hr">
-        <p id="title1-6-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i><strong>　瀏覽器上的設定</strong></p>
+        <p id="title1-6-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i><strong>　浏览器上的设定</strong></p>
         <br>
-        <strong>「編輯資料（update）」的網頁是在「打入編輯的資料（edit）」點擊按鈕之後會移動到的網頁，所以不用打入URL。</strong>
+        <strong>「编辑资料（update）」的网页是在「打入编辑的资料（edit）」点击按钮之后会移动到的网页，所以不用打入URL。</strong>
         <br>
-        <small>※　網頁的URL，應該是「0.0.0.0:3000/posts/id號碼」。</small>
+        <small>※　网页的URL，应该是「0.0.0.0:3000/posts/id号码」。</small>
         <hr class="red-hr">
-        到這裡，資料的編輯也做好了。
+        到这里，资料的编辑也做好了。
         <br>
-        <strong>剩下的也只是資料的刪除而已了！
+        <strong>剩下的也只是资料的删除而已了！
         <br><br>
-        設定的內容<a href="/zh-CN/codes/6" target="_blank">請參考這裡</a>。</strong>
+        设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a>。</strong>
 </h4>

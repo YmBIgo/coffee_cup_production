@@ -78,19 +78,19 @@
 </tr>
 </table>
         <br>
-        这一次设定的两行也，應該在哪裡看過的設定吧。
+        这一次设定的两行也是，应该在哪里看过的设定吧。
         <br>
         第一行的<strong>「<u>@post = Post.find(params[:id])</u>」</strong>在
         <br>
-        <a href="/zh-CN/mugcups/5#title1-1-1" target="_blank"><strong>「顯示一個資料（show）」</strong></a>的網頁，<a href="/zh-CN/mugcups/6#title1-5-1" target="_blank"><strong>「打入編輯的資料（edit）」</strong></a>的網頁上使用過。
+        <a href="/zh-CN/mugcups/5#title1-1-1" target="_blank"><strong>「显示一个资料（show）」</strong></a>的网页，<a href="/zh-CN/mugcups/6#title1-5-1" target="_blank"><strong>「打入编辑的资料（edit）」</strong></a>的网页上使用过。
         <br><br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>那麽，第二行是在做什麼呢？</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>那么，第二行是在做什么呢？</strong>
         <br><br>
-        在第二行，按着打入的資料「<u>params</u>」，<strong>「<u>変更（update）</u>」</strong>選擇的資料「<u>@post</u>」。
+        在第二行，按着打入的资料「<u>params</u>」，<strong>「<u>更新（update）</u>」</strong>选择的资料「<u>@post</u>」。
         <br>
-        <small>※　詳細<a href="/zh-CN/mugcups/4#title2-2" target="_blank"><strong>請參考這裡</strong></a></small>
+        <small>※　详细<a href="/zh-CN/mugcups/4#title2-2" target="_blank"><strong>请参考这里</strong></a></small>
         <hr class="red-hr">
-        <strong><a href="/zh-CN/mugcups/6#title1-4-1" target="_blank">「新增資料」</a></strong>的時候也設定過，同樣的內容吧。
+        <strong><a href="/zh-CN/mugcups/6#title1-4-1" target="_blank">「新增资料」</a></strong>的时候也设定过，同样的內容吧。
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
 <table class='highlight'>
@@ -106,22 +106,22 @@
 </tr>
 </table>
         <br>
-        在這個「params」的部分裡面有，<u>從「打入編輯的資料（edit）」網頁送來的資料。</u>
+        在这个「params」的部分里面有，<u>从「打入编辑的资料（edit）」网页送來的资料。</u>
         <br><br>
-        在這個「params」裡面放<strong>「<u>name是'名字'，content是'内容'，place是'地方'</u>」</strong>等等的資料。
+        在这个「params」里面放<strong>「<u>name是'名字'，content是'内容'，place是'地方'</u>」</strong>等等的资料。
         <br>
-        然後，為了不要改變指定的資料以外的資料，<strong><u>設定「require」跟「permit」。</u></strong>
+        然后，为了不要改变指定的资料以外的资料，<strong><u>设定「require」跟「permit」。</u></strong>
         <br><br>
-        在這裡設定的內容是，
+        在这里设定的內容是，
         <strong>
         <ul class="number_ul">
-            <li>「posts」資料庫的「<u>name</u>」的框子</li>
-            <li>「posts」資料庫的「<u>content</u>」的框子</li>
-            <li>「posts」資料庫的「<u>place</u>」的框子</li>
+            <li>「posts」资料库的「<u>name</u>」的框子</li>
+            <li>「posts」资料库的「<u>content</u>」的框子</li>
+            <li>「posts」资料库的「<u>place</u>」的框子</li>
         </ul>
         以外的框子不要更改</strong>。
         <br><br>
-        <i class="fa fa-play-circle color-red"></i>　<strong>「<u>資料的編輯（update）</u>」也一樣。</strong>
+        <i class="fa fa-play-circle color-red"></i>　<strong>「<u>资料的编辑（update）</u>」也一样。</strong>
         <br><br>
 <table class='highlight'>
 <tr>
@@ -132,7 +132,7 @@
 </tr>
 </table>
         <br>
-        在這裡使用「編輯資料」的「update」，所以<strong>設定的「<u>@post</u>」</strong>
+        在这里使用「编辑资料」的「update」，所以<strong>设定的「<u>@post</u>」</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>post_controller.rb（第24行）</strong>
 <table class='highlight'>
@@ -144,16 +144,16 @@
 </tr>
 </table>
         <br>
-        裡，只能編輯
+        里，只能编辑
         <strong>
             <ul class="number_ul">
-                <li>「posts」資料庫的「<u>content</u>」的框子</li>
-                <li>「posts」資料庫的「<u>place</u>」的框子</li>
+                <li>「posts」资料库的「<u>content</u>」的框子</li>
+                <li>「posts」资料库的「<u>place</u>」的框子</li>
             </ul>
         </strong>
-        的內容的操作資料的方法。
+        的內容的操作资料的方法。
         <br><br>
-        <i class="fa fa-question-circle color-green"></i><strong>　用從「打入編輯的資料（edit）」的網頁拿來的<u>「books」資料庫的「name」「price」「page」的框子，「編輯資料（update）」</u>的網頁的資料操作是這麼樣設定呢？</strong>
+        <i class="fa fa-question-circle color-green"></i><strong>　用从「打入编辑的资料（edit）」的网页拿來的<u>「books」资料库的「name」「price」「page」的框子，「编辑资料（update）」</u>的网页的资料操作是怎么样设定呢？</strong>
         <br><br>
         <textarea class="input-code form-control" placeholder="打入答案" rows="5"></textarea>
         <br>
@@ -172,28 +172,28 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <i class="fa fa-play-circle"></i>　<strong><u>最後做做看網頁的設定吧！</u></strong>
+        <i class="fa fa-play-circle"></i>　<strong><u>最後做做看网页的设定吧！</u></strong>
         <br><br>
-        打入編輯的資料點擊<strong>「登錄」</strong>按鈕之後，會顯示下面圖像一樣子的網頁。
+        打入编辑的资料点击<strong>「登录」</strong>按钮之后，会显示下面图像一样子的网页。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
                     :target => ["_blank"] %>
-        首先，用Sublime Text打開的「myapp」上，打開<strong>「<u>app > views > posts</u>」</strong>吧。
+        首先，用Sublime Text打开的「myapp」上，打开<strong>「<u>app > views > posts</u>」</strong>吧。
         <br>
-        裡面有<strong>「<u>update.html.erb</u>」</strong>文件嗎？如果有的話，打開看看！
+        里面有<strong>「<u>update.html.erb</u>」</strong>文件吗？如果有的话，打开看看！
         <br><br>
-        <strong>在這個文件裡設定，在「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">打入編輯的資料（edit）</a>」的網頁上點擊按鈕之後，顯示的網頁的內容。</strong>
+        <strong>在这个文件里设定，在「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">打入编辑的资料（edit）</a>」的网页上点击按钮之后，显示的网页的內容。</strong>
         <br><br>
-        那麽，編輯這個<strong>「<u>update.html.erb</u>」</strong>文件吧！
+        那么，编辑这个<strong>「<u>update.html.erb</u>」</strong>文件吧！
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　update.html.erb</strong>
         <br>
         <small>
-          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
           <br>
-          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -209,7 +209,7 @@
 9
 10
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿編輯好了。&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿编辑好了。&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;%= @post.name %&gt;</span>
@@ -218,42 +218,42 @@
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;%= @post.place %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
         <br>
-        <i class="fa fa-question-circle color-green"></i>　<strong>這裡是在設定什麼呢？</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>这里是在设定什么呢？</strong>
         <br><br>
-        在這裡顯示編輯後的資料。
+        在这里显示编辑后的资料。
         <br>
-        詳細的內容請參考，<a href="/zh-CN/mugcups/5#title1-1" target="_blank"><strong>「顯示一個資料（show）」</strong></a>的網頁，<a href="/zh-CN/mugcups/6#title1-4" target="_blank"><strong>「新增資料（create）」</strong></a>的網頁吧。
+        详细的內容请参考，<a href="/zh-CN/mugcups/5#title1-1" target="_blank"><strong>「显示一个资料（show）」</strong></a>的网页，<a href="/zh-CN/mugcups/6#title1-4" target="_blank"><strong>「新增资料（create）」</strong></a>的网页吧。
         <hr class="red-hr">
-        那麽顯示看網頁吧！
+        那么显示看网页吧！
         <br>
         <small>
-          ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+          ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
         </small>
         <br><br><br>
         <p class="alert alert-success">
-        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
         <br>
-        　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入「<u>rails s</u>」吧。</strong>
+        　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入「<u>rails s</u>」吧。</strong>
         </p>
         <br>
-        做完之後，打開「<a href="http://0.0.0.0:3000/posts/edit/1" target="_blank"><strong>0.0.0.0:3000/posts/1/edit</strong></a>」吧！
+        做完之后，打开「<a href="http://0.0.0.0:3000/posts/edit/1" target="_blank"><strong>0.0.0.0:3000/posts/1/edit</strong></a>」吧！
         <br>
         <small>
-            <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts/1/edit" target="_blank"><strong>localhost:3000/posts/1/edit</strong></a>」吧。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts/1/edit" target="_blank"><strong>localhost:3000/posts/1/edit</strong></a>」吧。
         </small>
         <br><br>
-        打開後打入自己喜歡的資料之後，點擊<strong>「<u>更新</u>」</strong>的按鈕吧！
+        打开后打入自己喜欢的内容之后，点击<strong>「<u>更新</u>」</strong>的按钮吧！
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
                     :target => ["_blank"] %>
-        顯示上面一樣子的網頁嗎？
+        显示上面一样子的网页了吗？
         <br><br>
-        出來了的話，用<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a> / <a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>，或者打開「<a href="http://0.0.0.0:3000/posts/1"><strong>0.0.0.0:3000/posts/1</strong></a>」看看內容有沒有更新！
+        出來了的话，用<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a> / <a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>，或者打开「<a href="http://0.0.0.0:3000/posts/1"><strong>0.0.0.0:3000/posts/1</strong></a>」看看內容有沒有更新！
 </h4>

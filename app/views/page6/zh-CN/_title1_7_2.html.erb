@@ -1,12 +1,12 @@
 <h4 id="chapter6-1-7-2">
-        <p id="title1-7-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 總結</strong></p>
-        <strong>「刪除資料（destroy）」</strong>的網頁的設定有三個。
+        <p id="title1-7-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 总结</strong></p>
+        <strong>「删除（destroy）」</strong>的网页的设定有三个。
         <br><br>
-        <strong>設定的內容<a href="/zh-CN/codes/6" target="_blank">請參考這裡</a></strong>
+        <strong>设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a></strong>
         <hr class="red-hr">
-        <p id="title1-7-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七個網頁的設定</strong></p>
+        <p id="title1-7-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七个网页的设定</strong></p>
         <br>
-        <strong>「config > routes.rb」文件裡，設定「<u>destroy</u>」</strong>
+        <strong>「config > routes.rb」文件里，设定「<u>destroy</u>」</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
 <table class='highlight'>
@@ -40,9 +40,9 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <p id="title1-7-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>操作資料的設定</strong></p>
+        <p id="title1-7-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>操作资料的设定</strong></p>
         <br>
-        <strong>「app > controllers > 資料庫的名字_controller」文件裡，設定「<u>destroy</u>」</strong>
+        <strong>「app > controllers > 资料库的名字_controller」文件里，设定「<u>destroy</u>」</strong>
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
 <table class='highlight'>
@@ -60,11 +60,11 @@
 </tr>
 </table>
         <br>
-        <strong><u>選擇要刪除的資料，設定標記之後、標記的後面加「.destroy」</u></strong>
+        <strong><u>选择要删除的资料，设定编辑之后，编辑的后面加「.destroy」</u></strong>
         <hr class="red-hr">
-        <p id="title1-7-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>網頁的設定</strong></p>
+        <p id="title1-7-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>网页的设定</strong></p>
         <br>
-        <strong>「app > views > 資料庫的名字」的文件夾裡的「<u>destroy.html.erb</u>」上，設定內容。</strong>
+        <strong>「app > views > 资料库的名字」的文件夾里的「<u>destroy.html.erb</u>」上，设定內容。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>destroy.html.erb</strong>
 <table class='highlight'>
@@ -77,41 +77,41 @@
 6
 7
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;刪除投稿了&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;删除投稿了&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
         <br>
-        內容設定什麼都可以，但是<strong><u>沒設定內容有一點不方便</u></strong>，所以至少設定返回住頁的連結吧。
+        內容设定什么都可以，但是<strong><u>沒设定內容有一点不方便</u></strong>，所以至少设定返回主页的连接吧。
         <br><br>
-        <p id="title1-7-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>瀏覽器上的顯示</strong></p>
+        <p id="title1-7-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>浏览器上的显示</strong></p>
         <br>
-        <strong>「<u>刪除資料（destroy）</u>」</strong>的網頁上，<u>不能從瀏覽器url的打入移動到網頁。</u>
+        <strong>「<u>删除资料（destroy）</u>」</strong>的网页上，<u>不能从浏览器url的打入移动到网页。</u>
         <br>
-        所以<strong>到「<u>刪除資料（destroy）</u>」的網頁的移動</strong>用
+        所以<strong>到「<u>删除资料（destroy）</u>」的网页的移动</strong>用
         <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;刪除投稿&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;删除投稿&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
         <br>
-        這樣，
+        这样，
 <pre>
-&lt;a href="資料庫的名字/選擇的id" data-method="delete"&gt;内容&lt;/a&gt;
+&lt;a href="资料库的名字/选择的id" data-method="delete"&gt;内容&lt;/a&gt;
 </pre>
-        設定連結。
+        设定连接。
         <hr class="red-hr">
-        <strong>到這裡辛苦你了。最後做總結。
+        <strong>到这里辛苦你了。最後做总结。
         <br><br>
-        設定的內容<a href="/zh-CN/codes/6" target="_blank">請參考這裡</a></strong>
+        设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a></strong>
 </h4>
