@@ -1,9 +1,9 @@
 <h4 id="chapter6-1-6-1">
-        <p id="title1-6-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 設定網頁</strong></p>
+        <p id="title1-6-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 设定网页</strong></p>
         <br>
-        <i class="fa fa-play-circle"></i>　<strong>首先，設定<u>七個網頁中使用哪一個網頁的設定吧</u>。</strong>
+        <i class="fa fa-play-circle"></i>　<strong>首先，设定<u>七个网页中使用哪一个网页的设定吧</u>。</strong>
          <br><br>
-        那麽打開，設定七個網頁的文件<strong>「<u>config > routes.rb</u>」</strong>吧！
+        那么打开，设定七个网页的文件<strong>「<u>config > routes.rb</u>」</strong>吧！
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
 <table class='highlight'>
@@ -37,30 +37,30 @@
 </tr>
 </table>
         <br>
-        內容已經有編輯過了吧。
+        內容已经有编辑过了吧。
         <br><br>
-        應該<strong><u>跟上面的內容一樣子已經追加了「update」</u></strong>吧。這樣子設定好「編輯資料（update）」的網頁了。
+        应该<strong><u>跟上面的內容一样子已经追加了「update」</u></strong>吧。这样子设定好「编辑资料（update）」的网页了。
         <hr class="red-hr">
-        <i class="fa fa-play-circle"></i>　<strong>那麽設定看「<u>操作資料</u>」的網頁吧。</strong>
+        <i class="fa fa-play-circle"></i>　<strong>那么设定看「<u>操作资料</u>」的网页吧。</strong>
         <br><br>
-        在設定「posts」資料庫的資料操作的<strong>「posts_controller.rb」</strong>文件上追加設定。
+        在设定「posts」资料库的资料操作的<strong>「posts_controller.rb」</strong>文件上追加设定。
         <br><br>
-        用Sublime Text打開<strong>「<u>app > controllers > posts_controller.rb</u></strong>」文件吧。
+        用Sublime Text打开<strong>「<u>app > controllers > posts_controller.rb</u></strong>」文件吧。
         <br>
         <small>
-          ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+          ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
           <br>
-          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
         </small>
         <br><br>
-        打開之後，在<strong><u>「def update」跟「end」之間</u></strong>設定下面的設定吧。
+        打开之后，在<strong><u>「def update」跟「end」之间</u></strong>设定下面的设定吧。
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（追加第24行第25行）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（追加第24～25行）</strong>
         <br>
         <small>
-          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
           <br>
-          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -78,19 +78,19 @@
 </tr>
 </table>
         <br>
-        這一次設定的兩行也，應該在哪裡看過的設定吧。
+        这一次设定的两行也，應該在哪裡看過的設定吧。
         <br>
         第一行的<strong>「<u>@post = Post.find(params[:id])</u>」</strong>在
         <br>
-        <a href="/zh-TW/mugcups/5#title1-1-1" target="_blank"><strong>「顯示一個資料（show）」</strong></a>的網頁，<a href="/zh-TW/mugcups/6#title1-5-1" target="_blank"><strong>「打入編輯的資料（edit）」</strong></a>的網頁上使用過。
+        <a href="/zh-CN/mugcups/5#title1-1-1" target="_blank"><strong>「顯示一個資料（show）」</strong></a>的網頁，<a href="/zh-CN/mugcups/6#title1-5-1" target="_blank"><strong>「打入編輯的資料（edit）」</strong></a>的網頁上使用過。
         <br><br>
         <i class="fa fa-question-circle color-green"></i>　<strong>那麽，第二行是在做什麼呢？</strong>
         <br><br>
         在第二行，按着打入的資料「<u>params</u>」，<strong>「<u>変更（update）</u>」</strong>選擇的資料「<u>@post</u>」。
         <br>
-        <small>※　詳細<a href="/zh-TW/mugcups/4#title2-2" target="_blank"><strong>請參考這裡</strong></a></small>
+        <small>※　詳細<a href="/zh-CN/mugcups/4#title2-2" target="_blank"><strong>請參考這裡</strong></a></small>
         <hr class="red-hr">
-        <strong><a href="/zh-TW/mugcups/6#title1-4-1" target="_blank">「新增資料」</a></strong>的時候也設定過，同樣的內容吧。
+        <strong><a href="/zh-CN/mugcups/6#title1-4-1" target="_blank">「新增資料」</a></strong>的時候也設定過，同樣的內容吧。
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
 <table class='highlight'>
@@ -184,7 +184,7 @@
         <br>
         裡面有<strong>「<u>update.html.erb</u>」</strong>文件嗎？如果有的話，打開看看！
         <br><br>
-        <strong>在這個文件裡設定，在「<a href="/zh-TW/mugcups/6#title1-5" target="_blank">打入編輯的資料（edit）</a>」的網頁上點擊按鈕之後，顯示的網頁的內容。</strong>
+        <strong>在這個文件裡設定，在「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">打入編輯的資料（edit）</a>」的網頁上點擊按鈕之後，顯示的網頁的內容。</strong>
         <br><br>
         那麽，編輯這個<strong>「<u>update.html.erb</u>」</strong>文件吧！
         <br><br>
@@ -227,7 +227,7 @@
         <br><br>
         在這裡顯示編輯後的資料。
         <br>
-        詳細的內容請參考，<a href="/zh-TW/mugcups/5#title1-1" target="_blank"><strong>「顯示一個資料（show）」</strong></a>的網頁，<a href="/zh-TW/mugcups/6#title1-4" target="_blank"><strong>「新增資料（create）」</strong></a>的網頁吧。
+        詳細的內容請參考，<a href="/zh-CN/mugcups/5#title1-1" target="_blank"><strong>「顯示一個資料（show）」</strong></a>的網頁，<a href="/zh-CN/mugcups/6#title1-4" target="_blank"><strong>「新增資料（create）」</strong></a>的網頁吧。
         <hr class="red-hr">
         那麽顯示看網頁吧！
         <br>
@@ -255,5 +255,5 @@
                     :target => ["_blank"] %>
         顯示上面一樣子的網頁嗎？
         <br><br>
-        出來了的話，用<a href="/zh-TW/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a> / <a href="/zh-TW/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>，或者打開「<a href="http://0.0.0.0:3000/posts/1"><strong>0.0.0.0:3000/posts/1</strong></a>」看看內容有沒有更新！
+        出來了的話，用<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a> / <a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>，或者打開「<a href="http://0.0.0.0:3000/posts/1"><strong>0.0.0.0:3000/posts/1</strong></a>」看看內容有沒有更新！
 </h4>

@@ -1,12 +1,12 @@
 <h4 id="chapter6-1-4-2">
-        <p id="title1-4-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 總結</strong></p>
-        在<strong>「新增資料（create）」</strong>的網頁上要設定三個內容。
+        <p id="title1-4-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 总结</strong></p>
+        在<strong>「新增资料（create）」</strong>的网页上要设定三个內容。
         <br><br>
-        <strong>設定的內容<a href="/zh-TW/codes/6" target="_blank">請參考這裡</a></strong>
+        <strong>设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a></strong>
         <hr class="red-hr">
-        <p id="title1-4-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七個網站的設定</strong></p>
+        <p id="title1-4-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七个网站的设定</strong></p>
         <br>
-        <strong>在「config」文件夾裡的「routes.rb」文件裡，追加「<u>create</u>」的設定</strong>
+        <strong>在「config」文件夾里的「routes.rb」文件里，追加「<u>create</u>」的设定</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
 <table class='highlight'>
@@ -40,9 +40,9 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <p id="title1-4-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>資料操作的設定</strong></p>
+        <p id="title1-4-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>资料操作的设定</strong></p>
         <br>
-        <strong>在「app > controllers > 資料庫的名字_controller」文件夾裡的「<u>create</u>」上，追加設定</strong>
+        <strong>在「app > controllers > 资料库的名字_controller」文件夾里的「<u>create</u>」上，追加设定</strong>
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
 <table class='highlight'>
@@ -58,11 +58,11 @@
 </tr>
 </table>
         <br>
-        <strong><u>新增資料的「create」裡，設定指定資料庫的內容（require）跟指定框子的內容（permit）</u>。</strong>
+        <strong><u>新增资料的「create」里，设定指定资料库的內容（require）跟指定框子的內容（permit）</u>。</strong>
         <hr class="red-hr">
-        <p id="title1-4-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>網頁的設定</strong></p>
+        <p id="title1-4-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>网页的设定</strong></p>
         <br>
-        <strong>編輯「app > views > 資料庫的名字」文件夾裡的設定文件「<u>create.html.erb</u>」的內容。</strong>
+        <strong>编辑「app > views > 资料库的名字」文件夾里的设定文件「<u>create.html.erb</u>」的內容。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>create.html.erb</strong>
 <table class='highlight'>
@@ -85,22 +85,22 @@
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;%= @post.place %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
         <br>
-        <strong><u>沒設定網頁的顯示也可以保存資料，但是利用的人比較會不方便，所以不要忘記設定網頁的顯示吧！</u></strong>
+        <strong><u>沒设定网页的显示也可以保存资料，但是利用的人比较会不方便，所以不要忘记设定网页的显示吧！</u></strong>
         <hr class="red-hr">
-        <p id="title1-4-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>在瀏覽器上的顯示</strong></p>
+        <p id="title1-4-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>在浏览器上的显示</strong></p>
         <br>
-        <strong>「<u>新增資料（create）</u>」的網頁是，從「<u>打入新的資料（new）</u>」的網頁移動到的，不用在瀏覽器打入url可以打開的網頁。</strong>
+        <strong>「<u>新增资料（create）</u>」的网页是，从「<u>打入新的资料（new）</u>」的网页移动到的，不用在浏览器打入url可以打开的网页。</strong>
         <br>
-        <small>※　網頁的url，應該是<strong>「<u>0.0.0.0:3000/posts</u>」</strong>。</small>
+        <small>※　网页的url，应该是<strong>「<u>0.0.0.0:3000/posts</u>」</strong>。</small>
         <hr class="red-hr">
-        到這裡，作了新增資料的網頁。
+        到这里，作了新增资料的网页。
         <br>
-        <strong>接着，設定「編輯資料」的網頁吧！
+        <strong>接着，设定「编辑资料」的网页吧！
         <br><br>
-        設定的內容，<a href="/zh-TW/codes/6" target="_blank">請參考這裡</a></strong>
+        设定的內容，<a href="/zh-CN/codes/6" target="_blank">请参考这里</a></strong>
 </h4>

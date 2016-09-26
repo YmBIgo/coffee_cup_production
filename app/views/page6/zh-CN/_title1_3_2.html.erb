@@ -1,0 +1,126 @@
+<h4 id="chapter6-1-3-2">
+        <p id="title1-3-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 总结</strong></p>
+        解释<strong>「打入新的资料（new）」</strong>的网页的三个设定。
+        <hr class="red-hr">
+        <p id="title1-3-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七个网页的设定</strong></p>
+        <br>
+        <strong>「config」文件夾里的「routes.rb」文件里设定「<u>new</u>」的內容</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <p id="title1-3-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>资料操作的设定</strong></p>
+        <br>
+        <strong>设定「app > controllers」文件夾里的「资料库的名字_controller」文件「<u>new</u>」</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<span class="color-red"><strong>2</strong></span>
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>new</span></span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.new</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong>设定<u>作空的资料的资料操作「.new」跟用html网页的显示</u></strong>
+        <hr class="red-hr">
+        <p id="title1-3-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>网页的设定</strong></p>
+        <br>
+        <strong>设定「app > views > 资料库」文件夾里「<u>new.html.erb</u>」的內容。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>new.html.erb（第3行〜第12行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3
+4
+5
+6
+7
+8
+9
+10
+11
+12</strong></span>
+13
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;作投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.text_area <span class='word-purple'>:content</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.submit <span class='word-yellow'>"登录"</span> %&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        在网页上，<strong><u>用「controller」文件里作的空格的资料，设定打入內容的输入框。</u></strong>
+        <br><br>
+        <i class="fa fa-arrow-right"></i>　<strong>form_for</strong>
+        <br><br>
+        <strong>用「<u>&lt;%= form_for @设定的标记 do |喜欢的名字| %&gt;</u>」</strong>で指定空格的资料，<br>在<strong>「<u>&lt;% end %&gt;</u>」</strong>之间<u>作「新增资料（create）」的输入框跟发信按鈕。</u>
+        <br><br>
+        <i class="fa fa-arrow-right"></i>　<strong>输入框・发信按鈕</strong>
+        <br><br>
+        用<strong>「<u>&lt;%= 名字.输入框 :框子的名字 %&gt;</u>」</strong>作资料的输入框之后，
+        <br>
+        用<strong>「<u>&lt;%= 名前.submit "显示的文字" %&gt;</u>」</strong>，作「新增资料（create）」的按鈕。
+        <br>
+        <small>※　短的文章的话<strong>用「<u>名字.text_field</u>」设定</strong>，长的文章的话<strong>用「<u>名字.text_area</u>」设定</strong>，数字的话<strong>用「<u>名前.number_field</u>」设定</strong>。</small>
+        <hr class="red-hr">
+        <p id="title1-3-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>浏览器上的显示</strong></p>
+        <br>
+        设定完了后，<strong>在terminal上打入「rails s」之后</strong>用浏览器上打开网页。
+        <br>
+        「新增资料（create）」的网页，从<strong>「<u>0.0.0.0:3000/资料库的名字/new</u>」</strong>打开。
+        <br><br>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，从<strong>「<u>localhost:3000/资料库的名字/new</u>」</strong>打开。</small>
+        <hr class="red-hr">
+        到这里，作了打入资料的网页。
+        <br><br>
+        <strong>接著做「新增资料（create）」的网页吧。
+        <br><br>
+        设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a>。</strong>
+</h4>

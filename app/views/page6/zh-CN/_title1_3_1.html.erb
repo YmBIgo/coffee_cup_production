@@ -1,40 +1,40 @@
 <h4 id="chapter6-1-3-1">
-          <p id="title1-3-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 設定網頁</strong></p>
+          <p id="title1-3-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 设定网页</strong></p>
           <br>
-          <i class="fa fa-question-circle color-green"></i><strong>　首先從學過的內容開始復習吧。<u>要設定網頁的時候，必須要設定三個設定。</u>那個設定是什麼呢？</strong>
+          <i class="fa fa-question-circle color-green"></i><strong>　首先从学过的內容开始复习吧。<u>要设定网页的时候，必须要设定三个设定。</u>那个设定是什么呢？</strong>
           <br><br>
-          這個設定是，
+          这个设定是，
           <strong>
           <ul class="number_ul">
-            <li>從<a href="/zh-TW/mugcups/5#title1" target="_blank"><u>七個網頁</u></a>中設定要使用哪一個網頁的設定</li>
-            →編輯「config > <u>routes.rb</u>」的內容
+            <li>从<a href="/zh-CN/mugcups/5#title1" target="_blank"><u>七个网页</u></a>中设定要使用哪一个网页的设定</li>
+            →编辑「config > <u>routes.rb</u>」的內容
             <br><br>
-            <li><u>資料的操作</u>的方法的設定</li>
-            →編輯「app > controllers > <u>資料庫的名字_controller.rb</u>」的內容
+            <li><u>资料的操作</u>的方法的设定</li>
+            →编辑「app > controllers > <u>资料库的名字_controller.rb</u>」的內容
             <br><br>
-            <li><u>顯示的網頁的內容</u>的設定</li>
-            →編輯「app > views > <u>網頁的名字.html.erb</u>」的內容
+            <li><u>显示的网页的內容</u>的设定</li>
+            →编辑「app > views > <u>网页的名字.html.erb</u>」的內容
           </ul>
           </strong>
-          的三個內容。
+          的三个內容。
           <% # ７つのページの設定（new） %>
           <hr class="red-hr">
-          做<strong>「打入新的資料（new）」</strong>的網頁上，
+          做<strong>「打入新的资料（new）」</strong>的网页上，
           <br>
-          <u>作空格的資料之後，作打入資料的輸入框。</u>
+          <u>作空格的资料之后，作打入资料的输入框。</u>
           <br><br>
-          在這裡做
+          在这里做
           <strong>
           <ul class="number_ul">
-            <li>作空格的資料（<u>posts_controller.rb</u>）</li>
-            <li>設定資料的輸入框，發信按鈕（<u>new.html.erb</u>）</li>
+            <li>作空格的资料（<u>posts_controller.rb</u>）</li>
+            <li>设定资料的输入框，发信按钮（<u>new.html.erb</u>）</li>
           </ul>
           </strong>
-          這個兩個設定。
+          这个两个设定。
           <hr class="red-hr">
-          <i class="fa fa-play-circle"></i>　<strong>那麽從「七個網頁的設定」開始做！</strong>
+          <i class="fa fa-play-circle"></i>　<strong>那么从「七个网页的设定」开始做！</strong>
           <br><br>
-          打開<strong>「<u>config</u>」文件夾</strong>裡，設定七個網頁的設定文件<strong>「<u>routes.rb</u>」文件</strong>吧。
+          打开<strong>「<u>config</u>」文件夾</strong>里，设定七个网页的设定文件<strong>「<u>routes.rb</u>」文件</strong>吧。
                  <br><br>
         <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
 <table class='highlight'>
@@ -68,30 +68,30 @@
 </tr>
 </table>
         <br>
-        內容已經編輯過了吧。
+        內容已经编辑过了吧。
         <br><br>
-        <strong><u>跟上面的第三行一樣有沒有追加「new」嗎？</u></strong>
+        <strong><u>跟上面的第三行一样有沒有追加「new」吗？</u></strong>
         <br>
-        有追加的話，已經設定好使用「打入新的資料（new）」的網頁了。
+        有追加的话，已经设定好使用「打入新的资料（new）」的网页了。
         <hr class="red-hr">
-        <i class="fa fa-play-circle"></i>　<strong>那麽設定看「<u>操作資料</u>」的內容吧。</strong>
+        <i class="fa fa-play-circle"></i>　<strong>那么设定看「<u>操作资料</u>」的內容吧。</strong>
         <br><br>
-        剛開始，用Sublime Text打開<strong>「<u>app > controllers</u>」</strong>文件夾裡的<strong>「<u>posts_controller.rb</u>」</strong>文件吧。
+        刚开始，用Sublime Text打开<strong>「<u>app > controllers</u>」</strong>文件夾里的<strong>「<u>posts_controller.rb</u>」</strong>文件吧。
         <br>
         <small>
-          ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+          ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
           <br>
-          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
         </small>
         <br><br>
-        打開之後，在<strong><u>「def new」跟「end」之間</u></strong>設定下面的內容吧。
+        打开之后，在<strong><u>「def new」跟「end」之间</u></strong>设定下面的內容吧。
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　posts_controller.rb（追加第12行）</strong>
         <br>
         <small>
-          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
           <br>
-          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -107,21 +107,21 @@
 </tr>
 </table>
         <br>
-        這樣子「打入新的資料（new）」的網頁的操作資料的設定完成了。
+        这样子「打入新的资料（new）」的网页的操作资料的设定完成了。
         <br><br>
-        「new」的資料操作像下面一樣，
+        「new」的资料操作像下面一样，
 <pre>
-@設定的標記 = 資料庫的名字（第一字是大寫的單數）.new
+@设定的标记 = 资料库的名字（第一字是大学的单数）.new
 </pre>
-        設定。
+        设定。
         <br><br>
-        <strong>「<i>Post.new</i>」</strong><u>在做裡面是空格的資料</u>。
+        <strong>「<i>Post.new</i>」</strong><u>在做里面是空格的资料</u>。
         <br><br>
-        <strong>先<u>用這裡空格的資料打入資料之後</u>，在「新增資料（create）」的網頁上保存資料</strong>。
+        <strong>先<u>用这里空格的资料打入资料之后</u>，在「新增资料（create）」的网页上保存资料</strong>。
         <br><br>
-        在「打入新的資料（new）」的網頁上，作打入空格的資料的輸入框跟發信按鈕。
+        在「打入新的资料（new）」的网页上，作打入空格的资料的输入框跟发信按钮。
         <br><br>
-        <i class="fa fa-question-circle color-green"></i><strong>　作作看「foods」資料庫的「打入新的資料（new）」的網頁上，操作資料的內容吧。</strong>
+        <i class="fa fa-question-circle color-green"></i><strong>　作作看「foods」资料库的「打入新的资料（new）」的网页上，操作资料的內容吧。</strong>
         <br><br>
         <textarea class="form-control input-code" placeholder="打入答案" rows="3"></textarea>
         <br>
@@ -139,28 +139,28 @@
 </tr>
 </table>
         <hr class="red-hr">
-        <i class="fa fa-play-circle"></i>　<strong>那麽，設定網頁的資料吧。</strong>
+        <i class="fa fa-play-circle"></i>　<strong>那么，设定网页的资料吧。</strong>
         <br><br>
-        在這裡設定像下面圖像一樣子的畫面。
+        在这里设定像下面图像一样子的画面。
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
                     :target => ["_blank"] %>
-        首先，用Sublime Text打開的「myapp」上，打開<strong>「<i>app > views > posts</i>」</strong>吧。
+        首先，用Sublime Text打开的「myapp」上，打开<strong>「<i>app > views > posts</i>」</strong>吧。
         <br>
-        裡面有沒有<strong>「<u>new.html.erb</u>」</strong>文件嗎？如果有的話開開看！
+        里面有沒有<strong>「<u>new.html.erb</u>」</strong>文件吗？如果有的話打开看！
         <br><br>
-        <strong>在這裡，設定顯示「打入新的資料（new）」的網頁的內容。</strong>
+        <strong>在这里，设定显示「打入新的资料（new）」的网页的內容。</strong>
         <br><br>
-        <u>那麽，開始做網頁的設定吧！</u>
+        <u>那么，开始做网页的设定吧！</u>
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　new.html.erb</strong>
         <br>
         <small>
-          ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
           <br>
-          <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
         </small>
         <br><br>
 <table class='highlight'>
@@ -196,35 +196,35 @@
 </tr>
 </table>
         <br>
-        那麽，顯示網頁吧！
+        那么，显示网页吧！
         <br>
         <small>
-          ※　<u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。
+          ※　<u>一起点击「Command」跟「c」</u>停止用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。
         </small>
         <br><br><br>
         <p class="alert alert-success">
-        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
         <br>
-        　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開服務器之後，再打入<u>「rails s」</u>吧。</strong>
+        　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入<u>「rails s」</u>吧。</strong>
         </p>
         <br>
-        起動服務器之後，用瀏覽器打開「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧。
+        启动服务器之后，用浏览器打开「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧。
         <br>
         <small>
-          <i class="fa fa-windows color-blue"></i>　使用Window的話，打開看<strong>「<a href="http://localhost:3000/posts/new" target="_blank">localhost:3000/posts/new</a>」</strong>吧。
+          <i class="fa fa-windows color-blue"></i>　使用Window的话，打开看<strong>「<a href="http://localhost:3000/posts/new" target="_blank">localhost:3000/posts/new</a>」</strong>吧。
         </small>
         <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
                               :width => "90%",
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
                     :target => ["_blank"] %>
-        顯示上面一樣的有輸入框跟發信按鈕的網頁嗎？
+        显示上面一样的有输入框跟发信按钮的网页吗？
         <hr class="red-hr">
-        像上面的<strong>「<u>0.0.0.0:3000/資料庫的名字/new</u>」</strong>是，<strong>「<u>打入新的資料（new）</u>」</strong>的網頁。
+        像上面的<strong>「<u>0.0.0.0:3000/资料库的名字/new</u>」</strong>是，<strong>「<u>打入新的资料（new）</u>」</strong>的网页。
         <br><br>
-        這一次是「posts」資料庫的<strong>「<u>打入新的資料（new）</u>」</strong>的網頁，所以在瀏覽器上打入
+        这一次是「posts」资料库的<strong>「<u>打入新的资料（new）</u>」</strong>的网页，所以在浏览器上打入
         <br><br>
-        <i class="fa fa-chrome color-red"></i><strong>　瀏覽器</strong>
+        <i class="fa fa-chrome color-red"></i><strong>　浏览器</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -234,13 +234,13 @@
 </tr>
 </table>
         <br>
-        打入這樣子的url，打開網頁。
+        打入这样子的url，打开网页。
         <br><br>
-        <i class="fa fa-question-circle color-green"></i><strong>　那麽，用瀏覽器打開<u>「tweets」資料庫「打入新的資料（new）」的網頁</u>的時候，要怎麼樣打開網站呢？</strong>
+        <i class="fa fa-question-circle color-green"></i><strong>　那么，用浏览器打开<u>「tweets」资料库「打入新的资料（new）」的网页</u>的时候，要怎么样打开网站呢？</strong>
         <br><br>
         <input type="input" class="form-control input-code" placeholder="打入答案">
         <br>
-        <i class="fa fa-chrome color-red"></i><strong>　瀏覽器</strong>
+        <i class="fa fa-chrome color-red"></i><strong>　浏览器</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -250,7 +250,7 @@
 </tr>
 </table>
         <hr class="red-hr">
-        那麽，說明在網頁上設定的內容吧。
+        那么，说明在网页上设定的內容吧。
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　new.html.erb</strong>
 <table class='highlight'>
@@ -279,14 +279,14 @@
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登錄"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登录"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class='word-red'>end</span> %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;回返主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;回返主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
         <br>
-        在顯示輸入框的地方是
+        在显示输入框的地方是
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　new.html.erb（第4〜11行）</strong>
 <table class='highlight'>
@@ -307,14 +307,14 @@
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>  &lt;%= f.submit <span class='word-yellow'>"登錄"</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.submit <span class='word-yellow'>"登录"</span> %&gt;</span>
 </td>
 </tr>
 </table>
         <br>
-        的地方。可以推測在這裡設定<u>三個輸入框跟一個發信按鈕吧</u>。
+        的地方。可以推测在这里设定<u>三个输入框跟一个发信按鈕吧</u>。
         <br><br>
-        對。在這裡設定輸入框，按鈕的顯示。例如說在裡面的
+        对。在这里设定输入框，按鈕的显示。例如说在里面的
         <br><br>
 <table class='highlight'>
 <tr>
@@ -325,9 +325,9 @@
 </tr>
 </table>
         <br>
-        在作<strong><u>資料庫裡保存「name」資料的輸入框</u></strong>。
+        在作<strong><u>资料库里保存「name」资料的输入框</u></strong>。
         <br>
-        跟這個比的話，作「content」的輸入框的
+        跟这个比的话，作「content」的输入框的
         <br><br>
 <table class='highlight'>
 <tr>
@@ -340,29 +340,29 @@
         <br>
         內容不同。
         <br><br>
-        這個是因為這裡的內容是按照資料的種類（<a href="/zh-TW/mugcups/4#title1-2" target="_blank"><strong>請參考這裡</strong></a>）設定的。
+        这个是应为这里的內容是按照资料的种类（<a href="/zh-CN/mugcups/4#title1-2" target="_blank"><strong>请参考这里</strong></a>）设定的。
         <br><br>
-        在<strong><u>「posts」資料庫解釋的話，在「name」上設定放短的文章・在「content」上設定放長的文章・在「place」上設定放短的文章</u></strong>的內容。
+        在<strong><u>「posts」资料库解释的话，在「name」上设定放短的文章・在「content」上设定放長的文章・在「place」上设定放短的文章</u></strong>的內容。
         <br>
-        <small>※　內容<a href="/zh-TW/mugcups/4#title1-2" target="_blank"><strong>請參考這裡</strong></a></small>
+        <small>※　內容<a href="/zh-CN/mugcups/4#title1-2" target="_blank"><strong>请参考这里</strong></a></small>
         <br><br>
-        <i class="fa fa-arrow-right color-red"></i>　輸入框也按着這個資料的種類設定。
+        <i class="fa fa-arrow-right color-red"></i>　输入框也按着这个资料的种类设定。
         <br><br>
-        放短的文章的輸入框的設定是
+        放短的文章的输入框的设定是
 <pre>
 &lt;%= f.text_field :框子的名字 %&gt;
 </pre>
-        放長的文章的輸入框的設定是
+        放長的文章的输入框的设定是
 <pre>
 &lt;%= f.text_area :框子的名字 %&gt;
 </pre>
-        放在數字的輸入框的設定是
+        放在数字的输入框的设定是
 <pre>
 &lt;%= f.number_field :框子的名字 %&gt;
 </pre>
-        設定。
+        设定。
         <br><br>
-        <i class="fa fa-question-circle color-green"></i><strong>　<u>打入數字的「price」的輸入框</u>要這麼設定好呢？</strong>
+        <i class="fa fa-question-circle color-green"></i><strong>　<u>打入数字的「price」的输入框</u>要怎么设定好呢？</strong>
         <br><br>
         <input type="input" class="form-control input-code" placeholder="打入答案">
         <br>
@@ -375,30 +375,30 @@
 </tr>
 </table>
         <hr class="red-hr">
-        到這裡，說明了顯示三個輸入框的設定。
+        到这里，说明了显示三个输入框的设定。
         <br>
-        <u>接著解釋顯示<strong>「登錄」</strong>的發信按鈕。</u>
+        <u>接着解释显示<strong>「登录」</strong>的发信按鈕。</u>
         <br>
-        這個按鈕在
+        这个按鈕在
         <br><br>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登錄"</span> %&gt;</span>
+<td class='code-content'><span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登录"</span> %&gt;</span>
 </td>
 </tr>
 </table>
         <br>
-        顯示。
+        显示。
         <br>
-        <strong>點擊這個按鈕之後，移動到「<u>新增資料（create）</u>」的網頁之後，保存打入的資料在資料庫裡。</strong>
+        <strong>点击这个按鈕之后，移动到「<u>新增资料（create）</u>」的网页之后，保存打入的资料在资料库里。</strong>
         <br>
-        <small>※　還沒設定<strong>「<u>新增資料（create）</u>」</strong>的網頁的資料操作，所以資料還不會保存在資料庫。（點擊看之後，在<a href="/zh-TW/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a>/<strong><a href="/zh-TW/mugcups/how_to_open#title4" target="_blank">SqliteBrowser</a></strong>看看內容吧）</small>
+        <small>※　还沒设定<strong>「<u>新增资料（create）</u>」</strong>的网页的资料操作，所以资料还不会保存在资料库里。（点击看之后，在<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a>/<strong><a href="/zh-CN/mugcups/how_to_open#title4" target="_blank">SqliteBrowser</a></strong>看看內容吧）</small>
         <hr class="red-hr">
-        到這裡，說明了顯示輸入框跟發信按鈕的說明。
+        到这里，说明了显示输入框跟发信按鈕的说明。
         <br>
-        那麽還沒說明的<u>第3行第12行是在做什麼呢？</u>
+        那么还沒说明的<u>第3行第12行是在做什么呢？</u>
         <br><br>
         <i class="fa fa-file color-red"></i><strong>　new.html.erb</strong>
 <table class='highlight'>
@@ -427,9 +427,9 @@
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:place</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登錄"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登录"</span> %&gt;</span>
 <span class='code-line remarkable-code'>&lt;% <span class='word-red'>end</span> %&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -448,45 +448,45 @@
 </tr>
 </table>
         <br>
-        <strong>在第3行，用「f」的標記選擇「<u>posts_controller.rb</u>」的「<u>Post.new</u>」作的空格的資料「<u>@post</u>」。</strong>
+        <strong>在第3行，用「f」的标记选择「<u>posts_controller.rb</u>」的「<u>Post.new</u>」作的空格的资料「<u>@post</u>」。</strong>
         <br><br>
-        <small>※　在這裡使用的是「f」不是「@post」，請注意。</small>
+        <small>※　在这里使用的是「f」不是「@post」，请注意。</small>
         <br>
-        <small>※　在這裡使用「f」的名字，但是這個只是<strong><u>從「form」的第一字</u></strong>拿的而已，所以可以用別的自己喜歡的名字。</small>
+        <small>※　在这里使用「f」的名字，但是这个只是<strong><u>从「form」的第一字</u></strong>拿的而已，所以可以用別的自己喜欢的名字。</small>
         <hr class="red-hr">
-        那麽，說明設定的方法吧。
+        那么，说明设定的方法吧。
         <br>
-        <strong>在「打入新的資料（new）」的網頁上，必須在網頁上顯示「<u>posts_controller.rb</u>」裡用「<u>Post.new</u>」作的空格的資料。</strong>
+        <strong>在「打入新的资料（new）」的网页上，必须在网页上显示「<u>posts_controller.rb</u>」里用「<u>Post.new</u>」作的空格的资料。</strong>
         <br><br>
-        使用這個空格的資料的時候，先設定
+        使用这个空格的资料的时候，先设定
 <pre>
-&lt;%= form_for @設定的標記 do |喜歡的名字| %&gt;
+&lt;%= form_for @设定的标记 do |喜欢的名字| %&gt;
 </pre>
-        的內容。這樣子可以選擇「@post」的資料。
+        的內容。这样子可以选择「@post」的资料。
         <br>
-        <small>※　是「&lt;%=」不是「&lt;%」，請注意。</small>
+        <small>※　是「&lt;%=」不是「&lt;%」，请注意。</small>
         <br><br>
-        選擇的資料要設定在
+        选择的资料要设定在
 <pre>
 &lt;% end %&gt;
 </pre>
-        之間。在這裡作輸入框跟發信按鈕。
+        之间。在这里作输入框跟发信按鈕。
         <hr class="red-hr">
-        在裡面設定的輸入框，如果是短的文章的話，
+        在里面设定的输入框，如果是短的文章的话，
 <pre>
 &lt;%= 名字.text_field :框子的名字 %&gt;
 </pre>
-        設定。
+        设定。
         <br>
-        <small>※　如果是長的文章的話使用<strong>「<u>f.text_area</u>」</strong>，如果是數字的話使用<strong>「<u>f.number_field</u>」</strong>設定。</small>
+        <small>※　如果是长的文章的话使用<strong>「<u>f.text_area</u>」</strong>，如果是数字的话使用<strong>「<u>f.number_field</u>」</strong>设定。</small>
         <br><br>
-        然後，設定從「打入新的資料（new）」的網頁，移動到「新增資料（create）」網頁的發信按鈕
+        然后，设定从「打入新的资料（new）」的网页，移动到「新增资料（create）」网页的发信按鈕
 <pre>
-&lt;%= f.submit "顯示的文字" %&gt;
+&lt;%= f.submit "显示的文字" %&gt;
 </pre>
         的內容。
         <hr class="red-hr">
-        <i class="fa fa-question-circle color-green"></i>　<strong>在網頁上打入，像下面一樣設定操作資料的「<u>@stock</u>」的<u>名字「name（短的文章）」</u>跟<u>用戶「user（短的文章）」</u>跟<u>價錢「price（數字）」</u>的設定吧。</strong>
+        <i class="fa fa-question-circle color-green"></i>　<strong>在网页上打入，像下面一样设定操作资料的「<u>@stock</u>」的<u>名字「name（短的文章）」</u>跟<u>用户「user（短的文章）」</u>跟<u>价钱「price（数字）」</u>的设定吧。</strong>
         <br><br>
         <i class="fa fa-file color-red"></i>　<strong>stocks_controller.rb</strong>
 <table class='highlight'>
@@ -519,9 +519,9 @@
 <td class='code-content answer-code'><span class='code-line'>&lt;%= form_for @stock <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;用戶&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;用户&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:user</span> %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;價錢&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;价钱&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;%= f.number_field <span class='word-purple'>:price</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 </td>

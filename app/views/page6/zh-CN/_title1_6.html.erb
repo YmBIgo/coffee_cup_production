@@ -1,0 +1,49 @@
+<h4 id="chapter6-1-6">
+          <p id="title1-6"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑥ : 编辑资料（update）</strong></p>
+          <br>
+          到这里设定了<strong>「<u>打入编辑的资料（edit）</u>」</strong>的网页了。
+          <br><br>
+          <strong>这个跟「<u>新增资料（create）</u>」的网页一样，还需要设定编辑资料的资料操作。</strong>
+          <br>
+          那么，在这里做做看资料的编辑吧！
+          <hr class="red-hr">
+          这一次设定的资料操作的方法是，在<a href="/zh-CN/mugcups/4#title2-2" target="_blank"><strong>第4章</strong></a>做的
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(1).update(:content =&gt; "晚安")</span>
+</td>
+</tr>
+</table>
+        <br>
+        这个內容。设定操作资料的地方（<i>posts_controller.rb</i>）里，设定这个內容。
+        <strong>
+        从「<u>打入编辑的资料（edit）</u>」的网页拿來资料之后，用上面的操作资料的方法编辑资料的內容。
+        </strong>
+        <br>
+        <small>※　这个网页是从「打入编辑的资料（edit）」的网页移動的，所以不用在浏览器上打入URL。</small>
+        <br><br>
+        在这里设定
+        <strong>
+        <ul class="number_ul">
+          <li>用「<u>打入编辑的资料（edit）</u>」的网页上打入的资料，编辑资料</li>
+          <li>显示编辑完成的网页</li>
+        </ul>
+        </strong>
+        <hr class="red-hr">
+        那么，做做
+        <strong>
+          <ul class="number_ul">
+            <li>「七个网页的设定」</li>
+            <li>「资料操作的设定」</li>
+            <li>「网页內容的设定」</li>
+          </ul>
+        </strong>
+        这个三个设定吧！
+        </h4>
+        <hr>
+        <%= render "page6/zh-CN/title1_6_1" %>
+        <hr>
+        <%= render "page6/zh-CN/title1_6_2" %>
