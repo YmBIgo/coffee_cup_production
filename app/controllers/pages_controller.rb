@@ -11,7 +11,7 @@ class PagesController < ApplicationController
           render template: "pages/#{params[:page]}"
         else
           redirect_to root_path
-          flash[:alert] = "ただ今は閲覧できません"
+          flash[:alert] = "指定時間外なので只今は閲覧できません"
         end
       else
         redirect_to dashboard_path
