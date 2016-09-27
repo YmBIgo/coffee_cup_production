@@ -36,7 +36,7 @@ class PagesController < ApplicationController
   end
 
   def time_ok?
-    current_time_hour = Time.now.strftime("%H").to_i
+    current_time_hour = (Time.now.strftime("%H").to_i)+9
     start_time_hour = current_user.start_time.strftime("%H").to_i
     end_time_hour = current_user.end_time.strftime("%H").to_i
     if current_time_hour >= start_time_hour && current_time_hour < end_time_hour
