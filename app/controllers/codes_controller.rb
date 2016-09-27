@@ -8,6 +8,7 @@ class CodesController < ApplicationController
     if lang_ok?
       if current_user.study_enabled == true
         if time_ok?
+          Viewlist.create(:lang => I18n.locale, :page_type => "codes", :page_id => params[:page], :user_id => current_user.id)
           render template: "codes/#{params[:page]}"
         else
           redirect_to dashboard_path
@@ -18,6 +19,7 @@ class CodesController < ApplicationController
         flash[:alert] = "閲覧権限がありません"
       end
     else
+      Viewlist.create(:lang => I18n.locale, :page_type => "mugcups", :page_id => params[:page], :user_id => 0)
       render template: "codes/#{params[:page]}"
     end
   end
@@ -43,14 +45,30 @@ class CodesController < ApplicationController
   end
 
   def time_ok?
-    current_time_hour = Time.now.strftime("%H").to_i
+
+    # current time
+    if Rails.env.production?
+      current_time_hour = (Time.now.strftime("%H").to_i)+9
+    else
+      current_time_hour = (Time.now.strftime("%H").to_i)
+    end
+
+    # start time
     start_time_hour = current_user.start_time.strftime("%H").to_i
+
+    # end time
     end_time_hour = current_user.end_time.strftime("%H").to_i
+    if end_time_hour == 0
+      end_time_hour = 24
+    end
+
+    # check time
     if current_time_hour >= start_time_hour && current_time_hour < end_time_hour
       return true
     else
       return false
     end
+
   end
 
 end
