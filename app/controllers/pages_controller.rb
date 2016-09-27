@@ -10,7 +10,7 @@ class PagesController < ApplicationController
         if time_ok?
           render template: "pages/#{params[:page]}"
         else
-          redirect_to root_path
+          redirect_to dashboard_path
           flash[:alert] = "指定時間外なので只今は閲覧できません"
         end
       else
