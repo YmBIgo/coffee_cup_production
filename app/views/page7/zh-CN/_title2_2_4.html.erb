@@ -1,30 +1,30 @@
 <h4 id="chapter7-2-2-4">
   <p id="title2-2-4"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : navigation-bar</strong></p>
   <br>
-  到這裡作好了輸入框跟按鈕了，網頁也變了漂亮一點吧。
+  到这里作好了输入框跟按钮了，网页也变了漂亮一点吧。
   <br>
-  <strong><u>最後解釋，用Bootstrap的「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」顯示網頁上面的巡覽列（navigation-bar）吧。</u></strong>
+  <strong><u>最后解释，用Bootstrap的「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」显示网页上面的游览列（navigation-bar）吧。</u></strong>
   <br><br>
-  在這裡顯示下面圖像一樣的畫面。
+  在这里显示下面图像一样的画面。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
               :target => ["_blank"] %>
   <br>
-  那麽開始作吧！
+  那么开始作吧！
   <hr class="red-hr">
-  首先用Sublime Text打開<strong>「<u>myapp</u>」</strong>之後，打開<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>吧。
+  首先用Sublime Text打开<strong>「<u>myapp</u>」</strong>之后，打开<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>吧。
   <br>
   <small>
-    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
   </small>
   <br><br>
-  在這個<strong>「<u>application.html.erb</u>」</strong>上面設定內容。
+  在这个<strong>「<u>application.html.erb</u>」</strong>上面设定內容。
   <br><br>
-  那麽在第9行的
+  那么在第9行的
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第9行）</strong>
 <table class='highlight'>
@@ -36,7 +36,7 @@
 </tr>
 </table>
   <br>
-  後面追加
+  后面追加
   <br><br>
 <table class='highlight'>
 <tr>
@@ -79,42 +79,42 @@
 </tr>
 </table>
   <br>
-  的內容吧！應為內容很長，使用複製與黏貼吧。
+  的內容吧！应为內容很长，使用复制与粘贴吧。
   <strong>
   <ul class="number_ul">
-    <li>複製　一起點擊<u>「Command」跟「c」</u></li>
-    <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，<strong>「ctrl」跟「c」</strong></small>
+    <li>复制　一起点击<u>「Command」跟「c」</u></li>
+    <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，<strong>「ctrl」跟「c」</strong></small>
     <br><br>
-    <li>黏貼　一起點擊<u>「Command」跟「v」</u></li>
-    <small><i class="fa fa-windows color-blue"></i>　使用Windows的話，<strong>「ctrl」跟「v」</strong></small>
+    <li>粘贴　一起点击<u>「Command」跟「v」</u></li>
+    <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，<strong>「ctrl」跟「v」</strong></small>
   </ul>
   </strong>
   <br>
   <small>
-    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
   </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  追加內容之後，打開<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>吧！
+  追加內容之后，打开<strong>「<a href="http://0.0.0.0:3000/posts" target="_blank">0.0.0.0:3000/posts</a>」</strong>吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
   <br><br>
-  有沒有顯示下面一樣的畫面嗎？
+  有沒有显示下面一样的画面吗？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_1.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_1.png",
               :target => ["_blank"] %>
-  上面的遊覽列蓋住網頁的內容顯示的不是那麽好，但是上面應該顯示了巡覽列。
+  上面的游览列盖住网页的內容显示的不是那么好，但是上面应该显示了游览列。
   <hr class="red-hr">
-  在這裡
+  在这里
   <br><br>
 <table class="highlight">
 <tr>
@@ -125,13 +125,13 @@
 </tr>
 </table>
   <br>
-  <strong><u>用「&lt;a&gt;」的連結顯示左邊的「myapp」。點擊這個連結之後會移動到「/posts」的網頁</u></strong>。
+  <strong><u>用「&lt;a&gt;」的连接显示左边的「myapp」。点击这个连接之后会移动到「/posts」的网页</u></strong>。
   <br>
-  別的設定方法，等一下再解釋吧！
+  別的设定方法，等一下再解释吧！
   <hr class="red-hr">
-  先修這個遊覽列蓋上來的網頁吧。
+  先修这个游览列盖上來的网页吧。
   <br>
-  修這個遊覽列蓋上來的地方的話，更改<strong><a href="/zh-TW/mugcups/7#application-html" target="_blank">顯示「show」或者「index」等等的網頁的</a></strong>
+  修这个游览列盖上來的地方的话，更改<strong><a href="/zh-CN/mugcups/7#application-html" target="_blank">显示「show」或者「index」等等的网页的</a></strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第10〜12行）</strong>
 <table class='highlight'>
@@ -147,9 +147,9 @@
 </tr>
 </table>
   <br>
-  這個「yield」的位置。
+  这个「yield」的位置。
   <br><br>
-  首先在這個「<a href="/zh-TW/mugcups/7#title2-2-1-css-div" target="_blank"><strong>div</strong></a>」上，設定<strong>「<u>main-page</u>」</strong>的「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」吧。在這個「class」裡設定網頁的位置的設定。
+  首先在这个「<a href="/zh-CN/mugcups/7#title2-2-1-css-div" target="_blank"><strong>div</strong></a>」上，设定<strong>「<u>main-page</u>」</strong>的「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」吧。在这个「class」里设定网页的位置的设定。
   <br><br>
   <i class="fa fa-question-circle color-green"></i>　<strong>在<u>&lt;div class="container"&gt;</u>上追加「main-page」的class吧！</strong>
   <br><br>
@@ -158,9 +158,9 @@
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第10〜12行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -176,38 +176,38 @@
 </tr>
 </table>
   <hr class="red-hr">
-  <strong>那麽在CSS文件「style.scss」上，追加「main-page」的裝飾設定吧。</strong>
+  <strong>那么在CSS文件「style.scss」上，追加「main-page」的装饰设定吧。</strong>
   <br><br>
-  <p id="title2-2-4-margin" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>更改這個被蓋的地方要，在指定的地方上面作空格。</strong></p>
+  <p id="title2-2-4-margin" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>更改这个被盖的地方要，在指定的地方上面作空格。</strong></p>
   <br>
-  這個是，用
+  这个是，用
 <pre>
 margin-top:50px;
 </pre>
-  的內容設定。
+  的內容设定。
   <br><br>
-  想改空格的地方的話，編輯數字的地方。
+  想改空格的地方的话，编辑数字的地方。
   <br>
-  想在右邊作空格的話使用<strong>「<u>margin-right:</u>」</strong>、左邊的話使用<strong>「<u>margin-left:</u>」</strong>，下面的話使用<strong>「<u>margin-bottom:</u>」</strong>設定。
+  想在右边作空格的话使用<strong>「<u>margin-right:</u>」</strong>、左边的话使用<strong>「<u>margin-left:</u>」</strong>，下面的话使用<strong>「<u>margin-bottom:</u>」</strong>设定。
   <br>
-  <small>※　<a href="/zh-TW/mugcups/css#title1-3" target="_blank"><strong>請參考這裡</strong></a></small>
+  <small>※　<a href="/zh-CN/mugcups/css#title1-3" target="_blank"><strong>请参考这里</strong></a></small>
   <br><br>
-  首先用Sublime Text打開<strong>「<u>myapp</u>」</strong>之後，打開<strong>「<u>app > assets > stylesheets > style.scss</u>」</strong>吧。
+  首先用Sublime Text打开<strong>「<u>myapp</u>」</strong>之后，打开<strong>「<u>app > assets > stylesheets > style.scss</u>」</strong>吧。
   <br>
   <small>
-    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
   </small>
   <br><br>
-  打開之後追加下面的設定吧！
+  打开之后追加下面的设定吧！
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>style.scss（第4〜6行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -223,40 +223,40 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  <u>這樣在「main-page」的class裡設定了<strong>在上面作50px的空格</strong>的內容。</u>
+  <u>这样在「main-page」的class里设定了<strong>在上面作50px的空格</strong>的內容。</u>
   <br><br>
   <small>
-    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
   </small>
   <br><br><br>
   <p class="alert alert-success">
   <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  設定好了之後，打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
+  设定好了之后，打开「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
   <br><br>
-  有沒有顯示下面圖像一樣的畫面嗎？
+  有沒有显示下面图像一样的画面吗？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_2.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_2.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  最後設定看，跟下面一樣
+  最后设定看，跟下面一样
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
               :target => ["_blank"] %>
-  在右邊<strong>「<u>作投稿</u>」</strong>的連結吧。從這個連結可以移動到「<a href="/zh-TW/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」的網頁。
+  在右边<strong>「<u>作投稿</u>」</strong>的连接吧。从这个连接可以移动到「<a href="/zh-CN/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」的网页。
   <br><br>
-  右邊的文字的設定在，
+  右边的文字的设定在，
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第22,23行）</strong>
 <table class='highlight'>
@@ -282,16 +282,16 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  這個第22，23行之間，設定。
+  这个第22，23行之间，设定。
   <br>
-  那麽開始做吧。在上面的第22行後面追加下面的內容。
+  那么开始做吧。在上面的第22行后面追加下面的內容。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第23行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -307,36 +307,36 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  <u>在這裡設定的「&lt;li&gt;」跟「&lt;/li&gt;」圍起來的地方會在網頁上顯示。</u>
+  <u>在这里设定的「&lt;li&gt;」跟「&lt;/li&gt;」围起來的地方会在网页上显示。</u>
   <br>
-  這一次的話，是<strong>「<u>&lt;a href="/posts/new"&gt;作投稿&lt;/a&gt;</u>」的地方</strong>呢。
+  这一次的话，是<strong>「<u>&lt;a href="/posts/new"&gt;作投稿&lt;/a&gt;</u>」的地方</strong>呢。
   <br><br>
-  那麽，看看內容吧！
+  那么，看看內容吧！
   <br>
   <small>
-    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
   </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
+  打开「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
   <br><br>
-  有沒有顯示下面圖像一樣的網頁嗎？
+  有沒有显示下面图像一样的网页吗？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_bootstrap_nav_3.png",
               :target => ["_blank"] %>
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>那麽在上面的遊覽列上追加，移動到「/posts」的網頁的<a href="/zh-TW/mugcups/5#title1-2-2" target="_blank">連結</a>「返回主頁」（&lt;a&gt;）的內容要怎麼設定好呢？（第23行上放鼠標可以看答案）</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>那么在上面的游览列上追加，移动到「/posts」的网页的<a href="/zh-CN/mugcups/5#title1-2-2" target="_blank">连接</a>「返回主页」（&lt;a&gt;）的內容要怎么设定好呢？（第23行上放鼠标可以看答案）</strong>
   <br><br>
   <input type="input" class="input-code form-control" placeholder="打入答案">
   <br>
@@ -354,9 +354,9 @@ margin-top:50px;
 </tr>
 </table>
   <hr class="red-hr">
-  移動到別的網頁（「edit」「index」等等），看看顯示的畫面有沒有一樣。
+  移动到別的网页（「edit」「index」等等），看看显示的画面有沒有一样。
   <br><br>
-  <i class="fa fa-star color-blue"></i>　<strong>用Bootstrap作上面的遊覽列的時候，要設定</strong>
+  <i class="fa fa-star color-blue"></i>　<strong>用Bootstrap作上面的游览列的时候，要设定</strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第10行〜第26行）</strong>
 <table class='highlight'>
@@ -412,11 +412,11 @@ margin-top:50px;
   <br>
   的內容。
   <br>
-  用複製與黏貼打入內容也可以。
+  用复制与粘贴打入內容也可以。
   <br><br>
-  在這個裡面，有可以編輯的地方
+  在这个里面，有可以编辑的地方
   <ul class="number_ul">
-  <strong><li>左邊的文字</li></strong>
+  <strong><li>左边的文字</li></strong>
   <br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
 <table class="highlight">
@@ -428,7 +428,7 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  <strong><li>右邊的文字</li></strong>
+  <strong><li>右边的文字</li></strong>
   <br>
   <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
 <table class='highlight'>
@@ -442,7 +442,7 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  之間設定
+  之间设定
   <br><br>
 <table class='highlight'>
 <tr>
@@ -453,7 +453,7 @@ margin-top:50px;
 </tr>
 </table>
   <br>
-  想顯示的文字。
+  想显示的文字。
   <hr class="red-hr">
-  <strong><u>辛苦你了。接着做總結。</u></strong>
+  <strong><u>辛苦你了。接着做总结。</u></strong>
 </h4>

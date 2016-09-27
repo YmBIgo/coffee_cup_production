@@ -1,0 +1,20 @@
+<h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
+<h4 id="chapter8-0">
+<i class="fa fa-bookmark color-red"></i> 学习<strong>在「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」上设定主页的方法跟用CSS设定图像的方法。</strong>
+<hr>
+到这里作的网页都是，在浏览器上打入「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」或者「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」等等很长的url才可以打开的网页。
+<br><br>
+可是在这个网站上，作网页的主页「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」要怎么设定好呢？
+<br>
+这一次设定用「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」的url，显示下面图像一样的网页吧。
+<br>
+<small>※　还沒设定好主页，现在打开「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」也只能看到<a href="/zh-CN/mugcups/3#title2-3" target="_blank"><strong><u>刚开始用Ruby on Rails作的主页</u></strong></a>。</small>
+<%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
+                    :width => "90%",
+                    :class => "hover_img textbook-title-img"),
+            "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
+            :target => ["_blank"] %>
+<strong>出现这样子的主页的话，比较像网站吧？
+<br>
+那么开始作吧！</strong>
+</h4>

@@ -1,45 +1,45 @@
 <h4 id="chapter7-2-2-3">
   <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : form-control</strong></p>
   <br>
-  設定好按鈕了嗎？
+  设定好按钮了吗？
   <br>
-  更改一下「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」的內容就可以設定裝飾，應該設定不會那麽難。
+  更改一下「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」的內容就可以设定装饰，应该设定不会那么难。
   <br><br>
-  <strong><u>接着跟「btn」同樣的方法，裝飾看輸入框的內容吧。</u></strong>
+  <strong><u>接着跟「btn」同样的方法，装饰看输入框的內容吧。</u></strong>
   <br>
-  現在的輸入框改成，
+  現在的输入框改成，
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_btn.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_btn.png",
               :target => ["_blank"] %>
-  這樣子漂亮的輸入框吧！
+  这样子漂亮的输入框吧！
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_myform.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_myform.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  用Bootstrap作輸入框的時候，要在<strong>「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」</strong>裡指定<strong>「<u>form-control</u>」</strong>。
+  用Bootstrap作输入框的时候，要在<strong>「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」</strong>里指定<strong>「<u>form-control</u>」</strong>。
   <br>
-  首先更改「<a href="/zh-TW/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」的輸入框（<strong><u>new.html.erb</u></strong>）吧！
+  首先更改「<a href="/zh-CN/mugcups/6#title1-3" target="_blank"><strong>new</strong></a>」的输入框（<strong><u>new.html.erb</u></strong>）吧！
   <br><br>
-  用Sublime Text打開<strong>「<u>myapp</u>」</strong>之後，打開<strong>「<u>app > views > posts > new.html.erb</u>」</strong>吧。
+  用Sublime Text打开<strong>「<u>myapp</u>」</strong>之后，打开<strong>「<u>app > views > posts > new.html.erb</u>」</strong>吧。
   <br>
   <small>
-    ※　使用Sublime Text打開文件的方法<a href="/zh-TW/mugcups/how_to_open#title1" target="_blank"><strong>請參考這裡</strong></a>
+    ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打開文件文件夾的方法<a href="/zh-TW/mugcups/how_to_open#title2" target="_blank"><strong>請參考這裡</strong></a>。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
   </small>
   <br><br>
-  打開之後，參考下面編輯內容吧。
+  打开之后，参考下面编辑內容吧。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -73,49 +73,49 @@
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登錄"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
   <small>
-    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
   </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  服務器起動之後，打開「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧。
+  服务器打开之后，打开「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧。
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」吧。
   </small>
   <br><br>
-  有沒有顯示下面圖像一樣的畫面嗎？
+  有沒有显示下面图像一样的画面吗？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_all.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_all.png",
               :target => ["_blank"] %>
-  雖然有一點長，但顯示比較好的輸入框了吧。
+  虽然有一点长，但显示比较好的输入框了吧。
   <br>
-  用Bootstrap設定輸入框的時候，要在「class」裡設定<strong>「<u>form-control</u>」</strong>。
+  用Bootstrap设定输入框的时候，要在「class」里设定<strong>「<u>form-control</u>」</strong>。
   <br><br>
-  輸入框用「&lt;%= 」跟「%&gt;」作，所以「class」使用
+  输入框用「&lt;%= 」跟「%&gt;」作，所以「class」使用
 <pre>
 ,:class => "class的名字"
 </pre>
-  設定。
+  设定。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>用Bootstrap設定<u>打入數字「age」的輸入框</u>的時候要怎麼設定呢？</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>用Bootstrap设定<u>打入数字「age」的输入框</u>的时候要怎么设定呢？</strong>
   <br>
-  <small>※　作打入數字的輸入框的方法<a href="/zh-TW/mugcups/6#title1-3-2-view" target="_blank"><strong>請參考這裡</strong></a></small>
+  <small>※　作打入数字的输入框的方法<a href="/zh-CN/mugcups/6#title1-3-2-view" target="_blank"><strong>请参考这里</strong></a></small>
   <br><br>
   <input type="input" class="input-code form-control" placeholder="打入答案">
   <br>
@@ -128,16 +128,16 @@
 </tr>
 </table>
   <hr class="red-hr">
-  <i class="fa fa-question-circle color-green"></i>　<strong>用Bootstrap設定<u>「<a href="/zh-TW/mugcups/6#title1-5" target="_blank">edit</a>」的網頁的輸入框</u>吧！</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>用Bootstrap设定<u>「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">edit</a>」的网页的输入框</u>吧！</strong>
   <br><br>
   <textarea class="input-code form-control" placeholder="打入答案" rows="14"></textarea>
   <br>
   <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（追加第5、6、8行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -156,7 +156,7 @@
 12
 13
 </td>
-<td class='code-content small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;編輯投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;编辑投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -165,7 +165,7 @@
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line answer-code'>  &lt;%= f.text_field <span class="word-purple">:place</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span></span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"編輯資料"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"编辑資料"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回投稿&lt;/<span class='word-red'>a</span>&gt;</span>
@@ -173,34 +173,34 @@
 </tr>
 </table>
   <hr class="red-hr">
-  到這裡輸入框的設定是好了，但是現在的輸入框太長了。在這裡設定輸入框的長度吧！
+  到这里输入框的设定是好了，但是现在的输入框太长了。在这里设定输入框的长度吧！
   <br>
-  設定長度的時候，在CSS上設定長度。
+  设定长度的时候，在CSS上设定长度。
   <br><br>
-  長度要在CSS文件上追加
+  长度要在CSS文件上追加
 <pre>
-width:數字px;
+width:数字px;
 </pre>
-  這個設定。
+  这个设定。
   <br>
   <small>
-  ※　px這個單位、自己設定自己看看長度吧。
+  ※　px这个单位，自己设定自己看看长度吧。
   <br>
-  　　要舉例子的話，右邊的滑動桿的上下是400px。
+  　　要举例子的话，右边的滑动杆的上下是400px。
   </small>
   <br><br>
-  <strong><u>那麽設定「<a href="/zh-TW/mugcups/6#title1-3" target="_blank">new</a>」網頁的設定文件「new.html.erb」吧！</u></strong>
+  <strong><u>那么设定「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">new</a>」网页的设定文件「new.html.erb」吧！</u></strong>
   <br><br>
-  首先在CSS的「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」上追加設定。在這裡追加<strong>「<u>my-form</u>」</strong>的名字的設定吧。
+  首先在CSS的「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>」上追加设定。在这里追加<strong>「<u>my-form</u>」</strong>的名字的设定吧。
   <br><br>
-  參考下面的內容，編輯<strong>「<u>new.html.erb</u>」</strong>吧。
+  参考下面的內容，编辑<strong>「<u>new.html.erb</u>」</strong>吧。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -234,36 +234,36 @@ width:數字px;
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登錄"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
 
   <br>
-  CSS文件裡還沒設定內容，所以在這個<strong>「<u>my-form</u>」</strong>裡設定
+  CSS文件里还沒设定內容，所以在这个<strong>「<u>my-form</u>」</strong>里设定
 <pre>
 width:500px;
 </pre>
   的內容吧！
   <hr class="red-hr">
-  事先，自己作設定裝飾的CSS文件。
+  事先，自己作设定装饰的CSS文件。
   <br>
   <strong>「app > assets > stylesheets」</strong>上，保存<strong>「<u>style.scss</u>」</strong>的文件吧。
   <br>
   <small>
-    ※　保存文件的方法，<a href="/zh-TW/mugcups/how_to_save" target="_blank"><strong>請參考這裡</strong></a>
+    ※　保存文件的方法，<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>请参考这里</strong></a>
   </small>
   <br>
-  <small>※　名字用什麼都可以，但是在這裡設定最簡單的「style.scss」。</small>
+  <small>※　名字用什么都可以，但是在这里设定最简单的「style.scss」。</small>
   <br><br>
-  在<strong>「<u>style.scss</u>」</strong>上，追加CSS的設定吧。
+  在<strong>「<u>style.scss</u>」</strong>上，追加CSS的设定吧。
   <br>
-  <strong>可是，仔細看文件的名字不是「style.css」而是「style.scss」呢。這是為什麼呢？</strong>
+  <strong>可是，仔细看文件的名字不是「style.css」而是「style.scss」呢。这是为什么呢？</strong>
   <br><br>
-  在Ruby on Rails上使用的CSS文件的時候，如果後面要使用<strong>「<u>scss</u>」</strong>設定CSS文件的話，
+  在Ruby on Rails上使用的CSS文件的时候，如果后面要使用<strong>「<u>scss</u>」</strong>设定CSS文件的话，
   <br><br>
 <table class='highlight'>
 <tr>
@@ -274,17 +274,17 @@ width:500px;
 </tr>
 </table>
   <br>
-  不用加這個，就可以使用CSS文件。
+  不用加这个，就可以使用CSS文件。
   <br>
-  <small>※　CSS的寫法<strong><a href="/zh-TW/mugcups/3#title1-2" target="_blank">請參考這裡</a></strong></small>
+  <small>※　CSS的写法<strong><a href="/zh-CN/mugcups/3#title1-2" target="_blank">请参考这里</a></strong></small>
   <hr class="red-hr">
-  <i class="fa fa-question-circle color-green"></i>　<strong>在這個「style.scss」上，</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>在这个「style.scss」上，</strong>
 <pre>
 width:500px;
 </pre>
-  <strong>設定看「<u>my-form</u>」吧！這個設定的方法跟<a href="/zh-TW/mugcups/3#title1-2" target="_blank">設定CSS文件的方法</a>一樣。</strong>
+  <strong>设定看「<u>my-form</u>」吧！这个设定的方法跟<a href="/zh-CN/mugcups/3#title1-2" target="_blank">设定CSS文件的方法</a>一样。</strong>
   <br>
-  <small>※　CSS的寫法<strong><a href="/zh-TW/mugcups/3#title1-2" target="_blank">請參考這裡</a></strong></small>
+  <small>※　CSS的写法<strong><a href="/zh-CN/mugcups/3#title1-2" target="_blank">请参考这里</a></strong></small>
   <br><br>
   <textarea class="input-code form-control" placeholder="打入答案" rows="4"></textarea>
   <br>
@@ -301,41 +301,41 @@ width:500px;
 </tr>
 </table>
   <hr class="red-hr">
-  到這裡，設定輸入框的設定好了。
+  到这里，设定输入框的设定好了。
   <br>
   <small>
-    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
   </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  起動服務器之後，打開「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧。
+  启动服务器之后，打开「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧。
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」吧。
   </small>
   <br><br>
-  有沒有顯示跟下面的圖像一樣的輸入框了嗎？
+  有沒有显示跟下面的图像一样的输入框了吗？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_myform.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_new_bootstrap_form_control_myform.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  <i class="fa fa-question-circle color-green"></i>　<strong>同樣在「<a href="/zh-TW/mugcups/6#title1-5" target="_blank">edit</a>」的網頁的輸入框裡設定「my-form」的內容吧！</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>同样在「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">edit</a>」的网页的输入框里设定「my-form」的內容吧！</strong>
   <br><br>
   <textarea class="input-code form-control" placeholder="打入答案" rows="17"></textarea>
   <br>
-  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（編輯第5、8行）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（编辑第5、8行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -354,7 +354,7 @@ width:500px;
 12
 13
 </td>
-<td class='code-content small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;編輯投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content small-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;编辑投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -363,7 +363,7 @@ width:500px;
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line answer-code'>  &lt;%= f.text_field <span class="word-purple">:place</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span></span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"編輯投稿"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"编辑投稿"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回投稿&lt;/<span class='word-red'>a</span>&gt;</span>
@@ -371,20 +371,20 @@ width:500px;
 </tr>
 </table>
   <hr class="red-hr">
-  完了之後打開「<a href="http://0.0.0.0:3000/posts/1/edit" target="_blank"><strong>0.0.0.0:3000/posts/1/edit</strong></a>」吧！
+  完了之后打开「<a href="http://0.0.0.0:3000/posts/1/edit" target="_blank"><strong>0.0.0.0:3000/posts/1/edit</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts/1/edit" target="_blank"><strong>localhost:3000/posts/1/edit</strong></a>」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts/1/edit" target="_blank"><strong>localhost:3000/posts/1/edit</strong></a>」吧。
   </small>
   <br><br>
-  有沒有顯示下面圖像一樣的畫面了嗎？
+  有沒有显示下面图像一样的画面了吗？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_edit_bootstrap_myform.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_edit_bootstrap_myform.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  <i class="fa fa-star color-blue"></i>　<strong>用Bootstrap設定輸入框的時候，要在「class」裡設定「form-control」。</strong>
+  <i class="fa fa-star color-blue"></i>　<strong>用Bootstrap设定输入框的时候，要在「class」里设定「form-control」。</strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>edit.html</strong>
 <table class='highlight'>
