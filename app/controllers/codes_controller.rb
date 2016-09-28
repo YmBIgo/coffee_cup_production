@@ -8,7 +8,7 @@ class CodesController < ApplicationController
     if lang_ok?
       if current_user.study_enabled == true
         if time_ok?
-          Viewlist.create(:lang => I18n.locale, :page_type => "codes", :page_id => params[:page], :user_id => current_user.id)
+          Viewlist.create(:lang => I18n.locale, :page_type => "codes", :page_id => params[:page], :user_id => current_user.id, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
           render template: "codes/#{params[:page]}"
         else
           redirect_to dashboard_path
@@ -19,7 +19,7 @@ class CodesController < ApplicationController
         flash[:alert] = "閲覧権限がありません"
       end
     else
-      Viewlist.create(:lang => I18n.locale, :page_type => "mugcups", :page_id => params[:page], :user_id => 0)
+      Viewlist.create(:lang => I18n.locale, :page_type => "mugcups", :page_id => params[:page], :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
       render template: "codes/#{params[:page]}"
     end
   end
