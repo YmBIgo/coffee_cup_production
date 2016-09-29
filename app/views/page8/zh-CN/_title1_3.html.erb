@@ -1,40 +1,40 @@
 <h4 id="chapter8-1-3">
-  <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 總結</strong></p>
+  <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 总结</strong></p>
   <br>
-  在這個章解釋了
+  在这个章解释了
   <ul class="number_ul">
-    <strong><li>不要操作資料的網頁</li></strong>
-    <strong><li>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」上的網頁的顯示</li></strong>
-    <strong><li>用CSS的顯示圖像的設定跟<a href="/zh-CN/mugcups/css#title1-3" target="_blank">Padding</a></li></strong>
+    <strong><li>不要操作资料的网页</li></strong>
+    <strong><li>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」上的网页的显示</li></strong>
+    <strong><li>用CSS的显示图像的设定跟<a href="/zh-CN/mugcups/css#title1-3" target="_blank">Padding</a></li></strong>
   </ul>
-  這個三個設定。
+  这个三个设定。
   <br><br>
-  <strong>設定的內容<a href="/zh-CN/codes/8" target="_blank">請參考這裡</a></strong>
+  <strong>设定的內容<a href="/zh-CN/codes/8" target="_blank">请参考这里</a></strong>
   <hr class="red-hr">
-  <strong class="little-remarkable"><u><i class="fa fa-play-circle"></i> 不要操作資料的網頁</u></strong>
+  <strong class="little-remarkable"><u><i class="fa fa-play-circle"></i> 不要操作资料的网页</u></strong>
   <br><br>
-  要設定不要用指定的資料庫操作資料的網頁的時候，使用<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」</strong>的網頁。
+  要设定不要用指定的资料库操作资料的网页的时候，使用<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」</strong>的网页。
   <br>
-  設定網頁的時候，使用
+  设定网页的时候，使用
   <br><br>
   　<strong>terminal</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>rails g controller 網頁的名字（單數）</span>
+<td class='code-content'><span class='code-line'>rails g controller 网页的名字（单数）</span>
 </td>
 </tr>
 </table>
   <br>
-  作設定的文件跟文件夾<strong>（<u>view跟controller</u>）</strong>。
+  作设定的文件跟文件夾<strong>（<u>view跟controller</u>）</strong>。
   <br><br>
-  做完這個之後，不要操作資料也要做<a href="/zh-CN/mugcups/5#title1" target="_blank"><strong>三個設定</strong></a>。
+  做完这个之后，不要操作资料也要做<a href="/zh-CN/mugcups/5#title1" target="_blank"><strong>三个设定</strong></a>。
   <ul class="number_ul">
     <hr class="red-hr">
-    <strong><li>使用哪一個網頁的設定</li></strong>
+    <strong><li>使用哪一个网页的设定</li></strong>
     <br>
-    應為不要操作資料，在<strong>「<u>config > routes.rb</u>」</strong>上設定<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」</strong>。
+    应为不要操作资料，在<strong>「<u>config > routes.rb</u>」</strong>上设定<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」</strong>。
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>routes.rb</strong>
 <table class='highlight'>
@@ -46,9 +46,9 @@
 </tr>
 </table>
     <br>
-    <strong><li>操作資料的設定</li></strong>
+    <strong><li>操作资料的设定</li></strong>
     <br>
-    不要操作資料也要，在<strong>「<u>app > controllers > 名字_controller.rb</u>」</strong>文件裡設定<strong>「<u>def index</u>」</strong>的內容。
+    不要操作资料也要，在<strong>「<u>app > controllers > 名字_controller.rb</u>」</strong>文件里设定<strong>「<u>def index</u>」</strong>的內容。
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>welcome_controller.rb</strong>
 <table class='highlight'>
@@ -66,9 +66,9 @@
 </tr>
 </table>
     <br>
-    <strong><li>網頁的設定</li></strong>
+    <strong><li>网页的设定</li></strong>
     <br>
-    <strong>「<u>app > views > 名字</u>」</strong>的文件夾裡，保存<strong>「<u>index.html.erb</u>」</strong>之後設定網頁的顯示。
+    <strong>「<u>app > views > 名字</u>」</strong>的文件夾里，保存<strong>「<u>index.html.erb</u>」</strong>之后设定网页的显示。
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
 <table class='highlight'>
@@ -80,37 +80,37 @@
 5
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;歡迎光臨&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;欢迎光临&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;看投稿一覽&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;看投稿一览&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
   </ul>
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i><strong class="little-remarkable"><u>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」上的網頁顯示</u></strong>
+  <i class="fa fa-play-circle"></i><strong class="little-remarkable"><u>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」上的网页显示</u></strong>
   <br><br>
-  在「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」上設定網頁的話，在<strong>「<u>config > routes.rb</u>」</strong>裡設定
+  在「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」上设定网页的话，在<strong>「<u>config > routes.rb</u>」</strong>里设定
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>routes.rb</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>root <span class='word-yellow'>"使用的view文件夾的名字#網頁的名字"</span></span>
+<td class='code-content'><span class='code-line'>root <span class='word-yellow'>"使用的view文件夾的名字#显示的名字"</span></span>
 </td>
 </tr>
 </table>
   <br>
-  這個內容。
+  这个內容。
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i> <strong class="little-remarkable"><u>CSS的設定（圖像的設定跟Padding）</u></strong>
+  <i class="fa fa-play-circle"></i> <strong class="little-remarkable"><u>CSS的設定（图像的设定跟Padding）</u></strong>
   <br><br>
   <ul class="number_ul">
-  <strong><li>CSS上的圖像的顯示</li></strong>
+  <strong><li>CSS上的图像的显示</li></strong>
   <br>
-  適用CSS的html設定「&lt;div&gt;」的class上，顯示圖像的話
+  适用CSS的html设定「&lt;div&gt;」的class上，显示图像的话
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
 <table class='highlight'>
@@ -136,11 +136,11 @@
 </tr>
 </table>
   <br>
-  這樣子設定。
+  这样子设定。
   <hr class="red-hr">
   <strong><li>Padding</li></strong>
   <br>
-  內容外面的空格使用<strong>「margin」</strong>設定，內容裡面的空格使用<strong>「<a href="/zh-CN/mugcups/css#title1-3" target="_blank">padding</a>」</strong>設定。
+  內容外面的空格使用<strong>「margin」</strong>设定，內容里面的空格使用<strong>「<a href="/zh-CN/mugcups/css#title1-3" target="_blank">padding</a>」</strong>设定。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
 <table class='highlight'>
@@ -156,7 +156,7 @@
 </tr>
 </table>
   <br>
-  這邊就自己試試怎麼作吧！
+  这边就自己试试怎么作吧！
   <br><br>
-  <strong>設定的內容<a href="/zh-CN/codes/8" target="_blank">請參考這裡</a></strong>
+  <strong>设定的內容<a href="/zh-CN/codes/8" target="_blank">请参考这里</a></strong>
 </h4>

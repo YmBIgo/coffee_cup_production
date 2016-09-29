@@ -1,0 +1,115 @@
+<h4 id="chapter9-1-1">
+  <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 安裝gem "devise"</strong></p>
+  <br>
+  首先用Sublime Text打开<strong>「<u>myapp</u>」</strong>吧。
+  <br>
+  <small>
+    ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+  </small>
+  <br><br>
+  <a href="/zh-CN/mugcups/3#title2-2-1" target="_blank"><strong>gem</strong></a>的「devise」要在<strong>「<u>Gemfile</u>」</strong>里设定內容。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>Gemfile（「<u>gem 'twitter-bootstrap-rails'</u>」后面追加「<u>gem 'devise'</u>」）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>26
+27
+28
+29
+<strong class="color-red">30</strong>
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'therubyracer'</span></span>
+<span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'less-rails'</span></span>
+<span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'twitter-bootstrap-rails'</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'><span class='word-red'>gem </span><span class='word-yellow'>'devise'</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>「<u>Gemfile</u>」</strong>文件里设定好內容之后，在terminal上打入<strong>「<a href="/zh-CN/mugcups/3#title2-2-1" target="_blank">bundle install</a>」</strong>导入gem。
+  <br>
+  首先在terminal上，移动到<strong>「<u>myapp</u>」</strong>吧。
+  <br><br><br>
+  <p class="alert alert-success">
+  <span><strong><i class="fa fa-windows color-blue"></i>　使用Windows移动的方法，<a href="/zh-CN/mugcups/windows_tips#title1-2" target="_blank">请参考这里</a></strong></span>
+  </p>
+  <br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+  <br>
+  之后打入<strong>「<u>bundle install</u>」</strong>。
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　不会动的话，删除<strong>「Gemfile.lock」</strong>之后再试试看吧。
+  </small>
+  <br><br>
+  有沒有显示下面图像一样的网页了吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Terminal_bundle_install_bootstrap.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Terminal_bundle_install_bootstrap.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  完了之后在网站上适用「gem」的內容，在terminal上打入
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:install</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个內容吧。有沒有显示下面一样的网页吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_install.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/rails_g_devise_install.png",
+              :target => ["_blank"] %>
+  这样子<strong>「<u>devise</u>」</strong>的导入完成了。
+  <hr class="red-hr">
+  可是要使用的话，还需要作资料库跟设定显示的內容。
+  <br>
+  <strong><u>先作作看资料库吧。</u></strong>
+</h4>

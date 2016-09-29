@@ -1,9 +1,9 @@
 <h4 id="chapter9-2-2-2">
-  <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 設定登入的通知</strong></p>
+  <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 设定登入的通知</strong></p>
   <br>
-  到這裡，用檢查利用者有沒有登入的設定，不讓沒有登入的利用者看「posts」的網頁的內容。
+  到这里，用检查利用者有沒有登入的设定，不让沒有登入的利用者看「posts」的网页的內容。
   <br>
-  現在就可以註冊會員登入網站了。但是註冊登入之前，咱們設定<strong><u>利用者登入之後等等的時候顯示的通知</u></strong>吧。
+  現在就可以注册会员登入网站了。但是注册登入之前，咱們设定<strong><u>利用者登入之后等等的时候显示的通知</u></strong>吧。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_after.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -14,16 +14,16 @@
                           :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
               :target => ["_blank"] %>
-  這個通知也加幾個內容就可以設定，做做看吧。
+  这个通知也加几个內容就可以设定，做做看吧。
   <hr class="red-hr">
-  首先編輯<strong>「app > views > layouts > application.html.erb」</strong>的<strong>「<u><a href="/zh-TW/mugcups/7#title2-2-1" target="_blank">&lt;div class="container main-page"&gt;</a></u>」</strong>裡的內容吧。
+  首先编辑<strong>「app > views > layouts > application.html.erb」</strong>的<strong>「<u><a href="/zh-CN/mugcups/7#title2-2-1" target="_blank">&lt;div class="container main-page"&gt;</a></u>」</strong>里的內容吧。
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（&lt;div class="container main-page"&gt;之後追加內容）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（&lt;div class="container main-page"&gt;之后追加內容）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -58,31 +58,31 @@
 </table>
   <br>
   <small>
-    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
   </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  編輯好了之後，打開「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧！
+  编辑好了之后，打开「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」吧。
   </small>
   <br><br>
-  有沒有顯示下面圖像一樣的畫面嗎？
+  有沒有显示下面图像一样的画面了吗？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  <i class="fa fa-play-circle color-red"></i>　<strong>在這裡解釋設定的內容吧。</strong>
+  <i class="fa fa-play-circle color-red"></i>　<strong>在这里解释设定的內容吧。</strong>
   <br><br>
-  在這裡的設定中，新追加
+  在这里的设定中，新追加
   <br><br>
 <table class='highlight'>
 <tr>
@@ -102,9 +102,9 @@
 </tr>
 </table>
   <br>
-  的設定。<u>這個設定在做什麼呢？</u>
+  的设定。<u>这个设定在做什么呢？</u>
   <br><br>
-  在這一些跟
+  在这一些跟
   <br><br>
 <table class='highlight'>
 <tr>
@@ -115,30 +115,30 @@
 </tr>
 </table>
   <br>
-  之間的地方設定條件判別，然後在各個條件上顯示各個顯示的內容。
+  之间的地方设定条件判别，然后在各个条件上显示各个显示的內容。
   <br><br>
-  條件用
+  条件用
 <pre>
-&lt;% if 條件 %&gt;
+&lt;% if 条件 %&gt;
 </pre>
-  指定，如果條件成立的時候
+  指定，如果条件成立的时候
 <pre>
 &lt;% end %&gt;
 </pre>
-  顯示到這裡的內容。
+  显示到这里的內容。
   <br><br>
-  這一次，
+  这一次，
   <br><br>
 <pre>
 &lt;% if notice %&gt;
 </pre>
-  在設定有通知過來的時候的條件，
+  在设定有通知过來的时候的条件，
 <pre>
 &lt;% if alert %&gt;
 </pre>
-  在設定有錯誤的通知過來的時候的條件。
+  在设定有错误的通知过來的时候的条件。
   <hr class="red-hr">
-  <strong>「<u>&lt;% if notice %&gt;</u>」（通知來的時候:notice）</strong>是，
+  <strong>「<u>&lt;% if notice %&gt;</u>」（通知來的时候:notice）</strong>是，
   <br><br>
 <table class='highlight'>
 <tr>
@@ -151,7 +151,7 @@
 </tr>
 </table>
 <br>
-<strong>「<u>&lt;% if alert %&gt;</u>」（錯誤的通知來的時候:alert）</strong>是，
+<strong>「<u>&lt;% if alert %&gt;</u>」（错误的通知來的时候:alert）</strong>是，
 <br><br>
 <table class='highlight'>
 <tr>
@@ -164,23 +164,23 @@
 </tr>
 </table>
   <br>
-  顯示各個內容。
+  显示各个內容。
   <br><br>
-  如果是notice的話顯示
+  如果是notice的话显示
   <p class="alert alert-success" style="margin-bottom:0px">Signed in successfuly.</p>
   <br>
-  如果是alert的話顯示
+  如果是alert的话显示
   <p class="alert alert-danger" style="margin-bottom:0px">You need to sign in or sign up before continuing.</p>
   <br>
-  這樣的通知的內容，放在
+  这样的通知的內容，放在
 <pre>
 &lt;%= notice %&gt;　&lt;%= alert %&gt;
 </pre>
-  裡面顯示。
+  里面显示。
   <hr class="red-hr">
-  在這裡顯示的有顏色的文字是怎麼設定呢？
+  在这里显示的有颜色的文字是怎么样设定呢？
   <br>
-  這個其實也是「Bootstrap」顯示有顏色文字的設定。在文字<strong>「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank">class</a>」</strong>裡指定<strong><u>「alert」跟「alert-success」「alert-danger」</u></strong>設定裝飾的內容。
+  这个其实也是「Bootstrap」显示有颜色文字的设定。在文字<strong>「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank">class</a>」</strong>里指定<strong><u>「alert」跟「alert-success」「alert-danger」</u></strong>设定装饰的內容。
   <br><br>
 <table class='highlight'>
 <tr>
@@ -200,57 +200,57 @@
 </tr>
 </table>
   <br><br>
-  綠色的通知在顯示
-<p class="alert alert-success">&lt;p class="alert alert-success"&gt;顯示的文字&lt;/p&gt;</p>
-  紅色的通知在顯示
-<p class="alert alert-danger">&lt;p class="alert alert-danger"&gt;顯示的文字&lt;/p&gt;</p>
-  各個內容。
+  绿色的通知在显示
+<p class="alert alert-success">&lt;p class="alert alert-success"&gt;显示的文字&lt;/p&gt;</p>
+  红色的通知在显示
+<p class="alert alert-danger">&lt;p class="alert alert-danger"&gt;显示的文字&lt;/p&gt;</p>
+  各个內容。
   <br><br>
-  綜括一下在這裡設定的內容吧。
+  总括一下在这里设定的內容吧。
   <br>
   <strong>
   <ul class="number_ul">
-  <li><u>「&lt;% if notice %&gt;」跟「&lt;% end %&gt;」之間設定有通知來的時候</u></li>
-  <li><u>「&lt;% if alert %&gt;」跟「&lt;% end %&gt;」之間設定有錯誤的通知來的時候</u></li>
+  <li><u>「&lt;% if notice %&gt;」跟「&lt;% end %&gt;」之间设定有通知來的时候</u></li>
+  <li><u>「&lt;% if alert %&gt;」跟「&lt;% end %&gt;」之间设定有错误的通知來的时候</u></li>
   </ul>
   </strong>
-  顯示的內容。
+  显示的內容。
   <br><br>
-  各個通知在<strong><u>「&lt;%= notice %&gt;」「&lt;%= alert %&gt;」</u></strong>裡顯示內容。
+  各个通知在<strong><u>「&lt;%= notice %&gt;」「&lt;%= alert %&gt;」</u></strong>里显示內容。
   <hr class="red-hr">
   <u>
-  這個通知是從哪裡來的呢？
+  这个通知是从哪里來的呢？
   <br>
-  <strong>其實說這個通知可以自己作作看，在這裡作作看通知吧。</strong>
+  <strong>其实说这个通知可以自己作作看，在这里作作看通知吧。</strong>
   </u>
   <br><br>
-  通知在<strong>「<u>controller</u>」文件裡設定</strong>
+  通知在<strong>「<u>controller</u>」文件里设定</strong>
   <ul class="number_ul">
-    <li><strong>通知（notice）</strong>的話</li>
+    <li><strong>通知（notice）</strong>的话</li>
 <pre>
-flash[:notice] = "顯示的內容"
+flash[:notice] = "显示的內容"
 </pre>
-    <li><strong>錯誤的通知（alert）</strong>的話</li>
+    <li><strong>错误的通知（alert）</strong>的话</li>
 <pre>
-flash[:alert] = "顯示的內容"
+flash[:alert] = "显示的內容"
 </pre>
   </ul>
-  各個內容可以在網頁上顯示。
+  各个內容可以在网页上显示。
   <br><br>
-  在<strong>「<u>controller</u>」文件</strong>裡設定的各個通知的內容會顯示在
+  在<strong>「<u>controller</u>」文件</strong>里设定的各个通知的內容会显示在
 <pre>
 &lt;%= notice %&gt;  &lt;%= alert %&gt;
 </pre>
-  裡面。
+  里面。
   <br><br>
-  <strong>「<a href="/zh-TW/mugcups/5#title1-1" target="_blank">show</a>」的網頁「<a href="http://0.0.0.0:3000/posts/1" target="_blank">0.0.0.0:3000/posts/1</a>」</strong>裡顯示自己設定的通知吧。
+  <strong>「<a href="/zh-CN/mugcups/5#title1-1" target="_blank">show</a>」的网页「<a href="http://0.0.0.0:3000/posts/1" target="_blank">0.0.0.0:3000/posts/1</a>」</strong>里显示自己设定的通知吧。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（追加第7行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -269,38 +269,38 @@ flash[:alert] = "顯示的內容"
 </table>
   <br>
   <small>
-    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
   </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  編輯完了之後，打開「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」吧！
+  编辑完了之后，打开「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」吧。
   </small>
   <br><br>
-  有沒有顯示下面圖像一樣的畫面嗎？
+  有沒有显示下面图像一样的画面吗？
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_1_flash.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_1_flash.png",
               :target => ["_blank"] %>
-  這樣設定好通知了！
+  这样设定好通知了！
   <br>
-  <strong><u>這一次設定的通知是試試看的而已，所以這一次設定的內容就除掉吧。</u></strong>
+  <strong><u>这一次设定的通知是试试看的而已，所以这一次设定的內容就除掉吧。</u></strong>
   <hr class="red-hr">
-  「devise」的通知也是用這個設定。
+  「devise」的通知也是用这个设定。
   <br>
-  通知的內容「devise」會自動作，所以簡單的理解內容就OK。
+  通知的內容「devise」会自动作，所以简单的理解內容就OK。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>「posts_controller.rb」的<u>「<a href="/zh-TW/mugcups/6#title1-5" target="_blank">edit</a>」網頁裡，顯示「@post」的「content」的通知</u>要怎麼樣設定呢？</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>「posts_controller.rb」的<u>「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">edit</a>」网页里，显示「@post」的「content」的通知</u>要怎么样设定呢？</strong>
   <br>
-  <small>※　在上面放鼠標，答案會顯示。</small>
+  <small>※　在上面放鼠标，答案会显示。</small>
   <br><br>
   <textarea class="input-code form-control" placeholder="打入答案" rows="4"></textarea>
   <br>

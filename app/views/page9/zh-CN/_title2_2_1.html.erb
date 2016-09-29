@@ -1,9 +1,9 @@
 <h4 id="chapter9-2-2-1">
-  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 對登入的會員顯示「posts」的網頁</strong></p>
+  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 对登入的会员显示「posts」的网页</strong></p>
   <br>
-  那麽在這裡，設定不要讓登入的會員以外的利用者顯示「posts」的網頁吧。
+  那么在这里，设定不要让登入的会员以外的利用者显示「posts」的网页吧。
   <br>
-  方法很簡單。<strong><u>在不想被看的「controller」文件上，打入下面的設定就OK。</u></strong>
+  方法很简单。<strong><u>在不想被看的「controller」文件上，打入下面的设定就OK。</u></strong>
   <br><br>
 <table class='highlight'>
 <tr>
@@ -14,18 +14,18 @@
 </tr>
 </table>
   <br>
-  用這個設定檢查利用者有沒有登入。
+  用这个设定检查利用者有沒有登入。
   <br><br>
-  那麽，開始做吧。
+  那么，开始做吧。
   <br>
-  <strong><u>編輯「posts_controller.rb」的內容吧。</u></strong>
+  <strong><u>编辑「posts_controller.rb」的內容吧。</u></strong>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>posts_controler.rb（追加第3行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -56,46 +56,46 @@
 </table>
   <br>
   <small>
-    ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
   </small>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入「<u>rails s</u>」吧。</strong>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
   </p>
   <br>
-  做完了之後，打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
+  做完了之后，打开「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
   <br><br>
-  <strong><i class="fa fa-arrow-right"></i>　現在還沒登入，應該會顯示登入網頁吧？</strong>
+  <strong><i class="fa fa-arrow-right"></i>　現在还沒登入，应该会显示登入网页吧？</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_sign_in_before_alert.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_sign_in_before_alert.png",
               :target => ["_blank"] %>
-  用<strong>「<a href="http://0.0.0.0:3000/posts/1" target="_blank">0.0.0.0:3000/posts/1</a>」</strong>等等別的網頁試試看吧。
+  用<strong>「<a href="http://0.0.0.0:3000/posts/1" target="_blank">0.0.0.0:3000/posts/1</a>」</strong>等等別的网页试试看吧。
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」等等吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」等等吧。
   </small>
   <br><br>
   <hr class="red-hr">
-  現在的狀況，沒有登入的利用者不能打開「posts」網頁。但是<strong><u>也可以設定讓全部的利用者打開「show」「index」這個兩個網頁</u></strong>。
+  现在的状况，沒有登入的利用者不能打开「posts」网页。但是<strong><u>也可以设定让全部的利用者打开「show」「index」这个两个网页</u></strong>。
   <br><br>
-  <strong><u>設定，可以誰都可以看「show」跟「index」這個兩個網頁的內容吧！</u>
+  <strong><u>设定，可以谁都可以看「show」跟「index」这个两个网页的內容吧！</u>
   <br>
-  編輯剛才的「posts_controller」文件的設定。</strong>
+  编辑刚才的「posts_controller」文件的设定。</strong>
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（編輯第3行）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（编辑第3行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -125,23 +125,23 @@
 </tr>
 </table>
   <br>
-  追加了後面的<strong>「<i>only => [...]</i>」</strong>的設定了。
+  追加了后面的<strong>「<i>only => [...]</i>」</strong>的设定了。
   <br>
-  這個設定的方法，跟<strong>「<a href="/mugcups/6#title2-route" target="_blank">routes.rb</a>」</strong>一樣，應該可以推測內容吧。
+  这个设定的方法，跟<strong>「<a href="/mugcups/6#title2-route" target="_blank">routes.rb</a>」</strong>一样，应该可以推测內容吧。
   <br><br>
-  這一次在
+  这一次在
   <strong>
   <ul class="number_ul">
-    <li>「<a href="/zh-TW/mugcups/6#title1-3" target="_blank">new</a>」</li>
-    <li>「<a href="/zh-TW/mugcups/6#title1-4" target="_blank">create</a>」</li>
-    <li>「<a href="/zh-TW/mugcups/6#title1-5" target="_blank">edit</a>」</li>
-    <li>「<a href="/zh-TW/mugcups/6#title1-6" target="_blank">update</a>」</li>
-    <li>「<a href="/zh-TW/mugcups/6#title1-7" target="_blank">destroy</a>」</li>
+    <li>「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">new</a>」</li>
+    <li>「<a href="/zh-CN/mugcups/6#title1-4" target="_blank">create</a>」</li>
+    <li>「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">edit</a>」</li>
+    <li>「<a href="/zh-CN/mugcups/6#title1-6" target="_blank">update</a>」</li>
+    <li>「<a href="/zh-CN/mugcups/6#title1-7" target="_blank">destroy</a>」</li>
   </ul>
   </strong>
-  這個五個網頁上，檢查利用者有沒有登入。
+  这个五个网页上，检查利用者有沒有登入。
   <br><br>
-  <i class="fa fa-question-circle color-green"></i>　<strong>在「controller」文件裡追加<u>設定「new」跟「create」的網頁裡檢查利用者有沒有登入</u>的內容的時候要怎麼設定呢？</strong>
+  <i class="fa fa-question-circle color-green"></i>　<strong>在「controller」文件里追加<u>设定「new」跟「create」的网页里检查利用者有沒有登入</u>的內容的时候要怎么设定呢？</strong>
   <br><br>
   <input type="input" class="input-code form-control" placeholder="打入答案">
   <br>

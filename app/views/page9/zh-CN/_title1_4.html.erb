@@ -1,0 +1,106 @@
+<h4 id="chapter9-1-4">
+  <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : 总结</strong></p>
+  <br>
+  要导入「devise」的时候，
+  <strong>
+  <ul class="number_ul">
+    <li><u>设定Gemfile之后安裝</u></li>
+    <li><u>导入devise</u></li>
+    <li><u>导入users的框子</u></li>
+    <li><u>导入显示网页的views</u></li>
+  </ul>
+  </strong>
+  要准备这个四个文件。在这里一个一个解释吧。
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li>设定Gemfile之后安裝</li></strong>
+    <br>
+    「devise」的<a href="/zh-CN/mugcups/3#title2-2-1" target="_blank"><strong>gem</strong></a>要在，Gemfile里
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>Gemfile</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>gem </span><span class='word-yellow'>'devise'</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    追加之后，在terminal上
+    <br><br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+    <br>
+    打入这个內容，设定。
+    <hr class="red-hr">
+    <strong><li>导入devise</li></strong>
+    <br>
+    安裝好「devise」的gem之后，在terminal上
+    <br><br>
+    　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:install</span>
+</td>
+</tr>
+</table>
+    <br>
+    打入这个內容。
+    <hr class="red-hr">
+    <strong><li>导入users的框子</li></strong>
+    <br>
+    打入
+    <br><br>
+    　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise user</span>
+</td>
+</tr>
+</table>
+    <br>
+    <u>作「devise」的「users」资料库的设定文件</u>。
+    <br><br>
+    自己更改內容之后，在terminal上打入
+    <br><br>
+    　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+    <br>
+    作「users」资料库。
+    <hr class="red-hr">
+    <strong><li>显示的view的设定</li></strong>
+    <br>
+    「devise」的网页也在用terminal的打入作。
+    <br><br>
+    　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:views</span>
+</td>
+</tr>
+</table>
+  <br>
+  打入这个命令，作「devise」的网页。
+  </ul>
+</h4>
