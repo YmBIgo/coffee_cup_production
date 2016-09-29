@@ -1,0 +1,46 @@
+<h4 id="chapter6-1-4">
+        <p id="title1-4"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : 新增资料（create）</strong></p>
+        <br>
+        到这里「打入新的资料（new）」的网页的设定好了。
+        <br><br>
+        <strong>现在资料的打入之后，可以从「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">打入新的资料（new）</a>」的网页移动到「<a href="/zh-CN/mugcups/6#title1-4" target="_blank">新增资料（create）</a>」的网页了。
+        <br>
+        但是资料还不能保存在资料库里</strong>
+        <br><br>
+        在这里做做看资料的保存吧！
+        <hr class="red-hr">
+        这一次的內容，可以说是在网页上设定<a href="/zh-CN/mugcups/4#title2-1" target="_blank"><strong>第四章</strong></a>做的
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.create(:name =&gt; "名字", :content =&gt; "内容", :place =&gt; "地方")</span>
+</td>
+</tr>
+</table>
+        <br>
+        的操作资料的地方（<i>posts_controller.rb</i>）。
+        <br><br>
+        <strong>
+        从「打入新的资料（new）」的网页拿资料之后，用上面操作资料的方法保存資料。
+        </strong>
+        <br>
+        <small>※　这个时候，网页是从<strong>「<u>打入新的资料（new）</u>」</strong>的网页移动到「新增资料（create）」的网页，所以不用在浏览器上打入url。</small>
+        <br><br>
+        在这里做，
+        <br>
+        <strong>
+        <ul class="number_ul">
+          <li>用「打入新的资料（new）」的网页的资料，保存資料（<u>posts_controller.rb</u>）</li>
+          <li>保存之后显示资料保存好的网页（<u>create.html.erb</u>）</li>
+        </ul>
+        </strong>
+        这个两个设定。
+        <br><br>
+        那么，做做看「七个网页的设定」「操作资料的设定」跟「显示的网页的设定」三个设定吧！
+        <hr>
+        <%= render "page6/zh-CN/title1_4_1" %>
+        <hr>
+        <%= render "page6/zh-CN/title1_4_2" %>
+</h4>

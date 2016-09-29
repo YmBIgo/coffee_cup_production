@@ -1,0 +1,259 @@
+<h4 id="chapter6-1-6-1">
+        <p id="title1-6-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 设定网页</strong></p>
+        <br>
+        <i class="fa fa-play-circle"></i>　<strong>首先，设定<u>七个网页中使用哪一个网页的设定吧</u>。</strong>
+         <br><br>
+        那么打开，设定七个网页的文件<strong>「<u>config > routes.rb</u>」</strong>吧！
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        內容已经有编辑过了吧。
+        <br><br>
+        应该<strong><u>跟上面的內容一样子已经追加了「update」</u></strong>吧。这样子设定好「编辑资料（update）」的网页了。
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong>那么设定看「<u>操作资料</u>」的网页吧。</strong>
+        <br><br>
+        在设定「posts」资料库的资料操作的<strong>「posts_controller.rb」</strong>文件上追加设定。
+        <br><br>
+        用Sublime Text打开<strong>「<u>app > controllers > posts_controller.rb</u></strong>」文件吧。
+        <br>
+        <small>
+          ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+        </small>
+        <br><br>
+        打开之后，在<strong><u>「def update」跟「end」之间</u></strong>设定下面的设定吧。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（追加第24～25行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>23
+<span class="color-red"><strong>24
+25</strong></span>
+26
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        这一次设定的两行也是，应该在哪里看过的设定吧。
+        <br>
+        第一行的<strong>「<u>@post = Post.find(params[:id])</u>」</strong>在
+        <br>
+        <a href="/zh-CN/mugcups/5#title1-1-1" target="_blank"><strong>「显示一个资料（show）」</strong></a>的网页，<a href="/zh-CN/mugcups/6#title1-5-1" target="_blank"><strong>「打入编辑的资料（edit）」</strong></a>的网页上使用过。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>那么，第二行是在做什么呢？</strong>
+        <br><br>
+        在第二行，按着打入的资料「<u>params</u>」，<strong>「<u>更新（update）</u>」</strong>选择的资料「<u>@post</u>」。
+        <br>
+        <small>※　详细<a href="/zh-CN/mugcups/4#title2-2" target="_blank"><strong>请参考这里</strong></a></small>
+        <hr class="red-hr">
+        <strong><a href="/zh-CN/mugcups/6#title1-4-1" target="_blank">「新增资料」</a></strong>的时候也设定过，同样的內容吧。
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<span class="color-red"><strong>2</strong></span>
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        在这个「params」的部分里面有，<u>从「打入编辑的资料（edit）」网页送來的资料。</u>
+        <br><br>
+        在这个「params」里面放<strong>「<u>name是'名字'，content是'内容'，place是'地方'</u>」</strong>等等的资料。
+        <br>
+        然后，为了不要改变指定的资料以外的资料，<strong><u>设定「require」跟「permit」。</u></strong>
+        <br><br>
+        在这里设定的內容是，
+        <strong>
+        <ul class="number_ul">
+            <li>「posts」资料库的「<u>name</u>」的框子</li>
+            <li>「posts」资料库的「<u>content</u>」的框子</li>
+            <li>「posts」资料库的「<u>place</u>」的框子</li>
+        </ul>
+        以外的框子不要更改</strong>。
+        <br><br>
+        <i class="fa fa-play-circle color-red"></i>　<strong>「<u>资料的编辑（update）</u>」也一样。</strong>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>@post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+</td>
+</tr>
+</table>
+        <br>
+        在这里使用「编辑资料」的「update」，所以<strong>设定的「<u>@post</u>」</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>post_controller.rb（第24行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>24
+</td>
+<td class='code-content'><span class='code-line'>@post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+</td>
+</tr>
+</table>
+        <br>
+        里，只能编辑
+        <strong>
+            <ul class="number_ul">
+                <li>「posts」资料库的「<u>content</u>」的框子</li>
+                <li>「posts」资料库的「<u>place</u>」的框子</li>
+            </ul>
+        </strong>
+        的內容的操作资料的方法。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　用从「打入编辑的资料（edit）」的网页拿來的<u>「books」资料库的「name」「price」「page」的框子，「编辑资料（update）」</u>的网页的资料操作是怎么样设定呢？</strong>
+        <br><br>
+        <textarea class="input-code form-control" placeholder="打入答案" rows="5"></textarea>
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content answer-code'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @book <span class="word-red">=</span> <span class='word-blue'>Book</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @book.update(params.<span class="word-red">require</span>(<span class='word-purple'>:book</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:price</span>, <span class='word-purple'>:page</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong><u>最後做做看网页的设定吧！</u></strong>
+        <br><br>
+        打入编辑的资料点击<strong>「登录」</strong>按钮之后，会显示下面图像一样子的网页。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
+                    :target => ["_blank"] %>
+        首先，用Sublime Text打开的「myapp」上，打开<strong>「<u>app > views > posts</u>」</strong>吧。
+        <br>
+        里面有<strong>「<u>update.html.erb</u>」</strong>文件吗？如果有的话，打开看看！
+        <br><br>
+        <strong>在这个文件里设定，在「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">打入编辑的资料（edit）</a>」的网页上点击按钮之后，显示的网页的內容。</strong>
+        <br><br>
+        那么，编辑这个<strong>「<u>update.html.erb</u>」</strong>文件吧！
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　update.html.erb</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿编辑好了。&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.name %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.content %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.place %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>这里是在设定什么呢？</strong>
+        <br><br>
+        在这里显示编辑后的资料。
+        <br>
+        详细的內容请参考，<a href="/zh-CN/mugcups/5#title1-1" target="_blank"><strong>「显示一个资料（show）」</strong></a>的网页，<a href="/zh-CN/mugcups/6#title1-4" target="_blank"><strong>「新增资料（create）」</strong></a>的网页吧。
+        <hr class="red-hr">
+        那么显示看网页吧！
+        <br>
+        <small>
+          ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+        </small>
+        <br><br><br>
+        <p class="alert alert-success">
+        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+        <br>
+        　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入「<u>rails s</u>」吧。</strong>
+        </p>
+        <br>
+        做完之后，打开「<a href="http://0.0.0.0:3000/posts/edit/1" target="_blank"><strong>0.0.0.0:3000/posts/1/edit</strong></a>」吧！
+        <br>
+        <small>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts/1/edit" target="_blank"><strong>localhost:3000/posts/1/edit</strong></a>」吧。
+        </small>
+        <br><br>
+        打开后打入自己喜欢的内容之后，点击<strong>「<u>更新</u>」</strong>的按钮吧！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_update_1.png",
+                    :target => ["_blank"] %>
+        显示上面一样子的网页了吗？
+        <br><br>
+        出來了的话，用<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a> / <a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>，或者打开「<a href="http://0.0.0.0:3000/posts/1"><strong>0.0.0.0:3000/posts/1</strong></a>」看看內容有沒有更新！
+</h4>

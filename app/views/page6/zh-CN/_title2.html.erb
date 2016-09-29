@@ -1,0 +1,207 @@
+<h2 class="textbook-section-title" id="title2"><strong>2 : 这个章的总结</strong></h2>
+        <h4 id="chapter6-2">
+          用Ruby on Rails作的网页，按着资料操作的方法有<strong><u>七种。</u></strong>
+          <br><br>
+        <ul class="number_ul">
+          <strong><li>显示全部的资料　　　<u>index</u></li></strong>
+          <small>例：推特的主页<br>→显示的资料用<strong>「<i>Post.all</i>」</strong>设定</small>
+          <strong><li>显示一个资料　　　　<u>show</u></li></strong>
+          <small>例：一个推特<br>→显示的资料用<strong>「<i>Post.find(id号码)</i>」</strong>设定</small>
+          <strong><li>打入新的资料　　　　<u>new</u></li></strong>
+          <strong><li>新增资料　　　　　　<u>create</u></li></strong>
+          <small>例：作推特的画面<br>→资料用<strong>「<i>Post.create</i>」</strong>设定</small>
+          <strong><li>打入编辑的资料　　　<u>edit</u></li></strong>
+          <strong><li>编辑资料　　　　　　<u>update</u></li></strong>
+          <small>例：编辑好吗的画面<br>→资料用<strong>「<i>Post.find(id号码).update</i>」</strong>设定</small>
+          <strong><li>删除资料　　　　　　<u>destroy</u></li></strong>
+          <small>例：删除推特的画面<br>→资料用<strong>「<i>Post.find(id号码).destroy</i>」</strong>设定</small>
+        </ul>
+        <hr class="red-hr">
+        显示各个网页要设定三个內容。
+        <ul class="number_ul">
+          <strong><li>七个网页中使用哪些网页的设定</li></strong>
+          <small>在「config > routes.rb」里设定</small>
+          <strong><li>操作资料的设定</li></strong>
+          <small>「app > controllers」里的「资料库的名字_controller.rb」文件上设定</small>
+          <strong><li>网页的设定</li></strong>
+          <small>「 app > views > 资料库的名字」里作html文件设定內容。</small>
+        </ul>
+        <br>
+        说明各个设定。
+        <br><br>
+        <strong>设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a></strong>
+        <hr class="red-hr">
+        <p id="title2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i><strong>　七个网页的设定（routes.rb）</strong></p>
+        <br>
+        <strong>「config > routes.rb」文件里设定內容</strong>
+        <br><br>
+        随着使用的资料库，设定內容。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（例子：第3行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <p id="title2-data-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>操作资料的设定/网页的设定</strong></p>
+        <br>
+        设定操作资料，显示网页的內容，必须作设定的文件跟文件夾。
+        <br>
+        做这个，要在terminal上打入
+        <br><br>
+        <strong>　terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>rails g controller 资料库的名字</span>
+</td>
+</tr>
+</table>
+        <br>
+        的內容。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Terminal_rails_g_controller_posts.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Terminal_rails_g_controller_posts.png",
+                    :target => ["_blank"] %>
+        如果出现这样子的內容的話OK。
+        <br><br>
+        在这个命令，作出來的
+        <ul class="number_ul">
+        <strong><li>「app > controllers > 资料库的名字_controller.rb」是操作资料的文件</li></strong>
+        <br>
+        <strong><li>「app > views」是显示网页的文件</li></strong>
+        </ul>
+        在各个文件文件夾里，设定內容。
+        <br>
+        在这里说明追加设定之前要设定的內容。
+        <hr class="red-hr">
+        <ul class="number_ul">
+          <strong class="little-remarkable"><li>资料操作</li></strong>
+            <strong>「app > controllers > 资料库的名字_controller.rb」</strong>里，追加下面一样的內容。
+            <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>PostsController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>new</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+          <br>
+          <strong class="little-remarkable"><li>网页</li></strong>
+          <strong>「app > views > 资料库的名字」</strong>里，保存下面的文件。
+          <br>
+          <small>
+            ※　保存文件的方法，<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>请参考这里</strong></a>
+          </small>
+          <br>
+          <br>
+          <ul class="number_ul">
+          <strong>
+            <li>「show.html.erb」（显示一个资料的网页）</li>
+            <li>「index.html.erb」（显示全部的资料的网页）</li>
+            <li>「new.html.erb」（打入新的资料的网页）</li>
+            <li>「create.html.erb」（新增资料的网页）</li>
+            <li>「edit.html.erb」（打入编辑的资料的网页）</li>
+            <li>「update.html.erb」（编辑资料的网页）</li>
+            <li>「destroy.html.erb」（删除资料的网页）</li>
+          </strong>
+          </ul>
+        </ul>
+        <hr class="red-hr">
+        <strong>在这个「资料库的名字_controller.rb」里追加各个操作资料的方法，各个html文件上追加內容。</strong>
+        <br>
+        各个说明请参考下面！
+        <br><br>
+        <div class="list-group">
+          <a href="/zh-CN/mugcups/5#title1-1" class="list-group-item" target="_blank"><strong>show</strong></a>
+          <a href="/zh-CN/mugcups/5#title1-2" class="list-group-item" target="_blank"><strong>index</strong></a>
+          <a href="/zh-CN/mugcups/6#title1-3" class="list-group-item" target="_blank"><strong>new</strong></a>
+          <a href="/zh-CN/mugcups/6#title1-4" class="list-group-item" target="_blank"><strong>create</strong></a>
+          <a href="/zh-CN/mugcups/6#title1-5" class="list-group-item" target="_blank"><strong>edit</strong></a>
+          <a href="/zh-CN/mugcups/6#title1-6" class="list-group-item" target="_blank"><strong>update</strong></a>
+          <a href="/zh-CN/mugcups/6#title1-7" class="list-group-item" target="_blank"><strong>destroy</strong></a>
+        </div>
+        </li>
+        <hr>
+        <i class="fa fa-star color-blue"></i>　
+        <strong>用Ruby on Rails作网页的说明到这里了。这样子应该可以作简单的网页吧？<br><br>可是现在的內容又不好看又不方便。在下章，咱們吧这个网站设定的又漂亮又方便吧！
+        <br><br>
+        在这个章设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a>。
+        </strong>
+        </h4>

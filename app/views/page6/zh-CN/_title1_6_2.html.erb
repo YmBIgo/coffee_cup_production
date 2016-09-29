@@ -1,0 +1,110 @@
+<h4 id="chapter6-1-6-2">
+        <p id="title1-6-2"><i class="fa fa-tags color-red"></i>　<strong>⑵ : 总结</strong></p>
+        在这里做了<strong>「编辑资料（update）」</strong>的网页的设定。
+        <br><br>
+        <strong>设定的內容，<a href="/zh-CN/codes/6" target="_blank">请参考这里</a></strong>
+        <hr class="red-hr">
+        <p id="title1-6-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七个网页的设定</strong></p>
+        <br>
+        <strong>在「config > routes.rb」文件上，设定「<u>update</u>」</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <p id="title1-6-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>操作资料的设定</strong></p>
+        <br>
+        <strong>在「app > controllers > 资料库的名字_controller」文件里的「<u>update</u>」设定內容。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @post.update(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>选择要编辑的资料之后，在设定编辑的资料的「update」里指定资料库（require）跟框子（permit）</u>。</strong>
+        <hr class="red-hr">
+        <p id="title1-6-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>网页的设定</strong></p>
+        <br>
+        <strong>「app > views > 资料库的名字」文件夾里的「<u>update.html.erb</u>」上设定內容。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>update.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿编辑好了。&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.name %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.content %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.place %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>沒设定网页的內容也可以编辑资料，可是利用的人会有一点不方便，所以不要忘记设定网页的內容吧！</u></strong>
+        <hr class="red-hr">
+        <p id="title1-6-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i><strong>　浏览器上的设定</strong></p>
+        <br>
+        <strong>「编辑资料（update）」的网页是在「打入编辑的资料（edit）」点击按钮之后会移动到的网页，所以不用打入URL。</strong>
+        <br>
+        <small>※　网页的URL，应该是「0.0.0.0:3000/posts/id号码」。</small>
+        <hr class="red-hr">
+        到这里，资料的编辑也做好了。
+        <br>
+        <strong>剩下的也只是资料的删除而已了！
+        <br><br>
+        设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a>。</strong>
+</h4>

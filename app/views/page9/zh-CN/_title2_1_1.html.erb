@@ -1,0 +1,334 @@
+<h4 id="chapter9-2-1-1">
+  <p id="title2-1-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : btn跟form-control</strong></p>
+  <br>
+  現在的网页，输入框跟按钮会不会有一点不好看呢？
+  <br>
+  在网页上追加<strong>「<a href="/zh-CN/mugcups/css#title2-1" target="_blank">btn</a>」</strong>跟<strong>「<a href="/zh-CN/mugcups/css#title2-2" target="_blank">form-control</a>」</strong>这个两个设定，把网页的显示的装饰的更漂亮吧。
+  <br><br>
+  首先看看注册的网页（<a href="http://0.0.0.0:3000/users/sign_up" target="_blank"><strong>0.0.0.0:3000/users/sign_up</strong></a>）吧。
+  <br>
+  打开<strong><u>「app > views > devise > registrations」</u></strong>的文件夾里的<strong>「<u>new.html.erb</u>」</strong>吧！
+  <br>
+  <small>
+    ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+  </small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（registrations文件夾）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h2</span>&gt;Sign up&lt;/<span class='word-red'>h2</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= form_for(resource, <span class='word-purple'>as:</span> resource_name, <span class='word-purple'>url:</span> registration_path(resource_name)) <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= devise_error_messages! %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:email</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line'>    &lt;%= f.email_field <span class='word-purple'>:email</span>, <span class='word-purple'>autofocus:</span> <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @minimum_password_length %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>em</span>&gt;(&lt;%= @minimum_password_length %&gt; characters minimum)&lt;/<span class='word-red'>em</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line'>    &lt;%= f.password_field <span class='word-purple'>:password</span>, <span class='word-purple'>autocomplete:</span> <span class='word-yellow'>"off"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password_confirmation</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line'>    &lt;%= f.password_field <span class='word-purple'>:password_confirmation</span>, <span class='word-purple'>autocomplete:</span> <span class='word-yellow'>"off"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"actions"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.submit <span class='word-yellow'>"Sign up"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= <span class="word-blue">render</span> <span class='word-yellow'>"devise/shared/links"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  有沒有打开这样子的文件吗？
+  <br>
+  有「form_for」等等的內容，里面的內容也可以理解一些吧。
+  <hr class="red-hr">
+<pre>
+f.label :文字
+</pre>
+  在显示「文字」
+<pre>
+f.email_field :email
+</pre>
+  在设定打入Email的输入框，
+<pre>
+f.password_field :password
+</pre>
+  在设定打入密码的输入框。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong><u>在new.html.erb的「f.email_field」</u>上，追加Bootstrap的输入框的设定吧。</strong>
+  <br>
+  <small>※　不知道的话，<a href="/zh-CN/mugcups/7#title2-2-3" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="打入答案">
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（第8行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>8
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;%= f.email_field <span class="word-purple">:email</span>, <span class="word-purple">autofocus:</span> <span class="word-purple">true</span><span class="remarkable-code">, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span></span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  这样打入也可以设定Bootstrap的输入框的设定，但是这样子设定的<strong><u>输入框太长了</u>所以<a href="/zh-CN/mugcups/7#title2-2-3" target="_blank">用之前作的「my-form」</a>把框子设定的短一点吧。</strong>
+  <br><br>
+  <strong>「f.email_field」的设定</strong>完了之后，
+  <strong>
+  <ul class="number_ul">
+    <li>在「f.password_field」里面设定<a href="/zh-CN/mugcups/7#title2-2-3" target="_blank">输入框</a></li>
+    <li>在「f.submit」里面设定<a href="/zh-CN/mugcups/7#title2-2-2" target="_blank">按钮</a></li>
+  </ul>
+  </strong>
+  追加这个內容吧。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（编辑第8、16、21、23、25行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+12
+13
+14
+15
+<strong class="color-red">16</strong>
+17
+18
+19
+20
+<strong class="color-red">21</strong>
+22
+<strong class="color-red">23</strong>
+24
+<strong class="color-red">25</strong>
+26
+27
+28
+29
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h2</span>&gt;Sign up&lt;/<span class='word-red'>h2</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= form_for(resource, <spam class="word-purple">as:</spam> resource_name, <span class='word-purple'>url:</span> registration_path(resource_name)) <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= devise_error_messages! %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:email</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.email_field <span class="word-purple">:email</span>, <span class="word-purple">autofocus:</span> <span class="word-purple">true</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password</span> %&gt;</span>
+<span class='code-line'>    &lt;% if @minimum_password_length %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>em</span>&gt;(&lt;%= @minimum_password_length %&gt; characters minimum)&lt;/<span class='word-red'>em</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.password_field <span class="word-purple">:password</span>, <span class="word-purple">autocomplete:</span> <span class="word-yellow">"off"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password_confirmation</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.password_field <span class="word-purple">:password_confirmation</span>, <span class="word-purple">autocomplete:</span> <span class="word-yellow">"off"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"actions"</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.submit <span class="word-yellow">"Sign up"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= <span class="word-blue">render</span> <span class='word-yellow'>"devise/shared/links"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  做完之后，打开「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank"><strong>0.0.0.0:3000/users/sign_up</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/users/sign_up" target="_blank"><strong>localhost:3000/users/sign_up</strong></a>」吧。
+  </small>
+  <br><br>
+  有沒有显示下面图像一样的画面吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_bootstrap.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_bootstrap.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  注册网页的设定也好了，接着作登入网页的设定吧。
+  <br>
+  登入的网页要设定在<strong>「<u>app > views > devise > sessions</u>」</strong>文件夾里的<strong>「<u>new.html.erb</u>」</strong>文件里。
+  <br><br>
+  那么
+  <strong>
+  <ul class="number_ul">
+    <li>在输入框里「<u>form-control</u>」跟「<u>my-form</u>」</li>
+    <li>在按钮里「<u>btn</u>」跟「<u>btn-primary</u>」</li>
+  </ul>
+  </strong>
+  追加显示的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（sessions文件夾）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6</strong>
+7
+8
+9
+10
+<strong class="color-red">11</strong>
+12
+13
+14
+15
+16
+17
+18
+19
+<strong class="color-red">20</strong>
+21
+<strong class="color-red">22</strong>
+23
+24
+25
+26
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h2</span>&gt;Log in&lt;/<span class='word-red'>h2</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= form_for(resource, <span class="word-purple">as:</span> resource_name, <span class='word-purple'>url:</span> session_path(resource_name)) <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:email</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.email_field <span class='word-purple'>:email</span>, <span class='word-purple'>autofocus: true</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.password_field <span class='word-purple'>:password</span>, <span class='word-purple'>autocomplete:</span> <span class="word-yellow">"off"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;% <span class="word-red">if</span> devise_mapping.rememberable? -%&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>      &lt;%= f.check_box <span class='word-purple'>:remember_me</span> %&gt;</span>
+<span class='code-line'>      &lt;%= f.label <span class='word-purple'>:remember_me</span> %&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> -%&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"actions"</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.submit <span class="word-yellow">"Log in"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= <span class="word-blue">render</span> <span class='word-yellow'>"devise/shared/links"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  做好了之后，打开「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank"><strong>0.0.0.0:3000/users/sign_in</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/users/sign_in" target="_blank"><strong>localhost:3000/users/sign_in</strong></a>」吧。
+  </small>
+  <br><br>
+  有沒有显示下面一样子的网页了吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_bootstrap.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_bootstrap.png",
+              :target => ["_blank"] %>
+  做好了按钮跟输入框的设定，接着追加<a href="/zh-CN/mugcups/css#title2-3" target="_blank"><strong>navigation-bar</strong></a>的內容吧。
+</h4>

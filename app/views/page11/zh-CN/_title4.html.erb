@@ -1,0 +1,83 @@
+<h2 class="textbook-section-title" id="title4"><strong>4 : 作会员的投稿</strong></h2>
+<h4 id="chapter10-4">
+  「用户管理」的內容，到这里我們做了<strong>
+  <ul class="number_ul">
+    <li><a href="/zh-CN/mugcups/9#title1" target="_blank">导入「devise」</a></li>
+    <li><a href="/zh-CN/mugcups/9#title2" target="_blank">设定登入机能</a></li>
+    <li><a href="/zh-CN/mugcups/10#title3" target="_blank">设定「users」网页</a></li>
+  </ul>
+  </strong>这个三个內容。
+  <br><br>
+  <strong><u>接着用设定的会员的资料，在投稿上显示会员的资料吧！</u></strong>
+  <br><br>
+  例如说...
+  <br>
+  <br>
+  到这里的內容，我們用「posts」资料库里的「name」的框子，显示作投稿的人的资料。
+  <br>
+  可是在会员制的网站的话，<strong>一次一次打入自己的名字有一点麻烦。</strong>
+  <br>
+  所以在这里想做做看，<strong><u>不用自己打自己的名字就可以作投稿的设定。</u></strong>
+  <br><br>
+  为了设定这个，作投稿的时候<strong><u>在投稿的资料库里保存作投稿的会员的资料（作这个投稿的会员的id是1 等等）。然后用这个资料显示会员的资料。</u></strong>
+  <hr class="red-hr">
+  在这边作的网页是，
+  <br>
+  <strong>如果是有登入的会员的话，显示的网页上作<u>新增・编辑资料</u>的网页（沒有打入名字的框子）。</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_new_after_devise.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_edit_after_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_edit_after_devise.png",
+              :target => ["_blank"] %>
+  在投稿资料编辑完成・显示投稿的网页上、<strong><u>显示投稿或者作投稿的会员的资料</u></strong>。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_create_after_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_create_after_devise.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_after_devise_create_post.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_after_devise_create_post.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_after_devise_create_post.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_update_after_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_update_after_devise.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_destroy_after_devise.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_destroy_after_devise.png",
+              :target => ["_blank"] %>
+  為了要显示这样的內容，<strong><u>在「posts」资料库上追加作投稿的会员的框子</u></strong>。用这个会员资料的框子，显示会员资料。
+  <br><br>
+  之后用这个投稿资料里的会员的资料，<br>
+  <strong><u>不让会员编辑或者删除自己以外的会员作的资料</u></strong>（如果自己的投稿被別人编辑的话有一点危险呢）的设定。
+  <hr class="red-hr">
+  所以在这个章，设定下面三个设定。
+  <strong>
+  <ul class="number_ul">
+    <li>「posts」资料库里追加，会员的框子</li>
+    <li>操作资料・显示网页的设定</li>
+    <li>检查会员可不可以编辑・删除资料的设定</li>
+  </ul>
+  </strong>
+  那么，开始做吧！
+  <hr>
+  <%= render "page11/zh-CN/title4_1" %>
+  <hr>
+  <%= render "page11/zh-CN/title4_2" %>
+  <hr>
+  <%= render "page11/zh-CN/title4_3" %>
+</h4>

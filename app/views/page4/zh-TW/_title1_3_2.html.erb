@@ -2,7 +2,7 @@
         <p id="title1-3-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 修正資料構造的設定</strong></p>
         用terminal打入<strong>「<u>rake db:migrate</u>」</strong>之後，設定文件的內容會反映到資料庫。
         <br>
-        可是，用「<strong><u>rake db:migrate</u></strong>」反映錯的設定的話要這麼辦呢？
+        可是，用「<strong><u>rake db:migrate</u></strong>」反映錯的設定的話要怎麼辦呢？
         <br><br>
         比如說，<strong><u>放「text・長的文章」的「content」框子、設定成「string・短的文章」的時候等等</u></strong>
         <br><br>
@@ -36,7 +36,7 @@
           <i class="fa fa-arrow-right"></i>　不動的話，前面加<strong>「bundle exec」</strong>、打入<strong>「bundle exec rake db:rollback」</strong>
         </small>
         <br><br>
-        打入這個，上一個反映的內容會取消。取消之後，再改修設定文件後，在terminal上打入<strong>「<u><i>rake db:migrate</i></u>」</strong>在反映設定文件的內容可以改正錯的設定。
+        打入這個，上一個反映的內容會取消。取消之後，再改修設定文件後，在terminal上打入<strong>「<u><i>rake db:migrate</i></u>」</strong>可以修改錯的設定。
         <br><br>
         這個命令<strong><u>只能一個一個的取消</u></strong>。設定錯的時候可以用用看。
         <hr class="red-hr">

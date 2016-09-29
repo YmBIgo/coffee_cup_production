@@ -1,0 +1,340 @@
+<h4 id="chapter8-1-1">
+  <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 设定网站！</strong></p>
+  <br>
+  首先打开「rails s」之后，打开「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」吧。
+  </small>
+  <br><br>
+  有沒有显示下面一样子的画面吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Chrome_localhost1.png",
+              :target => ["_blank"] %>
+  这个是刚开始打入<strong>「<a href="/zh-CN/mugcups/3#title2-1" target="_blank">rails new</a>」</strong>的时候作的网站。
+  <br>
+  在这个网站上，设定主页的內容。
+  <hr class="red-hr">
+  要设定网站的时候，需要打入什么样的设定呢？
+  <ul class="number_ul">
+    <strong><li>使用哪一个网站的设定</li></strong>
+    <strong><li>操作资料的设定</li></strong>
+    <strong><li>显示网页的设定</li></strong>
+  </ul>
+  这个<a href="/zh-CN/mugcups/5#title1" target="_blank"><strong>三个设定</strong></a>对吧。
+  <br><br>
+  这一次是<strong>主页<u>所以设定「不要操作资料」</u>的网页。</strong>
+  <br><br>
+  到这里只作操作资料的网页，可是也可以作不要操作资料的网页。
+  <br>
+  不要操作资料的网页上，不用<strong><a href="/zh-CN/mugcups/4#title1" target="_blank">作资料库（作Excel的表）</a></strong>操作资料。
+  <br><br>
+  不要操作资料的网页从<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」网页</strong>设定。
+  <br>
+  那么做做看吧。
+  <hr class="red-hr">
+  首先在terminal上移动到<strong>「<u>myapp</u>」</strong>吧。
+  <br><br><br>
+  <p class="alert alert-success">
+  <span><strong><i class="fa fa-windows color-blue"></i>　使用Windows移动的方法<a href="/zh-CN/mugcups/windows_tips#title1-2" target="_blank">请参考这里</a></strong></span>
+  </p>
+  <br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+  <br>
+  移动之后打入下面的命令。
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，请使用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller welcome</span>
+</td>
+</tr>
+</table>
+  <br>
+  有沒有显示下面图像一样的画面吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/rails_g_controller_welcome.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/rails_g_controller_welcome.png",
+              :target => ["_blank"] %>
+  这个
+<pre>
+rails g controller 资料库的名字
+</pre>
+  的打入是<a href="/zh-CN/mugcups/6#title2-data-view" target="_blank"><strong>按照资料库的內容，作操作资料跟显示网页的设定文件</strong></a>的命令。
+  <br><br>
+  这一次沒有这个<strong>「<u>welcome</u>」</strong>的资料库。
+  <br>
+  像这一次一样不要操作资料，只想显示网页的时候，在terminal上打入
+<pre>
+rails g controller 名字（单数）
+</pre>
+  作「controller」的设定文件跟显示网页的设定文件。
+  <br><br>
+  这一次不用做「welcome」资料库的资料操作，所以为了<strong><u>网页的设定</u></strong>打入这个內容。
+  <br>
+  <small>※　如果在这个网页上显示保存的投稿资料的话，在作好的「controller」文件上追加「@posts」等等的设定。</small>
+  <br><br>
+  这是例外，可是记住吧。
+  <br><br>
+  <ul class="number_ul">
+    <strong><li><i>rails g controller 名字（复数）</i></li></strong>
+    设定<u>用资料库</u>的网页。（详细<a href="/zh-CN/mugcups/6#title2-data-view" target="_blank"><strong>请参考这里</strong></a>）
+    <strong><li><i>rails g controller 名字（单数）</i></li></strong>
+    设定<u>不要用资料库</u>的网页。
+  </ul>
+  <hr class="red-hr">
+  首先从<strong><u>「用哪一个网页」</u></strong>的设定开始做吧。
+  <br>
+  用Sublime Text打开<strong>「<u>myapp</u>」</strong>之后，打开<strong>「config > routes.rb」</strong>文件吧。
+  <br>
+  <small>
+    ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+  </small>
+  <br><br>
+  在这个<strong>「<u>routes.rb</u>」文件</strong>上追加设定。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>先从复习开始吧。<u>使用「welcome」的「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」的网页的时候</u>，要设定怎么样的內容好呢？<br>（不知道的话<a href="/zh-CN/mugcups/6#title2-route" target="_blank">请参考这里</a>）</strong>
+  <br><br>
+  <input type="input" class="form-control input-code" placeholder="打入答案">
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>routes.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+</td>
+</tr>
+</table>
+  <br>
+  在<strong>「<u>routes.rb</u>」</strong>上，追加这个一行吧！
+  <hr class="red-hr">
+  追加上面的一行之后，在<strong>「<u>routes.rb</u>」</strong>上面设定下面的內容吧。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>routes.rb（追加第4行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+5
+6
+7
+8
+9
+...
+58
+59
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line remarkable-code'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'>  <span class='word-gray'>#   end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  這個
+<pre>
+root "要显示网页的设定文件夾#显示的网页"
+</pre>
+  在指定显示「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」的网页。
+  <br><br>
+  在这里设定，主页「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」上显示<strong>「views > welcome」的「index.html.erb」的设定文件</strong>。
+  <br><br>
+  如果用<strong><u>「posts」资料库的「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」的网页设定主页</u></strong>的时候，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  root <span class='word-yellow'>"posts#index"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  要这样设定。
+  <br><br>
+  这样子在「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」上显示网页的时候，
+<pre>
+root "显示的网页的设定文件夾#显示的网页"
+</pre>
+  这样子设定內容。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　在主页「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」上显示<strong><u>「views > top」里的「index.html.erb」</u>的话，在「routes.rb」里要设定怎么样的內容好呢？</strong>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="打入答案">
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>routes.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>  root <span class='word-yellow'>"top#index"</span></span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  指定好使用的网页，接着做<strong><u>操作资料</u></strong>的设定。
+  <br>
+  但是在这里不用操作资料，设定简单的內容就OK。
+  <br><br>
+  首先打开<strong>「<u>app > controllers > welcome_controller.rb</u>」</strong>吧！
+  <br>
+  这个是在<u><strong>「rails g controller welcome」</strong>的打入作的文件</u>，在这里设定各个网页上的操作资料的內容。
+  <br>
+  编辑这个文件的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>welcome_controller.rb（追加第2、3行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+<strong class="color-red">3</strong>
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>WelcomeController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line remarkable-code'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line remarkable-code'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  应为在「welcome」上只使用<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」</strong>的网页，所以设定这样子的內容。
+  <br><br>
+  这一次不用显示资料所以里面不用设定內容，但是如果像显示「post」资料库的资料的话，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@posts <span class="word-red">=</span> <span class='word-blue'>Post</span>.all</span>
+</td>
+</tr>
+</table>
+  <br>
+  像这样子设定「@posts」的标记之后、在<a href="/zh-CN/mugcups/5#title1-2-3-view" target="_blank"><strong>显示网页的设定文件</strong></a>上显示內容。
+<!--   <br><br>
+  データを表示させるかどうかは別にして後で追加する可能性もあるので，像上面一樣追加<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」</strong>のデータ操作の設定を加えましょう。 -->
+  <hr class="red-hr">
+  最后做网页的设定吧！
+  <br>
+  首先，<strong>「app > views > welcome」里保存「index.html.erb」的文件</strong>吧！
+  <br>
+  <small>
+    ※　保存文件的方法，<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>请参考这里</strong></a>
+  </small>
+  <br><br>
+  <strong><u>这个「index.html.erb」文件</u></strong>是显示网站的设定文件。
+  <br><br>
+  在「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」上，显示看看网页吧！
+  <br>
+  刚开始参考下面的內容，编辑文件的內容。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（welcome文件夾里）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;欢迎光临&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;看投稿一览&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  內容应该沒问题吧？
+  <br>
+  用<strong><a href="/zh-CN/mugcups/7#title2-2-5-btn" target="_blank">Bootstrapの「btn」</a></strong>作<a href="/zh-CN/mugcups/7#title1-3" target="_blank"><strong>「/posts」的连接</strong></a>呢。
+  <br><br>
+  那么打开看这个文件吧！
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  打开看<strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」吧。
+  </small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_before.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_before.png",
+              :target => ["_blank"] %>
+  有沒有显示上面图像一样的画面吗？
+  <hr class="red-hr">
+  到这里做好了，移动到<strong>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</strong>的设定了吧。
+  <br>
+  接着在这个网页上追加设定，显示下面图像一样的画面吧！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
+              :target => ["_blank"] %>
+</h4>

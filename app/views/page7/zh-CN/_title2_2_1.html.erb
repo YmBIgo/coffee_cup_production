@@ -1,0 +1,302 @@
+<h4 id="chapter7-2-2-1">
+  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : container</strong></p>
+  <br>
+  在这里把现在紧紧的网页，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_bootstrap_container.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_bootstrap_container.png",
+              :target => ["_blank"] %>
+  改成像上面图像一样！
+  <br>
+  这个网页的设定，也可以用<strong><u>Bootstrap</u></strong>做！
+  <hr class="red-hr">
+  首先，用Sublime Text打开看<strong>「<u>myapp</u>」</strong>吧。
+  <br>
+  <small>
+    ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+  </small>
+  <br><br>
+  之后，打开<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>吧。
+  <br><br>
+  <p class="fix-link-nav" id="application-html"><i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong></p>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</td>
+<td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>html</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>title</span>&gt;Myapp&lt;/<span class='word-red'>title</span>&gt;</span>
+<span class='code-line'>  &lt;%= stylesheet_link_tag    <span class="word-yellow">'application'</span>, <span class='word-purple'>media:</span> <span class="word-yellow">'all'</span>, <span class="word-yellow">'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= javascript_include_tag <span class="word-yellow">'application'</span>, <span class="word-yellow">'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= csrf_meta_tags %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  有沒有显示上面一样子的文件吗？
+  <br>
+  在这个文件里有，<a href="/zh-CN/mugcups/3#title1-1" target="_blank"><strong><u>刚开始学的「&lt;html&gt;」或者「&lt;head&gt;」</u></strong></a>等等呢。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle color-red"></i>　<strong>先简单的说明这里的內容。</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= <span class="word-red">yield</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里，显示<strong>「<u>show.html.erb</u>」</strong>或者<strong>「<u>index.html.erb</u>」</strong>等等显示网页的设定文件。
+  <br><br>
+  应为「show.html.erb」等等的文件都埋在「&lt;%= yield %&gt;」里面，<strong><u>所以在各个显示网页的文件里不用设定「&lt;html&gt;」或者「&lt;head&gt;」的內容。</u></strong>
+  <br><br>
+  <i class="fa fa-play-circle color-red"></i>　各个<u>CSS文件</u>等等装饰网页的设定文件都设定在
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>  &lt;%= stylesheet_link_tag    <span class="word-yellow">'application'</span>, <span class='word-purple'>media:</span> <span class="word-yellow">'all'</span>, <span class="word-yellow">'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= javascript_include_tag <span class="word-yellow">'application'</span>, <span class="word-yellow">'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= csrf_meta_tags %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个地方。
+  <br>
+  <small>※　「stylesheet_link_tag」在设定CSS文件，「javascript_include_tag」在设定叫做javascript的作动的网页显示的文件，「csrf_meta_tags」在谁难过电脑安全。</small>
+  <hr class="red-hr">
+  那么在<strong>「<u>application.html.erb</u>」</strong>上加几个设定，改成广宽的网页吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第10行〜第12行）</strong>
+  <br>
+  <small>
+    ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+<span class="color-red"><strong>10</strong></span>
+<span class="color-red"><strong>11</strong></span>
+<span class="color-red"><strong>12</strong></span>
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>html</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>title</span>&gt;Myapp&lt;/<span class='word-red'>title</span>&gt;</span>
+<span class='code-line'>  &lt;%= stylesheet_link_tag    <span class="word-yellow">'application'</span>, <span class='word-purple'>media:</span> <span class="word-yellow">'all'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= javascript_include_tag <span class='word-yellow'>'application'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= csrf_meta_tags %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>div </span><span class='word-green'>class</span>=<span class='word-yellow'>"container"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line remarkable-code'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  做好了的话，打开「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
+  </small>
+  <br><br>
+  显示像下面图像一样的画面吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_bootstrap_container.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_bootstrap_container.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <p id="title2-2-1-css-div" class="fix-link-nav"><i class="fa fa-play-circle color-red"></i>　<strong>在这里解释內容吧。</strong></p>
+  <br>
+  这一次出现新的html<strong>「<u>&lt;div&gt;</u>」</strong>。
+  <br>
+  刚开始解释这个<strong>「<u>&lt;div&gt;</u>」</strong>吧！
+  <br><br>
+  例如说，像下面的html文件里的，
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>sample.html</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;RED&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;GREEN&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>small</span>&gt;BLUE&lt;/<span class='word-red'>small</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>「&lt;h1&gt;」「&lt;p&gt;」「&lt;small&gt;」</strong>这个各个文字上设定
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.mysyle</span>{</span>
+<span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>white</span>;</span>
+<span class='code-line'>  <span class='word-blue'>background-color</span>:<span class='word-blue'>black</span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <br>
+  的內容的话，
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>sample.html</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1 </span><span class='word-green'>class</span>=<span class='word-yellow'>"mystyle"</span>&gt;RED&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p </span><span class='word-green'>class</span>=<span class='word-yellow'>"mystyle"</span>&gt;GREEN&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>small </span><span class='word-green'>class</span>=<span class='word-yellow'>"mystyle"</span>&gt;BLUE&lt;/<span class='word-red'>small</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  可以像上面一样，追加<strong>「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank">class</a>」</strong>。
+  <br>
+  但是这样写<strong><u>里面写三次「class="mystyle"」</u></strong>，重复有一点多。
+  <hr class="red-hr">
+  像这样的时候，一起设定CSS的文字是「<strong><u>&lt;div&gt;</u></strong>」。
+  <br>
+  用「<strong><u>&lt;div&gt;</u></strong>」，可以把上面的设定写的像下面一样。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>sample.html</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div </span><span class='word-green'>class</span>=<span class='word-yellow'>"mystyle"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;RED&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;GREEN&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>small</span>&gt;BLUE&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong><u>在「&lt;div&gt;」跟「&lt;/div&gt;」围起來的地方里，会使用用「&lt;div&gt;」设定的「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank">class</a>」的內容。</u></strong>
+  <hr class="red-hr">
+  所以在这一次的文件里的设定是
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+11
+12
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div </span><span class='word-green'>class</span>=<span class='word-yellow'>"container"</span>&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>对「yield」（「show.html.erb」等等的文件在埋在里面）上，适用「class="container"」的设定。</strong>
+  <br><br>
+  <u>这个<strong>「class="container"」</strong>的设定是<strong>Bootstrap的设定</strong>，在网页上追加空格。</u>
+  <br><br>
+  <i class="fa fa-star color-blue"></i>　<strong>导入Bootstrap之后，在「<u>application.html.erb</u>」上追加下面的设定。</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+<span class="color-red"><strong>10</strong></span>
+<span class="color-red"><strong>11</strong></span>
+<span class="color-red"><strong>12</strong></span>
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>html</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>title</span>&gt;Myapp&lt;/<span class='word-red'>title</span>&gt;</span>
+<span class='code-line'>  &lt;%= stylesheet_link_tag    <span class="word-yellow">'application'</span>, <span class='word-purple'>media:</span> <span class="word-yellow">'all'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class="word-purple">true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= javascript_include_tag <span class="word-yellow">'application'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class="word-purple">true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= csrf_meta_tags %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>div </span><span class='word-green'>class</span>=<span class='word-yellow'>"container"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line remarkable-code'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;</span>
+</td>
+</tr>
+</table>
+</h4>

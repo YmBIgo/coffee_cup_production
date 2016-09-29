@@ -1,0 +1,231 @@
+<h4 id="chapter10-4-1">
+  <p id="title4-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 更改「posts」资料库</strong></p>
+  到这里的「posts」资料库里有「name」的框子，所以作投稿的网页（<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>）上里有「name」的输入框。
+  <br><br>
+  但是在这里为了在作投稿的网页上自动保存会员的资料，<strong>不使用这个「name」的框子而使用会员资料（id）的框子<u>显示名字</u></strong>，所以<u>不用「name」的输入框。</u>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>「name」的输入框跟作好的投稿资料就都不用了，所以取掉好了！</strong>
+  <br><br>
+  <strong class="remarkable"><i class="fa fa-exclamation color-red"></i>　在投稿的「show」网页上，
+  点击<a class="btn btn-danger">删除投稿</a>
+  删除全部的资料吧。</strong>
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong><u>资料删除之后，接着删除框子吧。</u></strong>
+  <br><br>
+  框子的删除要先作编辑资料库的设定文件之后，再來删除资料库。
+  <br>
+  <small>※　框子的删除，<a href="/zh-CN/mugcups/4#title1-4" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>首先用terminal，移动到「<u>myapp</u>」吧。</strong>
+  <br><br><br>
+    <p class="alert alert-success">
+    <span><strong><i class="fa fa-windows color-blue"></i>　使用Windows移动的方法，<a href="/zh-CN/mugcups/windows_tips#title1-2" target="_blank">请参考这里</a></strong></span>
+    </p>
+  <br>
+  　<strong>terminal（用半母字母数字打入）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-arrow-right"></i>　<strong>为了作设定资料库的文件，在terminal上打入下面的命令吧</strong>
+  <br><br>
+  <strong>terminal（用半母字母数字打入）</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g migration removeColumnFromPost</span>
+</td>
+</tr>
+</table>
+  <br>
+  要作更改资料库的框子的设定文件的时候，
+<pre>
+rails g migration 设定文件的名字
+</pre>
+  在terminal上打入上面的內容。
+  <br>
+  名字使用什么都可以，但是我們推荐使用简单一点自己可以理解的名字。
+  <br><br>
+  <strong>「<u>db > migrate > 日子_remove_column_from_post.rb</u>」</strong>是作好的设定文件，参考下面编辑內容吧！
+<br><br>
+<i class="fa fa-file color-red"></i>　<strong>日子_remove_column_from_post.rb（用半母字母数字打入）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>RemoveColumnFromPost <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    remove_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:name</span>, <span class='word-purple'>:string</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这个
+<pre>
+remove_column :资料库的名字, :框子的名字, :资料的种类
+</pre>
+  在做框子的删除。
+  <br>
+  <small>※　详细<strong><a href="/zh-CN/mugcups/4#title1-4" target="_blank">请参考这里</a></strong>。</small>
+  <br><br>
+  设定好了之后为了适用设定的內容，打入
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  的內容吧。
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　如果不动的话，前面加<strong>「bundle exec」</strong>，打入<strong>「bundle exec rake db:migrate」</strong>吧。
+  </small>
+  <br><br>
+  做好这里的话，用<strong><u>Sequel Pro</u></strong>看看资料库的內容吧！
+  <br>
+  <small>
+    ※　打开Sequel Pro的方法，<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>请参考这里</strong></a>。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，使用<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>吧。
+  </small>
+  <br><br>
+  <u><strong>「name」的框子</strong>有沒有删除了呢？</u>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong><u>那么「posts」资料库里追加会员资料的框子的设定吧。</u></strong>
+  <br><br>
+  「posts」资料库里追加<u>放会员资料的「users」资料库的「id」</u>的框子<strong>「user_id」</strong>。
+  <br><br>
+  框子的设定使用跟「users」资料库的「id」一样的设定，<u>框子的资料的种类是<strong>「数字」</strong>・名字是<strong>「user_id」</strong></u>。
+  <br><br>
+  例如说，如果「id是189」的会员投稿的话，<strong>「<u>posts</u>」资料库的「<u>user_id</u>」里放「<u>189</u>」的资料，用这个会员号码的资料显示名字</strong>。
+  <hr class="red-hr">
+  <strong>那么做做看吧！</strong>
+  <br><br>
+  首先从设定文件开始作！
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/4#title1-4" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <strong>terminal（用半母字母數字打入）</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g migration addColumnToPost2</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>※　因为不能用同样的名字，所以后面加「2」。但是等一会儿看的时候知道里面在设定什么的话，使用什么名字也可以。</small>
+  <br><br>
+  作完了之后，参考下面的內容设定<strong>「<u>db > 日子_add_column_to_post2.rb</u>」</strong>的內容吧。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日子_add_column_to_post2.rb（用半母字母数字打入）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddColumnToPost2 <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    add_column <span class='word-purple'>:posts</span>, <span class='word-purple'>:user_id</span>, <span class='word-purple'>:integer</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这个
+<pre>
+add_column :资料库的名字, :名字, :资料的种类
+</pre>
+  追加框子的內容。放数字的资料的种类是<strong>「<u>integer</u>」</strong>。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/4#title1-3-1" target="_blank"><strong>请参考这里</strong></a>吧。</small>
+  <hr class="red-hr">
+  设定文件作好了之后，为了适用设定的內容，打入
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样子框子的编辑完成了。
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　不动的话，前面追加<strong>「bundle exec」</strong>，打入<strong>「bundle exec rake db:migrate」</strong>吧。
+  </small>
+  <br><br>
+  從<strong><u>Sequel Pro</u></strong>看看內容吧。
+  <br>
+  <small>
+  ※　Sequel Pro的话<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>请参考这里</strong></a>，SqliteBrowser的话<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>请参考这里</strong></a>吧。
+  </small>
+  <br><br>
+  <strong>有沒有追加「user_id」了吗？</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Sequel_Pro_add_user_id.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Sequel_Pro_add_user_id.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <strong><u>用这个「user_id」，在网页上显示投稿的会员的资料。</u></strong>
+</h4>

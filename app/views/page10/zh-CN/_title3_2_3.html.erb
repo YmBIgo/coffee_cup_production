@@ -1,0 +1,105 @@
+<h4 id="chapter10-3-2-3">
+  <p id="title3-2-3" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : edit网页</strong></p>
+  <br>
+  <strong>「<u>edit</u>」网页的资料操作</strong>要选择编辑的资料。
+  <br>
+  参考下面，编辑里面的內容吧！
+  <br>
+  <small>※　详细的说明，请参考<strong><u>「posts」资料库的「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">edit</a>」网页</u></strong>吧</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第12行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>11
+<strong class="color-red">12</strong>
+13
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line remarkable-code'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  用这个<strong>「<u>@user</u>」<u>的资料，设定打入的输入框</u>跟<u>发信按钮</u></strong>。
+  <hr class="red-hr">
+  接着在<strong>「<u>app > views > users > edit.html.erb</u>」</strong>上追加设定。编辑<strong>「<u>edit.html.erb</u>」</strong>的內容吧。
+  <br>
+  <small>※　网页的说明，请参考<strong><u>「posts」资料库的「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">edit</a>」网页</u></strong>吧</small>
+  <br>
+  <small>※　输入框的<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank"><strong>class</strong></a>等等，请参考<strong><u><a href="/zh-CN/mugcups/7#title2-2-3" target="_blank">Bootstrap的说明</a></u></strong>吧</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;编辑会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;姓氏&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:family_name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:first_name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;自我介绍&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:self_introduction</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"更新"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  做完了之后，打开「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank"><strong>0.0.0.0:3000/users/1/edit</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/users/1/edit" target="_blank"><strong>localhost:3000/users/1/edit</strong></a>」吧。
+  </small>
+  <br><br>
+  有沒有显示下面图像一样的网页吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_edit_before.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_1_edit_before.png",
+              :target => ["_blank"] %>
+  输入框也做好了，接着作资料的更新吧！
+</h4>

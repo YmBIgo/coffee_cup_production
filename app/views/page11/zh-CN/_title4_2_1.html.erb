@@ -1,0 +1,257 @@
+<h4 id="chapter10-4-2-1">
+  <p id="title4-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 操作资料</strong></p>
+  <br>
+  首先编辑<strong>「<u>posts_controller.rb</u>」</strong>的內容，设定<u>不使用<strong>「name」</strong>而使用<strong>「user_id」</strong>的资料</u>吧。
+  <br><br>
+  要编辑的时候，还要追加两个设定。
+  <strong>
+    <ul class="number_ul">
+      <li>作资料的时候（<a href="/zh-CN/mugcups/6#title1-3" target="_blank">create</a>），在「<u>user_id</u>」里放会员资料的设定</li>
+      <li>在网页上显示的标记「<u>@user</u>」的设定</li>
+    </ul>
+  </strong>
+  在这里，做做看各个內容吧！
+  <br>
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li>作资料的时候，在「user_id」里面放会员资料</li></strong>
+    <br>
+    <i class="fa fa-question-circle color-green"></i>　<strong>首先复习內容吧。在「def create」的部分，设定<u>可以编辑「content」「place」「user_id」的框子</u>的內容吧。</strong>
+    <br>
+    <small>※　不知道的话，<a href="/zh-CN/mugcups/6#title1-4" target="_blank"><strong>请参考这里</strong></a>吧</small>
+    <br><br>
+    <input type="input" class="input-code form-control" placeholder="打入答案">
+    <br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（第17〜19行）</strong>
+    <br>
+    <small>
+      ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      <br>
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    </small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>17
+<strong class="color-red">18</strong>
+19
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line answer-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class="remarkable-code"><span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>, <span class="word-purple">:user_id</span></span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    新增・编辑资料的时候，
+<pre>
+.require(:资料库的名字（单数）.permit(:资料库的框子...))
+</pre>
+    的地方在限制资料库。
+    <br>
+    <small>※　详细的內容<a href="/zh-CN/mugcups/6#title1-4-1" target="_blank"><strong>请参考这里</strong></a>。</small>
+    <hr class="red-hr">
+    这样设定好了保存「user_id」的资料的內容，但是在「user_id」里面放资料的设定还沒设定好。
+    <br>
+    <strong><u>接着在「user_id」里放会员的资料吧。</u></strong>
+    <br><br>
+    可是，这个「user_id」不能用输入框。
+    <br>
+    <strong>如果作投稿的网页上有打入会员资料的输入框的话，<u>网站就变成可以用別人的会员资料投稿吧</u>。这有一点危险・・・</strong>
+    <br><br>
+    <strong>「user_id」的內容，使用取得登入的会员资料的「<a href="/zh-CN/mugcups/10#title3-3-3" target="_blank">current_user</a>」在「posts_controller.rb」里面设定。</strong>
+    <br><br>
+    编辑<strong>「<u>posts_controller.rb</u>」</strong>的內容吧。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（第17〜19行）</strong>
+    <br>
+    <small>
+      ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      <br>
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    </small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center small-code'>17
+<strong class="color-red">18</strong>
+19
+</td>
+<td class='code-content small-code'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.create(params.require(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>, <span class='word-purple'>:user_id</span>)<span class="remarkable-code">.merge(<span class='word-purple'>:user_id</span> => current_user.id)</span>)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    第18行的<strong>「<u>... , :user_id)</u>」</strong>后面追加了
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">18</strong>
+</td>
+<td class='code-content'><span class='code-line remarkable-code'>.merge(<span class='word-purple'>:user_id</span> => current_user.id)</span>
+</td>
+</tr>
+</table>
+    <br>
+    的內容了。
+    <br>
+    <u>这样子设定好了<strong>「user_id」</strong>里，<strong>放「current_user」的「id」</strong>的內容了。</u>
+    <hr class="red-hr">
+    看看內容可不可以理解，
+<pre>
+:user_id => current_user.id
+</pre>
+    在<strong><u>「user_id」裡放「current_user」的「id」</u></strong>嗎？
+    <br>
+    这个设定跟使用「rails c」<a href="/zh-CN/mugcups/4#title2-1" target="_blank"><strong>新增（create）</strong></a>・<a href="/zh-CN/mugcups/4#title1-3" target="_blank"><strong>编辑（update）</strong></a>的时候的內容一样。
+    <br>
+    <u><strong>「user_id」</strong>里放<strong>「current_user」的「id」</strong>的內容。</u>
+    <br><br>
+    那么，
+<pre>
+.merge()
+</pre>
+    在做什么呢？
+    <br><br>
+    这个是<strong><u>资料操作上追加设定</u></strong>的时候的设定。像这一次保存，在网页上沒有打入的资料的时候会使用。
+    <hr class="red-hr">
+    <strong><li>「@user」的设定</li></strong>
+    <br>
+    接着设定在网页上显示资料的标记<strong>「<u>@user</u>」</strong>吧。
+    <br>
+    跟<a href="/zh-CN/mugcups/10#title3-2-1" target="_blank"><strong>作「users」网页的时候</strong></a>一样，<u>网页上显示的标记<strong>「<u>@user</u>」</strong>设定在<strong>「<u>posts_controller.rb</u>」</strong>里面</u>。
+    <br><br>
+    在这里要显示投稿的会员资料，所以在<strong>「<u>posts_controller.rb</u>」</strong>上的
+    <strong>
+      <ul class="number_ul">
+        <li>显示投稿的资料「<u>show</u>」</li>
+        <li>显示作好的资料「<u>create</u>」</li>
+        <li>显示编辑好的资料「<u>update</u>」</li>
+        <li>显示删除好的资料「<u>destroy</u>」</li>
+      </ul>
+      <br>
+    </strong>
+    设定标记<strong>「<u>@user</u>」</strong>。
+    <hr class="red-hr">
+    <strong>「<u>@user</u>」</strong>里面要设定作投稿的会员资料，这个是用
+<pre>
+User.find(id好吗)
+</pre>
+    設定。
+    <br><br>
+    在这个后面追加的「id号码」里，<strong><u>放「posts」资料库的「user_id」。</u></strong>
+    <br><br>
+    <i class="fa fa-play-circle color-red"></i>　例如说，<strong>「<u>id</u>」是「890」的会员资料</strong>要
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@user = <span class='word-blue'>User</span>.find(890)</span>
+</td>
+</tr>
+</table>
+    <br>
+    这样打入选择会员资料。
+    <br><br>
+    但是在这里后面的「id」的部分<strong>放「posts」资料库的「user_id」选择投稿的会员资料。</strong>
+    <hr class="red-hr">
+    那么在<strong>「<u>show</u>」</strong>的网页上设定看吧。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（第5〜8行）</strong>
+    <br>
+    <small>
+      ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      <br>
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    </small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+<strong class="color-red">7</strong>
+8
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @post = <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    这样<strong>「<u>@user</u>」里选择了作「<u>@post</u>」的投稿的会员资料。</strong>
+    <br><br>
+    作「@post」的投稿的会员，用「find」选择「id是@post.user_id」的会员。
+    <br>
+    在网页上显示，这个<strong>「<u>@user</u>」的「<u>family_name</u>」跟「<u>first_name</u>」</strong>。
+    <hr class="red-hr">
+    <i class="fa fa-play-circle color-red"></i>　<strong>设定网页之前，在剩下的「<u>create</u>」「<u>update</u>」「<u>destroy</u>」上也设定同样的设定吧！</strong>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（第18〜39行）</strong>
+    <br>
+    <small>
+      ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      <br>
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    </small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>18
+19
+<strong class="color-red">20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong class="color-red">30</strong>
+31
+32
+33
+34
+35
+<strong class="color-red">36</strong>
+37
+38
+39
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.require(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>, <span class='word-purple'>:user_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+<span class='code-line remarkable-code'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @post.update(params.require(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line remarkable-code'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @post.destroy</span>
+<span class='code-line remarkable-code'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  </ul>
+  <br>
+  到这里<strong><u>「user_id」跟显示网页的「@user」的设定</u></strong>完成了。
+  <br><br>
+  <strong>接着删除「name」，显示设定的「@user」吧！</strong>
+</h4>

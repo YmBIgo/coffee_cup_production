@@ -1,0 +1,43 @@
+<h2 class="textbook-section-title" id="title1"><strong>1 : 完成作连接吧！</strong></h2>
+<h4 id="chapter7-1">
+  <strong>那么，先设定网页的移动，连接吧！</strong>
+  <hr class="red-hr">
+  网页的移动（连接），例如说移动到<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">显示全部的资料（index）</a>」</strong>的网页的话，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  用这样子显示內容。
+  <br>
+  详细<a href="/zh-CN/mugcups/5#title1-2-2" target="_blank"><strong>请参考这里</strong></a>！
+  <hr class="red-hr">
+  这个章的目的是，
+  <br>
+  「<a href="/zh-CN/mugcups/5#title1-1" target="_blank"><strong>显示一个资料（show）</strong></a>」的网页上，显示跟下面的图像一样子的「<a href="/zh-CN/mugcups/6#title1-5" target="_blank"><strong>打入编辑的资料（edit）</strong></a>」的网页的连接，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_1_add_edit.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_1_add_edit.png",
+              :target => ["_blank"] %>
+  「<a href="/zh-CN/mugcups/5#title1-2" target="_blank"><strong>显示全部的资料（index）</strong></a>」的网页上，显示跟下面的图像一样子的「<a href="/zh-CN/mugcups/6#title1-3" target="_blank"><strong>打入新的资料（new）</strong></a>」的网页的连接，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+              :target => ["_blank"] %>
+  的设定內容。
+  <br>
+  那么，做做看吧！
+</h4>
+<hr>
+<%= render "page7/zh-CN/title1_1" %>
+<hr>
+<%= render "page7/zh-CN/title1_2" %>
+<hr>
+<%= render "page7/zh-CN/title1_3" %>

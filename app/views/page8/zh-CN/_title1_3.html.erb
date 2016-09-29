@@ -1,0 +1,162 @@
+<h4 id="chapter8-1-3">
+  <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 总结</strong></p>
+  <br>
+  在这个章解释了
+  <ul class="number_ul">
+    <strong><li>不要操作资料的网页</li></strong>
+    <strong><li>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」上的网页的显示</li></strong>
+    <strong><li>用CSS的显示图像的设定跟<a href="/zh-CN/mugcups/css#title1-3" target="_blank">Padding</a></li></strong>
+  </ul>
+  这个三个设定。
+  <br><br>
+  <strong>设定的內容<a href="/zh-CN/codes/8" target="_blank">请参考这里</a></strong>
+  <hr class="red-hr">
+  <strong class="little-remarkable"><u><i class="fa fa-play-circle"></i> 不要操作资料的网页</u></strong>
+  <br><br>
+  要设定不要用指定的资料库操作资料的网页的时候，使用<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」</strong>的网页。
+  <br>
+  设定网页的时候，使用
+  <br><br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller 网页的名字（单数）</span>
+</td>
+</tr>
+</table>
+  <br>
+  作设定的文件跟文件夾<strong>（<u>view跟controller</u>）</strong>。
+  <br><br>
+  做完这个之后，不要操作资料也要做<a href="/zh-CN/mugcups/5#title1" target="_blank"><strong>三个设定</strong></a>。
+  <ul class="number_ul">
+    <hr class="red-hr">
+    <strong><li>使用哪一个网页的设定</li></strong>
+    <br>
+    应为不要操作资料，在<strong>「<u>config > routes.rb</u>」</strong>上设定<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」</strong>。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>routes.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>操作资料的设定</li></strong>
+    <br>
+    不要操作资料也要，在<strong>「<u>app > controllers > 名字_controller.rb</u>」</strong>文件里设定<strong>「<u>def index</u>」</strong>的內容。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>welcome_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>WelcomeController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>网页的设定</li></strong>
+    <br>
+    <strong>「<u>app > views > 名字</u>」</strong>的文件夾里，保存<strong>「<u>index.html.erb</u>」</strong>之后设定网页的显示。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;欢迎光临&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;看投稿一览&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  </ul>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i><strong class="little-remarkable"><u>「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」上的网页显示</u></strong>
+  <br><br>
+  在「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」上设定网页的话，在<strong>「<u>config > routes.rb</u>」</strong>里设定
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>routes.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>root <span class='word-yellow'>"使用的view文件夾的名字#显示的名字"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这个內容。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i> <strong class="little-remarkable"><u>CSS的設定（图像的设定跟Padding）</u></strong>
+  <br><br>
+  <ul class="number_ul">
+  <strong><li>CSS上的图像的显示</li></strong>
+  <br>
+  适用CSS的html设定「&lt;div&gt;」的class上，显示图像的话
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>7
+8
+9
+10
+11
+12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange">/assets/header12.jpg</span>);</span>
+<span class='code-line'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>400</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class="word-blue">-webkit-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-moz-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-o-background-size</span>: cover;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样子设定。
+  <hr class="red-hr">
+  <strong><li>Padding</li></strong>
+  <br>
+  內容外面的空格使用<strong>「margin」</strong>设定，內容里面的空格使用<strong>「<a href="/zh-CN/mugcups/css#title1-3" target="_blank">padding</a>」</strong>设定。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.css</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+<span class='code-line'>  <span class='word-blue'>padding</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <br>
+  这边就自己试试怎么作吧！
+  <br><br>
+  <strong>设定的內容<a href="/zh-CN/codes/8" target="_blank">请参考这里</a></strong>
+</h4>

@@ -1,0 +1,129 @@
+<h4 id="chapter10-4-2-3">
+  <p id="title4-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 總結</strong></p>
+  <br>
+  在这里
+  <br>
+  <strong>删除在「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">new</a>」网页设定的「name」输入框、设定用登入的会员资料投稿资料。</strong>
+  <br><br>
+  为了这个，设定了
+  <strong>
+    <ul class="number_ul">
+      <li>操作资料</li>
+      <li>显示会员的资料</li>
+    </ul>
+  </strong>
+  这个两个。在这里说明这个两个內容。
+  <br><br>
+  <strong>设定的內容<a href="/zh-CN/codes/11" target="_blank">请参考这里</a></strong>
+  <ul class="number_ul">
+    <hr class="red-hr">
+    <strong><li>操作资料</li></strong>
+    <br>
+    资料操作有
+    <strong>
+      <ul style="margin:20px 0;">
+        <li>新增资料（<a href="/mugcups/6#title1-4" target="_blank"><strong>create</strong></a>）时候，在「user_id」里追加资料</li>
+        <li>设定要显示的「@user」</li>
+      </ul>
+    </strong>
+    的这个两个。
+    <hr class="red-hr">
+    <i class="fa fa-play-circle"></i>　要新增资料要设定<u><strong>「posts_controller.rb」</strong>的<strong>「create」</strong>里追加<strong>「user_id」</strong>的內容。</u>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center small-code'>17
+<strong class="color-red">18</strong>
+19
+</td>
+<td class='code-content small-code'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:content</span>, <span class='word-purple'>:place</span><span class="remarkable-code">, <span class='word-purple'>:user_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id)</span>)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <i class="fa fa-play-circle"></i>　在显示的资料操作里，设定<u><strong>「@user」</strong>的标记。</u>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+<strong class="color-red">7</strong>
+8
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(@post.user_id)</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li>显示会员资料</li></strong>
+    <br>
+    会员资料从资料操作的<strong>「<u>@user</u>」</strong>显示资料。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2
+3
+4</strong>
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>h4</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>small</span>&gt;&lt;%= @post.created_at %&gt;：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;删除投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    虽然內容很长，可是不用<strong>「<u>@user</u>」</strong>也可以设定显示。
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4</strong>
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一览&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= p.user.id %&gt;"</span>&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;的投稿&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h3</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;作投稿&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>设定的內容<a href="/zh-CN/codes/11" target="_blank">请参考这里</a>。</strong>
+  <hr class="red-hr">
+  <strong>
+    这样用会员的资料作好投稿了吗？
+    <br><br>
+    到这里网站也大概作好了。但是在现在的网站<u>有登入的会员谁都可以编辑删除別人作的投稿</u>。这个有一点不好。
+    <br><br>
+    接下來为了修这个，设定「<u>会员的检查</u>」吧。
+  </strong>
+  </ul>
+</h4>

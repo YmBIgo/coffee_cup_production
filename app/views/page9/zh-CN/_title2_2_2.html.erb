@@ -1,0 +1,321 @@
+<h4 id="chapter9-2-2-2">
+  <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 设定登入的通知</strong></p>
+  <br>
+  到这里，用检查利用者有沒有登入的设定，不让沒有登入的利用者看「posts」的网页的內容。
+  <br>
+  現在就可以注册会员登入网站了。但是注册登入之前，咱們设定<strong><u>利用者登入之后等等的时候显示的通知</u></strong>吧。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_after.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
+              :target => ["_blank"] %>
+  这个通知也加几个內容就可以设定，做做看吧。
+  <hr class="red-hr">
+  首先编辑<strong>「app > views > layouts > application.html.erb」</strong>的<strong>「<u><a href="/zh-CN/mugcups/7#title2-2-1" target="_blank">&lt;div class="container main-page"&gt;</a></u>」</strong>里的內容吧。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（&lt;div class="container main-page"&gt;之后追加內容）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>36
+37
+<strong class="color-red">38
+39
+40
+41
+42
+43
+44
+45</strong>
+46
+47
+</td>
+<td class='code-content'><span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container main-page"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">if</span> notice %&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;&lt;%= notice %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">if</span> alert %&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-danger"</span>&gt;&lt;%= alert %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  编辑好了之后，打开「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts/new" target="_blank"><strong>localhost:3000/posts/new</strong></a>」吧。
+  </small>
+  <br><br>
+  有沒有显示下面图像一样的画面了吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_fail_to_sign_in.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle color-red"></i>　<strong>在这里解释设定的內容吧。</strong>
+  <br><br>
+  在这里的设定中，新追加
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> notice %&gt;</span>
+</td>
+</tr>
+</table>
+  跟
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> alert %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  的设定。<u>这个设定在做什么呢？</u>
+  <br><br>
+  在这一些跟
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  之间的地方设定条件判别，然后在各个条件上显示各个显示的內容。
+  <br><br>
+  条件用
+<pre>
+&lt;% if 条件 %&gt;
+</pre>
+  指定，如果条件成立的时候
+<pre>
+&lt;% end %&gt;
+</pre>
+  显示到这里的內容。
+  <br><br>
+  这一次，
+  <br><br>
+<pre>
+&lt;% if notice %&gt;
+</pre>
+  在设定有通知过來的时候的条件，
+<pre>
+&lt;% if alert %&gt;
+</pre>
+  在设定有错误的通知过來的时候的条件。
+  <hr class="red-hr">
+  <strong>「<u>&lt;% if notice %&gt;</u>」（通知來的时候:notice）</strong>是，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;&lt;%= notice %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+<br>
+<strong>「<u>&lt;% if alert %&gt;</u>」（错误的通知來的时候:alert）</strong>是，
+<br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-danger"</span>&gt;&lt;%= alert %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  显示各个內容。
+  <br><br>
+  如果是notice的话显示
+  <p class="alert alert-success" style="margin-bottom:0px">Signed in successfuly.</p>
+  <br>
+  如果是alert的话显示
+  <p class="alert alert-danger" style="margin-bottom:0px">You need to sign in or sign up before continuing.</p>
+  <br>
+  这样的通知的內容，放在
+<pre>
+&lt;%= notice %&gt;　&lt;%= alert %&gt;
+</pre>
+  里面显示。
+  <hr class="red-hr">
+  在这里显示的有颜色的文字是怎么样设定呢？
+  <br>
+  这个其实也是「Bootstrap」显示有颜色文字的设定。在文字<strong>「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank">class</a>」</strong>里指定<strong><u>「alert」跟「alert-success」「alert-danger」</u></strong>设定装饰的內容。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>2
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow remarkable-code'>"alert alert-success"</span>&gt;&lt;%= notice %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+<br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>2
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow remarkable-code'>"alert alert-danger"</span>&gt;&lt;%= alert %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br><br>
+  绿色的通知在显示
+<p class="alert alert-success">&lt;p class="alert alert-success"&gt;显示的文字&lt;/p&gt;</p>
+  红色的通知在显示
+<p class="alert alert-danger">&lt;p class="alert alert-danger"&gt;显示的文字&lt;/p&gt;</p>
+  各个內容。
+  <br><br>
+  总括一下在这里设定的內容吧。
+  <br>
+  <strong>
+  <ul class="number_ul">
+  <li><u>「&lt;% if notice %&gt;」跟「&lt;% end %&gt;」之间设定有通知來的时候</u></li>
+  <li><u>「&lt;% if alert %&gt;」跟「&lt;% end %&gt;」之间设定有错误的通知來的时候</u></li>
+  </ul>
+  </strong>
+  显示的內容。
+  <br><br>
+  各个通知在<strong><u>「&lt;%= notice %&gt;」「&lt;%= alert %&gt;」</u></strong>里显示內容。
+  <hr class="red-hr">
+  <u>
+  这个通知是从哪里來的呢？
+  <br>
+  <strong>其实说这个通知可以自己作作看，在这里作作看通知吧。</strong>
+  </u>
+  <br><br>
+  通知在<strong>「<u>controller</u>」文件里设定</strong>
+  <ul class="number_ul">
+    <li><strong>通知（notice）</strong>的话</li>
+<pre>
+flash[:notice] = "显示的內容"
+</pre>
+    <li><strong>错误的通知（alert）</strong>的话</li>
+<pre>
+flash[:alert] = "显示的內容"
+</pre>
+  </ul>
+  各个內容可以在网页上显示。
+  <br><br>
+  在<strong>「<u>controller</u>」文件</strong>里设定的各个通知的內容会显示在
+<pre>
+&lt;%= notice %&gt;  &lt;%= alert %&gt;
+</pre>
+  里面。
+  <br><br>
+  <strong>「<a href="/zh-CN/mugcups/5#title1-1" target="_blank">show</a>」的网页「<a href="http://0.0.0.0:3000/posts/1" target="_blank">0.0.0.0:3000/posts/1</a>」</strong>里显示自己设定的通知吧。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（追加第7行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+<strong class="color-red">7</strong>
+8
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>  @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>  flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"投稿"</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  编辑完了之后，打开「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts/1" target="_blank"><strong>localhost:3000/posts/1</strong></a>」吧。
+  </small>
+  <br><br>
+  有沒有显示下面图像一样的画面吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_1_flash.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_posts_1_flash.png",
+              :target => ["_blank"] %>
+  这样设定好通知了！
+  <br>
+  <strong><u>这一次设定的通知是试试看的而已，所以这一次设定的內容就除掉吧。</u></strong>
+  <hr class="red-hr">
+  「devise」的通知也是用这个设定。
+  <br>
+  通知的內容「devise」会自动作，所以简单的理解內容就OK。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>「posts_controller.rb」的<u>「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">edit</a>」网页里，显示「@post」的「content」的通知</u>要怎么样设定呢？</strong>
+  <br>
+  <small>※　在上面放鼠标，答案会显示。</small>
+  <br><br>
+  <textarea class="input-code form-control" placeholder="打入答案" rows="4"></textarea>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>  @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code answer-code'>  flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> @post.content</span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+</h4>

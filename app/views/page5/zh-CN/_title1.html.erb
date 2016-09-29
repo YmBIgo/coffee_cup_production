@@ -1,0 +1,39 @@
+<h2 class="textbook-section-title" id="title1"><strong>1 : 设定网页</strong></h2>
+        <h4 id="chapter5-1">
+        在<a href="/zh-CN/mugcups/2#title1-1" target="_blank"><strong>第二章</strong></a>解释过，Ruby on Rails 是随着保存资料的方法设定各个网页。
+        <br><br>
+        设定的网页可以分类成<strong>「<u>资料的显示・新增・编辑・删除</u>」</strong>这个4种网页，但正确分类的话有<strong><u>7个</u></strong>（操作的资料的方法是只有4种）。
+        <br>
+        <small>※　现在就记得这个七种就OK</small>
+        <br><br>
+        <ul class="number_ul">
+          <strong><li>显示全部的资料　　　<u>index</u></li></strong>
+          <small>例子：推特的主页<br>→显示的资料用<strong>「<i>Post.all</i>」</strong>设定</small>
+          <strong><li>显示一个资料　　　　<u>show</u></li></strong>
+          <small>例子：一个推特<br>→显示的资料用<strong>「<i>Post.find(id号码)</i>」</strong>設定</small>
+          <strong><li>打入新的资料　　　　<u>new</u></li></strong>
+          <strong><li>新增资料　　　　　　<u>create</u></li></strong>
+          <small>例子：作推特的画面<br>→资料用<strong>「<i>Post.create</i>」</strong>设定</small>
+          <strong><li>打入编辑的资料　　　<u>edit</u></li></strong>
+          <strong><li>编辑资料　　　　　　<u>update</u></li></strong>
+          <small>例子：编辑帐号的画面<br>→资料用<strong>「<i>Post.find(id号码).update</i>」</strong>设定</small>
+          <strong><li>删除资料　　　　　　<u>destroy</u></li></strong>
+          <small>例子：删除推特的画面<br>→资料用<strong>「<i>Post.find(id号码).destroy</i>」</strong>设定</small>
+        </ul>
+        <br>
+        这样看來，可以看出用设定<a href="/zh-CN/mugcups/4" target="_blank"><strong>在上章</strong></a>学习的操作资料的方法显示內容。
+        <br>
+        这些7个设定要在<u><strong>设定资料操作的文件</strong></u>上设定。
+        <br><br>
+        <i class="fa fa-star color-red"></i>　在这个章，<u><strong>用「posts」资料库</strong>作作看这个7个网站吧</u>。
+        <br><br>
+        各个设定中必须要有<strong><u>3个设定</u></strong>。
+        <ul class="number_ul">
+          <strong><li>七个网页中，使用哪一个网页的设定</li></strong>
+          <strong><li>资料操作的设定</li></strong>
+          <strong><li>网页显示的设定（html）</li></strong>
+        </ul>
+        做了<strong><u>这个3个设定</u></strong>之后，可以看网页。
+        <hr class="red-hr">
+        <strong class="little-remarkable">刚开始，作作看「显示一个资料（show）」的网页吧！</strong>
+        </h4>

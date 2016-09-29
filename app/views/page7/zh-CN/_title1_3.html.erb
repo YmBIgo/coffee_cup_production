@@ -1,0 +1,124 @@
+<h4 id="chapter7-1-3">
+  <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 总结</strong></p>
+  <br>
+  在这里解释了作连接的方法，在这里复习连接的內容。
+  <br><br>
+  <strong>设定的內容<a href="/zh-CN/codes/7" target="_blank">请参考这里</a></strong>
+  <hr class="red-hr">
+  在这里复习
+  <br>
+  <strong>
+  <ul class="number_ul">
+  <li><a href="/zh-CN/mugcups/5#title1-1" target="_blank">「显示一个网页（show）」</a></li>
+  <li><a href="/zh-CN/pages5#title1-2" target="_blank">「显示全部的网页（index）」</a></li>
+  <li><a href="/zh-CN/mugcups/6#title1-3" target="_blank">「打入新的资料（new）」</a></li>
+  <li><a href="/zh-CN/mugcups/6#title1-5" target="_blank">「打入编辑的资料（edit）」</a></li>
+  <li><a href="/zh-CN/mugcups/6#title1-7" target="_blank">「删除资料（destroy）」</a></li>
+  </ul>
+  <br>
+  这个五个网页的连接。
+  </strong>
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li>移动到「<a href="/zh-CN/mugcups/5#title1-1" target="_blank"><strong>显示一个资料（show）</strong></a>」的网页的连接</li></strong>
+    <br>
+    例如说
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/1"</span>&gt;投稿１&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    这样子
+<pre>
+&lt;a href="/资料库的名字/id号码"&gt;显示的文字&lt;/a&gt;
+</pre>
+    显示连接（<a href="/zh-CN/mugcups/5#title1-2-3-chrome" target="_blank"><strong>请参考这里</strong></a>）。
+    <hr class="red-hr">
+    <strong><li>移动到「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">显示全部的资料（index）</a>」的连接</li></strong>
+    <br>
+    例如说
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;看投稿一览&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    这样子
+<pre>
+&lt;a href="/资料库的名字" &gt;显示的名字&lt;/a&gt;
+</pre>
+    显示连接（<a href="/zh-CN/mugcups/5#title1-2-3-chrome" target="_blank"><strong>请参考这里</strong></a>）
+    <hr class="red-hr">
+    <strong><li>「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">打入新的资料（new）</a>」</li></strong>
+    <br>
+    例如说
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新增投稿&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    这样子
+<pre>
+&lt;a href="/资料库的名字/new"&gt;显示的名字&lt;/a&gt;
+</pre>
+    显示连接。
+    <hr class="red-hr">
+    <strong><li>「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">打入编辑的资料（edit）</a>」</li></strong>
+    <br>
+    例如说
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/1/edit"</span>&gt;编辑投稿&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    这样子
+<pre>
+&lt;a href="/资料库的名字/id号码/edit"&gt;显示的文字&lt;/a&gt;
+</pre>
+    显示连接。
+    <hr class="red-hr">
+    <strong><li>「<a href="/zh-CN/mugcups/6#title1-7" target="_blank">删除資料（destroy）</a>」</li></strong>
+    <br>
+    例如说
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/1"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;删除投稿１&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样子
+<pre>
+&lt;a href="/资料库的名字/id号码" data-method="delete"&gt;显示的文字&lt;/a&gt;
+</pre>
+  显示內容（详细的內容<a href="/zh-CN/mugcups/6#title1-7-2-chrome" target="_blank"><strong>请参考这里</strong></a>）
+  </ul>
+  <hr class="red-hr">
+  到这里解释了移动到网页的连接的设定方法。
+  <br>
+  <strong>接着做网页的装饰吧！</strong>
+  <br><br>
+  <strong>设定的內容，<a href="/zh-CN/codes/7" target="_blank">请参考这里</a>。</strong>
+</h4>

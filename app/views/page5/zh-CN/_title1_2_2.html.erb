@@ -1,0 +1,205 @@
+<h4 id="chapter5-1-2-2">
+        <p id="title1-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 移动网页</strong></p>
+        <br>
+        <strong>到这里「显示全部的资料（index）」的网页的设定完成了。</strong>
+        <br><br>
+        <strong>
+        但是在浏览器上一次一次打入移动网页的方法，会不会觉得有一点麻烦呢？<u>普通的网页是点击一次就可以移动网页。</u>
+        </strong>
+        <br><br>
+        最后想做做看，<strong>从全部的资料的网页（index）到一个资料的网页（show）/ 從一個资料的网页（show）到全部的资料的网页<u>的移动</u></strong>。
+        <br>
+        <br>
+        网页的移动，要在「html.erb」文件上做。首先在<u><strong>「show.html.erb」</strong>上，追加点击后移动到「显示全部的资料（index）」的网页的设定<strong>（连接）</strong></u>。
+        <br><br>
+        移动网页的文字要
+<pre>
+&lt;a href="移动到的网页"&gt;文字&lt;/a&gt;
+</pre>
+        这样子设定。<strong>设定后，网页上会出现<u>点击后会移动到指定的网页的文字</u>。</strong>
+        <br><br>
+        <u>那么试试看吧。按照下面的內容，编辑<strong>「show.html.erb」</strong>。</u>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第4行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://www.books.com.tw/"</span>&gt;博客來&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        显示之后，用浏览器打开「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」吧。
+        <br>
+        <small>
+        ※　为了适用內容，<strong><u>一起点击「Command」跟「c」</u>停止用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
+        </small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，<br>　　<u>一起点击「ctrl」跟「c」</u>停止用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>。之后打开「<a href="http://localhost:3000/posts/1">localhost:3000/posts/1</a>」。</strong>
+        </p>
+        <br>
+        显示像下面的图像一样的图像吗？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_3.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_3.png",
+                    :target => ["_blank"] %>
+        点击「博客來」的部分之后，移动到博客來的网页了吗？
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　设定看移动到<strong>Facebook（<a href="http://facebook.com" target="_blank">http://facebook.com</a>）的文字吧。</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://facebook.com"</span>&gt;Click&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        跟上面一样子，设定<strong><u>從「显示一个资料（show）」的网页到「显示全部的资料（index）」移动</u>的连接吧。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（编辑第4行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;主页&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        编辑之后，在浏览器上打开「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」。
+        <br>
+        <small>
+          ※　为了适用內容，<strong><u>一起点击「Command」跟「c」</u>停止用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
+        </small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，<br>　　<u>一起点击「ctrl」跟「c」</u>停止用「<u>rails s</u>」打开服务器之后，再打入<u>「rails s」</u>。之后打开「<a href="http://localhost:3000/posts/1" target="_blank">localhost:3000/posts/1</a>」。</strong>
+        </p>
+        <br>
+        点击「主页」之后，
+        <br>
+        移动到<strong>「显示全部的资料（index）」</strong>的网页「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」嗎？
+        <br><br>
+        <i class="fa fa-arrow-right color-red"></i>　<strong>应为「/posts」的「/」表示<u>url「0.0.0.0:3000」（Windows的话，「localhost:3000」）</u>，所以点击之后会移动网页。</strong>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　设定看，移动到photos资料库的「index」网页的「按这里」的连接。</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/photos"</span>&gt;按这里&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <strong>那么，「index」网页上设定移动到「show」网页的內容吧。</strong>
+        <br>
+        <u>按照下面的內容，编辑<strong>「index.html.erb」</strong>的內容。</u>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　index.html.erb（编辑第4行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一览&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        显示之后，在浏览器上打开「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧。
+        <br>
+        <small>
+          ※　为了适用內容，<strong><u>一起点击「Command」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
+        </small>
+        <br><br><br>
+        <p class="alert alert-success">
+          <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，<br>　　<u>一起点击「ctrl」跟「c」</u>停止用「<u>rails s</u>」打开服务器之后，再打入<u>「rails s」</u>。之后打开「<a href="http://localhost:3000/posts" target="_blank">localhost:3000/posts</a>」。</strong>
+        </p>
+        <br>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_3.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_3.png",
+                    :target => ["_blank"] %>
+        显示像上面一样的画面吗？
+        <br>
+        点击「id」的部分之后，<strong>看看可不可以移动网页！</strong>
+        <br><br>
+        <i class="fa fa-play-circle"></i>　<strong>那么解释內容吧！</strong>
+        <br><br>
+        <strong>在连接上设定，省略「<u>0.0.0.0:3000/posts/id号码」的「/posts/id号码</u>」</strong>，这样可以移动到「显示一个资料（show）」的网页。
+        <br><br>
+        在这里为了指定「<u>/posts/id号码</u>」，<strong>在「<u>id号码</u>」的部分设定显示选择的id「<u>&lt;%= p.id %&gt;</u>」。</strong>
+        <br>
+        这样，用「id」设定各个网页的移动。
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i><strong>　<u>设定看，移动到books资料库「id是10」的「show」网页的「按这里」的连接</u>。</strong>
+        <br><br>
+        <input type="input" class="input-code form-control" placeholder="打入答案">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/10"</span>&gt;按这里&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+</h4>

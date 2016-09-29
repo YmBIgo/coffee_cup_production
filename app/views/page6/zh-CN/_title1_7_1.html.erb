@@ -1,0 +1,377 @@
+<h4 id="chapter6-1-7-1">
+        <p id="title1-7-1"><i class="fa fa-check-square color-red"></i><strong>　⑴ : 设定网页</strong></p>
+        <br>
+        差不多记住了，怎么样设定网页了吧？
+        <strong>
+        <ul class="number_ul">
+          <li>七个网页的设定</li>
+          <li>操作资料的设定</li>
+          <li>显示网页的设定</li>
+        </ul>
+        </strong>
+        这个三个。
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong>首先，從「七个网页中使用哪些网页」的设定开始作。</strong>
+        <br><br>
+        那么打开，七个网页的设定文件<strong>「config > routes.rb」</strong>吧！
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        內容已经有编辑过了吧。
+        <br><br>
+        <strong><u>跟上面一样，有沒有「destroy」的內容吗？</u></strong>
+        <br>
+        有的话，已经设定好<strong>使用「<u>资料的删除（destroy）</u>」的网页</strong>了。
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i><strong>　接着做「操作资料」的设定吧。</strong>
+        <br><br>
+        在设定「posts」资料库的资料操作的<strong>「posts_controller.rb」</strong>文件上，追加设定。
+        <br><br>
+        用Sublime Text打开，<strong>「<u>app > controllers > posts_controller.rb</u>」</strong>把。
+        <br>
+        <small>
+          ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+        </small>
+        <br><br>
+        打开后，<strong><u>「def destroy」跟「end」之间</u></strong>设定下面的內容吧。
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb（追加第29，30行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>28
+<span class="color-red"><strong>29
+30</strong></span>
+31
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @post.destroy</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        可以理解这个內容吗？
+        <br>
+        首先在
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>29
+</td>
+<td class='code-content'><span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+</td>
+</tr>
+</table>
+        <br>
+        这里选择删除的资料（请参考这里<a href="/zh-CN/mugcups/5#title1-1" target="_blank"><strong>show</strong></a>，<a href="/zh-CN/mugcups/6#title1-5" target="_blank"><strong>edit</strong></a>）之后，删除资料。
+        <br><br>
+        这里面的內容也可以用
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
+<span class='code-line'>    <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>]).destroy</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        设定。
+        <br><br>
+        <strong><u>但是这样子不能在网页上显示删除的资料，所以要设定「@post」的标记。</u></strong>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　删除「tweets」资料库里的资料的资料操作要怎么设定呢？</strong>
+        <br><br>
+        <textarea class="input-code form-control" placeholder="打入答案" rows="4"></textarea>
+        <br>
+        <i class="fa fa-file color-red"></i><strong>　tweets_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content answer-code'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>destroy</span></span>
+<span class='code-line'>    @tweet <span class="word-red">=</span> <span class='word-blue'>Tweet</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @tweet.destroy</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong>那么，设定网页的內容吧！</strong>
+        <br><br>
+        首先设定点击「删除投稿」之后，移动到「删除资料（destroy）」的网页的连接。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
+                    :target => ["_blank"] %>
+        在<u>「显示一个资料」的网页的<strong>「show.html.erb」</strong></u>追加这个设定。
+        <br>
+        首先用Sublime Text打开的「myapp」上，打开<strong>「<u>app > views > posts</u>」</strong>吧。
+        <br>
+        从这里打开<strong>「<u>show.html.erb</u>」</strong>吧！
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        內容应该是这样子。
+        <br><br>
+        那么，在这里追加移动到「删除资料（destroy）」的网页的设定吧！
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第6行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<span class="color-red"><strong>6</strong></span>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;删除投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        在这里追加的行跟，在<strong>「<u>显示全部的资料（index）</u>」</strong>的网页上追加的<a href="/zh-CN/mugcups/5#title1-2-2" target="_blank"><strong>移动网页的设定（连接）</strong></a>很像。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<span class="color-red"><strong>4</strong></span>
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一览&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <u>不同的是，里面的<strong>「data-method="delete"」</strong></u>的內容。
+        <br><br>
+        移动到删除的网页的设定要<strong><u>「data-method="delete"」</u></strong>追加，
+<pre>
+&lt;a href="资料库的名字/选择的id" data-method="delete"&gt;内容&lt;/a&gt;
+</pre>
+        设定內容。
+        <br><br>
+        这一次的「选择的id」是，用资料操作设定的，
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+<span class="color-red"><strong>4</strong></span>
+5
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        用「@post」的「@post.id」显示「id」
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><span class="color-red"><strong>6</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/<span class="remarkable-code">&lt;%= @post.id %&gt;</span>"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;刪除投稿&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        这样子作连接。
+        <br><br>
+        <strong>这样，移动到「删除资料（destroy）」的网页的设定好了！</strong>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong><u>移动到删除「songs」资料库的「id是100」的资料的「删除」的连接</u>要怎么设定好呢？</strong>
+        <br><br>
+        <input type="input" class="input-code form-control" placeholder="打入答案">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/songs/100"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span>&gt;删除&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        接着设定，删除完成之后移动到的网页吧！
+        <br><br>
+        点击「删除投稿」之后，显示下面一样的网页。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
+                    :target => ["_blank"] %>
+        首先用Sublime Text打开的「myapp」里，打开<strong>「<u>app > views > posts</u>」</strong>吧。
+        <br>
+        这里面的<strong>「<u>destroy.html.erb</u>」</strong>是，删除资料之后会显示的「删除资料（destroy）」的网页。
+        <br><br>
+        那么，看看里面的內容吧！
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>destroy.html.erb</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;删除內容了&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        学到这里的话，里面的內容应该大概可以理解了吧。
+        <br><br>
+        说明內容的话，
+        <br>
+        <strong>显示在资料操作选择的资料「@post」。</strong>
+        <br>
+        详细的內容，请参考<strong>「<a href="/zh-CN/mugcups/5#title1-1-3" target="_blank">show</a>」「<a href="/zh-CN/mugcups/6#title1-4" target="_blank">create</a>」「<a href="/zh-CN/mugcups/6#title1-6" target="_blank">update</a>」</strong>吧。
+        <br><br>
+        <strong><u class="little-remarkable">利用的人会有一点不方便</u>，所以不要忘记设定这里的內容哦！</strong>
+        <hr class="red-hr">
+        那么，在網頁上删除资料吧！
+        <br>
+        <small>
+          ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+        </small>
+        <br><br><br>
+        <p class="alert alert-success">
+        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+        <br>
+        　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入「<u>rails s</u>」吧。</strong>
+        </p>
+        <br>
+        移动到，例如说像<strong>「<u>0.0.0.0:3000/posts/1</u>」</strong>的，<strong>「显示一个资料（<u>show</u>）」</strong>的网页吧。
+        <br><br>
+        有沒有追加删除的连接了吗？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
+                    :target => ["_blank"] %>
+        有设定好的话，点击<strong>「<u>删除投稿</u>」</strong>的按钮吧！有沒有显示下面一样子的网页了吗？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
+                    :target => ["_blank"] %>
+        做完了的话，「<strong><a href="http://0.0.0.0:3000/posts" target="_blank">显示全部的资料（http://0.0.0.0:3000/posts）</a></strong>」的网页或者，用<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a> / <a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>看看資料有沒有删除！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_all_after_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_all_after_destroy.png",
+                    :target => "_blank" %>
+</h4>

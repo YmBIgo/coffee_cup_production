@@ -3,7 +3,7 @@
           <br>
           <strong class="little-remarkable">在這裡作作看，<a href="https://gentle-cove-48435.herokuapp.com/users/sign_in" target="_blank">這個網站</a>的資料庫。</strong>
           <br><br>
-          這個網站的資料庫裡有<strong>「號碼」「投稿者」「内容」「時間」</strong>等等的框字。資料庫的構造就是，由資料庫裡一個一個的框子構成。
+          這個網站的資料庫裡有<strong>「號碼」「投稿者」「内容」「時間」</strong>等等的框子。資料庫的構造就是，由資料庫裡一個一個的框子構成。
           <br><br>
           <i class="fa fa-arrow-right"></i>　<strong>作資料庫的構造可以說是，設定「號碼」「投稿者」「內容」「時間」等等一個一個的框子。</strong>
           <hr class="red-hr">
@@ -131,7 +131,7 @@ rails g model 資料庫的名字（單數）
         <br>
         仔細看的話，會看到「<strong>create_table :posts do |t|</strong>」跟下一次出現的「<strong>end</strong>」之間有一個設定。
         <br><br>
-        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb（第五行）</strong>
+        <i class="fa fa-file color-red"></i>　<strong>2016..._create_posts.rb（第5行）</strong>
 <table class="highlight">
 <tr>
 <td class='code-line-no text-center'>5
@@ -195,7 +195,7 @@ rails g model 資料庫的名字（單數）
         <br><br>
         <strong><u>咱們作「name」跟「contact」的框子，完成資料庫的構造吧！</u></strong>
         <hr class="red-hr">
-        <u>設定構造的時候要編輯下面兩個設計。</u>
+        <u>設定構造的時候要編輯下面兩個設定。</u>
         <br><br>
         <ul class="number_ul">
           <strong><li>框字裡放的資料的種類</li></strong>
@@ -210,7 +210,7 @@ rails g model 資料庫的名字（單數）
         <br>
         <small>
         ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>保存內容。
-        <br>※　為了看的時候容易看有很多空格，但是不用打這麼多空格也沒關係。
+        <br>※　為了看的時候容易看有很多空格，但是不用打怎麼多空格也沒關係。
         <br>
         <i class="fa fa-windows"></i>　使用Windows的話，一起點擊<strong><u>「ctrl」跟「s」</u></strong>保存內容。
         </small>
@@ -256,7 +256,7 @@ rails g model 資料庫的名字（單數）
           <br>
           <small>※　另外還有，真假的「t.boolean」日子的「t.date」等等。</small>
         <strong><li>名字的設定</li></strong>
-          <strong><u>資料種類的設定的後面，加「:名前」</u></strong>（名字用英文設定）。
+          <strong><u>資料種類的設定的後面，加「:名字」</u></strong>（名字用英文設定）。
         </ul>
         <br>
         這個兩個設定，
@@ -279,7 +279,7 @@ t.資料的種類 :名字
         <hr class="red-hr">
         <i class="fa fa-question-circle color-green"></i>　<strong>在資料庫裡設定、<u>放短的文章的「place」的框字</u>的話要怎麼樣設定？（上面放鼠標可以看答案）</strong>
         <br>
-        <small>※　不用加在設定文件裡</small>
+        <small>※　不用在設定文件裡追加內容</small>
         <br><br>
         <input type="input" class="form-control input-code" placeholder="上面放鼠標可以看答案">
         <br>
@@ -365,7 +365,7 @@ t.資料的種類 :名字
                               :class => "hover_img textbook-title-img"),
                     "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page4/Sequel_Pro_myapp_development_posts.png",
                     :target => ["_blank"] %>
-        <strong><u>Ruby on Rails上、這樣子設定資料庫。</u></strong>
+        <strong><u>Ruby on Rails上、這樣子設定好資料庫了。</u></strong>
         <hr class="red-hr">
         <i class="fa fa-star color-blue"></i>　<strong>terminal（命令提示符）上打入「<u>rails g model 資料庫的名字</u>」作設定文件。設定文件編輯完了之後，terminal（命令提示符）上打入「<u>rake db:migrate</u>」作資料庫。</strong>
 </h4>

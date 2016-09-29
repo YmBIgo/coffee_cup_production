@@ -1,0 +1,43 @@
+<h4 id="chapter10-4-3">
+  <p id="title4-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑶ : 检查会员的资料</strong></p>
+  <br>
+  最后在投稿的编辑・删除的网页里追加检查会员资料的设定把。这个是「用户管理」最后的內容。
+  <br>
+  <strong>现在的网页，<u>谁都可以编辑・删除別人作的投稿</u>。这个有一点不好，所以修这个设定吧！</strong>
+  <hr class="red-hr">
+  <strong>解释在这里设定的內容把。在別人的投稿网页上不显示「编辑投稿」「删除資料」的按钮，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_1_invalid_user.png",
+              :target => ["_blank"] %>
+  想移动到別人作的「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">edit</a>」「<a href="/zh-CN/mugcups/6#title1-6" target="_blank">update</a>」「<a href="/zh-CN/mugcups/6#title1-7" target="_blank">destroy</a>」网页的时候，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_invalid_user.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page11/Chrome_posts_all_invalid_user.png",
+              :target => ["_blank"] %>
+  移动到主页，显示<a href="/zh-CN/mugcups/9#title2-2-2" target="_blank">通知</a>的设定吧。</strong>
+  <br><br>
+  会员的检查要在操作资料的设定文件<strong>「<u>posts_controller.rb</u>」</strong>里面设定，之前使用的
+  <br>
+  <strong><a href="/zh-CN/mugcups/9#title2-2-2" target="_blank">if</a>・<a href="/zh-CN/mugcups/10#title3-3-3" target="_blank">else</a></strong>
+<pre>
+if 条件
+  内容
+else
+  内容
+end
+</pre>
+  的內容。
+  <br>
+  如果跟条件成立的时候执行<strong>「<u>if</u>」</strong>里面的內容，不成立的时候执行<strong>「<u>else</u>」</strong>的設定。
+  <br>
+  <strong><u>那么做做看吧！</u></strong>
+  <hr class="red-hr">
+  <%= render "page11/zh-CN/title4_3_1" %>
+  <hr class="red-hr">
+  <%= render "page11/zh-CN/title4_3_2" %>
+  <hr class="red-hr">
+  <%= render "page11/zh-CN/title4_3_3" %>
+</h4>

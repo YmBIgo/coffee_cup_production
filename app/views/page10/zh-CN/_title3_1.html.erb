@@ -1,0 +1,108 @@
+<h4 id="chapter10-3-1">
+  <p id="title3-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 七个网页的设定</strong></p>
+  <br>
+  要设定网页的时候，在<strong><u>「config > routes.rb」</u></strong>文件里设定要用哪一个网页。
+  <br>
+  首先用Sublime Text打开<strong>「<u>myapp</u>」</strong>之后，编辑<strong><u>「config > routes.rb」</u></strong>文件的內容吧。
+  <br>
+  <small>
+    ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+  </small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>routes.rb（追加第7行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+<strong class="color-red">7</strong>
+8
+9
+10
+11
+12
+13
+14
+15
+16
+...
+61
+62
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  devise_for <span class='word-purple'>:users</span></span>
+<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:users</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># Example of regular route:</span></span>
+<span class='code-line'>  <span class='word-gray'>#   get 'products/:id' => 'catalog#view'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  追加的內容是用「users」资料库的<strong>「<a href="/zh-CN/mugcups/6#title2-route" target="_blank">七个网页的设定</a>」</strong>。
+  <br><br>
+  在这里设定，<strong><u>使用「users」资料库的「<a href="/zh-CN/mugcups/5#title1-1" target="_blank">show</a>」「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">edit</a>」「<a href="/zh-CN/mugcups/6#title1-6" target="_blank">update</a>」网页</u></strong>。
+  <hr class="red-hr">
+  仔细看內容可以看到，第3行里有新追加的设定。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content'><span class='code-line'>devise_for <span class='word-purple'>:users</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这个设定是，在<a href="/zh-CN/mugcups/9#title1-2" target="_blank"><strong>作「users」资料库的设定文件的时候</strong></a>
+  <br><br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise user</span>
+</td>
+</tr>
+</table>
+  <br>
+  自动追加的內容，在设定使用
+  <br>
+  <strong>
+  <ul class="number_ul">
+  <li>注册的网页　　「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</li>
+  <li>登入的网页「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</li>
+  </ul>
+  </strong>
+  等等的「devise」作的网页。
+  <hr class="red-hr">
+  到这里，设定了要使用<strong><u>「users」资料库的「<a href="/zh-CN/mugcups/5#title1-1" target="_blank">show</a>」「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">index</a>」「<a href="/zh-CN/mugcups/6#title1-5" target="_blank">edit</a>」「<a href="/zh-CN/mugcups/6#title1-6" target="_blank">update</a>」</u></strong>网页。
+  <br>
+  接着做资料的操作吧。
+</h4>

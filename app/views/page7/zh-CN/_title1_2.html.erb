@@ -1,0 +1,134 @@
+<h4 id="chapter7-1-2">
+  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 设定移动到new网页的连接</strong></p>
+  <br>
+  <strong>移动到「edit」网页的连接的设定也好了，接着设定移动到<strong>「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">打入新的资料（new）</a>」</strong>的网页的连接的设定吧！</strong>
+  <br><br>
+  <strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">选择全部的资料（index）</a>」</strong>的网页上，追加下面图像一样的设定吧！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">选择全部的资料（index）</a>」</strong>的网页，要在<strong>「<u>index.html.erb</u>」</strong>追加设定。那么设定做吧！
+  <br><br>
+  先用Sublime Text打开<strong>「<u>myapp</u>」</strong>之后，打开<strong>「<a href="/zh-CN/mugcups/5#title1-2-3-view" target="_blank">index.html.erb</a>」</strong>吧！
+  <br>
+  <small>
+    ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+  </small>
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>
+<strong>
+移动到「打入新的资料（new）」的网页的连接要怎么样设定好呢？
+</strong>
+<br>
+<small>
+※　「打入新的资料（new）」的网页，可以用浏览器打入「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」移动（详细的內容<a href="/zh-CN/mugcups/6#title1-3-2-chrome" target="_blank"><strong>请参考这里</strong></a>）。</small>
+<br><br>
+<input type="input" class="form-control input-code" placeholder="打入答案">
+<br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新增投稿&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  那么，在<strong>「<u>index.html.erb</u>」</strong>设定內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（追加第9行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+<span class="color-red"><strong>9</strong></span>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一览&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新增資料&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话、
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  打开服务器之后，打开「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧。
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
+  </small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page7/Chrome_posts_all_add_new.png",
+              :target => ["_blank"] %>
+  有沒有显示连接吗？
+  <br>
+  有显示连接的话，打开看这个连接吧！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_new_1.png",
+              :target => ["_blank"] %>
+  移动到网页了吗？
+  <br><br>
+  像这样，移动到<strong>「<u>打入新的资料（new）</u>」</strong>的连接要，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新增投稿&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样子设定。
+  <br>
+  <strong><u>如果资料库的名字不同的话，顺着资料的名字设定內容吧！</u></strong>
+  <hr class="red-hr">
+  <i class="fa fa-question-circle color-green"></i>　<strong>移动到「tweets」资料库的「打入新的资料（new）」的网页的连接要怎么样设定好呢？</strong>
+  <br><br>
+  <input type="input" class="form-control input-code" placeholder="打入答案">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/tweets/new"</span>&gt;新增推特&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+</h4>

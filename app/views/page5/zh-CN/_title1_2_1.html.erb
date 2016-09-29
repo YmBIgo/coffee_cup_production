@@ -1,0 +1,454 @@
+<h4 id="chapter5-1-2-1">
+         <p id="title1-2-1"><i class="fa fa-check-square color-red"></i>　<strong>　⑴ : 设定网页</strong></p>
+         <br>
+         <i class="fa fa-play-circle"></i><strong>　刚开始从「七个网页的设定」开始做吧！</strong>
+         <br><br>
+         打开看看<strong>「<u>config</u>」</strong>文件里的，设定七个网页的<strong>「<u>routes.rb</u>」</strong>文件吧。
+                 <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple remarkable-code'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        內容已经遍及过了吧。
+        <br><br>
+        <strong><u>跟上面一样追加「index」</u></strong>了吗？
+        <br>
+        这样子设定，要使用<strong>「<u>显示全部的资料（index）</u>」</strong>的网页。
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i><strong>　咱們设定「操作资料」的內容吧。</strong>
+        <br><br>
+        「posts」资料库的资料，要设定在<strong>「<u>posts_controller.rb</u>」</strong>文件里。
+        <br><br>
+        首先，用Sublime Text打开<strong>「<u>app > controllers</u>」</strong>文件夾里的<strong>「<u>posts_controller.rb</u>」</strong>文件吧。
+        <br><br>
+        <small>
+          ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+        </small>
+        <br><br>
+        打开之后，在<strong><u>「def index」跟「end」之间</u></strong>设定下面的內容。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（追加第8行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line remarkable-code'>    @posts <span class="word-red">=</span> <span class='word-blue'>Post</span>.all</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong>用「<u>Post.all</u>」，选择posts资料库裡的全部的资料。</strong>
+        <br>
+        <small>※　使用「<a href="/zh-CN/mugcups/4#title2" target="_blank"><strong><i>rails c</i></strong></a>」确认打入的內容吧。</small>
+        <br><br>
+        <strong>在这里的标记「<u>@posts</u>」使用复数。</strong>
+        <br>
+        这是应为要用显示<u>全部的资料的标记</u>，所以在这里使用<u>复数的名字</u>。等下自己看的时候可以理解的话，名字用什么也沒关系。
+        <br><br>
+        <strong class="little-remarkable">在「index」操作资料的方法是，用「资料库的名字.all」选择全部的资料之后，设定标记。</strong>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　设定<strong><u>从tweets资料库选择全部的资料</u>的资料的操作吧。</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>@tweets <span class="word-red">=</span> <span class="word-blue">Tweet</span>.all</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i><strong>　那么设定网页的內容吧。</strong>
+        <br><br>
+        刚开始，用Sublime Text打开<strong>「<u>myapp</u>」</strong>文件夾之后，打开<strong>「<u>app > views > posts</u>」</strong>文件夾吧。
+        <br><br>
+        <small>
+          ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+        </small>
+        <br><br>
+        里面有沒有<strong>「<u>index.html.erb</u>」</strong>文件吗？如果有的话，打开看吧！
+        <br>
+        <strong>在这个文件上，设定显示「选择全部的资料（index）」的网页。</strong>
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>那么刚开始，复习学习的內容吧。</strong>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_1.png",
+                    :target => ["_blank"] %>
+        <strong>
+        像上面的图像的画面，设定「index.html.erb」文件吧。
+        </strong>
+        <br>
+        <small>※　線用&lt;hr&gt;设定。</small>
+        <br><br>
+        <textarea class="form-control input-code" placeholder="打入答案" rows="3"></textarea>
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一览&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        做完了之后，用terminal移动到<strong>「<u>myapp</u>」</strong>，之后打入<strong>「<i>rails s</i>」</strong>吧。
+        <br><br>
+        在terminal上打入「rails s」启动服务器之后，用浏览器打开「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧。
+        <br>
+        <small>
+        <i class="fa fa-windows color-blue"></i>　使用Window的话，打开看<strong>「<a href="http://localhost:3000/posts" target="_blank">localhost:3000/posts</a>」</strong>吧。
+        </small>
+        <br><br>
+        显示下面图像一样子的网页吗？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_1.png",
+                    :target => ["_blank"] %>
+        <hr class="red-hr">
+        在这里，作作看下面图像一樣子的<strong><u>像SNS的网页</u></strong>吧！
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
+                    :target => ["_blank"] %>
+        <hr class="red-hr">
+        那么，编辑<strong>「<u>index.html.erb</u>」</strong>文件吧。打入下面的內容。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>index.html.erb（编辑第3〜7行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一览&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% @posts.each <span class="word-red">do </span>|p| %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>一起点击「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服务器之后，再打入<u>「rails s」</u>吧。</strong>
+        <br>
+        <u>这样编辑好的內容会适用在网页上。</u>
+        <br><br><br>
+        <p class="alert alert-success">
+          <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+          <br>
+          　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入<u>「rails s」</u>吧。</strong>
+        </p>
+        <br>
+        <i class="fa fa-arrow-right"></i>　如果设定的內容沒有显示在网页上的时候，<strong><u>一起点击「Command」跟「c」</u>停止用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
+        <br><br>
+        设定好了之后，用浏览器打开「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」。
+        <br>
+        <small>
+        <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」。
+        </small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_posts_all_2.png",
+                    :target => ["_blank"] %>
+        有沒有显示上面一样子的<strong><u>像SNS主页的网页</u></strong>吗？
+        <hr class="red-hr">
+        那么，解释刚才的设定在做什么。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一览&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% @posts.each <span class="word-red">do </span>|p| %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        可不可以推测，在这里
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>反复显示这里的內容吗？</u></strong>
+        <br>
+        在里面的
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  &lt;%= p.name %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        显示<u>名字，<strong>id</strong>显示号码，<strong>content</strong>显示投稿的內容。</u>
+        <hr class="red-hr">
+        那么<strong>第3行到第7行</strong>是在做什么呢？
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一览&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% @posts.each <span class="word-red">do </span>|p| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        在这个第三行，
+        <br>
+        <strong>吧「<u>Post.all</u>」选择的资料「<u>@posts</u>」（下面的「<i>posts_controller.rb</i>」）分成一个一个的资料（<u>p</u>）之后，反复显示分成一个一个的內容。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line remarkable-code'>    @posts <span class="word-red">=</span> <span class='word-blue'>Post</span>.all</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        从<strong>「<u>&lt;% @posts.each.do |p| %&gt;</u>」</strong>到<strong>「<u>&lt;% end %&gt;</u>」</strong>的地方会反复显示。
+        <br><br>
+        然后<strong>在各个反复中的「p」里代入各个资料。然后用这个资料「p」显示资料。</strong>
+        <br>
+        <small>※　这个「p」的名字是用什么都可以，<strong><u>在这里用「post」的第一字「p」。</u></strong>名字用什么都可以。</small>
+        <hr class="red-hr">
+        说明设定的方法吧。
+        <br>
+        <strong>像「<u>Post.all</u>」一样里面包括复数资料的时候，必须吧这个资料分成一个一个的资料。</strong>
+        <br><br>
+        <i class="fa fa-play-circle"></i>　<strong><u>这样子的复数的资料</u></strong>要用，
+<pre>
+&lt;% @设定的标记.each do |喜欢的名字| %&gt;
+</pre>
+        <strong><u>分成一個一個的资料。</u></strong>
+        <br>
+        <small>※　是「&lt;%」不是「&lt;%=」，要注意。</small>
+        <br><br>
+        <i class="fa fa-play-circle"></i>　到
+<pre>
+&lt;% end %&gt;
+</pre>
+        的地方<strong><u>分成的资料会反复显示</u></strong>。
+        <br>
+        <small>※　这里也是「&lt;%」不是「&lt;%=」，要注意。</small>
+        <br><br>
+        <i class="fa fa-play-circle"></i>　<strong><u>里面的资料</u></strong>是，跟<strong>「<a href="/zh-CN/mugcups/5#title1-1" target="_blank">显示一个资料（show）</a>」</strong>一样用
+<pre>
+&lt;%= 设定的名字.框子的名字 %&gt;
+</pre>
+        显示內容。
+        <br><br>
+        <small>※　在上章解释的「where」也可以用这个方法显示。用搜索的时候也会出现复数的资料。</small>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>那么，在「显示全部的资料(index)」的网页里追加「<u>作资料的时间</u>」的內容要怎么设定呢？</strong>
+        <br>
+        <small>※　里面放作资料的框子是<strong>「created_at」</strong>。</small>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= p.created_at %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>做下面一样子的资料操作的时候，设定看显示「<u>@messages</u>」的，<u>寄件者「name」</u>跟<u>收件者「send_to」</u>跟<u>内容「content」</u>的网页。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>    @messages <span class="word-red">=</span> <span class='word-blue'>Message</span>.all</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <textarea class="form-control input-code" rows="9" placeholder="打入答案"></textarea>
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>index.html.erb（答案的例子）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;message一览&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>寄件者：&gt;&lt;%= m.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>收件者：&gt;&lt;%= m.send_to %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>內容：&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-play-circle color-red"></i>　虽然已经打开过了，但是解释用浏览器打开网页的方法。
+        <br><br>
+        在浏览器打开<strong>「<u>0.0.0.0:3000/资料库的名字</u>」</strong>的话，可以打开<strong>「<u>显示全部的资料（index）</u>」</strong>的网页。
+        <br>
+        这一次是显示「posts」资料库里全部的內容的网页，所以打入
+        <br><br>
+        <i class="fa fa-chrome color-red"></i><strong>　浏览器</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>0.0.0.0:3000/posts</span>
+</td>
+</tr>
+</table>
+        <br>
+        打开网页。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　打开显示全部的「tweets」资料的网页要怎么打开呢？</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案">
+        <br>
+        <i class="fa fa-chrome color-red"></i><strong>　浏览器</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>0.0.0.0:3000/tweets</span>
+</td>
+</tr>
+</table>
+</h4>

@@ -1,0 +1,262 @@
+<h4 id="chapter6-1-4-1">
+        <p id="title1-4-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 设定网页</strong></p>
+        <br>
+        <i class="fa fa-play-circle"></i>　<strong>首先从「<u>七个网页中使用哪一个网页</u>」的设定开始做。</strong>
+         <br><br>
+         打开看，设定七个网页中自己喜欢的网页的设定文件<strong>「<u>routes.rb</u>」文件</strong>（在config文件夾里）吧。
+                 <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        內容已经有设定过了对吧。
+        <br><br>
+        <strong><u>跟上面一样已经追加了「create」吧</u></strong>。这样子设定好「新增资料（create）」的网页了。
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong>那么，设定看「<u>操作资料</u>」的內容吧。</strong>
+        <br><br>
+        在设定「posts」资料库的操作资料的方法的文件「<u>posts_controller.rb</u>」上，追加设定。
+        <br><br>
+        用Sublime Text，打开<strong>「<u>app > controllers</u>」</strong>文件夾里的<strong>「<u>posts_controller.rb</u>」</strong>文件吧。
+        <br>
+        <small>
+          ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+        </small>
+        <br><br>
+        打开之后，<strong><u>在「def create」跟「end」之间</u></strong>设定下面的內容吧。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb（追加第16行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>15
+16
+17
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        內容有一点复杂。
+        <br><br>
+        可以推测<strong>「<u>@post</u>」</strong>是用html文件设定显示网页的标记、<strong>「<u>Post.create</u>」</strong>是作资料，所以
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>params.<span class='word-red'>require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>)</span>
+</td>
+</tr>
+</table>
+        <br>
+        的地方有一点难理解。
+        <hr class="red-hr">
+        <strong>「params」</strong>里会放<strong>「<u>打入新的资料（new）</u>」</strong>的网页送來的资料。例如说是「<u>name是'山田太郎'、content是'你好'、place是'新宿'</u>」等等的资料，都放在<strong>「params」</strong>里面。
+        <br><br>
+        所以这个<strong>「params」</strong>里有
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>(<span class='word-purple'>:name</span> => <span class='word-yellow'>"打入的內容"</span>, <span class='word-purple'>:content</span> => <span class='word-yellow'>"打入的內容"</span>, <span class='word-purple'>:place</span> => <span class='word-yellow'>"打入的內容"</span>)</span>
+</td>
+</tr>
+</table>
+        <br>
+        这些，在「打入新的资料（new）」打入的字来哦。
+        <hr class="red-hr">
+        在后面的，
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>.<span class='word-red'>require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>)</span>
+</td>
+</tr>
+</table>
+        <br>
+        在设定<strong>「<u>不要保存posts资料库的name、content、place以外的资料</u>」</strong>。
+        <br><br>
+        这个是为了网站的安全的设定。例如说防止资料库里的別的资料的删除或者更改等等。<strong><u>记得这个设定是为了安全，不要忘记设定。</u></strong>
+        <br><br>
+        在这里的设定是，
+        <strong>
+        <ul class="number_ul">
+            <li>在「require」的后面打入「:资料库的名字（单数）」</li>
+            <li>「permit」的后面打入「:框子的名字」</li>
+        </ul>
+        </strong>
+        <br>
+        这样子做。
+        <br><br>
+        所以「新增资料（create）」的网页，
+<pre>
+@设定的标记 = 资料库的名字(第一字大写・单数).create(params.require(:单数的资料库的名字).permit(:框子的名字 ...))
+</pre>
+        是这样子设定。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i><strong>　设定<u>「tweets」资料库的「name」「content」「place」的「新增资料（create）」</u>的网页的资料的操作是怎么样做呢？</strong>
+        <br><br>
+        <input type="input" class="input-code form-control" placeholder="打入答案">
+        <br>
+        <i class="fa fa-file color-red"></i><strong>　tweets_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'><span class='word-blue'>Tweet</span>.create(params.permit(<span class='word-purple'>:tweet</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        操作资料的设定到这里。<strong><u>接着做做看网页的设定吧！</u></strong>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_create_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_create_1.png",
+                    :target => ["_blank"] %>
+        在这里，作作看上面图像一样子的网页。
+        <br><br>
+        首先，用Sublime Text打开的「myapp」上，打开<strong>「<i>app > views > posts</i>」</strong>吧。
+        <br>
+        这里面有沒有<strong>「<u>create.html.erb</u>」</strong>文件吗？有的話打开看！
+        <br><br>
+        <strong>在这个文件上，追加「新增资料（create）」的网页的设定。</strong>
+        <br><br>
+        那么，编辑<strong>「<u>create.html.erb</u>」</strong>的內容吧！
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　create.html.erb</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿好了&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名前&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.name %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.content %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;場所&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.place %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        接著，在网页上显示看吧！
+        <br>
+        <small>
+          ※　<u>一起点击「Command」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。
+        </small>
+        <br><br><br>
+        <p class="alert alert-success">
+        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+        <br>
+        　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开服务器之后，再打入<u>「rails s」</u>吧。</strong>
+        </p>
+        <br>
+        启动服务器之后，用浏览器打开「<a href="http://0.0.0.0:3000/posts/new" target="_blank"><strong>0.0.0.0:3000/posts/new</strong></a>」吧。
+        <br>
+        <small>
+          <i class="fa fa-windows color-blue"></i>　使用Window的话，打开看<strong>「<a href="http://localhost:3000/posts/new" target="_blank">localhost:3000/posts/new</a>」</strong>吧。
+        </small>
+        <br><br>
+        这样会显示打入资料的输入框，<strong>打入看自己喜欢的资料之后，点击「<u>登录</u>」的按鈕吧。</strong>
+        <br>
+        像下面的图像一样，有沒有移动到<strong>「<u>投稿好了</u>」</strong>的画面吗？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_create_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_create_1.png",
+                    :target => ["_blank"] %>
+        移动好了之后，用<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>Sequel Pro</strong></a>确认內容吧！
+        <br><br>
+        <i class="fa fa-windows color-blue"></i>　使用Windows的话，用<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>SqliteBrowser</strong></a>确认內容吧！
+        <br><br>
+        <i class="fa fa-play-circle"></i>　<strong>资料有沒有保存好了吗？</strong>
+        <hr class="red-hr">
+        网页的內容应该容易理解。
+        <br>
+        在「<a href="/zh-CN/mugcups/5#title1" target="_blank"><strong>show.html.erb</strong></a>」里面设定的，
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= @post.name %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        一样，在显示內容。
+        <br><br>
+        这一次的「@post」是，
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+</td>
+</tr>
+</table>
+        <br>
+        不是「find(id号码)」一样选择资料，<u>记得用「create」也可以显示资料</u>吧。
+</h4>

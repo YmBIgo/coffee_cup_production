@@ -1,0 +1,54 @@
+<h4 id="chapter6-1-7">
+          <p id="title1-7"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">⑦ : 删除资料（destroy）</strong></p>
+          <br>
+          这个是，这个章最后一个网页的说明。
+          <br>
+          <strong><u>最后解释「资料的删除（destroy）」吧。</u></strong>
+          <hr class="red-hr">
+          在这里设定的內容可以说是，在「<a href="/zh-CN/mugcups/4#title2-3" target="_blank"><strong>rails c</strong></a>」做的
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line small-code'>Post.find(3).destroy</span>
+</td>
+</tr>
+</table>
+        <br>
+        的操作资料的內容。
+        <hr class="red-hr">
+        首先，像下面的图像一样「显示一个资料（show）」的网页上<strong>追加移动到「删除投稿」的网页的连接，</strong>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_add_destroy.png",
+                    :target => ["_blank"] %>
+        点击连接之后，会移动到「删除了」的网页。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_1_destroy.png",
+                    :target => ["_blank"] %>
+        在「显示全部的资料（index）」的网页上可以看到，像下面的图像一样资料已经删除了。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_all_after_destroy.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page6/Chrome_posts_all_after_destroy.png",
+                    :target => ["_blank"] %>
+        所以在这里设定
+        <strong>
+        <ul class="number_ul">
+          <li>追加移动到删除资料的网页的设定</li>
+          <li>操作资料的设定</li>
+          <li>显示网页的设定</li>
+        </ul>
+        </strong>
+        这个三个內容。
+        <br><br>
+        那么，开始做「删除资料（destroy）」的设定吧！
+        </h4>
+        <hr>
+        <%= render "page6/zh-CN/title1_7_1" %>
+        <hr>
+        <%= render "page6/zh-CN/title1_7_2" %>

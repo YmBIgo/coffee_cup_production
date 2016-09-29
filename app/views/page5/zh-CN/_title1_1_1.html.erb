@@ -1,0 +1,163 @@
+<h4 id="chapter5-1-1-1">
+        <p id="title1-1-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : <u>七個网页的设定</u></strong></p>
+        <br>
+        <i class="fa fa-play-circle"></i><strong>　那么刚开始设定「七个网页的设定」吧！</strong>
+        <br><br>
+        要编辑设定文件，<strong>所以用 Sublime Text 打开看看在<a href="/zh-CN/mugcups/3" target="_blank">第三章</a>作的网站「myapp」吧！</strong>
+        <br>
+        <small>
+        ※　用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>。
+        <br>
+        <i class="fa fa-windows color-blue"></i>　用Windows的 Sublime Text 打开文件文件夹的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+        </small>
+        <br><br>
+        打开之后，参考下面的图像打开<strong>「<u>routes.rb</u>」</strong>吧。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Open_route_rb.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Open_route_rb.png",
+                    :target => ["_blank"] %>
+        这个<strong>「<u>routes.rb</u>」</strong>的文件在设定，七个网页中使用哪一个网页的设定文件。
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+...
+56
+57
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># Example of regular route:</span></span>
+<span class='code-line'>  <span class='word-gray'>#   get 'products/:id' => 'catalog#view'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+<br>
+在这个设定文件上设定<u>用资料库作那些七个网页。</u>
+<br><br>
+看起來是很长，但是<strong><u>从「#」开始的行不会适用</u></strong>，所以文件上沒有內容在设定。
+<br>
+<strong><u>文件的內容从「<i>do</i>」到「<i>end</i>」的行里面设定。</u></strong>
+<hr class="red-hr">
+那么追加下一行，設定内容吧！
+<br><br>
+<i class="fa fa-file color-red"></i>　<strong>routes.rb（追加第2行）</strong>
+<br>
+<small>
+※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+<br>
+<i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+</small>
+<br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># Example of regular route:</span></span>
+<span class='code-line'>  <span class='word-gray'>#   get 'products/:id' => 'catalog#view'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        上面的內容在设定，用「posts」资料库作
+        <br><br>
+        <strong>
+        显示全部的资料（<i><u>index</u></i>）・显示一个资料（<i><u>show</u></i>）
+        <br>
+        打入新的资料（<i><u>new</u></i>）・新增资料（<i><u>create</u></i>）
+        <br>
+        打入编辑的资料（<i><u>edit</u></i>）・编辑资料（<i><u>update</u></i>）
+        <br>
+        删除资料（<i><u>destroy</u></i>）
+        </strong>
+        <br><br>
+        这个七个网页。
+        <hr class="red-hr">
+        如果不想删除资料的话，
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第二行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>2
+</td>
+<td class='code-content'><span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong>像上面这样子「<i>:only =></i>」后面指定「<i>destroy</i>」以外六个网页。</strong>
+        <br>
+        <small>※　「:」是在Ruby on Rails 作网页的时候的规则。请记住。</small>
+        <br><br>
+        所以网页的设定是在<strong>「<i>routes.rb</i>」</strong>上追加
+<pre>
+resources :资料库的名字, :only => [:想加的网页...]
+</pre>
+        这些內容。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>如果用「<u>messages</u>」的资料库作
+        <ul class="number_ul">
+            <li><u>显示全部的资料（index）</u></li>
+            <li><u>新增资料（create）</u></li>
+            <li><u>删除资料（destroy）</u></li>
+        </ul>
+        这个3种资料操作的话，「routes.rb」上要设定什么样的资料呢？</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="答えを入力しよう！">
+        <br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第2行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>  resources <span class='word-purple'>:messages</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:destroy</span>]</span>
+</td>
+</tr>
+</table>
+        <br>
+</h4>

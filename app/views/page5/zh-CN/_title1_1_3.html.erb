@@ -1,0 +1,328 @@
+<h4 id="chapter5-1-1-3">
+        <p id="title1-1-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 网页的设定</strong></p>
+        到这里设定了<u>「七個网页的设定」跟「操作资料的设定」的方法</u>。
+        <br><br>
+        <strong>那么，在网页上显示保存的资料吧！</strong>
+        网页的设定，要从<strong class="little-remarkable"><u>「views」文件夾里作html文件</u></strong>上做。
+        <hr class="red-hr">
+        那么参考下面的图像，从Sublime Text打开的<strong>「<u>myapp > app</u>」</strong>打开<strong>「<u>views</u>」</strong>文件夾吧！
+        <br>
+        <small>
+          ※　使用Sublime Text打开文件的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的Sublime Text打开文件文件夾的方法<a href="/zh-CN/mugcups/how_to_open#title2" target="_blank"><strong>请参考这里</strong></a>。
+        </small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Select_views.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_Select_views.png",
+                    :target => ["_blank"] %>
+        这个「views」文件夾里面的<strong><u>「posts」文件夾</u>里，作作看为了显示网页的设定文件・html文件。</strong>
+        <br><br>
+        事先<strong>「<u>posts</u>」文件夾里保存，显示网页的设定文件「<u>show.html.erb</u>」吧！</strong>
+        <br>
+        <small>
+        ※　保存文件的方法，<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>请参考这里</strong></a>
+        </small>
+        <br>
+        <small>※　<strong>Ruby on Rails上文件的名字不用「show.html」用「show.html<u>.erb</u>」。请注意。</strong></small>
+        <br><br>
+        完了之后，参考下面的图像打开看看<strong>「<u>show.html.erb</u>」</strong>吧。
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_posts_show_html_erb.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_posts_show_html_erb.png",
+                    :target => ["_blank"] %>
+        在这个设定文件上，设定显示网页的设定。
+        <hr class="red-hr">
+        那么，跟刚才的方法一样，在<strong>「<u>posts</u>」文件夾里</strong>保存
+        <br><br>
+        <ul class="number_ul">
+        <strong>
+          <li>「index.html.erb」（显示全部的资料的网页）</li>
+          <li>「new.html.erb」（打入新的资料的网页）</li>
+          <li>「create.html.erb」（新增资料的网页）</li>
+          <li>「edit.html.erb」（打入编辑的资料的网页）</li>
+          <li>「update.html.erb」（编辑资料的网页）</li>
+          <li>「destroy.html.erb」（删除资料的网页）</li>
+        </strong>
+        </ul>
+        <br>
+        这些六个文件吧。
+        <small>
+          ※　保存文件的方法，<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>请参考这里</strong></a>
+        </small>
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_views_posts_all.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Sublime_Text_views_posts_all.png",
+                    :target => ["_blank"] %>
+        使用这些文件，设定网页的內容。
+        <hr class="red-hr">
+        <i class="fa fa-play-circle"></i>　<strong>那么做做看网页的设定吧！</strong>
+        <br><br>
+        首先<strong><u>显示看文字吧。</u></strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+        <br>
+        <small>
+        ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+        <br>
+        <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <u>这样子保存好资料的话，用浏览器看看內容吧！</u>
+        <br><br>
+        用 Ruby on Rails 作的网站，<strong><u>要先启动服务器之后再显示网页。</u></strong>
+        <br>
+        <small>※　详细的內容<a href="/zh-CN/mugcups/3#title2-3" target="_blank"><strong>请参考这里</strong></a></small>
+        <br><br>
+        <strong class="little-remarkable">那么启动服务器，看看网页吧！</strong>
+        <hr class="red-hr">
+        首先，<strong><u>用terminal移动到「myapp」吧。</u></strong>
+        <br><br><br>
+        <p class="alert alert-success">
+            <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，<a href="/zh-CN/mugcups/windows_tips#title1-2" target="_blank">请参考这里</a></strong>
+        </p>
+        <br>
+        <strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class='code-line'>cd myapp</span>
+</td>
+</tr>
+</table>
+        <br><br>
+        移动到「myapp」之后，打入<strong>「<i>rails s</i>」</strong>启动服务器。
+        <br><br>
+        <strong>terminal</strong>
+        <br>
+        <small>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+        </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails s</span>
+</td>
+</tr>
+</table>
+        <br>
+        显示下面图像一样的画面吗？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rails_s.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page3/Terminal_rails_s.png",
+                    :target => ["_blank"] %>
+        这样，启动服务器了。
+        <br>
+        服务器启动了，现在可以从浏览器看网站了。
+        <br><br>
+        那么用浏览器，打开看「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」吧！
+        <br><br><br>
+        <p class="alert alert-success">
+        <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，打开<a href="http://localhost:3000/posts/1" target="_blank">localhost:3000/posts/1</a>吧。</strong>
+        </p>
+        <br>
+        有显示像下面图像一样的画面了吗？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_1.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_1.png",
+                    :target => ["_blank"] %>
+        「显示一個资料（show）」的网页是，用浏览器打开<strong>「<u>0.0.0.0:3000/资料库的名字/id号码</u>」</strong>。在「id号码」的地方，可以选择资料。
+        <br>
+        这个网页在选择<strong>「<u>posts资料库里，id是1</u>」</strong>的资料。
+        <hr class="red-hr">
+        那么接着用浏览器打开看「<a href="http://0.0.0.0:3000/posts/2016" target="_blank"><strong>0.0.0.0:3000/posts/2016</strong></a>」吧。
+        <br>
+        <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，用浏览器打开看<strong>「<a href="http://localhost:3000/posts/2016" target="_blank">localhost:3000/posts/2016</a>」</strong>吧。</small>
+        <br><br>
+        有沒有出现，下面一样的Error的画面吗？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_2016.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_2016.png",
+                    :target => ["_blank"] %>
+        这个是应为，沒有<strong>「<u>id是2016的posts资料</u>」</strong>。
+        <br>
+        如果还有別的保存过的资料的话，打开看看那个网页吧！
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>從浏览器打开「<u>从tweets资料库里，选择id是9028的资料</u>」的「显示一个资料（show）」的网页要怎么打入好呢？</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案">
+        <br>
+        <i class="fa fa-chrome color-red"></i><strong>　浏览器</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line small-code'>0.0.0.0:3000/tweets/9028</span>
+</td>
+</tr>
+</table>
+        <br>
+        <hr class="red-hr">
+        到这里，作好了在显示各个资料的网页。
+        <br><br>
+        <strong><u>接着，显示看保存的资料吧！</u></strong>
+        <br>
+        <u>像下面，编辑<strong>「show.html.erb」</strong>的內容吧！</u>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb（编辑第2、3行）</strong>
+        <br>
+        <small>
+          ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+          <br>
+          <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+        </small>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2
+3</strong>
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        內容编辑之后，在terminal上移动到<strong>「<u>myapp</u>」</strong>之后，用<strong>「<i>rails s</i>」</strong>打开服务器打开「<a href="http://0.0.0.0:3000/posts/1" target="_blank"><strong>0.0.0.0:3000/posts/1</strong></a>」吧。
+        <br><br>
+        <small>
+        <i class="fa fa-windows color-blue"></i>　使用Windows移动到「myapp」的方法，<strong><a href="/zh-CN/mugcups/windows_tips#title1-2" target="_blank">请参考这里</a></strong>。
+        <br>
+        <i class="fa fa-windows color-blue"></i>　Windows的网站，可以从<strong>「<a href="http://localhost:3000/posts/1" target="_blank">localhost:3000/posts/1</a>」</strong>打开。
+        </small>
+        <br><br>
+        有沒有跟下面图像一样，显示保存的资料吗？
+        <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
+                              :width => "90%",
+                              :class => "hover_img textbook-title-img"),
+                    "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page5/Chrome_localhost_posts_1_2.png",
+                    :target => ["_blank"] %>
+        <u>还有別的保存的资料的话，那个资料也用跟这里一样的方法打开看确认內容吧！</u>
+        <br>
+        <small>
+        ※　使用Sequel Pro的方法<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>请参考这里</strong></a>。
+        <br>
+        ※　使用SqliteBrowser的方法<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>请参考这里</strong></a>。
+        </small>
+        <hr class="red-hr">
+        <strong>那么，说明设定 html文件的方法吧。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        內容应该可以推测吧。
+        <br><br>
+        有沒有看到<strong><a href="/zh-CN/mugcups/5#title1-1-2" target="_blank">刚才的解释操作资料的地方</a>设定的「<u>@post</u>」</strong>吗？这个<strong>「<u>@post</u>」</strong>是在选择网页的资料。
+        <br><br>
+        <u>所以，如果在操作资料的部分・<strong>「posts_controller.rb」</strong>沒有设定<strong>「@post」</strong>的话，不会显示这样子的资料。</u>
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>2
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= @post.name %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        在这个部分，<strong><u>从「@post」拿出「name」。</u></strong>
+        <br>
+        同样的
+        <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= @post.content %&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>在拿出「content」。</u></strong>
+        <hr class="red-hr">
+        简单的追加说明。
+        <br><br>
+        <strong>用 Ruby on Rails作的html文件，<u>要必须從资料库选择资料</u>。</strong>
+        <br><br>
+        这样子的部分用，
+<pre>
+&lt;%= 内容 %&gt;
+</pre>
+或者是
+<pre>
+&lt;% 内容 %&gt;
+</pre>
+        设定內容。
+        <br><br>
+        <strong>在这个<u>「&lt;%=」或者「&lt;%」</u>跟<u>「%&gt;」</u>之间，取得资料库的资料。
+        <br>
+        <u>「&lt;%=」跟「%&gt;」</u>之间的內容会显示在网页上，但是<u>「&lt;%」跟「%&gt;」</u>之间的內容不会显示。</strong>
+        <br><br>
+        內容也只能打入<strong><u>资料库里的资料或者简单的算数 等等...</u></strong>。这些在等一下解释吧。
+        <hr class="red-hr">
+        像这一次一样的<strong>「显示一個资料（show）」的资料的操作</strong>是，
+<pre>
+@設定的标记.框字的名字
+</pre>
+        设定。
+        <br><br>
+        <i class="fa fa-question-circle color-green"></i>　<strong>那么，「<u>从@tweet选择place</u>」的显示要怎么设定好呢？</strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;%= @tweet.place %&gt;</span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <i class="fa fa-question-circle color-green"></i>　<strong>現在的网页上，从选择的资料「@post」只能拿出「name」跟「content」而已。在这里<u>追加显示「place」的设定吧。</u></strong>
+        <br><br>
+        <input type="input" class="form-control input-code" placeholder="打入答案">
+        <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+</h4>

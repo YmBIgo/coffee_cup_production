@@ -1,0 +1,106 @@
+<h4 id="chapter6-1-4-2">
+        <p id="title1-4-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 总结</strong></p>
+        在<strong>「新增资料（create）」</strong>的网页上要设定三个內容。
+        <br><br>
+        <strong>设定的內容<a href="/zh-CN/codes/6" target="_blank">请参考这里</a></strong>
+        <hr class="red-hr">
+        <p id="title1-4-2-route" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>七个网站的设定</strong></p>
+        <br>
+        <strong>在「config」文件夾里的「routes.rb」文件里，追加「<u>create</u>」的设定</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>routes.rb（第3行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<span class="color-red"><strong>3</strong></span>
+4
+5
+6
+7
+8
+9
+...
+57
+58
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <hr class="red-hr">
+        <p id="title1-4-2-data" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>资料操作的设定</strong></p>
+        <br>
+        <strong>在「app > controllers > 资料库的名字_controller」文件夾里的「<u>create</u>」上，追加设定</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i><strong>　posts_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+<span class="color-red"><strong>2</strong></span>
+3
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line remarkable-code'>    @post <span class="word-red">=</span> <span class='word-blue'>Post</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:post</span>).permit(<span class='word-purple'>:name</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:place</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>新增资料的「create」里，设定指定资料库的內容（require）跟指定框子的內容（permit）</u>。</strong>
+        <hr class="red-hr">
+        <p id="title1-4-2-view" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>网页的设定</strong></p>
+        <br>
+        <strong>编辑「app > views > 资料库的名字」文件夾里的设定文件「<u>create.html.erb</u>」的內容。</strong>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>create.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿好了&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.name %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.content %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;%= @post.place %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+        <br>
+        <strong><u>沒设定网页的显示也可以保存资料，但是利用的人比较会不方便，所以不要忘记设定网页的显示吧！</u></strong>
+        <hr class="red-hr">
+        <p id="title1-4-2-chrome" class="fix-link-nav"><i class="fa fa-play-circle"></i>　<strong>在浏览器上的显示</strong></p>
+        <br>
+        <strong>「<u>新增资料（create）</u>」的网页是，从「<u>打入新的资料（new）</u>」的网页移动到的，不用在浏览器打入url可以打开的网页。</strong>
+        <br>
+        <small>※　网页的url，应该是<strong>「<u>0.0.0.0:3000/posts</u>」</strong>。</small>
+        <hr class="red-hr">
+        到这里，作了新增资料的网页。
+        <br>
+        <strong>接着，设定「编辑资料」的网页吧！
+        <br><br>
+        设定的內容，<a href="/zh-CN/codes/6" target="_blank">请参考这里</a></strong>
+</h4>

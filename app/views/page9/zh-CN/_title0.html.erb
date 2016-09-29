@@ -1,0 +1,47 @@
+<h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
+<h4 id="chapter9-0">
+<i class="fa fa-bookmark color-red"></i>　<strong>作作看<u>做用户管理的会员制的网站</u>吧。</strong>
+<hr>
+在很多网页上，利用者登入网站之后使用那个网页。
+<br>
+我們在这里，想作作看<strong><u>这样做用戶管理的会员制的网站</u></strong>的设定。
+<br><br>
+在Ruby on Rails上，为了作「用户管理」的机能我們使用<strong>「<u>devise</u>」的<a href="/mugcups/3#title2-2-1" target="_blank">gem</a></strong>。
+<br><br>
+先简单的解释用<strong>「<u>devise</u>」</strong>作的会员制的网页吧。
+<hr class="red-hr">
+<ul class="number_ul">
+  <strong><li>登入机能</li></strong>
+  <br>
+  要看post资料库的网页（<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>等等）的时候<strong><u>需要登入会员</u></strong>，如果沒有登入的利用者的话<u>会移动到「登入」网页</u>。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_users_sign_in_nav.png",
+              :target => ["_blank"] %>
+  登入之后，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page10/Chrome_posts_all_nav_after_login.png",
+              :target => ["_blank"] %>
+  显示网页里面的內容。
+  <hr class="red-hr">
+  <strong><li>登入利用者的资料</li></strong>
+  <br>
+  登入的会员的资料，会在<strong>「users」资料库</strong>（<u>「devise」会作资料</u>）里保存。
+  <br>
+  用这个「users」资料库，可以作会员资料的网页。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_1_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_1_after.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <strong><li>用user资料库显示別的资料</li></strong>
+  <br>
+  如果会员的资料设定好了的话，可以用这个users资料库区别，別的资料库的资料是谁作的 等等的设定。
+</ul>
+<hr class="red-hr">
+<strong>在这个章做这个三个设定，但是作这个设定之前<u>先导入这个「devise」的工具</u>。</strong>
+</h4>

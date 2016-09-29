@@ -1,0 +1,118 @@
+<h4 id="chapter9-2-3">
+  <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 总结</strong></p>
+  <br>
+  到这里设定了登入机能的內容了（虽然很多是「devise」作的・・・）。
+  <br><br>
+  <strong>
+  在这里设定了
+  <ul class="number_ul">
+    <li>注册登入网页的设定</li>
+    <li>网页上检查利用者有沒有登入的设定</li>
+    <li>通知的设定</li>
+  </ul>
+  这个三个內容。
+  <br><br>
+  设定的內容<a href="/zh-CN/codes/9" target="_blank">请参考这里</a>吧。
+  </strong>
+  <ul class="number_ul">
+    <hr class="red-hr">
+    <strong><li>注册登入网页的设定</li></strong>
+    <br>
+    <strong>注册网页（「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」）</strong>在
+    <br><br>
+    <strong>「<u>app > views > devise > registrations</u>」</strong>文件夾里的<strong>「<u>new.html.erb</u>」</strong>文件里追加设定的內容。
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_bootstrap.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_sign_up_bootstrap.png",
+                :target => ["_blank"] %>
+    <hr class="red-hr">
+    <strong>登入网页（「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」）</strong>在
+    <br><br>
+    <strong>「<u>app > views > devise > sessions</u>」</strong>文件夾里的<strong>「<u>new.html.erb</u>」</strong>文件里追加设定的內容。
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_bootstrap.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page9/Chrome_users_log_in_bootstrap.png",
+                :target => ["_blank"] %>
+    <hr class="red-hr">
+    <strong><li>网页上检查利用者有沒有登入的设定</li></strong>
+    <br>
+    要限制显示网页的內容的话，<strong>想检查利用者的网页的资料库的「controller」文件里追加下面的设定。</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>before_action <span class='word-purple'>:authenticate_user!</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    这样子在全部的网页上检查利用者了。
+    <br>
+    如果要指定检查的网页的話，设定像下面的內容。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>before_action <span class='word-purple'>:authenticate_user!</span>, <span class="remarkable-code"><span class='word-purple'>:only</span> => [<span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span></span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li>通知的內容</li></strong>
+    <br>
+    在「devise」里，可以设定<strong><u>显示注册登入网页上的通知</u></strong>的內容。
+    <br>
+    设定通知要追加下面的內容。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> notice %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;&lt;%= notice %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">if</span> alert %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-danger"</span>&gt;&lt;%= alert %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    內容使用
+<pre>
+&lt;% if 条件 %&gt;
+  内容
+&lt;% end %&gt;
+</pre>
+    判别通知，在各个通知上显示设定的內容。
+    <br><br>
+    <strong>设定的內容<a href="/zh-CN/codes/9" target="_blank">请参考这里</a></strong>。
+  </ul>
+  <hr>
+  <strong>
+  到这里辛苦你了。作的网站也更像会员制的网站吧。
+  <hr class="red-hr">
+  <i class="fa fa-star color-blue"></i>　看「users」资料库里面，应该看到
+  <ul class="number_ul">
+    <li>「family_name」</li>
+    <li>「first_name」</li>
+    <li>「self_introduction」</li>
+  </ul>
+  的框子裡沒有保存的资料，应为注册的时候沒有打入。
+  <br><br>
+  接着在这个资料库里保存资料，作「users」资料库的网页吧。
+  </strong>
+</h4>

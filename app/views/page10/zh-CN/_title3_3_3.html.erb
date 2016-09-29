@@ -1,0 +1,87 @@
+<h4 id="chapter10-3-3-3">
+  <p id="title3-3-3" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 总结</strong></p>
+  <br>
+  在这里使用利用者有沒有登入的条件，区别<a href="/zh-CN/mugcups/css#title2-3" target="_blank"><strong>navigation-bar</strong></a>的显示的设定。
+  <br>
+  为了做这个设定，使用下面的三个设定。
+  <br>
+  <strong>
+  <ul class="number_ul">
+    <li><u>current_user</u>（取得登入的会员的资料）</li>
+    <li><u>user_signed_in?</u>（判別利用者有沒有登入）</li>
+    <li><u>&lt;% else %&gt;</u>（跟条件不成立的时候显示内容）</li>
+  </ul>
+  </strong>
+  在这里说明各个设定。
+  <br><br>
+  <strong>设定的內容<a href="/zh-CN/codes/10" target="_blank">请参考这里</a></strong>
+  <hr class="red-hr">
+  <ul class="number_ul">
+    <strong><li><u>current_user</u></li></strong>
+    <br>
+    如果想取得登入的的资料的话，用「devise」的设定，在「&lt;% %&gt;」「&lt;%= %&gt;」里面设定
+<pre>
+current_user
+</pre>
+    这个內容。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow remarkable-code'>"/users/&lt;%= current_user.id %&gt;"</span>&gt;会员资料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li><u>user_signed_in?</u></li></strong>
+    <br>
+    如果想判別利用者有沒有登入的话，用「devise」的设定在「&lt;% %&gt;」里设定
+<pre>
+if user_signed_in?
+</pre>
+    这个內容。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> <span class="remarkable-code">user_signed_in?</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+    <strong><li><u>&lt;% else %&gt;</u></li></strong>
+    <br>
+    用
+<pre>
+&lt;% if 条件 %&gt;
+</pre>
+    判別条件的时候，显示条件不成立的设定用「&lt;% else %&gt;」。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"登出"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;注册&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;登入&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <hr class="red-hr">
+  </ul>
+  到这里设定了「users」网页了。
+  <br>
+  最后做这里的总结吧。
+  <br><br>
+  <strong>设定的內容<a href="/zh-CN/codes/10" target="_blank">请参考这里</a>吧。</strong>
+</h4>
