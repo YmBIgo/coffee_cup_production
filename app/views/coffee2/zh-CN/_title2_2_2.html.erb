@@ -1,0 +1,111 @@
+<h4 id="coffee-chapter2-2-2-2">
+  <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : users_controller.rb</strong></p>
+  <br>
+  <strong>「users_controller.rb」</strong>里设定
+  <ul class="number_ul">
+    <strong><li>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">显示全部的资料（index）</a>」</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @messages <span class="word-red">=</span> <span class='word-blue'>Message</span>.where(指定的条件)</span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">打入新的资料（new）</a>」</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.<span class='word-red'>new</span></span>
+</td>
+</tr>
+</table>
+  </ul>
+  的內容
+  <hr class="red-hr">
+  那么打开<strong>「<u>app > controllers > users_controller.rb</u>」</strong>，编辑內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第7、8行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+<strong class="color-red">7
+8</strong>
+9
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user <span class='word-red'>=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @messages <span class='word-red'>=</span> <span class='word-blue'>Message</span>.where(<span class='word-purple'>:receiver</span> => @user.id)</span>
+<span class='code-line remarkable-code'>    @message <span class='word-red'>=</span> <span class="word-blue">Message</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  说明內容吧。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>首先第7行</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>7
+</td>
+<td class='code-content'><span class='code-line'>    @messages <span class='word-red'>=</span> <span class='word-blue'>Message</span>.where(<span class='word-purple'>:receiver</span> => @user.id)</span>
+</td>
+</tr>
+</table>
+  <br>
+  在这个设定
+  <br>
+  <strong>选择<u>「receiver」跟网页的会员资料「@user」的「id」一樣</u>的「messages」资料库的资料</strong>。
+  <br>
+  <small>※　where的说明<a href="/zh-CN/mugcups/4#title2-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  这样<strong>选择显示的会员的「messages」资料库的资料</strong>了。
+  <br><br>
+  网页的留言板上显示<strong>在这里设定的标记「<u>@messages</u>」</strong>的內容。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>最后第8行</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>8
+</td>
+<td class='code-content'><span class='code-line'>  @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.<span class='word-red'>new</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在这个设定，
+  <br>
+  <strong>为了作输入框，作新的「messages」资料。</strong>
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/6#title1-3" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <strong>使用在这里设定的「@message」，作讯息的输入框。</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+              :target => ["_blank"] %>
+  这样子设定好资料操作了！
+  <br><br>
+  <strong>最后总括在这个章的內容！</strong>
+</h4>
