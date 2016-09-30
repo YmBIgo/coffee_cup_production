@@ -1,0 +1,63 @@
+<h2 class="textbook-section-title" id="title2"><strong>2 : 作主页！</strong></h2>
+<h4 id="coffee-chapter1-2">
+  <i class="fa fa-play-circle"></i>　<strong>设定网站的设定文件夾也作好了，接着做这个网页的主页吧！</strong>
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/8" target="_blank"><strong>请参考这里</strong></a>吧。</small>
+  <hr class="red-hr">
+  在这里做
+  <strong>
+  <ul class="number_ul">
+    <li>七个网页的设定（详细<a href="/zh-CN/mugcups/8#title1-1" target="_blank"><strong>请参考这里</strong></a>）</li>
+    <li>设定资料操作的文件（详细<a href="/zh-CN/mugcups/8#title1-1" target="_blank"><strong>请参考这里</strong></a>）</li>
+    <li>设定显示网页的文件（详细<a href="/zh-CN/mugcups/8#title1-1" target="_blank"><strong>请参考这里</strong></a>）</li>
+    <li>网页上显示图像（详细<a href="/zh-CN/mugcups/8#title1-2" target="_blank"><strong>请参考这里</strong></a>）</li>
+  </ul>
+  </strong>
+  这些內容。
+  <hr class="red-hr">
+  首先做
+  <strong>
+  <ul class="number_ul">
+    <li>资料操作的文件（controller文件）</li>
+    <li>显示网页的文件（views文件夾）</li>
+  </ul>
+  </strong>
+  这个两个吧！
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/8#title1" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+  为了作controller文件・views文件夾，在terminal上打入
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller welcome</span>
+</td>
+</tr>
+</table>
+  <br>
+  的命令吧。
+  <br><br>
+  这样作好了
+  <strong>
+  <ul class="number_ul">
+    <li><strong>操作资料的设定文件「<u>app > controllers > welcome_controller.rb</u>」</strong></li>
+    <li><strong>设定显示网页的文件夾「<u>app > views > welcome</u>」</strong></li>
+  </ul>
+  </strong>
+  这个文件文件夾了。在这里设定内容。
+  <br><br>
+  设定这个两个的內容之前，首先设定「七个网页的设定」吧。
+  <hr>
+  <%= render "coffee1/zh-CN/title2_1" %>
+  <hr>
+  <%= render "coffee1/zh-CN/title2_2" %>
+  <hr>
+  <%= render "coffee1/zh-CN/title2_3" %>
+</h4>

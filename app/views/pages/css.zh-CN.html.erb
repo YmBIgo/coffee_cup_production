@@ -4,41 +4,41 @@
       <div class="textbook-area">
         <div class="textbook-area-inner fadeIn wow">
           <div id="title" class="textbook-title">
-            <h1><strong>CSS設定一覽</strong></h1>
+            <h1><strong>CSS设定一览</strong></h1>
           </div>
           <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header9.jpg",
                                 :width => "90%",
                                 :class => "hover_img textbook-title-img") %>
           <hr>
-          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
           <h4>
-            <i class="fa fa-star color-red"></i>　解釋適用CSS的方法。
+            <i class="fa fa-star color-red"></i>　解释适用CSS的方法。
             <hr>
-            在這裡解釋，<u>普通的CSS</u>跟<u>適用Bootstrap設定的「<a href="/zh-TW/mugcups/3#title1-2-css-class" target="_blank">class</a>」</u>兩種設定。
+            在这里解释，<u>普通的CSS</u>跟<u>适用Bootstrap设定的「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank">class</a>」</u>两个设定。
             <br>
-            <small>※　CSS的寫法<a href="/zh-TW/mugcups/3#title1-2" target="_blank"><strong>請參考這裡</strong></a></small>
+            <small>※　CSS的写法<a href="/zh-CN/mugcups/3#title1-2" target="_blank"><strong>请参考这里</strong></a></small>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title1"><strong>1 : CSS的設定</strong></h2>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : CSS的设定</strong></h2>
           <h4>
-            首先解釋，普通的CSS的
+            首先解释，普通的CSS的
             <strong>
             <ul class="number_ul">
-              <li>文字的大小・顏色・背景色</li>
-              <li>左右長度・上下高度</li>
+              <li>文字的大小・颜色・背景色</li>
+              <li>左右长度・上下高度</li>
               <li>空格</li>
             </ul>
             </strong>
-            這個3個設定的方法。
+            这个三个设定的方法。
             <hr>
             <ul class="number_ul" id="title1-1">
-              <strong><li><p style="color:white;background-color:black;font-size:30px;">文字的大小・顏色・背景色</p></li></strong>
+              <strong><li><p style="color:white;background-color:black;font-size:30px;">文字的大小・颜色・背景色</p></li></strong>
               <br>
               文字的大小要
   <pre>
-  font-size:顯示的大小px（或者%）;
+  font-size:显示的大小px（或者%）;
   </pre>
-              這樣設定。
+              这样设定。
               <br><br>
 <table class='highlight'>
   <tr>
@@ -53,11 +53,11 @@
   </tr>
   </table>
               <hr class="red-hr">
-              顏色的設定要
+              颜色的设定要
 <pre>
-color:喜歡的顏色;
+color:喜欢的颜色;
 </pre>
-              這樣設定。
+              这样设定。
               <br><br>
   <table class='highlight'>
   <tr>
@@ -74,15 +74,15 @@ color:喜歡的顏色;
   </tr>
   </table>
               <br>
-              顏色使用英文打入，或者
+              颜色使用英文打入，或者
               <br>
-              使用<strong><a href="https://www.toodoo.com/db/color.html" target="_blank">色碼表</a></strong>的「#??????」也可以設定。
+              使用<strong><a href="https://www.toodoo.com/db/color.html" target="_blank">色吗表</a></strong>的「#??????」也可以设定。
               <hr class="red-hr">
-              背景色的設定要
+              背景色的设定要
   <pre>
-background-color:喜歡的顏色;
+background-color:喜欢的颜色;
 </pre>
-              設定。
+              设定。
               <br><br>
   <table class='highlight'>
   <tr>
@@ -101,19 +101,19 @@ background-color:喜歡的顏色;
   </tr>
   </table>
               <br>
-              顏色
+              颜色
 <pre>
-color:喜歡的顏色;
+color:喜欢的颜色;
 </pre>
-              跟這個一樣，可以用「#??????」設定（顏色<strong><a href="https://www.toodoo.com/db/color.html" target="_blank">請參考這裡</a></strong>）。
+              跟这个一样，可以用「#??????」设定（颜色<strong><a href="https://www.toodoo.com/db/color.html" target="_blank">请参考这里</a></strong>）。
               <hr class="red-hr">
-              <strong><li><p id="title1-2">左右長度・上下高度</p></li></strong>
+              <strong><li><p id="title1-2">左右长度・上下高度</p></li></strong>
               <br>
-              長度要
+              长度要
   <pre>
-width:設定的長度px（或者%）;
+width:设定的长度px（或者%）;
 </pre>
-              設定。
+              设定。
               <br><br>
   <table class='highlight'>
   <tr>
@@ -128,14 +128,14 @@ width:設定的長度px（或者%）;
   </tr>
   </table>
               <br>
-              設定<a href="/zh-TW/mugcups/6#title2-3" target="_blank"><strong>Bootstrap的輸入框</strong></a>的長度的時候，有用過。
+              设定<a href="/zh-CN/mugcups/6#title2-3" target="_blank"><strong>Bootstrap的输入框</strong></a>的长度的时候，有用过。
               <input type="input" style="width:500px;" class="form-control my-form" placeholder="width:500px;">
               <hr class="red-hr">
-              同樣的高度是
+              同样的高度是
   <pre>
-height:設定的高度px（或者%）;
+height:设定的高度px（或者%）;
 </pre>
-              設定。
+              设定。
               <br><br>
   <table class='highlight'>
   <tr>
@@ -156,23 +156,23 @@ height:設定的高度px（或者%）;
               <hr class="red-hr">
               <strong><li><p id="title1-3"></p>空格</li></strong>
               <br>
-              空格的設定有
+              空格的设定有
               <strong>
                 <ul class="number_ul">
                   <li>外面的空白（margin）</li>
-                  <li>裡面的空白（padding）</li>
+                  <li>里面的空白（padding）</li>
                 </ul>
               </strong>
               <br>
-              的兩種。
+              的两种。
               <hr class="red-hr">
               外面的空格（margin）要
   <pre>
-margin-空白的地方:設定的大小px（或者%）;
+margin-空白的地方:设定的大小px（或者%）;
 </pre>
-              設定。
+              设定。
               <br>
-              空格的地方的設定是，<u>上面的話用「top」，下面的話用「bottom」，右邊的話用「right」，左邊的話用「left」</u>設定。
+              空格的地方的设定是，<u>上面的话用「top」，下面的话用「bottom」，右边的话用「right」，左边的话用「left」</u>设定。
               <br><br>
   <table class='highlight'>
   <tr>
@@ -191,21 +191,21 @@ margin-空白的地方:設定的大小px（或者%）;
   </tr>
   </table>
             <hr class="red-hr">
-            裡面的空格使用 padding。
+            里面的空格使用 padding。
   <pre>
-padding-空白的地方:設定的大小px;
+padding-空白的地方:设定的大小px;
 </pre>
-            這樣設定。
+            这样设定。
             <br>
-            空白的地方跟 margin 一樣。
+            空白的地方跟 margin 一样。
             <hr class="red-hr">
-            例如說，像下面一樣圖像裡的文字（詳細<a href="/zh-TW/mugcups/8#title1-2" target="_blank"><strong>請參考這裡</strong></a>）
+            例如说，像下面一样图像里的文字（详细<a href="/zh-CN/mugcups/8#title1-2" target="_blank"><strong>请参考这里</strong></a>）
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
                         "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
                         :target => ["_blank"] %>
-            移動到下面一點兒的話，使用 padding 在裡面作空格。
+            移动到下面一点儿的话，使用 padding 在里面作空格。
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
@@ -224,59 +224,59 @@ padding-空白的地方:設定的大小px;
   </tr>
   </table>
             <br>
-            <strong>不知道要用 margin 或者 padding 的話，試試看一次吧！</strong>
+            <strong>不知道要用 margin 或者 padding 的话，试试看一次吧！</strong>
             </ul>
             <hr>
-            <strong class="little-remarkable"><u>還有別的CSS的設定，有興趣的話自己查查看吧！</u></strong>
+            <strong class="little-remarkable"><u>还有別的CSS的设定，有兴趣的话自己查查看吧！</u></strong>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title2"><strong>2 : Bootstrap的設定</strong></h2>
+          <h2 class="textbook-section-title" id="title2"><strong>2 : Bootstrap的设定</strong></h2>
           <h4>
-          解釋 Bootstrap（導入等等的詳細<a href="/zh-TW/mugcups/7#title2" target="_blank"><strong>請參考這裡</strong></a>）的設定。
+          解释 Bootstrap（导入等等的详细<a href="/zh-CN/mugcups/7#title2" target="_blank"><strong>请参考这里</strong></a>）的设定。
           <br>
-          這一次說明
+          这一次说明
           <strong>
           <ul class="number_ul">
-            <li>btn（按鈕）</li>
-            <li>form-control（輸入框）</li>
-            <li>nav（遊覽列）</li>
+            <li>btn（按钮）</li>
+            <li>form-control（输入框）</li>
+            <li>nav（游览列）</li>
           </ul>
           </strong>
           的內容。
           <hr>
           <ul class="number_ul">
-            <strong id="title2-1"><li>btn（按鈕）</li></strong>
+            <strong id="title2-1"><li>btn（按钮）</li></strong>
             <br>
-            Bootstrap的按鈕用
+            Bootstrap的按钮用
   <pre>
-class="btn 喜歡的按鈕"
+class="btn 喜欢的按钮"
 </pre>
-            設定。
+            设定。
             <hr class="red-hr">
-            <a class="btn btn-primary">藍色的按鈕</a>
+            <a class="btn btn-primary">蓝色的按钮</a>
             <br><br>
   <table class='highlight'>
   <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;藍色的按鈕&lt;/<span class='word-red'>a</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;蓝色的按钮&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
   </tr>
   </table>
             <br>
             按鈕有
             <br>
-            <a class="btn btn-danger">btn-danger</a>　<a class="btn btn-success">btn-success</a>　<a class="btn btn-info">btn-info</a>　等等的種類。（別的按鈕，<a href="http://getbootstrap.com/css#buttons-options" target="_blank"><strong>請參考這裡</strong></a>）
+            <a class="btn btn-danger">btn-danger</a>　<a class="btn btn-success">btn-success</a>　<a class="btn btn-info">btn-info</a>　等等的种类。（別的按钮，<a href="http://getbootstrap.com/css#buttons-options" target="_blank"><strong>请参考这里</strong></a>）
             <br><br>
-            詳細<a href="/zh-TW/mugcups/7#title2-2-2" target="_blank"><strong>請參考這裡</strong></a>
+            详细<a href="/zh-CN/mugcups/7#title2-2-2" target="_blank"><strong>请参考这里</strong></a>
             <hr class="red-hr">
-            <strong id="title2-2"><li>form-control（輸入框）</li></strong>
+            <strong id="title2-2"><li>form-control（输入框）</li></strong>
             <br>
-            Bootstrap的輸入框用
+            Bootstrap的输入框用
   <pre>
 class="form-control"
 </pre>
-            設定。
+            设定。
             <hr class="red-hr">
             <input type="input" class="form-control">
             <br>
@@ -289,11 +289,11 @@ class="form-control"
   </tr>
   </table>
             <br>
-            詳細<a href="/zh-TW/mugcups/7#title2-2-3" target="_blank"><strong>請參考這裡</strong></a>
+            详细<a href="/zh-CN/mugcups/7#title2-2-3" target="_blank"><strong>请参考这里</strong></a>
             <hr class="red-hr">
-            <strong id="title2-3"><li>nav（遊覽列）</li></strong>
+            <strong id="title2-3"><li>nav（游览列）</li></strong>
             <br>
-            Bootstrap的遊覽列要
+            Bootstrap的游览列要
             <br><br>
   <table class='highlight'>
   <tr>
@@ -336,9 +336,9 @@ class="form-control"
   </tr>
   </table>
           <br>
-          這樣設定。
+          这样设定。
           <br><br>
-          左邊的文字在
+          左边的文字在
   <table class='highlight'>
   <tr>
 <td class='code-line-no text-center'>10
@@ -347,9 +347,9 @@ class="form-control"
 </td>
   </tr>
   </table>
-          設定
+          设定
           <br><br>
-          右邊的文字在
+          右边的文字在
   <table class='highlight'>
   <tr>
 <td class='code-line-no text-center'>13
@@ -361,7 +361,7 @@ class="form-control"
   </tr>
   </table>
           <br>
-          的之間追加，像
+          的之间追加，像
   <table class='highlight'>
   <tr>
 <td class='code-line-no text-center'>13
@@ -375,16 +375,16 @@ class="form-control"
   </tr>
   </table>
           <br>
-          這樣的內容，設定。
+          这样的內容，设定。
           <br><br>
-          詳細<a href="/zh-TW/mugcups/7#title2-2-4" target="_blank"><strong>請參考這裡</strong></a>。
+          详细<a href="/zh-CN/mugcups/7#title2-2-4" target="_blank"><strong>请参考这里</strong></a>。
           </ul>
           <hr class="red-hr">
-          <strong>有興趣的話，自己查查看吧！</strong>
+          <strong>有兴趣的话，自己查查看吧！</strong>
           <hr>
           </h4>
           <div class="next-page">
-            <a href="javascript:history.back()" class="btn btn-primary">上頁</a>
+            <a href="javascript:history.back()" class="btn btn-primary">上页</a>
           </div>
         </div>
       </div>
@@ -394,13 +394,13 @@ class="form-control"
       <strong>
       <div id="slide-bar" class="clear-fix">
         <div class="list-group nomargin">
-          <a href="#title" class="list-group-item list-title"><h4>css設定一覽</h4></a>
-          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
-          <a href="#title1" class="list-group-item">1 : CSS的設定</a>
-          <a href="#title1-1" class="list-group-item"><small>　① : 文字的大小・顏色・背景色</small></a>
-          <a href="#title1-2" class="list-group-item"><small>　② : 左右長度・上下高度</small></a>
+          <a href="#title" class="list-group-item list-title"><h4>css设定一览</h4></a>
+          <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+          <a href="#title1" class="list-group-item">1 : CSS的设定</a>
+          <a href="#title1-1" class="list-group-item"><small>　① : 文字的大小・颜色・背景色</small></a>
+          <a href="#title1-2" class="list-group-item"><small>　② : 左右长度・上下高度</small></a>
           <a href="#title1-3" class="list-group-item"><small>　③ : 空格</small></a>
-          <a href="#title2" class="list-group-item">2 : Bootstrap 的設定</a>
+          <a href="#title2" class="list-group-item">2 : Bootstrap 的设定</a>
           <a href="#title2-1" class="list-group-item"><small>　① : btn</small></a>
           <a href="#title2-2" class="list-group-item"><small>　② : form-control</small></a>
           <a href="#title2-3" class="list-group-item"><small>　③ : nav</small></a>

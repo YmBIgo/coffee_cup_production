@@ -1,20 +1,20 @@
 <h4 id="coffee-chapter1-4-3">
-  <p id="title4-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 裝飾註冊・登入網頁</strong></p>
+  <p id="title4-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 装饰注册・登入网页</strong></p>
   <br>
   <strong>
-  用「devise」作註冊・登入網頁之後，裝飾網頁的內容吧！
+  用「devise」作注册・登入网页之后，装饰网页的內容吧！
   </strong>
   <hr class="red-hr">
-  在這裡<strong><u>用「devise」作註冊・登入網頁</u></strong>之後，用<a href="/zh-TW/mugcups/7#title2" target="_blank"><strong>Bootstrap</strong></a>裝飾網頁的內容吧。
+  在这里<strong><u>用「devise」作注册・登入网页</u></strong>之后，用<a href="/zh-CN/mugcups/7#title2" target="_blank"><strong>Bootstrap</strong></a>装饰网页的內容吧。
   <br>
-  為了<strong><u>用「devise」作網頁的畫面</u></strong>，要在terminal上打入下面的內容。
+  為了<strong><u>用「devise」作网页的画面</u></strong>，要在terminal上打入下面的內容。
   <br>
-  <small>※　詳細<a href="/zh-TW/mugcups/9#title1-3" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+  <small>※　详细<a href="/zh-CN/mugcups/9#title1-3" target="_blank"><strong>请参考这里</strong></a>吧</small>
   <br><br>
   <strong>terminal</strong>
   <br>
   <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
   </small>
 <table class='highlight'>
 <tr>
@@ -25,23 +25,23 @@
 </tr>
 </table>
   <br>
-  在這個命令作好的幾個文件文件夾裡，使用
+  在这个命令作好的几个文件文件夾里，使用
   <strong>
   <ul class="number_ul">
-    <li>註冊畫面</li>
-    「<u>app > views > devise > registrations</u>」文件夾裡的「new.html.erb」文件
-    <li>登入畫面</li>
-    「<u>app > views > devise > sessions</u>」文件夾裡的「new.html.erb」文件
+    <li>注册画面</li>
+    「<u>app > views > devise > registrations</u>」文件夾里的「new.html.erb」文件
+    <li>登入画面</li>
+    「<u>app > views > devise > sessions</u>」文件夾里的「new.html.erb」文件
   </ul>
   </strong>
-  這個兩個文件。在各個文件上設定內容。
+  这个两个文件。在各个文件上设定內容。
   <br>
-  <small>※　詳細<a href="/zh-TW/mugcups/9#title2-1" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+  <small>※　详细<a href="/zh-CN/mugcups/9#title2-1" target="_blank"><strong>请参考这里</strong></a>吧</small>
   <br><br>
-  在這裡做
+  在这里做
   <strong>
     <ul class="number_ul">
-      <li>裝飾輸入框・按鈕（詳細<a href="/zh-TW/mugcups/9#title2-1-1" target="_blank">請參考這裡</a>）</li>
+      <li>装饰输入框・按钮（详细<a href="/zh-CN/mugcups/9#title2-1-1" target="_blank">请参考这里</a>）</li>
       <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_in.png",
                             :width => "90%",
                             :class => "hover_img textbook-title-img"),
@@ -52,13 +52,13 @@
                             :class => "hover_img textbook-title-img"),
                   "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up.png",
                   :target => ["_blank"] %>
-      <li>遊覽列（navigation-bar）上追加移動到註冊・登入網頁的連結（詳細<a href="/zh-TW/mugcups/9#title2-1-2" target="_blank">請參考這裡</a>）</li>
+      <li>游览列（navigation-bar）上追加移动到注册・登入网页的连接（详细<a href="/zh-CN/mugcups/9#title2-1-2" target="_blank">请参考这里</a>）</li>
       <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_add_nav_users_sign_in_up.png",
                             :width => "90%",
                             :class => "hover_img textbook-title-img"),
                   "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_add_nav_users_sign_in_up.png",
                   :target => ["_blank"] %>
-      <li>追加註冊・登入的通知（詳細<a href="/zh-TW/mugcups/9#title2-2-2" target="_blank">請參考這裡</a>）</li>
+      <li>追加注册・登入的通知（详细<a href="/zh-CN/mugcups/9#title2-2-2" target="_blank">请参考这里</a>）</li>
       <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_in_notice.png",
                             :width => "90%",
                             :class => "hover_img textbook-title-img"),
@@ -66,26 +66,26 @@
                   :target => ["_blank"] %>
     </ul>
   </strong>
-  這個三個內容。
+  这个三个內容。
   <br><br>
-    <i class="fa fa-play-circle"></i>　<strong>裝飾註冊・登入網頁上的輸入框・按鈕</strong>
+    <i class="fa fa-play-circle"></i>　<strong>装饰注册・登入网页上的输入框・按钮</strong>
     <br><br>
-    輸入框跟按鈕的裝飾，使用<a href="/zh-TW/mugcups/css#title2" target="_blank"><strong>Bootstrap</strong></a>的設定。
+    输入框跟按钮的装饰，使用<a href="/zh-CN/mugcups/css#title2" target="_blank"><strong>Bootstrap</strong></a>的设定。
     <hr class="red-hr">
-    <i class="fa fa-arrow-right"></i>　<strong>首先從<u>註冊網頁</u>開始裝飾。</strong>
+    <i class="fa fa-arrow-right"></i>　<strong>首先从<u>注册网页</u>开始装饰。</strong>
     <br><br>
-    在設定註冊網頁的設定文件是<strong>「<u>app > views > devise > registrations</u>」</strong>裡的<strong>「<u>new.html.erb</u>」</strong>。
+    在设定注册网页的设定文件是<strong>「<u>app > views > devise > registrations</u>」</strong>里的<strong>「<u>new.html.erb</u>」</strong>。
     <br><br>
-    那麽，編輯<strong>「<u>new.html.erb</u>」</strong>的內容吧！
+    那么，编辑<strong>「<u>new.html.erb</u>」</strong>的內容吧！
     <br>
-    <small>※　內容的說明<a href="/zh-TW/mugcups/9#title2-1-1" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+    <small>※　內容的说明<a href="/zh-CN/mugcups/9#title2-1-1" target="_blank"><strong>请参考这里</strong></a>吧</small>
     <br><br>
-    <i class="fa fa-file color-red"></i>　<strong>new.html.erb（編輯第8、16、21、23、25行）</strong>
+    <i class="fa fa-file color-red"></i>　<strong>new.html.erb（编辑第8、16、21、23、25行）</strong>
     <br>
     <small>
-      ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
       <br>
-      <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
     </small>
     <br><br>
 <table class='highlight'>
@@ -153,16 +153,16 @@
 </tr>
 </table>
     <br>
-    為了把輸入框的長度設定的短一點，在<strong>「<u>app > assets > stylesheets > style.scss</u>」</strong>裡追加<u>設定輸入框的大小的CSS文件的設定「my-form」</u>。
+    为了把输入框的长度设定的短一点，在<strong>「<u>app > assets > stylesheets > style.scss</u>」</strong>里追加<u>设定输入框的大小的CSS文件的设定「my-form」</u>。
     <br>
-    <small>※　詳細<a href="/zh-TW/mugcups/7#title2-2-3" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+    <small>※　详细<a href="/zh-CN/mugcups/7#title2-2-3" target="_blank"><strong>请参考这里</strong></a>吧</small>
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
     <br>
     <small>
-      ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
       <br>
-      <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
     </small>
     <br><br>
 <table class='highlight'>
@@ -189,19 +189,19 @@
 </table>
     <br>
     <small>
-      ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+      ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
     </small>
     <br><br><br>
     <p class="alert alert-success">
-    <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+    <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
     <br>
-    　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入「<u>rails s</u>」吧。</strong>
+    　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
     </p>
     <br>
-    編輯好之後，打開「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank"><strong>0.0.0.0:3000/users/sign_up</strong></a>」吧！
+    编辑好之后，打开「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank"><strong>0.0.0.0:3000/users/sign_up</strong></a>」吧！
     <br>
     <small>
-      <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/users/sign_up" target="_blank"><strong>localhost:3000/users/sign_up</strong></a>」吧。
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/users/sign_up" target="_blank"><strong>localhost:3000/users/sign_up</strong></a>」吧。
     </small>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up.png",
                           :width => "90%",
@@ -209,25 +209,25 @@
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up.png",
                 :target => ["_blank"] %>
     <strong><u>
-    有沒有顯示上面圖像一樣的畫面嗎？
+    有沒有显示上面图像一样的画面吗？
     <br>
-    接着做登入網頁的設定吧！
+    接着做登入网页的设定吧！
     </u></strong>
     <hr class="red-hr">
-    <i class="fa fa-arrow-right"></i>　<strong>接着裝飾<u>登入網頁</u>吧</strong>
+    <i class="fa fa-arrow-right"></i>　<strong>接着装饰<u>登入网页</u>吧</strong>
     <br><br>
-    顯示登入網頁的設定文件是<strong>「<u>app > views > devise > sessions</u>」</strong>裡面的<strong>「<u>new.html.erb</u>」文件</strong>。
+    显示登入网页的设定文件是<strong>「<u>app > views > devise > sessions</u>」</strong>里面的<strong>「<u>new.html.erb</u>」文件</strong>。
     <br><br>
-    編輯<strong>「<u>sessions</u>」</strong>裡面的<strong>「<u>new.html.erb</u>」</strong>文件吧。
+    编辑<strong>「<u>sessions</u>」</strong>里面的<strong>「<u>new.html.erb</u>」</strong>文件吧。
     <br>
-    <small>※　詳細<a href="/zh-TW/mugcups/9#title2-1-1" target="_blank"><strong>請參考這裡</strong></a></small>
+    <small>※　详细<a href="/zh-CN/mugcups/9#title2-1-1" target="_blank"><strong>请参考这里</strong></a></small>
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
     <br>
     <small>
-      ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
       <br>
-      <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
     </small>
     <br><br>
 <table class='highlight'>
@@ -290,19 +290,19 @@
 </table>
     <br>
     <small>
-      ※　<u>一起點擊<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打開的服務器之後，再打入<strong><u>「rails s」</u></strong>吧。
+      ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
     </small>
     <br><br><br>
     <p class="alert alert-success">
-    <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+    <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
     <br>
-    　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入「<u>rails s</u>」吧。</strong>
+    　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
     </p>
     <br>
-    做好之後，打開「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank"><strong>0.0.0.0:3000/users/sign_in</strong></a>」吧！
+    做好之后，打开「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank"><strong>0.0.0.0:3000/users/sign_in</strong></a>」吧！
     <br>
     <small>
-      <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/users/sign_in" target="_blank"><strong>localhost:3000/users/sign_in</strong></a>」吧。
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/users/sign_in" target="_blank"><strong>localhost:3000/users/sign_in</strong></a>」吧。
     </small>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_in.png",
                           :width => "90%",
@@ -310,36 +310,36 @@
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_in.png",
                 :target => ["_blank"] %>
     <strong><u>
-    有沒有顯示上面圖像一樣的畫面嗎？
+    有沒有显示上面图像一样的画面吗？
     <br>
-    接着在遊覽列（navigation-bar）上追加，移動到註冊・登入網頁的連結。
+    接着在游览列（navigation-bar）上追加，移动到注册・登入网页的连接。
     </u></strong>
     <hr class="red-hr">
-    <i class="fa fa-play-circle"></i>　<strong>遊覽列（navigation-bar）上追加，移動到註冊・登入網頁的連結</strong>
+    <i class="fa fa-play-circle"></i>　<strong>游览列（navigation-bar）上追加，移动到注册・登入网页的连接</strong>
     <br><br>
-    <u>「navigation-bar」的設定</u>是，在<strong>「<u>application.html.erb</u>」</strong>裡追加<a href="/zh-TW/mugcups/css#title2-3" target="_blank"><strong>Bootstrap</strong></a>的裝飾設定。
+    <u>「navigation-bar」的设定</u>是，在<strong>「<u>application.html.erb</u>」</strong>里追加<a href="/zh-CN/mugcups/css#title2-3" target="_blank"><strong>Bootstrap</strong></a>的装饰设定。
     <br>
-    <small>※　詳細<a href="/zh-TW/mugcups/9#title2-1-2" target="_blank"><strong>請參考這裡</strong></a>吧。</small>
+    <small>※　详细<a href="/zh-CN/mugcups/9#title2-1-2" target="_blank"><strong>请参考这里</strong></a>吧。</small>
     <br><br>
-    在這個章設定的「navigation-bar」裡追加，移動到
+    在这个章设定的「navigation-bar」里追加，移动到
     <strong>
     <ul class="number_ul">
-    <li>註冊網頁「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</li>
-    <li>登入網頁「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</li>
+    <li>注册网页「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</li>
+    <li>登入网页「<a href="http://0.0.0.0:3000/users/sign_in" target="_blank">0.0.0.0:3000/users/sign_in</a>」</li>
     </ul>
     </strong>
-    的連結吧！
+    的连接吧！
     <br><br>
-    打開<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>之後，參考下面的內容編輯文件的內容吧！
+    打开<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>之后，参考下面的內容编辑文件的內容吧！
     <br>
-    <small>※　詳細<a href="/zh-TW/mugcups/10#title3-3-2" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+    <small>※　详细<a href="/zh-CN/mugcups/10#title3-3-2" target="_blank"><strong>请参考这里</strong></a>吧</small>
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第24〜28行）</strong>
     <br>
     <small>
-      ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
       <br>
-      <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
     </small>
     <br><br>
 <table class='highlight'>
@@ -411,7 +411,7 @@
 <span class='code-line remarkable-code'>        &lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
 <span class='code-line remarkable-code'>          &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"登出"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
 <span class='code-line remarkable-code'>        &lt;% <span class="word-red">else</span> %&gt;</span>
-<span class='code-line remarkable-code'>          &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;註冊&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;注册&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
 <span class='code-line remarkable-code'>          &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;登入&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
 <span class='code-line remarkable-code'>        &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
@@ -430,57 +430,57 @@
 </table>
     <br>
     <strong>
-    用「<u>if</u>」「<u>else</u>」跟「<u>user_signed_in?</u>」，設定
+    用「<u>if</u>」「<u>else</u>」跟「<u>user_signed_in?</u>」，设定
     <br>
     <ul class="number_ul">
-      <li>不是會員的話，顯示「註冊」「登入」的連結</li>
-      <li>會員的話，顯示「登出」的連結</li>
+      <li>不是会员的话，显示「注册」「登入」的连接</li>
+      <li>会员的话，显示「登出」的连接</li>
     </ul>
     </strong>
     的內容吧。
     <br>
-    <small>※　詳細<a href="/zh-TW/mugcups/10#title3-3-2" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+    <small>※　详细<a href="/zh-CN/mugcups/10#title3-3-2" target="_blank"><strong>请参考这里</strong></a>吧</small>
     <br><br>
-    <u>這樣遊覽列的設定好了！</u>
+    <u>这样游览列的设定好了！</u>
     <hr class="red-hr">
-    <strong><u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+    <strong><u>一起点击「Command」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
     <br>
-    <u>這樣編輯好的內容會適用在網頁上。</u>
+    <u>这样编辑好的內容会适用在网页上。</u>
     <br><br><br>
     <p class="alert alert-success">
-    <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+    <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
     <br>
-    　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+    　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
     </p>
     <br>
-    編輯好了之後，打開「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
+    编辑好了之后，打开「<a href="http://0.0.0.0:3000/posts" target="_blank"><strong>0.0.0.0:3000/posts</strong></a>」吧！
     <br>
     <small>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/posts" target="_blank"><strong>localhost:3000/posts</strong></a>」吧。
   </small>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_add_nav_users_sign_in_up.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_add_nav_users_sign_in_up.png",
                 :target => ["_blank"] %>
-    遊覽列（navigation-bar）上有沒有顯示連結了嗎？
+    游览列（navigation-bar）上有沒有显示连接了吗？
     <br>
-    做好之後點擊連結，看看移動到的網頁是對不對。
+    做好之后点击连接，看看移动到的网页是对不对。
     <hr class="red-hr">
-    <i class="fa fa-play-circle"></i>　<strong>追加註冊・登入的通知</strong>
+    <i class="fa fa-play-circle"></i>　<strong>追加注册・登入的通知</strong>
     <br><br>
-    <u>註冊・登入的通知的設定</u>，在<strong>「<u>application.html.erb</u>」</strong>裡設定Bootstrap跟「if」「else」的條件判別。
+    <u>注册・登入的通知的设定</u>，在<strong>「<u>application.html.erb</u>」</strong>里设定Bootstrap跟「if」「else」的条件判別。
     <br>
-    <small>※　詳細<a href="/zh-TW/mugcups/9#title2-2-2" target="_blank"><strong>請參考這裡</strong></a></small>
+    <small>※　详细<a href="/zh-CN/mugcups/9#title2-2-2" target="_blank"><strong>请参考这里</strong></a></small>
     <br><br>
-    參考下面的內容，編輯<strong>「<u>application.html.erb</u>」</strong>的內容吧！
+    参考下面的內容，编辑<strong>「<u>application.html.erb</u>」</strong>的內容吧！
     <br><br>
     <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第36〜43行）</strong>
     <br>
     <small>
-      ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+      ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
       <br>
-      <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+      <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
     </small>
     <br><br>
 <table class='highlight'>
@@ -512,7 +512,7 @@
 </tr>
 </table>
     <br>
-    這樣做好通知的設定了！
+    这样做好通知的设定了！
     <hr class="red-hr">
-    <u>接着用「users」資料庫，顯示看「users」資料庫的網頁吧！</u>
+    <u>接着用「users」资料库，显示看「users」资料库的网页吧！</u>
 </h4>
