@@ -1,0 +1,162 @@
+<h4 id="coffee-chapter3-1-2">
+  <p id="title1-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : rooms资料库</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>接着作「rooms」资料库吧！</strong>
+  <br><br>
+  <strong>rooms</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">name</th>
+        <th style="background-color: #f2dede;">explain</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;font-size:12px;">新的聊天</td>
+        <td style="background-color: #f2dede;font-size:12px;">打入说明</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr class="red-hr">
+  作资料库要<strong><u>用terminal作的设定文件上</u></strong>设定內容。
+  <br>
+  在terminal上打入下面的內容吧！
+  <br>
+  <small>※　作资料库的解释，<a href="/zh-CN/mugcups/4#title1-2" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model room</span>
+</td>
+</tr>
+</table>
+  <br>
+  编辑，在这个命令作好的<strong>「<u>db > migrate」文件夾</u>里的「日子_create_rooms.rb」</strong>吧。
+  <br>
+  <small>※　內容<a href="/zh-CN/mugcups/4#title1-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日子_create_rooms.rb（追加第5、6行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreateRooms <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:rooms</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>:name</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"新的聊天"</span></span>
+<span class='code-line remarkable-code'>      t.text       <span class='word-purple'>:explain</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"打入说明"</span></span>
+<span class='code-line'>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这一次，<strong>「<u>name</u>」「<u>explain</u>」</strong>各个设定上有
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>t.string     <span class='word-purple'>:name</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"新的聊天"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>t.text       <span class='word-purple'>:explain</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"打入说明"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  像这样，后面有
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>, <span class='word-purple'>default:</span> <span class='word-yellow'>"文字"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  的设定。
+  <br><br>
+  在这里设定，<strong><u>新增资料的时候如果沒有资料的话</u></strong>要在框子里放的资料。
+  <br>
+  设定写着<strong>「<u>default</u>」</strong>应该可以理解。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>那么，<u>放「短的文章（string）」的「file」的框子的default要设定「新的文件」的话</u>，必须要设定怎么样的设定呢？</strong>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="打入答案">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>t.string      <span class='word-purple'>:file</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"新的文件"</span></span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  最后为了导入內容，在terminal上打入
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　不动的话，在前面追加<strong>「bundle exec」</strong>，打入<strong>「bundle exec rake db:migrate」</strong>吧。
+  </small>
+  <br><br>
+  这个命令吧。这样设定会适用，作好<strong>「<u>rooms</u>」资料库</strong>了。
+  <br><br>
+  <strong>最后用<u>Sequel Pro</u>，看看內容吧！</strong>
+  <br>
+  <small>※　打开Sequel Pro的方法，<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>请参考这里</strong></a>，打开SqliteBrowser的方法<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>设定的內容，<a href="/zh-CN/codes/c_3#title1-2" target="_blank">请参考这里</a>。</strong>
+</h4>

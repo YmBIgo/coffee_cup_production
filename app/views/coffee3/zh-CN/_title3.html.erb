@@ -1,0 +1,385 @@
+<h2 class="textbook-section-title" id="title3"><strong>3 : 總結</strong></h2>
+<h4 id="coffee-chapter3-3">
+  <i class="fa fa-play-circle"></i>　<strong>在這個章總結解釋的內容。</strong>
+  <hr class="red-hr">
+  在這個章解釋的內容是
+    <ul class="number_ul">
+      <br>
+      <p id="title3-1"><strong><li>設定資料庫的文件的「<u>default</u>」</li></strong></p>
+        <small>※　詳細<a href="/zh-CN/coffee_cups/3#title1-2" target="_blank"><strong>請參考這裡</strong></a></small>
+        <br><br>
+        <i class="fa fa-file color-red"></i>　<strong>日子_create_rooms.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreateRooms <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:rooms</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>:name</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"新的聊天"</span></span>
+<span class='code-line remarkable-code'>      t.text       <span class='word-purple'>:explain</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"打入說明"</span></span>
+<span class='code-line'>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+      <br>
+      這樣子設定好<strong>「<u>name</u>」「<u>explain</u>」的框子裡剛開始放的資料</strong>了。
+      <hr class="red-hr">
+      <p id="title3-2"><strong><li>「Bootstrap」的「<u>row</u>」「<u>col-xs-數字</u>」</li></strong></p>
+      <small>※　詳細<a href="/zh-CN/coffee_cups/4#title2-1-2" target="_blank"><strong>請參考這裡</strong></a>。</small>
+      <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1
+2</strong>
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+<strong class="color-red">15
+16</strong>
+17
+18
+</td>
+<td class='code-content'><span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span></span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;歲）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自我介紹：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯會員資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>      &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"開始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span></span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回會員一覽&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    在這個<strong>「<u>row</u>」跟「<u>col-xs-數字</u>」</strong>，把長度12的畫面的分割成幾個內容顯示。
+    <br><br>
+    <i class="fa fa-arrow-right"></i>　<strong>例如說把「12」的畫面分成「6」「6」的話，</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+<span class='code-line'>    内容1</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+<span class='code-line'>    内容2</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    這樣設定，可以顯示
+    <div class="row">
+      <div class="col-xs-6" style="margin-top:20px; padding:0">
+        <p class="alert alert-success">内容1(長度6)</p>
+      </div>
+      <div class="col-xs-6" style="margin-top:20px; padding:0">
+        <p class="alert alert-danger">内容2(長度6)</p>
+      </div>
+    </div>
+    這樣的內容。
+    <hr class="red-hr">
+    <p id="title3-3"><strong><li>判別資料的「<u>present?</u>」</li></strong></p>
+    <small>※　詳細<a href="/zh-CN/coffee_cups/4#title2-1-3" target="_blank"><strong>請參考這裡</strong></a>。</small>
+    <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong class="color-red">10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong class="color-red">30</strong>
+31
+32
+33
+<strong class="color-red">34</strong>
+35
+36
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-3 text-center"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;%= @room.name %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;<span class='word-red'>small</span>&gt;&lt;%= @room.explain %&gt;&lt;/<span class='word-red'>small</span>&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯資料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">if</span> @messages.present? %&gt;</span></span>
+<span class='code-line'>      &lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">if</span> m.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-right"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-left"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-info"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span></span>
+<span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h3</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;沒有訊息&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    到這裡判別有沒有<strong>「<u>@messages</u>」</strong>。
+    <strong>
+      <ul class="number_ul" style="margin-bottom:10px">
+        <li>有的話顯示，第11〜29行</li>
+        <li>沒有的話顯示，第31〜33行</li>
+      </ul>
+    </strong>
+    這裡的內容。
+    <hr class="red-hr">
+    <p id="title3-4" class="fix-link-nav"><strong><li>設定輸入框的大小的「<u>:size</u>」</li></strong></p>
+    <small>詳細<a href="/zh-CN/coffee_cups/4#title2-1-5" target="_blank"><strong>請參考這裡</strong></a></small>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h2</span>&gt;編輯聊天資料&lt;/<span class='word-red'>h2</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= f.label <span class='word-purple'>:name</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:name</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"打入名字"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.label <span class='word-purple'>:explain</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.text_area <span class="word-purple">:explain</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class="word-purple">:size</span> =&gt; <span class="word-yellow">"30x10"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"打入說明"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"更新"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-success"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回聊天資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    的第8行的
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'> , <span class="word-purple">:size</span> =&gt; <span class="word-yellow">"30x10"</span>
+</td>
+</tr>
+</table>
+    <br>
+    在設定輸入框的大小。
+    <br>
+    到這裡設定了<strong>「左右30字・上下10行」</strong>的輸入框。
+    <textarea rows="10" cols="30" class="form-control my-form" placeholder="打入說明" style="margin:20px 0"></textarea>
+    <hr class="red-hr">
+    <p id="title3-5" class="fix-link-nav"><strong><li>在打入資料的地方，新增別的資料的「<u>fields_for</u>」</li></strong></p>
+    <small>※　詳細<a href="/zh-CN/coffee_cups/5#title2-2-1" target="_blank"><strong>請參考這裡</strong></a>。</small>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+11
+<strong class="color-red">12
+13
+14</strong>
+15
+16
+17
+</td>
+<td class='code-content'><span class='code-line'>  &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>    &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>      &lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>        &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>      &lt;%= f.submit <span class="word-yellow">"開始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    設定「@room」的地方裡，設定<strong>「<u>@entry</u>」</strong>了。
+    <hr class="red-hr">
+    <p id="title3-6" class="fix-link-nav"><strong><li>限制資料的數字的「<u>limit</u>」</li></strong></p>
+    <small>※　詳細<a href="/zh-CN/coffee_cups/5#title2-2-2" target="_blank"><strong>請參考這裡</strong></a>。</small>
+    <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+12
+13
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line remarkable-code'>      @entries <span class="word-red">=</span> current_user.entries.limit(<span class="word-purple">3</span>)</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      @room <span class="word-red">=</span> <span class="word-blue">Room</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>      @entry <span class="word-red">=</span> <span class="word-blue">Entry</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    這樣設定了<strong>「<u>@entries</u>」</strong>裡最多也可以放三個資料的設定。
+    <hr class="red-hr">
+    <p id="title3-7" class="fix-link-nav"><strong><li>params</li></strong></p>
+    <small>※　詳細<a href="/zh-CN/coffee_cups/5#title2-2-3" target="_blank"><strong>請參考這裡</strong></a></small>
+    <br><br>
+    <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+<strong class="color-red">6</strong>
+7
+8
+9
+10
+11
+12
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line remarkable-code'>    <span class='word-red'>if </span><span class='word-blue'>Entry</span>.where(<span class='word-purple'>:user_id</span> => current_user.id, <span class='word-purple'>:room_id</span> => params[<span class='word-purple'>:message</span>][<span class='word-purple'>:room_id</span>]).present?</span>
+<span class='code-line'>      @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>  <span class='word-red'>end</span>
+</td>
+</tr>
+</table>
+    <br>
+    的
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'> 1 
+</td>
+<td class='code-content'><span class='code-line'><span class='word-purple'>:room_id</span> => params[<span class='word-purple'>:message</span>][<span class='word-purple'>:room_id</span>]</span>
+</td>
+</tr>
+</table>
+    <br>
+    的部分
+    <br>
+    取得<strong>送來的「<u>message</u>」資料的「<u>room_id</u>」</strong>。
+    <br><br>
+    <i class="fa fa-play-circle"></i>　<strong>這些事新設定的內容。</strong>
+    </ul>
+  <br>
+  <strong>在下章，想在會員資料追加上載的圖像。</strong>
+  <hr>
+  <div class="text-center">
+    <a href="/zh-CN/coffee_cups/7" class="btn btn-primary" target="_blank">下章</a>
+  </div>
+</h4>
