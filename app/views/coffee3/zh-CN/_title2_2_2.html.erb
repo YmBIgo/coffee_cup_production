@@ -1,9 +1,9 @@
 <h4 id="coffee-chapter3-2-2-2">
-  <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 顯示「entries」資料</strong></p>
+  <p id="title2-2-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 显示「entries」资料</strong></p>
   <br>
-  <i class="fa fa-play-circle"></i>　<strong>接着顯示「<u>entries</u>」資料吧！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>接着显示「<u>entries</u>」资料吧！</strong>
   <hr class="red-hr">
-  「entries」資料庫裡有
+  「entries」资料库里有
   <br><br>
   <strong>entries</strong>
   <table class="table table-striped" style="width:50%">
@@ -26,17 +26,17 @@
       </tr>
     </tbody>
   </table>
-  這樣的
+  这样的
   <strong>
   <ul class="number_ul">
-    <li>設定「rooms」資料的框子「room_id」</li>
-    <li>設定「users」資料的框子「user_id」</li>
+    <li>设定「rooms」资料的框子「room_id」</li>
+    <li>设定「users」资料的框子「user_id」</li>
   </ul>
   </strong>
   <br>
-  應為<strong>「<u>rooms</u>」資料・「<u>users</u>」資料都可以拿複數的「<u>entries</u>」資料</strong>，所以在這裡設定
+  应为<strong>「<u>rooms</u>」资料・「<u>users</u>」资料都可以拿复数的「<u>entries</u>」资料</strong>，所以在这里设定
   <br><br>
-  <p><i class="fa fa-arrow-right color-red"></i>　<strong>從聊天室資料「@room」選擇「entries」資料</strong></p>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>从聊天室资料「@room」选择「entries」资料</strong></p>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -46,7 +46,7 @@
 </tr>
 </table>
   <br>
-  <p><i class="fa fa-arrow-right color-red"></i>　<strong>從會員資料「@user」選擇「@entries」資料</strong>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>从会员资料「@user」选择「@entries」资料</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -56,7 +56,7 @@
 </tr>
 </table>
   <br>
-  <p><i class="fa fa-arrow-right color-red"></i>　<strong>從「@entry」資料選擇「@user」資料</strong>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>从「@entry」资料选择「@user」资料</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
@@ -66,21 +66,21 @@
 </tr>
 </table>
   <br>
-  <p><i class="fa fa-arrow-right color-red"></i>　<strong>從「@entry」選擇「@room」資料</strong>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>从「@entry」选择「@room」资料</strong>
 <table class='highlight'>
 <tr>
 <td class='code-line-no text-center'>1
 </td>
-<td class='code-content'><span class='code-line'>@user <span class="word-red">=</span> @entry.room</span>
+<td class='code-content'><span class='code-line'>@room <span class="word-red">=</span> @entry.room</span>
 </td>
 </tr>
 </table>
   <br>
-  這些內容。
+  这些內容。
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>首先從使用這些內容的設定開始做。</strong>
+  <i class="fa fa-play-circle"></i>　<strong>首先从使用这些內容的设定开始做。</strong>
   <br><br>
-  這個設定在
+  这个设定在
   <br>
   <strong>
   <ul class="number_ul">
@@ -89,20 +89,20 @@
     <li>「<u>app > models > user.rb</u>」</li>
   </ul>
   </strong>
-  裡追加各個設定。
+  里追加各个设定。
   <br>
-  <small>※　詳細<a href="/zh-CN/coffee_cups/2#title2-3-4" target="_blank"><strong>請參考這裡</strong></a></small>
+  <small>※　详细<a href="/zh-CN/coffee_cups/2#title2-3-4" target="_blank"><strong>请参考这里</strong></a></small>
   <br><br>
-  編輯各個設定文件吧！
+  编辑各个设定文件吧！
   <br>
-  <small>※　詳細<a href="/zh-CN/coffee_cups/2#title2-3-4" target="_blank"><strong>請參考這裡</strong></a>吧</small>
+  <small>※　详细<a href="/zh-CN/coffee_cups/2#title2-3-4" target="_blank"><strong>请参考这里</strong></a>吧</small>
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>entry.rb（追加第3、4行目）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -127,9 +127,9 @@
   <i class="fa fa-file color-red"></i>　<strong>room.rb（追加第4行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -154,9 +154,9 @@
   <i class="fa fa-file color-red"></i>　<strong>user.rb（追加第8行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -186,7 +186,7 @@
 </tr>
 </table>
   <hr class="red-hr">
-  到這裡，
+  到这里，
   <br><br>
 <table class='highlight'>
 <tr>
@@ -224,17 +224,17 @@
 </tr>
 </table>
   <br>
-  這些都可以用了！
+  这些都可以用了！
   <br><br>
-  <i class="fa fa-play-circle"></i>　<strong>使用這些設定
+  <i class="fa fa-play-circle"></i>　<strong>使用这些内容，设定
   <ul class="number_ul">
-    <li>顯示參加聊天室的會員的資料</li>
+    <li>显示参加聊天室的会员的资料</li>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                 :target => ["_blank"] %>
-    <li>顯示登入的會員在參加的聊天室的資料</li>
+    <li>显示登入的会员在参加的聊天室的资料</li>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),
@@ -246,31 +246,31 @@
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                 :target => ["_blank"] %>
   </ul>
-  這些內容！
+  这些內容！
   </strong>
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>首先從「顯示參加聊天室的會員的資料」開始做吧！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>首先从「显示参加聊天室的会员的资料」开始做吧！</strong>
   <br><br>
-  要顯示會員的資料的是<strong>「<u>rooms</u>」資料庫的「<u>show</u>」網頁</strong>，所以在
+  要显示会员的资料的是<strong>「<u>rooms</u>」资料库的「<u>show</u>」网页</strong>，所以在
   <br>
   <strong>
   <ul class="number_ul">
-    <li>rooms_controller.rb（操作資料）</li>
-    <li>show.html.erb（顯示網頁）</li>
+    <li>rooms_controller.rb（操作资料）</li>
+    <li>show.html.erb（显示网页）</li>
   </ul>
   </strong>
-  裡追加設定。
+  里追加设定。
   <hr class="red-hr">
-  <i class="fa fa-arrow-right"></i>　<strong>首先從操作資料開始做吧！</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>首先從操作资料开始做吧！</strong>
   <br><br>
-  編輯操作資料的設定文件<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>吧。
+  编辑操作资料的设定文件<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>吧。
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第17行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -292,19 +292,19 @@
 </tr>
 </table>
   <br>
-  使用這個<strong>「<u>@entries</u>」</strong>，顯示會員資料！
+  使用这个<strong>「<u>@entries</u>」</strong>，显示会员资料！
   <hr class="red-hr">
-  <i class="fa fa-arrow-right"></i>　<strong>接着做網頁顯示吧！</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>接着做网页显示吧！</strong>
   <br><br>
-  在這裡
+  在这里
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
               :target => ["_blank"] %>
-  像上面的圖像一樣在左邊的聊天資料的下面，顯示參加的會員的資料。
+  像上面的图像一样在左边的聊天资料的下面，显示参加的会员的资料。
   <br><br>
-  為了要顯示這樣的顯示，用剛剛設定的
+  为了要显示这样的显示，用刚刚设定的
   <br><br>
 <table class='highlight'>
 <tr>
@@ -315,7 +315,7 @@
 </tr>
 </table>
   <br>
-  分成一個一個的資料，
+  分成一个一个的资料，
   <br><br>
 <table class='highlight'>
 <tr>
@@ -335,16 +335,16 @@
 </tr>
 </table>
   <br>
-  換成這樣子的會員資料。
+  换成这样子的会员资料。
   <br><br>
-  那麽打開<strong>「<u>app > views > rooms > show.html.erb</u>」</strong>設定內容吧！
+  那么打开<strong>「<u>app > views > rooms > show.html.erb</u>」</strong>设定內容吧！
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第6〜10行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -376,7 +376,7 @@
 <span class='code-line'>      &lt;<span class='word-red'>h5</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= e.user.id %&gt;"</span>&gt;&lt;%= e.user.family_name %&gt; &lt;%= e.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h5</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span></span>
 <span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯資料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑资料&lt;/<span class='word-red'>a</span>&gt;</span>
 <span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
 <span class="code-line">  <span class="word-gray">#省略</span></span>
@@ -395,7 +395,7 @@
 </tr>
 </table>
   <br>
-  這個設定
+  这个设定
   <br><br>
 <table class='highlight'>
 <tr>
@@ -406,7 +406,7 @@
 </tr>
 </table>
   <br>
-  把「@room」拿的「@entries」資料分成一個一個的資料<strong>「e」</strong>。
+  把「@room」拿的「@entries」资料分成一个一个的资料<strong>「e」</strong>。
   <br><br>
   <strong>entries</strong>
   <table class="table table-striped" style="width:50%">
@@ -449,7 +449,7 @@
       </tr>
     </tbody>
   </table>
-  使用這個一個一個的資料<strong>「e」</strong>，顯示會員資料。
+  使用这个一个一个的资料<strong>「e」</strong>，显示会员资料。
   <br><br>
 <table class='highlight'>
 <tr>
@@ -460,31 +460,31 @@
 </tr>
 </table>
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>那麽，看看參加者的資料會不會顯示！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>那么，看看參加者的资料会不会显示！</strong>
   <br><br>
-  <strong><u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+  <strong><u>一起点击「Command」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
   <br>
-  <u>這樣編輯好的內容會適用在網頁上。</u>
+  <u>这样编辑好的內容会适用在网页上。</u>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
   </p>
   <br>
-  之後用瀏覽器，打開「<a href="http://0.0.0.0:3000/rooms/2" target="_blank"><strong>0.0.0.0:3000/rooms/2</strong></a>」吧。
+  之后用浏览器，打开「<a href="http://0.0.0.0:3000/rooms/2" target="_blank"><strong>0.0.0.0:3000/rooms/2</strong></a>」吧。
   <br>
   <small>
-  <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/rooms/2" target="_blank"><strong>localhost:3000/rooms/2</strong></a>」吧。
+  <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/rooms/2" target="_blank"><strong>localhost:3000/rooms/2</strong></a>」吧。
   </small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
               :target => ["_blank"] %>
-  有沒有顯示上面圖像一樣的參加者的資料了嗎？
+  有沒有显示上面图像一样的參加者的资料了吗？
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>接着，顯示登入的會員在參加的聊天室的資料</strong>
+  <i class="fa fa-play-circle"></i>　<strong>接着，显示登入的会员在参加的聊天室的资料</strong>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
@@ -496,7 +496,7 @@
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
               :target => ["_blank"] %>
   <hr class="red-hr">
-  為了做這個，使用
+  为了做这个，使用
   <br><br>
 <table class='highlight'>
 <tr>
@@ -507,18 +507,18 @@
 </tr>
 </table>
   <br>
-  這個設定選擇，裡面有「user_id」是登入會員的「id」的「entries」資料。網頁上顯示這個「entries」資料。
+  这个设定选择，里面有「user_id」是登入会员的「id」的「entries」资料。网页上显示这个「entries」资料。
   <br><br>
-  在這裡
+  在这里
   <strong>
   <ul class="number_ul">
-    <li>「users」資料庫的「show」網頁</li>
+    <li>「users」资料库的「show」网页</li>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),
                 "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
                 :target => ["_blank"] %>
-    <li>「rooms」資料庫的「index」網頁</li>
+    <li>「rooms」资料库的「index」网页</li>
     <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                           :width => "90%",
                           :class => "hover_img textbook-title-img"),
@@ -526,29 +526,29 @@
                 :target => ["_blank"] %>
   </ul>
   </strong>
-  在這個兩個網頁上，設定這個內容。
+  在这个两个网页上，设定这个內容。
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>首先從「users」資料庫的「show」網頁開始做吧！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>首先从「users」资料库的「show」网页开始做吧！</strong>
   <br><br>
-  在這裡也在追加
+  在这里也在追加
   <strong>
   <ul class="number_ul">
-    <li>操作資料（users_controller.rb）</li>
-    <li>顯示網頁（show.html.erb）</li>
+    <li>操作资料（users_controller.rb）</li>
+    <li>显示网页（show.html.erb）</li>
   </ul>
   </strong>
-  這個兩個設定。
+  这个两个设定。
   <br><br>
-  <i class="fa fa-arrow-right"></i>　<strong>那麽從資料操作開始做吧！</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>那么从资料操作开始做吧！</strong>
   <br><br>
-  打開<strong>「<u>app > controllers > users_controller.rb</u>」</strong>之後，編輯裡面的內容吧！
+  打开<strong>「<u>app > controllers > users_controller.rb</u>」</strong>之后，编辑里面的內容吧！
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第8行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -576,7 +576,7 @@
 </tr>
 </table>
   <br>
-  在這裡跟
+  在这里跟
   <br><br>
 <table class='highlight'>
 <tr>
@@ -587,7 +587,7 @@
 </tr>
 </table>
   <br>
-  的條件成立的時候（顯示的網頁的會員跟登入的會員是一樣的時候），
+  的条件成立的时候（显示的网页的会员跟登入的会员是一样的时候），
   <br><br>
 <table class='highlight'>
 <tr>
@@ -598,7 +598,7 @@
 </tr>
 </table>
   <br>
-  用這個選擇「@user」在拿的「entries」資料。
+  用这个选择「@user」在拿的「entries」资料。
   <br><br>
   <strong>entries</strong>
   <table class="table table-striped" style="width:50%">
@@ -641,7 +641,7 @@
       </tr>
     </tbody>
   </table>
-  在最後的一行，
+  在最后的一行，
   <br><br>
 <table class='highlight'>
 <tr>
@@ -652,20 +652,20 @@
 </tr>
 </table>
   <br>
-  這裡有<strong>「limit(3)」</strong>的設定，這個是<strong>選擇最大3個以內的資料的</strong>設定。
+  这里有<strong>「limit(3)」</strong>的设定，这个是<strong>选择最大三个以內的资料的</strong>设定。
   <hr class="red-hr">
-  <i class="fa fa-arrow-right"></i>　<strong>接着設定「網頁顯示」吧。</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>接着设定「网页显示」吧。</strong>
   <br><br>
-  顯示在上面設定的<strong>「@entries」</strong>吧。
+  显示在上面设定的<strong>「@entries」</strong>吧。
   <br>
-  打開<strong>「<u>app > views > users > show.html.erb</u>」</strong>之後，編輯裡面的內容吧！
+  打开<strong>「<u>app > views > users > show.html.erb</u>」</strong>之后，编辑里面的內容吧！
   <br><br>
   <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第19〜29行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -705,41 +705,41 @@
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;歲）&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自我介紹：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
-<span class='code-line'>      &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯會員資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑会员资料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
 <span class='code-line'>      &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line'>        &lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
 <span class='code-line'>          &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
 <span class='code-line'>        &lt;% <span class="word-red">end</span> %&gt;</span>
-<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"開始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"开始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
 <span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class="remarkable-code"><span class='code-line'>  &lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
-<span class='code-line'>      &lt;<span class='word-red'>h1</span>&gt;聊天一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h1</span>&gt;聊天一览&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>      &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>      &lt;% @entries.each <span class="word-red">do</span> |e| %&gt;</span>
 <span class='code-line'>        &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= e.room.id %&gt;"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;%= e.room.name %&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>        &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
-<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;看聊天一覽&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;看聊天一览&lt;/<span class='word-red'>a</span>&gt;</span>
 <span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
 <span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回會員一覽&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回会员一览&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  在這裡使用下面的條件判別，
+  在这里使用下面的条件判別，
   <br><br>
 <table class='highlight'>
 <tr>
@@ -750,9 +750,9 @@
 </tr>
 </table>
   <br>
-  設定如果登入的會員跟「@user」是一樣的時候而已，顯示內容。
+  设定如果登入的会员跟「@user」是一样的时候而已，显示內容。
   <br><br>
-  顯示的內容，用
+  显示的內容，用
   <br><br>
 <table class='highlight'>
 <tr>
@@ -763,15 +763,15 @@
 </tr>
 </table>
   <br>
-  這個設定，分網頁的顯示。
+  这个设定，分网页的显示。
   <br>
-  <small>※　詳細<a href="/zh-CN/coffee_cups/4#title2-1-2" target="_blank"><strong>請參考這裡</strong></a></small>
+  <small>※　详细<a href="/zh-CN/coffee_cups/4#title2-1-2" target="_blank"><strong>请参考这里</strong></a></small>
   <div class="row">
     <div class="col-xs-6" style="margin-top:20px; padding:0">
-      <p class="alert alert-success">會員資料</p>
+      <p class="alert alert-success">会员资料</p>
     </div>
     <div class="col-xs-6" style="margin-top:20px; padding:0">
-      <p class="alert alert-danger">聊天資料</p>
+      <p class="alert alert-danger">聊天资料</p>
     </div>
   </div>
   使用
@@ -785,9 +785,9 @@
 </tr>
 </table>
   <br>
-  把<strong>「<u>@entries</u>」</strong>分成一個一個的資料<strong>「e」</strong>，
+  把<strong>「<u>@entries</u>」</strong>分成一个一个的资料<strong>「e」</strong>，
   <br>
-  一個一個的顯示內容。
+  一个一个的显示內容。
   <br><br>
 <table class='highlight'>
 <tr>
@@ -798,51 +798,51 @@
 </tr>
 </table>
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>到這裡，看看可不可以顯示內容！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>到这里，看看可不可以显示內容！</strong>
   <br><br>
-  <strong><u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+  <strong><u>一起点击「Command」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
   <br>
-  <u>這樣編輯好的內容會適用在網頁上。</u>
+  <u>这样编辑好的內容会适用在网页上。</u>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
   </p>
   <br>
-  用瀏覽器，打開登入的會員的網頁<strong>「<u>0.0.0.0:3000/users/数字</u>」</strong>吧。
+  用浏览器，打开登入的会员的网页<strong>「<u>0.0.0.0:3000/users/数字</u>」</strong>吧。
   <br>
   <small>
-  <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開<strong>「<u>localhost:3000/users/數字</u>」</strong>吧。
+  <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开<strong>「<u>localhost:3000/users/数字</u>」</strong>吧。
   </small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
               :target => ["_blank"] %>
-  有沒有在右邊顯示，登入的會員在參加的聊天室了嗎？
+  有沒有在右边显示，登入的会员在参加的聊天室了吗？
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>接着編輯「rooms」資料庫的「index」網頁吧！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>接着编辑「rooms」资料库的「index」网页吧！</strong>
   <br><br>
-  在這裡也在
+  在这里也在
   <strong>
   <ul class="number_ul">
-    <li>操作資料（users_controller.rb）</li>
-    <li>顯示網頁（index.html.erb）</li>
+    <li>操作资料（users_controller.rb）</li>
+    <li>显示网页（index.html.erb）</li>
   </ul>
   </strong>
-  這個兩個文件文件夾設定內容。
+  这个两个文件文件夾设定內容。
   <br><br>
-  <i class="fa fa-arrow-right"></i>　<strong>那麽從資料操作開始做吧！</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>那么从资料操作开始做吧！</strong>
   <br><br>
-  編輯<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>吧！
+  编辑<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（編輯第21行）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（编辑第21行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -858,20 +858,20 @@
 </tr>
 </table>
   <br>
-  這樣設定好，<strong>選擇「current_user」在拿的<u>「entries」資料</u></strong>了！
+  这样设定好，<strong>选择「current_user」在拿的<u>「entries」资料</u></strong>了！
   <hr class="red-hr">
-  <i class="fa fa-arrow-right"></i>　<strong>接着做網頁顯示吧！</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>接着做网页显示吧！</strong>
   <br><br>
-  用上面設定的<strong>「@entries」</strong>顯示聊天室的內容吧！
+  用上面设定的<strong>「@entries」</strong>显示聊天室的內容吧！
   <br>
-  編輯<strong>「<u>app > views > rooms > index.html.erb</u>」</strong>的內容吧！
+  编辑<strong>「<u>app > views > rooms > index.html.erb</u>」</strong>的內容吧！
   <br><br>
-  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（編輯第3〜6行）</strong>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb（编辑第3〜6行）</strong>
   <br>
   <small>
-    ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
     <br>
-    <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
   </small>
   <br><br>
 <table class='highlight'>
@@ -885,61 +885,61 @@
 7
 8
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;聊天室一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;聊天室一览&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class="remarkable-code"><span class='code-line'>&lt;% @entries.each <span class="word-red">do</span> |e| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= e.room_id %&gt;"</span>&gt;&lt;%= e.room.name %&gt;&lt;/<span class='word-red'>a</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span></span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span> <span class="word-green">class</span>=<span class='word-yellow'>"btn btn-primary"</span></span>&gt;返回&lt;%= current_user.family_name %&gt; &lt;%= current_user.first_name %&gt;的資料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span> <span class="word-green">class</span>=<span class='word-yellow'>"btn btn-primary"</span></span>&gt;返回&lt;%= current_user.family_name %&gt; &lt;%= current_user.first_name %&gt;的资料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
   <br>
-  在這裡也把<strong>「<u>@entries</u>」</strong>分成一個一個的資料<strong>「e」</strong>，之後顯示這個資料「e」。
+  在这里也把<strong>「<u>@entries</u>」</strong>分成一个一个的资料<strong>「e」</strong>，之后显示这个资料「e」。
   <hr class="red-hr">
-  <i class="fa fa-play-circle"></i>　<strong>到這裡，看看可不可以顯示！</strong>
+  <i class="fa fa-play-circle"></i>　<strong>到这里，看看可不可以显示！</strong>
   <br><br>
-  <strong><u>一起點擊「Command」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+  <strong><u>一起点击「Command」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
   <br>
-  <u>這樣編輯好的內容會適用在網頁上。</u>
+  <u>这样编辑好的內容会适用在网页上。</u>
   <br><br><br>
   <p class="alert alert-success">
-  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的話、
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
   <br>
-  　<u>一起點擊「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打開的服務器之後，再打入<u>「rails s」</u>吧。</strong>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
   </p>
   <br>
-  在瀏覽器上，打開「rooms」資料庫的「index」網頁「<a href="http://0.0.0.0:3000/rooms" target="_blank"><strong>0.0.0.0:3000/rooms</strong></a>」吧。
+  在浏览器上，打开「rooms」资料库的「index」网页「<a href="http://0.0.0.0:3000/rooms" target="_blank"><strong>0.0.0.0:3000/rooms</strong></a>」吧。
   <br>
   <small>
-  <i class="fa fa-windows color-blue"></i>　使用Windows的話，打開「<a href="http://localhost:3000/rooms" target="_blank"><strong>localhost:3000/rooms</strong></a>」吧。
+  <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/rooms" target="_blank"><strong>localhost:3000/rooms</strong></a>」吧。
   </small>
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
               :target => ["_blank"] %>
-  有沒有顯示上面圖像一樣的畫面嗎？
+  有沒有显示上面图像一样的画面吗？
   <hr class="red-hr">
   <strong>
-  這樣聊天室大概作好了。
+  这样聊天室大概作好了。
   <br><br>
-  但是好不容易作好「<u>entries</u>」資料，
+  但是好不容易作好「<u>entries</u>」资料，
   <br>
-  但是現在誰都可以看全部的聊天。這個應該有一點不好啊。
+  但是現在谁都可以看全部的聊天。这个应该有一点不好啊。
   <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
                         :width => "90%",
                         :class => "hover_img textbook-title-img"),
               "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
               :target => ["_blank"] %>
-  <i class="fa fa-play-circle"></i>　接着做聊天的檢查吧。如果沒有參加聊天室的會員想看聊天的時候，顯示
+  <i class="fa fa-play-circle"></i>　接着做聊天的检查吧。如果沒有参加聊天室的会员想看聊天的时候，显示
   </strong>
-  <p class="alert alert-danger" style="margin-top:20px;">無效的會員</p>
+  <p class="alert alert-danger" style="margin-top:20px;">无效的会员</p>
   <strong>
   的通知。
   </strong>
   <br><br>
-  <i class="fa fa-arrow-right"></i>　<strong>設定的內容，<a href="/zh-CN/codes/c_5" target="_blank">請參考這裡</a>。</strong>
+  <i class="fa fa-arrow-right"></i>　<strong>设定的內容，<a href="/zh-CN/codes/c_5" target="_blank">请参考这里</a>。</strong>
 </h4>
