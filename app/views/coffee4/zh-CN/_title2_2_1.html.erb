@@ -1,0 +1,90 @@
+<h4 id="coffee-chapter4-2-2-1">
+  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 编辑资料库</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>首先在资料库里追加图像的框子吧。</strong>
+  <br><br>
+  为了追加设定图像的框子，在terminal上打入
+  <br><br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g paperclip user image</span>
+</td>
+</tr>
+</table>
+  <br>
+  的命令。
+  <br>
+  这样作好了，<strong>「<u>users</u>」资料库里追加「<u>image</u>」的框子的设定文件「<u>日子_add_attachment_image_to_users.rb</u>」</strong>。
+  <br>
+  <small>※　「image」的框子，可以使用「photo」这样子自己喜欢的名字。</small>
+  <hr class="red-hr">
+  看看作好的設定文件吧。
+  <br>
+  打开<strong>「<u>db > migrate > 日子_add_attachment_image_to_users.rb</u>」</strong>，看看內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日子_add_attachment_image_to_users.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>AddAttachmentImageToUsers <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>self.up</span></span>
+<span class='code-line'>    change_table <span class='word-purple'>:users</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'>      t.attachment <span class='word-purple'>:image</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>self.down</span></span>
+<span class='code-line'>    remove_attachment <span class='word-purple'>:users</span>, <span class='word-purple'>:image</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  为了适用这个设定，在terminal上打入
+  <br><br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个命令吧！
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　不动的话，在前面追加<strong>「bundle exec」</strong>，打入<strong>「bundle exec rake ...」</strong>吧。
+  </small>
+  <br><br>
+  这样，资料库的设定好了！
+  <br>
+  用<strong><u>Sequel Pro</u></strong>看看资料库有沒有作好！
+  <br>
+  <small>※　打开Sequel Pro的方法，<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  在<strong>「created_at」「updated_at」</strong>的后面，
+  <br>
+  有沒有追加<strong>「<u>image</u>」的框子</strong>吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sequel_Pro_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sequel_Pro_images.png",
+              :target => ["_blank"] %>
+</h4>

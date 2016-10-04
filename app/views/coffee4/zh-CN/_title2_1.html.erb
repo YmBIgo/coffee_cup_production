@@ -1,0 +1,89 @@
+<h4 id="coffee-chapter4-2-1">
+  <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 上载图像是怎么做呢？</strong></p>
+  <br>
+  使用<strong>「<u>Paperclip</u>」</strong>上载图像是要怎么做呢？
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>在这里再看看网站上的动作吧。</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　
+  <strong>
+  首先打开「<u>users</u>」资料库的「<u>edit</u>」网页，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_image.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_image.png",
+              :target => ["_blank"] %>
+  打开图像的输入框选择图像，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_select_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_select_images.png",
+              :target => ["_blank"] %>
+  点击 <a class="btn btn-primary">登录</a> 之后，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_upload_image.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_upload_image.png",
+              :target => ["_blank"] %>
+  会上面图像会显示。
+  </strong>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>那么，图像是在哪里保存呢？</strong>
+  <br><br>
+  这些图像在<strong>「<u>public > system</u>」</strong>里保存。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sublime_Text_public_system_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sublime_Text_public_system_images.png",
+              :target => ["_blank"] %>
+  网页上显示，在这里保存的图像。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>接着解释，显示保存的图像的方法。</strong>
+  <br><br>
+  为了用会员资料显示图像，在<strong>「<u>users</u>」资料库里</strong>追加<u>保存图像的名字的框子</u>，
+  <br><br>
+  <strong>users</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.6em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">image_file_name</th>
+        <th style="background-color: #f2dede;">image_content_type</th>
+        <th style="background-color: #f2dede;">image_file_size</th>
+        <th style="background-color: #f2dede;">image_updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center" style="font-size:0.6em">
+      <tr>
+        <td style="background-color: #f2dede;">sample.jpg</td>
+        <td style="background-color: #f2dede;">image/jpeg</td>
+        <td style="background-color: #f2dede;">164788</td>
+        <td style="background-color: #f2dede; font-size:11px;">2016-04-25 04:45:48</td>
+      </tr>
+    </tbody>
+  </table>
+  使用这样的框子，显示图像。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>例如说，「<u>id</u>」是「1」的会员的话，</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sublime_Text_public_system.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sublime_Text_public_system.png",
+              :target => ["_blank"] %>
+  图像会保存在<strong>「<u>public > system > users > images > 000 > 000 > <span class="color-red">001</span> > medium > 图像的名字</u>」</strong>里面。
+  <br><br>
+  上面的<strong>「<u>图像的名字</u>」</strong>里放追加的<strong>「image_file_name」的框子</strong>的內容，显示图像。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>途中有「<u>medium</u>」的文件夾，这个是设定<u>图像的大小</u>。</strong>
+  <br><br>
+  图像的大小，在这里设定
+  <strong>
+    <ul class="number_ul">
+      <li>original（原來的大小）</li>
+      <li>medium（中）</li>
+      <li>thumb（小）</li>
+    </ul>
+  </strong>
+  这个三个，在各个文件夾里保存图像文件。
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>那么用用看「<u>Paperclip</u>」吧！</strong>
+</h4>
