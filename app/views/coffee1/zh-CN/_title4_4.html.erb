@@ -1,0 +1,706 @@
+<h4 id="coffee-chapter1-4-4">
+  <p id="title4-4" class="fix-link-nav"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">④ : 作会员网页</strong></p>
+  <br>
+  <strong>最后作作看用「users」资料库作的网页吧。</strong>
+  <hr class="red-hr">
+  设定用资料库的网页的话，需要做
+  <strong>
+    <ul class="number_ul">
+      <li>七个网页的设定（routes.rb）</li>
+      <li>操作资料的设定（controller）</li>
+      <li>显示网页的设定（views）</li>
+    </ul>
+  </strong>
+  这个三个设定。
+  <br><br>
+  首先为了<strong><u>作「users」资料库的资料操作・网页显示的设定文件</u></strong>，在terminal上打入下面的命令。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/10#title3-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller users</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样作好
+  <strong>
+  <ul class="number_ul">
+    <li>资料操作的设定文件「<u>app > controllers > users_controller.rb</u>」</li>
+    <li>显示网页的设定文件夾「<u>app > views > users</u>」</li>
+  </ul>
+  </strong>
+  这两个了。
+  <br>
+  在这个文件文件夾上，设定內容。
+  <hr class="red-hr">
+  应为<u>「devise」会作好会员资料</u>，所以「users」资料库里设定
+  <strong>
+  <ul class="number_ul">
+    <li><a href="/zh-CN/mugcups/10#title3-2-1" target="_blank">show</a></li>
+    <li><a href="/zh-CN/mugcups/10#title3-2-2" target="_blank">index</a></li>
+    <li><a href="/zh-CN/mugcups/10#title3-2-3" target="_blank">edit</a></li>
+    <li><a href="/zh-CN/mugcups/10#title3-2-4" target="_blank">update</a></li>
+  </ul>
+  </strong>
+  这个四个內容
+  <br><br>
+  所以在显示网页的设定文件夾<strong>「<u>app > views > users</u>」</strong>里，保存
+  <strong>
+  <ul class="number_ul">
+    <li>show.html.erb</li>
+    <li>index.html.erb</li>
+    <li>edit.html.erb</li>
+    <li>update.html.erb</li>
+  </ul>
+  </strong>
+  这个四个文件吧（保存文件的方法<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>请参考这里</strong></a>）
+  <br><br>
+  <strong>到这里做好之后，首先设定「七个网页的设定」吧！</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>七个网页的设定</strong>
+  <br><br>
+  「七个网页的设定」要在<strong>「<u>config > routes.rb</u>」</strong>里追加设定。编辑<strong>「<u>routes.rb</u>」</strong>的內容吧！
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/10#title3-1" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>routes.rb（追加第6行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6</strong>
+7
+8
+9
+...
+62
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  devise_for <span class='word-purple'>:users</span></span>
+<span class='code-line'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:users</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这样设定好了<strong><u>使用「users」资料库的「show」「index」「edit」「update」网页的设定</u></strong>了！
+  <br><br>
+  那么，在各个网页上追加设定吧！
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>show网页</strong>
+  <br><br>
+  要设定网页的时候，需要
+  <strong>
+  <ul class="number_ul">
+    <li>操作资料的设定（<u>users_controller.rb</u>）</li>
+    <li>显示网页的设定（<u>html.erb</u>）</li>
+  </ul>
+  </strong>
+  这个两个设定。
+  <hr class="red-hr">
+  首先从<u>操作资料的设定</u>开始做吧。在<strong>「<u>app > controllers > users_controller.rb</u>」</strong>里追加资料操作的设定。
+  <br><br>
+  编辑<strong>「<u>users_controller.rb</u>」</strong>的內容吧。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/10#title3-2-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第3〜7行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5
+6
+7</strong>
+8
+9
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line remarkable-code'></span>
+<span class='code-line remarkable-code'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line remarkable-code'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里追加了
+  <strong>
+  <ul class="number_ul">
+  <li>设定在「<u>show.html.erb</u>」显示的标记「<u>@user</u>」</li>
+  <li>设定不让沒登入的会员看內容（<a href="/zh-CN/mugcups/10#title3-2-5" target="_blank">请参考这里</a>）</li>
+  </ul>
+  </strong>
+  这个两个设定。
+  <hr class="red-hr">
+  接着设定显示网页的设定吧！
+  <br>
+  编辑<strong>「<u>app > views > users > show.html.erb</u>」</strong>的內容吧。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/10#title3-2-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;岁）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回会员资料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑会员资料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <u>显示「@user」的资料</u>以外，
+  <br>
+  <u>用「if」「else」</u>，如果登入的会员跟网页上显示的会员是一样的时候而已，显示
+  <br><br>
+  <a class="btn btn-success">编辑会员资料</a>
+  <br><br>
+  的按钮。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/11#title4-3-1" target="_blank"><strong>请参考这里</strong></a>。</small>
+  <br><br>
+  到这里<u>「show」网页的设定</u>完成了！
+  <br><br>
+  做好这里之后，
+  <br>
+  在<strong>注册网页「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」</strong>裡注册新的会员吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/users/sign_up" target="_blank"><strong>localhost:3000/users/sign_up</strong></a>」吧。
+  </small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up_enter_info.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_sign_up_enter_info.png",
+              :target => ["_blank"] %>
+  作好了之后，看看<strong>会员的网页「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」</strong>吧！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_no_info.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_no_info.png",
+              :target => ["_blank"] %>
+  有沒有显示上面一样的內容吗？
+  <br><br>
+  <strong><u>接着做「index」网页吧！</u></strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>index网页</strong>
+  <br><br>
+  首先从<u>资料操作（controller）</u>开始做吧。
+  <br>
+  编辑<strong>「<u>app > controllers > users_controller.rb</u>」</strong>的內容吧。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/10#title3-2-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第9〜11行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+<strong class="color-red">9
+10
+11</strong>
+12
+13
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line remarkable-code'>    @users = <span class='word-blue'>User</span>.all</span>
+<span class='code-line remarkable-code'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这样子设定好了，<strong><u>网页上显示的标记「@users」</u></strong>。
+  <hr class="red-hr">
+  接着设定显示的网页吧。
+  <br><br>
+  「index」网页的显示，在<strong>「<u>app > views > users > index.html.erb</u>」</strong>文件里设定显示的內容。
+  <br>
+  编辑<strong>「<u>index.html.erb</u>」</strong>的內容吧！
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/10#title3-2-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;会员一览&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @users.each <span class="word-red">do</span> |u| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= u.id %&gt;"</span>&gt;&lt;%= u.family_name %&gt;&lt;%= u.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在这个设定，<strong>把「<u>users_controller.rb</u>」设定的「<u>@users</u>」分成一个一个的內容显示在网页</strong>。
+  <br><br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  做好之后，打开「<a href="http://0.0.0.0:3000/users" target="_blank"><strong>0.0.0.0:3000/users</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/users" target="_blank"><strong>localhost:3000/users</strong></a>」吧。
+  </small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users.png",
+              :target => ["_blank"] %>
+  有沒有显示上面图像一样的网页吗？
+  <br><br>
+  <strong><u>接着做「edit」网页吧</u></strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>edit网页</strong>
+  <br><br>
+  首先从资料操作开始做。
+  <br>
+  编辑<strong>「<u>app > controllers > users_controller.rb</u>」</strong>的內容吧。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/10#title3-2-3" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第13〜20行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+10
+11
+12
+<strong class="color-red">13
+14
+15
+16
+17
+18
+19
+20</strong>
+21
+22
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>    @users = <span class='word-blue'>User</span>.all</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"无效的会员"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里也使用<strong><u>「if」「else」</u></strong>，
+  <ul class="number_ul">
+    <strong><li>如果登入的会员跟在显示的会员一样的话，</li></strong>
+    <br>
+    显示网页的內容
+    <br><br>
+    <strong><li>如果登入的會員跟在顯示的會員不一樣的話，</li></strong>
+    <br>
+    移动到<strong>"/"「<a href="http://0.0.0.0:3000/" target="_blank">0.0.0.0:3000</a>」</strong>网页，显示
+    <p class="alert alert-danger" style="margin-top:20px">无效的会员</p>
+  </ul>
+  的设定。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/11#title4-3-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <hr class="red-hr">
+  接下设定网页的显示吧。
+  <br><br>
+  「edit」网页的显示，在<strong>「<u>app > views > users > edit.html.erb</u>」</strong>文件里设定显示的內容。
+  <br>
+  编辑<strong>「<u>edit.html.erb</u>」</strong>的內容吧！
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/10#title3-2-3" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;编辑会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;姓名&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:family_name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:first_name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;年龄&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.number_field <span class="word-purple">:age</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;自我介绍&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:self_introduction</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回会员资料&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  编辑好了之后，打开「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank"><strong>0.0.0.0:3000/users/1/edit</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/users/1/edit" target="_blank"><strong>localhost:3000/users/1/edit</strong></a>」吧。
+  </small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_edit.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_edit.png",
+              :target => ["_blank"] %>
+  有沒有显示上面图像一样的画面吗？
+  <br><br>
+  <strong>接着设定「update」网页的设定吧！</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>update网页</strong>
+  <br><br>
+  在这里的「update」网页里想设定，编辑好了之后
+  <br>
+  不移动到<a href="/zh-CN/mugcups/6#title1-6-2-view" target="_blank"><strong>编辑完成的网页</strong></a>，而移动到<strong>会员编辑的网页「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank">0.0.0.0:3000/users/1/edit</a>」</strong>的设定。
+  <br><br>
+  在「edit」网页上点击「登录」之后，下面像图像一样再显示「edit」的网页。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_update_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_update_after.png",
+              :target => ["_blank"] %>
+  这个是在<strong>资料操作的「controller」文件上使用「<a href="/zh-CN/mugcups/11#title4-3-3" target="_blank">redirect_to</a>」跟「<a href="/zh-CN/mugcups/9#title2-2-2" target="_blank">通知:flash</a>」</strong>设定。
+  <br>
+  那么在<strong>「<u>app > controllers > users_controller.rb</u>」</strong>上面设定內容吧。
+  <br>
+  <small>详细<a href="/zh-CN/mugcups/10#title3-2-4" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第22〜32行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>13
+14
+15
+16
+17
+18
+19
+20
+21
+<strong class="color-red">22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</strong>
+33
+34
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>    else</span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"无效的会员"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>      @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>, <span class='word-purple'>:age</span>))</span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] = <span class='word-yellow'>"会员资料编辑好了"</span></span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"无效的会员"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这一次也用<u>「if」「else」</u>条件判別（详细<a href="/zh-CN/mugcups/11#title4-3-2" target="_blank"><strong>请参考这里</strong></a>）。
+  <hr class="red-hr">
+  「if」「else」里面，新设定了
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>26
+27
+</td>
+<td class='code-content'><span class='code-line'>redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
+<span class='code-line'>flash[<span class='word-purple'>:notice</span>] = <span class='word-yellow'>"会员资料编辑好了"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  的內容。
+  <br><br>
+  可以理解，在第27行显示
+  <p class="alert alert-success" style="margin-top:20px">会员资料编辑好了</p>
+  的內容，
+  <br><br>
+  但是第28行<strong>「<a href="/zh-CN/mugcups/11#title4-3-3" target="_blank">redirect_to</a>」</strong>是移动到哪一个网页呢？
+  <br>
+  应该可以推测，<u>在这里移动到「users」资料库的「edit」网页</u>吧。
+  <br><br>
+  这个「#{@user.id}」跟<strong><u>显示网页的「html.erb」</u></strong>裡
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span>&gt;编辑会员资料&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  显示标记的
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= @user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  一样，显示资料「@user.id」。
+  <hr class="red-hr">
+  这一次的
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  是在「controller」文件显示「@user.id」的设定。
+  <br><br>
+  可是使用<strong>「<u>#{@user.id}</u>」</strong>的显示，也许觉得有一点奇怪。
+  <br>
+  <strong>「""」</strong>里的这个
+<pre>
+#{}
+</pre>
+  大概可以说是，跟<u>「html.erb」文件</u>的
+<pre>
+&lt;%= %&gt;
+</pre>
+  一样的设定。
+  <br><br>
+  如果不用「#{}」的话，「""」里的「@user.id」的部分不会换成会员的号码
+  <br>
+  会移动到<strong>「<a href="http://0.0.0.0:3000/users/@user.id/edit" target="_blank">0.0.0.0:3000/users/@user.id/edit</a>」</strong>的网页。
+  <br><br>
+  <strong>如果资料操作的文件的「""」里面使用像「@user」一样的编辑的时候，用「#{}」显示资料。</strong>
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>使用「<a href="/zh-CN/mugcups/11#title4-3-3" target="_blank">redirect_to</a>」移动到「posts」资料库的「show」网页的设定要怎么设定好呢？</strong>
+  <br><br>
+  <input type="input" class="form-control input-code" placeholder="打入答案">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>redirect_to <span class='word-yellow'>"/posts/#{@post.id}/edit"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  做好之后，打开「<a href="http://0.0.0.0:3000/users/1/edit" target="_blank"><strong>0.0.0.0:3000/users/1/edit</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/users/1/edit" target="_blank"><strong>localhost:3000/users/1/edit</strong></a>」吧。
+  </small>
+  <br><br>
+  <strong><u>打入资料之后点击「登录」吧！</u></strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_update_after.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_users_1_update_after.png",
+              :target => ["_blank"] %>
+  有沒有显示上面图像一样的网页吗？
+  <br>
+  接着在<strong>「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」</strong>的网页看看內容有沒有更改！
+  <br><br>
+  最后<strong>「<u>update.html.erb</u>」</strong>不用使用了，所以删除吧。
+  <br><br>
+  <strong>设定的內容<a href="/zh-CN/codes/c_1#title1-4" target="_blank">请参考这里</a>吧。</strong>
+</h4>

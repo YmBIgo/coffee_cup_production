@@ -1,0 +1,146 @@
+<h4 id="coffee-chapter2-2-2-1">
+  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : messsages_controller.rb</strong></p>
+  <br>
+  首先从<strong>「messages_controller.rb」的「<a href="/zh-CN/mugcups/6#title1-4" target="_blank">新增资料（create）</a>」</strong>开始做。
+  <br><br>
+  打开<strong>「<u>app > controllers > messages_controller.rb</u>」</strong>之后，编辑內容吧。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5
+6
+7
+8</strong>
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>MessagesController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:receiver</span>, <span class='word-purple'>:content</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+<span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  说明里面的內容吧！
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>事先第3行</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>3
+</td>
+<td class='code-content'><span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>]</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个是<strong><u>只让登入的会员显示网页的设定</u></strong>。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/9#title2-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br>
+  这一次只在「messages」资料库的「create」里设定这个限制。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>接下第6行</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>  @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:receiver</span>, <span class='word-purple'>:content</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个<strong>「Message.create(...)」</strong>在新增资料。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/6#title1-3" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>  .merge(<span class='word-purple'>:user_id</span> => current_user.id)</span>
+</td>
+</tr>
+</table>
+  <br>
+  在设定<strong>「user_id」里放，在登入的会员「<a href="/zh-CN/mugcups/10#title3-3-3" target="_blank">current_user</a>」的「id」的內容</strong>。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/11#title4-2-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>最后第7行</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里，使用<strong>「<a href="/zh-CN/mugcups/11#title4-3-3" target="_blank">redirect_to</a>」</strong>做网页移动。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/11#title4-3-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  这一次使用<strong>「<u>:back</u>」</strong>的设定。这个<strong>「<u>:back</u>」</strong>在设定上一个网页。
+  <br>
+  所以
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  是移动到上页的设定。
+  <hr class="red-hr">
+  这一次的网页是，在输入框打入讯息，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+              :target => ["_blank"] %>
+  点击登录按钮之后，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+              :target => ["_blank"] %>
+  会移动到上一个网页。所以设定
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这样的內容。
+  <br><br>
+  <strong>接着设定「users_controller.rb」的內容。</strong>
+</h4>

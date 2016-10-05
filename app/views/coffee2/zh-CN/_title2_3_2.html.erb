@@ -1,0 +1,597 @@
+<h4 id="coffee-chapter2-2-3-2">
+  <p id="title2-3-2" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : 显示讯息</strong></p>
+  <br>
+  在这里编辑<strong>「<u>users</u>」资料库的「<u>show.html.erb</u>」</strong>的內容，显示讯息。
+  <br><br>
+  讯息的显示用，在<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">显示全部的资料（index）</a>」</strong>说明的反覆资料的方法做。
+  <br><br>
+  首先用Sublime Text打开，<strong>「<u>app > views > users > show.html.erb</u>」</strong>之后，编辑內容吧！
+  <br>
+  <small>※　打开Sublime Text的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第8〜12行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6
+7
+8
+9
+10
+11
+12</strong>
+13
+14
+15
+16
+17
+18
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;岁）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;留言板&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= <span class="word-blue">User</span>.find(m.user_id).id %&gt;"</span></span>&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;的讯息&lt;/<span class='word-red'>h5</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回会员资料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑会员资料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  那么说明里面的內容吧！
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>首先第8行跟第12行的</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第8行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  跟
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第12行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  之间<strong>显示选择「<u>messages</u>」资料库的资料</strong>。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/5#title1-2-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  把<strong>「<u>users_controller.rb</u>」里设定的「<u>@messages</u>」</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（第5〜9行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+<strong class="color-red">7</strong>
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user <span class='word-red'>=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line remarkable-code'>    @messages <span class='word-red'>=</span> <span class='word-blue'>Message</span>.where(<span class='word-purple'>:receiver</span> => @user.id)</span>
+<span class='code-line'>    @message <span class='word-red'>=</span> <span class="word-blue">Message</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>分成一个一个的资料「m」</strong>，在第8～12行之间显示內容。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/5#title1-2-1" target="_blank"><strong>请参考这里</strong></a>。</small>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>接着设定第9〜11行。</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第9〜11行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= <span class="word-blue">User</span>.find(m.user_id).id %&gt;"</span></span>&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;的讯息&lt;/<span class='word-red'>h5</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里做
+  <strong>
+  <ul class="number_ul">
+    <li>显示分成的「m」</li>
+    <li>使用「m」的「user_id」，显示作讯息的会员的资料</li>
+  </ul>
+  </strong>
+  这个两个。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/5#title1-2-1" target="_blank"><strong>请参考这里</strong></a></small>
+    <hr class="red-hr">
+  但是，这个
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第9行）</strong>
+<table class="highlight">
+<tr>
+<td class="code-line-no text-center">9</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= <span class="word-blue">User</span>.find(m.user_id).id %&gt;"</span></span>&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(m.user_id).first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;的讯息&lt;/<span class='word-red'>h5</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  的设定，不会觉得有一点长又麻烦吗（特别是<strong>「User.find...」</strong>的部分）？
+  <br><br>
+  像这一次的<strong>「<u>messages</u>」资料库</strong>一样
+  <br><br>
+  <strong>messages</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>receiver</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>192</td>
+      <td style="font-size:15px">你好</td>
+      <td style="background-color: #f2dede;">91</td>
+      <td>20</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      </tr>
+    </tbody>
+  </table>
+  如果资料库的框子里有，跟別的资料库关联的框子的话（在这里是<strong>「<u>messages</u>」资料库的「<u>user_id</u>」</strong>）、
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（9行目）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>9
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= m.user.id %&gt;"</span></span>&gt;&lt;%= m.user.family_name %&gt;&lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;的讯息&lt;/<span class='word-red'>h5</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  可以这样设定。
+  <br>
+  显示<strong>分成作的「<u>messages</u>」资料「<u>m</u>」的「<u>user</u>」的「<u>id</u>」</strong>，应该很容易理解。
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>但是这样子而已设定还不会适用，在这里追加设定。</strong>
+  <hr class="red-hr">
+  为了追加设定，在<strong>「<u>app > models</u>」</strong>文件夾里的文件裡追加几个设定。
+  <br><br>
+  首先看<strong>「<u>app > models</u>」</strong>文件夾吧！
+  <br>
+  里面有
+  <strong>
+  <ul class="number_ul">
+    <li>「concerns」文件夾</li>
+    <li>「<u>user.rb</u>」文件</li>
+    <li>「<u>message.rb</u>」文件</li>
+  </ul>
+  </strong>
+  这个三个设定文件。
+  <br><br>
+  里面的两个文件是，<strong>作资料库设定文件的时候</strong>，
+  <br><br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise user</span>
+</td>
+</tr>
+</table>
+  <br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model message</span>
+</td>
+</tr>
+</table>
+  <br>
+  自动作好的设定文件。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>那么，追加设定吧！</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= m.user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  要适用这些设定要在<strong>「<u>user.rb</u>」跟「<u>message.rb</u>」</strong>文件里设定下面的內容。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>user.rb（追加第7行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+<strong class="color-red">7</strong>
+8
+9
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>User <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'>  <span class='word-gray'># Include default devise modules. Others available are:</span></span>
+<span class='code-line'>  <span class='word-gray'># :confirmable, :lockable, :timeoutable and :omniauthable</span></span>
+<span class='code-line'>  devise <span class='word-purple'>:database_authenticatable</span>, <span class='word-purple'>:registerable</span>,</span>
+<span class='code-line'>         <span class='word-purple'>:recoverable</span>, <span class='word-purple'>:rememberable</span>, <span class='word-purple'>:trackable</span>, <span class='word-purple'>:validatable</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  has_many <span class='word-purple'>:messages</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>message.rb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>Message <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  belongs_to <span class='word-purple'>:user</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>那么解释里面的內容吧！</strong>
+  <br><br>
+  上面的內容是，像这一次的<strong>「<u>user</u>」跟「<u>message</u>」</strong>一样，
+  <br><br>
+  在<strong>一个资料库的资料（这一次是「<u>users</u>」）可以<u>拿复数的別的资料库的资料</u>（这一次是「<u>messages</u>」）时候，
+  <br>
+  选择资料的设定。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right color-red"></i>　<strong>设定方法是，</strong>
+  <ul class="number_ul">
+    <br>
+    <strong><li>框子的设定</li></strong>
+    <br>
+    <strong>上级的资料库（可以从別的资料库里拿复数资料的资料库）不用更改
+    <br>
+    下级的资料库里追加<u>「上级的资料库的名字（单数）_id」的框子</u>。</strong>
+    <br><br>
+  <strong>messages</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>receiver</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>192</td>
+      <td style="font-size:15px">你好</td>
+      <td style="background-color: #f2dede;">91</td>
+      <td>20</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      </tr>
+    </tbody>
+  </table>
+    <strong><li>上级的资料库（这一次是「<u>users</u>」）</li></strong>
+    <br>
+    在<strong>「<u>app > models > 资料库的名字（单数）.rb</u>」</strong>里追加下面的內容。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>has_many <span class='word-purple'>:下级的资料库的名字（复数）</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>下级的资料库（这一次是「<u>messages</u>」）</li></strong>
+    <br>
+    <strong>「<u>app > models > 资料库的名字（单数）.rb</u>」</strong>里追加下面的內容。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>belongs_to <span class='word-purple'>:上级的资料库的名字（单数）</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  </ul>
+  <strong>这样设定。</strong>
+  <hr class="red-hr">
+  在上面设定
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= m.user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  可以<u>从「messages」资料库选择作讯息的「users」的资料</u>，
+  <br>
+  <strong>
+  相反的也可以<u>从「users」资料库选择会员作的「messages」的资料</u>。
+  </strong>
+  <br><br>
+  要设定这个，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @messages <span class="word-red">=</span> @user.messages</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样设定。在<strong>选择的「users」资料库的资料后面追加「.messages」（<u class="color-red">复数</u>）</strong>。
+  <hr class="red-hr">
+  <i class="fa fa-question-circle color-green"></i>　<strong>那么如果，像下面<u>在拿复数的「posts」资料库的资料的「users」资料库</u>里，设定</strong>
+  <br><br>
+  <strong>posts</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>192</td>
+      <td style="font-size:15px">晚安</td>
+      <td style="background-color: #f2dede;">91</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>users</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+        <th>id</th>
+        <th>family_name</th>
+        <th>first_name</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>91</td>
+      <td>山田</td>
+      <td>太郎</td>
+      <td style="font-size:11px;">2016-02-02 10:42:18</td>
+      <td style="font-size:11px;">2016-02-02 16:42:18</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>从@post选择会员资料</strong></p>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@user <span class="word-red">=</span> @post.user</span>
+</td>
+</tr>
+</table>
+  <br>
+  <p><i class="fa fa-arrow-right color-red"></i>　<strong>从@user选择投稿资料</strong></p>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@posts <span class="word-red">=</span> @user.posts</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>
+  的话，
+  <ul class="number_ul">
+    <li>「<u>app > models > post.rb</u>」</li>
+    <li>「<u>app > models > user.rb</u>」</li>
+  </ul>
+  里设定怎么样的內容好呢？
+  </strong>
+  <br>
+  <small>※　上面放鼠标，可以看答案。</small>
+  <br><br>
+  <textarea class="form-control input-code" placeholder="打入答案"></textarea>
+  <br>
+  <textarea class="form-control input-code" placeholder="打入答案"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>post.rb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>Post <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code answer-code'>  belongs_to <span class='word-purple'>:user</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>user.rb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>User <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code answer-code'>  has_many <span class='word-purple'>:posts</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  最后，看看设定的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6
+7
+8
+9
+10
+11
+12</strong>
+13
+14
+15
+16
+17
+18
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;岁）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;留言板&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= m.user.id %&gt;"</span></span>&gt;&lt;%= m.user.family_name %&gt;&lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;的讯息&lt;/<span class='word-red'>h5</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回会员资料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑会员资料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>接着<u>设定输入框・按钮的显示</u>吧。</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+              :target => ["_blank"] %>
+</h4>

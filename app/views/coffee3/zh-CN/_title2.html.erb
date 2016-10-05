@@ -1,0 +1,182 @@
+<h2 class="textbook-section-title" id="title2"><strong>2 : 作聊天室</strong></h2>
+<h4 id="coffee-chapter3-2">
+  <strong>设定作聊天室的內容吧！</strong>
+  <hr class="red-hr">
+  作聊天室要在
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  点击上面的图像的 <a class="btn btn-warning">开始聊天</a> 之后，
+  <strong>
+    <ul class="number_ul">
+      <br>
+      <li>作新的「<u>rooms</u>」资料</li>
+      <br>
+      <strong>rooms</strong>
+      <table class="table table-striped" style="width:50%">
+        <thead style="font-size:0.8em">
+          <tr class="active">
+            <th style="background-color: #f2dede;">id</th>
+            <th style="background-color: #f2dede;">name</th>
+            <th style="background-color: #f2dede;">explain</th>
+            <th>created_at</th>
+            <th>updated_at</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="background-color: #f2dede;font-size:12px;">新的聊天</td>
+            <td style="background-color: #f2dede;font-size:12px;">打入说明</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          </tr>
+        </tbody>
+      </table>
+      <i class="fa fa-arrow-right color-red"></i>　<strong>作聊天室「1」</strong>
+      <br><br>
+      <li>作，表示哪一个会员在参加哪一个聊天室的「entries」资料</li>
+      <br>
+      <strong>entries</strong>
+      <table class="table table-striped" style="width:50%">
+        <thead style="font-size:0.8em">
+          <tr class="active">
+            <th style="background-color: #f2dede;">id</th>
+            <th style="background-color: #f2dede;">room_id</th>
+            <th style="background-color: #f2dede;">user_id</th>
+            <th>created_at</th>
+            <th>updated_at</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table table-striped" style="width:50%">
+        <thead style="font-size:0.8em">
+          <tr class="active">
+            <th style="background-color: #f2dede;">id</th>
+            <th style="background-color: #f2dede;">room_id</th>
+            <th style="background-color: #f2dede;">user_id</th>
+            <th>created_at</th>
+            <th>updated_at</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="background-color: #f2dede;">1</td>
+            <td style="background-color: #f2dede;">2</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+            <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          </tr>
+        </tbody>
+      </table>
+      <i class="fa fa-arrow-right color-red"></i>　<strong>表示会员「1」跟「2」在参加聊天室「1」的资料</strong>
+    </ul>
+    <br>
+  </strong>
+  使用这个两个，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  显示这个画面。
+  <br><br>
+  这个网页<strong>「<a href="http://0.0.0.0:3000/rooms/1" target="_blank">0.0.0.0:3000/rooms/1</a>」</strong>是，
+  <br>
+  <strong>显示「rooms」资料库的「id」是「1」的资料的「show」网页</strong>。
+  <br><br>
+  在右边，<strong>显示「<u>messages</u>」资料库的资料</strong>。
+  <br>
+  在左边，<strong>顯示「<u>rooms</u>」资料库的资料跟「<u>entries</u>」资料库里的会员的资料</strong>。
+  <hr class="red-hr">
+  所以，在<strong>「users」资料库的「show」网页</strong>上做
+  <strong>
+  <ul class="number_ul">
+    <li>新增「rooms」资料（create）</li>
+    <li>新增「entries」资料（create）</li>
+  </ul>
+  </strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  在<strong>「rooms」资料库的「show」网页</strong>上做
+  <strong>
+  <ul class="number_ul">
+    <li>显示「rooms」资料（show）</li>
+    <li>显示「entries」资料</li>
+  </ul>
+  </strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  这些设定。
+  <hr class="red-hr">
+  用这个「rooms」资料库，作
+  <strong>
+  <ul class="number_ul">
+    <li>index网页</li>
+    <br>
+    显示全部的「rooms」资料
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                :target => ["_blank"] %>
+    <li>edit</li>
+    <br>
+    打入编辑的「rooms」资料
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_edit.png",
+                :target => ["_blank"] %>
+    <li>update</li>
+    <br>
+    编辑「rooms」
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_update.png",
+                :target => ["_blank"] %>
+  </ul>
+  </strong>
+  这些网页的设定。
+  <hr class="red-hr">
+  在这里做的设定是，
+  <br><br>
+  <strong>
+  <i class="fa fa-arrow-right"></i>　「rooms」资料库
+  <ul class="number_ul">
+    <li>create（在<u>users资料库的「show」网页</u>做）</li>
+    <li>show</li>
+    <li>index</li>
+    <li>edit</li>
+    <li>update</li>
+  </ul>
+  <i class="fa fa-arrow-right"></i>　「entries」资料库
+  <ul class="number_ul">
+    <li>create（在<u>users资料库的「show」网页</u>做）</li>
+    <li>show（在<u>rooms资料库的「show」网页</u>做）</li>
+  </ul>
+  </strong>
+  这些设定。
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>首先从「<u>rooms</u>」资料库开始设定吧！</strong>
+</h4>
+<hr>
+<%= render "coffee3/zh-CN/title2_1" %>

@@ -1,0 +1,53 @@
+<h4 id="coffee-chapter2-2-2-3">
+  <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 总结</strong></p>
+  <br>
+  在这里设定的是，
+  <br>
+  <strong>
+    <ul class="number_ul">
+      <li>redirect_to :back</li>
+      <li>Message.where(条件)</li>
+    </ul>
+  </strong>
+  这个两个设定。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>redirect_to :back</strong>
+  <br><br>
+  为了返回上页，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  使用这个设定。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>Message.where(条件)</strong>
+  <br><br>
+  为了从「messages」资料库选择资料，使用
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>    @messages <span class='word-red'>=</span> <span class='word-blue'>Message</span>.where(<span class='word-purple'>:receiver</span> => @user.id)</span>
+</td>
+</tr>
+</table>
+  <br>
+  的设定。
+  <br><br>
+  这一次的设定是<strong><u>选择跟「receiver」一样的「@user」的「id」的「messages」资料</u></strong>。
+  <hr class="red-hr">
+  <strong>
+  这样做好了资料操作的设定了。
+  <br><br>
+  接着做网页显示的內容吧！
+  </strong>
+  <br><br>
+  <strong>设定的內容<a href="/zh-CN/codes/c_2#title1-3" target="_blank">请参考这里</a>。</strong>
+</h4>

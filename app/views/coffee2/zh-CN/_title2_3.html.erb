@@ -1,0 +1,83 @@
+<h4 id="coffee-chapter2-2-3">
+  <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 网页显示</strong></p>
+  <br>
+  接着做<strong><u>网页显示</u></strong>吧。
+  <hr class="red-hr">
+  网页显示在<strong>「<u>users</u>」资料库的「<u>show.html.erb</u>」</strong>里设定內容。
+  <br>
+  在上面设定的<strong>「<u>messages</u>」资料库的「<u>create</u>」</strong>是，应为使用
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  不会显示网页，所以显示的內容只有<strong>「<u>users</u>」资料库的「<u>show.html.erb</u>」</strong>。
+  <hr class="red-hr">
+  在这里用<strong><u>「messages」资料库</u></strong>，设定
+  <ul class="number_ul">
+    <strong><li>讯息的显示</li></strong>
+    <br>
+    使用<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">显示全部的资料（index）</a>」</strong>说明的反覆显示资料的设定，显示复数的讯息资料「@messages」。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= p.user_id %&gt;"</span>&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).family_name %&gt;&lt;%= <span class="word-blue">User</span>.find(p.user_id).first_name %&gt;様&lt;/<span class='word-red'>a</span>&gt;的投稿&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h3</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.content %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>输入框跟按钮的设定</li></strong>
+    <br>
+    使用<strong>「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">打入新的资料（new）</a>」</strong>上说明的內容，显示资料的输入框・按钮。
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <br>
+  </ul>
+  这些內容吧。
+  <hr class="red-hr">
+  <%= render "coffee2/zh-CN/title2_3_1" %>
+  <hr class="red-hr">
+  <%= render "coffee2/zh-CN/title2_3_2" %>
+  <hr class="red-hr">
+  <%= render "coffee2/zh-CN/title2_3_3" %>
+  <hr class="red-hr">
+  <%= render "coffee2/zh-CN/title2_3_4" %>
+</h4>

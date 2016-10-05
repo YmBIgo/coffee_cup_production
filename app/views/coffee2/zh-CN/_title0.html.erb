@@ -1,0 +1,90 @@
+<h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
+<h4 id="coffee-chapter2-0">
+  <i class="fa fa-bookmark color-red"></i>　
+  <strong>
+  在<a href="/zh-CN/coffee_cups/1" target="_blank">上章</a>作的「message-app」里追加讯息机能。
+  </strong>
+  <hr class="red-hr">
+  使用到这里学习的內容，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+              :target => ["_blank"] %>
+  在各个「show」网页上，作跟上面图像一样<strong><u>会员的留言板</u></strong>吧。
+  <hr class="red-hr">
+  例如说，<strong><u>用「湘南花子」的会员资料，移动到显示「山田太郎」的会员资料的网页的话</u></strong>，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+              :target => ["_blank"] %>
+  会员的资料的下边，会显示留言板。
+  <br><br>
+  在这个网页上打入讯息
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+              :target => ["_blank"] %>
+  打入的讯息
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+              :target => ["_blank"] %>
+  会出现讯息。
+  <br><br>
+  接着用「山田太郎」的会员资料登入，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner.png",
+              :target => ["_blank"] %>
+  可以看到讯息的资料。
+  <br><br>
+  在这里打入讯息
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_input.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_input.png",
+              :target => ["_blank"] %>
+  会出现讯息的內容。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+              :target => ["_blank"] %>
+  <strong><u>在这里使用「messages」资料库的「create」的资料操作</u></strong>，作讯息。
+  <hr class="red-hr">
+  这里的留言板也<strong><u>显示资料库里保存的资料</u></strong>。资料库里面，差不多是下面图像的內容。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Sequel_Pro_messages_database_content.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Sequel_Pro_messages_database_content.png",
+              :target => ["_blank"] %>
+  <strong>
+  资料库的
+  <ul class="number_ul">
+    <li>「user_id」里放，作讯息的会员的「id」</li>
+    <li>「receiver」里放，受到讯息的会员的「id」</li>
+    <li>「content」里放，讯息的內容</li>
+  </ul>
+  使用这些资料，显示资料。
+  </strong>
+  <hr class="red-hr">
+  在这个章设定的內容是，
+  <strong>
+    <ul class="number_ul">
+      <li>设定「messages」资料库（<a href="/zh-CN/mugcups/4" target="_blank">请参考这里</a>）</li>
+      <li>「七个网页中使用哪一些网页」的设定（<a href="/zh-CN/mugcups/5#title1-1-1" target="_blank">请参考这里</a>）</li>
+      <li>资料操作的设定（<a href="/zh-CN/mugcups/5#title1-1-2" target="_blank">请参考这里</a>）</li>
+      <li>显示资料的设定（<a href="/zh-CN/mugcups/5#title1-1-3" target="_blank">请参考这里</a>）</li>
+    </ul>
+  </strong>
+  这个四个设定。
+  <br><br>
+  全部都在「posts」资料库的网页里设定过的內容吧。
+  <br>
+  <strong>那么，开始做吧！</strong>
+</h4>

@@ -1,0 +1,1193 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>Mugcup（基础编）的复习：设定一览</strong></h1>
+          </div>
+          <h4><u><a href="/zh-CN/coffee_cups/1" class="text-left ">Mugcup（基础编）的复习</a></u></h4>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffeecup_header1.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的复习</strong></h2>
+          <h4>
+            <i class="fa fa-bookmark color-red"></i>　<strong>看「Mugcup（基础编）的复习」的设定一览</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 设定一览</strong></h2>
+          <h4 id="code-coffee-1">
+            <strong>
+            在「<a href="/zh-CN/coffee-cups/1" target="_blank">Mugcup（基础编）的复习</a>」设定了
+            <br><br>
+            <ul class="number_ul">
+              <li>作刚开始的「message-app」的网站</li>
+              <li>作主页「<a href="http://0.0.0.0:3000" target="_blank">0.0.0.0:3000</a>」</li>
+              <li>Bootstrap</li>
+              <li>devise</li>
+            </ul>
+            <br>
+            这个四个设定，作「message-app」网站。
+            </strong>
+            <br><br>
+            在这里复习学习的內容。
+            <hr class="red-hr">
+            <ul class="number_ul">
+            <p id="title1-1"><strong><li>作「message-app」</li></strong></p>
+            <br>
+            刚开始，用terminal作「message-app」。打入
+            <br><br>
+            <strong>　terminal</strong>
+            <br>
+            <small>
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+            </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+</td>
+</tr>
+</table>
+          <br>
+          移动到「rails_project」之后，
+          <br><br><br>
+          <p class="alert alert-success">
+          <span><strong><i class="fa fa-windows color-blue"></i>　用Windows移动的方法，<a href="/zh-CN/mugcups/windows_tips#title1-2" target="_blank">请参考这里</a>。</strong></span>
+          </p>
+          <br>
+          <strong><u>在这个「rails_project」文件夾里作「message-app」刚开始的网站。</u></strong>
+          <br><br>
+          <strong>　terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails new message-app -d mysql</span>
+</td>
+</tr>
+</table>
+          <br>
+          <p class="alert alert-success">
+          <strong><i class="fa fa-windows color-blue"></i>　使用Windows的话，打入下面的命令吧。</strong>
+          </p>
+          　<strong>命令提示符</strong>
+<table class="highlight">
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails new message-app</span>
+</td>
+</tr>
+</table>
+          <br><br><br>
+          完了之后做<a href="/zh-CN/mugcups/3#title2-2-1" target="_blank"><strong>工具（gem）的设定跟导入</strong></a>。
+          <br><br>
+          <strong>　terminal</strong>
+          <br>
+          <small>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+          </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          接着做<strong>「<u>资料库的准备</u>」</strong>。
+          <br>
+          「资料库的准备」是，在terminal打入下面的命令。
+          <br><br>
+          <strong>　terminal</strong>
+          <br>
+          <small>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+          </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:create</span>
+</td>
+</tr>
+</table>
+          <br>
+          这样作好了<strong>「<u>message-app_development</u>」的资料库</strong>了。
+          <hr class="red-hr">
+          <p id="title1-2"><strong><li>作主页</li></strong></p>
+          <br>
+          为了作主页的设定文件，打入下面的命令。
+          <br><br>
+          　<strong>terminal</strong>
+          <br>
+          <small>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+          </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller welcome</span>
+</td>
+</tr>
+</table>
+          <br>
+          使用这个命令作好的设定文件
+          <strong>
+            <ul class="number_ul">
+              <li>操作资料的设定文件「<u>app > controllers > welcome_controller.rb</u>」</li>
+              <li>显示网页的设定文件「<u>app > views > welcome</u>」</li>
+            </ul>
+          </strong>
+          里追加设定。
+          <br><br>
+          首先在「route.rb」设定<strong>「七个网页中使用的网页」</strong>。
+          <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>route.rb（追加第3、4行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4</strong>
+5
+6
+7
+8
+...
+60
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line remarkable-code'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          操作资料在<strong>「<u>app > controllers > welcome_controller.rb</u>」</strong>里面设定。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>welcome_controller.rb</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4</strong>
+5
+6
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>WelcomeController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line remarkable-code'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          网页显示，在<strong>「<u>app > views > welcome</u>」</strong>文件夾里保存<strong>「<u>index.html.erb</u>」</strong>文件（保存文件的方法，<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>请参考这里</strong></a>），编辑里面的內容。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>index.html.erb（保存在「<u>app > views > welcome</u>」文件夾）</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center header-content"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;欢迎光临&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          接着在<strong>「<u>app > assets > stylesheets</u>」</strong>里保存「style.scss」，追加下面的內容。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange">/assets/保存好的图像的名字</span>);</span>
+<span class='code-line'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>400</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class="word-blue">-webkit-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-moz-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-o-background-size</span>: cover;</span>
+<span class='code-line'>}</span>
+<span class='code-line'><span class='word-green'>.header-content</span>{</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>75</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class='word-blue'>padding-top</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          最后追加「Bootstrap」的设定。
+          <br><br>
+          　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g bootstrap:install</span>
+</td>
+</tr>
+</table>
+          <br>
+          <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，<a href="/zh-CN/mugcups/windows_tips#title1-4" target="_blank"><strong>请参考这里</strong></a>导入Bootstrap。</small>
+          <hr class="red-hr">
+          <p id="title1-3"><strong><li>Bootstrap</li></strong></p>
+          <br>
+          在<strong>「<u>application.html.erb</u>」</strong>里设定，使用Bootstrap的<a href="/zh-CN/mugcups/css#title2-3" target="_blank"><strong>游览列・navigation-bar</strong></a>的显示。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>application.html.erb</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+<strong class="color-red">11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</strong>
+28
+<strong class="color-red">29</strong>
+30
+<strong class="color-red">31</strong>
+32
+33
+34
+</td>
+<td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>html</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>title</span>&gt;MessageApp&lt;/<span class='word-red'>title</span>&gt;</span>
+<span class='code-line'>  &lt;%= stylesheet_link_tag    <span class="word-yellow">'application'</span>, <span class='word-purple'>media:</span> <span class="word-yellow">'all'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= javascript_include_tag <span class="word-yellow">'application'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= csrf_meta_tags %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse"</span> <span class="word-green">data-target</span>=<span class="word-yellow">"#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;Message-app&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container main-page"</span>&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line remarkable-code'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;</span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          追加这个內容，再追加CSS的设定。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1
+2
+3</strong>
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</td>
+<td class='code-content'><span class='code-line remarkable-code'><span class='word-green'>.main-page</span>{</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>margin-top</span>:<span class='word-blue'><span class='word-purple'>50</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line remarkable-code'>}</span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange">/assets/保存的图像的名字</span>);</span>
+<span class='code-line'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>400</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class="word-blue">-webkit-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-moz-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-o-background-size</span>: cover;</span>
+<span class='code-line'>}</span>
+<span class='code-line'><span class='word-green'>.header-content</span>{</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>75</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class='word-blue'>padding-top</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          <p id="title1-4"><strong><li>devise</li></strong></p>
+          <br>
+          首先从「devise」的安装开始做。
+          <br><br>
+          　<strong>terminal</strong>
+          <br>
+          <small>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+          </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:install</span>
+</td>
+</tr>
+</table>
+          <br>
+          　<strong>terminal</strong>
+          <br>
+          <small>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+          </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise user</span>
+</td>
+</tr>
+</table>
+          <br>
+          编辑，用这个打入作好的<strong>「<u>db > migrate > 日子_devise_create_users.rb</u>」</strong>的內容。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>日子_devise_create_users.rb</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+<strong class="color-red">33
+34
+35
+36</strong>
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>DeviseCreateUsers <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table(<span class='word-purple'>:users</span>)<span class='word-red'> do</span> |t|</span>
+<span class='code-line'>      <span class='word-gray'>## Database authenticatable</span></span>
+<span class='code-line'>      t.string <span class='word-purple'>:email</span>,              <span class='word-purple'>null:</span> <span class="word-purple">false</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>""</span></span>
+<span class='code-line'>      t.string <span class='word-purple'>:encrypted_password</span>, <span class='word-purple'>null:</span> <span class="word-purple">false</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>""</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Recoverable</span></span>
+<span class='code-line'>      t.string   <span class='word-purple'>:reset_password_token</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:reset_password_sent_at</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Rememberable</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:remember_created_at</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Trackable</span></span>
+<span class='code-line'>      t.integer  <span class='word-purple'>:sign_in_count</span>, <span class='word-purple'>default:</span> <span class="word-purple">0</span>, <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:current_sign_in_at</span></span>
+<span class='code-line'>      t.datetime <span class='word-purple'>:last_sign_in_at</span></span>
+<span class='code-line'>      t.string   <span class='word-purple'>:current_sign_in_ip</span></span>
+<span class='code-line'>      t.string   <span class='word-purple'>:last_sign_in_ip</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Confirmable</span></span>
+<span class='code-line'>      <span class='word-gray'># t.string   :confirmation_token</span></span>
+<span class='code-line'>      <span class='word-gray'># t.datetime :confirmed_at</span></span>
+<span class='code-line'>      <span class='word-gray'># t.datetime :confirmation_sent_at</span></span>
+<span class='code-line'>      <span class='word-gray'># t.string   :unconfirmed_email # Only if using reconfirmable</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      <span class='word-gray'>## Lockable</span></span>
+<span class='code-line'>      <span class='word-gray'># t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts</span></span>
+<span class='code-line'>      <span class='word-gray'># t.string   :unlock_token # Only if unlock strategy is :email or :both</span></span>
+<span class='code-line'>      <span class='word-gray'># t.datetime :locked_at</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>:first_name</span></span>
+<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>:family_name</span></span>
+<span class='code-line remarkable-code'>      t.text       <span class='word-purple'>:self_introduction</span></span>
+<span class='code-line remarkable-code'>      t.integer   <span class='word-purple'>:age</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>    add_index <span class='word-purple'>:users</span>, <span class='word-purple'>:email</span>,                <span class='word-purple'>unique:</span> <span class="word-purple">true</span></span>
+<span class='code-line'>    add_index <span class='word-purple'>:users</span>, <span class='word-purple'>:reset_password_token</span>, <span class='word-purple'>unique:</span> <span class="word-purple">true</span></span>
+<span class='code-line'>    <span class='word-gray'># add_index :users, :confirmation_token,   unique: true</span></span>
+<span class='code-line'>    <span class='word-gray'># add_index :users, :unlock_token,         unique: true</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+          <br>
+          编辑好了之后，为了适用內容打入
+          <br><br>
+          　<strong>terminal</strong>
+          <br>
+          <small>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+          </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>bundle install</span>
+</td>
+</tr>
+</table>
+          <br>
+          的內容。
+          <br><br>
+          做好了之后，为了设定显示的內容打入下面的內容。
+          <br><br>
+          　<strong>terminal</strong>
+          <br>
+          <small>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+          </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g devise:views</span>
+</td>
+</tr>
+</table>
+          <br>
+          在这个打入作好的
+          <strong>
+            <ul class="number_ul">
+              <li>注册网页「<u>app > views > devise > registrations > new.html.erb</u>」</li>
+              <li>登入网页「<u>app > views > devise > sessions > new.html.erb</u>」</li>
+            </ul>
+          </strong>
+          里面设定显示的网页的设定。
+          <br><br>
+          注册的网页<strong>「new.html.erb」</strong>的设定是，
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>new.html.erb（编辑第8、16、21、23、25行）</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+12
+13
+14
+15
+<strong class="color-red">16</strong>
+17
+18
+19
+20
+<strong class="color-red">21</strong>
+22
+<strong class="color-red">23</strong>
+24
+<strong class="color-red">25</strong>
+26
+27
+28
+29
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h2</span>&gt;Sign up&lt;/<span class='word-red'>h2</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= form_for(resource, <span class='word-purple'>as:</span> resource_name, <span class='word-purple'>url:</span> registration_path(resource_name)) <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= devise_error_messages! %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:email</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.email_field <span class='word-purple'>:email</span>, <span class='word-purple'>autofocus:</span> <span class='word-purple'>true</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @minimum_password_length %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>em</span>&gt;(&lt;%= @minimum_password_length %&gt; characters minimum)&lt;/<span class='word-red'>em</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.password_field <span class='word-purple'>:password</span>, <span class='word-purple'>autocomplete:</span> <span class="word-yellow">"off"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password_confirmation</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.password_field <span class='word-purple'>:password_confirmation</span>, <span class='word-purple'>autocomplete:</span> <span class="word-yellow">"off"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"actions"</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.submit <span class="word-yellow">"Sign up"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= <span class="word-blue">render</span> <span class='word-yellow'>"devise/shared/links"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+          <br>
+          登入的网页<strong>「new.html.erb」</strong>的设定是
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>new.html.erb</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6</strong>
+7
+8
+9
+10
+<strong class="color-red">11</strong>
+12
+13
+14
+15
+16
+17
+18
+19
+<strong class="color-red">20</strong>
+21
+<strong class="color-red">22</strong>
+23
+24
+25
+26
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h2</span>&gt;Log in&lt;/<span class='word-red'>h2</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= form_for(resource, <span class="word-purple">as:</span> resource_name, <span class="word-purple">url:</span> session_path(resource_name)) do |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:email</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.email_field <span class="word-purple">:email</span>, <span class="word-purple">autofocus:</span> <span class="word-purple">true</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>    &lt;%= f.label <span class='word-purple'>:password</span> %&gt;&lt;<span class='word-red'>br</span> /&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.password_field <span class="word-purple">:password</span>, <span class="word-purple">autocomplete:</span> <span class="word-yellow">"off"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>  &lt;% <span class="word-red">if</span> devise_mapping.rememberable? -%&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"field"</span>&gt;</span>
+<span class='code-line'>      &lt;%= f.check_box <span class='word-purple'>:remember_me</span> %&gt;</span>
+<span class='code-line'>      &lt;%= f.label <span class='word-purple'>:remember_me</span> %&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> -%&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"actions"</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= f.submit <span class="word-yellow">"Log in"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= <span class="word-blue">render</span> <span class='word-yellow'>"devise/shared/links"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+          <br>
+          为了调整输入框的长度，追加CSS的设定。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4
+5
+6</strong>
+7
+...
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.main-page</span>{</span>
+<span class='code-line'>  <span class='word-blue'>margin-top</span>:<span class='word-blue'><span class='word-purple'>50</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+<span class='code-line remarkable-code'><span class='word-green'>.my-form</span>{</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>width</span>:<span class='word-blue'><span class='word-purple'>500</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line remarkable-code'>}</span>
+<span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-gray">/* 省略 */</span></span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          接着，追加<strong>「<a href="/zh-CN/mugcups/css#title2-3" target="_blank">游览列・navigation-bar的设定</a>」</strong>跟<strong>「<a href="/zh-CN/mugcups/9#title2-2-2" target="_blank">通知:flash</a>」</strong>。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第24〜28行跟第36〜43行）</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+<strong class="color-red">24
+25
+26
+27
+28
+29</strong>
+30
+31
+32
+33
+34
+35
+<strong class="color-red">36
+37
+38
+39
+40
+41
+42
+43</strong>
+44
+45
+46
+47
+48
+</td>
+<td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>html</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>title</span>&gt;MessageApp&lt;/<span class='word-red'>title</span>&gt;</span>
+<span class='code-line'>  &lt;%= stylesheet_link_tag    <span class="word-yellow">'application'</span>, <span class='word-purple'>media:</span> <span class="word-yellow">'all'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= javascript_include_tag <span class="word-yellow">'application'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= csrf_meta_tags %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse"</span> <span class="word-green">data-target</span>=<span class="word-yellow">"#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;Message-app&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"登出"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;注册&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;登入&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>        &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container main-page"</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;% <span class="word-red">if</span> notice %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;&lt;%= notice %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">if</span> alert %&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-danger"</span>&gt;&lt;%= alert %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;</span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          最后作了「users」资料库的网页了。首先作设定文件。
+          <br><br>
+          　<strong>terminal</strong>
+          <br>
+          <small>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+          </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller users</span>
+</td>
+</tr>
+</table>
+          <br>
+          在这里作好的
+          <strong>
+            <ul class="number_ul">
+              <li>操作资料的文件「<u>app > controllers > users_controller.rb</u>」</li>
+              <li>显示网页的文件夾「<u>app > views > users</u>」</li>
+            </ul>
+          </strong>
+          里追加设定。
+          <br><br>
+          在<strong>「<u>app > views > users</u>」文件夾</strong>里，保存<strong><u>「show.html.erb」「index.html.erb」「edit.html.erb」</u></strong>文件（保存的方法<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>请参考这里</strong></a>）。
+          <hr class="red-hr">
+          <i class="fa fa-play-circle"></i>　首先在<strong>「<u>route.rb</u>」</strong>里追加「七个网页的设定」。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>route.rb（追加第6行）</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6</strong>
+7
+8
+9
+...
+62
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  devise_for <span class='word-purple'>:users</span></span>
+<span class='code-line'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line remarkable-code'>  resources <span class='word-purple'>:users</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+          <br>
+          <i class="fa fa-play-circle"></i>　接着在<strong>「<u>app > controllers > users_controller.rb</u>」</strong>追加操作资料的设定。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>    @users = <span class='word-blue'>User</span>.all</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>    else</span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"无效的会员"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>    @user = <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>      @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>, <span class='word-purple'>:age</span>))</span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] = <span class='word-yellow'>"编辑好了！"</span></span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"无效的会员"</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+          <br>
+          <i class="fa fa-play-circle"></i>　最后在<strong>「app > views > users」文件夾</strong>里的文件，设定网页的显示。
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;歲）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回会员一览&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑会员资料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+          <br>
+          <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% @users.each <span class="word-red">do</span> |u| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= u.id %&gt;"</span>&gt;&lt;%= u.family_name %&gt;&lt;%= u.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+          <br>
+          <i class="fa fa-file color-red"></i>　<strong>edit.html.erb</strong>
+          <br>
+          <small>
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            <br>
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+          </small>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;编辑会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;姓字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:family_name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;名字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class="word-purple">:first_name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;年龄&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.number_field <span class="word-purple">:age</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;自我介绍&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:self_introduction</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回会员资料&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+            </ul>
+            <hr>
+            <div class="next-page">
+                <a href="/zh-CN/coffee_cups/1" class="btn btn-primary">返回第1章</a>
+            </div>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>Mugcup（基础编）的复习：设定一览</h4></a>
+          <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 设定一览</a>
+          <a href="#title1-1" class="list-group-item">　<small>① : 作「message-app」</small></a>
+          <a href="#title1-2" class="list-group-item">　<small>② : 作主页</small></a>
+          <a href="#title1-3" class="list-group-item">　<small>③ : Bootstrap</small></a>
+          <a href="#title1-4" class="list-group-item">　<small>④ : devise</small></a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

@@ -1,0 +1,226 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>html设定一览</strong></h1>
+          </div>
+          <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header10.jpg",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img") %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
+            <h4>
+              <i class="fa fa-star color-red"></i>　解释html文件里的显示的设定。
+              <hr>
+              html文件上的设定有两个。
+              <strong>
+              <ul class="number_ul">
+                <li>显示文字的设定</li>
+                <li>其他的设定</li>
+              </ul>
+              </strong>
+              在这里解释这个两个设定
+            </h4>
+            <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 显示文字的设定</strong></h2>
+            <h4>
+            在这里解释
+            <ul class="number_ul">
+            <strong><li>「<a href="#html-h1"><u>&lt;h1&gt;</u></a>」显示大的文字</li></strong>
+            <strong><li>「<a href="#html-p"><u>&lt;p&gt;</u></a>」显示普通的文字</li></strong>
+            <strong><li>「<a href="#html-small"><u>&lt;small&gt;</u></a>」显示小的文字</li></strong>
+            </ul>
+            这个三个设定。
+            <hr>
+            <ul class="number_ul">
+              <h1 id="html-h1" class="fix-link-nav"><strong><li>&lt;h1&gt;:显示大的文字</li></strong></h1>
+              <br>
+              大的文字的显示要
+<pre>
+&lt;h1&gt;显示的文字&lt;/h1&gt;
+</pre>
+              这样设定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;显示大的文字&lt;/<span class='word-red'>h1</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+              <br><br>
+              如果是小一点的文字的话使用「&lt;h2&gt;」，<br>更小的文字的话「&lt;h3&gt;」・・・
+              <br>
+              这样最小有「&lt;h6&gt;」。
+              <hr class="red-hr">
+              <p id="html-p" class="fix-link-nav"><strong><li>&lt;p&gt;:显示普通的文字</li></strong></p>
+              <br>
+              显示普通的文字要
+  <pre>
+&lt;p&gt;显示的文字&lt;/p&gt;
+</pre>
+              这样设定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>p</span>&gt;显示普通的文字&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <small id="html-small" class="fix-link-nav"><strong><li>&lt;small&gt;:显示小的文字</li></strong></small>
+              <br>
+              显示小的文字要
+  <pre>
+&lt;small&gt;显示的文字&lt;/small&gt;
+</pre>
+              这样设定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>small</span>&gt;显示小的文字&lt;/<span class='word-red'>small</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+            <hr class="red-hr">
+            </ul>
+            <strong class="little-remarkable">显示的文字就自己试试看吧！</strong>
+            </h4>
+            <br>
+          <h2 class="textbook-section-title" id="title2"><strong>2 : 其他的设定</strong></h2>
+            <h4>
+            解释
+            <strong>
+            <ul class="number_ul">
+              <li>「<a href="#html-hr"><u>&lt;hr&gt;</u></a>」显示线</li>
+              <li>「<a href="#html-br"><u>&lt;br&gt;</u></a>」改行</li>
+              <li>「<a href="#html-a"><u>&lt;a&gt;</u></a>」网页的移动/连接</li>
+              <li>「<a href="#html-div"><u>&lt;div&gt;</u></a>」为了适用CSS的设定</li>
+            </ul>
+            </strong>这些四个设定。
+            <hr>
+            <ul class="number_ul">
+              <p id="html-hr" class="fix-link-nav"><strong><li>&lt;hr&gt;:显示线</li></strong></p>
+              <br>
+              线的显示要
+  <pre>
+&lt;hr&gt;
+</pre>
+              这样设定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <p id="html-br" class="fix-link-nav"><strong><li>&lt;br&gt;:改行</li></strong></p>
+              <br>
+              改行的设定要
+  <pre>
+&lt;br&gt;
+</pre>
+              这样设定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <p id="html-a" class="fix-link-nav"><strong><li>&lt;a&gt;:连接/网页的移动</li></strong></p>
+              <br>
+              连接的设定要
+  <pre>
+&lt;a href="移动到的url"&gt;显示的文字&lt;/a&gt;
+</pre>
+              这样设定。
+              <br><br>
+              详细<a href="/zh-CN/mugcups/5#title1-2-2" target="_blank"><strong>请参考这里</strong></a>
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"http://amazon.com"</span>&gt;Amazon&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              <p id="html-div" class="fix-link-nav"><strong><li>&lt;div&gt;:CSS的设定</li></strong></p>
+              <br>
+              想在复数的地方适用CSS的话，
+  <pre>
+&lt;div&gt;
+  内容
+&lt;/div&gt;
+</pre>
+              使用这个设定。
+              <br><br>
+              <strong>这个「&lt;div&gt;」里面设定「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank">class</a>」，可以在「div」里全部的地方装饰「class」的设定。</strong>
+              <br><br>
+              详细<a href="/zh-CN/mugcups/7#title2-2-1-css-div" target="_blank"><strong>请参考这里</strong></a>
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div </span><span class='word-green'>class</span>=<span class='word-yellow'>"mystyle"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span>&gt;SFC&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;ORF&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>small</span>&gt;SBC&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+            <hr class="red-hr">
+            </ul>
+            <strong>其他还有html 的设定，自己查查看吧！</strong>
+            <hr>
+            </h4>
+          <div class="next-page">
+            <a href="javascript:history.back()" class="btn btn-primary">返回</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <strong>
+      <div id="slide-bar" class="clear-fix">
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>html设定一览</h4></a>
+          <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 显示文字</a>
+          <a href="#html-h1" class="list-group-item"><small>　① : &lt;h1&gt;显示大的文字</small></a>
+          <a href="#html-p" class="list-group-item"><small>　② : &lt;p&gt;显示普通的文字</small></a>
+          <a href="#html-small" class="list-group-item"><small>　③ : &lt;small&gt;显示小的文字</small></a>
+          <a href="#title2" class="list-group-item">2 : 其他的设定</a>
+          <a href="#html-hr" class="list-group-item"><small>　① : &lt;hr&gt;显示线</small></a>
+          <a href="#html-br" class="list-group-item"><small>　② : &lt;br&gt;改行</small></a>
+          <a href="#html-a" class="list-group-item"><small>　③ : &lt;a&gt;移动网页/连接</small></a>
+          <a href="#html-div" class="list-group-item"><small>　④ : &lt;div&gt;设定CSS</small></a>
+        </div>
+      </div>
+      </strong>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

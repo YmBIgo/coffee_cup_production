@@ -1,0 +1,194 @@
+<h2 class="textbook-section-title" id="title3"><strong>3 : 使用Bootstrap吧！</strong></h2>
+<h4 id="coffee-chapter1-3">
+  那么使用「Bootstrap」，设定<a href="/zh-CN/mugcups/css#title2-3" target="_blank"><strong>游览列・navigation-bar</strong></a>吧！
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/7#title2-2-4" target="_blank"><strong>请参考这里</strong></a>吧。</small>
+  <hr class="red-hr">
+  Mac上的Bootstrap的导入，打入
+  <br><br>
+  <strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g bootstrap:install</span>
+</td>
+</tr>
+</table>
+  <br>
+  的內容。
+  <br>
+  沒做好的话，再做一次吧！
+  <br><br>
+  <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，<a href="/zh-CN/mugcups/windows_tips#title1-4" target="_blank"><strong>请参考这里</strong></a>吧。</small>
+  <hr class="red-hr">
+  那么，设定看上面的游览列吧！
+  <br>
+  游览列要在全部的网站上显示，所以在<strong>「<u>app > views > layouts</u>」文件夾里的「<u>application.html.erb</u>」文件</strong>设定內容。
+  <br>
+  编辑<strong>「<u>application.html.erb</u>」</strong>的內容吧。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/7#title2-2-4" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第11〜27、29、30行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+<strong class="color-red">11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</strong>
+28
+<strong class="color-red">29</strong>
+30
+<strong class="color-red">31</strong>
+32
+33
+34
+</td>
+<td class='code-content'><span class='code-line'>&lt;!DOCTYPE html&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>html</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>title</span>&gt;MessageApp&lt;/<span class='word-red'>title</span>&gt;</span>
+<span class='code-line'>  &lt;%= stylesheet_link_tag    <span class="word-yellow">'application'</span>, <span class='word-purple'>media:</span> <span class="word-yellow">'all'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= javascript_include_tag <span class="word-yellow">'application'</span>, <span class='word-yellow'>'data-turbolinks-track'</span> =&gt; <span class='word-purple'>true</span> %&gt;</span>
+<span class='code-line'>  &lt;%= csrf_meta_tags %&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>head</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse"</span> <span class="word-green">data-target</span>=<span class="word-yellow">"#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;Message-app&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container main-page"</span>&gt;</span>
+<span class='code-line'>  &lt;%= <span class="word-red">yield</span> %&gt;</span>
+<span class='code-line remarkable-code'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;/<span class='word-red'>body</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>html</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>这个游览列「<a href="/zh-CN/mugcups/7#title2-2-4" target="_blank">navigation-bar</a>」</strong>的设定以外，还要设定<strong>「<a href="/zh-CN/mugcups/7#title2-2-1" target="_blank">container</a>」跟「main-page」</strong>的內容吧。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/7#title2-2-4" target="_blank"><strong>请参考这里</strong></a>吧。</small>
+  <hr class="red-hr">
+  现在的网页上<strong>「navigation-bar」的地方会盖住图像</strong>，所以设定「main-page」的CSS文件修改內容吧。
+  <br><br>
+  编辑<strong>「<u>style.scss</u>」</strong>的內容。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>style.scss（追加第1〜3行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1
+2
+3</strong>
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</td>
+<td class='code-content'><span class='code-line remarkable-code'><span class='word-green'>.main-page</span>{</span>
+<span class='code-line remarkable-code'>  <span class='word-blue'>margin-top</span>:<span class='word-blue'><span class='word-purple'>50</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line remarkable-code'>}</span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange">/assets/保存的图像的名字</span>);</span>
+<span class='code-line'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>400</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class="word-blue">-webkit-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-moz-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-o-background-size</span>: cover;</span>
+<span class='code-line'>}</span>
+<span class='code-line'><span class='word-green'>.header-content</span>{</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>75</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class='word-blue'>padding-top</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+</tr>
+</table>
+  <br>
+<small>
+  ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+</small>
+<br><br><br>
+<p class="alert alert-success">
+<i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+<br>
+　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+</p>
+  <br>
+  编辑好了之后，打开「<a href="http://0.0.0.0:3000" target="_blank"><strong>0.0.0.0:3000</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000" target="_blank"><strong>localhost:3000</strong></a>」吧。
+  </small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_2.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee1/Chrome_messages_root_2.png",
+              :target => ["_blank"] %>
+  有沒有显示上面的网页了吗？
+  <br><br>
+  <strong>设定的內容<a href="/zh-CN/codes/c_1#title1-3" target="_blank">请参考这里</a>吧。</strong>
+</h4>

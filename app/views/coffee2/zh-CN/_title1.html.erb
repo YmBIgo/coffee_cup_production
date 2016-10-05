@@ -1,0 +1,141 @@
+<h2 class="textbook-section-title" id="title1"><strong>1 : 作资料库</strong></h2>
+<h4 id="coffee-chapter2-1">
+  <strong>为了作留言板，首先作「messages」的资料库吧！</strong>
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>「message」资料库的框子的设定文件要怎么作呢？</strong>
+  <br>
+  <small>※　不知道的话，<a href="/zh-CN/mugcups/4#title1-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <input type="input" class="form-control input-code" placeholder="打入答案">
+  <br>
+  <strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>rails g model message</span>
+</td>
+</tr>
+</table>
+  <br>
+  打入好了吗？
+  <br>
+  <strong>「<u>db > migrate > 日子_create_messages.rb</u>」</strong>是在这里作好的设定文件。
+  <hr class="red-hr">
+  接着在，作好的设定文件上追加內容吧！
+  <br>
+  在这里会作跟下面一样的资料库。
+  <br><br>
+  <strong>messages</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th>user_id</th>
+        <th>receiver</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>192</td>
+      <td>你好</td>
+      <td>91</td>
+      <td>20</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <strong>
+  「<u>user_id</u>」里放作讯息的会员号码「<u>id</u>」，「<u>receiver</u>」里放受到讯息的会员号码「<u>id</u>」。
+  <br>
+  上面的资料是，<u>「id是91」的会员送给「id是20」的会员的「你好」的讯息</u>。
+  <br><br>
+  网络聊天的网站里面是，差不多这样子保存资料。
+  </strong>
+  <hr class="red-hr">
+  用Sublime Text打开，<strong>「<u>db > migrate > 日子_create_messages.rb</u>」</strong>之后，编辑內容吧！（打开Sublime Text的方法<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>）
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/4#title1-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日子_create_messages.rb（追加第5〜7行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6
+7</strong>
+8
+9
+10
+11
+12
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreateMessages < <span class='word-green'>ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:messages</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.text        <span class='word-purple'>:content</span></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:user_id</span></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:receiver</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这个设定在作<strong>放长的文章的「<u>content</u>」，放数字的「<u>user_id</u>」，放数字的「<u>receiver</u>」</strong>。
+  <br><br>
+  设定好了之后，作设定內容的资料库吧！
+  <br>
+  在terminal打入下面的命令吧。
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　不动的话，在前面<strong>「bundle exec」</strong>追加，打入<strong>「bundle exec rake db:migrate」</strong>吧。
+  </small>
+  <br><br>
+  <strong><u>这样子「messages」资料库作好了！</u></strong>
+  <hr class="red-hr">
+  作完这里，<strong><u>用 Sequel Pro / SqliteBrower 看看「messages」资料库的內容吧</u></strong>！
+  <br>
+  <small>※　打开Sequel Pro的方法<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>请参考这里</strong></a>，打开SqliteBrowser的方法<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>请参考这里</strong></a>。</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Sequel_Pro_messages_database.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Sequel_Pro_messages_database.png",
+              :target => ["_blank"] %>
+  <strong>这样做好资料库的设定了，接着做网页的设定吧！</strong>
+  <br><br>
+  <strong>设定的內容<a href="/zh-CN/codes/c_2#title1-1" target="_blank">请参考这里</a>。</strong>
+</h4>

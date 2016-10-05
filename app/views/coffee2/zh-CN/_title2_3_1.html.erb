@@ -1,0 +1,65 @@
+<h4 id="coffee-chapter2-2-3-1">
+  <p id="title2-3-1" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 设定游览列</strong></p>
+  <br>
+  设定之前，首先在<strong><a href="/zh-CN/mugcups/css#title2-3" target="_blank">游览列・navigation-bar</a></strong>上追加移动到「users」资料库的网页的连接。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/7#title2-2-4" target="_blank"><strong>请参考这里</strong></a></small>
+  <hr class="red-hr">
+  游览列在<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>设定內容。
+  <br><br>
+  在这个<strong>「<u>app > views > layouts > application.html.erb</u>」</strong>里追加设定吧！
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/10#title3-3-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>application.html.erb（追加第25、26行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>23
+24
+<strong class="color-red">25
+26</strong>
+27
+28
+29
+30
+31
+31
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> user_signed_in? %&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span>&gt;会员一览&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line remarkable-code'>      &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= current_user.id %&gt;"</span>&gt;&lt;%= current_user.family_name %&gt;&lt;%= current_user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>li</span>&gt;&lt;%= link_to <span class='word-yellow'>"登出"</span>, destroy_user_session_path, <span class="word-purple">:method</span> =&gt; <span class='word-purple'>:delete</span> %&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_up"</span>&gt;注册&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/sign_in"</span>&gt;登入&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>ul</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在这个2行，设定了
+  <strong>
+    <ul class="number_ul">
+      <li>移动到会员一览的连接</li>
+      <li>移动到在登入的会员的网页的连接</li>
+    </ul>
+  </strong>
+  的內容。
+  <br><br>
+  在这个<strong>「<u>移动到在登入的会员的网页的连接</u>」</strong>里显示<strong><u>在登入的会员的名字</u></strong>。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+              :target => ["_blank"] %>
+  <strong>接着设定「messages」资料库的网页显示吧！</strong>
+</h4>

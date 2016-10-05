@@ -1,0 +1,82 @@
+<h4 id="coffee-chapter2-2-2">
+  <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 资料操作</strong></p>
+  <br>
+  接下做<strong><u>资料操作</u></strong>吧。
+  <hr class="red-hr">
+  资料操作在<strong>「<u>messages_controller.rb</u>」「<u>users_controller.rb</u>」</strong>这个两个设定文件上设定。
+  <br><br>
+  <ul class="number_ul">
+    <strong><li>messages_controller.rb上</li></strong>
+    <br>
+    指定「messages」资料库的<strong>「<a href="/zh-CN/mugcups/6#title1-4" target="_blank">新增资料（create）</a>」</strong>的资料操作。
+    <br>
+    <small>※　详细<a href="/zh-CN/mugcups/11#title4-2-1" target="_blank"><strong>请参考这里</strong></a>。</small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:receiver</span>, <span class='word-purple'>:content</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>users_controller.rb上</li></strong>
+    <br>
+    <strong>指定「show」网页的资料操作的设定里</strong>
+    <br><br>
+    设定「messages」资料库的<strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">显示全部的资料（index）</a>」</strong>跟<strong>「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">打入新的资料（new）</a>」</strong>的资料操作。
+    <br><br>
+    <strong>「<a href="/zh-CN/mugcups/5#title1-2" target="_blank">显示全部的资料（index）</a>」</strong>上做，讯息资料的显示
+    <br>
+    <strong>「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">打入新的资料（new）</a>」</strong>上做，新的讯息的输入框的设定。
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+                :target => ["_blank"] %>
+    <hr class="red-hr">
+    讯息资料的显示，用
+    <br>
+    <small>※　详细<a href="/zh-CN/mugcups/5#title1-2" target="_blank"><strong>请参考这里</strong></a></small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @messages <span class="word-red">=</span> <span class='word-blue'>Message</span>.where(指定的条件)</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>※　使用where，选择条件成立的资料。详细<a href="/zh-CN/mugcups/4#title2-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  例：选择「first_name」是「太郎」的资料
+<pre>
+User.where(:first_name => "太郎")
+</pre>
+  <br><br>
+    作输入框跟按钮的资料操作，用
+    <br>
+    <small>※　详细<a href="/zh-CN/mugcups/6#title1-3" target="_blank"><strong>请参考这里</strong></a></small>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.<span class='word-red'>new</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  </ul>
+  这样子的资料操作设定。
+  <br><br>
+  <strong>那么做做看吧！</strong>
+  <hr class="red-hr">
+  <%= render "coffee2/zh-CN/title2_2_1" %>
+  <hr class="red-hr">
+  <%= render "coffee2/zh-CN/title2_2_2" %>
+  <hr class="red-hr">
+  <%= render "coffee2/zh-CN/title2_2_3" %>
+</h4>

@@ -1,0 +1,121 @@
+<h4 id="coffee-chapter2-2-3-4">
+  <p id="title2-3-4" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑷ : 总结</strong></p>
+  <br>
+  这一次设定了
+  <strong>
+  <ul class="number_ul">
+    <li>has_many / belongs_to</li>
+    <li>hidden_field</li>
+  </ul>
+  </strong>
+  <br>
+  的內容。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>has_many / belongs_to</strong>
+  <br><br>
+  如果一个資资料库的资料可以拿別的资料库里的复数的资料的话，
+  <br>
+  为了简单的选择资料，可以使用<strong>「<u>has_many</u>」跟「<u>belongs_to</u>」</strong>的设定。
+  <br><br>
+  适用这一些设定，
+  <br><br>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>在下级的资料库追加框子</strong>
+  <br><br>
+  <strong>messages</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>receiver</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+      <td>192</td>
+      <td style="font-size:15px">你好</td>
+      <td style="background-color: #f2dede;">91</td>
+      <td>20</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      <td style="font-size:11px;">2016-03-02 16:13:52</td>
+      </tr>
+    </tbody>
+  </table>
+  像这样子<strong>追加「上级的资料库的名字（单数）_id」的框子</strong>，
+  <br><br>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>「<u>app > models > 资料库的名字（单数）.rb</u>」</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>上级的资料库的名字（单数）.rb</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>has_many <span class='word-purple'>:下级的资料库的名字（复数）</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>下级的资料库的名字（单数）.rb</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>belongs_to <span class='word-purple'>:上级的资料库的名字（单数）</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  追加这一些內容。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong><u>资料的选择是，</u></strong>
+  <ul class="number_ul">
+  <br>
+  <li><strong>选择作讯息的会员资料</strong></li>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @user <span class="word-red">=</span> @message.user</span>
+</td>
+</tr>
+</table>
+  <br>
+  <li><strong>选择会员作的讯息资料</strong></li>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  @messages <span class="word-red">=</span> @user.messages</span>
+</td>
+</tr>
+</table>
+  <br>
+  </ul>
+  这样选择资料。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>hidden_field</strong>
+  <br><br>
+  不用打入的资料要
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>  &lt;%= f.hidden_field <span class="word-purple">:receiver</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样设定。
+  <br><br>
+  <strong>这一次设定<u>「:receiver」里放「@user」的「id」</u>的內容。</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>设定的內容，<a href="/zh-CN/codes/c_2#title1-4" target="_blank">请参考这里</a>。</strong>
+</h4>

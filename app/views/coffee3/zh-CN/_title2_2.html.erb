@@ -1,0 +1,137 @@
+<h4 id="coffee-chapter3-2-2">
+  <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : 新增・显示「entries」资料</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>那么，设定「entries」资料的新增・显示吧！</strong>
+  <hr class="red-hr">
+  在这里设定
+  <strong>
+  <ul class="number_ul">
+    <li>「users」的「show」网页上，<u>新增「entries」资料（create）</u></li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                :target => ["_blank"] %>
+    点击 <a class="btn btn-warning">开始聊天</a> 会新增「entries」资料
+    <br><br>
+    <strong>entries</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+          <th style="background-color: #f2dede;">id</th>
+          <th style="background-color: #f2dede;">room_id</th>
+          <th style="background-color: #f2dede;">user_id</th>
+          <th>created_at</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+          <th style="background-color: #f2dede;">id</th>
+          <th style="background-color: #f2dede;">room_id</th>
+          <th style="background-color: #f2dede;">user_id</th>
+          <th>created_at</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">2</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        </tr>
+      </tbody>
+    </table>
+    <i class="fa fa-arrow-right"></i>　哪一个会员在参加哪一个聊天室的资料。
+    <br><br>
+    <li>「rooms」的「show」网页上，<u>显示「entries」资料</u></li>
+    <br>
+    <i class="fa fa-arrow-right"></i>　显示参加聊天室的会员
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                :target => ["_blank"] %>
+    <hr class="red-hr">
+    <i class="fa fa-arrow-right"></i>　显示登入的会员在参加的聊天室
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                :target => ["_blank"] %>
+    <br><br>
+    <li>限制可以看聊天室的会员</li>
+    <br>
+    如果沒有参加聊天室的会员的话，不让他看聊天室里面的內容。
+    <br><br>
+    <i class="fa fa-arrow-right"></i>　判别登入的会员有沒有参加聊天室的时候，要使用
+    <br><br>
+    <strong>entries</strong>
+    <table class="table table-striped" style="width:50%">
+      <thead style="font-size:0.8em">
+        <tr class="active">
+          <th style="background-color: #f2dede;">id</th>
+          <th style="background-color: #f2dede;">room_id</th>
+          <th style="background-color: #f2dede;">user_id</th>
+          <th>created_at</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="background-color: #f2dede;">1</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+          <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        </tr>
+      </tbody>
+    </table>
+    「entries」资料。
+  </ul>
+  </strong>
+  <br>
+  设定这个三个內容。
+  <br><br>
+  首先从<strong>新增「<u>entries</u>」资料（<u>create</u>）</strong>开始做吧！
+  <hr class="red-hr">
+  <%= render "coffee3/zh-CN/title2_2_1" %>
+  <hr class="red-hr">
+  <%= render "coffee3/zh-CN/title2_2_2" %>
+  <hr class="red-hr">
+  <%= render "coffee3/zh-CN/title2_2_3" %>
+</h4>
+<h4>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>
+  到这里，解释了参加聊天室的会员资料「<u>entries</u>」的內容。
+  <br><br>
+  設定的內容是
+  <ul class="number_ul">
+    <li>新增「entries」资料</li>
+    <li>新增「entries」资料</li>
+    <li>用「entries」资料，限制聊天室的阅览</li>
+  </ul>
+  这些三个。
+  </strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>最后，总括里面的內容吧！</strong>
+</h4>

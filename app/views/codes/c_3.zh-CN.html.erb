@@ -1,0 +1,375 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>作聊天室①：设定一览</strong></h1>
+          </div>
+          <h4><u><a href="/zh-CN/coffee_cups/3" class="text-left ">作聊天室①</a></u></h4>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffeecup_header3.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
+          <h4>
+            <i class="fa fa-bookmark color-red"></i>　<strong>看看「作聊天室①」的设定</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 设定一览</strong></h2>
+          <h4 id="code-coffee-1">
+            <br>
+            <strong>
+            在「<a href="/zh-CN/coffee_cups/3" target="_blank">作聊天室①</a>」里设定了
+            <ul class="number_ul">
+              <li>编辑「messages」资料库</li>
+              <li>作「rooms」资料库</li>
+              <li>作「entries」资料库</li>
+            </ul>
+            这个三个內容。
+            </strong>
+            <br><br>
+            在这里看看这里设定的內容吧。
+            <hr class="red-hr">
+            <ul class="number_ul">
+              <p id="title1-1"><strong><li>编辑「messages」资料库</li></strong></p>
+              <br>
+              <strong>「<u>messages</u>」资料库</strong>里<br><strong>追加「room_id」・删除「receiver」</strong>，更改资料库的內容。
+              <br><br>
+                <strong>messages</strong>
+                <table class="table table-striped" style="width:50%">
+                  <thead style="font-size:0.8em">
+                    <tr class="active">
+                      <th>id</th>
+                      <th>content</th>
+                      <th style="background-color: #f2dede;">user_id</th>
+                      <th style="background-color: #f2dede;">room_id</th>
+                      <th>created_at</th>
+                      <th>updated_at</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-center">
+                    <tr>
+                      <td>1</td>
+                      <td style="font-size:12px">你好！</td>
+                      <td style="background-color: #f2dede;">1</td>
+                      <td style="background-color: #f2dede;">1</td>
+                      <td style="font-size:11px;">2016-04-12 20:33:43</td>
+                      <td style="font-size:11px;">2016-04-12 20:33:43</td>
+                    </tr>
+                  </tbody>
+                </table>
+                首先在terminal上，作编辑资料库的设定文件。
+                <br><br>
+                　<strong>terminal</strong>
+                <br>
+                <small>
+                  <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
+                </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g migration changeColumnMessages</span>
+</td>
+</tr>
+</table>
+              <br>
+              编辑，用这个命令作好的<strong>「<u>db > migrate > 日子_change_column_messages.rb</u>」</strong>文件。
+              <br><br>
+              <i class="fa fa-file color-red"></i>　<strong>日子_change_column_messages.rb（追加第3、4行）</strong>
+              <br>
+              <small>
+                ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+                <br>
+                <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+              </small>
+              <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4</strong>
+5
+6
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>ChangeColumnMessages <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    add_column <span class='word-purple'>:messages</span>, <span class='word-purple'>:room_id</span>, <span class='word-purple'>:integer</span></span>
+<span class='code-line remarkable-code'>    remove_column <span class='word-purple'>:messages</span>, <span class='word-purple'>:receiver</span>, <span class='word-purple'>:integer</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+              <br>
+              这样做好了<strong>「<u>messages</u>」资料库</strong>的
+              <strong>
+                <ul class="number_ul" style="margin-bottom:10px">
+                  <li>追加「room_id」的框子</li>
+                  <li>删除「receiver」的框子</li>
+                </ul>
+              </strong>
+              这个两个设定了。
+              <hr class="red-hr">
+              为了适用设定內容，在terminal上打入
+              <br><br>
+              　<strong>terminal</strong>
+              <br>
+              <small>
+                <i class="fa fa-windows color-blue"></i>　使用Windows的话，请使用「命令提示符」吧。
+              </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+              <br>
+              这样资料库作好了。
+              <br><br>
+              <p id="title1-2"><strong><li>作「rooms」资料库</li></strong></p>
+              <br>
+              接着作<strong>「<u>rooms</u>」资料库</strong>。
+              <br><br>
+              <strong>rooms</strong>
+              <table class="table table-striped" style="width:50%">
+                <thead style="font-size:0.8em">
+                  <tr class="active">
+                    <th style="background-color: #f2dede;">id</th>
+                    <th style="background-color: #f2dede;">name</th>
+                    <th style="background-color: #f2dede;">explain</th>
+                    <th>created_at</th>
+                    <th>updated_at</th>
+                  </tr>
+                </thead>
+                <tbody class="text-center">
+                  <tr>
+                    <td style="background-color: #f2dede;">1</td>
+                    <td style="background-color: #f2dede;font-size:12px;">新的聊天</td>
+                    <td style="background-color: #f2dede;font-size:12px;">打入說明</td>
+                    <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                    <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                  </tr>
+                </tbody>
+              </table>
+              为了作「rooms」资料的文件，在terminal上打入下面的命令。
+              <br><br>
+              　<strong>terminal</strong>
+              <br>
+              <small>
+                <i class="fa fa-windows color-blue"></i>　使用Windows的话，请使用「命令提示符」吧。
+              </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model room</span>
+</td>
+</tr>
+</table>
+              <br>
+              编辑，在这里打入作好的<strong>「<u>db > migrate > 日子_create_rooms.rb</u>」</strong>文件的內容。
+              <br><br>
+              <i class="fa fa-file color-red"></i>　<strong>日子_create_rooms.rb（追加第5、6行）</strong>
+              <br>
+              <small>
+                ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+                <br>
+                <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+              </small>
+              <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreateRooms <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:rooms</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.string     <span class='word-purple'>:name</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"新的聊天"</span></span>
+<span class='code-line'>      t.text       <span class='word-purple'>:explain</span>, <span class='word-purple'>default:</span> <span class='word-yellow'>"打入说明"</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+              <br>
+              这样在<strong>「<u>rooms</u>」资料库</strong>里设定了
+              <strong>
+              <ul class="number_ul" style="margin-bottom:10px">
+                <li>刚开始放「新的聊天」的「<u>name</u>」的框子</li>
+                <li>刚开始放「打入说明」的「<u>explain</u>」的框子</li>
+              </ul>
+              </strong>
+              这个两个设定。
+              <hr class="red-hr">
+              为了适用设定的內容，在terminal上打入
+              <br><br>
+              　<strong>terminal</strong>
+              <br>
+              <small>
+                <i class="fa fa-windows color-blue"></i>　使用Windows的话，请使用「命令提示符」吧。
+              </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+              <br>
+              适用设定。
+              <br><br>
+              <p id="title1-3"><strong><li>作「entries」资料库</li></strong></p>
+              <br>
+              最后作，表示会员在参加的聊天室的<strong>「<u>entries</u>」资料库</strong>。
+              <br><br>
+              <strong>entries</strong>
+              <table class="table table-striped" style="width:50%">
+                <thead style="font-size:0.8em">
+                  <tr class="active">
+                    <th style="background-color: #f2dede;">id</th>
+                    <th style="background-color: #f2dede;">room_id</th>
+                    <th style="background-color: #f2dede;">user_id</th>
+                    <th>created_at</th>
+                    <th>updated_at</th>
+                  </tr>
+                </thead>
+                <tbody class="text-center">
+                  <tr>
+                    <td style="background-color: #f2dede;">1</td>
+                    <td style="background-color: #f2dede;">1</td>
+                    <td style="background-color: #f2dede;">1</td>
+                    <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                    <td style="font-size:11px;">2016-04-12 20:30:21</td>
+                  </tr>
+                </tbody>
+              </table>
+              <i class="fa fa-arrow-right"></i>　这个资料是，<strong>会员「1」在参加聊天室「1」的资料</strong>。
+              <br><br>
+              首先打入下面的命令作「entries」资料的设定文件吧。
+              <br><br>
+              　<strong>terminal</strong>
+              <br>
+              <small>
+                <i class="fa fa-windows color-blue"></i>　使用Windows的话，请使用「命令提示符」吧。
+              </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model entry</span>
+</td>
+</tr>
+</table>
+            <br>
+            编辑<strong>「<u>db > migrate > 日子_create_entries.rb</u>」</strong>的內容。
+            <br><br>
+            <i class="fa fa-file color-red"></i>　<strong>日子_create_entries.rb（追加第5、6行）</strong>
+            <br>
+            <small>
+              ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+              <br>
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+            </small>
+            <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreateEntries <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:entries</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:user_id</span></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:room_id</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+            <br>
+            这样在<strong>「<u>entries</u>」资料库</strong>里设定
+            <strong>
+            <ul class="number_ul" style="margin-bottom:10px">
+              <li>「user_id」的框子</li>
+              <li>「room_id」的框子</li>
+            </ul>
+            </strong>
+            这个两个框子了。
+            <hr class="red-hr">
+            为了适用设定打入
+            <br><br>
+            　<strong>terminal</strong>
+            <br>
+            <small>
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+            </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+            <br>
+            这个命令就OK。
+            </ul>
+            <hr>
+            <div class="next-page">
+                <a href="/zh-CN/coffee_cups/3" class="btn btn-primary">返回第3章</a>
+            </div>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>作聊天室①：设定一览</h4></a>
+          <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 设定一览</a>
+          <a href="#title1-1" class="list-group-item">　<small>① : messages资料库</small></a>
+          <a href="#title1-2" class="list-group-item">　<small>② : rooms资料库</small></a>
+          <a href="#title1-3" class="list-group-item">　<small>③ : entries资料库</small></a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

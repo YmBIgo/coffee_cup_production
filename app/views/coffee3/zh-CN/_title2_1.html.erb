@@ -1,0 +1,196 @@
+<h4 id="coffee-chapter3-2-1">
+  <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 「rooms」资料库</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>做「rooms」资料库的资料操作・网页显示之前，事先删除在<a href="/zh-CN/coffee_cups/2" target="_blank">上章</a>作的留言板吧！</strong>
+  <br><br>
+  留言板有
+  <strong>
+  <ul class="number_ul">
+    <li>资料操作的设定</li>
+    <li>显示网页的设定</li>
+  </ul>
+  </strong>
+  这个两个设定，删除內容吧。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>首先从资料操作开始做吧。</strong>
+  <br><br>
+  從<strong>「<u>app > controllers > users_controller.rb</u>」</strong>里，删除<strong>「<u>messages</u>」</strong>资料库的资料。
+  <br>
+  <small>※　详细<a href="/zh-CN/coffee_cups/2#title2-2-2" target="_blank"><strong>请参考这里</strong></a>。</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（第7〜8行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">7
+8</strong>
+</td>
+<td class='code-content'><span class="remarkable-code"><span class='code-line'>@messages <span class="word-red">=</span> <span class='word-blue'>Message</span>.where(<span class='word-purple'>:receiver</span> => @user.id)</span>
+<span class='code-line'>@message <span class="word-red">=</span> <span class="word-blue">Message</span>.<span class='word-red'>new</span></span></span>
+</td>
+</tr>
+</table>
+  <br>
+  删除上面的內容，改成下面一样的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（编辑第5〜7行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6
+7</strong>
+8
+9
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>  <span class='word-red'>end</span></span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-arrow-right"></i>　<strong>接着做网页显示吧！</strong>
+  <br><br>
+  从<strong>「<u>app > views > users > show.html.erb</u>」</strong>，删除<strong>在做显示「<u>messages</u>」资料・显示输入框按钮的设定</strong>吧。
+  <br>
+  <small>※　「messages」资料的显示<a href="/zh-CN/coffee_cups/2#title2-3-2" target="_blank"><strong>请参考这里</strong></a>，输入框按钮的显示<a href="/zh-CN/coffee_cups/2#title2-3-3" target="_blank"><strong>请参考这里</strong></a>。</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",                    :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_owner_after_posts.png",
+              :target => ["_blank"]
+  %>
+  所以在这里，删除<strong>「<u>app > views > users > show.html.erb</u>」</strong>的
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第5〜19行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;留言版&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= m.user.id %&gt;"</span></span>&gt;&lt;%= m.user.family_name %&gt;&lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;的投稿&lt;/<span class='word-red'>h5</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;%= form_for @message <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"留下留言吧！"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.hidden_field <span class="word-purple">:receiver</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  的內容，改成下面的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;歲）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回会员一览&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑会员资料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  到这里，删除了在<a href="/zh-CN/coffee_cups/2" target="_blank"><strong>上章</strong></a>设定的內容了！
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>那么，开始做聊天室的设定吧！</strong>
+  <br><br>
+  作网页的时候，需要设定
+  <strong>
+  <ul class="number_ul">
+    <li>七个网页的设定（详细<a href="/zh-CN/mugcups/5#title1-1-1" target="_blank">请参考这里</a>）</li>
+    <li>操作资料的设定（详细<a href="/zh-CN/mugcups/5#title1-1-2" target="_blank">请参考这里</a>）</li>
+    <li>显示网页的设定（详细<a href="/zh-CN/mugcups/5#title1-1-3" target="_blank">请参考这里</a>）</li>
+  </ul>
+  </strong>
+  这个三个內容。
+  <br><br>
+  這一次按着上面的手顺，设定作<strong>「<u>rooms</u>」资料库</strong>的网页。
+  <br><br>
+  首先从<strong>「<u>七个网页的设定</u>」</strong>开始做吧。
+</h4>
+  <hr class="red-hr">
+  <%= render "coffee3/zh-CN/title2_1_1" %>
+  <hr class="red-hr">
+  <%= render "coffee3/zh-CN/title2_1_2" %>
+  <hr class="red-hr">
+  <%= render "coffee3/zh-CN/title2_1_3" %>
+  <hr class="red-hr">
+  <%= render "coffee3/zh-CN/title2_1_4" %>
+  <hr class="red-hr">
+  <%= render "coffee3/zh-CN/title2_1_5" %>
+  <hr class="red-hr">
+  <%= render "coffee3/zh-CN/title2_1_6" %>
+  <hr class="red-hr">
+<h4>
+  <strong>
+  到这里设定好了「rooms」网页的显示了。
+  <br>
+  到这里做好了聊天室了！接着
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+              :target => ["_blank"] %>
+  像上面图像一样，显示在参加聊天室的会员资料吧。
+  </strong>
+</h4>

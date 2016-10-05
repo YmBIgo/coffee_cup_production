@@ -1,0 +1,230 @@
+<h4 id="coffee-chapter3-1-1">
+  <p id="title1-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : messages资料库</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>编辑资料库之前，首先删除已经有保存的资料吧！</strong>
+  <br><br>
+  在terminal上，打入下面的命令吧
+  <br><br>
+  <strong>　terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:reset</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　不动的话，在前面追加<strong>「bundle exec」</strong>，打入<strong>「bundle exec rake db:reset」</strong>吧。
+  </small>
+  <br><br>
+  这个命令在，重新作资料库的资料。
+  <br><br>
+  那么使用Sequel Pro / SqliteBrowser 打开<strong>「messages-app_development」</strong>，看看<strong>「messages」资料库</strong>的內容有沒有删除。
+  <br>
+  <small>※　打开Sequel Pro的方法<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>请参考这</strong></a>，打开SqliteBrowser的方法<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>重新作好资料库之后，在注册的网页「<a href="http://0.0.0.0:3000/users/sign_up" target="_blank">0.0.0.0:3000/users/sign_up</a>」新增会员的资料吧。</strong>
+  <br>
+  <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，打开<strong>「<a href="http://localhost:3000/users/sign_up" target="_blank">localhost:3000/users/sign_up</a>」</strong>吧。</small>
+  <hr class="red-hr">
+  <strong><i class="fa fa-play-circle"></i>　做好这里之后，编辑「<u>messages</u>」资料库吧！</strong>
+  <br>
+  <small>※　编辑资料库的方法<a href="/zh-CN/mugcups/4#title1-3" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <strong>messages</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>1</td>
+        <td style="font-size:12px">你好！</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  资料库的编辑要在，<strong><u>用terminal作的设定文件</u></strong>设定。
+  <br>
+  事先，在terminal上移动到<strong>「<u>message-app</u>」</strong>吧。
+  <br><br><br>
+  <p class="alert alert-success">
+  <span><strong><i class="fa fa-windows color-blue"></i>　使用Windows移动的方法，<a href="/zh-CN/mugcups/windows_tips#title1-2" target="_blank">请参考这里</a></strong></span>
+  </p>
+  <br>
+  　<strong>terminal</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>cd Desktop</span>
+<span class='code-line'>cd rails_project</span>
+<span class="code-line">cd message-app</span>
+</td>
+</tr>
+</table>
+  <br>
+  在这个文件夾里作编辑资料库的设定文件。
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g migration changeColumnMessages</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样在<strong>「<u>db > migrate</u>」文件夾里作好「<u>日子_change_column_messages.rb</u>」</strong>了。
+  <hr class="red-hr">
+  参考下面的內容，编辑这个<strong>「<u>日子_change_column_messages.rb</u>」</strong>的设定吧。！
+  <br>
+  <small>※　內容<a href="/zh-CN/mugcups/4#title1-3-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日子_change_column_messages.rb（追加第3、4行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4</strong>
+5
+6
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>ChangeColumnMessages <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line remarkable-code'>    add_column <span class='word-purple'>:messages</span>, <span class='word-purple'>:room_id</span>, <span class='word-purple'>:integer</span></span>
+<span class='code-line remarkable-code'>    remove_column <span class='word-purple'>:messages</span>, <span class='word-purple'>:receiver</span>, <span class='word-purple'>:integer</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这样做好了
+  <strong>
+  <ul class="number_ul">
+    <li>追加「room_id」的框子</li>
+    <li>删除「receiver」的框子</li>
+  </ul>
+  </strong>
+  这个两个设定了。
+  <hr class="red-hr">
+  完了之后，导入设定的內容。在terminal上，打入下面的命令吧。
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+<small>
+  <i class="fa fa-arrow-right"></i>　不动的话，在前面追加<strong>「bundle exec」</strong>，打入<strong>「bundle exec rake db:migrate」</strong>吧。
+</small>
+  <br><br>
+  这样，设定的內容适用好了。
+  <br><br>
+  <strong>最后用<u>Sequel Pro</u>看看里面的內容吧。</strong>
+  <br>
+  <small>※　打开Sequel Pro的方法<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>请参考这里</strong></a>，打开SqliteBrowser的方法<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <hr class="red-hr">
+  到这里设定好了
+  <br>
+  <ul class="number_ul">
+    <strong><li>「<u>receiver</u>」的删除</li></strong>
+    <strong><li>「<u>room_id</u>」的追加</li></strong>
+  </ul>
+  按着这个更改，编辑<strong>「<u>messages_controller.rb</u>」</strong>的內容。
+  <br><br>
+  编辑<strong>「<u>app > controllers > messages_controller.rb</u>」</strong>的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb（追加第6行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6</strong>
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>MessagesController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line remarkable-code'>    @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+<span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>.permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:content</span>, <span class='word-purple remarkable-code'>:room_id</span>)...</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样删除<strong>「<u>receiver</u>」</strong>，追加<strong>「<u>room_id</u>」</strong>了。
+  <br><br>
+  这样做好了<strong>「<u>messages</u>」资料库的操作资料的设定</strong>了。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>设定的內容，<a href="/zh-CN/codes/c_3#title1-1" target="_blank">请参考这里</a>。</strong>
+</h4>

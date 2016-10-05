@@ -1,0 +1,294 @@
+<h4 id="coffee-chapter2-2-3-3">
+  <p id="title2-3-3" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 显示输入框・按钮</strong></p>
+  <br>
+  <strong>「<u>users</u>」资料库的「<u>show.html.erb</u>」</strong>里设定显示输入框・按钮吧。
+  <br><br>
+  显示输入框・按钮的的设定是，在<strong>「<a href="/zh-CN/mugcups/6#title1-3" target="_blank">打入新的资料（new）</a>」</strong>说明的方法做。
+  <br><br>
+  用 Sublime Text 打开<strong>「<u>app > views > users > show.html.erb</u>」</strong>文件吧！
+  <br>
+  <small>※　打开Sublime Text的方法，<a href="/zh-CN/mugcups/how_to_open#title1" target="_blank"><strong>请参考这里</strong></a>吧。</small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+<strong class="color-red">14
+15
+16
+17
+18
+19</strong>
+20
+21
+22
+23
+24
+25
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;岁）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;留言板&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h5</span>&gt;&lt;%= m.id %&gt; : &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'><span class='word-yellow'>"/users/&lt;%= m.user.id %&gt;"</span></span>&gt;&lt;%= m.user.family_name %&gt;&lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;的讯息&lt;/<span class='word-red'>h5</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;%= m.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>&lt;%= form_for @message <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"留下留言吧！"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.hidden_field <span class="word-purple">:receiver</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'></span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回会员资料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑会员资料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  那么解释內容吧！
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>首先从第14、19行开始</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第14行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>14
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @message <span class="word-red">do</span> |f| %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  跟
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第19行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>19
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  之间<strong>用新增的「@message」资料<u>作输入框跟资料的发信按钮</u></strong>。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/6#title1-3" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  把<strong>「<u>messages_controller.rb</u>」里设定的「<u>@message</u>」，</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb（第5〜9行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+<strong class="color-red">8</strong>
+9
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user <span class='word-red'>=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @messages <span class='word-red'>=</span> <span class='word-blue'>Message</span>.where(<span class='word-purple'>:receiver</span> => @user.id)</span>
+<span class='code-line remarkable-code'>    @message <span class='word-red'>=</span> <span class="word-blue">Message</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>分成一个一个的资料「f」</strong>、在第19行之前显示输入框跟发信按钮。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/5#title1-2-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>接着说明第15〜18行吧。</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第15〜18行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>15
+16
+17
+18
+</td>
+<td class='code-content'><span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"留下留言吧！"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.hidden_field <span class="word-purple">:receiver</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  可以理解在<strong><u>第15行</u></strong>，<u>设定输入框</u>吧。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/6#title1-3" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>15
+</td>
+<td class='code-content'><span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"留下留言吧！"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这一次在后面追加了
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class="word-purple">:placeholder</span> =&gt; <span class="word-yellow">"留下留言吧！"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  的內容吧。
+  <br>
+  在这个部分，设定输入框里沒有打入资料的时候显示的內容。
+  <textarea class="form-control" style="width:500px;margin:30px 0;" placeholder="留下留言吧！"></textarea>
+  记住这个设定吧。
+  <hr class="red-hr">
+  接着<strong><u>第18行</u></strong>里，可以看到按钮的设定吧。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/6#title1-3" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>18
+</td>
+<td class='code-content'><span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这一次在设定「btn-warning」的黄色的按钮。
+  <div style="margin:30px auto;">
+    <a class="btn btn-warning">登录</a>
+  </div>
+  <hr class="red-hr">
+  最后解释<strong><u>第16行</u></strong>吧。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>16
+</td>
+<td class='code-content'><span class='code-line'>  &lt;%= f.hidden_field <span class="word-purple">:receiver</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个是沒有解释过的设定。
+  <br><br>
+  里面有「:receiver」，可以推测是<strong><u>在作「:receiver」的输入框的设定</u></strong>吧。
+  <br>
+  但是，网页上沒有显示输入框。
+  <br>
+  <small>※　看看<strong>「<a href="http://0.0.0.0:3000/users/1" target="_blank">0.0.0.0:3000/users/1</a>」</strong>吧。</small>
+  <br>
+  <small><i class="fa fa-windows color-blue"></i>　看看<strong>「<a href="http://localhost:3000/users/1" target="_blank">localhost:3000/users/1</a>」</strong>吧。</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+              :target => ["_blank"] %>
+  这个是<strong><u>不想用输入框设定资料库的內容的时候</u></strong>使用的输入框。在「:receiver」的框子里放网页的会员资料「@user」的「id」的设定。
+  <br><br>
+  在这个「users」资料库的「show」网页上，<strong><u>已经知道要对谁发信</u>所以不用讓利用者打入內容。</strong>所以使用這個內容。
+  <hr class="red-hr">
+  像这样，<strong><u>不用让利用者打入的资料</u></strong>的时候要，
+<pre>
+&lt;%= f.hidden_field :框子的名字, :value => 要放的资料 %&gt;
+</pre>
+  这样设定。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>那么，在<u>「:place」的框子里放「@user」的「location」资料</u>的<u>「hidden_field」</u>的设定要怎么设定好呢？</strong>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="打入答案">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>  &lt;%= f.hidden_field <span class="word-purple">:place</span>, <span class='word-purple'>:value</span> =&gt; @user.location %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>不用打入的资料要用「<u>hidden_field</u>」发信。</strong>
+  <hr class="red-hr">
+  这样做好了网页的设定了。
+  <br><br>
+  到这里，试试看<strong><u>讯息的新增・显示</u></strong>可不可以做！
+  <br>  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  做好之后，打开「<a href="http://0.0.0.0:3000/users/1" target="_blank"><strong>0.0.0.0:3000/users/1</strong></a>」吧！
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/users/1" target="_blank"><strong>localhost:3000/users/1</strong></a>」吧。
+  </small>
+  <br><br>
+  有沒有显示下面图像一样的画面吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_no_messages.png",
+              :target => ["_blank"] %>
+  在这里的输入框里打入资料之后，点击<a class="btn btn-warning">登录</a> 吧！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_input_message.png",
+              :target => ["_blank"] %>
+  像下面的图像一样，有沒有显示讯息了吗？
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Chrome_messages_users_1_after_post_message.png",
+              :target => ["_blank"] %>
+  在Sequel Pro里，看看资料有沒有保存在资料库吧。
+  <br>
+  <small>※　打开Sequel Pro的方法<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>请参考这里</strong></a>，打开SqliteBrowser的方法<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+  <strong>
+  这样设定好网页的设定了！
+  <br><br>
+  最后做总结吧。
+  </strong>
+</h4>

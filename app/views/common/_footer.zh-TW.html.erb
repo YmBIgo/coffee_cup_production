@@ -40,6 +40,11 @@
         <%= link_to "繁體字",
                     url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-TW') %>
       </div>
+      <div class="col-sm-2">
+          <%= link_to '简体字',
+                      url_for(controller: controller.controller_name, action: controller.action_name, locale: 'zh-CN')
+          %>
+      </div>
     </div>
     <br>
     <h3>CONTACT US</h3>

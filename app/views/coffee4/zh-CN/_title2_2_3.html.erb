@@ -1,0 +1,342 @@
+<h4 id="coffee-chapter4-2-2-3">
+  <p id="title2-2-3"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : 显示网页</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>接着做网页显示吧！</strong>
+  <br><br>
+  网页显示要做
+  <strong>
+  <ul class="number_ul">
+    <li>设定输入框</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_images_no_message.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_images_no_message.png",
+                :target => ["_blank"] %>
+    <li>显示图像</li>
+    <br>
+    <i class="fa fa-arrow-right"></i>　显示大小「medium」的图像（300x300）の表示
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_after_upload_images.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_after_upload_images.png",
+                :target => ["_blank"] %>
+    <i class="fa fa-arrow-right"></i>　显示大小「thumb」的图像（50x50）
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_rooms_1_messages_with_images.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_rooms_1_messages_with_images.png",
+                :target => ["_blank"] %>
+  </ul>
+  </strong>
+  有这个两个设定。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>首先设定输入框的设定吧。</strong>
+  <br><br>
+  编辑会员资料的网页<strong>「<u>users</u>」资料库的「<u>edit</u>」网页</strong>里，追加文件的输入框的设定。
+  <input type="file" style="margin:20px 0" class="form-control my-form">
+  那么编辑<strong>「<u>app > views > users > edit.html.erb</u>」</strong>的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（追加第4〜6行）</strong>
+  <br>
+  <small>※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4
+5
+6</strong>
+7
+...
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;编辑会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;头像&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span></span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;姓字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class="code-line word-gray">  &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样设定好了文件的输入框了。
+  <br><br>
+  像这样，文件的输入框要
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  像上面的图像一樣使用<strong>「file_field」</strong>设定。
+  <br>
+  在这里也是用<strong>「<a href="/zh-CN/mugcups/7#title2-2-3" target="_blank">form-control</a>」</strong>，装饰输入框。
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right color-red"></i>　<strong>输入框的设定跟资料操作完成了，在这里保存看图像吧！</strong>
+  <br><br>
+  首先登入会员之后，移动到会员的资料的网页吧！
+  <br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_images_no_message.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_no_images_no_message.png",
+              :target => ["_blank"] %>
+  有沒有显示这样子的画面吗？
+  <br>
+  网页显示之后，在图像的输入框里选择图像，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_select_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_select_images.png",
+              :target => ["_blank"] %>
+  点击 <a class="btn btn-primary">登录</a> 吧！
+  <br><br>
+  這樣圖像保存好了，
+  <br>
+  看看在<strong>「<u>public > system</u>」</strong>里面有沒有保存资料！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sublime_Text_public_system_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sublime_Text_public_system_images.png",
+              :target => ["_blank"] %>
+  看看<strong>「<u>Sequel Pro</u>」</strong>，资料有沒有保存了沒！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sequel_Pro_images_user_1.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sequel_Pro_images_user_1.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>接着显示图像吧。</strong>
+  <br><br>
+  <i class="fa fa-arrow-right color-red"></i>　首先显示<strong>「<u>medium</u>」（上下300左右300）</strong>的图像。显示的网页是
+  <strong>
+  <ul class="number_ul">
+    <li>「<u>users</u>」资料库的「<u>show</u>」网页</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_after_upload_images.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_after_upload_images.png",
+                :target => ["_blank"] %>
+    <li>「<u>users</u>」资料库的「<u>edit</u>」网页</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_upload_image.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_upload_image.png",
+                :target => ["_blank"] %>
+  </ul>
+  </strong>这个两个网页！
+  <hr class="red-hr">
+  那么，先编辑<strong>「<u>app > views > users > show.html.erb</u>」</strong>的內容吧。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第5、6行）</strong>
+  <br>
+  <small>※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+...
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line remarkable-code'>    &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+<span class='code-line remarkable-code'>    &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;岁）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line word-gray'>    &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  里面的
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在显示图像。
+  <br><br>
+  用<strong>「<u>@user</u>」</strong>选择会员资料，
+  <br>
+  显示<strong>大小「<u>medium</u>」的「<u>image</u>」</strong>的会员的图像。
+  <br>
+  <small>※　后面追加两个「&lt;br&gt;」，在图像跟名字之间作空格</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_after_upload_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_after_upload_images.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  同样的在<strong>「<u>users</u>」资料库的「<u>edit</u>」网页</strong>显示图像吧。
+  <br><br>
+  编辑<strong>「<u>app > views > users > edit.html.erb</u>」</strong>的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（追加第5、6行）</strong>
+  <br>
+  <small>※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;编辑会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;头像&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;姓字&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line word-gray'>  &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在第5行的设定，在显示图像。
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_upload_image.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_users_1_edit_upload_image.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　接着显示<strong>「<u>thumb</u>」（上下50左右50）</strong>的图像吧。显示的网页是，
+  <strong>
+  <ul class="number_ul">
+    <li>「<u>rooms</u>」资料库的「<u>show</u>」网页</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_rooms_1_messages_with_images.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_rooms_1_messages_with_images.png",
+                :target => ["_blank"] %>
+  </ul>
+  </strong>
+  这个网页。
+  <br><br>
+  <strong>「<u>thumb</u>」</strong>的大小的图像是
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= image_tag @user.image.url(<span class='word-purple'>:thumb</span>) %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样设定显示的內容。
+  <hr class="red-hr">
+  那么编辑<strong>「<u>app > views > rooms > show.html.erb</u>」</strong>的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（编辑第22、30行）</strong>
+  <br>
+  <small>※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>14
+15
+16
+17
+18
+19
+20
+21
+<strong class="color-red">22</strong>
+23
+24
+25
+26
+27
+28
+29
+<strong class="color-red">30</strong>
+31
+32
+33
+34
+35
+...
+</td>
+<td class='code-content'><span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @messages.present? %&gt;</span>
+<span class='code-line'>      &lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">if</span> m.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-right"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;　&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-left"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-info"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line remarkable-code'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;　&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class="code-line word-gray">    &lt;!-- 省略 --&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在第22、30行的显示名字的部分的前面/后面，设定
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= image_tag m.user.image.url(<span class='word-purple'>:thumb</span>) %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个內容，显示会员的头像。
+  <br>
+  <small>※　使用<strong>「<u>m.user</u>」</strong>，选择<strong>「<u>messages</u>」资料</strong>在拿的会员。</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_rooms_1_messages_with_images.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Chrome_messages_rooms_1_messages_with_images.png",
+              :target => ["_blank"] %>
+  <i class="fa fa-play-circle"></i>　<strong>这样显示图像了！</strong>
+</h4>

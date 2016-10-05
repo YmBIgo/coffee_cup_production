@@ -1,0 +1,136 @@
+<h4 id="coffee-chapter3-1-3">
+  <p id="title1-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : entries资料库</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>最后，作作看<u>表示哪一个会员在参加哪一个聊天室的资料的「entries」资料库</u>吧。</strong>
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <i class="fa fa-arrow-right"></i>　<strong>这个「id」是「1」的资料在表示，会员「1」在参加聊天室「1」的资料。</strong>
+  <hr class="red-hr">
+  刚开始作资料库吧！在terminal上，打入下面的命令吧。
+  <br><br>
+  　<strong>terminal</strong>
+  <br>
+  <small>※　这一次的打入是<strong class="color-red"><u>单数</u></strong>，请注意！</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g model entry</span>
+</td>
+</tr>
+</table>
+  <br>
+  打入完了之后，在<strong>「<u>db > migrate</u>」文件夾里会作好「日子_create_entries.rb」文件</strong>，在这个文件里追加內容。
+  <br>
+  <small>※　內容<a href="/zh-CN/mugcups/4#title1-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>日子_create_entries.rb（追加第5、6行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6</strong>
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>CreateEntries <span class="word-green">< ActiveRecord::Migration</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>change</span></span>
+<span class='code-line'>    create_table <span class='word-purple'>:entries</span><span class='word-red'> do</span> |t|</span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:user_id</span></span>
+<span class='code-line remarkable-code'>      t.integer    <span class='word-purple'>:room_id</span></span>
+<span class='code-line'></span>
+<span class='code-line'>      t.timestamps <span class='word-purple'>null:</span> <span class="word-purple">false</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这样，作了
+  <br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  这个资料库的设定做好了。
+  <br><br>
+  接着适用这个设定吧！在terminal上，打入下面的命令吧！
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rake db:migrate</span>
+</td>
+</tr>
+</table>
+  <br>
+  <small>
+    <i class="fa fa-arrow-right"></i>　不动的话，在前面追加<strong>「bundle exec」</strong>，打入<strong>「bundle exec rake ...」</strong>吧。
+  </small>
+  <br><br>
+  这样设定适用了，资料库作好了。
+  <br><br>
+  <strong>最后在<u>Sequel Pro</u>看看內容吧！</strong>
+  <br>
+  <small>※　打开Sequel Pro的方法<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>请参考这里</strong></a>，打开SqliteBrowser的方法<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>设定的內容，<a href="/zh-CN/codes/c_3#title1-3" target="_blank">请参考这里</a>。</strong>
+</h4>

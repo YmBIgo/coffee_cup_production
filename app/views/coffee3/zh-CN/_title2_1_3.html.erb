@@ -1,0 +1,1081 @@
+<h4 id="coffee-chapter3-2-1-3">
+  <p id="title2-1-3" class="fix-link-nav"><i class="fa fa-check-square color-red"></i>　<strong>⑶ : show</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>接着作「<u>rooms</u>」资料库的「<u>show</u>」网页吧！</strong>
+  <hr class="red-hr">
+  <strong>「<u>show</u>」</strong>网页的设定要
+  <ul class="number_ul">
+    <strong><li>「<u>rooms_controller.rb</u>」文件上的资料操作</li></strong>
+      <br>
+      <i class="fa fa-arrow-right"></i>　选择要显示的「rooms」资料
+      <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
+</td>
+</tr>
+</table>
+    <br>
+    <i class="fa fa-arrow-right"></i>　选择要显示的「messages」资料・新增「messages」资料
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+</td>
+<td class='code-content'><span class='code-line'>@messages <spam class="word-red">=</spam> @room.messages</span>
+<span class='code-line'>@message <span class="word-red">=</span> <span class="word-blue">Message</span>.<span class='word-red'>new</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>「rooms」资料库的「show」网页的设定</li></strong>
+    <br>
+    在这里
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                :target => ["_blank"] %>
+    像这样设定
+    <br><br>
+    <i class="fa fa-arrow-right"></i>　<strong>在左边显示「rooms」资料</strong>
+    <br>
+    <i class="fa fa-arrow-right"></i>　<strong>在右边显示「messages」资料</strong>
+    <br><br>
+    这些內容。
+  </ul>
+  <br>
+  <strong>在这里设定这个两个设定吧！</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>首先在「rooms_controller.rb」里追加设定。</strong>
+  <br><br>
+  <strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>里追加下面的设定吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第12〜14行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>11
+<strong class="color-red">12
+13
+14</strong>
+15
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class="remarkable-code"><span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    @messages <span class="word-red">=</span> @room.messages</span>
+<span class='code-line'>    @message <span class="word-red">=</span> <span class="word-blue">Message</span>.<span class='word-red'>new</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  內容应该大概是沒有问题，<strong>解释第13行的设定</strong>
+  <hr class="red-hr">
+  在这个网站上，<u>一个「rooms」资料可以拿复数的「messages」资料</u>。
+  <br><br>
+  <strong>rooms</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">name</th>
+        <th style="background-color: #f2dede;">explain</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;font-size:12px;">新的聊天</td>
+        <td style="background-color: #f2dede;font-size:12px;">打入说明</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>messages</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>1</td>
+        <td style="font-size:12px">什么呀？</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>2</td>
+        <td style="font-size:12px">功课做好了吗？</td>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th>content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>3</td>
+        <td style="font-size:12px">還沒</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  使用，一方的资料有拿別的资料库的复数的资料的时候的设定，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>13
+</td>
+<td class='code-content'><span class='code-line'>@messages <span class="word-red">=</span> @room.messages</span>
+</td>
+</tr>
+</table>
+  <br>
+  设定上面一样的內容。
+  <br>
+  在这里选择，<strong>有拿跟「@room」的「id」一样的「room_id」的「messages」资料库的资料</strong>。
+  <br>
+  <small>※　详细<a href="/zh-CN/coffee_cups/2#title2-3-4" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <hr class="red-hr">
+  为了适用这个设定，
+  <strong>
+  <ul class="number_ul">
+    <li>「<u>app > models > message.rb</u>」</li>
+    <li>「<u>app > models > room.rb</u>」</li>
+  </ul>
+  </strong>
+  里追加设定。
+  <br>
+  <small>※　详细<a href="/zh-CN/coffee_cups/2#title2-3-4" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>message.rb（追加第4行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+<strong class="color-red">4</strong>
+5
+6
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>Message <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  belongs_to <span class='word-purple'>:user</span></span>
+<span class='code-line remarkable-code'>  belongs_to <span class='word-purple'>:room</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>room.rb（追加第3行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3</strong>
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>Room <span class="word-green">< ActiveRecord::Base</span></span>
+<span class='code-line'></span>
+<span class='code-line remarkable-code'>  has_many <span class='word-purple'>:messages</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这样设定好了
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>选择「room」资料里的「messages」资料</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@messages <span class="word-red">=</span> @room.messages</span>
+</td>
+</tr>
+</table>
+  <br>
+  <i class="fa fa-arrow-right"></i>　<strong>选择「message」资料投稿的地方「room」资料</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@room <span class="word-red">=</span> @message.room</span>
+</td>
+</tr>
+</table>
+  <br>
+  的內容了。
+  <br><br>
+  <strong>
+  到这里设定好了
+    <ul class="number_ul">
+      <li>「rooms」资料「<u>@room</u>」</li>
+      <li>网页的「messages」资料「<u>@messages</u>」</li>
+      <li>新的「messages」资料「<u>@message</u>」</li>
+    </ul>
+  的內容了。接着显示这些资料吧。
+  </strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+              :target => ["_blank"] %>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>接下做，显示「show」网页的设定吧</strong>
+  <br><br>
+  这一次是
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+              :target => ["_blank"] %>
+  像上面图像一样的左右的画面显示，所以
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-3"</span>&gt;</span>
+<span class='code-line'>    内容1</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+<span class='code-line'>    内容2</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  使用这个设定
+  <div class="row">
+    <div class="col-xs-3" style="margin-top:20px; padding:0">
+      <p class="alert alert-success">内容1(长度3)</p>
+    </div>
+    <div class="col-xs-9" style="margin-top:20px; padding:0">
+      <p class="alert alert-danger">内容2(长度9)</p>
+    </div>
+  </div>
+  这个內容。
+  <br>
+  <small>※　详细<a href="/zh-CN/coffee_cups/4#title2-1-2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>首先显示左边的「<u>@room</u>」吧。</strong>
+  <br><br>
+  打开<strong>「<u>app > views > rooms > show.html.erb</u>」</strong>之后，编辑內容吧。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-3 text-center"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;%= @room.name %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;<span class='word-red'>small</span>&gt;&lt;%= @room.explain %&gt;&lt;/<span class='word-red'>small</span>&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑资料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  说明內容吧。
+  <hr class="red-hr">
+  用
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-3 text-center"</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  围起來的
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;&lt;%= @room.name %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;&lt;<span class='word-red'>small</span>&gt;&lt;%= @room.explain %&gt;&lt;/<span class='word-red'>small</span>&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑资料&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  的地方，在左边显示<strong>「长度3」</strong>的画面。
+  <br><br>
+  在里面做
+  <br>
+  <strong>
+  <ul class="number_ul">
+    <li>显示「@room」的「name」「explain」</li>
+    <li>显示移动到「rooms」资料库的「edit」网页的连接</li>
+  </ul>
+  </strong>
+  这个两个设定。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>设定好了的话，看看可不可以作聊天室！</strong>
+  <br><br>
+  首先注册两个会员之后，
+  <br>
+  登入「id」是「1」的会员之后，打开<strong>「<a href="http://0.0.0.0:3000/users/2" target="_blank">0.0.0.0:3000/users/2</a>」</strong>吧！
+  <br>
+  <small><i class="fa fa-windows color-blue"></i>　使用Windows的话，打开<strong>「<a href="http://localhost:3000/users/2" target="_blank">localhost:3000/users/2</a>」</strong>吧。</small>
+  <br>
+  <small>※　不要忘记，在terminal上打入<strong>「rails s」</strong>启动服务器！</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  显示之后点击 <a class="btn btn-warning">作聊天室</a> 吧！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_left.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_left.png",
+              :target => ["_blank"] %>
+  有沒有跟上面图像一样显示<strong>「<a href="http://0.0.0.0:3000/rooms/1">0.0.0.0:3000/rooms/1</a>」</strong>的画面吗？
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>接着设定右边的显示吧！</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>在这里做两个设定。</strong>
+  <ul class="number_ul">
+    <strong><li>显示讯息资料「@messages」</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@messages <span class="word-red">=</span> @room.messages</span>
+</td>
+</tr>
+</table>
+    <br>
+    <p class="alert alert-success text-right">什么呀？<br><small><strong><a>山田太郎</a></strong></small></p>
+    <p class="alert alert-info text-left">功课做好了吗？<br><small><strong><a>湘南花子</a></strong></small></p>
+    <p class="alert alert-success text-right">还沒<br><small><strong><a>山田太郎</a></strong></small></p>
+    <strong><li>使用新的讯息资料「@message」，显示输入框按钮</li></strong>
+    <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@message <span class="word-red">=</span> <span class="word-blue">Message</span><span class='word-red'>.new</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <input type="input" class="form-control" placeholder="打入答案">
+  <br>
+  <div class="text-center">
+    <a class="btn btn-primary">投稿</a>
+  </div>
+  <hr class="red-hr">
+  </ul>
+  用这些设定，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_image_no_entries.png",
+                        :width => "90%",
+                         :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_image_no_entries.png",
+              :target => ["_blank"] %>
+  显示上面图像一样的画面吧。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>首先从「@messages」的显示开始做吧。</strong>
+  <br><br>
+  打开<strong>「<u>app > views > rooms > show.html.erb</u>」</strong>之后，编辑內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第10〜34行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong class="color-red">10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</strong>
+35
+36
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-3 text-center"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;%= @room.name %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;<span class='word-red'>small</span>&gt;&lt;%= @room.explain %&gt;&lt;/<span class='word-red'>small</span>&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑资料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">if</span> @messages.present? %&gt;</span>
+<span class='code-line'>      &lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">if</span> m.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-right"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-left"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-info"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h3</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;沒有讯息&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  说明內容吧。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>在这里使用两个「if」，做条件判别。</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> @messages.present? %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  跟
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>12
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> m.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>第一个</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> @messages.present? %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在判別有沒有「@messages」。
+  <br>
+  如果沒有的话，显示下面图像一样的画面，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+              :target => ["_blank"] %>
+  如果有的话，显示下面图像一样的画面
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_image_no_entries.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_image_no_entries.png",
+              :target => ["_blank"] %>
+  像这样，判別资料有沒有的时候，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> 资料.present? %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  使用这个內容设定。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>那么，<u>判別有沒有「@rooms」</u>的时候要怎么样设定好呢？</strong>
+  <br><br>
+  <input type="input" class="input-code form-control" placeholder="打入答案">
+  <br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content answer-code'><span class='code-line'>&lt;% <span class="word-red">if</span> @rooms.present? %&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>第二个</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> m.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在判別
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>11
+</td>
+<td class='code-content'><span class='code-line'>&lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  使用这个分成一个一个的<strong>「<u>m</u>」的「<u>user_id</u>」</strong>跟，
+  <br>
+  登入的会员<strong>「<u>current_user</u>」的「<u>id</u>」</strong>是不是一样。
+  <br><br>
+  这个条件判別在做
+  <br>
+  <strong>登入的会员「<u>current_user</u>」是不是投稿「<u>m</u>」讯息的条件判別</strong>。
+  <br><br>
+  <strong>
+  <ul class="number_ul">
+    <li>如果成立的话（「m」是登入的会员作的讯息的话），</li>
+      <br>
+      <p class="alert alert-success text-right">讯息<br><small><strong><a>名字</a></strong></small></p>
+      <br>
+    <li>如果不成立的话（「m」是別的会员作的讯息的话），</li>
+      <br>
+      <p class="alert alert-info text-left">訊息<br><small><strong><a>名字</a></strong></small></p>
+  </ul>
+  </strong>
+  随着条件判別，显示內容。
+  <br><br>
+  用这个两个设定，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+              :target => ["_blank"] %>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_image_no_entries.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_image_no_entries.png",
+              :target => ["_blank"] %>
+  显示这些画面。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>解释相惜的內容吧。</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>事先第13〜19行的设定是，
+  <ul class="number_ul">
+    <li>里面有「@messages」</li>
+    <li>「m.user_id」跟「current_user.id」是一样</li>
+  </ul>
+  的时候显示，
+  </strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>13
+14
+15
+16
+17
+18
+19
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow remarkable-code'>"text-right"</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow remarkable-code'>"alert alert-success"</span>&gt;</span>
+<span class='code-line'>&lt;%= m.content %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>h4</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个內容。
+  <br><br>
+  使用<strong>「<u>Bootstrap</u>」</strong>的
+  <ul class="number_ul">
+    <strong><li>在右边显示文字的「<u>text-right</u>」</li></strong>
+    <strong><li>显示有颜色的文字的「<u>alert alert-success</u>」</li></strong>
+    <br>
+    <p class="alert alert-success text-right">讯息<br><small><strong><a>名字</a></strong></small></p>
+  </ul>
+  这个两个设定，在显示
+  <strong>
+  <ul class="number_ul">
+    <li>「內容（content）」</li>
+    <li>「姓字（family_name）」</li>
+    <li>「名字（first_name）」</li>
+  </ul>
+  </strong>
+  的资料。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>第21〜27行的设定是，
+  <ul class="number_ul">
+    <li>里面有「@messages」</li>
+    <li>「m.user_id」跟「current_user.id」不一样</li>
+  </ul>
+  的时候会显示，
+  </strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow remarkable-code'>"text-left"</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow remarkable-code'>"alert alert-info"</span>&gt;</span>
+<span class='code-line'>&lt;%= m.content %&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>h4</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个內容。
+  <br><br>
+  使用<strong>「<u>Bootstrap</u>」</strong>的
+  <strong>
+  <ul class="number_ul">
+    <li>在左边显示文字的「<u>text-left</u>」</li>
+    <li>显示有颜色的文字的「<u>alert alert-info</u>」</li>
+    <br>
+    <p class="alert alert-info">訊息<br><small><strong><a>名字</a></strong></small></p>
+  </ul>
+  </strong>
+  这个两个设定，显示
+  <strong>
+  <ul class="number_ul">
+    <li>「內容（content）」</li>
+    <li>「姓字（family_name）」</li>
+    <li>「名字（first_name）」</li>
+  </ul>
+  </strong>
+  这些三个资料。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　
+  <strong>
+  第31〜33行的设定是
+  <ul class="number_ul">
+    <li>沒有「@messages」</li>
+  </ul>
+  的时候会显示
+  </strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>h3</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;沒有讯息&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+</h4>
+  <h3 class="text-center">沒有讯息</h3>
+<h4>
+  的內容。
+  <br><br>
+  <strong>到这里作好了「<u>@messages</u>」的显示了。<br>接着设定使用「<u>@message</u>」的输入框的显示吧。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>作作看使用「@message」的输入框的设定吧。</strong>
+  <br><br>
+  打开<strong>「<u>app > views > rooms > show.html.erb</u>」</strong>之后，编辑內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第35〜43行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+<strong class="color-red">35
+36
+37
+38
+39
+40
+41
+42
+43</strong>
+44
+45
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-3 text-center"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;%= @room.name %&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;&lt;<span class='word-red'>small</span>&gt;&lt;%= @room.explain %&gt;&lt;/<span class='word-red'>small</span>&gt;&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/rooms/&lt;%= @room.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑资料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @messages.present? %&gt;</span>
+<span class='code-line'>      &lt;% @messages.each <span class="word-red">do</span> |m| %&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">if</span> m.user_id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-right"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-success"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>h4</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-left"</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>p</span><span class='word-green'> class</span>=<span class='word-yellow'>"alert alert-info"</span>&gt;</span>
+<span class='code-line'>          &lt;%= m.content %&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>          &lt;<span class='word-red'>small</span>&gt;&lt;<span class='word-red'>strong</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= m.user_id %&gt;"</span>&gt;&lt;%= m.user.family_name %&gt; &lt;%= m.user.first_name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>small</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>          &lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>        &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h3</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;沒有讯息&lt;/<span class='word-red'>h3</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;%= form_for @message <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>      &lt;%= f.text_field <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control myform"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"打入讯息"</span> %&gt;</span>
+<span class='code-line'>      &lt;%= f.hidden_field <span class="word-purple">:room_id</span>, <span class='word-purple'>:value</span> =&gt; @room.id %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center"</span>&gt;</span>
+<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"投稿"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  內容应该很容易理解。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@message <span class="word-red">=</span> <span class="word-blue">Message</span>.<span class='word-red'>new</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  使用这个设定，显示
+  <br><br>
+  <hr>
+  <input type="input" class="form-control my-form" placeholder="打入答案" style="margin:0 auto">
+  <br>
+  <div class="text-center"><a class="btn btn-primary">投稿</a></div>
+  <br>
+  输入框跟发信按钮。
+  <hr class="red-hr">
+  在这里
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>37
+38
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= f.text_field <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control myform"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"打入讯息"</span> %&gt;</span>
+<span class='code-line'>&lt;%= f.hidden_field <span class="word-purple">:room_id</span>, <span class='word-purple'>:value</span> =&gt; @room.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  像上面一样作，编辑<strong>「<u>content</u>」</strong>跟<strong>「<u>room_id</u>」</strong>的输入框。
+  <br><br>
+  使用网页上打入的资料，在<strong>「<u>messages_controller.rb</u>」</strong>设定
+  <br>
+  <small>※　详细<a href="/zh-CN/coffee_cups/3#title1-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line remarkable-code'>    @message <span class="word-red">=</span> <span class='word-blue'>Message</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:message</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:content</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:user_id</span> => current_user.id))</span>
+<span class='code-line'>    redirect_to <span class='word-purple'>:back</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  的內容。在这里设定
+  <strong>
+  <ul class="number_ul">
+    <li>「content」</li>
+    <li>「room_id」</li>
+    <li>「user_id」</li>
+  </ul>
+  </strong>
+  这个三个內容可以编辑更改內容，
+  <br>
+  <strong>「user_id」</strong>设定里面要放<strong>「current_user」的「id」</strong>。
+  <br><br>
+  点击 <a class="btn btn-primary">投稿</a> 之后，
+  <br><br>
+  <strong>messages</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th>id</th>
+        <th style="background-color: #f2dede;">content</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>1</td>
+        <td style="font-size:12px;background-color: #f2dede;">你好！</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+        <td style="font-size:11px;">2016-04-12 20:33:43</td>
+      </tr>
+    </tbody>
+  </table>
+  会新增<strong>「<u>messages</u>」</strong>像上面的资料。
+  <hr class="red-hr">
+  <strong><u>一起点击「Command」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
+  <br>
+  <u>这样编辑好的內容会适用在网页上。</u>
+  <br><br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入<u>「rails s」</u>吧。</strong>
+  </p>
+  <br>
+  之后在浏览器，打开「<a href="http://0.0.0.0:3000/rooms/1" target="_blank"><strong>0.0.0.0:3000/rooms/1</strong></a>」吧。
+  <br>
+  <small>
+  <i class="fa fa-windows color-blue"></i>　使用Windows的话，打开「<a href="http://localhost:3000/rooms/1" target="_blank"><strong>localhost:3000/rooms/1</strong></a>」吧。
+  </small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+              :target => ["_blank"] %>
+  显示之后，投稿讯息吧！
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_image_no_entries.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_image_no_entries.png",
+              :target => ["_blank"] %>
+  有沒有显示上面一样的画面吗？
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>接着设定「index」网页吧！</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>设定的內容，<a href="/zh-CN/codes/c_4#title1-2" target="_blank">请参考这里</a>。</strong>
+</h4>

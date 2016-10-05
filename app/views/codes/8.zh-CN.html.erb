@@ -1,0 +1,206 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>作作看主页！：设定一览</strong></h1>
+          </div>
+          <h4>
+          <u>
+          <a href="/zh-CN/mugcups/8" class="text-left" target="_blank">作作看主页！</a>
+          </u>
+          </h4>
+          <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header8.jpg",
+                        :width => "90%",
+                        :class => "textbook-title-img hover_img" %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
+          <h4>
+            <i class="fa fa-bookmark color-red"></i>　<strong>看看「作作看主页！」里设定的內容</strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 设定一览</strong></h2>
+          <h4 id="code-8">
+            <strong>「<a href="/zh-CN/mugcups/8" target="_blank">作作看主页！</a>」里设定了主页。</strong>
+            <br><br>
+            在这里看看里面的內容吧。
+            <hr class="red-hr">
+            为了做主页的设定，打入
+            <br><br>
+            　<strong>terminal</strong>
+            <br>
+            <small>
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，请使用「命令提示符」吧。
+            </small>
+            <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>ralis g controller welcome</span>
+</td>
+</tr>
+</table>
+          <br>
+          用这个打入作好的
+          <strong>
+          <ul class="number_ul">
+          <li>設定资料的显示的「<u>app > views > welcome</u>」</li>
+          <li>設定资料的操作的「<u>app > controllers > welcome_controller.rb</u>」</li>
+          </ul>
+          </strong>
+          跟
+          <br><br>
+          <strong style="margin-left:10px">3. 设定使用的网页的「<u>config > route.rb</u>」</strong>
+          <br><br>
+          这个三个文件设定网页。
+          <hr class="red-hr">
+          <i class="fa fa-play-circle"></i>　<strong><u>七个网页的设定（route.rb）</u></strong>是
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>route.rb</strong>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+5
+6
+7
+8
+9
+...
+58
+59
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Rails</span>.application.routes.draw<span class='word-red'> do</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  resources <span class='word-purple'>:posts</span> , <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:new</span>, <span class='word-purple'>:create</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>, <span class='word-purple'>:destroy</span>]</span>
+<span class='code-line'>  resources <span class='word-purple'>:welcome</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:index</span>]</span>
+<span class='code-line remarkable-code'>  root <span class='word-yellow'>"welcome#index"</span></span>
+<span class='code-line'>  <span class='word-gray'># The priority is based upon order of creation: first created -> highest priority.</span></span>
+<span class='code-line'>  <span class='word-gray'># See how all your routes lay out with "rake routes".</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-gray'># You can have the root of your site routed with "root"</span></span>
+<span class='code-line'>  <span class='word-gray'># root 'welcome#index'</span></span>
+<span class='code-line'>  <span class='word-gray'># 省略</span></span>
+<span class='code-line'>  <span class='word-gray'>#   end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          <i class="fa fa-play-circle"></i>　<strong><u>操作资料的设定（controller文件）</u></strong>是
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>welcome_controller.rb</strong>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>WelcomeController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+          <hr class="red-hr">
+          <i class="fa fa-play-circle"></i>　<strong><u>网页的设定（views文件夾）</u></strong>是
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>index.html.erb</strong>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"header-image"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>h1</span><span class='word-green'> class</span>=<span class='word-yellow'>"text-center header-content"</span>&gt;&lt;<span class='word-red'>strong</span>&gt;欢迎光临&lt;/<span class='word-red'>strong</span>&gt;&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;看投稿一览&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+</tr>
+</table>
+          <br>
+          <i class="fa fa-play-circle"></i><strong><u>网页的装饰</u></strong>是
+          <br><br>
+          <i class="fa fa-file color-red"></i>　<strong>style.scss</strong>
+          <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+<strong class="color-red">8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</strong>
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.my-form</span>{</span>
+<span class='code-line'>  <span class='word-blue'>width</span>:<span class='word-blue'><span class='word-purple'>500</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+<span class='code-line'><span class='word-green'>.main-page</span>{</span>
+<span class='code-line'>  <span class='word-blue'>margin-top</span>:<span class='word-blue'><span class='word-purple'>50</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'><span class='word-green'>.header-image</span>{</span>
+<span class='code-line'>  <span class="word-blue">background-image</span>: <span class="word-blue">url</span>(<span class="color-orange">/assets/header12.jpg</span>);</span>
+<span class='code-line'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>400</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class="word-blue">-webkit-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-moz-background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">background-size</span>: cover;</span>
+<span class='code-line'>  <span class="word-blue">-o-background-size</span>: cover;</span>
+<span class='code-line'>}</span>
+<span class='code-line'><span class='word-green'>.header-content</span>{</span>
+<span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>75</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>  <span class='word-blue'>padding-top</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span></span>
+</td>
+</tr>
+</table>
+          <hr>
+          <div class="next-page">
+              <a href="/zh-CN/mugcups/8" class="btn btn-primary">返回第8章</a>
+          </div>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>8：设定一览</h4></a>
+          <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 设定一览</a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

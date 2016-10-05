@@ -1,0 +1,413 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div id="title" class="textbook-title">
+            <h1><strong>CSS设定一览</strong></h1>
+          </div>
+          <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header9.jpg",
+                                :width => "90%",
+                                :class => "hover_img textbook-title-img") %>
+          <hr>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
+          <h4>
+            <i class="fa fa-star color-red"></i>　解释适用CSS的方法。
+            <hr>
+            在这里解释，<u>普通的CSS</u>跟<u>适用Bootstrap设定的「<a href="/zh-CN/mugcups/3#title1-2-css-class" target="_blank">class</a>」</u>两个设定。
+            <br>
+            <small>※　CSS的写法<a href="/zh-CN/mugcups/3#title1-2" target="_blank"><strong>请参考这里</strong></a></small>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : CSS的设定</strong></h2>
+          <h4>
+            首先解释，普通的CSS的
+            <strong>
+            <ul class="number_ul">
+              <li>文字的大小・颜色・背景色</li>
+              <li>左右长度・上下高度</li>
+              <li>空格</li>
+            </ul>
+            </strong>
+            这个三个设定的方法。
+            <hr>
+            <ul class="number_ul" id="title1-1">
+              <strong><li><p style="color:white;background-color:black;font-size:30px;">文字的大小・颜色・背景色</p></li></strong>
+              <br>
+              文字的大小要
+  <pre>
+  font-size:显示的大小px（或者%）;
+  </pre>
+              这样设定。
+              <br><br>
+<table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+  <span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>30</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+  </tr>
+  </table>
+              <hr class="red-hr">
+              颜色的设定要
+<pre>
+color:喜欢的颜色;
+</pre>
+              这样设定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+  <span class='code-line remarkable-code'>  <span class='word-blue'>color</span>:<span class='word-blue'>white</span>;</span>
+  <span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>30</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+  </tr>
+  </table>
+              <br>
+              颜色使用英文打入，或者
+              <br>
+              使用<strong><a href="https://www.toodoo.com/db/color.html" target="_blank">色吗表</a></strong>的「#??????」也可以设定。
+              <hr class="red-hr">
+              背景色的设定要
+  <pre>
+background-color:喜欢的颜色;
+</pre>
+              设定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+3
+4
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+  <span class='code-line remarkable-code'>  <span class='word-blue'>background-color</span>:<span class='word-blue'>black</span>;</span>
+  <span class='code-line'>  <span class='word-blue'>color</span>:<span class='word-blue'>white</span>;</span>
+  <span class='code-line'>  <span class='word-blue'>font-size</span>:<span class='word-blue'><span class='word-purple'>30</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+  </tr>
+  </table>
+              <br>
+              颜色
+<pre>
+color:喜欢的颜色;
+</pre>
+              跟这个一样，可以用「#??????」设定（颜色<strong><a href="https://www.toodoo.com/db/color.html" target="_blank">请参考这里</a></strong>）。
+              <hr class="red-hr">
+              <strong><li><p id="title1-2">左右长度・上下高度</p></li></strong>
+              <br>
+              长度要
+  <pre>
+width:设定的长度px（或者%）;
+</pre>
+              设定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.my-form</span>{</span>
+  <span class='code-line'>  <span class='word-blue'>width</span>:<span class='word-blue'><span class='word-purple'>500</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+  </tr>
+  </table>
+              <br>
+              设定<a href="/zh-CN/mugcups/6#title2-3" target="_blank"><strong>Bootstrap的输入框</strong></a>的长度的时候，有用过。
+              <input type="input" style="width:500px;" class="form-control my-form" placeholder="width:500px;">
+              <hr class="red-hr">
+              同样的高度是
+  <pre>
+height:设定的高度px（或者%）;
+</pre>
+              设定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+3
+4
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.my-form</span>{</span>
+  <span class='code-line remarkable-code'>  <span class='word-blue'>height</span>:<span class='word-blue'><span class='word-purple'>200</span><span class='word-red'>px</span></span>;</span>
+  <span class='code-line'>  <span class='word-blue'>width</span>:<span class='word-blue'><span class='word-purple'>500</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+  </tr>
+  </table>
+              <br>
+              <textarea class="my-form form-control" placeholder="width:500px;height:200px" style="width:500px;height:200px;"></textarea>
+              <hr class="red-hr">
+              <strong><li><p id="title1-3"></p>空格</li></strong>
+              <br>
+              空格的设定有
+              <strong>
+                <ul class="number_ul">
+                  <li>外面的空白（margin）</li>
+                  <li>里面的空白（padding）</li>
+                </ul>
+              </strong>
+              <br>
+              的两种。
+              <hr class="red-hr">
+              外面的空格（margin）要
+  <pre>
+margin-空白的地方:设定的大小px（或者%）;
+</pre>
+              设定。
+              <br>
+              空格的地方的设定是，<u>上面的话用「top」，下面的话用「bottom」，右边的话用「right」，左边的话用「left」</u>设定。
+              <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2
+3
+4</strong>
+5
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+  <span class='code-line remarkable-code'>  <span class='word-blue'>margin-top</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+  <span class='code-line remarkable-code'>  <span class='word-blue'>margin-left</span>:<span class='word-blue'><span class='word-purple'>10</span><span class='word-red'>px</span></span>;</span>
+  <span class='code-line remarkable-code'>  <span class='word-blue'>margin-right</span>:<span class='word-blue'><span class='word-purple'>10</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+  </tr>
+  </table>
+            <hr class="red-hr">
+            里面的空格使用 padding。
+  <pre>
+padding-空白的地方:设定的大小px;
+</pre>
+            这样设定。
+            <br>
+            空白的地方跟 margin 一样。
+            <hr class="red-hr">
+            例如说，像下面一样图像里的文字（详细<a href="/zh-CN/mugcups/8#title1-2" target="_blank"><strong>请参考这里</strong></a>）
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root_text_center.png",
+                        :target => ["_blank"] %>
+            移动到下面一点儿的话，使用 padding 在里面作空格。
+            <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/page8/Chrome_posts_root.png",
+                                  :width => "90%",
+                                  :class => "hover_img textbook-title-img"),
+                        "/assets/pahe8/Chrome_posts_root.png",
+                        :target => ["_blank"] %>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+<strong class="color-red">2</strong>
+3
+</td>
+<td class='code-content'><span class='code-line'><span class='word-green'>.example</span>{</span>
+  <span class='code-line remarkable-code'>  <span class='word-blue'>padding</span>:<span class='word-blue'><span class='word-purple'>150</span><span class='word-red'>px</span></span>;</span>
+<span class='code-line'>}</span>
+</td>
+  </tr>
+  </table>
+            <br>
+            <strong>不知道要用 margin 或者 padding 的话，试试看一次吧！</strong>
+            </ul>
+            <hr>
+            <strong class="little-remarkable"><u>还有別的CSS的设定，有兴趣的话自己查查看吧！</u></strong>
+          </h4>
+          <br>
+          <h2 class="textbook-section-title" id="title2"><strong>2 : Bootstrap的设定</strong></h2>
+          <h4>
+          解释 Bootstrap（导入等等的详细<a href="/zh-CN/mugcups/7#title2" target="_blank"><strong>请参考这里</strong></a>）的设定。
+          <br>
+          这一次说明
+          <strong>
+          <ul class="number_ul">
+            <li>btn（按钮）</li>
+            <li>form-control（输入框）</li>
+            <li>nav（游览列）</li>
+          </ul>
+          </strong>
+          的內容。
+          <hr>
+          <ul class="number_ul">
+            <strong id="title2-1"><li>btn（按钮）</li></strong>
+            <br>
+            Bootstrap的按钮用
+  <pre>
+class="btn 喜欢的按钮"
+</pre>
+            设定。
+            <hr class="red-hr">
+            <a class="btn btn-primary">蓝色的按钮</a>
+            <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;蓝色的按钮&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+            <br>
+            按鈕有
+            <br>
+            <a class="btn btn-danger">btn-danger</a>　<a class="btn btn-success">btn-success</a>　<a class="btn btn-info">btn-info</a>　等等的种类。（別的按钮，<a href="http://getbootstrap.com/css#buttons-options" target="_blank"><strong>请参考这里</strong></a>）
+            <br><br>
+            详细<a href="/zh-CN/mugcups/7#title2-2-2" target="_blank"><strong>请参考这里</strong></a>
+            <hr class="red-hr">
+            <strong id="title2-2"><li>form-control（输入框）</li></strong>
+            <br>
+            Bootstrap的输入框用
+  <pre>
+class="form-control"
+</pre>
+            设定。
+            <hr class="red-hr">
+            <input type="input" class="form-control">
+            <br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= f.text_field <span class="word-purple">:name</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control"</span> %&gt;</span>
+</td>
+  </tr>
+  </table>
+            <br>
+            详细<a href="/zh-CN/mugcups/7#title2-2-3" target="_blank"><strong>请参考这里</strong></a>
+            <hr class="red-hr">
+            <strong id="title2-3"><li>nav（游览列）</li></strong>
+            <br>
+            Bootstrap的游览列要
+            <br><br>
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>nav</span><span class='word-green'> id</span>=<span class='word-yellow'>"mainNav"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar navbar-default navbar-fixed-top"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"container-fluid"</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"navbar-header"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>button</span><span class='word-green'> type</span>=<span class='word-yellow'>"button"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-toggle collapsed"</span> <span class="word-green">data-toggle</span>=<span class="word-yellow">"collapse"</span> <span class="word-green">data-target</span>=<span class="word-yellow">"#bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"sr-only"</span>&gt;Toggle navigation&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>                &lt;<span class='word-red'>span</span><span class='word-green'> class</span>=<span class='word-yellow'>"icon-bar"</span>&gt;&lt;/<span class='word-red'>span</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>button</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>    &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"collapse navbar-collapse"</span> <span class="word-green">id</span>=<span class="word-yellow">"bs-example-navbar-collapse-1"</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>ul</span>&gt;</span>
+<span class='code-line'>      &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>nav</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+          <br>
+          这样设定。
+          <br><br>
+          左边的文字在
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>10
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts" class="navbar-brand"</span>&gt;myapp&lt;/<span class='word-red'>a</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+          设定
+          <br><br>
+          右边的文字在
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+          <br>
+          的之间追加，像
+  <table class='highlight'>
+  <tr>
+<td class='code-line-no text-center'>13
+<strong class="color-red">14</strong>
+15
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>ul</span><span class='word-green'> class</span>=<span class='word-yellow'>"nav navbar-nav navbar-right"</span>&gt;</span>
+<span class='code-line remarkable-code'>  &lt;<span class='word-red'>li</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/new"</span>&gt;新增投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>li</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>ul</span>&gt;</span>
+</td>
+  </tr>
+  </table>
+          <br>
+          这样的內容，设定。
+          <br><br>
+          详细<a href="/zh-CN/mugcups/7#title2-2-4" target="_blank"><strong>请参考这里</strong></a>。
+          </ul>
+          <hr class="red-hr">
+          <strong>有兴趣的话，自己查查看吧！</strong>
+          <hr>
+          </h4>
+          <div class="next-page">
+            <a href="javascript:history.back()" class="btn btn-primary">上页</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <strong>
+      <div id="slide-bar" class="clear-fix">
+        <div class="list-group nomargin">
+          <a href="#title" class="list-group-item list-title"><h4>css设定一览</h4></a>
+          <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+          <a href="#title1" class="list-group-item">1 : CSS的设定</a>
+          <a href="#title1-1" class="list-group-item"><small>　① : 文字的大小・颜色・背景色</small></a>
+          <a href="#title1-2" class="list-group-item"><small>　② : 左右长度・上下高度</small></a>
+          <a href="#title1-3" class="list-group-item"><small>　③ : 空格</small></a>
+          <a href="#title2" class="list-group-item">2 : Bootstrap 的设定</a>
+          <a href="#title2-1" class="list-group-item"><small>　① : btn</small></a>
+          <a href="#title2-2" class="list-group-item"><small>　② : form-control</small></a>
+          <a href="#title2-3" class="list-group-item"><small>　③ : nav</small></a>
+        </div>
+      </div>
+      </strong>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

@@ -1,0 +1,639 @@
+<h4 id="coffee-chapter3-2-2-1">
+  <p id="title2-2-1"><i class="fa fa-check-square color-red"></i>　<strong>⑴ : 新增「entries」资料（create）</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>首先新增「<u>entries</u>」资料吧！</strong>
+  <hr class="red-hr">
+  新增「entries」资料要在<strong>资料操作文件（<u>controller文件</u>）</strong>里
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Entry</span>.create(<span class='word-purple'>:user_id</span> => 数字, <span class='word-purple'>:room_id</span> => 数字)</span>
+</td>
+</tr>
+</table>
+  <br>
+  追加上面的內容。
+  <br><br>
+  这一次的「entries」资料的设定是
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  点击 <a class="btn btn-warning">开始聊天</a> 作<strong>「<u>rooms</u>」资料</strong>的时候会一起新增「entries」资料。
+  <br><br>
+  所以
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'><span class='word-blue'>Entry</span>.create(<span class='word-purple'>:user_id</span> => 数字, <span class='word-purple'>:room_id</span> => 数字)</span>
+</td>
+</tr>
+</table>
+  <br>
+  在<strong>「rooms_controller.rb」</strong>里面追加像上面的设定。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>首先作<u>现在登入的会员在参加聊天室</u>的资料吧！</strong>
+  <br><br>
+  编辑<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>的內容吧！
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/4#title2-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第7行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+<strong class="color-red">7</strong>
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+<span class='code-line remarkable-code'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
+<span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"作好聊天室了！"</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这样作好了
+  <strong>
+    <ul class="number_ul">
+      <li>「room_id」里放「@room」的「id」</li>
+      <li>「user_id」里放「current_user」的「id」</li>
+    </ul>
+  </strong>
+  的「entries」资料。
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>如果要新增登入的会员的「id」是「1」・新增的聊天室的「id」是「1」的资料的话，</strong>
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <strong>这样的资料。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>接着作<u>聊天的对方的会员在参加聊天室</u>的资料吧！</strong>
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;"><strong class="color-red">2</strong></td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  在这里，
+  <br>
+  <ul class="number_ul">
+  <strong><li>点击，作「<u>rooms</u>」资料的 <a class="btn btn-warning">开始聊天</a> 之前</li></strong>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「<u>app > views > users</u>」文件夾）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+11
+<strong class="color-red">12
+13
+14</strong>
+15
+16
+17
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>  &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>      &lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>        &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>    &lt;%= f.submit <span class="word-yellow">"开始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong><u>设定新的「entries」资料。</u></strong>
+  <br><br>
+  <strong><li>点击 <a class="btn btn-warning">开始聊天</a> 之后</li></strong>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+<span class='code-line'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
+<span class='code-line remarkable-code'>    @entry2 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:entry</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:room_id</span> => @room.id))</span>
+<span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"作好聊天室了！"</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong><u>在「rooms_controller.rb」里作新的资料。</u></strong>
+  </ul>
+  <br>
+  所以在这里设定
+  <strong>
+  <ul class="number_ul">
+    <li><p>点击 <a class="btn btn-warning">开始聊天</a> <span class="color-red">之前</span>的设定</p></li>
+    <li><p>点击 <a class="btn btn-warning">开始聊天</a> <span class="color-red">之後</span>的设定</p></li>
+  </ul>
+  </strong>
+  这个两个內容吧。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>那么开始设定內容吧！</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>首先从，点击 <a class="btn btn-warning">开始聊天</a> <span class="color-red">之前</span>的设定做起吧。</strong>
+  <br><br>
+  設定這個要做
+  <strong>
+  <ul class="number_ul">
+    <li>「users_controller.rb」里设定新的「entries」资料「@entry」（<u>资料操作</u>）</li>
+    <li>「users」资料库的「show」网页里设定「@entry」的输入框（<u>显示网页</u>）</li>
+  </ul>
+  </strong>
+  这个两个设定。
+  <br><br>
+  <i class="fa fa-arrow-right color-red"></i>　<strong>从第一个设定，在「users_controller.rb」里设定「@entry」开始做吧！（<u>操作资料</u>）</strong>
+  <br><br>
+  打开<strong>「<u>app > controllers > users_controller.rb</u>」</strong>之后，编辑內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第10行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+8
+9
+<strong class="color-red">10</strong>
+11
+12
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      @room <span class="word-red">=</span> <span class="word-blue">Room</span>.<span class='word-red'>new</span></span>
+<span class='code-line remarkable-code'>      @entry <span class="word-red">=</span> <span class="word-blue">Entry</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>「<u>app > views > users > show.html.erb</u>」</strong>里面设定，在这里作的新的「entry」资料「@entry」（<u>网页显示</u>）。
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（追加第12〜14行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>10
+11
+<strong class="color-red">12
+13
+14</strong>
+15
+16
+17
+</td>
+<td class='code-content'><span class='code-line'>  &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>    &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>      &lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>        &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>      &lt;%= f.submit <span class="word-yellow">"开始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  出现了新的设定，说明內容吧！
+  <hr class="red-hr">
+  这一次出现了
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>12
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个新的设定。
+  <br><br>
+  这个是
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>11
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>在作「<u>rooms</u>」资料</strong>的设定里，追加<strong>作「<u>@entry</u>」资料</strong>的设定。
+  <br><br>
+  在
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  之间追加资料的设定。
+  <br><br>
+  在这里使用<strong>「<a href="/zh-CN/coffee_cups/2#title2-3-4" target="_blank">hidden_field</a>」</strong>，
+  <br>
+  设定<strong>「@entry」的「user_id」里放会员的资料「@user」的「id」</strong>的內容。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  使用<strong>「<u>users_controller.rb</u>」里设定的「<u>@entry</u>」</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>  &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在<strong>「<u>rooms_controller.rb</u>」</strong>里面，新增资料。
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@entry2 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:entry</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:room_id</span> => @room.id))</span>
+</td>
+</tr>
+</table>
+  <br>
+  这个<strong>「<u>params</u>」</strong>后面，放
+  <br>
+  <strong>
+  <ul class="number_ul">
+    <li>「rooms」资料</li>
+    <li>在「entry」资料里指定的「user_id」的资料</li>
+  </ul>
+  </strong>
+  使用<strong><a href="/zh-CN/mugcups/6#title1-4-2-data" target="_blank">「<u>require</u>」跟「<u>permit</u>」</a></strong>，新增资料。
+  <br><br>
+  <i class="fa fa-question-circle color-green"></i>　<strong>做像下面一样的「new」网页里，显示「<u>@corporation」的「name」的输入框</u>要怎么样设定好呢？</strong>
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5</strong>
+6
+7
+8
+9
+<strong class="color-red">10</strong>
+11
+12
+13
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>new</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class="word-blue">User</span>.<span class='word-red'>new</span></span>
+<span class='code-line remarkable-code'>    @corporation <span class="word-red">=</span> <span class="word-blue">Corporation</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:name</span>))</span>
+<span class='code-line remarkable-code'>    @corporation <span class="word-red">=</span> <span class='word-blue'>Corporation</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:corporation</span>).permit(<span class='word-purple'>:name</span>))</span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <hr class="red-hr">
+  <textarea class="input-code form-control" placeholder="打入答案" rows="4"></textarea>
+  <br>
+  <i class="fa fa-file color-red"></i>　<strong>new.html.erb（<u>app > views > users 文件夾</u>）</strong>
+  <br>
+  <small>※　上面放鼠标，可以看到答案</small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+<strong class="color-red">5
+6
+7</strong>
+8
+9
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;作新的资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= f.text_field <span class='word-purple'>:name</span> %&gt;</span>
+<span class="remarkable-code answer-code"><span class='code-line'>  &lt;%= fields_for @corporation <span class="word-red">do</span> |c| %&gt;</span>
+<span class='code-line'>    &lt;%= c.text_field <span class='word-purple'>:name</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>  &lt;%= f.submit <span class='word-yellow'>"新增"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>到这里设定好，新增资料<span class="color-red">之前</span>的设定了！</strong>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>接着设定，点击 <a class="btn btn-warning">开始聊天</a> <span class="color-red">之后</span>的內容吧。</strong>
+  <br><br>
+  在这里，设定<strong>「rooms_controller.rb」</strong>的內容。
+  <br>
+  现在是
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+8
+9
+10
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+<span class='code-line'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
+<span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"作好聊天室了！"</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  里<strong>「<u>@room</u>」跟「<u>@entry1</u>」</strong>新增资料，在这里追加作<strong>「<u>@entry2</u>」</strong>的设定（对方的会员的资料）吧。
+  <br><br>
+  那么编辑<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>的內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第8行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>5
+6
+7
+<strong class="color-red">8</strong>
+9
+10
+11
+</td>
+<td class='code-content'><span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+<span class='code-line'>    @entry1 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(<span class='word-purple'>:room_id</span> => @room.id, <span class='word-purple'>:user_id</span> => current_user.id)</span>
+<span class='code-line remarkable-code'>    @entry2 <span class="word-red">=</span> <span class='word-blue'>Entry</span>.create(params.<span class="word-red">require</span>(<span class='word-purple'>:entry</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:room_id</span> => @room.id))</span>
+<span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"作好聊天室了！"</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  params里面有
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第12〜14行）</strong>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= fields_for @entry <span class="word-red">do</span> |e| %&gt;</span>
+<span class='code-line'>  &lt;%= e.hidden_field <span class="word-purple">:user_id</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  <strong>「user_id」里放「@user」的「id」的「@entry」的资料</strong>。
+  <br>
+  把这个从<strong>「params」</strong>取得。
+  <br>
+  <small>※　params的说明<a href="/zh-CN/mugcups/6#title1-4-1" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>params.<span class="word-red">require</span>(<span class='word-purple'>:entry</span>).permit(<span class='word-purple'>:user_id</span>, <span class='word-purple'>:room_id</span>).merge(<span class='word-purple'>:room_id</span> => @room.id)</span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里
+  <strong>
+  <ul class="number_ul">
+    <li>应许编辑「entry」资料的「user_id」跟「room_id」的框子</li>
+    <small>※　详细<a href="/zh-CN/mugcups/6#title1-4-2-data" target="_blank"><strong>请参考这里</strong></a></small>
+    <li>「room_id」里放「@room」的「id」</li>
+    <small>※　详细<a href="/zh-CN/mugcups/11#title4-2-1" target="_blank"><strong>请参考这里</strong></a></small>
+  </ul>
+  </strong>
+  这个两个设定。
+  <hr class="red-hr">
+  这样
+  <strong>
+  <ul class="number_ul">
+    <li>「user_id」里放「@user」的「id」</li>
+    <li>「room_id」里放「@room」的「id」</li>
+  </ul>
+  </strong>
+  的新增资料的设定好了！
+  <br><br>
+  <strong>entries</strong>
+  <table class="table table-striped" style="width:50%">
+    <thead style="font-size:0.8em">
+      <tr class="active">
+        <th style="background-color: #f2dede;">id</th>
+        <th style="background-color: #f2dede;">room_id</th>
+        <th style="background-color: #f2dede;">user_id</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="background-color: #f2dede;">1</td>
+        <td style="background-color: #f2dede;">2</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+        <td style="font-size:11px;">2016-04-12 20:30:21</td>
+      </tr>
+    </tbody>
+  </table>
+  <i class="fa fa-play-circle"></i>　<strong>那么，试试看资料会不会新增！</strong>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  从不是自己的会员的网页以外，点击 <a class="btn btn-warning">开始聊天</a> 吧！
+  <br><br>
+  <small>
+    ※　<u>一起点击<strong>「Command」跟「c」</strong></u>停止，用<strong>「<u>rails s</u>」</strong>打开的服务器之后，再打入<strong><u>「rails s」</u></strong>吧。
+  </small>
+  <br><br>
+  <p class="alert alert-success">
+  <i class="fa fa-windows color-blue"></i>　<strong>使用Windows的话，
+  <br>
+  　<u>一起点击「ctrl」跟「c」</u>停止，用「<u>rails s</u>」打开的服务器之后，再打入「<u>rails s</u>」吧。</strong>
+  </p>
+  <br>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages_no_entry.png",
+              :target => ["_blank"] %>
+  应该移动到这样的网页吧。
+  <br>
+  已经作好「rooms」网页了，应该移动到<strong>「<a href="http://0.0.0.0:3000/rooms/2">0.0.0.0:3000/rooms/2</a>」</strong>网页。
+  <br><br>
+  作好了之后，<strong>用Sequel Pro / SqliteBrowser 看看「<u>entries</u>」资料有沒有作好了沒</strong>！
+  <br>
+  <small>※　打开Sequel Pro的方法<a href="/zh-CN/mugcups/how_to_open#title3" target="_blank"><strong>请参考这里</strong></a>，打开SqliteBrowser的方法<a href="/zh-CN/mugcups/how_to_open#title4" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Sequel_Pro_entries.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Sequel_Pro_entries.png",
+              :target => ["_blank"] %>
+  在这里作了
+  <strong>
+    <ul class="number_ul">
+      <li>表示会员「1」在参加聊天室「2」的资料</li>
+      <li>表示會員「2」在參加聊天室「2」的资料</li>
+    </ul>
+  </strong>
+  这个两个资料！
+  <hr class="red-hr">
+  <strong>
+  <i class="fa fa-play-circle"></i>　接着使用新增的资料，
+  <ul class="number_ul">
+    <li>在「rooms」网页上，显示参加的会员</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms_1_no_messages.png",
+                :target => ["_blank"] %>
+    <li>显示登入的会员在参加的聊天室一览</li>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_link_chats_1.png",
+                :target => ["_blank"] %>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_rooms.png",
+                :target => ["_blank"] %>
+  </ul>
+  做这个两个「显示资料」吧。
+  </strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>设定的內容，<a href="/zh-CN/codes/c_5" target="_blank">请参考这里</a>。</strong>
+</h4>

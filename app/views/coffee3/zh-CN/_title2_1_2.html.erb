@@ -1,0 +1,494 @@
+<h4 id="coffee-chapter3-2-1-2">
+  <p id="title2-1-2"><i class="fa fa-check-square color-red"></i>　<strong>⑵ : create</strong></p>
+  <br>
+  <i class="fa fa-play-circle"></i>　<strong>首先从「<u>rooms</u>」资料库的「<u>create</u>」网页开始设定吧！</strong>
+  <hr class="red-hr">
+  先作<strong>「<u>rooms</u>」资料库的「<u>操作资料</u>」的设定文件跟「<u>显示网页</u>」的设定文件夾</strong>吧！
+  <br>
+  <strong>在terminal上，打入下面的命令吧！</strong>
+  <br><br>
+  <strong>terminal</strong>
+  <br>
+  <small>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」吧。
+  </small>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>rails g controller rooms</span>
+</td>
+</tr>
+</table>
+  <br>
+  在这个打入作<strong>「<u>rooms</u>」资料库</strong>的
+  <strong>
+  <ul class="number_ul">
+    <li>操作资料的文件「<u>app > controllers > rooms_controller.rb</u>」</li>
+    <li>显示网页的文件夾「<u>app > views > rooms</u>」</li>
+  </ul>
+  </strong>
+  这个两个设定文件文件夾。
+  <hr class="red-hr">
+  首先在作好的文件文件夾上，追加刚开始的设定！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（追加第3〜18行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+<strong class="color-red">3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</strong>
+19
+20
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>RoomsController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class="remarkable-code"><span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>, <span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>index</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>edit</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>update</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span></span>
+<span class='code-line'></span>
+<span class='code-line'><span class='word-red'>end</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里设定好，<strong><u>会员的限制</u>跟<u>里面沒有设定內容的资料操作</u></strong>了。
+  <br>
+  <small>※　会员的限制<a href="/zh-CN/mugcups/9#title2" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  接着作显示网页的设定文件。
+  <br>
+  <strong>
+  「<u>app > views > rooms</u>」里保存
+  <ul class="number_ul">
+    <li>show.html.erb</li>
+    <li>index.html.erb</li>
+    <li>edit.html</li>
+  </ul>
+  的文件吧！
+  <br>
+  <small>
+    ※　保存资料的方法，<a href="/zh-CN/mugcups/how_to_save" target="_blank"><strong>请参考这里</strong></a>
+  </small>
+  <br><br>
+  </strong>
+  「create」要在「users」资料库的「show」网页上设定显示，「update」网页要移动到「edit」网页，所以不使用显示网页的文件。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>那么做「<u>create</u>」网页的设定吧！</strong>
+  <br><br>
+  在<strong>「<u>create</u>」</strong>网页的设定，
+  <ul class="number_ul">
+    <strong><li>「users」资料库的操作资料的设定文件「<u>users_controller.rb</u>」上</li></strong>
+    <br>
+    <strong>新增「<u>rooms</u>」资料</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@room <span class="word-red">=</span> <span class="word-blue">Room</span>.<span class='word-red'>new</span></span>
+</td>
+</tr>
+</table>
+    <br>
+    <strong><li>「users」资料的显示网页的设定文件「<u>show.html.erb</u>」上</li></strong>
+    <br>
+    <strong>显示登入按钮 <a class="btn btn-warning">开始聊天</a> </strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+</td>
+<td class='code-content'><span class='code-line'>&lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"开始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+    <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                          :width => "90%",
+                          :class => "hover_img textbook-title-img"),
+                "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                :target => ["_blank"] %>
+    <strong><li>「rooms」资料库的操作资料的设定文件「<u>rooms_controller.rb</u>」上</li></strong>
+    <br>
+    <strong>保存新的「<u>rooms</u>」资料</strong>
+    <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+</td>
+<td class='code-content'><span class='code-line'>@room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+</td>
+</tr>
+</table>
+  <br>
+  </ul>
+  这个三个內容。
+  <br><br>
+  <strong>一个一个做做看吧。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>首先从「users_controller.rb」设定內容吧。</strong>
+  <br><br>
+  打开<strong>「<u>app > controllers > users_controller.rb</u>」</strong>之后，编辑內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第7〜10行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+<strong class="color-red">7
+8
+9
+10</strong>
+11
+12
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>UsersController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>    @user <span class="word-red">=</span> <span class='word-blue'>User</span>.find(params[<span class='word-purple'>:id</span>])</span>
+<span class="remarkable-code"><span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
+<span class='code-line'>    <span class="word-red">else</span></span>
+<span class='code-line'>      @room <span class="word-red">=</span> <span class="word-blue">Room</span>.<span class='word-red'>new</span></span>
+<span class='code-line'>    <span class='word-red'>end</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'>  <span class="word-gray"># 省略</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这里是设定怎么样的內容呢？
+  <br><br>
+  在这里设定<strong>「users」资料库的「show」网页的会员跟<u>在登入的会员不一样</u></strong>的时候，
+  <br>
+  作新的<strong>「<u>rooms</u>」</strong>资料库的资料的标记<strong>「<u>@room</u>」</strong>。
+  <br>
+  <small>※　「if/else」，<a href="/zh-CN/mugcups/11#title4-3-2" target="_blank"><strong>请参考这里</strong></a>吧</small>
+  <br><br>
+  使用这个<strong>「<u>@room</u>」</strong>，作 <a class="btn btn-warning">开始聊天</a> 的按钮。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>在「<u>users</u>」资料库的「<u>show.html.erb</u>」追加设定吧！</strong>
+  <br><br>
+  打开<strong>「<u>app > views > users > show.html.erb</u>」</strong>，编辑內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1
+2</strong>
+3
+4
+5
+6
+7
+8
+9
+<strong class="color-red">10
+11
+12
+13</strong>
+14
+<strong class="color-red">15
+16</strong>
+17
+18
+</td>
+<td class='code-content'><span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span></span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;岁）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;</span>
+<span class='code-line'>    &lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑会员资料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>      &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>        &lt;%= f.submit <span class="word-yellow">"开始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>      &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span></span>
+<span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回会员一览&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  说明內容吧！
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>首先从第10〜13行</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>8
+9
+<strong class="color-red">10
+11
+12
+13</strong>
+14
+</td>
+<td class='code-content'><span class='code-line'>&lt;% <span class="word-red">if</span> @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑会员资料&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>&lt;% <span class="word-red">else</span> %&gt;</span>
+<span class='code-line'>  &lt;%= form_for @room <span class="word-red">do</span> |f| %&gt;</span>
+<span class='code-line'>    &lt;%= f.submit <span class="word-yellow">"开始聊天"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span></span>
+<span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里<strong>使用「users」网页的会员资料跟在登入的会员资料是不是一样的条件</strong>，
+  <br>
+  判別要不要显示 <a class="btn btn-warning">开始聊天</a> 的按钮。
+  <br>
+  <small>※　「if/else」的內容<a href="/zh-CN/mugcups/11#title4-3-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <br><br>
+  这里沒有输入框，但是这样也可以新增资料。
+  <br>
+  在资料库里设定了，作好空的资料的时候要在里面放的资料，所以点击按钮之后，资料库里会保存<strong><u>「name」里「新的聊天」</u>・<u>「explain」里「打入说明」</u>的资料</strong>。
+  <br>
+  <small>※　default的设定<a href="/zh-CN/coffee_cups/3#title1-2" target="_blank"><strong>请参考这里</strong></a>。</small>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>接着做，第1、2、15、16行</strong>
+  <br><br>
+  里面应该是
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'><strong class="color-red">1
+2
+...
+15
+16</strong>
+</td>
+<td class='code-content'><span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
+<span class='code-line'>    内容</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  这样的设定。
+  <br>
+  这个<strong>「<u>row</u>」跟「<u>col-xs-6</u>」</strong>是，在设定画面左右长度的<strong>「<u>Bootstrap</u>」</strong>的设定。
+  <br><br>
+  设定<strong>「<u>row</u>」</strong>围起來的地方的长度是<strong>「<i>12</i>」</strong>，在里面追加<strong>「<u>col-xs-数字</u>」</strong>分割长度「12」的画面。
+  <hr class="red-hr">
+  这一次使用<strong>「<u>col-xs-6</u>」</strong>，设定<strong>「<i>12</i>」</strong>一半的长度「6」，
+  <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+                        :width => "90%",
+                        :class => "hover_img textbook-title-img"),
+              "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee3/Chrome_messages_users_1_start_chat.png",
+              :target => ["_blank"] %>
+  所以显示画面一半的长度。
+</h4>
+  <h1>会员资料</h1>
+<h4>
+  的下面的线，应该变短了吧。
+  <hr class="red-hr">
+  像这一次一样，要显示
+  <div class="row">
+    <div class="col-xs-3" style="margin-top:20px; padding:0">
+      <p class="alert alert-success">内容1(长度3)</p>
+    </div>
+    <div class="col-xs-9" style="margin-top:20px; padding:0">
+      <p class="alert alert-danger">内容2(长度9)</p>
+    </div>
+  </div>
+  一样的显示的时候，
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+6
+7
+8
+</td>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-3"</span>&gt;</span>
+<span class='code-line'>    内容1</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-9"</span>&gt;</span>
+<span class='code-line'>    内容2</span>
+<span class='code-line'>  &lt;/<span class='word-red'>div</span>&gt;</span>
+<span class='code-line'>&lt;/<span class='word-red'>div</span>&gt;</span>
+</td>
+</tr>
+</table>
+  <br>
+  这样设定。
+  <hr class="red-hr">
+  <i class="fa fa-play-circle"></i>　<strong>最后在「rooms_controller.rb」里追加作「rooms」资料的设定吧。</strong>
+  <br><br>
+  打开<strong>「<u>app > controllers > rooms_controller.rb</u>」</strong>之后，编辑內容吧！
+  <br><br>
+  <i class="fa fa-file color-red"></i>　<strong>rooms_controller.rb（编辑第6〜8行）</strong>
+  <br>
+  <small>
+    ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+    <br>
+    <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+  </small>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>1
+2
+3
+4
+5
+<strong class="color-red">6
+7
+8</strong>
+9
+10
+11
+12
+13
+14
+</td>
+<td class='code-content'><span class='code-line'><span class='word-red'>class </span>RoomsController <span class="word-green">< ApplicationController</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  before_action <span class='word-purple'>:authenticate_user!</span>, <span class='word-purple'>:only</span> => [<span class='word-purple'>:create</span>, <span class='word-purple'>:show</span>, <span class='word-purple'>:index</span>, <span class='word-purple'>:edit</span>, <span class='word-purple'>:update</span>]</span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>create</span></span>
+<span class="remarkable-code"><span class='code-line'>    @room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+<span class='code-line'>    redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+<span class='code-line'>    flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"作好聊天室了！"</span></span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class='code-line'></span>
+<span class='code-line'>  <span class='word-red'>def </span><span class='word-green'>show</span></span>
+<span class='code-line'>  <span class='word-red'>end</span></span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="word-gray"># 以下省略</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  那么解释內容吧！
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>首先从第6行</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>6
+</td>
+<td class='code-content'><span class='code-line'>@room <span class="word-red">=</span> <span class='word-blue'>Room</span>.create</span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里<strong>作「<u>id</u>」「<u>created_at</u>」「<u>updated_at</u>」以外沒有任何资料的「<u>rooms</u>」资料</strong>。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/4#title2-1" target="_blank"><strong>请参考这里</strong></a></small>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>接着第7行</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>7
+</td>
+<td class='code-content'><span class='code-line'>redirect_to <span class='word-yellow'>"/rooms/#{@room.id}"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里，<strong>移动到作好的「<u>rooms</u>」资料的网页</strong>。
+  <br>
+  <strong>移动到作好的「<u>@room</u>」的「<u>id</u>」的「<u>rooms</u>」资料库的「<u>show</u>」网页。</strong>
+  <br>
+  <small>※　详细<a href="/zh-CN/coffee_cups/1#title4-4" target="_blank"><strong>请参考「update」网页</strong></a>吧。</small>
+  <br><br>
+  应为在这里移动「rooms」资料库的「show」网页，<strong>所以不用作「<u>create.html.erb</u>」文件。</strong>
+  <hr class="red-hr">
+  <i class="fa fa-arrow-right"></i>　<strong>最后第8行</strong>
+  <br><br>
+<table class='highlight'>
+<tr>
+<td class='code-line-no text-center'>8
+</td>
+<td class='code-content'><span class='code-line'>flash[<span class='word-purple'>:notice</span>] = <span class='word-yellow'>"作好聊天室了！"</span></span>
+</td>
+</tr>
+</table>
+  <br>
+  在这里设定，移动到的网页上显示
+  <p class="alert alert-success" style="margin:20px 0">作好聊天室了！</p>
+  的通知。
+  <br>
+  <small>※　详细<a href="/zh-CN/mugcups/9#title2-2-2" target="_blank"><strong>请参考这里</strong></a>。</small>
+  <br><br>
+  <strong>
+  到这里设定好「rooms」资料库的「create」的设定了。
+  <br><br>
+  <i class="fa fa-play-circle"></i>　<strong>接着设定「show」网页的设定吧！</strong>
+  <br><br>
+  <i class="fa fa-arrow-right"></i>　<strong>设定的內容，<a href="/zh-CN/codes/c_4#title1-2" target="_blank">请参考这里</a>。</strong>
+</h4>
