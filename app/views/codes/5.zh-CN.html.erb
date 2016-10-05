@@ -4,42 +4,42 @@
         <div class="textbook-area">
           <div class="textbook-area-inner fadeIn wow">
             <div id="title" class="textbook-title">
-              <h1><strong>作作看網頁！①：設定一覽</strong></h1>
+              <h1><strong>作作看网页！①：设定一览</strong></h1>
             </div>
             <h4>
             <u>
-            <a href="/zh-CN/mugcups/5" class="text-left" target="_blank">作作看網頁！①</a>
+            <a href="/zh-CN/mugcups/5" class="text-left" target="_blank">作作看网页！①</a>
             </u>
             </h4>
             <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header5.jpg",
                           :width => "90%",
                           :class => "textbook-title-img hover_img" %>
             <hr>
-            <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
+            <h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
             <h4>
-              <i class="fa fa-bookmark color-red"></i>　<strong>看看在「作作看網頁！①」裡設定的內容</strong>
+              <i class="fa fa-bookmark color-red"></i>　<strong>看看在「作作看网页！①」里设定的內容</strong>
             </h4>
             <br>
-            <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覽</strong></h2>
+            <h2 class="textbook-section-title" id="title1"><strong>1 : 设定一览</strong></h2>
             <h4 id="code5-1">
-            <strong>「<a href="/zh-CN/mugcups/5" target="_blank">作作看網頁！①</a>」裡設定了「posts」資料庫的網頁<u>「show」「index」</u>的內容。</strong>
+            <strong>「<a href="/zh-CN/mugcups/5" target="_blank">作作看网页！①</a>」里设定了「posts」资料库的网页<u>「show」「index」</u>的內容。</strong>
             <hr class="red-hr">
-            網頁的設定，需要
+            网页的设定，需要
             <strong>
               <ul class="number_ul">
-                <li>七個網頁的設定（route.rb）</li>
-                <li>操作資料的設定（controller文件）</li>
-                <li>顯示網頁的設定（views文件夾）</li>
+                <li>七個网页的设定（route.rb）</li>
+                <li>操作资料的设定（controller文件）</li>
+                <li>显示网页的设定（views文件夾）</li>
               </ul>
             </strong>
-            這個三個設定。
+            这个三个设定。
             <br><br>
-            為了作「controller」文件跟「views」文件及，先必須在terminal上打入
+            为了作「controller」文件跟「views」文件及，先必须在terminal上打入
             <br><br>
             　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，请使用「命令提示符」吧。
             </small>
             <br><br>
 <table class='highlight'>
@@ -51,9 +51,9 @@
 </tr>
 </table>
             <br>
-            這個命令，<strong><u>作「controller」文件（posts_controller.rb）跟「views」文件及（posts）</u></strong>。
+            这个命令，<strong><u>作「controller」文件（posts_controller.rb）跟「views」文件及（posts）</u></strong>。
             <hr class="red-hr">
-            <p id="title1-1"><i class="fa fa-play-circle"></i>　<strong><u>七個網頁的設定（route.rb）</u></strong>是</p>
+            <p id="title1-1"><i class="fa fa-play-circle"></i>　<strong><u>七个网页的设定（route.rb）</u></strong>是</p>
             <br>
             <i class="fa fa-file color-red"></i>　<strong>route.rb</strong>
             <br><br>
@@ -92,7 +92,7 @@
 </tr>
 </table>
             <hr class="red-hr">
-            <p id="title1-2"><i class="fa fa-play-circle"></i>　<strong><u>資料操作的設定（controller文件）</u></strong>是</p>
+            <p id="title1-2"><i class="fa fa-play-circle"></i>　<strong><u>资料操作的设定（controller文件）</u></strong>是</p>
             <br>
             <i class="fa fa-file color-red"></i>　<strong>posts_controller.rb</strong>
             <br><br>
@@ -125,7 +125,7 @@
 </tr>
 </table>
             <hr class="red-hr">
-            <p id="title1-3"><i class="fa fa-play-circle"></i>　<strong>顯示網頁的設定（views文件夾）</strong>是設定</p>
+            <p id="title1-3"><i class="fa fa-play-circle"></i>　<strong>显示网页的设定（views文件夾）</strong>是设定</p>
             <br>
             <strong>
               <ul class="number_ul">
@@ -134,7 +134,7 @@
               </ul>
             </strong>
             <br>
-            這些文件。各個內容是
+            这些文件。各个內容是
             <br><br>
             <ul class="number_ul">
               <strong><li>　<i class="fa fa-file color-red"></i>　show.html.erb</li></strong>
@@ -151,7 +151,7 @@
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -169,7 +169,7 @@
 7
 8
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一览&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -181,7 +181,7 @@
 </tr>
 </table>
             <br>
-            這樣子。
+            这样子。
             </ul>
             <hr>
             <div class="next-page">
@@ -196,12 +196,12 @@
         <div id="slide-bar" class="clear-fix">
         <strong>
           <div class="list-group nomargin">
-            <a href="#title" class="list-group-item list-title"><h4>5：設定一覧</h4></a>
-            <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
-            <a href="#title1" class="list-group-item">1 : 設定一覽</a>
+            <a href="#title" class="list-group-item list-title"><h4>5：设定一览</h4></a>
+            <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+            <a href="#title1" class="list-group-item">1 : 设定一览</a>
             <a href="#title1-1" class="list-group-item">　<small>① : route.rb</small></a>
             <a href="#title1-2" class="list-group-item">　<small>② : posts_controller.rb</small></a>
-            <a href="#title1-3" class="list-group-item">　<small>③ : 網頁的顯示</small></a>
+            <a href="#title1-3" class="list-group-item">　<small>③ : 网页的显示</small></a>
           </div>
         </strong>
         </div>

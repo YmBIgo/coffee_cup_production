@@ -4,29 +4,29 @@
         <div class="textbook-area">
           <div class="textbook-area-inner fadeIn wow">
             <div id="title" class="textbook-title">
-              <h1><strong>把網頁設定的更方便吧！：設定一覽</strong></h1>
+              <h1><strong>把网页设定的更方便吧！：设定一览呢</strong></h1>
             </div>
             <h4>
             <u>
-            <a href="/zh-CN/mugcups/7" class="text-left" target="_blank">把網頁設定的更方便吧！</a>
+            <a href="/zh-CN/mugcups/7" class="text-left" target="_blank">把网页设定的更方便吧！</a>
             </u>
             </h4>
             <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header7.jpg",
                           :width => "90%",
                           :class => "textbook-title-img hover_img" %>
             <hr>
-            <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
+            <h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
             <h4>
-              <i class="fa fa-bookmark color-red"></i>　<strong>看看「把網頁設定的更方便吧！」裡設定的內容</strong>
+              <i class="fa fa-bookmark color-red"></i>　<strong>看看「把网页设定的更方便吧！」里设定的內容</strong>
             </h4>
             <br>
-            <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覽</strong></h2>
+            <h2 class="textbook-section-title" id="title1"><strong>1 : 设定一览</strong></h2>
             <h4 id="code-7">
-            <strong>「<a href="/zh-CN/mugcups/7" target="_blank">把網頁設定的更方便吧！</a>」裡，做了連結的設定跟Bootstrap的導入。</strong>
+            <strong>「<a href="/zh-CN/mugcups/7" target="_blank">把网页设定的更方便吧！</a>」里，做了连接的设定跟Bootstrap的导入。</strong>
             <br><br>
-            在這裡看看這裡設定的內容。
+            在这里看看这里设定的內容。
             <hr class="red-hr">
-            為了安裝Bootstrap的gem，在<strong>「<u>Gemfile</u>」</strong>上追加內容。
+            为了安裝Bootstrap的gem，在<strong>「<u>Gemfile</u>」</strong>上追加內容。
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>Gemfile（第26〜28行目）</strong>
             <br><br>
@@ -43,12 +43,12 @@
 </tr>
 </table>
             <br>
-            「Gemfile」裡的設定完了之後，打入
+            「Gemfile」里的设定完了之后，打入
             <br><br>
             　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，請使用「命令提示符」吧。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，请使用「命令提示符」吧。
             </small>
             <br><br>
 <table class='highlight'>
@@ -60,9 +60,9 @@
 </tr>
 </table>
             <br>
-            適用設定。
+            适用设定。
             <hr class="red-hr">
-            <strong>「<u>app > views > layouts > application.html.erb</u>」</strong>文件裡追加，用Bootstrap在畫面上作空格的設定跟追加遊覽列的設定。
+            <strong>「<u>app > views > layouts > application.html.erb</u>」</strong>文件里追加，用Bootstrap在画面上作空格的设定跟追加游览列的设定。
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>application.html.erb（第11〜31行）</strong>
             <br><br>
@@ -139,9 +139,9 @@
 </tr>
 </table>
             <hr class="red-hr">
-            適用Bootstrap的設定，吧按鈕跟輸入框裝飾的更漂亮。
+            适用Bootstrap的设定，吧按钮跟输入框装饰的更漂亮。
             <br>
-            <strong>設定的文件是「<u>app > views > posts</u>」裡面的顯示網頁的文件。</strong>
+            <strong>设定的文件是「<u>app > views > posts</u>」里面的显示网页的文件。</strong>
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>show.html.erb</strong>
 <table class='highlight'>
@@ -160,9 +160,9 @@
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;刪除投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">data-method</span>=<span class="word-yellow">"delete"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-danger"</span>&gt;删除投稿&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -179,7 +179,7 @@
 7
 <strong class="color-red">8</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一覽&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿一览&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;% @posts.each <span class="word-red">do</span> |p| %&gt;</span>
 <span class='code-line remarkable-code'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a </span><span class='word-green'>href</span>=<span class='word-yellow'>"/posts/&lt;%= p.id %&gt;"</span>&gt;&lt;%= p.id %&gt;：&lt;%= p.name %&gt;&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -223,10 +223,10 @@
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"登錄"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -246,7 +246,7 @@
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts" class="btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts" class="btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -268,7 +268,7 @@
 12
 <strong class="color-red">13</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;編輯投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;编辑投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @post <span class="word-red">do</span> |f| %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;内容&lt;/<span class='word-red'>p</span>&gt;</span>
@@ -277,7 +277,7 @@
 <span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;地方&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line remarkable-code'>  &lt;%= f.text_field <span class="word-purple">:place</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"編輯"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
+<span class='code-line remarkable-code'>  &lt;%= f.submit <span class="word-yellow">"编辑"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-primary"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end %&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts/&lt;%= @post.id %&gt;"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回投稿&lt;/<span class='word-red'>a</span>&gt;</span>
@@ -295,12 +295,12 @@
 5
 <strong class="color-red">6</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿編輯好了&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;投稿编辑好了&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @post.name %&gt;様&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
@@ -316,18 +316,18 @@
 6
 <strong class="color-red">7</strong>
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;刪除投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;删除投稿&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @post.name %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;内容：&lt;%= @post.content %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>p</span>&gt;地方：&lt;%= @post.place %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主頁&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line remarkable-code'>&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/posts"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-info"</span>&gt;返回主页&lt;/<span class='word-red'>a</span>&gt;</span>
 </td>
 </tr>
 </table>
             <hr class="red-hr">
-            用CSS文件，設定網頁的裝飾。
+            用CSS文件，设定网页的装饰。
             <br>
             <strong>「<u>app > assets > stylesheets > style.scss</u>」</strong>
             <br><br>
@@ -363,9 +363,9 @@
         <div id="slide-bar" class="clear-fix">
         <strong>
           <div class="list-group nomargin">
-            <a href="#title" class="list-group-item list-title"><h4>7：設定一覽</h4></a>
-            <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
-            <a href="#title1" class="list-group-item">1 : 設定一覽</a>
+            <a href="#title" class="list-group-item list-title"><h4>7：设定一览</h4></a>
+            <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+            <a href="#title1" class="list-group-item">1 : 设定一览</a>
           </div>
         </strong>
         </div>

@@ -1,47 +1,46 @@
-<% provide :title, "2：設定一覽" %>
 <div class="container">
   <div class="row">
     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
       <div class="textbook-area">
         <div class="textbook-area-inner fadeIn wow">
           <div id="title" class="textbook-title">
-            <h1><strong>作訊息：設定一覽</strong></h1>
+            <h1><strong>作讯息：设定一览</strong></h1>
           </div>
-          <h4><u><a href="/zh-CN/coffee_cups/2" class="text-left ">作訊息</a></u></h4>
+          <h4><u><a href="/zh-CN/coffee_cups/2" class="text-left ">作讯息</a></u></h4>
           <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffeecup_header2.jpg",
                         :width => "90%",
                         :class => "textbook-title-img hover_img" %>
           <hr>
-          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
           <h4>
-            <i class="fa fa-bookmark color-red"></i>　<strong>看看「作訊息」的設定一覽吧</strong>
+            <i class="fa fa-bookmark color-red"></i>　<strong>看看「作讯息」的设定一览吧</strong>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覽</strong></h2>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 设定一览</strong></h2>
           <h4 id="code-coffee-2">
           <strong>
-          「<a href="/zh-CN/coffee_cups/2" target="_blank">作訊息</a>」裡設定
+          「<a href="/zh-CN/coffee_cups/2" target="_blank">作讯息</a>」里设定
           <br>
             <ul class="number_ul">
-              <li>作「messages」資料庫</li>
-              <li>「7個網頁」的設定</li>
-              <li>資料操作的設定</li>
-              <li>網頁顯示的設定</li>
+              <li>作「messages」资料库</li>
+              <li>「七个网页」的设定</li>
+              <li>资料操作的设定</li>
+              <li>网页显示的设定</li>
             </ul>
-          這個4個內容。
+          这个四个內容。
           </strong>
           <br><br>
-          在這裡看看設定的內容吧。
+          在这里看看设定的內容吧。
           <hr class="red-hr">
           <ul class="number_ul">
-            <p id="title1-1"><strong><li>作「messages」資料庫</li></strong></p>
+            <p id="title1-1"><strong><li>作「messages」资料库</li></strong></p>
             <br>
-            首先在terminal上，作<strong>「<u>messages</u>」</strong>資料庫的設定文件。
+            首先在terminal上，作<strong>「<u>messages</u>」</strong>资料库的设定文件。
             <br><br>
             　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
             </small>
 <table class='highlight'>
 <tr>
@@ -52,14 +51,14 @@
 </tr>
 </table>
             <br>
-            編輯，在這個命令作好的<strong>「db > migrate」文件及裡的「日子_create_messages.rb」</strong>。
+            编辑，在这个命令作好的<strong>「db > migrate」文件及里的「日子_create_messages.rb」</strong>。
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>日子_create_messages.rb</strong>
             <br>
             <small>
-              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+              ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -93,7 +92,7 @@
 </tr>
 </table>
           <br>
-          這樣設定好了下面一樣的資料庫。
+          这样设定好了下面一样的资料库。
           <br><br>
           <strong>messages</strong>
           <table class="table table-striped" style="width:50%">
@@ -119,12 +118,12 @@
             </tbody>
           </table>
           <hr class="red-hr">
-          最後適用資料庫的設定。
+          最后适用资料库的设定。
           <br><br>
           　<strong>terminal</strong>
           <br>
           <small>
-            <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
           </small>
 <table class='highlight'>
 <tr>
@@ -135,35 +134,35 @@
 </tr>
 </table>
           <br>
-          這樣子作好下面圖像一樣的資料庫了。
+          这样子作好下面图像一样的资料库了。
           <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Sequel_Pro_messages_database.png",
                                 :width => "90%",
                                 :class => "hover_img textbook-title-img"),
                       "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee2/Sequel_Pro_messages_database.png",
                       :target => ["_blank"] %>
           <hr class="red-hr">
-          資料庫做好了，接着為了作網頁做
+          资料库做好了，接着为了作网页做
           <strong>
           <ul class="number_ul" style="margin-bottom:10px">
-            <li>「7個網頁」的設定</li>
-            <li>資料操作的設定</li>
-            <li>網頁顯示的設定</li>
+            <li>「七个网页」的设定</li>
+            <li>资料操作的设定</li>
+            <li>网页显示的设定</li>
           </ul>
           </strong>
-          這個<strong><u>3個設定</u></strong>。
+          这个<strong><u>三个设定</u></strong>。
           <br><br>
-          <i class="fa fa-play-circle"></i>　<strong>首先從「七個網頁」的設定開始做。</strong>
+          <i class="fa fa-play-circle"></i>　<strong>首先从「七个网页」的设定开始做。</strong>
           <hr class="red-hr">
-          <p id="title1-2"><strong><li>「7個網頁」的設定</li></strong></p>
+          <p id="title1-2"><strong><li>「七个网页」的设定</li></strong></p>
           <br>
-          「7個網頁」的設定要在，<strong>「<u>route.rb</u>」</strong>裡面設定。
+          「七个网页」的设定要在，<strong>「<u>route.rb</u>」</strong>里面设定。
           <br><br>
           <i class="fa fa-file color-red"></i>　<strong>route.rb</strong>
           <br>
           <small>
-            ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
             <br>
-            <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
           </small>
           <br><br>
 <table class='highlight'>
@@ -197,25 +196,25 @@
 </tr>
 </table>
           <br>
-          這樣設定好了，<strong>「<u>messages</u>」資料庫的網頁顯示只用「<u>create</u>」</strong>的設定。
+          这样设定好了，<strong>「<u>messages</u>」资料库的网页显示只用「<u>create</u>」</strong>的设定。
           <hr class="red-hr">
-          <p id="title1-3"><strong><li>資料操作的設定</li></strong></p>
+          <p id="title1-3"><strong><li>资料操作的设定</li></strong></p>
           <br>
-          資料操作的設定在
+          资料操作的设定在
           <strong>
           <ul class="number_ul" style="margin-bottom:10px">
             <li>messages_controller.rb</li>
             <li>users_controller.rb</li>
           </ul>
           </strong>
-          這個兩個文件設定內容。
+          这个两个文件设定內容。
           <br><br>
           <i class="fa fa-file color-red"></i>　<strong>messages_controller.rb</strong>
           <br>
           <small>
-            ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
             <br>
-            <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
           </small>
           <br><br>
 <table class='highlight'>
@@ -248,9 +247,9 @@
           <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（追加第7、8行）</strong>
           <br>
           <small>
-            ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
             <br>
-            <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
           </small>
           <br><br>
 <table class='highlight'>
@@ -311,7 +310,7 @@
 <span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
 <span class='code-line'>    <span class="word-red">else</span></span>
 <span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] = <span class='word-yellow'>"无效的会员"</span></span>
 <span class='code-line'>    <span class='word-red'>end</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 <span class='code-line'></span>
@@ -320,10 +319,10 @@
 <span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
 <span class='code-line'>      @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>, <span class='word-purple'>:age</span>))</span>
 <span class='code-line'>      redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"編輯好了！"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"编辑好了！"</span></span>
 <span class='code-line'>    <span class="word-red">else</span></span>
 <span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"无效的会员"</span></span>
 <span class='code-line'>    <span class='word-red'>end</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 <span class='code-line'></span>
@@ -332,18 +331,18 @@
 </tr>
 </table>
           <br>
-          這樣做好了在<strong>「<u>users</u>」資料的「<u>show</u>」網頁新增「<u>messages</u>」資料</strong>的設定了。
+          这样做好了在<strong>「<u>users</u>」资料的「<u>show</u>」网页新增「<u>messages</u>」资料</strong>的设定了。
           <hr class="red-hr">
-          <p id="title1-4"><strong><li>顯示網頁的設定</li></strong>
+          <p id="title1-4"><strong><li>显示网页的设定</li></strong>
           <br>
-          最後在<strong>「<u>app > views > users > show.html.erb</u>」</strong>裡面設定「users」資料庫的「show」網頁的顯示。
+          最后在<strong>「<u>app > views > users > show.html.erb</u>」</strong>里面设定「users」资料库的「show」网页的显示。
           <br><br>
           <i class="fa fa-file color-red"></i>　<strong>show.html.erb（第5〜19行）</strong>
           <br>
           <small>
-            ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
             <br>
-            <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
           </small>
           <br><br>
 <table class='highlight'>
@@ -374,10 +373,10 @@
 24
 25
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;歲）&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自我介紹：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;岁）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class="remarkable-code"><span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>h4</span>&gt;留言版&lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'></span>
@@ -391,19 +390,19 @@
 <span class='code-line'>  &lt;%= f.text_area <span class="word-purple">:content</span>, <span class="word-purple">:class</span> =&gt; <span class="word-yellow">"form-control my-form"</span>, <span class='word-purple'>:placeholder</span> =&gt; <span class='word-yellow'>"留下留言吧！"</span> %&gt;</span>
 <span class='code-line'>  &lt;%= f.hidden_field <span class="word-purple">:receiver</span>, <span class='word-purple'>:value</span> =&gt; @user.id %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span>
-<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登錄"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
+<span class='code-line'>  &lt;%= f.submit <span class="word-yellow">"登录"</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"btn btn-warning"</span> %&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span></span>
 <span class='code-line'></span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
-<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回會員一覽&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>&lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-primary"</span>&gt;返回会员一览&lt;/<span class='word-red'>a</span>&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>&lt;% if @user.id <span class="word-red">==</span> current_user.id %&gt;</span>
-<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;編輯會員資料&lt;/<span class='word-red'>a</span>&gt;</span>
+<span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;&lt;<span class='word-red'>a</span><span class='word-green'> href</span>=<span class='word-yellow'>"/users/&lt;%= @user.id %&gt;/edit"</span> <span class="word-green">class</span>=<span class="word-yellow">"btn btn-success"</span>&gt;编辑会员一览&lt;/<span class='word-red'>a</span>&gt;</span>
 <span class='code-line'>&lt;% <span class="word-red">end</span> %&gt;</span>
 </td>
 </tr>
 </table>
           <hr class="red-hr">
-          接着為了使用
+          接着为了使用
           <br><br>
 <table class='highlight'>
 <tr>
@@ -414,21 +413,21 @@
 </tr>
 </table>
           <br>
-          這樣的設定，追加了
+          这样的设定，追加了
           <strong>
           <ul class="number_ul" style="margin-bottom:10px">
             <li>「<u>app > models > user.rb</u>」</li>
             <li>「<u>app > models > message.rb</u>」</li>
           </ul>
           </strong>
-          這些設定。
+          这些设定。
           <br><br>
           <i class="fa fa-file color-red"></i>　<strong>user.rb（追加第7行）</strong>
           <br>
           <small>
-            ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
             <br>
-            <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
           </small>
           <br><br>
 <table class='highlight'>
@@ -459,9 +458,9 @@
           <i class="fa fa-file color-red"></i>　<strong>message.rb（追加第3行）</strong>
           <br>
           <small>
-            ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
             <br>
-            <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
           </small>
           <br><br>
 <table class='highlight'>
@@ -494,13 +493,13 @@
       <div id="slide-bar" class="clear-fix">
       <strong>
         <div class="list-group nomargin">
-          <a href="#title" class="list-group-item list-title"><h4>作訊息：設定一覽</h4></a>
-          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
-          <a href="#title1" class="list-group-item">1 : 設定一覽</a>
-          <a href="#title1-1" class="list-group-item">　<small>① : 作「messages」資料庫</small></a>
-          <a href="#title1-2" class="list-group-item">　<small>② : 「七個網頁」的設定</small></a>
-          <a href="#title1-3" class="list-group-item">　<small>③ : 資料操作的設定</small></a>
-          <a href="#title1-4" class="list-group-item">　<small>④ : 網頁顯示的設定</small></a>
+          <a href="#title" class="list-group-item list-title"><h4>作讯息：设定一览</h4></a>
+          <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 设定一览</a>
+          <a href="#title1-1" class="list-group-item">　<small>① : 作「messages」资料库</small></a>
+          <a href="#title1-2" class="list-group-item">　<small>② : 「七个网页」的设定</small></a>
+          <a href="#title1-3" class="list-group-item">　<small>③ : 资料操作的设定</small></a>
+          <a href="#title1-4" class="list-group-item">　<small>④ : 网页显示的设定</small></a>
         </div>
       </strong>
       </div>
