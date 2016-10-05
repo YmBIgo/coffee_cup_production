@@ -13,8 +13,18 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
+  after_action  :record_log
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def record_log
+    if user_signed_in?
+      Viewlist.create(:lang => I18n.locale, :page_type => request.url, :user_id => current_user.id, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
+    else
+      Viewlist.create(:lang => I18n.locale, :page_type => request.url, :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
+    end
   end
 
   def default_url_options(options = {})
