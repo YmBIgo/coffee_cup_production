@@ -4,41 +4,41 @@
       <div class="textbook-area">
         <div class="textbook-area-inner fadeIn wow">
           <div id="title" class="textbook-title">
-            <h1><strong>上載圖像：設定一覽</strong></h1>
+            <h1><strong>上载图像：设定一览</strong></h1>
           </div>
-          <h4><u><a href="/zh-CN/coffee_cups/7" class="text-left ">上載圖像</a></u></h4>
+          <h4><u><a href="/zh-CN/coffee_cups/7" class="text-left ">上载图像</a></u></h4>
           <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/coffeecup_header7.jpg",
                         :width => "90%",
                         :class => "textbook-title-img hover_img" %>
           <hr>
-          <h2 class="textbook-section-title" id="title0"><strong>0 : 這個章的目的</strong></h2>
+          <h2 class="textbook-section-title" id="title0"><strong>0 : 这个章的目的</strong></h2>
           <h4>
-            <i class="fa fa-bookmark color-red"></i>　<strong>看看「上載圖像」的設定一覽</strong>
+            <i class="fa fa-bookmark color-red"></i>　<strong>看看「上载图像」的设定一览</strong>
           </h4>
           <br>
-          <h2 class="textbook-section-title" id="title1"><strong>1 : 設定一覽</strong></h2>
+          <h2 class="textbook-section-title" id="title1"><strong>1 : 设定一览</strong></h2>
           <h4 id="code-coffee-1">
-            <strong>「<a href="/zh-CN/coffee_cups/7" target="_blank">上載圖像</a>」裡使用「<u>Paperclip</u>」的gem，上載圖像。</strong>
+            <strong>「<a href="/zh-CN/coffee_cups/7" target="_blank">上载图像</a>」裡使用「<u>Paperclip</u>」的gem，上载图像。</strong>
             <br><br>
-            在這個章做了，
+            在这个章做了，
             <strong>
             <ul class="number_ul">
-              <li>導入「Paperclip」</li>
-              <li>追加資料庫的框子</li>
-              <li>圖像的資料操作</li>
-              <li>網頁上顯示圖像</li>
+              <li>导入「Paperclip」</li>
+              <li>追加资料库的框子</li>
+              <li>图像的资料操作</li>
+              <li>网页上显示图像</li>
             </ul>
             </strong>
-            這個3個設定。
+            这个三个设定。
             <hr class="red-hr">
-            <p id="title1-1"><i class="fa fa-play-circle"></i>　<strong>首先從「<u>Paperclip</u>」的導入開始</strong></p>
+            <p id="title1-1"><i class="fa fa-play-circle"></i>　<strong>首先从「<u>Paperclip</u>」的导入开始</strong></p>
             <br>
             在terminal打入
             <br><br>
             　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
             </small>
 <table class='highlight'>
 <tr>
@@ -49,18 +49,18 @@
 </tr>
 </table>
             <br>
-            之後安裝<strong>使用「<u>Paperclip</u>」的時候會需要的「<u>imagemagick</u>」</strong>。
+            之后安装<strong>使用「<u>Paperclip</u>」的时候会需要的「<u>imagemagick</u>」</strong>。
             <br>
-            <small>※　這樣安裝好了，以後不用安裝。</small>
+            <small>※　这样安装好了，以后不用安裝。</small>
             <br><br>
-            到這裡之後，在<strong>「<u>Gemfile</u>」</strong>裡追加內容
+            到这里之后，在<strong>「<u>Gemfile</u>」</strong>里追加內容
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>Gemfile</strong>
             <br>
             <small>
-              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+              ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -72,12 +72,12 @@
 </tr>
 </table>
             <br>
-            用terminal，做gem的導入。
+            用terminal，做gem的导入。
             <br><br>
             　<strong>ターミナル</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
             </small>
 <table class='highlight'>
 <tr>
@@ -88,14 +88,14 @@
 </tr>
 </table>
             <hr class="red-hr">
-            <p id="title1-2"><i class="fa fa-play-circle"></i>　<strong>接着做框子的設定</strong></p>
+            <p id="title1-2"><i class="fa fa-play-circle"></i>　<strong>接着做框子的设定</strong></p>
             <br><br>
-            首先在terminal打入下面的打入，作編輯資料庫的設定文件。
+            首先在terminal打入下面的打入，作编辑资料库的设定文件。
             <br><br>
             　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
             </small>
 <table class='highlight'>
 <tr>
@@ -106,7 +106,7 @@
 </tr>
 </table>
             <br>
-            這樣<strong>「<u>db > migrate</u>」文件夾裡作好「<u>日子_add_attachment_image_to_users.rb</u>」文件</strong>了。
+            这样<strong>「<u>db > migrate</u>」文件夾里作好「<u>日子_add_attachment_image_to_users.rb</u>」文件</strong>了。
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>日子_add_attachment_image_to_users.rb</strong>
 <table class='highlight'>
@@ -138,12 +138,12 @@
 </tr>
 </table>
             <br>
-            適用這個文件的內容。
+            适用这个文件的內容。
             <br><br>
             　<strong>terminal</strong>
             <br>
             <small>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，用「命令提示符」。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，用「命令提示符」。
             </small>
 <table class='highlight'>
 <tr>
@@ -154,15 +154,15 @@
 </tr>
 </table>
             <br>
-            到這裡
+            到这里
             <%= link_to image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sequel_Pro_images.png",
                                   :width => "90%",
                                   :class => "hover_img textbook-title-img"),
                         "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/coffee4/Sequel_Pro_images.png",
                         :target => ["_blank"]  %>
-              追加了像上面圖像一樣的框子吧。
+              追加了像上面图像一样的框子吧。
               <hr class="red-hr">
-              <p id="title1-3"><i class="fa fa-play-circle"></i>　<strong>那麽做做看資料操作吧！</strong></p>
+              <p id="title1-3"><i class="fa fa-play-circle"></i>　<strong>那麽做做看资料操作吧！</strong></p>
               <br><br>
               資料操作在
               <strong>
@@ -171,14 +171,14 @@
                 <li>「app > models > user.rb」</li>
               </ul>
               </strong>
-              這個兩個文件裡設定。
+              这个两个文件里设定。
               <br><br>
-              <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（編輯第31行）</strong>
+              <i class="fa fa-file color-red"></i>　<strong>users_controller.rb（编辑第31行）</strong>
               <br>
               <small>
-                ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+                ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
                 <br>
-                <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+                <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
               </small>
               <br><br>
 <table class='highlight'>
@@ -201,10 +201,10 @@
 <span class='code-line'>    <span class='word-red'>if </span>@user.id <span class="word-red">==</span> current_user.id</span>
 <span class='code-line remarkable-code'>      @user.update(params.<span class="word-red">require</span>(<span class='word-purple'>:user</span>).permit(<span class='word-purple'>:first_name</span>, <span class='word-purple'>:family_name</span>, <span class='word-purple'>:self_introduction</span>, <span class='word-purple'>:age</span>, <span class='word-purple'>:image</span>))</span>
 <span class='code-line'>      redirect_to <span class='word-yellow'>"/users/#{@user.id}/edit"</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"編輯好了"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:notice</span>] <span class="word-red">=</span> <span class='word-yellow'>"编辑好了"</span></span>
 <span class='code-line'>    <span class="word-red">else</span></span>
 <span class='code-line'>      redirect_to <span class='word-yellow'>"/"</span></span>
-<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"無效的會員"</span></span>
+<span class='code-line'>      flash[<span class='word-purple'>:alert</span>] <span class="word-red">=</span> <span class='word-yellow'>"无效的会员"</span></span>
 <span class='code-line'>    <span class='word-red'>end</span></span>
 <span class='code-line'>  <span class='word-red'>end</span></span>
 </td>
@@ -214,9 +214,9 @@
             <i class="fa fa-file color-red"></i>　<strong>user.rb（追加第10〜12行）</strong>
             <br>
             <small>
-              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+              ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -254,9 +254,9 @@
 </tr>
 </table>
             <hr class="red-hr">
-            <p id="title1-4"><i class="fa fa-play-circle"></i>　<strong>最後做網頁的顯示吧</strong></p>
+            <p id="title1-4"><i class="fa fa-play-circle"></i>　<strong>最后做网页的显示吧</strong></p>
             <br><br>
-            網頁顯示要在
+            网页显示要在
             <strong>
             <ul class="number_ul">
               <li>「app > views > users > edit.html.erb」</li>
@@ -279,14 +279,14 @@
                           :target => ["_blank"] %>
             </ul>
             </strong>
-            這個3個網頁裡，追加畫面的輸入框・顯示的內容。
+            这个三个网页里，追加画面的输入框・显示的內容。
             <br><br>
             <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「users」文件夾）</strong>
             <br>
             <small>
-              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+              ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -307,16 +307,16 @@
 </td>
 <td class='code-content'><span class='code-line'>&lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"row"</span>&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>div</span><span class='word-green'> class</span>=<span class='word-yellow'>"col-xs-6"</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h1</span>&gt;会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>hr</span>&gt;</span>
 <span class="remarkable-code"><span class='code-line'>    &lt;% <span class="word-red">if</span> @user.image.present? %&gt;</span>
 <span class='code-line'>      &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
 <span class='code-line'>      &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">else</span> %&gt;</span>
-<span class='code-line'>      &lt;<span class='word-red'>h4</span>&gt;沒有圖像&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>      &lt;<span class='word-red'>h4</span>&gt;沒有图像&lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'>    &lt;% <span class="word-red">end</span> %&gt;</span></span>
-<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;歳）&lt;/<span class='word-red'>p</span>&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自我介紹：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;名字：&lt;%= @user.family_name %&gt;&lt;%= @user.first_name %&gt;（&lt;%= @user.age %&gt;岁）&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>p</span>&gt;自我介绍：&lt;%= @user.self_introduction %&gt;&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line word-gray'>    &lt;!-- 省略 --&gt;</span>
 </td>
 </tr>
@@ -325,9 +325,9 @@
             <i class="fa fa-file color-red"></i>　<strong>edit.html.erb（「users」文件夾）</strong>
             <br>
             <small>
-              ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+              ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
               <br>
-              <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+              <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
             </small>
             <br><br>
 <table class='highlight'>
@@ -347,15 +347,15 @@
 13
 ...
 </td>
-<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;編輯會員資料&lt;/<span class='word-red'>h1</span>&gt;</span>
+<td class='code-content'><span class='code-line'>&lt;<span class='word-red'>h1</span>&gt;编辑会员资料&lt;/<span class='word-red'>h1</span>&gt;</span>
 <span class='code-line'>&lt;<span class='word-red'>hr</span>&gt;</span>
 <span class='code-line'>&lt;%= form_for @user <span class="word-red">do</span> |f| %&gt;</span>
-<span class="remarkable-code"><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;頭像&lt;/<span class='word-red'>p</span>&gt;</span>
+<span class="remarkable-code"><span class='code-line'>  &lt;<span class='word-red'>p</span>&gt;头像&lt;/<span class='word-red'>p</span>&gt;</span>
 <span class='code-line'>  &lt;% <span class="word-red">if</span> @user.image.present? %&gt;</span>
 <span class='code-line'>    &lt;%= image_tag @user.image.url(<span class='word-purple'>:medium</span>) %&gt;</span>
 <span class='code-line'>    &lt;<span class='word-red'>br</span>&gt;&lt;<span class='word-red'>br</span>&gt;</span>
 <span class='code-line'>  &lt;% <span class="word-red">else</span> %&gt;</span>
-<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;圖像還沒登錄&lt;/<span class='word-red'>h4</span>&gt;</span>
+<span class='code-line'>    &lt;<span class='word-red'>h4</span>&gt;图像还沒登录&lt;/<span class='word-red'>h4</span>&gt;</span>
 <span class='code-line'>  &lt;% <span class="word-red">end</span> %&gt;</span>
 <span class='code-line'>  &lt;%= f.file_field <span class="word-purple">:image</span>, <span class='word-purple'>:class</span> =&gt; <span class='word-yellow'>"form-control my-form"</span> %&gt;</span>
 <span class='code-line'>  &lt;<span class='word-red'>br</span>&gt;</span></span>
@@ -368,9 +368,9 @@
           <i class="fa fa-file color-red"></i>　<strong>show.html.erb（「rooms」文件夾）</strong>
           <br>
           <small>
-            ※　<strong><u>用半母字母數字打入</u></strong>。一起點擊<strong><u>「Command」跟「s」</u></strong>可以保存內容。
+            ※　<strong><u>用半母字母数字打入</u></strong>。一起点击<strong><u>「Command」跟「s」</u></strong>可以保存內容。
             <br>
-            <i class="fa fa-windows color-blue"></i>　使用Windows的話，點擊<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
+            <i class="fa fa-windows color-blue"></i>　使用Windows的话，点击<strong><u>「ctrl」跟「s」</u></strong>可以保存內容。
           </small>
           <br><br>
 <table class='highlight'>
@@ -426,7 +426,7 @@
 </tr>
 </table>
             <br>
-            <i class="fa fa-play-circle"></i>　<strong>到這裡設定好了「<u>Paperclip</u>」的內容了。</strong>
+            <i class="fa fa-play-circle"></i>　<strong>到这里设定好了「<u>Paperclip</u>」的內容了。</strong>
             </h4>
             <hr>
             <div class="next-page">
@@ -440,13 +440,13 @@
       <div id="slide-bar" class="clear-fix">
       <strong>
         <div class="list-group nomargin">
-          <a href="#title" class="list-group-item list-title"><h4>上載圖像：設定一覽</h4></a>
-          <a href="#title0" class="list-group-item">0 : 這個章的目的</a>
-          <a href="#title1" class="list-group-item">1 : 設定一覽</a>
-          <a href="#title1-1" class="list-group-item">　<small>① : 導入「Paperclip」</small></a>
+          <a href="#title" class="list-group-item list-title"><h4>上载图像：设定一览</h4></a>
+          <a href="#title0" class="list-group-item">0 : 这个章的目的</a>
+          <a href="#title1" class="list-group-item">1 : 设定一览</a>
+          <a href="#title1-1" class="list-group-item">　<small>① : 导入「Paperclip」</small></a>
           <a href="#title1-2" class="list-group-item">　<small>② : 追加框子</small></a>
-          <a href="#title1-3" class="list-group-item">　<small>③ : 資料操作</small></a>
-          <a href="#title1-4" class="list-group-item">　<small>④ : 網頁顯示</small></a>
+          <a href="#title1-3" class="list-group-item">　<small>③ : 资料操作</small></a>
+          <a href="#title1-4" class="list-group-item">　<small>④ : 网页显示</small></a>
         </div>
       </strong>
       </div>
