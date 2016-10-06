@@ -1,1 +1,1 @@
-web: bundle exec rake proxytasks:generate
+web: bin/proximo ruby proximo_bridge.rb
