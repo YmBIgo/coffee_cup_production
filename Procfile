@@ -1,1 +1,1 @@
-web: bin/proximo rake proxytasks:generate
+web: bundle exec rake proxytasks:generate
