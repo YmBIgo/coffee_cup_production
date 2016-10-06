@@ -14,7 +14,7 @@ namespace :proxytasks do
     # if code == 'cn'
     RestClient.proxy = ENV["PROXIMO_URL"] if ENV["PROXIMO_URL"]
 
-    res = RestClient.get("http://api.someservice.com/endpoint")
+    res = RestClient.get("http://www.coffee-cup.com")
 
     puts "status code", res.code
     puts "headers", res.headers
