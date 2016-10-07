@@ -5,7 +5,7 @@ if [ "${PROXIMO_URL}" == "" ]; then
   echo "heroku addons:add proximo:development"
 fi
 
-DANTE_DIR="$(dirname $(dirname $($0)))/vendor/dante"
+DANTE_DIR="vendor/dante"
 
 PROXIMO_LEADER=${PROXIMO_URL%%@*}
 PROXIMO_AUTH=$(echo $PROXIMO_LEADER | cut -d/ -f3)
