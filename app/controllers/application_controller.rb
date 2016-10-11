@@ -21,9 +21,9 @@ class ApplicationController < ActionController::Base
 
   def record_log
     if user_signed_in?
-      Viewlist.create(:lang => I18n.locale, :page_type => request.url, :user_id => current_user.id, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => request.referer)
+      Viewlist.create(:lang => I18n.locale, :page_type => request.url, :user_id => current_user.id, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => referer_str, :user_agent => request.env["HTTP_USER_AGENT"])
     else
-      Viewlist.create(:lang => I18n.locale, :page_type => request.url, :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => request.referer)
+      Viewlist.create(:lang => I18n.locale, :page_type => request.url, :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => referer_str, :user_agent => request.env["HTTP_USER_AGENT"])
     end
   end
 
@@ -33,13 +33,13 @@ class ApplicationController < ActionController::Base
 
   def error404(e)
     render 'error404', status: 404, formats: [:html]
-    Viewlist.create(:lang => "404", :page_type => request.url, :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => request.referer)
+    Viewlist.create(:lang => "404", :page_type => request.url, :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => referer_str, :user_agent => request.env["HTTP_USER_AGENT"])
   end
 
   def error500(e)
     logger.error [e, *e.backtrace].join("\n")
     render 'error500', status: 500, formats: [:html]
-    Viewlist.create(:lang => "500", :page_type => request.url, :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => request.referer)
+    Viewlist.create(:lang => "500", :page_type => request.url, :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => referer_str, :user_agent => request.env["HTTP_USER_AGENT"])
   end
 
   def after_sign_in_path_for(resource)
@@ -58,6 +58,14 @@ class ApplicationController < ActionController::Base
 
   def admin_controller?
     self.class < ActiveAdmin::BaseController
+  end
+
+  def referer_str
+    if request.referer != nil
+      request.referer
+    else
+      "no"
+    end
   end
 
 end
