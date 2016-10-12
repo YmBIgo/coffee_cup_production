@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   scope "(:locale)" do
   # top page
 
-    devise_for :users
+    devise_for :users, :controllers => {
+        :registrations => 'users/registrations'
+    }
 
     root to: "welcome#index"
 

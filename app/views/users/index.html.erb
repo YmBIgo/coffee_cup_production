@@ -70,20 +70,34 @@
             </div>
           <% else %>
             <h4>教材を購入しておりません</h4>
-            <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-warning">購入はこちらから</a>
             <hr class="red-hr">
-            <p>
-            <a target="_blank" class="btn btn-primary disabled">
-                  <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
-                                :class => "nav-img") %>
-                  Mugcup(基礎編)
-            </a>　
-            <a target="_blank" class="btn btn-danger disabled">
-                  <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
-                                :class => "nav-img") %>
-                  Coffee（応用編）
-            </a>
-            </p>
+            <div class="row">
+              <div class="col-sm-6">
+                <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-warning btn-lg">購入はこちらから</a>
+              </div>
+              <div class="col-sm-6">
+                <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-success btn-lg">購入時の注意点</a>
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-sm-6">
+                <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="btn btn-primary btn-lg disabled">
+                      <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
+                                    :class => "nav-img") %>
+                      Mugcup(基礎編)
+                </a>
+                <br><br>
+              </div>
+              <div class="col-sm-6">
+                <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="btn btn-danger btn-lg disabled">
+                    <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
+                                  :class => "nav-img") %>
+                    Coffee（応用編）
+                </a>
+                <br><br>
+              </div>
+            </div>
           <% end %>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 teach-text-section">
@@ -105,8 +119,6 @@
         <div class="my-info-card-inner">
           <h2 class="text-center">
             <strong><i class="fa fa-user"></i>　<%= current_user.full_name %></strong>
-            <br>
-            <p><a href="/<%= I18n.locale %>/users/<%= current_user.id %>/edit" class="btn btn-success" style="margin-top:15px">ユーザー情報を編集</a></p>
           </h2>
           <hr class="red-hr">
           <h4 class="text-left">
@@ -122,7 +134,15 @@
             <br>
             <strong>都道府県名</strong>　　 : <%= current_user.prefecture %>
           </h4>
-          <p><%= link_to "基本情報の編集", edit_user_registration_path, :class => "btn btn-warning" %></p>
+          <br>
+          <div class="row">
+            <div class="col-sm-6">
+              <p><%= link_to "ユーザー情報を編集", edit_user_path(current_user.id), :class => "btn btn-success btn-lg" %></p>
+            </div>
+            <div class="col-sm-6">
+              <p><%= link_to "基本情報の編集", edit_user_registration_path, :class => "btn btn-warning btn-lg" %></p>
+            </div>
+          </div>
         </div>
       </div>
       <br>

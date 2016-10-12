@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
+  before_filter :basic_auth, :if => :check_company?, :only => [:edit, :update, :destroy]
 
   def index
   end
@@ -39,6 +40,30 @@ class UsersController < ApplicationController
 
   def update_params
     params.require(:user).permit(:first_name, :family_name, :company_name, :phone_number, :sex, :prefecture)
+  end
+
+# authenticate
+
+  def basic_auth
+    authenticate_or_request_with_http_basic do |user, pass|
+      user == company_logname && pass == company_pass
+    end
+  end
+
+  def check_company?
+    if current_user.company != nil
+      return true
+    else
+      return false
+    end
+  end
+
+  def company_logname
+    return current_user.company.log_name
+  end
+
+  def company_pass
+    return current_user.company.password
   end
 
 end
