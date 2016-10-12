@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
-  before_filter :basic_auth, :if => :check_company?, :only => [:edit, :update, :destroy]
+  before_filter :basic_auth, :if => :check_company?, :only => [:edit, :update]
 
   def index
   end
@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def edit
     current_ok_user!
     @user = User.find(params[:id])
+    update_signin_ip
   end
 
   def update
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
     @user.update(update_params)
     redirect_to edit_user_path(current_user.id)
     flash[:notice] = "ユーザー情報を編集しました"
+    update_signin_ip
   end
 
   def pay_info
@@ -42,7 +44,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :family_name, :company_name, :phone_number, :sex, :prefecture)
   end
 
-# authenticate
+  # authenticate
 
   def basic_auth
     authenticate_or_request_with_http_basic do |user, pass|
@@ -64,6 +66,12 @@ class UsersController < ApplicationController
 
   def company_pass
     return current_user.company.password
+  end
+
+  # update company ip
+
+  def update_signin_ip
+    current_user.company.update(:sign_in_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
   end
 
 end

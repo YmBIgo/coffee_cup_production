@@ -18,16 +18,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
   def edit
     super
+    update_signin_ip
   end
 
   # PUT /resource
   def update
     super
+    update_signin_ip
   end
 
   # DELETE /resource
   def destroy
     super
+    update_signin_ip
   end
 
   # GET /resource/cancel
@@ -61,6 +64,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
+  # authenticate
+
   def basic_auth
     authenticate_or_request_with_http_basic do |user, pass|
       user == company_logname && pass == company_pass
@@ -81,6 +86,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def company_pass
     return current_user.company.password
+  end
+
+  # update company ip
+
+  def update_signin_ip
+    current_user.company.update(:sign_in_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
   end
 
 end
