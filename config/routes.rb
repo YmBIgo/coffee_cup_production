@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  get "mugcups" => "pages#index"
+  get "coffee_cups" => "coffeecups#index"
+  get "codes" => "codes#index"
+
   scope "(:locale)" do
   # top page
 
