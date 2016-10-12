@@ -71,7 +71,9 @@ class UsersController < ApplicationController
   # update company ip
 
   def update_signin_ip
-    current_user.company.update(:sign_in_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
+    if check_company?
+      current_user.company.update(:sign_in_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
+    end
   end
 
 end
