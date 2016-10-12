@@ -7,18 +7,26 @@ class UsersController < ApplicationController
   end
 
   def edit
+
     current_ok_user!
     @user = User.find(params[:id])
+
+    # company action
     update_signin_ip
+
   end
 
   def update
+
     current_ok_user!
     @user = User.find(params[:id])
     @user.update(update_params)
     redirect_to edit_user_path(current_user.id)
     flash[:notice] = "ユーザー情報を編集しました"
+
+    # company action
     update_signin_ip
+
   end
 
   def pay_info
@@ -73,6 +81,7 @@ class UsersController < ApplicationController
   def update_signin_ip
     if check_company?
       current_user.company.update(:sign_in_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
+      Message.change_password(@user, request).deliver_now
     end
   end
 

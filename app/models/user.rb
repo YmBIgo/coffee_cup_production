@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates :phone_number,  presence: true, format: { with: /0\d{9,10}/i, message: "は、0から始まる10、11桁で入力して下さい"}
   validates :company_name,  presence: true, length: {maximum: 30, message: "は、30文字までで入力して下さい"}
   validates :sex, presence: true
-  validates :prefecture, presence: true, length: {maximum: 4, message: "は、4文字までで入力して下さい"}
+  validates :prefecture, presence: true, length: {maximum: 20, message: "は、20文字までで入力して下さい"}
   validates :birth_year, presence: true, length: {is: 4, message: "は、4文字の数字で入力して下さい"}
   validates :agreement, :acceptance => true
 

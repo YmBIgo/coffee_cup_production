@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
   before_filter :basic_auth, :if => :check_company?, :only => [:edit, :update, :destroy, :cancel]
+  after_action :send_create_user_mail, :only => [:create]
 
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
@@ -11,9 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+  end
 
   # GET /resource/edit
   def edit
@@ -89,11 +90,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # update company ip
-
   def update_signin_ip
     if check_company?
       current_user.company.update(:sign_in_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
+      Message.change_password(@user, request).deliver_now
     end
+  end
+
+  # create user
+  def send_create_user_mail
+    Message.create_user(User.last).deliver_now
   end
 
 end
