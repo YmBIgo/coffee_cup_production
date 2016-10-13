@@ -25,9 +25,11 @@
               <li class="hover-nav">
                 <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 設定一覧</a>
               </li>
-              <li class="hover-nav">
-                <a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank" class="nav-word"><i class="fa fa-question"></i> 質問</a></li>
-              </li>
+              <% unless current_user.company? %>
+                <li class="hover-nav">
+                  <a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank" class="nav-word"><i class="fa fa-question"></i> 質問</a></li>
+                </li>
+              <% end %>
             <% end %>
             <li class="hover-nav">
               <a href="/<%= I18n.locale %>/dashboard" class="nav-word"><i class="fa fa-user"></i> トップページ</a>

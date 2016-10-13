@@ -18,20 +18,29 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
-    super
-    update_signin_ip
+    unless current_user.company?
+      super
+    else
+      update_signin_ip
+    end
   end
 
   # PUT /resource
   def update
-    super
-    update_signin_ip
+    unless current_user.company?
+      super
+    else
+      update_signin_ip
+    end
   end
 
   # DELETE /resource
   def destroy
-    super
-    update_signin_ip
+    unless current_user.company?
+      super
+    else
+      update_signin_ip
+    end
   end
 
   # GET /resource/cancel
@@ -40,7 +49,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # cancel oauth signing in/up in the middle of the process,
   # removing all OAuth session data.
   def cancel
-    super
+    unless current_user.company?
+      super
+    else
+      update_signin_ip
+    end
   end
 
   protected
@@ -89,10 +102,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
     return current_user.company.password
   end
 
+  # redirect
+  def back_to_dashboard
+    redirect_to dashboard_path
+    flash[:alert] = "編集権限はありません"
+  end
+
   # update company ip
   def update_signin_ip
     if check_company?
-      current_user.company.update(:sign_in_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
+      back_to_dashboard
+      # current_user.company.update(:sign_in_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
       Message.change_password(@user, request).deliver_now
     end
   end

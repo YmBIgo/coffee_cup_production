@@ -42,12 +42,18 @@
             </h4>
             <hr class="red-hr">
             <div class="row">
-              <div class="col-sm-6">
-                <a href="/<%= I18n.locale %>/pay_info#title2-2-2" class="btn btn-warning btn-lg">閲覧期間の延長</a>
-              </div>
-              <div class="col-sm-6">
-                <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-success btn-lg">購入時の注意点</a>
-              </div>
+              <% unless current_user.company? %>
+                <div class="col-sm-6">
+                  <a href="/<%= I18n.locale %>/pay_info#title2-2-2" class="btn btn-warning btn-lg">閲覧期間の延長</a>
+                </div>
+                <div class="col-sm-6">
+                  <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-success btn-lg">購入時の注意点</a>
+                </div>
+              <% else %>
+                <div class="text-center">
+                    <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-warning btn-lg">使用時の注意点</a>
+                </div>
+              <% end %>
             </div>
             <br><br>
             <div class="row">
@@ -76,7 +82,7 @@
                 <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-warning btn-lg">購入はこちらから</a>
               </div>
               <div class="col-sm-6">
-                <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-success btn-lg">購入時の注意点</a>
+                <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-success btn-lg">使用時の注意点</a>
               </div>
             </div>
             <br><br>
@@ -106,8 +112,14 @@
                         :width => "90%",
                         :class => "hover_img textbook-title-img zoom_img") %>
           <h4>
-          <a href="https://facebook.com" target="_blank">Facebook</a>に登録した上、<a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank">Facebookページ</a>にて投稿・質問下さい。
-          </h4>
+          <% if current_user.company? %>
+            <strong><u>有料版</u>なら、勉強中に分からないところの質問対応をいたします。</strong>
+            <br>
+            もしご興味がありましたら、ご活用下さい。
+          <% else %>
+            <a href="https://facebook.com" target="_blank">Facebook</a>に登録した上、<a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank">Facebookページ</a>にて投稿・質問下さい。
+            </h4>
+          <% end %>
         </div>
       </div>
       <br>
@@ -121,6 +133,13 @@
             <strong><i class="fa fa-user"></i>　<%= current_user.full_name %></strong>
           </h2>
           <hr class="red-hr">
+          <% if current_user.company? %>
+            <% if current_user.company.picture_url? %>
+              <%= image_tag(current_user.company.picture_url,
+                            :width => "200px",
+                            :height => "200px") %>
+            <% end %>
+          <% end %>
           <h4 class="text-left">
             <strong>Id</strong>　　　　　　 : <%= current_user.id %>
             <br>
@@ -130,19 +149,23 @@
             <br>
             <strong>電話番号</strong>　　　 : <%= current_user.phone_number %>
             <br>
-            <strong>会社・学校名</strong>　 : <%= current_user.company_name %>
-            <br>
+            <% unless current_user.company? %>
+              <strong>会社・学校名</strong>　 : <%= current_user.company_name %>
+              <br>
+            <% end %>
             <strong>都道府県名</strong>　　 : <%= current_user.prefecture %>
           </h4>
           <br>
-          <div class="row">
-            <div class="col-sm-6">
-              <p><%= link_to "ユーザー情報を編集", edit_user_path(current_user.id), :class => "btn btn-success btn-lg" %></p>
+          <% unless current_user.company? %>
+            <div class="row">
+              <div class="col-sm-6">
+                <p><%= link_to "ユーザー情報を編集", edit_user_path(current_user.id), :class => "btn btn-success btn-lg" %></p>
+              </div>
+              <div class="col-sm-6">
+                <p><%= link_to "基本情報の編集", edit_user_registration_path, :class => "btn btn-warning btn-lg" %></p>
+              </div>
             </div>
-            <div class="col-sm-6">
-              <p><%= link_to "基本情報の編集", edit_user_registration_path, :class => "btn btn-warning btn-lg" %></p>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
       <br>

@@ -64,4 +64,12 @@ class User < ActiveRecord::Base
     fixed_time = l.strftime("%H時%M分")
   end
 
+  def company?
+    if self.company != nil
+      return true
+    else
+      return false
+    end
+  end
+
 end
