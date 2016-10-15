@@ -1,7 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
   before_filter :basic_auth, :if => :check_company?, :only => [:edit, :update, :destroy, :cancel]
-  after_action :send_create_user_mail, :only => [:create]
 
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
@@ -14,6 +13,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    unless resource.invalid?
+      send_create_user_mail
+    end
   end
 
   # GET /resource/edit
