@@ -22,6 +22,11 @@
             <small>※　会員情報の確認は<a href="/ja/dashboard#title0" target="_blank"><strong>こちら</strong></a>から</small>
             <br><br>
             当方が確認でき次第、口座番号とご案内をお知らせいたします。
+            <br><br>
+            <%= form_for @mail_sender do |f| %>
+              <%= f.hidden_field :mail_type, :value => 1 %>
+              <%= f.submit "メールに購入方法を送信", :class => "btn btn-primary" %>
+            <% end %>
             <hr class="red-hr">
             <span style="font-size:20px"><i class="fa fa-exclamation color-red"></i>　<strong>学生の方は学生証の写真を添付した上、<a href="mailto:support@coffee-cup.info">support@coffee-cup.info</a>宛に、</strong></span>
             <br>

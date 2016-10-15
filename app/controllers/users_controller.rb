@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   end
 
   def pay_info
+    @mail_sender = MailSender.new
   end
 
   def pay_warning
