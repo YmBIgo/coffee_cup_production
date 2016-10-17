@@ -8,13 +8,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  validates :family_name,   presence: true, length: {maximum: 20, message: "は、20文字までで入力して下さい"}
-  validates :first_name,    presence: true, length: {maximum: 20, message: "は、20文字までで入力して下さい"}
-  validates :phone_number,  presence: true, format: { with: /0\d{9,10}/i, message: "は、0から始まる10、11桁で入力して下さい"}
-  validates :company_name,  presence: true, length: {maximum: 30, message: "は、30文字までで入力して下さい"}
-  validates :sex, presence: true
-  validates :prefecture, presence: true, length: {maximum: 20, message: "は、20文字までで入力して下さい"}
-  validates :birth_year, presence: true, length: {is: 4, message: "は、4文字の数字で入力して下さい"}
+  # validates :family_name,   presence: true, length: {maximum: 20, message: "は、20文字までで入力して下さい"}
+  # validates :first_name,    presence: true, length: {maximum: 20, message: "は、20文字までで入力して下さい"}
+  # validates :phone_number,  presence: true, format: { with: /0\d{9,10}/i, message: "は、0から始まる10、11桁で入力して下さい"}
+  # validates :company_name,  presence: true, length: {maximum: 30, message: "は、30文字までで入力して下さい"}
+  # validates :sex, presence: true
+  # validates :prefecture, presence: true, length: {maximum: 20, message: "は、20文字までで入力して下さい"}
+  # validates :birth_year, presence: true, length: {is: 4, message: "は、4文字の数字で入力して下さい"}
+
   validates :agreement, :acceptance => true
 
   def full_name
@@ -22,7 +23,7 @@ class User < ActiveRecord::Base
   end
 
   def sex_list
-    {1 => '男性', 2 => '女性'}
+    {0 => '性別を指定して下さい',1 => '男性', 2 => '女性'}
   end
 
   def sex_name

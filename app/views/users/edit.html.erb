@@ -7,34 +7,33 @@
           <h2 class="color-green text-center" style="margin-top:8px"><strong><i class="fa fa-edit"></i> プロフィール変更</strong></h2>
           <hr class="red-hr">
           <div class="field">
-            <%= f.label :family_name %>
+            <h4><%= f.label :family_name %>　<small>※(必要項目)</small></h4>
             <%= f.text_field :family_name, :class => "form-control" %>
           </div>
           <br>
           <div class="field">
-            <%= f.label :first_name %>
+            <h4><%= f.label :first_name %>　<small>※(必要項目)</small></h4>
             <%= f.text_field :first_name, :class => "form-control" %>
           </div>
           <br>
           <div class="field">
-            <%= f.label :sex %>
-            <br>
+            <h4><%= f.label :sex %>　<small>※(必要項目)</small></h4>
             <label><%= f.radio_button :sex, "1" %> 男性</label>　
             <label><%= f.radio_button :sex, "2" %> 女性</label>
           </div>
           <br>
           <div class="field">
-            <%= f.label :phone_number %>
-            <%= f.text_field :phone_number, :class => "form-control" %>
-          </div>
-          <br>
-          <div class="field">
-            <%= f.label :company_name %>
+            <h4><%= f.label :company_name %>　<small>※(必要項目)</small></h4>
             <%= f.text_field :company_name, :class => "form-control" %>
           </div>
           <br>
           <div class="field">
-            <%= f.label :prefecture %>
+            <h4><%= f.label :phone_number %></h4>
+            <%= f.text_field :phone_number, :class => "form-control" %>
+          </div>
+          <br>
+          <div class="field">
+            <h4><%= f.label :prefecture %></h4>
             <%= f.text_field :prefecture, :class => "form-control" %>
           </div>
           <br>
