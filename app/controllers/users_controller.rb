@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
   # user が登録されているかを確認する。
   def check_user_info
-    unless current_user.family_name != "no data" && current_user.first_name != "no data" && current_user.sex != 0 && current_user.company_name != "no data"
+    unless current_user.family_name != "no data" && current_user.first_name != "no data" && current_user.sex != 0 && current_user.company_name != "no data" && current_user.phone_number != "no data"
       redirect_to edit_user_path(current_user.id)
       flash[:notice] = "まず必要項目を入力して下さい"
     end
