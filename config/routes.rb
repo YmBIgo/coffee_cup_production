@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   get "coffee_cups" => "coffeecups#index"
   get "codes" => "codes#index"
 
+  get "privacypolicy" => "info_page#privacypolicy"
+  get "company"       => "info_page#company"
+  get "term"          => "info_page#term"
+  get "tokusho"       => "info_page#tokusho"
+  get "warning"       => "info_page#warning"
+
   scope "(:locale)" do
   # top page
 
