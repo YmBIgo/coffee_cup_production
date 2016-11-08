@@ -1,0 +1,197 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class="textbook-area">
+        <div class="textbook-area-inner fadeIn wow">
+          <div class="teaching-explain-section">
+            <div id="title" class="textbook-title">
+              <h1><strong>本教材の教え方について</strong></h1>
+            </div>
+            <%= image_tag "https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/header/header0.jpeg",
+                          :width => "90%",
+                          :class => "textbook-title-img hover_img" %>
+            <br>
+            <h2 class="textbook-section-title" id="title0"><strong>0 : 本ページの目的</strong></h2>
+            <h4>
+              ご覧になっていただきありがとうございます。
+              <br><br>
+              本教材は<strong>「<u>20時間でプログラミングを学べる</u>」</strong>という表題をつけているのですが、これについてもしかしたら疑問を感じる方がいるかもしれないと思ったので、このページで教材がどのような場所で工夫されているかを説明いたします。
+              <br><br>
+              この説明で何かしらの参考にして、それを何かしらの形で応用していただければ幸いです。
+            </h4>
+            <br><br>
+            <h2 class="textbook-section-title" id="title1"><strong>1 : 本教材における「教育」の目的について</strong></h2>
+            <h4>
+              本教材は、
+              <br>
+              <strong>「<u>初学者でも短時間にかつ確実にプログラミング（Ruby on Rails）を学ぶ</u>」</strong>ために作られたものになります。
+              <br><br>
+              これは、<strong>プログラミングを知らない人に対して「<u>プログラミングは楽しい</u>」という感覚を確実に与え、Ruby on Railsのプログラミングを学んでもらう</strong>ことを一番の目的にして作られたものになります。
+              <br><br>
+              ここで教えているのはあくまでも「入り口」の「入り口」に過ぎませんが、<strong>教材を学び終えた後でプログラミングに対する抵抗感などを無くし、その後の学習のきっかけを作れれば</strong>いいと思っております。
+            </h4>
+            <br><br>
+            <h2 class="textbook-section-title" id="title2"><strong>2 : 本教材の概要</strong></h2>
+            <h4>
+              この目的のために本教材は、下のような条件の下で教材制作が行われました。
+              <br><br>
+              <ul>
+                <strong>
+                  <li>何も知らない人でも理解できるような説明の順番を考える</li>
+                  <li>ウェブサイトの簡単な仕組みを知りながら、それを作る過程を体験してもらう</li>
+                  <li>専門用語をできるだけパラフレーズする</li>
+                </strong>
+              </ul>
+              <br>
+              ここでそれぞれについて説明いたします。
+            </h4>
+            <hr>
+            <h4 id="chapter2-1">
+              <p id="title2-1"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">① : 初学者でも理解できる説明の順番を考える</strong></p>
+              <br>
+              初心者がプログラミングを学んでいく中でよくつまずいていると思われることに、細かい概念の意味があまり理解できずよく分からなくなってしまうことがあります（これはRuby on Railsに限らず）。
+              <br><br>
+              なので本教材では実際のコードの説明の前に、簡単にRuby on Railsでやっている操作の説明を入れた後で、その説明に対応したプログラミングの方法で教えております。
+              <br>
+              大切なのは、<strong><u>抽象的な説明をできるだけ具体的な説明に</u>落とし込もうとしている</strong>点にあります。
+              <hr class="red-hr">
+              <i class="fa fa-arrow-right"></i>　<strong>例えば・・・</strong>
+              <br><br>
+              Ruby on Rails には「MVC」というアプリケーションの概念の使われていますが、これをそのまま説明しようとすると、
+              <br><br>
+<pre>
+<strong><u>MVC</u></strong>（<strong><u>Model View Controller</u></strong> モデル・ビュー・コントローラ）は、ユーザーインタフェースをもつアプリケーションソフトウェアを実装するためのデザインパターンである。
+
+アプリケーションソフトウェアの<strong>内部データ</strong>を、ユーザーが直接参照・編集する情報から分離する。そのためにアプリケーションソフトウェアを以下の3つの部分に分割する。
+
+　1 . model: アプリケーションデータ、ビジネスルール、ロジック、関数
+　2 . view: グラフや図などの任意の情報表現
+　3 . controller: 入力を受け取りmodelとviewへの命令に変換する
+
+<small>(Wikipedia <a href="https://ja.wikipedia.org/wiki/Model_View_Controller" target="_blank"><strong>「Model View Container」</strong></a> より引用)</small>
+</pre>
+              <br>
+              のようになってしまい、始めての人にとっては少し難しい内容になってしまいがちです。
+              <br><br>
+              <i class="fa fa-thumbs-o-up"></i>　<strong>なので本教材では・・・</strong>
+              <br><br>
+              最初にウェブサイトを作る際に行う操作を
+              <ul class="number_ul">
+                <strong>
+                  <li class="color-blue"><u>データの保存・更新・削除・選択などのデータ操作</u></li>
+                  <li class="color-red"><u>ページ表示</u></li>
+                </strong>
+              </ul>
+              の2つであると説明した上で、Ruby on Railsで行なっている操作を
+              <ul class="number_ul">
+                <strong>
+                  <li>保存するデータの形式の設定（<u>Excelの1行目を決める</u>）</li><i class="fa fa-arrow-right"></i>　<u>Model</u>
+                  <li>ページの表示</li><i class="fa fa-arrow-right"></i>　<u>View</u>
+                  <li>データ操作</li><i class="fa fa-arrow-right"></i>　<u>Controller</u>
+                </strong>
+              </ul>
+              の3つであると説明します。本当に簡単で大したことではありませんが、この程度の説明を加えた方が理解しやすいでしょう。
+            </h4>
+            <hr>
+            <h4 id="chapter2-2">
+              <p id="title2-2"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">② : ウェブサイトを作る過程を体験してもらう</strong></p>
+              <br>
+              上の説明は最低限のところであるので次に注意したのは、噛み砕いて理解しやすくした<strong>概念を実際の作る過程を通じて<u>体験</u>してもらおう</strong>とする点です。
+              <br><br>
+              ある程度抽象的な説明を取り除いたとは言え、それをそのまま説明しようとしても具体性に欠けます。本教材ではページの作成を<strong>「<u>データの操作</u>」「<u>ページの表示</u>」</strong>の2つに分けて説明しました。
+              <br><br>
+              <i class="fa fa-arrow-right"></i>　<strong>例えば・・・</strong>
+              <br><br>
+              上で説明した<strong>「<u>データ操作</u>」「<u>ページ表示</u>」</strong>の2つの操作をそれぞれ具体的に
+              <ul class="number_ul">
+                <strong>
+                  <li class="color-blue">「<u>データ操作</u>」</li>
+                    <i class="fa fa-arrow-right"></i>　データベースを作った後で、<u>実際のデータの保存・更新・削除</u>をやってみる（「rails c」）
+                  <li class="color-red">「<u>ページ表示</u>」</li>
+                    <i class="fa fa-arrow-right"></i>　ページの作成を、「<u>①ページはデータ選択・保存・更新・削除の何をするか（route.rb）</u>」「<u>②ページの表示（views）</u>」「<u>③その裏で行われるデータ操作（controllers）</u>」の3つに分けて説明してページを作ってもらい、これを<u>一連の作業</u>として覚えてもらう。
+                </strong>
+              </ul>
+              <br>
+              ここも実際大したことはありませんが、最初の「データ操作」でデータの保存の方法を知ってもらい、それを次の「ページ表示」で実際のページを作る時に「データ操作」をする際の事前の知識を入れてもらいます。
+              <br>
+              その後でページを作成する上では、必要な操作を3つに分けてそれを繰り返せばページが作成できることを徹底させます。
+            </h4>
+            <hr>
+            <h4 class="chapter2-3">
+              <p id="title2-3"><i class="fa fa-tags color-red"></i>　<strong class="remarkable">③ : 専門用語をパラフレーズ</strong></p>
+              <br>
+              ここまでも実際普通なこと（概念を分かった上で体験させた方が習得は速くなります）ですが、最後に専門用語のパラフレーズを行います。
+              <br>
+              初心者に専門用語を教えるよりも、専門用語をパラフレーズした方が初心者に優しく分かりやすく「入り口」にはそれが一番だからです。
+              <br><br>
+              <i class="fa fa-arrow-right"></i>　<strong>例えば・・・</strong>
+              <br><br>
+              Ruby on Railsには主な「データ操作」をする7つのページ<strong>「<u>show/index/new/create/edit/update/destroy</u>」</strong>が決まっているのですが、それをそれぞれ
+              <ul class="number_ul">
+                <strong>
+                  <li>「1つのデータを表示（<u>show</u>）」</li>
+                  <li>「全てのデータを表示（<u>index</u>）」</li>
+                  <li>「新しいデータを記入（<u>new</u>）」</li>
+                  <li>「データを保存（<u>create</u>）」</li>
+                  <li>「編集するデータを記入（<u>edit</u>）」</li>
+                  <li>「データを更新（<u>update</u>）」</li>
+                  <li>「データを削除（<u>destroy</u>）」</li>
+                </strong>
+              </ul>
+              の7つに置き換えて説明します。
+              <br>
+              このような簡単なパラフレーズを心がけています。
+            </h4>
+            <br>
+            <h2 class="textbook-section-title" id="title3"><strong>3 : まとめ</strong></h2>
+            <h4>
+              ここまで本当に簡単で当たり前なことばかりですが、大体ここまでが本教材の特徴になります。
+              <br>
+              このような感じで「初心者目線」の教材になっているので、一応<strong>「<u>20時間でプログラミングを学べる</u>」プログラミング教材</strong>になっております。
+              <br><br>
+              <i class="fa fa-arrow-right"></i>　<strong>詳しい内容は中身を見てみて下されば幸いです。</strong>
+              <br><br>
+              <div class="row text-center">
+                <div class="col-sm-6">
+                  <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="btn btn-primary btn-lg">
+                        <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_link.png",
+                                      :class => "nav-img") %>
+                        Mugcup(基礎編)
+                  </a>
+                  <br><br>
+                </div>
+                <div class="col-sm-6">
+                  <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="btn btn-danger btn-lg">
+                      <%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/coffee_logo_link.png",
+                                    :class => "nav-img") %>
+                      Coffee（応用編）
+                  </a>
+                  <br><br>
+                </div>
+              </div>
+            </h4>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 hidden-xs">
+      <br>
+      <div id="slide-bar" class="clear-fix">
+      <strong>
+        <div class="list-group nomargin">
+          <a href="" class="list-group-item list-title">Coffee-Cupの教え方について</a>
+          <a href="#title0" class="list-group-item">0 : はじめに</a>
+          <a href="#title1" class="list-group-item">1 : 本教材における「教育」の目的について</a>
+          <a href="#title2" class="list-group-item">2 : 本教材の概要</a>
+          <a href="#title2-1" class="list-group-item">　<small>① : 初学者でも理解できる説明の順番を考える</small></a>
+          <a href="#title2-2" class="list-group-item">　<small>② : ウェブサイトを作る過程を体験してもらう</small></a>
+          <a href="#title2-3" class="list-group-item">　<small>③ : 専門用語をパラフレーズ</small></a>
+          <a href="#title3" class="list-group-item">3 : まとめ</a>
+        </div>
+      </strong>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pages/fixedjs' %>

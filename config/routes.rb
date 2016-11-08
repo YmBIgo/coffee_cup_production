@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "term"          => "info_page#term"
   get "tokusho"       => "info_page#tokusho"
   get "warning"       => "info_page#warning"
+  get "teaching"      => "info_page#teaching"
 
   scope "(:locale)" do
   # top page
@@ -65,6 +66,8 @@ Rails.application.routes.draw do
     get "tokusho"       => "info_page#tokusho"
 
     get "warning"       => "info_page#warning"
+
+    get "teaching"      => "info_page#teaching"
 
   # 404
 

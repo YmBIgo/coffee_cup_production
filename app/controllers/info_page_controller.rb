@@ -15,4 +15,7 @@ class InfoPageController < ApplicationController
   def warning
   end
 
+  def teaching
+  end
+
 end
