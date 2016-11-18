@@ -35,7 +35,7 @@ gem 'devise-i18n'
 
 gem 'jquery-turbolinks'
 
-# gem 'rest-client'
+gem 'rest-client'
 # gem 'geoip'
 
 # Use ActiveModel has_secure_password
