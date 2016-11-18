@@ -80,8 +80,6 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     devise-i18n (1.0.1)
-    domain_name (0.5.24)
-      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.1.0)
     dotenv-rails (2.1.0)
       dotenv (= 2.1.0)
@@ -93,15 +91,12 @@ GEM
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
-    geoip (1.6.2)
     git-version-bump (0.15.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
-    http-cookie (1.0.2)
-      domain_name (~> 0.5)
     i18n (0.7.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
@@ -140,7 +135,6 @@ GEM
     minitest (5.8.4)
     multi_json (1.11.2)
     mysql2 (0.3.18)
-    netrc (0.11.0)
     newrelic_rpm (3.15.1.316)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -200,10 +194,6 @@ GEM
       json (~> 1.4)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
-    rest-client (2.0.0)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
     sass (3.4.21)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -233,9 +223,6 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.1)
     warden (1.2.4)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -256,7 +243,6 @@ DEPENDENCIES
   devise-i18n
   dotenv-rails
   font-awesome-rails
-  geoip
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
@@ -268,7 +254,6 @@ DEPENDENCIES
   pry-rails
   rails (= 4.2.4)
   rails_12factor (= 0.0.2)
-  rest-client
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

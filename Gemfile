@@ -24,8 +24,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "font-awesome-rails"
 
-# gem 'syntax-highlighter-rails'
-
 gem 'meta-tags'
 
 gem 'newrelic_rpm'
@@ -37,9 +35,8 @@ gem 'devise-i18n'
 
 gem 'jquery-turbolinks'
 
-gem 'rest-client'
-
-gem 'geoip'
+# gem 'rest-client'
+# gem 'geoip'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
