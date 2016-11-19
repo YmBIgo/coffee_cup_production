@@ -5,16 +5,22 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, :only => [:show]
 
   def show
-    if current_user.study_enabled == true
-      if time_ok?
-        render template: "pages/#{params[:page]}"
+    if lang_ok?
+      if current_user.study_enabled == true
+        if time_ok?
+          # Viewlist.create(:lang => I18n.locale, :page_type => "mugcups", :page_id => params[:page], :user_id => current_user.id, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
+          render template: "pages/#{params[:page]}"
+        else
+          redirect_to dashboard_path
+          flash[:alert] = "指定時間外なので只今は閲覧できません"
+        end
       else
         redirect_to dashboard_path
-        flash[:alert] = "指定時間外なので只今は閲覧できません"
+        flash[:alert] = "閲覧権限がありません"
       end
     else
-      redirect_to dashboard_path
-      flash[:alert] = "閲覧権限がありません"
+      # Viewlist.create(:lang => I18n.locale, :page_type => "mugcups", :page_id => params[:page], :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
+      render template: "pages/#{params[:page]}"
     end
   end
 
@@ -23,13 +29,13 @@ class PagesController < ApplicationController
 
   private
   # If locale is zh-TW || zh-CN return true
-  # def lang_ok?
-  #   if I18n.locale == :ja
-  #     return true
-  #   else
-  #     return false
-  #   end
-  # end
+  def lang_ok?
+    if I18n.locale == :ja
+      return true
+    else
+      return false
+    end
+  end
 
   def time_ok?
 
