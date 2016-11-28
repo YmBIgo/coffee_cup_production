@@ -7,7 +7,7 @@
         <%= devise_error_messages! %>
       </div>
       <div>
-        <h2><%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_logo_nav_gray.png") %> <strong>基本情報の編集</strong></h2>
+        <h2><%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/mugcup_logo_nav_gray.png") %> <strong>基本情報の編集</strong></h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
@@ -36,7 +36,7 @@
           </div>
         <% end %>
         <hr class="log-hr">
-        <h3><%= image_tag("https://s3.amazonaws.com/rails-textbook/rails_for_sfc/images/logo/mugcup_hand_logo_gray.png") %> <strong>アカウントを削除する</strong></h3>
+        <h3><%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/mugcup_hand_logo_gray.png") %> <strong>アカウントを削除する</strong></h3>
 
         <p><strong>Unhappy?</strong> <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger" %></p>
       </div>
