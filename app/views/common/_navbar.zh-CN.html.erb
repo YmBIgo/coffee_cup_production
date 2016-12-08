@@ -19,21 +19,19 @@
         <strong>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <% if user_studiable? %>
-              <li class="hover-nav">
-                <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 设定一览</a>
-              </li>
-              <li class="hover-nav">
-                <a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank" class="nav-word"><i class="fa fa-question"></i> 问问题</a></li>
-              </li>
-            <% end %>
+            <li class="hover-nav">
+              <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 设定一览</a>
+            </li>
+            <li class="hover-nav">
+              <a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank" class="nav-word"><i class="fa fa-question"></i> 问问题</a></li>
+            </li>
             <li class="hover-nav">
               <a href="/<%= I18n.locale %>/dashboard" class="nav-word"><i class="fa fa-user"></i> 主页</a>
             </li>
             <li class="hover-nav">
               <%= link_to "登出", destroy_user_session_path, method: :delete, :class => "nav-word" %>
             </li>
-          <% else %>
+          <% end %>
             <li class="hover-nav">
               <a href="/zh-CN/codes" class="nav-word" target="_blank">设定一览</a>
             </li>
@@ -43,7 +41,6 @@
             <li class="hover-nav">
               <a href="/zh-CN/coffee_cups" class="nav-word" target="_blank">Coffee(应用编)</a>
             </li>
-          <% end %>
             <li style="margin-top:5px;">
               <a><input type="submit" value="字小" onclick="smaller();" class="btn btn-primary"></a>
             </li>

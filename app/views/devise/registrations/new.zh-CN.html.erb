@@ -8,7 +8,6 @@
       </div>
       <div>
         <h2><%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/mugcup_logo_nav_gray.png") %> <strong>註冊</strong></h2>
-        <h5><strong><u>註冊之後，可以買教材。</u></strong></h5>
         <h5><strong>使用教材之前，請準備<u>Mac 或者 Windows 的電腦</u>。</strong></h5>
         <h5><strong>請認可，從<u> support@coffee-cup.info </u>受到的郵件。</strong></h5>
       </div>
@@ -22,30 +21,6 @@
         </div>
         <div class="field">
           <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "密碼（確認）" %>
-        </div>
-        <br>
-        <div class="field">
-          <%= f.text_field :family_name, autofocus: "off", :class => "form-control", :placeholder => "姓氏" %>
-        </div>
-        <div class="field">
-          <%= f.text_field :first_name, autofocus: "off", :class => "form-control", :placeholder => "名字" %>
-        </div>
-        <div class="field">
-          <%= f.text_field :phone_number, autofocus: "off", :class => "form-control", :placeholder => "電話號碼（例子：0399999999）" %>
-        </div>
-        <br>
-        <div class="field">
-          <%= f.text_field :birth_year, autofocus: "off", :class => "form-control", :placeholder => "生日（例：1996）" %>
-        </div>
-        <div class="field">
-          <%= f.text_field :company_name, autofocus: "off", :class => "form-control", :placeholder => "公司，學校名" %>
-        </div>
-        <div class="field">
-          <%= f.text_field :prefecture, :autofocus => "off", :class => "form-control", :placeholder => "都道府県名" %>
-        </div>
-        <div class="field">
-          <label class="log-label"><%= f.radio_button :sex, "1" %> 男生</label>　
-          <label class="log-label"><%= f.radio_button :sex, "2" %> 女生</label>
         </div>
         <div class="field">
           <p style="margin-top:15px;margin-bottom:7px;">

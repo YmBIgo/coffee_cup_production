@@ -2,13 +2,6 @@
   <div class="header-content fadeIn wow">
   <%= render "common/alert" %>
     <div class="header-content-word">
-      <% unless user_studiable? %>
-        <h3 class="alert alert-warning">
-          <strong>
-          教材のご購入は、<a href="/<%= I18n.locale %>/pay_warning" target="_blank">こちら</a>からできます。
-          </strong>
-        </h3>
-      <% end %>
       <h1 style="line-height:1.5">
         <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/coffee_grains_logo.png") %>
         <br>
@@ -34,79 +27,34 @@
           <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/header/coffee_img_text.jpg",
                         :width => "90%",
                         :class => "textbook-title-img hover_img zoom_img") %>
-          <% if user_studiable? %>
-            <h4>
-            <strong><u><%= current_user.limit_time %></u></strong>まで。残り<strong><u><%= current_user.time_left %></u></strong>です。
-            <br>
-            <strong><u><%= current_user.fix_starttime %>から<%= current_user.fix_endtime %>まで</u></strong>の時間に勉強できます。
-            <br><br>
-            <small>※　カリキュラム終了後に、料金のキャッシュバックができます。<br>詳細は<a href="/ja/pay_info#title2-4" target="_blank"><strong>こちら</strong></a>を参考にして下さい</small>
-            </h4>
-            <hr class="red-hr">
-            <div class="row">
-              <% unless current_user.company? %>
-                <div class="col-sm-6">
-                  <a href="/<%= I18n.locale %>/pay_info#title2-2-2" class="btn btn-warning btn-lg">閲覧期間の延長</a>
-                </div>
-                <div class="col-sm-6">
-                  <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-success btn-lg">購入時の注意点</a>
-                </div>
-              <% else %>
-                <div class="text-center">
-                    <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-warning btn-lg">使用時の注意点</a>
-                </div>
-              <% end %>
+          <h4>
+            <strong><u>教材を学ぶことができます。</u></strong>
+          </h4>
+          <hr class="red-hr">
+          <div class="row">
+            <div class="text-center">
+              <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-warning btn-lg">使用時の注意点</a>
             </div>
-            <br><br>
-            <div class="row">
-              <div class="col-sm-6">
-                <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="btn btn-primary btn-lg">
-                      <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/mugcup_logo_link.png",
-                                    :class => "nav-img") %>
-                      Mugcup(基礎編)
-                </a>
-                <br><br>
-              </div>
-              <div class="col-sm-6">
-                <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="btn btn-danger btn-lg">
-                    <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/coffee_logo_link.png",
+          </div>
+          <br><br>
+          <div class="row">
+            <div class="col-xs-12 col-lg-6">
+              <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="btn btn-primary btn-lg">
+                    <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/mugcup_logo_link.png",
                                   :class => "nav-img") %>
-                    Coffee（応用編）
-                </a>
-                <br><br>
-              </div>
+                    Mugcup(基礎編)
+              </a>
+              <br><br>
             </div>
-          <% else %>
-            <h4>教材を購入しておりません</h4>
-            <hr class="red-hr">
-            <div class="row">
-              <div class="col-sm-6">
-                <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-warning btn-lg">購入はこちらから</a>
-              </div>
-              <div class="col-sm-6">
-                <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-success btn-lg">使用時の注意点</a>
-              </div>
+            <div class="col-xs-12 col-lg-6">
+              <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="btn btn-danger btn-lg">
+                  <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/coffee_logo_link.png",
+                                :class => "nav-img") %>
+                  Coffee（応用編）
+              </a>
+              <br><br>
             </div>
-            <br><br>
-            <div class="row">
-              <div class="col-sm-6">
-                <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="btn btn-primary btn-lg disabled">
-                      <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/mugcup_logo_link.png",
-                                    :class => "nav-img") %>
-                      Mugcup(基礎編)
-                </a>
-                <br><br>
-              </div>
-              <div class="col-sm-6">
-                <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="btn btn-danger btn-lg disabled">
-                    <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/coffee_logo_link.png",
-                                  :class => "nav-img") %>
-                    Coffee（応用編）
-                </a>
-                <br><br>
-              </div>
-            </div>
-          <% end %>
+          </div>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 teach-text-section">
           <h2><i class="fa fa-question color-blue"></i> 質問する</h2>

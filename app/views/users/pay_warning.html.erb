@@ -26,20 +26,6 @@
         <i class="fa fa-windows"></i>　<strong><u>Windowsをご利用の方は</u></strong>、機種の関係で、<strong>「応用編」の「<u>7 : 画像のアップロード</u>」</strong>を勉強することはできません。ご了承下さい。
       </h3>
       <br>
-      <div class="text-center row">
-        <div class="col-sm-6">
-          <%= form_for @mail_sender do |f| %>
-            <%= f.hidden_field :mail_type, :value => 1 %>
-            <%= f.submit "メールに購入方法を送信", :class => "btn btn-primary btn-lg" %>
-          <% end %>
-          <br>
-        </div>
-        <div class="col-sm-6">
-          <a href="/ja/pay_info" class="btn btn-warning btn-lg">購入情報を見る</a>
-          <br>
-        </div>
-      </div>
-      <br>
     </div>
   </div>
 </div>

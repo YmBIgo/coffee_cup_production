@@ -2,13 +2,6 @@
   <div class="header-content fadeIn wow">
   <%= render "common/alert" %>
     <div class="header-content-word">
-      <% unless user_studiable? %>
-        <h3 class="alert alert-warning">
-          <strong>
-          教材<a href="/<%= I18n.locale %>/pay_warning" target="_blank">从这里</a>可以购买。
-          </strong>
-        </h3>
-      <% end %>
       <h1 style="line-height:1.5">
         <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/coffee_grains_logo.png") %>
         <br>
@@ -34,14 +27,14 @@
           <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/header/coffee_img_text.jpg",
                         :width => "90%",
                         :class => "textbook-title-img hover_img zoom_img") %>
-          <% if user_studiable? %>
-            <h4>
-            到<strong><u><%= current_user.limit_time %></u></strong>
-            <br>
-            剩<strong><u><%= current_user.time_left %></u></strong>
-            </h4>
-            <a href="/<%= I18n.locale %>/pay_info#title2-2-2" class="btn btn-green">延长学习的时期</a>
+          <h4>
+            <strong><u>学习编程吧！</u></strong>
+          </h4>
             <hr class="red-hr">
+            <div class="text-center">
+              <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-warning btn-lg">利用之前的注意</a>
+            </div>
+            <br>
             <div class="row">
             <div class="col-lg-6">
               <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="btn btn-primary">
@@ -60,23 +53,6 @@
               <br><br>
             </div>
           </div>
-          <% else %>
-            <h4>还没购买教材</h4>
-            <a href="/<%= I18n.locale %>/pay_warning" class="btn btn-green">可以从这里购买教材</a>
-            <hr class="red-hr">
-            <p>
-            <a target="_blank" class="btn btn-primary disabled">
-                  <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/mugcup_logo_link.png",
-                                :class => "nav-img") %>
-                  Mugcup(基础编)
-            </a>　
-            <a target="_blank" class="btn btn-danger disabled">
-                  <%= image_tag("https://s3-ap-northeast-1.amazonaws.com/coffee-cup/images/logo/coffee_logo_link.png",
-                                :class => "nav-img") %>
-                  Coffee（应用编）
-            </a>
-            </p>
-          <% end %>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 teach-text-section">
           <h2><i class="fa fa-question color-blue"></i> 问问题</h2>

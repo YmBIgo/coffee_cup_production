@@ -5,23 +5,10 @@ class CoffeecupsController < ApplicationController
   before_action :authenticate_user!, :only => [:show]
 
   def show
-    if lang_ok?
-      if current_user.study_enabled == true
-        if time_ok?
-          # Viewlist.create(:lang => I18n.locale, :page_type => "coffeecups", :page_id => params[:page], :user_id => current_user.id, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
-          render template: "coffeecups/#{params[:page]}"
-        else
-          redirect_to dashboard_path
-          flash[:alert] = "指定時間外なので只今は閲覧できません"
-        end
-      else
-        redirect_to dashboard_path
-        flash[:alert] = "閲覧権限がありません"
-      end
-    else
-      # Viewlist.create(:lang => I18n.locale, :page_type => "mugcups", :page_id => params[:page], :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip)
-      render template: "coffeecups/#{params[:page]}"
-    end
+    # if lang_ok?
+    # if current_user.study_enabled == true
+    # if time_ok?
+    render template: "coffeecups/#{params[:page]}"
   end
 
   def index

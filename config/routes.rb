@@ -51,7 +51,7 @@ Rails.application.routes.draw do
 
     get "dashboard" => "users#index"
 
-    get "pay_info" => "users#pay_info"
+    # get "pay_info" => "users#pay_info"
 
     get "pay_warning" => "users#pay_warning"
 

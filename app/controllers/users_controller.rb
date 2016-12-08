@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
   before_filter :basic_auth, :if => :check_company?, :only => [:edit, :update]
-  before_action :check_user_info, :only => [:pay_info, :pay_warning]
+  # before_action :check_user_info, :only => [:pay_warning]
 
   def index
   end
@@ -30,12 +30,12 @@ class UsersController < ApplicationController
 
   end
 
-  def pay_info
-    @mail_sender = MailSender.new
-  end
+  # def pay_info
+  #   @mail_sender = MailSender.new
+  # end
 
   def pay_warning
-    @mail_sender = MailSender.new
+    # @mail_sender = MailSender.new
   end
 
   private
