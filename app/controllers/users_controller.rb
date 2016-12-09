@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
   before_filter :basic_auth, :if => :check_company?, :only => [:edit, :update]
-  # before_action :check_user_info, :only => [:pay_warning]
+  before_action :check_user_info, :only => [:pay_warning]
 
   def index
   end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
   # user が登録されているかを確認する。
   def check_user_info
-    unless current_user.family_name != "no data" && current_user.first_name != "no data" && current_user.sex != 0
+    unless current_user.family_name != "no data" && current_user.first_name != "no data" && current_user.sex != 0 && current_user.birth_year != 0
       redirect_to edit_user_path(current_user.id)
       flash[:notice] = "まず必要項目を入力して下さい"
     end
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
   end
 
   def update_params
-    params.require(:user).permit(:first_name, :family_name, :company_name, :phone_number, :sex, :prefecture)
+    params.require(:user).permit(:first_name, :family_name, :company_name, :phone_number, :sex, :prefecture, :birth_year)
   end
 
   # authenticate

@@ -3,6 +3,7 @@ class CodesController < ApplicationController
   # http_basic_authenticate_with :name => ENV['EDIT_USER'], :password => ENV['EDIT_PASS']
 
   before_action :authenticate_user!
+  before_action :check_user_info, :only => [:show, :index]
 
   def show
     # if lang_ok?
@@ -15,6 +16,15 @@ class CodesController < ApplicationController
   end
 
   private
+
+  # user が登録されているかを確認する。
+  def check_user_info
+    unless current_user.family_name != "no data" && current_user.first_name != "no data" && current_user.sex != 0 && current_user.birth_year != 0
+      redirect_to edit_user_path(current_user.id)
+      flash[:notice] = "まず必要項目を入力して下さい"
+    end
+  end
+
   # If locale is zh-TW || zh-CN return true
   def lang_ok?
     if I18n.locale == :ja

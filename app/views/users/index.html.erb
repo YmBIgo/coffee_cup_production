@@ -62,16 +62,10 @@
                         :width => "90%",
                         :class => "hover_img textbook-title-img zoom_img") %>
           <h4>
-          <% if current_user.company? %>
-            <strong><u>有料版</u>なら、勉強中に分からないところの質問対応をいたします。</strong>
-            <br>
-            もしご興味がありましたら、ご活用下さい。
-          <% else %>
             <a href="https://facebook.com" target="_blank">Facebook</a>に登録した上、<a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank">Facebookページ</a>にて投稿・質問下さい。
             <br><br>
             もしくは<a href="mailto:support@coffee-cup.info">当社メール（support@coffee-cup.info）</a>宛に質問下さい。
-            </h4>
-          <% end %>
+          </h4>
         </div>
       </div>
       <br>
@@ -100,6 +94,8 @@
             <strong>Email</strong>　　　　 : <%= current_user.email %>
             <br>
             <strong>電話番号</strong>　　　 : <%= current_user.phone_number %>
+            <br>
+            <strong>誕生年</strong>　　　　 : <%= current_user.birth_year %>
             <br>
             <% unless current_user.company? %>
               <strong>会社・学校名</strong>　 : <%= current_user.company_name %>
