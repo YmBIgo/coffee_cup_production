@@ -18,35 +18,24 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <strong>
         <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li class="hover-nav">
-              <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 设定一览</a>
-            </li>
-            <li class="hover-nav">
-              <a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank" class="nav-word"><i class="fa fa-question"></i> 问问题</a></li>
-            </li>
-            <li class="hover-nav">
-              <a href="/<%= I18n.locale %>/dashboard" class="nav-word"><i class="fa fa-user"></i> 主页</a>
-            </li>
-            <li class="hover-nav">
-              <%= link_to "登出", destroy_user_session_path, method: :delete, :class => "nav-word" %>
-            </li>
-          <% end %>
-            <li class="hover-nav">
-              <a href="/zh-CN/codes" class="nav-word" target="_blank">设定一览</a>
-            </li>
-            <li class="hover-nav">
-              <a href="/zh-CN/mugcups" class="nav-word" target="_blank">Mugcup(基础编)</a>
-            </li>
-            <li class="hover-nav">
-              <a href="/zh-CN/coffee_cups" class="nav-word" target="_blank">Coffee(应用编)</a>
-            </li>
-            <li style="margin-top:5px;">
-              <a><input type="submit" value="字小" onclick="smaller();" class="btn btn-primary"></a>
-            </li>
-            <li style="margin-top:5px;">
-              <a><input type="submit" value="字大" onclick="larger();" class="btn btn-danger"></a>
-            </li>
+          <li class="hover-nav">
+            <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 设定一览</a>
+          </li>
+          <li class="hover-nav">
+            <a href="/zh-CN/mugcups" class="nav-word" target="_blank">Mugcup(基础编)</a>
+          </li>
+          <li class="hover-nav">
+            <a href="/zh-CN/coffee_cups" class="nav-word" target="_blank">Coffee(应用编)</a>
+          </li>
+          <li class="hover-nav">
+            <a href="/zh-CN/warning" class="nav-word"><i class="fa fa-exclamation"></i> 使用前的注意</a>
+          </li>
+          <li style="margin-top:5px;">
+            <a><input type="submit" value="字小" onclick="smaller();" class="btn btn-primary"></a>
+          </li>
+          <li style="margin-top:5px;">
+            <a><input type="submit" value="字大" onclick="larger();" class="btn btn-danger"></a>
+          </li>
         </ul>
         </strong>
       </div>

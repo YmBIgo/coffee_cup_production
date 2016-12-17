@@ -18,38 +18,24 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <strong>
         <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li class="hover-nav">
-              <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 設定一覧</a>
-            </li>
-            <% unless current_user.company? %>
-              <li class="hover-nav">
-                <a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank" class="nav-word"><i class="fa fa-question"></i> 質問</a></li>
-                </li>
-            <% end %>
-            <li class="hover-nav">
-              <a href="/ja/pay_warning" class="nav-word"><i class="fa fa-exclamation"></i> 使用時の注意</a>
-            </li>
-            <li class="hover-nav">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => "nav-word" %>
-            </li>
-          <% else %>
-            <li class="hover-nav">
-              <a href="/teaching" class="nav-word" target="_blank"><i class="fa fa-graduation-cap"></i> 本教材の教え方について</a>
-            </li>
-            <li class="hover-nav">
-              <%= link_to "登録する",new_user_registration_path, :class => "nav-word" %>
-            </li>
-            <li class="hover-nav">
-              <%= link_to "ログイン", new_user_session_path, :class => "nav-word" %>
-            </li>
-          <% end %>
-            <li style="margin-top:5px;">
-              <a><input type="submit" value="文字小" onclick="smaller();" class="btn btn-primary"></a>
-            </li>
-            <li style="margin-top:5px;">
-              <a><input type="submit" value="文字大" onclick="larger();" class="btn btn-danger"></a>
-            </li>
+          <li class="hover-nav">
+            <a href="/<%= I18n.locale %>/mugcups" target="_blank" class="nav-word"> Mugcup(基礎編)</a>
+          </li>
+          <li class="hover-nav">
+            <a href="/<%= I18n.locale %>/coffee_cups" target="_blank" class="nav-word"> Coffee(応用編)</a>
+          </li>
+          <li class="hover-nav">
+            <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 設定一覧</a>
+          </li>
+          <li class="hover-nav">
+            <a href="/ja/warning" class="nav-word"><i class="fa fa-exclamation"></i> 使用時の注意</a>
+          </li>
+          <li style="margin-top:5px;">
+            <a><input type="submit" value="文字小" onclick="smaller();" class="btn btn-primary"></a>
+          </li>
+          <li style="margin-top:5px;">
+            <a><input type="submit" value="文字大" onclick="larger();" class="btn btn-danger"></a>
+          </li>
         </ul>
         </strong>
       </div>

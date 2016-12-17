@@ -26,12 +26,12 @@ gem "font-awesome-rails"
 
 gem 'meta-tags'
 
-gem 'newrelic_rpm'
+# gem 'newrelic_rpm'
 
-gem 'devise'
-gem 'activeadmin', '~> 1.0.0.pre2'
+# gem 'devise'
+# gem 'activeadmin', '~> 1.0.0.pre2'
 
-gem 'devise-i18n'
+# gem 'devise-i18n'
 
 gem 'jquery-turbolinks'
 

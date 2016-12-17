@@ -1,25 +1,25 @@
 Rails.application.routes.draw do
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  # devise_for :admin_users, ActiveAdmin::Devise.config
+  # ActiveAdmin.routes(self)
 
   get "mugcups" => "pages#index"
   get "coffee_cups" => "coffeecups#index"
   get "codes" => "codes#index"
 
   get "privacypolicy" => "info_page#privacypolicy"
-  get "company"       => "info_page#company"
-  get "term"          => "info_page#term"
-  get "tokusho"       => "info_page#tokusho"
+  # get "company"       => "info_page#company"
+  # get "term"          => "info_page#term"
+  # get "tokusho"       => "info_page#tokusho"
   get "warning"       => "info_page#warning"
   get "teaching"      => "info_page#teaching"
 
   scope "(:locale)" do
   # top page
 
-    devise_for :users, :controllers => {
-        :registrations => 'users/registrations'
-    }
+    # devise_for :users, :controllers => {
+    #     :registrations => 'users/registrations'
+    # }
 
     root to: "welcome#index"
 
@@ -49,21 +49,21 @@ Rails.application.routes.draw do
 
     resources :users, :only => [:edit, :update]
 
-    get "dashboard" => "users#index"
+    # get "dashboard" => "users#index"
 
     # get "pay_info" => "users#pay_info"
 
-    get "pay_warning" => "users#pay_warning"
+    # get "pay_warning" => "users#pay_warning"
 
   # info_page
 
     get "privacypolicy" => "info_page#privacypolicy"
 
-    get "company"       => "info_page#company"
+    # get "company"       => "info_page#company"
 
-    get "term"          => "info_page#term"
+    # get "term"          => "info_page#term"
 
-    get "tokusho"       => "info_page#tokusho"
+    # get "tokusho"       => "info_page#tokusho"
 
     get "warning"       => "info_page#warning"
 

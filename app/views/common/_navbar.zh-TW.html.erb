@@ -18,35 +18,27 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <strong>
         <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li class="hover-nav">
-              <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 設定一覽</a>
-            </li>
-            <li class="hover-nav">
-              <a href="https://www.facebook.com/CoffeeCupJapan/" target="_blank" class="nav-word"><i class="fa fa-question"></i> 問問題</a></li>
-            </li>
-            <li class="hover-nav">
-              <a href="/<%= I18n.locale %>/dashboard" class="nav-word"><i class="fa fa-user"></i> 主頁</a>
-            </li>
-            <li class="hover-nav">
-              <%= link_to "登出", destroy_user_session_path, method: :delete, :class => "nav-word" %>
-            </li>
-          <% end %>
-            <li class="hover-nav">
-              <a href="/zh-TW/codes" class="nav-word" target="_blank">設定一覽</a>
-            </li>
-            <li class="hover-nav">
-              <a href="/zh-TW/mugcups" class="nav-word" target="_blank">Mugcup(基礎編)</a>
-            </li>
-            <li class="hover-nav">
-              <a href="/zh-TW/coffee_cups" class="nav-word" target="_blank">Coffee(應用編)</a>
-            </li>
-            <li style="margin-top:5px;">
-              <a><input type="submit" value="字小" onclick="smaller();" class="btn btn-primary"></a>
-            </li>
-            <li style="margin-top:5px;">
-              <a><input type="submit" value="字大" onclick="larger();" class="btn btn-danger"></a>
-            </li>
+          <li class="hover-nav">
+            <a href="/<%= I18n.locale %>/codes" target="_blank" class="nav-word"><i class="fa fa-hashtag"></i> 設定一覽</a>
+          </li>
+          <li class="hover-nav">
+            <a href="/zh-TW/codes" class="nav-word" target="_blank">設定一覽</a>
+          </li>
+          <li class="hover-nav">
+            <a href="/zh-TW/mugcups" class="nav-word" target="_blank">Mugcup(基礎編)</a>
+          </li>
+          <li class="hover-nav">
+            <a href="/zh-TW/coffee_cups" class="nav-word" target="_blank">Coffee(應用編)</a>
+          </li>
+          <li class="hover-nav">
+            <a href="/zh-TW/warning" class="nav-word"><i class="fa fa-exclamation"></i> 使用前的注意</a>
+          </li>
+          <li style="margin-top:5px;">
+            <a><input type="submit" value="字小" onclick="smaller();" class="btn btn-primary"></a>
+          </li>
+          <li style="margin-top:5px;">
+            <a><input type="submit" value="字大" onclick="larger();" class="btn btn-danger"></a>
+          </li>
         </ul>
         </strong>
       </div>

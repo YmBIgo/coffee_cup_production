@@ -4,27 +4,27 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # http_basic_authenticate_with :name => ENV['EDIT_USER'], :password => ENV['EDIT_PASS']
 
-  http_basic_authenticate_with :name => ENV['ADMIN_USER'], :password => ENV['ADMIN_PASS'], :if => :admin_controller?
+  # http_basic_authenticate_with :name => ENV['COFFEE_USER'], :password => ENV['COFFEE_PASS']
 
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  # before_filter :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from Exception, with: :error500
   rescue_from ActiveRecord::RecordNotFound, ActionController::RoutingError, with: :error404
 
   before_action :set_locale
 
-  after_action  :record_log
+  # after_action  :record_log
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
   def record_log
-    if user_signed_in?
-      Viewlist.create(:lang => I18n.locale, :page_type => request.url, :user_id => current_user.id, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => referer_str, :user_agent => request.env["HTTP_USER_AGENT"])
-    else
-      Viewlist.create(:lang => I18n.locale, :page_type => request.url, :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => referer_str, :user_agent => request.env["HTTP_USER_AGENT"])
-    end
+    # if user_signed_in?
+    #   Viewlist.create(:lang => I18n.locale, :page_type => request.url, :user_id => current_user.id, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => referer_str, :user_agent => request.env["HTTP_USER_AGENT"])
+    # else
+    #   Viewlist.create(:lang => I18n.locale, :page_type => request.url, :user_id => 0, :watching_ip => request.env["HTTP_X_FORWARDED_FOR"] || request.remote_ip, :referer => referer_str, :user_agent => request.env["HTTP_USER_AGENT"])
+    # end
   end
 
   def default_url_options(options = {})
@@ -51,14 +51,6 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :agreement) }
-  end
-
-  def admin_controller?
-    self.class < ActiveAdmin::BaseController
-  end
 
   def referer_str
     if request.referer != nil
